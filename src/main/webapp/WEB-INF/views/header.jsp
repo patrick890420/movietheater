@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="/resources/css/owl.carousel.min.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/slicknav.min.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/style.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/ticket/ticket.css" type="text/css">
 </head>
 
 <body>
@@ -45,7 +46,7 @@
       <div class="row">
         <div class="col-lg-2">
           <div class="header__logo">
-            <a href="./index.html">NEW sssss포스터 입력</a>
+            <a href="./index.html">NEW 포스터 입력</a>
           </div>
         </div>
       </div>
@@ -96,7 +97,7 @@
                   <li><a href="./signup.html">Sign Up</a></li>
                   <li><a href="./login.html">Login</a></li>
                 </ul></li>
-              <li><a href="./blog.html">예매</a></li>
+              <li><a href="/ticket/ticket.do">예매</a></li>
               <li><a href="#">이벤트</a></li>
             </ul>
           </nav>
