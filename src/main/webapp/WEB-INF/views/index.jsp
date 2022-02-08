@@ -72,7 +72,7 @@
 								<div class="product__item">
 									<div class="product__item__pic set-bg"
 										data-setbg="/resources/img/trending/trend-1.jpg">
-										<div class="ep">18 /asfsdsf 18</div>
+										<div class="ep">18 / 18</div>
 										<div class="comment">
 											<i class="fa fa-comments"></i> 11
 										</div>
