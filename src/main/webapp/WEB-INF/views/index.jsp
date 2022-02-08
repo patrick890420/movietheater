@@ -9,7 +9,7 @@
 						<div class="col-lg-6">
 							<div class="hero__text">
 								<div class="label">Adventure</div>
-								<h2>Fate / Stay Night: Unl  imited Blade Works</h2>
+								<h2>Fate / Stay Night: Unlimited Blade s</h2>
 								<p>After 30 days of travel across  the world...</p>
 								<a href="#"><span>Watch Now</span> <i
 									class="fa fa-angle-right"></i></a>
@@ -72,7 +72,7 @@
 								<div class="product__item">
 									<div class="product__item__pic set-bg"
 										data-setbg="/resources/img/trending/trend-1.jpg">
-										<div class="ep">18 / 18</div>
+										<div class="ep">18 /asfsdsf 18</div>
 										<div class="comment">
 											<i class="fa fa-comments"></i> 11
 										</div>
