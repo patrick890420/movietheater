@@ -45,7 +45,7 @@
       <div class="row">
         <div class="col-lg-2">
           <div class="header__logo">
-            <a href="./index.html">NEW ssss포스터 입력</a>
+            <a href="./index.html">NEW ssssss포스터 입력</a>
           </div>
         </div>
       </div>
