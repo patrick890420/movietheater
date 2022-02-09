@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/security 
+	http://www.springframework.org/schema/security/spring-security.xsd">
+	
+	<!--bean 객체등록, 비밀번호 암호화 처리 -->
+	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+	
+
+	 
+<!-- 	<security:http>  -->
+	<!-- 접근권한 부여 -->
+	<!--<security:form-login />  default login page-->
+	
+		<!-- 접근권한 모두허락 --> 
+<!-- 		<security:intercept-url pattern="/adm/admin" access="permitAll"/> -->
+		 
+		<!-- 접근권한 ROLE_ADMIN 만 --> 
+<!-- 		<security:intercept-url pattern="/adm/adminManager" access="hasRole('ROLE_ADMIN')"/> -->
+		
+		<!-- 접근권한 없으면 여기로 가고 로그인 성공하면 CustomLoginSuccess 실행-->
+<!-- 		<security:form-login login-page="/adm/admin" authentication-success-handler-ref="CustomLoginSuccess"/> -->
+		
+		<!--로그아웃 버튼 클릭경로, 로그아웃 성공시 /로 이동 -->
+<!-- 		<security:logout logout-url="/adm/adminLogout" invalidate-session="true" logout-success-url="/"/> -->
+
+<!-- 	</security:http> -->
+<!-- 	<security:authentication-manager> -->
+<!-- 		<security:authentication-provider user-service-ref="CustomUserDetailService"> 이서비스를 호출 할때 -->
+<!-- 			<security:password-encoder ref="bcryptPasswordEncoder"/> 비밀번호 암호화 5.0버전 부터는 필수 -->
+<!-- 		</security:authentication-provider> -->
+		
+<!-- 	</security:authentication-manager> -->
+
+</beans>

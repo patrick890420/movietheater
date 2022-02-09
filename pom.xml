@@ -3,9 +3,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.newspring6</groupId>
+	<groupId>com.theater</groupId>
 	<artifactId>controller</artifactId>
-	<name>newspring6</name>
+	<name>MovieTheater</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -224,32 +224,32 @@
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
-		<dependency>
-		    <groupId>org.springframework.security</groupId>
-		    <artifactId>spring-security-web</artifactId>
-		    <version>5.0.7.RELEASE</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 		    <groupId>org.springframework.security</groupId> -->
+<!-- 		    <artifactId>spring-security-web</artifactId> -->
+<!-- 		    <version>5.0.7.RELEASE</version> -->
+<!-- 		</dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
-		<dependency>
-		    <groupId>org.springframework.security</groupId>
-		    <artifactId>spring-security-config</artifactId>
-		    <version>5.0.7.RELEASE</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 		    <groupId>org.springframework.security</groupId> -->
+<!-- 		    <artifactId>spring-security-config</artifactId> -->
+<!-- 		    <version>5.0.7.RELEASE</version> -->
+<!-- 		</dependency> -->
 		
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
-		<dependency>
-		    <groupId>org.springframework.security</groupId>
-		    <artifactId>spring-security-core</artifactId>
-		    <version>5.0.7.RELEASE</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 		    <groupId>org.springframework.security</groupId> -->
+<!-- 		    <artifactId>spring-security-core</artifactId> -->
+<!-- 		    <version>5.0.7.RELEASE</version> -->
+<!-- 		</dependency> -->
 		
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs -->
-		<dependency>
-		    <groupId>org.springframework.security</groupId>
-		    <artifactId>spring-security-taglibs</artifactId>
-		    <version>5.0.7.RELEASE</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 		    <groupId>org.springframework.security</groupId> -->
+<!-- 		    <artifactId>spring-security-taglibs</artifactId> -->
+<!-- 		    <version>5.0.7.RELEASE</version> -->
+<!-- 		</dependency> -->
 		
 		
 		
