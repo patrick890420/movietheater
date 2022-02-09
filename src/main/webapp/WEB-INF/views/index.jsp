@@ -49,9 +49,277 @@
 	<!-- Hero Section End -->
 
 	<!-- Product Section Begin -->
-	<section class="product spad">
+	<section class="" style="padding-top:80px; padding-bottom:0px; background:#80808026;">
 		<div class="container">
 			<div class="row">
+        <div class="col-lg-12">
+          <div class="trending__product">
+            <div class="row">
+              <div class="col-lg-8 col-md-8 col-sm-8">
+                <div class="section-title">
+                  <h4 style="float:left;">Movie Chart</h4>
+                    <span style="font-size:24px; color:#808080ab; line-height:24px;"> ㅣ상영예정작</span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="product__item">
+                  <div class="product__item__pic set-bg"
+                    data-setbg="/resources/img/trending/movie1.jpg">
+                    <div class="ep15">15</div>
+                    <div class="comment">
+                      <i class="fa fa-comments"></i> 11
+                    </div>
+                    <div class="view">
+                      <i class="fa fa-eye"></i> 9141
+                    </div>
+                  </div>
+                  <div class="product__item__text">
+                    <ul>
+                      <li>Active</li>
+                      <li>Movie</li>
+                    </ul>
+                    <h5>
+                      <a href="#">The Seven Deadly Sins: Wrath of the Gods</a>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="product__item">
+                  <div class="product__item__pic set-bg"
+                    data-setbg="/resources/img/trending/movie2.jpg">
+                    <div class="ep12">12</div>
+                    <div class="comment">
+                      <i class="fa fa-comments"></i> 11
+                    </div>
+                    <div class="view">
+                      <i class="fa fa-eye"></i> 9141
+                    </div>
+                  </div>
+                  <div class="product__item__text">
+                    <ul>
+                      <li>Active</li>
+                      <li>Movie</li>
+                    </ul>
+                    <h5>
+                      <a href="#">The Seven Deadly Sins: Wrath of the Gods</a>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="product__item">
+                  <div class="product__item__pic set-bg"
+                    data-setbg="/resources/img/trending/movie3.jpg">
+                    <div class="ep15">15</div>
+                    <div class="comment">
+                      <i class="fa fa-comments"></i> 11
+                    </div>
+                    <div class="view">
+                      <i class="fa fa-eye"></i> 9141
+                    </div>
+                  </div>
+                  <div class="product__item__text">
+                    <ul>
+                      <li>Active</li>
+                      <li>Movie</li>
+                    </ul>
+                    <h5>
+                      <a href="#">The Seven Deadly Sins: Wrath of the Gods</a>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="product__item">
+                  <div class="product__item__pic set-bg"
+                    data-setbg="/resources/img/trending/movie4.jpg">
+                    <div class="ep12">12</div>
+                    <div class="comment">
+                      <i class="fa fa-comments"></i> 11
+                    </div>
+                    <div class="view">
+                      <i class="fa fa-eye"></i> 9141
+                    </div>
+                  </div>
+                  <div class="product__item__text">
+                    <ul>
+                      <li>Active</li>
+                      <li>Movie</li>
+                    </ul>
+                    <h5>
+                      <a href="#">The Seven Deadly Sins: Wrath of the Gods</a>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+     </section>
+     <section class="" style="padding-top:80px; padding-bottom:0px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="trending__product">
+            <div class="row">
+              <div class="col-lg-8 col-md-8 col-sm-8">
+                <div class="section-title">
+                  <h4 style="float:left;">Event</h4>
+                    <span style="font-size:24px; color:#808080ab; line-height:24px;"> ㅣSpecial</span>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="btn__all">
+                  <a href="#" class="primary-btn">View All <span
+                    class="arrow_right"></span></a>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="product__item">
+                  <div class="product__item__pic set-bg"
+                    data-setbg="/resources/img/trending/event1.jpg" style="height:206px;">
+                    <div class="ep">18 / 18</div>
+                    <div class="comment">
+                      <i class="fa fa-comments"></i> 11
+                    </div>
+                    <div class="view">
+                      <i class="fa fa-eye"></i> 9141
+                    </div>
+                  </div>
+                  <div class="product__item__text">
+                      <strong>[킹메이커]CGV필름마크</strong>
+                    <h5>
+                      <a href="#">2022.01.19~2022.02.27</a>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="product__item">
+                  <div class="product__item__pic set-bg"
+                    data-setbg="/resources/img/trending/event2.jpg" style="height:206px;">
+                    <div class="ep">18 / 18</div>
+                    <div class="comment">
+                      <i class="fa fa-comments"></i> 11
+                    </div>
+                    <div class="view">
+                      <i class="fa fa-eye"></i> 9141
+                    </div>
+                  </div>
+                  <div class="product__item__text">
+                  <strong>[킹메이커]CGV필름마크</strong>
+                    <h5>
+                      <a href="#">2022.01.19~2022.02.27</a>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="product__item">
+                  <div class="product__item__pic set-bg"
+                    data-setbg="/resources/img/trending/event3.jpg" style="height:206px;">
+                    <div class="ep">18 / 18</div>
+                    <div class="comment">
+                      <i class="fa fa-comments"></i> 11
+                    </div>
+                    <div class="view">
+                      <i class="fa fa-eye"></i> 9141
+                    </div>
+                  </div>
+                  <div class="product__item__text">
+                  <strong>[킹메이커]CGV필름마크</strong>
+                    <h5>
+                      <a href="#">2022.01.19~2022.02.27</a>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+     </section>
+     <section class="" style="padding-bottom:0px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="trending__product">
+            <div class="row">
+              <div class="col-lg-8 col-md-8 col-sm-8">
+                <div class="section-title">
+                  <h4 style="float:left;">극장</h4>
+                    <span style="font-size:24px; color:#808080ab; line-height:24px;"> ㅣSpecial</span>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="btn__all">
+                  <a href="#" class="primary-btn">View All <span
+                    class="arrow_right"></span></a>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-7 col-md-7 col-sm-7">
+                <div class="product__item">
+                  <div class="product__item__pic set-bg"
+                    data-setbg="/resources/img/trending/theater1.png">
+                    <div class="ep">18 / 18</div>
+                    <div class="comment">
+                      <i class="fa fa-comments"></i> 11
+                    </div>
+                    <div class="view">
+                      <i class="fa fa-eye"></i> 9141
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5 col-md-5 col-sm-5">
+                <div class="product__item">
+                  <div class="product__item__text">
+                  <div class="index_theater_text">
+                  <strong style="font-size: xx-large;">SUITE CINEMA</strong>
+                    <h5>
+                      <a href="#">2022.01.19~2022.02.27</a>
+                    </h5>
+                   </div>
+                   <div class="index_theater_text">
+                    <strong style="font-size: xx-large;">SKY BOX</strong>
+                    <h5>
+                      <a href="#">2022.01.19~2022.02.27</a>
+                    </h5>
+                    </div>
+                    <div class="index_theater_text">
+                    <strong style="font-size: xx-large;">4DX</strong>
+                    <h5>
+                      <a href="#">2022.01.19~2022.02.27</a>
+                    </h5>
+                    </div>
+                    <div class="index_theater_text index_theater_text2">
+                    <strong style="font-size: xx-large;">CINE de CHEF</strong>
+                    <h5>
+                      <a href="#">2022.01.19~2022.02.27</a>
+                    </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+     </section>
+     <section class="product spad">
+     <div class="container">
+      <div class="row">
 				<div class="col-lg-9">
 					<div class="trending__product">
 						<div class="row">

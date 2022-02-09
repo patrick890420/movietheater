@@ -81,7 +81,7 @@
   </div>
   <div class="container">
     <div class="row" style="border-top: solid 2px #eeeeee; padding:10px 0; border-bottom: solid 2px #eeeeee;">
-      <div class="col-lg-4" style="margin-left: -15px;">
+      <div class="col-lg-5" style="margin-left: -15px;">
         <div class="header__nav">
           <nav class="header__menu mobile-menu">
             <ul>
@@ -104,7 +104,7 @@
       </div>
       <div class="col-lg-3" style="text-align:right;">
       </div>
-      <div class="col-lg-3" style="text-align:right;">
+      <div class="col-lg-4" style="text-align:right;">
         <label style="margin:10px 0;">
           <input type="text">
           <button type="button" style="background:none; border:none;"><span

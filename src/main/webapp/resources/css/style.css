@@ -666,6 +666,28 @@ ol {
 	left: 10px;
 	top: 10px;
 }
+.product__item__pic .ep15 {
+  font-size: 13px;
+  color: black;;
+  background: #ff8100;
+  display: inline-block;
+  padding: 5px 7px;
+  border-radius: 50px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.product__item__pic .ep12 {
+  font-size: 13px;
+  color: black;;
+  background: #0484dfd9;
+  display: inline-block;
+  padding: 5px 7px;
+  border-radius: 50px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
 
 .product__item__pic .comment {
 	font-size: 13px;
@@ -2339,4 +2361,11 @@ ol {
 	.anime__review__item__text {
 		padding: 18px 20px 20px;
 	}
+}
+
+.index_theater_text {
+  border-top: solid 2px #80808061;
+}
+.index_theater_text2 {
+  border-bottom: solid 2px #80808061;
 }
