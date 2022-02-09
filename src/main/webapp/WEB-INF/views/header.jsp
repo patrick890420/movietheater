@@ -98,7 +98,7 @@
                   <li><a href="./signup.html">Sign Up</a></li>
                   <li><a href="./login.html">Login</a></li>
                 </ul></li>
-              <li><a href="./blog.html">예매</a></li>
+              <li><a href="/ticket/ticket.do">예매</a></li>
               <li><a href="#">이벤트</a></li>
             </ul>
           </nav>
