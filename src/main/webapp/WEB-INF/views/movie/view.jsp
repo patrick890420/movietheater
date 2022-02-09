@@ -28,7 +28,6 @@
                                 </div>
                                 <span>1.029 Votes</span>
                             </div>
-                            <p>영화 간단 소개(intro)</p>
                             <div class="anime__details__widget">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
@@ -47,12 +46,13 @@
                                             <li><span>Quality:</span> 상영등급</li>
                                         </ul>
                                     </div>
+                                    <p>영화 간단 소개(intro)</p>
                                 </div>
                             </div>
-                            <div class="anime__details__btn">
+                            <div class="anime__details__btn mv-txt-center">
                                 <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Follow</a>
-                                <a href="#" class="watch-btn"><span>Watch Now</span> 
-                                <i class="fa fa-angle-right"></i></a>
+                                <a href="#" class="watch-btn"><span>Watch Now</span></a>
+<!--                                 <i class="fa fa-angle-right"></i></a> -->
                                 </div>
                             </div>
                         </div>
@@ -125,8 +125,8 @@
                             <div class="section-title">
                                 <h5>Your Comment</h5>
                             </div>
-                            <form action="#">
-                                <textarea placeholder="Your Comment"></textarea>
+                            <form  action="#">
+                                <textarea class="cmt-border" placeholder="Your Comment"></textarea>
                                 <button type="submit"><i class="fa fa-location-arrow"></i> Review</button>
                             </form>
                         </div>
