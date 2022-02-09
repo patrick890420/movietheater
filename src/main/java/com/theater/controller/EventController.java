@@ -25,5 +25,10 @@ public class EventController {
     
   }
   
+  @GetMapping("/eventview.do")
+  public void eventview() {
+    
+  }
+  
 
 }//class
