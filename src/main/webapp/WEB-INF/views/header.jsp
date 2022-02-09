@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="/resources/css/owl.carousel.min.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/slicknav.min.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/style.css" type="text/css">
-<link rel="stylesheet" href="/resources/css/movie.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/movie/movie.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/event_notice.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/ticket/ticket.css" type="text/css">
 </head>
