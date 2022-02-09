@@ -31,6 +31,8 @@
 <link rel="stylesheet" href="/resources/css/owl.carousel.min.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/slicknav.min.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/style.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/event_notice.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/ticket/ticket.css" type="text/css">
 </head>
 
 <body>
@@ -96,7 +98,7 @@
                   <li><a href="./signup.html">Sign Up</a></li>
                   <li><a href="./login.html">Login</a></li>
                 </ul></li>
-              <li><a href="./blog.html">예매</a></li>
+              <li><a href="/ticket/ticket.do">예매</a></li>
               <li><a href="#">이벤트</a></li>
             </ul>
           </nav>
