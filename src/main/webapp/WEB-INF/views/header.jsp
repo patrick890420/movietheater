@@ -47,7 +47,7 @@
       <div class="row">
         <div class="col-lg-2">
           <div class="header__logo">
-            <a href="./index.html">NEW sssss포스터 입력</a>
+            <a href="./index.html">NEW 포스터 입력</a>
           </div>
         </div>
       </div>
@@ -60,7 +60,7 @@
     <div class="row">
       <div class="col-lg-2">
         <div class="header__logo">
-          <a href="./index.html"> <span
+          <a href="/"> <span
             style="font-size: x-large; font-weight: 800; color: black;">📽
               JSL-Movie</span>
           </a>
@@ -99,7 +99,7 @@
                   <li><a href="./login.html">Login</a></li>
                 </ul></li>
               <li><a href="/ticket/ticket.do">예매</a></li>
-              <li><a href="#">이벤트</a></li>
+              <li><a href="/event/event.do">이벤트</a></li>
             </ul>
           </nav>
         </div>
