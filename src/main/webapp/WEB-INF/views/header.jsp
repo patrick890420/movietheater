@@ -80,13 +80,8 @@
     <div id="mobile-menu-wrap"></div>
   </div>
   <div class="container">
-<<<<<<< HEAD
     <div class="row" style="border-top: solid 2px #eeeeee; padding:10px 0; border-bottom: solid 2px #eeeeee;">
       <div class="col-lg-4" style="margin-left: -15px;">
-=======
-    <div class="row" style="border-top: solid 2px #eeeeee; padding:10px 0;">
-      <div class="col-lg-6" style="margin-left: -15px;">
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
         <div class="header__nav">
           <nav class="header__menu mobile-menu">
             <ul>
