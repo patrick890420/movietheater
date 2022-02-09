@@ -3,12 +3,20 @@
 <%@ include file="../header.jsp" %>
 
 <!-- Hero Section Begin -->
-	<section class="hero">
-		<div class="container">
-            <div class="row">
-                <div class="col-md-12 event9">
-                    <h2>イベント</h2><!-- EVENT -->
-                </div><!-- md12 -->
+<section class="hero">
+<div class="container">
+  <div class="row event8">
+    <div class="col-md-12 event9">
+      <h2>イベント</h2><!-- EVENT -->
+        <div class="col-lg-3" style="text-align:right;">
+          <label style="margin:10px 0;">
+            <input type="text">
+              <button type="button" style="background:none; border:none;">
+                <span class="icon_search"></span>
+              </button>
+            </label>
+        </div><!-- lg3 -->
+    </div><!-- md12 -->
             </div><!-- row -->
             <div class="row event13">
                 <div class="col-md-9">
