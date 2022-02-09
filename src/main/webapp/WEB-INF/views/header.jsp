@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="/resources/css/owl.carousel.min.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/slicknav.min.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/style.css" type="text/css">
-<link rel="stylesheet" href="/resources/css/movie.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/movie/movie.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/event_notice.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/ticket/ticket.css" type="text/css">
 </head>
@@ -81,7 +81,7 @@
   </div>
   <div class="container">
     <div class="row" style="border-top: solid 2px #eeeeee; padding:10px 0;">
-      <div class="col-lg-4" style="margin-left: -15px;">
+      <div class="col-lg-6" style="margin-left: -15px;">
         <div class="header__nav">
           <nav class="header__menu mobile-menu">
             <ul>
@@ -97,12 +97,13 @@
                   <li><a href="./login.html">Login</a></li>
                 </ul></li>
               <li><a href="/ticket/ticket.do">예매</a></li>
-              <li><a href="/event/event.do">이 벤 트</a></li>
+              <li><a href="/event/event.do">이벤트</a></li>
+              <li><a href="/notice/notice.do">공지사항</a></li>
             </ul>
           </nav>
         </div>
       </div>
-      <div class="col-lg-5" style="text-align:right;">
+      <div class="col-lg-3" style="text-align:right;">
       </div>
       <div class="col-lg-3" style="text-align:right;">
         <label style="margin:10px 0;">

@@ -1114,7 +1114,7 @@ ol {
 	right: -30px;
 	top: 15px;
 	border-top: 15px solid transparent;
-	border-left: 15px solid #1d1e39;
+	border-left: 15px solid #eee;
 	content: "";
 	-webkit-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
@@ -1129,7 +1129,7 @@ ol {
 
 .anime__review__item__text {
 	overflow: hidden;
-	background: #1d1e39;
+	background: #eee;
 	padding: 18px 30px 16px 20px;
 	border-radius: 10px;
 }
@@ -1146,7 +1146,7 @@ ol {
 }
 
 .anime__review__item__text p {
-	color: #b7b7b7;
+	color: #000;
 	line-height: 23px;
 	margin-bottom: 0;
 }
@@ -1158,7 +1158,7 @@ ol {
 	padding-left: 20px;
 	padding-top: 12px;
 	height: 110px;
-	border: none;
+	border: 3px solid #ccc;
 	border-radius: 5px;
 	resize: none;
 	margin-bottom: 24px;
