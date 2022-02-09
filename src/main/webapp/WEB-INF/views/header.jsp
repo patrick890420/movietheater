@@ -68,7 +68,7 @@
       </div>
       <div class="col-lg-10">
         <div class="header__right">
-          <a href="#" style="text-align: center;"><span class="icon_lock"><br>로그인</span></a>
+          <a href="login.do" style="text-align: center;"><span class="icon_lock"><br>로그인</span></a>
           <a href="" style="text-align: center;"><span
             class="icon_profile"><br>회원가입</span></a> <a href=""
             style="text-align: center;"><span class="icon_profile"><br>마이페이지</span></a>
