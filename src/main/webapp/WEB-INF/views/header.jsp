@@ -45,7 +45,7 @@
       <div class="row">
         <div class="col-lg-2">
           <div class="header__logo">
-            <a href="./index.html">NEW sssss포스터 입력</a>
+            <a href="./index.html">NEW포스터 입력</a>
           </div>
         </div>
       </div>
@@ -80,7 +80,7 @@
   </div>
   <div class="container">
     <div class="row"
-      style="border-top: solid 2px #eeeeee; padding: 20px 0; border-bottom:solid">
+      style="border-top: solid 2px #eeeeee; padding:10px 0;">
       <div class="col-lg-4" style="margin-left: -15px;">
         <div class="header__nav">
           <nav class="header__menu mobile-menu">

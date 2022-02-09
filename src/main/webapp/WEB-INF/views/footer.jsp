@@ -8,7 +8,10 @@
       <div class="row">
         <div class="col-lg-3">
           <div class="footer__logo">
-            <a href="./index.html"><img src="/resources/img/logo.png" alt=""></a>
+            <a href="./index.html"> <span
+            style="font-size: x-large; font-weight: 800; color: black;">📽
+              JSL-Movie</span>
+          </a>
           </div>
         </div>
         <div class="col-lg-6">
