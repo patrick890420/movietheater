@@ -80,14 +80,13 @@
     <div id="mobile-menu-wrap"></div>
   </div>
   <div class="container">
-    <div class="row" style="border-top: solid 2px #eeeeee; padding:10px 0;">
+    <div class="row" style="border-top: solid 2px #eeeeee; padding:10px 0; border-bottom: solid 2px #eeeeee;">
       <div class="col-lg-4" style="margin-left: -15px;">
         <div class="header__nav">
           <nav class="header__menu mobile-menu">
             <ul>
               <li class="active"><a href="/movie/movie.do">영화</a></li>
-              <li><a href="./categories.html">극장<span
-                  class="arrow_carrot-down"></span></a>
+              <li><a href="/theater/theater.do">극장<span class="arrow_carrot-down"></span></a>
                 <ul class="dropdown">
                   <li><a href="./categories.html">Categories</a></li>
                   <li><a href="/movie/view.do">ViewPage</a></li>
