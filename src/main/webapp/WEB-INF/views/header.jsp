@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="/resources/css/owl.carousel.min.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/slicknav.min.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/style.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/movie.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/event_notice.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/ticket/ticket.css" type="text/css">
 </head>
@@ -55,7 +56,6 @@
     </div>
   </header>
   <!-- Header End -->
-
   <div class="container">
     <div class="row">
       <div class="col-lg-2">
@@ -66,7 +66,6 @@
           </a>
         </div>
       </div>
-
       <div class="col-lg-10">
         <div class="header__right">
           <a href="#" style="text-align: center;"><span class="icon_lock"><br>로그인</span></a>
@@ -81,18 +80,17 @@
     <div id="mobile-menu-wrap"></div>
   </div>
   <div class="container">
-    <div class="row"
-      style="border-top: solid 2px #eeeeee; padding: 20px 0; border-bottom:solid">
+    <div class="row" style="border-top: solid 2px #eeeeee; padding:10px 0;">
       <div class="col-lg-4" style="margin-left: -15px;">
         <div class="header__nav">
           <nav class="header__menu mobile-menu">
             <ul>
-              <li class="active"><a href="./index.html">영화</a></li>
+              <li class="active"><a href="/movie/movie.do">영화</a></li>
               <li><a href="./categories.html">극장<span
                   class="arrow_carrot-down"></span></a>
                 <ul class="dropdown">
                   <li><a href="./categories.html">Categories</a></li>
-                  <li><a href="./anime-details.html">Anime Details</a></li>
+                  <li><a href="/movie/view.do">ViewPage</a></li>
                   <li><a href="./anime-watching.html">Anime Watching</a></li>
                   <li><a href="./blog-details.html">Blog Details</a></li>
                   <li><a href="./signup.html">Sign Up</a></li>
