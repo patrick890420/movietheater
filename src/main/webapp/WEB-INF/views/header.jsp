@@ -86,7 +86,7 @@
           <nav class="header__menu mobile-menu">
             <ul>
               <li class="active"><a href="/movie/movie.do">영화</a></li>
-              <li><a href="./categories.html">극장<span
+              <li><a href="./categories.html">극장1<span
                   class="arrow_carrot-down"></span></a>
                 <ul class="dropdown">
                   <li><a href="./categories.html">Categories</a></li>
