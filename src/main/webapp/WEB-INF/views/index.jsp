@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
 	<!-- Hero Section Begin -->
-	<section class="hero">
+	<section class="hero" style="background:#000000eb; border-top:solid 3px red;">
 		<div class="container">
 			<div class="hero__slider owl-carousel">
 				<div class="hero__items set-bg" data-setbg="/resources/img/hero/hero-1.jpg">
@@ -52,12 +52,12 @@
 	<section class="product spad">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8">
+				<div class="col-lg-9">
 					<div class="trending__product">
 						<div class="row">
 							<div class="col-lg-8 col-md-8 col-sm-8">
 								<div class="section-title">
-									<h4>Trending Now</h4>
+									<h4>Now Film</h4>
 								</div>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4">
@@ -677,7 +677,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6 col-sm-8">
+				<div class="col-lg-3 col-md-6 col-sm-8">
 					<div class="product__sidebar">
 						<div class="product__sidebar__view">
 							<div class="section-title">

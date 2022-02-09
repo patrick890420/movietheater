@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+/*                  Event*/
+.event9{
+  border-bottom: 2px solid;
+  padding-bottom: 10px;
+}
+
+.event13{
+  border-bottom: 1px solid #ccc;
+}
+
+.event15{
+  background: none;
+  margin-top: 1rem;
+}
+
+.event15 li a{
+  padding: 5px 30px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.event24{
+  background: none;
+  padding-top: 27px;
+}
+
+.event24 li a{
+  padding: 0 13px;
+  font-weight: bold;
+  color: #ff0000;
+}
+
+.event36{
+  margin-bottom: 10px;
+}
+
+.event38{
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.event68{
+  max-width: 22%;
+}
+
+
+/*                  notice*/
