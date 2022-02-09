@@ -2,11 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ include file ="../header.jsp" %>
 <body>
-   
-
-    
-
-    <!-- Product Section Begin -->
     <section class="product-page spad">
         <div class="container">
             <div class="row">
