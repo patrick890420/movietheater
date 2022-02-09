@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="/resources/css/owl.carousel.min.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/slicknav.min.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/style.css" type="text/css">
-<link rel="stylesheet" href="/resources/css/movie.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/movie/movie.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/event_notice.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/ticket/ticket.css" type="text/css">
 </head>
@@ -68,8 +68,8 @@
       </div>
       <div class="col-lg-10">
         <div class="header__right">
-          <a href="#" style="text-align: center;"><span class="icon_lock"><br>로그인</span></a>
-          <a href="" style="text-align: center;"><span
+          <a href="/login/login.do" style="text-align: center;"><span class="icon_lock"><br>로그인</span></a>
+          <a href="/join/join.do" style="text-align: center;"><span
             class="icon_profile"><br>회원가입</span></a> <a href=""
             style="text-align: center;"><span class="icon_profile"><br>마이페이지</span></a>
           <a href="" style="text-align: center;"><span
@@ -80,8 +80,13 @@
     <div id="mobile-menu-wrap"></div>
   </div>
   <div class="container">
+<<<<<<< HEAD
     <div class="row" style="border-top: solid 2px #eeeeee; padding:10px 0; border-bottom: solid 2px #eeeeee;">
       <div class="col-lg-4" style="margin-left: -15px;">
+=======
+    <div class="row" style="border-top: solid 2px #eeeeee; padding:10px 0;">
+      <div class="col-lg-6" style="margin-left: -15px;">
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
         <div class="header__nav">
           <nav class="header__menu mobile-menu">
             <ul>
@@ -96,12 +101,13 @@
                   <li><a href="./login.html">Login</a></li>
                 </ul></li>
               <li><a href="/ticket/ticket.do">예매</a></li>
-              <li><a href="/event/event.do">이 벤 트</a></li>
+              <li><a href="/event/event.do">이벤트</a></li>
+              <li><a href="/notice/notice.do">공지사항</a></li>
             </ul>
           </nav>
         </div>
       </div>
-      <div class="col-lg-5" style="text-align:right;">
+      <div class="col-lg-3" style="text-align:right;">
       </div>
       <div class="col-lg-3" style="text-align:right;">
         <label style="margin:10px 0;">
