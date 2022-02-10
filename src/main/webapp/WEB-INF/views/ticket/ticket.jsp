@@ -1,6 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-  pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
+<!-- <div> -->
+<!--   <img alt="" src="/resources/img/ticket/popcon2.png"> -->
+<!-- </div> -->
 <div class="reserve-container">
   <div class="movie-part">
     <div class="reserve-title">영화</div>
@@ -76,7 +78,11 @@
       </div>
     </div>
     <div>
-      <form class="moveSeatForm" action="moveSeat.do" method="post">
+    </div>
+  </div>
+</div>
+  <div id="ticket_tnb">
+     <form class="moveSeatForm" action="moveSeat.do" method="post">
         <input type="hidden" class="title" name="title">
         <input type="hidden" class="movieAge" name="movieAge">
         <input type="hidden" class="selectedTheater" name="selectedTheater">
@@ -84,7 +90,5 @@
         <input type="hidden" class="runningTime" name="runningTime">
         <button class="moveSeatButton" type="button" onclick="location.href='/ticket/seat.do'">예약하기</button>
       </form>
-    </div>
   </div>
-</div>
 <%@ include file="../footer.jsp"%>
