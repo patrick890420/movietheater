@@ -80,14 +80,23 @@
     <div id="mobile-menu-wrap"></div>
   </div>
   <div class="container">
+<<<<<<< HEAD
+    <div class="row" style="border-top: solid 2px #eeeeee; padding:10px 0; border-bottom: solid 2px #eeeeee;">
+      <div class="col-lg-4" style="margin-left: -15px;">
+=======
     <div class="row" style="border-top: solid 2px #eeeeee; padding:10px 0;">
       <div class="col-lg-6" style="margin-left: -15px;">
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
         <div class="header__nav">
           <nav class="header__menu mobile-menu">
             <ul>
               <li class="active"><a href="/movie/movie.do">영화</a></li>
+<<<<<<< HEAD
               <li><a href="./categories.html">극장1<span
                   class="arrow_carrot-down"></span></a>
+=======
+              <li><a href="/theater/theater.do">극장<span class="arrow_carrot-down"></span></a>
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
                 <ul class="dropdown">
                   <li><a href="./categories.html">Categories</a></li>
                   <li><a href="/movie/view.do">ViewPage</a></li>
