@@ -34,6 +34,7 @@
 <link rel="stylesheet" href="/resources/css/movie/movie.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/event_notice.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/ticket/ticket.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/member/member.css" type="text/css">
 </head>
 
 <body>
