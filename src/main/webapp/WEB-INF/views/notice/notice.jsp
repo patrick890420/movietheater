@@ -36,7 +36,7 @@
 
 
 <!-- Table -->
-<section class="table39">
+<section class="notice">
 <div class="container">
   <div class="row">
     <div class="col-md-12">
