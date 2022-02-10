@@ -33,24 +33,29 @@
 
 
 <!-- search -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-1" style="text-align:right;">
-      </div>
-      <div class="col-lg-11" style="text-align:right;">
-        <label style="margin:10px 0;">
-        <input type="text">
-        <button type="button" style="background:none; border:none;">
-        <span class="icon_search"></span>
-        </button>
-        </label>
-      </div><!-- lg3 -->
-  </div><!-- row -->
-</div><!-- container -->
-
+<form name="myform" method="get" action="/event/event.do">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 event39">
+      <select name="sel" class="select">
+    <option value="title">제목</option>
+    <option value="content">내용</option>
+  </select>
+        </div>
+        <div class="col-lg-3" style="text-align:right;">
+          <label>
+          <input type="text" class="event47">
+          <button type="button" style="background:none; border:none;">
+          <span class="icon_search"></span>
+          </button>
+          </label>
+        </div><!-- lg3 -->
+    </div><!-- row -->
+  </div><!-- container -->
+</form>
 
 <!-- Product Section Begin -->
-<section class="product spad">
+<section class="event">
   <div class="container event36">
     <div class="row">
       <div class="col-sm-6 col-md-3 event38">
