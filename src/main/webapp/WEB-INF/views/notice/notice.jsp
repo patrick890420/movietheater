@@ -19,20 +19,26 @@
 
 
 <!-- search -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-1" style="text-align:right;">
-      </div>
-      <div class="col-lg-11" style="text-align:right;">
-        <label style="margin:10px 0;">
-        <input type="text">
-        <button type="button" style="background:none; border:none;">
-        <span class="icon_search"></span>
-        </button>
-        </label>
-      </div><!-- lg3 -->
-  </div><!-- row -->
-</div><!-- container -->
+<form name="myform" method="get" action="/notice/notice.do">
+  <div class="container">
+    <div class="row notice24">
+      <div class="col-lg-9 event39">
+      <select name="sel" class="select">
+    <option value="title">제목</option>
+    <option value="content">내용</option>
+  </select>
+        </div>
+        <div class="col-lg-3 event45">
+          <label style="margin-bottom: 1.5rem;">
+          <input type="text" class="event47">
+          <button type="button" style="background:none; border:none;">
+          <span class="icon_search"></span>
+          </button>
+          </label>
+        </div><!-- lg3 -->
+    </div><!-- row -->
+  </div><!-- container -->
+</form>
 
 
 <!-- Table -->
@@ -45,20 +51,23 @@
           <col width="10%">
           <col width="*">
           <col width="10%">
+<!--           <col width="10%"> -->
           <col width="10%">
           <col width="10%">
         </colgroup>
         <tr>
           <th>番号</th><!-- 번호 -->
           <th>題目</th><!-- 제목 -->
-          <th>作成者</th><!-- 작성자 -->
+          <th>イメージ</th><!-- 이미지 -->
+<!--           <th>内容</th>내용 -->
           <th>作成日</th><!-- 작성일 -->
           <th>照会数</th><!-- 조회수 -->
         </tr>
         <tr>
           <td>번호</td>
           <td><a href="#"></a>제목</td>
-          <td>작성자</td>
+          <td>이미지</td>
+<!--           <td>내용</td> -->
           <td>작성일</td>
           <td>조회수</td>
         </tr>

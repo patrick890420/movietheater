@@ -14,6 +14,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Movie Theater</title>
 
+
 <!-- Google Font -->
 <link
   href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
@@ -24,7 +25,6 @@
 
 <!-- Css Styles -->
 <link rel="stylesheet" href="/resources/css/bootstrap.min.css" type="text/css">
-<link rel="stylesheet" href="/resources/css/font-awesome.min.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/elegant-icons.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/plyr.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/nice-select.css" type="text/css">
