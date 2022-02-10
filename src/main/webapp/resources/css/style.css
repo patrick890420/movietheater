@@ -1809,6 +1809,8 @@ ol {
 
 .login__register {
 	padding-left: 30px;
+	text-align: center;
+    padding-top: 50px;
 }
 
 .login__register h3 {
