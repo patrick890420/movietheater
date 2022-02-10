@@ -50,8 +50,7 @@
                                 </div>
                             </div>
                             <div class="anime__details__btn mv-txt-center">
-                                <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Follow</a>
-                                <a href="#" class="watch-btn"><span>Watch Now</span></a>
+                                <a href="#" class="watch-btn btn btn-primary"><span>Watch Now</span></a>
 <!--                                 <i class="fa fa-angle-right"></i></a> -->
                                 </div>
                             </div>
