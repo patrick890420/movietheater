@@ -18,7 +18,7 @@ import lombok.extern.log4j.Log4j;
 public class EventController {
 
   @Setter(onMethod_=@Autowired)
-  private EventService Eservice;
+  private EventService service;
   
   @GetMapping("/event.do")
   public void event() {
