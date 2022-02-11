@@ -24,8 +24,8 @@
                         <h3>Login</h3>
                         <form action="#">
                             <div class="input__item">
-                                <input type="text" placeholder="Email address">
-                                <span class="icon_mail"></span>
+                                <input type="text" placeholder="ID">
+                                <span class="icon_id"></span>
                             </div>
                             <div class="input__item">
                                 <input type="password" placeholder="Password">

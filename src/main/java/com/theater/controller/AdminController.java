@@ -11,9 +11,14 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class AdminController {
 
-  
   @GetMapping("/admin")
   public void admin() {
+  }
+  
+  @GetMapping("/adminMemberList.do")
+  public String adminMember() {
+    
+    return "/adminMember/adminMemberList";
     
   }
 }

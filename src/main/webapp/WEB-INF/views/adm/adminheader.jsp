@@ -16,13 +16,12 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/resources/admin/assets/images/favicon.png">
 <title>Movie Theater Admin</title>
 <!-- Custom CSS -->
-<link href="/resources/admin/assets/extra-libs/c3/c3.min.css"
-  rel="stylesheet">
-<link href="/resources/admin/assets/libs/chartist/dist/chartist.min.css"
-  rel="stylesheet">
-<link
-  href="/resources/admin/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css"
-  rel="stylesheet" />
+<link href="/resources/admin/assets/extra-libs/c3/c3.min.css" rel="stylesheet">
+<!-- datatables -->
+<link href="assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+<!-- chartist -->
+<link href="/resources/admin/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+<link href="/resources/admin/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
 <!-- Custom CSS -->
 <link href="/resources/admin/css/style.min.css" rel="stylesheet">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
