@@ -46,13 +46,6 @@
 
 .event24{
   background: none;
-  padding-top: 27px;
-}
-
-.event24 li a{
-  padding: 0 13px;
-  font-weight: bold;
-  color: #ff0000;
 }
 
 .event24 li a:hover{
@@ -78,7 +71,8 @@
 }
 
 .event47{
-  padding-bottom: 10px;
+  padding-bottom: 8px;
+  padding-top: 6px;
 }
 
 .event60>p{
@@ -88,26 +82,14 @@
 .event68{
   max-width: 22%;
 }
-/*                            button*/
-.event139{
-  text-align: center;
-}
 
-.btn-item-more {
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    background-color: #f8f8f8;
-    margin: 36px 0 0 0;
-    border: none;
-}
-/*                            button*/
+/*                            하단 배너*/
 .event142>img{
   display : block;
   margin : 0 auto;
   width: 1170px;
   height: 250px;
-}
+  padding: 50px 0;
 }
 
 /*                            view*/

@@ -30,7 +30,7 @@
         </div>
         <div class="col-lg-3 event45">
           <label style="margin-bottom: 1.5rem;">
-          <input type="text" class="event47">
+          <input type="text" class="event47" placeholder="검색어를 입력해 주세요">
           <button type="button" style="background:none; border:none;">
           <span class="icon_search"></span>
           </button>
