@@ -27,15 +27,15 @@
 							<input type="text" placeholder="이름을 입력해 주세요."> <span
 								class="icon_profile"></span>
 						</div>
-						<input type="button" value='중복확인' class="site-btn"
+						<input type="button" value='중복확인' class="btn btn-primary"
 							style="position: absolute;">
 						<div class="input__item">
 							<input type="text" placeholder="아이디를 입력해 주세요."> <span
 								class="icon_id"></span>
 						</div>
-						<input type="button" value='확인메일' class="site-btn"
+						<input type="button" value='중복확인' class="btn btn-primary"
 							style="position: absolute;">
-						<!-- position: absolute; 하면 옆으로 고정되는데 밑에 좃창남 -->
+					
 
 						<div class="input__item">
 							<input type="text" placeholder="이메일을 입력해 주세요."> <span
@@ -103,7 +103,7 @@
 
 						</form>
 						<input type="checkbox"> 약관에 동의합니다. &nbsp;&nbsp;
-						<button type="submit" class="site-btn btnbtm">회원가입</button>
+						<button type="submit" class="btn btn-success">회원가입</button>
 
 				</div>
 			</div>
