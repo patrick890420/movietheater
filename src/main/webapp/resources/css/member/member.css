@@ -26,6 +26,10 @@ ul.join_box {
 	list-style: none;
 }
 
+.genderchoice {
+	margin-bottom: 50px;
+}
+
 
 /*약관 동의*/
 
@@ -35,6 +39,8 @@ ul.join_box {
 
 .checkBox>ul>li {
 	float: left;
+	margin-top: 15px;
+	
 }
 
 .checkBox>ul>li:first-child {
@@ -42,6 +48,8 @@ ul.join_box {
 	padding: 15px;
 	font-weight: 600;
 	color: #888;
+	list-style:none;
+	    margin-left: 60px;
 }
 
 .checkBox>ul>li:nth-child(2) {
@@ -78,4 +86,12 @@ ul.join_box {
 	text-align: center;
 	line-height: 60px;
 }
+
+.btnbtm {
+	margin-bottom: 30px;
+}
+
+/*.joinh5 {
+	margin-bottom: 50px;
+}*/
 

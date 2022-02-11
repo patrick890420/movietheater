@@ -81,6 +81,10 @@
   padding-bottom: 10px;
 }
 
+.event60>p{
+  float: right;
+}
+
 .event68{
   max-width: 22%;
 }

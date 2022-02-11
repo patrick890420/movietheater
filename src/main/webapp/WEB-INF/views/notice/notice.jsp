@@ -41,6 +41,12 @@
 </form>
 
 
+<!-- 총 게시글 -->
+<div class="col-md-3 event60">
+  <p>총게시글<span>10</span>건</p>
+</div><!-- md-3 -->
+
+
 <!-- Table -->
 <section class="notice">
 <div class="container">
