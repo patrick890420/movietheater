@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<%-- <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>  --%>
+<%-- <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%> --%>
 <!DOCTYPE html>
 <html>
 
@@ -13,6 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Movie Theater</title>
+
 
 <!-- Google Font -->
 <link
@@ -34,6 +35,7 @@
 <link rel="stylesheet" href="/resources/css/movie/movie.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/event_notice.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/ticket/ticket.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/member/member.css" type="text/css">
 </head>
 
 <body>
@@ -81,11 +83,11 @@
   </div>
   <div class="container">
     <div class="row" style="border-top: solid 2px #eeeeee; padding:10px 0; border-bottom: solid 2px #eeeeee;">
-      <div class="col-lg-4" style="margin-left: -15px;">
+      <div class="col-lg-5" style="margin-left: -15px;">
         <div class="header__nav">
           <nav class="header__menu mobile-menu">
             <ul>
-              <li class="active"><a href="/movie/movie.do">영화</a></li>
+              <li><a href="/movie/movie.do">영화</a></li>
               <li><a href="/theater/theater.do">극장<span class="arrow_carrot-down"></span></a>
                 <ul class="dropdown">
                   <li><a href="./categories.html">Categories</a></li>
@@ -104,7 +106,7 @@
       </div>
       <div class="col-lg-3" style="text-align:right;">
       </div>
-      <div class="col-lg-3" style="text-align:right;">
+      <div class="col-lg-4" style="text-align:right;">
         <label style="margin:10px 0;">
           <input type="text">
           <button type="button" style="background:none; border:none;"><span

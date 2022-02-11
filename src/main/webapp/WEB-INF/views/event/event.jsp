@@ -5,7 +5,7 @@
 <!-- Hero Section Begin -->
 <section class="hero">
 <div class="container">
-  <div class="row event8">
+  <div class="row">
     <div class="col-md-12 event9">
       <h2>イベント</h2><!-- EVENT -->
     </div><!-- md12 -->
@@ -13,19 +13,19 @@
     <div class="row event13">
       <div class="col-md-9">
         <ol class="breadcrumb event15">
-          <li><a href="#">SPECIAL</a></li>
-          <li><a href="#">映画 / 前売り</a></li><!-- 영화 / 예매 -->
-          <li><a href="#">Membership / CLUB</a></li>
-          <li><a href="#">CGV 극장별</a></li><!-- / 극장별 -->
-          <li><a href="#">提携 / 割引</a></li><!-- 제휴 / 할인 -->
+          <li>
+            <a href="/ticket/ticket.do">영화 / 예매</a>
+            <a href="/theater/theater.do">CGV 극장별</a>
+          </li>
+          <li class="event24">
+            <a href="#"style="color: #e53637;">종료 이벤트</a>
+          </li><!--  -->
+<!--           <li><a href="#">당첨자 발표</a></li> -->
+<!--           <li><a href="#">SPECIAL</a></li> -->
+<!--           <li><a href="#">Membership / CLUB</a></li> -->
+<!--           <li><a href="#">제휴 / 할인</a></li> -->
         </ol>
       </div><!-- md9 -->
-      <div class="col-md-3">
-        <ol class="breadcrumb pull-right event24">
-          <li><a href="#">当選者発表</a></li><!-- 당첨자 발표 -->
-          <li><a href="#">終了イベント</a></li><!-- 종료 이벤트 -->
-        </ol>
-      </div><!-- md3 -->    
     </div><!-- row -->
   </div><!-- container -->
 </section><!-- hero -->
@@ -33,35 +33,47 @@
 
 
 <!-- search -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-1" style="text-align:right;">
-      </div>
-      <div class="col-lg-11" style="text-align:right;">
-        <label style="margin:10px 0;">
-        <input type="text">
-        <button type="button" style="background:none; border:none;">
-        <span class="icon_search"></span>
-        </button>
-        </label>
-      </div><!-- lg3 -->
-  </div><!-- row -->
-</div><!-- container -->
+<form name="myform" method="get" action="/event/event.do">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 event39">
+      <select name="sel" class="select">
+    <option value="title">제목</option>
+    <option value="content">내용</option>
+  </select>
+        </div>
+        <div class="col-lg-3 event45">
+          <label>
+          <input type="text" class="event47" placeholder="검색어를 입력해 주세요">
+          <button type="button" style="background:none; border:none;">
+          <span class="icon_search"></span>
+          </button>
+          </label>
+        </div><!-- lg3 -->
+    </div><!-- row -->
+  </div><!-- container -->
+</form>
+
+
+<!-- 총 게시글 -->
+<div class="col-md-3 event60">
+  <p>총게시글<span>10</span>건</p>
+</div><!-- md-3 -->
 
 
 <!-- Product Section Begin -->
-<section class="product spad">
+<section class="event">
   <div class="container event36">
     <div class="row">
       <div class="col-sm-6 col-md-3 event38">
         <div class="thumbnail">
           <a href="/event/eventview.do">
             <img src="/resources/img/anime/details-pic.jpg" alt="...">
-          </a>
-            <div class="caption">
-              <h3>제목</h3>
+              <div class="caption">
+                <h3>제목</h3>
                 <p>날짜</p>
-            </div>
+              </div>
+          </a>
         </div>
       </div>
               <div class="col-sm-6 col-md-3 event38">
@@ -132,6 +144,11 @@
             </div><!-- row -->
         </div><!-- container -->
 </section><!-- hero -->
+
+<!-- 하단 배너 -->
+<div class="col-md-12 event142">
+  <img src="/resources/img/event.jpg" alt="..." class="img-rounded">
+</div>
 	
 
 <%@ include file="../footer.jsp" %>	
