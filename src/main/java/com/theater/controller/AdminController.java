@@ -16,9 +16,16 @@ public class AdminController {
   }
   
   @GetMapping("/adminMemberList.do")
-  public String adminMember() {
+  public String adminMemberList() {
     
-    return "/adminMember/adminMemberList";
+    return "adm/adminMember/adminMemberList";
+    
+  }
+  
+  @GetMapping("/adminMemberInsert.do")
+  public String adminMemberInsert() {
+    
+    return "adm/adminMember/adminMemberInsert";
     
   }
 }
