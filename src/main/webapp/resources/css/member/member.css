@@ -18,6 +18,7 @@
 #joinForm {
 	width: 460px;
 	margin: 0 auto;
+	
 }
 
 ul.join_box {
@@ -28,6 +29,7 @@ ul.join_box {
 
 .genderchoice {
 	margin-bottom: 50px;
+	background-color: #fff;
 }
 
 
