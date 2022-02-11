@@ -25,6 +25,7 @@
 
 <!-- Css Styles -->
 <link rel="stylesheet" href="/resources/css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/font-awesome.min.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/elegant-icons.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/plyr.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/nice-select.css" type="text/css">
