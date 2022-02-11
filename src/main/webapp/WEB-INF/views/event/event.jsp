@@ -5,7 +5,7 @@
 <!-- Hero Section Begin -->
 <section class="hero">
 <div class="container">
-  <div class="row event8">
+  <div class="row">
     <div class="col-md-12 event9">
       <h2>イベント</h2><!-- EVENT -->
     </div><!-- md12 -->
@@ -42,7 +42,7 @@
     <option value="content">내용</option>
   </select>
         </div>
-        <div class="col-lg-3" style="text-align:right;">
+        <div class="col-lg-3 event45">
           <label>
           <input type="text" class="event47">
           <button type="button" style="background:none; border:none;">
@@ -53,6 +53,13 @@
     </div><!-- row -->
   </div><!-- container -->
 </form>
+
+
+<!-- 총 게시글 -->
+<div class="col-md-3 event60">
+  <p>총게시글<span>10</span>건</p>
+</div><!-- md-3 -->
+
 
 <!-- Product Section Begin -->
 <section class="event">
@@ -134,9 +141,19 @@
                   <img src="/resources/img/recent/recent-6.jpg" alt="...">
                 </a>
               </div>
+              
+              <!-- button -->
+              <div class="col-md-9 event139">
+                <button type="button" class="btn-item-more" id="btnMoreData" onclick="">더보기</button>
+              </div>
             </div><!-- row -->
         </div><!-- container -->
 </section><!-- hero -->
+
+<!-- 하단 배너 -->
+<div class="col-md-12 event142">
+  <img src="/resources/img/event.png" alt="..." class="img-rounded">
+</div>
 	
 
 <%@ include file="../footer.jsp" %>	
