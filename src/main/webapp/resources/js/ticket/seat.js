@@ -42,7 +42,7 @@ const seatForm = document.querySelector('.seatForm');
 const reserveButton = document.querySelector('.reserve-button');
 const title = document.querySelector('.title');
 const selectedTheater = document.querySelector('.selectedTheater');
-const reserveDate = document.querySelector('.reserveDate');
+const ticketDate = document.querySelector('.reserveDate');
 const runningTime = document.querySelector('.runningTime');
 const ticketNumber = document.querySelector('.ticketNumber');
 const selectedSeat = document.querySelector('.selectedSeat');
@@ -284,7 +284,7 @@ reserveButton.addEventListener('click', function() {
         selectedTheaterPlaceInfo[0].innerHTML +
         ' ' +
         selectedTheaterPlaceInfo[1].innerHTML;
-    reserveDate.value = theaterDate.innerHTML;
+    ticketDate.value = theaterDate.innerHTML;
     runningTime.value = theaterTime.innerHTML;
     ticketNumber.value = reserveNumber.innerHTML;
     selectedSeat.value = selectedSeats.innerHTML;

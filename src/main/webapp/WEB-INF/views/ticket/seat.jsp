@@ -55,7 +55,7 @@
       <div class="select-seat-information">
         <div class="selected-movie"></div>
         <div class="select-seat-information-wrapper">
-          <div class="select-theater-place selected-theater-place-info">강남</div>
+          <div class="select-theater-place selected-theater-place-info">서대전</div>
           <div class="select-theater-place selected-theater-place-info">3관
             8층</div>
           <div class="select-theater-place">
