@@ -62,13 +62,13 @@
           <!-- ============================================================== -->
           <div class="navbar-brand">
             <!-- Logo icon -->
-            <a href="index.html"> <b class="logo-icon"> <!-- Dark Logo icon -->
-              <img src="/resources/admin/assets/images/logo-icon.png" alt="homepage" class="dark-logo" /> <!-- Light Logo icon -->
-              <img src="/resources/admin/assets/images/logo-icon.png" alt="homepage" class="light-logo" /> </b> <!--End Logo icon --> 
+            <a href="/"> <b class="logo-icon"> <!-- Dark Logo icon -->
+<!--               <img src="/resources/admin/assets/images/logo-icon.png" alt="homepage" class="dark-logo" /> Light Logo icon -->
+<!--               <img src="/resources/admin/assets/images/logo-icon.png" alt="homepage" class="light-logo" /> </b> End Logo icon  -->
               <!-- Logo text -->
               <span class="logo-text"> <!-- dark Logo text -->
-                <img src="/resources/admin/assets/images/logo-text.png" alt="homepage" class="dark-logo" /> <!-- Light Logo text -->
-                <img src="/resources/admin/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                <img src="/resources/img/newlogo.png" alt="homepage" class="dark-logo" style="height: 75px" /> <!-- Light Logo text -->
+                <img src="/resources/img/newlogo.png" class="light-logo" alt="homepage" style="height: 75px"/>
               </span>
             </a>
           </div>
@@ -308,17 +308,17 @@
             <li class="list-divider"></li>
             <!-- Movie st -->
             <li class="nav-small-cap">
-              <span class="hide-menu">Movie</span>
+              <span class="hide-menu"></span>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
                 <i data-feather="file-text" class="feather-icon"></i>
-                <span class="hide-menu">Forms </span>
+                <span class="hide-menu">Movie</span>
               </a>
               <ul aria-expanded="false" class="collapse  first-level base-level-line">
                 <li class="sidebar-item">
-                  <a href="/adm/adminmoiveInsert.do" class="sidebar-link">
-                  <span class="hide-menu"> Form Inputs </span>
+                  <a href="/adm/adminMovieInsert.do" class="sidebar-link">
+                  <span class="hide-menu">Registration </span>
                   </a>
                 </li>
                 <li class="sidebar-item">

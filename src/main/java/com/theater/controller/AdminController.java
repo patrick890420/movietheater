@@ -15,6 +15,7 @@ public class AdminController {
   public void admin() {
   }
   
+  /* Member */
   @GetMapping("/adminMemberList.do")
   public String adminMemberList() {
     
@@ -29,9 +30,21 @@ public class AdminController {
     
   }
   
-  @GetMapping("/adminmovieInsert.do")
-  public String adminmovieInsert() {
+  /* Movie */
+  @GetMapping("/adminMovieInsert.do")
+  public String adminMovieInsert() {
     
-    return "adm/adminMovie/adminmovieInsert";
+    return "adm/adminMovie/adminMovieInsert";
   }
+  
+  /* Theater */
+  
+  
+  /* Ticketing */
+  
+  
+  /* Board*/
+  
+  
+  /* Util */
 }
