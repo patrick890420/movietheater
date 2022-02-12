@@ -28,4 +28,10 @@ public class AdminController {
     return "adm/adminMember/adminMemberInsert";
     
   }
+  
+  @GetMapping("/adminmovieInsert.do")
+  public String adminmovieInsert() {
+    
+    return "adm/adminMovie/adminmovieInsert";
+  }
 }
