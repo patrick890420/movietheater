@@ -22,30 +22,16 @@
     <div class="theater-container">
       <div class="theater-wrapper">
         <div class="theater-location-wrapper">
-          <button class="theater-location">서울(30)</button>
-          <button class="theater-location">경기(43)</button>
-          <button class="theater-location">인천(10)</button>
-          <button class="theater-location">강원(5)</button>
+          <button class="theater-location">대전(1)</button>
+          <button class="theater-location">서울(2)</button>
+          <button class="theater-location">청주(3)</button>
         </div>
         <div class="theater-place-wrapper">
-          <button class="theater-place">천호</button>
-          <button class="theater-place">강변</button>
-          <button class="theater-place">건대입구</button>
-          <button class="theater-place">구로</button>
-          <button class="theater-place">대학로</button>
-          <button class="theater-place">동대문</button>
-          <button class="theater-place">목동</button>
-          <button class="theater-place">명동</button>
-          <button class="theater-place">미아</button>
-          <button class="theater-place">불광</button>
-          <button class="theater-place">상봉</button>
-          <button class="theater-place">송파</button>
-          <button class="theater-place">수유</button>
-          <button class="theater-place">압구정</button>
-          <button class="theater-place">여의도</button>
-          <button class="theater-place">영등포</button>
-          <button class="theater-place">왕십리</button>
-          <button class="theater-place">중계</button>
+          <button class="theater-place">서대전</button>
+          <button class="theater-place">유성</button>
+          <button class="theater-place">둔산</button>
+          <button class="theater-place">복합</button>
+         
         </div>
       </div>
     </div>
@@ -81,14 +67,14 @@
     </div>
   </div>
 </div>
-  <div id="ticket_tnb">
-     <form class="moveSeatForm" action="moveSeat.do" method="post">
-        <input type="hidden" class="title" name="title">
-        <input type="hidden" class="movieAge" name="movieAge">
-        <input type="hidden" class="selectedTheater" name="selectedTheater">
-        <input type="hidden" class="reserveDate" name="movieDate">
-        <input type="hidden" class="runningTime" name="runningTime">
-        <button class="moveSeatButton" type="button" onclick="location.href='/ticket/seat.do'">예약하기</button>
-      </form>
-  </div>
+<div id="ticket_tnb">
+  <form class="moveSeatForm" action="moveSeat.do" method="post">
+    <input type="hidden" class="title" name="title">
+    <input type="hidden" class="movieAge" name="movieAge">
+    <input type="hidden" class="selectedTheater" name="selectedTheater">
+    <input type="hidden" class="reserveDate" name="movieDate">
+    <input type="hidden" class="runningTime" name="runningTime">
+    <button class="moveSeatButton" type="button" onclick="location.href='/ticket/seat.do'">예약하기</button>
+  </form>
+</div>
 <%@ include file="../footer.jsp"%>
