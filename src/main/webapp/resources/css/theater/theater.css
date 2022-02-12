@@ -56,7 +56,7 @@
   border-left:1px solid #dee2e6;
 }
 .tab-content{
-  padding:15px 0;
+  padding:30px 10px;
 }
 .t_date{
   float:left;
@@ -114,6 +114,14 @@
 .t_filmtitle{
  font-size: larger; font-weight: 900;
 }
+.t_post{
+  height:530px;
+  background-image: url("/resources/img/theater/theatermain.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top:30px;
+  position: relative;
+}
 .t_ranpost{
   width:1155px;
   padding:35px 0;
@@ -121,4 +129,31 @@
 .t_chargetext{
   padding: 20px 0;
   background: #80808026;
+}
+.t_city{
+  text-align: center;
+  margin:90px 70px 0 70px;
+  border-top: solid 1px #cfcdcdb8;
+  border-bottom: solid 1px #cfcdcdb8;
+  box-sizing: content-box;  
+}
+.t_city a{
+  color:white;
+}
+.t_city li{
+  padding:10px 0;
+}
+.t_subcity{
+  margin:0 60px;
+}
+.t_citydata{
+  float:left;
+  margin-left:15px;
+  text-align:center;
+  line-height: 15px;
+  color:white;
+}
+.t_citydataline:nth-child(n+2) {
+  border-left: 1px solid #dee2e6;
+  padding-left: 15px;
 }

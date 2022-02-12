@@ -2,7 +2,76 @@
   pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
 <!-- Hero Section Begin -->
+  <div class="container">
+  <div class="t_post">
+<section class="">
+      <div class="row">
+        <div class="col-lg-12">
+     <ul class="nav t_city" role="tablist" id="myTab">
+      <li role="presentation" class="active col-lg-1 col-md-1 col-sm-1"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">서울</a></li>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">경기</a></li>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1"><a href="#profile2" aria-controls="profile2" role="tab" data-toggle="tab">인천</a></li>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1"><a href="#profile3" aria-controls="profile3" role="tab" data-toggle="tab">강원</a></li>
+      <li role="presentation" class="col-lg-2 col-md-2 col-sm-2"><a href="#profile4" aria-controls="profile4" role="tab" data-toggle="tab">대전/충청</a></li>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1"><a href="#profile5" aria-controls="profile5" role="tab" data-toggle="tab">대구</a></li>
+      <li role="presentation" class="col-lg-2 col-md-2 col-sm-2"><a href="#profile6" aria-controls="profile6" role="tab" data-toggle="tab">부산/울산</a></li>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1"><a href="#profile7" aria-controls="profile7" role="tab" data-toggle="tab">경상</a></li>
+      <li role="presentation" class="col-lg-2 col-md-2 col-sm-2"><a href="#profile8" aria-controls="profile8" role="tab" data-toggle="tab">광주/전라/제주</a></li>
+    </ul>
 
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="home">
+    <div class="t_subcity">
+    <div class="t_citydata t_citydataline">
+    <strong class=""><a href="">J-강남</a></strong>
+    </div>
+    <div class="t_citydata t_citydataline">
+     <strong class=""><a href="">J-강변</a></strong>
+    </div>
+    <div class="t_citydata t_citydataline">
+     <strong class="">J-건대입구</strong>
+    </div>
+    <div class="t_citydata t_citydataline">
+     <strong class="">J-동대문</strong>
+    </div>
+    <div class="t_citydata t_citydataline">
+     <strong class="">J-명동</strong>
+    </div>
+  </div>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="profile">
+    <div class="t_subcity">
+    <div class="t_citydata t_citydataline">
+    <strong class="">J-경기광주</strong>
+    </div>
+    <div class="t_citydata t_citydataline">
+     <strong class="">J-광교</strong>
+    </div>
+    <div class="t_citydata t_citydataline">
+     <strong class="">J-구리</strong>
+    </div>
+  </div>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="profile2">
+    <div class="t_subcity">
+    <div class="t_citydata t_citydataline">
+    <strong class="">J-부평</strong>
+    </div>
+    <div class="t_citydata t_citydataline">
+     <strong class="">J-남주안</strong>
+    </div>
+    <div class="t_citydata t_citydataline">
+     <strong class="">J-인천</strong>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+  </div>
+  
+  </div>
 <section class="hero">
   <div class="container" style="text-align: center;">
     <h3
@@ -152,12 +221,12 @@
       <div class="row">
         <div class="col-lg-12">
      <ul class="nav nav-tabs t_tablist" role="tablist" id="myTab">
-      <li role="presentation" class="active col-lg-6 col-md-6 col-sm-6"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">상영시간표</a></li>
-      <li role="presentation" class="col-lg-6 col-md-6 col-sm-6 t_tableftline"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">요금안내</a></li>
+      <li role="presentation" class="active col-lg-6 col-md-6 col-sm-6"><a href="#date" aria-controls="date" role="tab" data-toggle="tab">상영시간표</a></li>
+      <li role="presentation" class="col-lg-6 col-md-6 col-sm-6 t_tableftline"><a href="#charge" aria-controls="charge" role="tab" data-toggle="tab">요금안내</a></li>
     </ul>
 
 <div class="tab-content">
-  <div role="tabpanel" class="tab-pane active" id="home">
+  <div role="tabpanel" class="tab-pane active" id="date">
     <div class="t_date">
     <strong>2월</strong>
     <span><br>
@@ -239,11 +308,8 @@
       </label>
     </span>
     </div>
-    
-    
-    
   </div>
-  <div role="tabpanel" class="tab-pane" id="profile">
+  <div role="tabpanel" class="tab-pane" id="charge">
     <strong>2D 일반석</strong>
     <div class="row t_chargetext">
       <div class="col-lg-6 col-md-6 col-sm-6">

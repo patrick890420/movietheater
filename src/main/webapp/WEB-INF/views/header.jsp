@@ -91,12 +91,8 @@
               <li><a href="/movie/movie.do">영화</a></li>
               <li><a href="/theater/theater.do">극장<span class="arrow_carrot-down"></span></a>
                 <ul class="dropdown">
-                  <li><a href="./categories.html">Categories</a></li>
-                  <li><a href="/movie/view.do">ViewPage</a></li>
-                  <li><a href="./anime-watching.html">Anime Watching</a></li>
-                  <li><a href="./blog-details.html">Blog Details</a></li>
-                  <li><a href="./signup.html">Sign Up</a></li>
-                  <li><a href="./login.html">Login</a></li>
+                  <li><a href="">JSL-Movie극장</a></li>
+                  <li><a href="">특별관</a></li>
                 </ul></li>
               <li><a href="/ticket/ticket.do">예매</a></li>
               <li><a href="/event/event.do">이벤트</a></li>
