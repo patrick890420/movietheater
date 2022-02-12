@@ -16,13 +16,12 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/resources/admin/assets/images/favicon.png">
 <title>Movie Theater Admin</title>
 <!-- Custom CSS -->
-<link href="/resources/admin/assets/extra-libs/c3/c3.min.css"
-  rel="stylesheet">
-<link href="/resources/admin/assets/libs/chartist/dist/chartist.min.css"
-  rel="stylesheet">
-<link
-  href="/resources/admin/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css"
-  rel="stylesheet" />
+<link href="/resources/admin/assets/extra-libs/c3/c3.min.css" rel="stylesheet">
+<!-- datatables -->
+<link href="/resources/admin/assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+<!-- chartist -->
+<link href="/resources/admin/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+<link href="/resources/admin/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
 <!-- Custom CSS -->
 <link href="/resources/admin/css/style.min.css" rel="stylesheet">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -279,17 +278,17 @@
             <li class="sidebar-item">
               <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
                 <i data-feather="file-text" class="feather-icon"></i>
-                <span class="hide-menu">Forms </span>
+                <span class="hide-menu">sample </span>
               </a>
               <ul aria-expanded="false" class="collapse  first-level base-level-line">
                 <li class="sidebar-item">
-                  <a href="form-inputs.html" class="sidebar-link">
-                  <span class="hide-menu"> Form Inputs </span>
+                  <a href="/adm/adminMemberList.do" class="sidebar-link">
+                  <span class="hide-menu"> table sample </span>
                   </a>
                 </li>
                 <li class="sidebar-item">
-                  <a href="form-input-grid.html" class="sidebar-link">
-                  <span class="hide-menu"> Form Grids </span>
+                  <a href="/adm/adminMemberInsert.do" class="sidebar-link">
+                  <span class="hide-menu"> view & insert sample </span>
                   </a>
                 </li>
                 <li class="sidebar-item">

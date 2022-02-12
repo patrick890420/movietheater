@@ -3,12 +3,22 @@
 /*                                Event*/
 
 .event9{
-  border-bottom: 2px solid;
+  border-bottom: 2px solid #ff0000;
   padding-bottom: 10px;
 }
 
 .event9 h2{
   font-weight: bold;
+}
+
+.event9 h2:after{
+  position: absolute;
+  left: 0;
+  height: 40px;
+  width: 4px;
+  background: #e53637;
+  content: "";
+  box-sizing: border-box;
 }
 
 .event13{
@@ -26,15 +36,20 @@
   color: #000000;
 }
 
-.event24{
-  background: none;
-  padding-top: 27px;
+.event15 li a:hover{
+  color: #ddd;
 }
 
-.event24 li a{
-  padding: 0 13px;
-  font-weight: bold;
+.event15 li a.on{
   color: #ff0000;
+}
+
+.event24{
+  background: none;
+}
+
+.event24 li a:hover{
+  color: #ddd;
 }
 
 .event36{
@@ -48,15 +63,33 @@
 }
 
 .event39{
-  padding-left: 840px;
+  padding-left: 800px;
+}
+
+.event45{
+  padding-left: 0px;
 }
 
 .event47{
-  padding-bottom: 10px;
+  padding-bottom: 8px;
+  padding-top: 6px;
+}
+
+.event60>p{
+  float: right;
 }
 
 .event68{
   max-width: 22%;
+}
+
+/*                            하단 배너*/
+.event142>img{
+  display : block;
+  margin : 0 auto;
+  width: 1170px;
+  height: 250px;
+  padding: 50px 0;
 }
 
 /*                            view*/
@@ -80,5 +113,8 @@
   width: 1140px;
 }
 
+.
+
 
 /*                            notice*/
+

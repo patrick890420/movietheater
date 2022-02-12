@@ -564,14 +564,11 @@
                               href="javascript:void(0)">+</a>
                           </div>
                         </td>
-                        <td class="text-center px-2 py-4"><i
-                          class="fa fa-circle text-danger font-12"
-                          data-toggle="tooltip" data-placement="top"
-                          title="In Progress"></i></td>
-                        <td
-                          class="text-center text-muted font-weight-medium px-2 py-4">23</td>
-                        <td
-                          class="font-weight-medium text-dark px-2 py-4">$80K</td>
+                        <td class="text-center px-2 py-4">
+                          <i class="fa fa-circle text-danger font-12" data-toggle="tooltip" data-placement="top" title="In Progress"></i>
+                        </td>
+                        <td class="text-center text-muted font-weight-medium px-2 py-4">23</td>
+                        <td class="font-weight-medium text-dark px-2 py-4">$80K</td>
                       </tr>
                     </tbody>
                   </table>

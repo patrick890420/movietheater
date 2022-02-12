@@ -181,7 +181,8 @@ ol {
 }
 
 .site-btn {
-	font-size: 13px;
+
+	font-size: 15px;
 	color: black;;
 	background: #e53637;
 	font-weight: 700;
@@ -1186,11 +1187,9 @@ ol {
 
 .anime__details__form form button {
 	font-size: 11px;
-	color: black;;
 	font-weight: 700;
 	letter-spacing: 2px;
 	text-transform: uppercase;
-	background: #e53637;
 	border: none;
 	padding: 10px 15px;
 	border-radius: 2px;

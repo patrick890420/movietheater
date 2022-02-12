@@ -14,6 +14,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Movie Theater</title>
 
+
 <!-- Google Font -->
 <link
   href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
@@ -35,6 +36,7 @@
 <link rel="stylesheet" href="/resources/css/event_notice.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/ticket/ticket.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/theater/theater.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/member/member.css" type="text/css">
 </head>
 
 <body>
@@ -86,7 +88,7 @@
         <div class="header__nav">
           <nav class="header__menu mobile-menu">
             <ul>
-              <li class="active"><a href="/movie/movie.do">영화</a></li>
+              <li><a href="/movie/movie.do">영화</a></li>
               <li><a href="/theater/theater.do">극장<span class="arrow_carrot-down"></span></a>
                 <ul class="dropdown">
                   <li><a href="./categories.html">Categories</a></li>
