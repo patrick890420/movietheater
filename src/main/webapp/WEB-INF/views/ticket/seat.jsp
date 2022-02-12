@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
-<div class="select-container">
+<div class="select-container" style="padding-bottom: 30px;">
   <div class="select-wrapper">
     <div class="select-title">인원/좌석</div>
     <div class="select-seat-container">
@@ -11,15 +11,12 @@
             <div class="select-seat-age">일반</div>
             <div class="select-seat-number">
               <ul class="select-seat-ul select-seat-ul-normal">
-                <li class="select-number-normal ">0</li>
+                <li class="select-number-normal">0</li>
                 <li class="select-number-normal">1</li>
                 <li class="select-number-normal">2</li>
                 <li class="select-number-normal">3</li>
                 <li class="select-number-normal">4</li>
                 <li class="select-number-normal">5</li>
-                <!--  <li class="select-number-normal">6</li>
-                      <li class="select-number-normal">7</li>
-                      <li class="select-number-normal">8</li> -->
               </ul>
             </div>
           </div>
@@ -33,9 +30,6 @@
                 <li class="select-number-teen">3</li>
                 <li class="select-number-teen">4</li>
                 <li class="select-number-teen">5</li>
-                <!-- <li class="select-number-teen">6</li>
-                     <li class="select-number-teen">7</li>
-                     <li class="select-number-teen">8</li> -->
               </ul>
             </div>
           </div>
@@ -49,9 +43,6 @@
                 <li class="select-number-old">3</li>
                 <li class="select-number-old">4</li>
                 <li class="select-number-old">5</li>
-                <!-- <li class="select-number-old">6</li>
-                     <li class="select-number-old">7</li>
-                     <li class="select-number-old">8</li> -->
               </ul>
             </div>
           </div>
@@ -64,7 +55,7 @@
       <div class="select-seat-information">
         <div class="selected-movie"></div>
         <div class="select-seat-information-wrapper">
-          <div class="select-theater-place selected-theater-place-info">CGV강남</div>
+          <div class="select-theater-place selected-theater-place-info">강남</div>
           <div class="select-theater-place selected-theater-place-info">3관
             8층</div>
           <div class="select-theater-place">
@@ -85,7 +76,7 @@
           <div class="ticket-price-title">가격</div>
           <div class="ticket-price">0원</div>
         </div>
-        <form action="moveKakao.do" class="seatForm" method="post">
+        <form action="movePayment.do" class="seatForm" method="post">
           <input type="hidden" class="title" name="title">
           <input type="hidden" class="selectedTheater" name="selectedTheater">
           <input type="hidden" class="reserveDate" name="movieDate">
@@ -96,8 +87,7 @@
           <input type="hidden" class="selectedSeat" name="selectedSeat">
           <!-- 결제 정보 -->
           <input type="hidden" class="payMoney" name="payMoney">
-          <button type="button" class="reserve-button">결제하기
-          <img src="./images/payment_icon_yellow_medium.png">
+          <button type="button" class="reserve-button btn btn-primary">결제하기
           </button>
         </form>
       </div>
@@ -110,5 +100,7 @@
       </div>
     </div>
   </div>
+</div>
+<div id="ticket_tnb">
 </div>
 <%@ include file="../footer.jsp"%>
