@@ -449,6 +449,7 @@ button.theater-location , button.theater-place{
   /* line-height: 15px; */
   /* padding: 5px; */
   padding: 2px;
+  list-style: none;
 }
 
 .select-seat-ul>li:hover {
@@ -604,6 +605,7 @@ button.theater-location , button.theater-place{
 .seat-container {
   margin-top: 20px;
   display: flex;
+  height: 500px;
   justify-content: center;
 }
 
@@ -658,7 +660,7 @@ button.theater-location , button.theater-place{
 }
 
 .seatButtonWrapper>input {
-  width: 30px;
+  width: 35px;
   height: 30px;
 }
 
