@@ -1,2 +1,124 @@
 @charset "UTF-8";
 
+.t_infotext{
+  margin-bottom:25px;
+}
+.t_sit{
+  margin-left:15px;
+  padding-left:15px;
+  border-left:groove;
+}
+.t_icon{
+  margin-top:60px;
+}
+.t_icon2{
+  margin-top:20px;
+  font-size: x-large;
+}
+.t_icon2 span{
+  margin-right:10px;
+}
+.t_icon strong {
+  margin-right:25px;
+}
+.t_reco{
+  background:#8080801c;
+  padding:20px;
+}
+.t_recoline{
+    border-bottom: groove;
+    width: 22px;
+    margin: 10px 0;
+}
+.t_reco .t_recotitle span{
+  
+    font-size: 25px;
+    color: lightslategray;
+    font-weight: 500;
+
+}
+.t_recoradi4{
+  border-radius:4px;
+}
+.t_eventimg{
+  height:230px;
+}
+.t_tablist{
+  text-align:center;
+  padding:10px;
+}
+.t_tablist a {
+  font-size:16px;
+  font-weight: 600;
+  color:black;
+}
+.t_tableftline{
+  border-left:1px solid #dee2e6;
+}
+.tab-content{
+  padding:15px 0;
+}
+.t_date{
+  float:left;
+  margin-left:74px;
+  text-align:center;
+  line-height: 2.5;
+}
+.t_age{
+  border-top:2px solid #dee2e6;
+  border-bottom:1px solid #dee2e6;
+  background:#dee2e62e;
+  padding:10px;
+}
+.t_agelist{
+  float:right;
+  margin-left:20px;
+}
+.t_ep0{
+  font-size: 1px;
+    color: white;
+    background: #5BC77E;
+    display: inline-block;
+    padding: 7px 5px;
+    border-radius: 50px;
+}
+.t_ep19{
+  font-size: 1px;
+    color: white;
+    background: #ED4C6B;
+    display: inline-block;
+    padding: 7px 5px;
+    border-radius: 50px;
+}
+.t_ep12{
+  font-size: 13px;
+    color: white;
+    background: #0484dfd9;
+    display: inline-block;
+    padding: 5px 7px;
+    border-radius: 50px;
+}
+.t_ep15{
+  font-size: 13px;
+    color: white;
+    background: #ff8100;
+    display: inline-block;
+    padding: 5px 7px;
+    border-radius: 50px;
+}
+.t_filminfo{
+  padding:30px 0;
+  border-bottom: solid 1px gray;
+  padding-bottom: 30px;
+}
+.t_filmtitle{
+ font-size: larger; font-weight: 900;
+}
+.t_ranpost{
+  width:1155px;
+  padding:35px 0;
+}
+.t_chargetext{
+  padding: 20px 0;
+  background: #80808026;
+}
