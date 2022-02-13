@@ -62,6 +62,10 @@ public class AdminController {
   
   /* Board*/
   
-  
-  /* Util */
+  /* Utility */
+  @GetMapping("/adminCodeList.do")
+  public String codeList() {
+    
+    return "adm/adminUtility/adminCodeList";
+  }
 }
