@@ -99,14 +99,152 @@
               <strong > 대전 서구 계룡로 598 (괴정동)</strong>
               </div>
               <div class="t_icon">
-              <img src="/resources/img/theater/theatericon1.png" alt="대중교통 안내">
-                <strong>대중교통 안내</strong>
-              <img src="/resources/img/theater/theatericon2.png" alt="자가용/주차 안내">
-                <strong>자가용/주차 안내</strong>
-              <img src="/resources/img/theater/theatericon3.png" alt="지도보기">
-                <strong>지도보기</strong>
+              
+              <!-- 수정중 -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn t_modaliconstart" id="modal_show">
+    <img src="/resources/img/theater/theatericon1.png" alt="대중교통 안내" class="t_iconimg">
+        <span class="t_modal_name">대중교통 안내</span>
+    </button>
+ 
+    <!-- Modal1 -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title t_modaltitle" id="exampleModalLabel">대중교통 안내</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="/resources/img/theater/theatericon5.png" alt="대중교통 안내" class="t_iconimg">
+                    <span class="t_modaltextname">지하철로 오시는 길</span>
+                    <ul class="t_modallisttext">
+                      <li>
+                        <span>
+                          <strong>[JSL-Movie 영업시간 내]</strong>
+                        </span>
+                        <p class="t_modaltext"> 오전 10시 30분 ~ 오후 10시 </p>
+                      </li>
+                      <li>
+                        <span>
+                          <strong>오룡역 하차 > 3번 출구로 이동 > JSL빌딩 진입</strong>
+                        </span>
+                        <p class="t_modaltext"> JSL빌딩 엘리베이터로 5층 이동 > JSL-Movie 입구 </p>
+                      </li>
+                      <li>
+                        <span>
+                          <strong>[JSL-Movie 영업시간 외]</strong>
+                        </span>
+                        <p class="t_modaltext"> 오후 10시 ~ 익일 오전 10시 30분 </p>
+                      </li>
+                      <li>
+                        <span>
+                          <strong>오룡역 하차 > 3번 출구 > 좌측 도보 200미터 이동 > JSL-Movie 입구</strong>
+                        </span>
+                      </li>
+                    </ul>
+                    <img src="/resources/img/theater/theatericon4.png" alt="대중교통 안내" class="t_iconimg">
+                    <span class="t_modaltextname">버스로 오시는 길</span>
+                    <ul class="t_modallisttext">
+                    <li>
+                        <span>
+                          <strong>JSL정류장하차> 좌측 도보 200미터 이동 > JSL-Movie 입구</strong>
+                        </span>
+                      </li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn" id="modal_show2">
+    <img src="/resources/img/theater/theatericon2.png" alt="자가용/주차 안내" class="t_iconimg">
+        <span class="t_modal_name">자가용/주차 안내</span>
+    </button>
+ 
+    <!-- Modal2 -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title t_modaltitle2" id="exampleModalLabel">자가용/주차 안내</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="/resources/img/theater/theatericon6.png" alt="자가용" class="t_iconimg">
+                    <span class="t_modaltextname">자가용으로 오시는 길</span>
+                    <ul class="t_modallisttext">
+                      <li>
+                        <span>
+                          <strong>[네비게이션 주소]</strong>
+                        </span>
+                        <p class="t_modaltext"> 대전 중구 계룡로 761, JSL-Movie </p>
+                      </li>
+                      <li>
+                        <span>
+                          <strong>[주차 TIP]</strong>
+                        </span>
+                        <p class="t_modaltext"> P1층 > G, H, J 15 ~ 19번 (옐로우 존) </p>
+                        <p class="t_modaltext"> P1층 > G, H, J 15 ~ 19번 (옐로우 존) </p>
+                        <p class="t_modaltext"> 해당 위치 주차 시 JSL-Movie 진입이 용이합니다. (전용 엘리베이터) </p>
+                      </li>
+                    </ul>
+                    <img src="/resources/img/theater/theatericon7.png" alt="주차요금" class="t_iconimg">
+                    <span class="t_modaltextname">주차요금 안내</span>
+                    <ul class="t_modallisttext">
+                    <li>
+                        <span>
+                          <strong>[주차 할인]</strong>
+                        </span>
+                        <p class="t_modaltext"> 무인정산기 주차권 인증 시 영화 관람 당일 3시간 무료(초과 시 30분당 1,000원 / JSL몰 구매 금액 합산 시 최대 12시간) </p>
+                      </li>
+                      <li>
+                        <span>
+                          <strong>[무인정산기 위치]</strong>
+                        </span>
+                        <p class="t_modaltext"> JSL-Movie 지상 1층, P1~ P3 전용 엘리베이터 로비 </p>
+                      </li>
+                      <li>
+                        <span>
+                          <strong>[주차권 안내]-사전정산 시스템</strong>
+                        </span>
+                        <p class="t_modaltext"> [모바일 티켓] </p>
+                        <p class="t_modaltext"> 바로티켓 상단 주차권 버튼 클릭 시 바코드 생성 </p>
+                        <p class="t_modaltext"> [지류 티켓] </p>
+                        <p class="t_modaltext"> 영화 티켓 하단 주차권 바코드 사용 </p>
+                      </li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-default btn-sm map" id="modal_show3">
+    <img src="/resources/img/theater/theatericon3.png" alt="지도보기" class="t_iconimg">
+       <span class="t_modal_name">지도보기</span>
+    </button>
+    <!-- Modal3 -->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title t_modaltitle3" id="exampleModalLabel">지도보기</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+            </div>
+        </div>
+    </div>
               </div>
           </div>
+         
+          <!-- 수정부분끝 -->
           <div class="col-lg-3 col-md-3 col-sm-3 t_reco t_recoradi4">
             <div class="t_recotitle">
               <strong>CGV대전</strong>에서<br><span>나일강의 죽음</span><br>  어떠세요?
@@ -116,8 +254,8 @@
               <span>나일강의 죽음</span><br>예매율 25.9%
             </div>
             <div class="t_icon2">
-            <span class="icon_link_alt"></span>
-            <span class="icon_heart_alt"></span>
+            <a href=""><span class="icon_link_alt"></span></a>
+            <a href=""><span class="icon_heart_alt"></span></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-2 col-sm-2 t_reco t_recoradi4">
@@ -231,7 +369,8 @@
     <strong>2월</strong>
     <span><br>
       <label>
-        <strong>11</strong><br>
+        <input type="radio" name="date1">
+          <strong>11</strong><br>
         <span>오늘</span>
       </label>
     </span>
@@ -239,6 +378,7 @@
     <div class="t_date">
     <span><br>
       <label>
+      <input type="radio" name="date1">
         <strong>12</strong><br>
         <span>오늘</span>
       </label>
@@ -247,6 +387,7 @@
     <div class="t_date">
     <span><br>
       <label>
+      <input type="radio" name="date1">
         <strong>13</strong><br>
         <span>오늘</span>
       </label>
@@ -255,6 +396,7 @@
     <div class="t_date">
     <span><br>
       <label>
+      <input type="radio" name="date1">
         <strong>14</strong><br>
         <span>오늘</span>
       </label>
@@ -263,6 +405,7 @@
     <div class="t_date">
     <span><br>
       <label>
+      <input type="radio" name="date1">
         <strong>15</strong><br>
         <span>오늘</span>
       </label>
@@ -271,6 +414,7 @@
     <div class="t_date">
     <span><br>
       <label>
+      <input type="radio" name="date1">
         <strong>16</strong><br>
         <span>오늘</span>
       </label>
@@ -279,6 +423,7 @@
     <div class="t_date">
     <span><br>
       <label>
+      <input type="radio" name="date1">
         <strong>17</strong><br>
         <span>오늘</span>
       </label>
@@ -287,6 +432,7 @@
     <div class="t_date">
     <span><br>
       <label>
+      <input type="radio" name="date1">
         <strong>11</strong><br>
         <span>오늘</span>
       </label>
@@ -295,6 +441,7 @@
     <div class="t_date">
     <span><br>
       <label>
+      <input type="radio" name="date1">
         <strong>18</strong><br>
         <span>토</span>
       </label>
@@ -303,6 +450,25 @@
     <div class="t_date">
     <span><br>
       <label>
+      <input type="radio" name="date1">
+        <strong>19</strong><br>
+        <span>일</span>
+      </label>
+    </span>
+    </div>
+    <div class="t_date">
+    <span><br>
+      <label>
+      <input type="radio" name="date1">
+        <strong>19</strong><br>
+        <span>일</span>
+      </label>
+    </span>
+    </div>
+    <div class="t_date">
+    <span><br>
+      <label>
+      <input type="radio" name="date1">
         <strong>19</strong><br>
         <span>일</span>
       </label>
@@ -403,6 +569,123 @@
   $(function () {
     $('#myTab a:last').tab('show')
   })
+</script>
+<!-- 아이콘모달 -->
+<script>
+$(document).ready(function() {
+    $("#modal_show").click(function() {
+        $("#exampleModal").modal("show");
+    });
+    
+    $("#modal_show2").click(function() {
+      $("#exampleModal2").modal("show");
+  });
+    $("#modal_show3").click(function() {
+      $("#exampleModal3").modal("show");
+  });
+
+    $("#close_modal").click(function() {
+        $("#exampleModal").modal("hide");
+    });
+});
+</script>
+<!-- map modal -->
+<script>
+
+$(document).ready(function() {
+
+
+
+$("button.map").on("click", function() {
+
+$("div#googleMapModal").modal();
+
+/* myMap(); */
+
+});
+
+
+//모달창 이벤트 등록 -> myMap() 함수 호출, 동적 생성된 엘리먼트 삭제 연계
+
+$("div#googleMapModal").on("shown.bs.modal", function() {
+
+myMap();
+
+});
+
+$("div#googleMapModal").on("hidden.bs.modal", function() {
+
+$("div#googleMap").empty();
+
+});
+
+
+
+});
+
+</script>
+
+
+
+<script>
+
+function myMap() {
+
+
+
+//위도, 경도 
+
+var center = new google.maps.LatLng(37.500431, 127.033176);
+
+var handok = new google.maps.LatLng(37.499362, 127.033202);
+
+
+//맵 정보
+
+var mapProp = {
+
+center : center,
+
+zoom : 17,
+
+};
+
+//맵 요청
+
+var map = new google.maps.Map(document
+
+.getElementById("googleMap"), mapProp);
+
+
+
+//마커 표시
+
+var marker = new google.maps.Marker({
+
+position : handok
+
+});
+
+marker.setMap(map);
+
+
+
+//InfoWindow
+
+var infowindow = new google.maps.InfoWindow(
+
+{
+
+content : "<div style=\"text-align:center;\"><strong>한독약품빌딩</strong><br>서울특별시 강남구 역삼1동 735<br><img src=\"handok_small.png\"></div>"
+
+});
+
+infowindow.open(map, marker);
+
+
+
+}
+
 </script>
 
 <!-- Product Section End -->
