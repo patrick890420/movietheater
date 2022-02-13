@@ -1,7 +1,5 @@
 package com.theater.domain;
 
-
-
 import lombok.Data;
 
 @Data

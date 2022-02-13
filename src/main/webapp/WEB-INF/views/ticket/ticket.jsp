@@ -11,8 +11,17 @@
     </div>
     <div class="movie-list-wrapper">
       <div class="movie-list">
-<!--         <div class="movie-list-age">15</div> -->
-<!--         <div class="movie-list-title">1917</div> -->
+        <table>
+        <c:forEach items="${mvList}" var="mvList">
+            <tr>
+              <td>
+                <button class="movie-list-btn">
+                  ${mvList.rate}    ${mvList.title}
+                </button>
+              </td>
+            </tr>
+        </c:forEach>
+        </table>  
       </div>
     </div>
   </div>
@@ -30,7 +39,6 @@
           <button class="theater-place">유성</button>
           <button class="theater-place">둔산</button>
           <button class="theater-place">복합</button>
-         
         </div>
       </div>
     </div>

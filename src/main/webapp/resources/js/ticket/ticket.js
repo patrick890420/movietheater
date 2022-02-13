@@ -1,6 +1,6 @@
 
 const date = new Date();
-// console.log(date.getFullYear());
+console.log(date.getFullYear());
 const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
 const reserveDate = document.querySelector('.reserve-date');
 const theaterPlace = document.querySelectorAll('.theater-place');
@@ -16,89 +16,15 @@ const movieAge = document.querySelector('.movieAge');
 let movieListAge = '';
 let year = 0;
 let month = 0;
-add();
+
 document.addEventListener('DOMContentLoaded', () => {
-    add();
     addDate();
 });
-
-// 데이터 가져오기
-function add() {
-    $.ajax({
-        url: 'crawling.do',
-        type: 'get',
-        success: function(data) {
-            crawlingData = setData(data);
-            // console.log(crawlingData);
-            // document.querySelector('.movie-list-wrapper').append(crawlingData);
-            //            poster.setAttribute('src', crawlingData[randomNumber].img)crawlingData;
-            setList(data);
-            movieListAge = document.querySelectorAll('.movie-list-age');
-            movieListAge.forEach(li => {
-                if (li.innerHTML === '15세 이상') {
-                    li.classList.add('fifteen');
-                } else if (li.innerHTML === '청소년 관람불가') {
-                    li.classList.add('eighteen');
-                    li.innerHTML = '청불';
-                } else if (li.innerHTML === '전체') {
-                    li.classList.add('all');
-                }
-            });
-            if (crawlingData.length === 0) {
-                location.href = 'moveReserve.do';
-            }
-            document.querySelectorAll('.movie-list-title').forEach(li => {
-                li.addEventListener('click', function() {
-                    const movieListTitleActvie = document.querySelectorAll(
-                        '.movie-list-title-active'
-                    );
-                    movieListTitleActvie.forEach(li => {
-                        li.classList.remove('movie-list-title-active');
-                    });
-                    li.parentNode.classList.add('movie-list-title-active');
-                    console.log(li.innerHTML);
-                    console.log(li.parentElement);
-                    console.log(li.parentElement.childNodes[1].innerHTML);
-                    //form에 넘기기 위한
-                    movieAge.value = li.parentElement.childNodes[1].innerHTML;
-                    inputTitle.value = li.innerHTML;
-                });
-            });
-        },
-        error: function() {
-            document.querySelector('.movie-list-wrapper').innerHTML ='데이터가없습니다 새로고침해주세요';
-        },
-    });
-}
-
-function setData(data) {
-    data = JSON.parse(data);
-
-    return data;
-}
-
-function setList(data) {
-    document.querySelector('.movie-list-wrapper').innerHTML = JSON.parse(
-        data
-    ).reduce((html = '', item, index = 0) => {
-        html += getMovieList(item);
-
-        return html;
-    }, ' ');
-}
-
-function getMovieList(item) {
-    console.log(item);
-    return `<div class="movie-list">
-    <div class="movie-list-age">${item.movieAge}</div>
-    <button class="movie-list-title">${item.movieTitle}</button>
-</div>`;
-}
 
 function addDate() {
     const weekOfDay = ['일', '월', '화', '수', '목', '금', '토'];
     year = date.getFullYear();
-    month = date.getMonth();
+    month = date.getMonth()+1;
     reserveDate.append(year + '/' + month);
     for (i = date.getDate(); i <= lastDay.getDate(); i++) {
         const button = document.createElement('button');
@@ -110,7 +36,7 @@ function addDate() {
         spanWeekOfDay.classList = 'movie-week-of-day';
         spanDay.classList = 'movie-day';
 
-        //weekOfDay[new Date(2020-03-날짜)]
+        //weekOfDay[new Date(2022-03-날짜)]
         const dayOfWeek =
             weekOfDay[new Date(year + '-' + month + '-' + i).getDay()];
 
