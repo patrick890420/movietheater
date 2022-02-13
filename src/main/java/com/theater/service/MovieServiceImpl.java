@@ -14,8 +14,8 @@ public class MovieServiceImpl implements MovieService {
 
   
   @Override
-    public void movieInsertPro(MovieVO mvo) {
-    mapper.movieInsertPro(mvo);
+    public void MovieInsertPro(MovieVO mvo) {
+    mapper.MovieInsertPro(mvo);
   }
 
 }//Impl
