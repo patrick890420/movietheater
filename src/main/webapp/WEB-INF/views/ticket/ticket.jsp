@@ -7,13 +7,12 @@
   <div class="movie-part">
     <div class="reserve-title">영화</div>
     <div class="sort-wrapper">
-      <div class="sort-rate sort-selected">예매율순</div>
       <div class="sort-korean">가나다순</div>
     </div>
     <div class="movie-list-wrapper">
       <div class="movie-list">
-        <%-- <div class="movie-list-age">15</div>
-             <div class="movie-list-title">1917</div> --%>
+<!--         <div class="movie-list-age">15</div> -->
+<!--         <div class="movie-list-title">1917</div> -->
       </div>
     </div>
   </div>

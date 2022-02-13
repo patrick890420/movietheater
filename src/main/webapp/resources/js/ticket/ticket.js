@@ -66,8 +66,7 @@ function add() {
             });
         },
         error: function() {
-            document.querySelector('.movie-list-wrapper').innerHTML =
-                '데이터가없습니다 새로고침해주세요';
+            document.querySelector('.movie-list-wrapper').innerHTML ='데이터가없습니다 새로고침해주세요';
         },
     });
 }
