@@ -14,7 +14,7 @@
 <meta name="author" content="">
 <!-- Favicon icon -->
 <link rel="icon" type="image/png" sizes="16x16" href="/resources/admin/assets/images/favicon.png">
-<title>Movie Theater Admin</title>
+<title>JSL Movie Admin</title>
 <!-- Custom CSS -->
 <link href="/resources/admin/assets/extra-libs/c3/c3.min.css" rel="stylesheet">
 <!-- datatables -->
@@ -274,11 +274,10 @@
             <!-- Menu start -->
             <!-- Member st -->
             <li class="list-divider"></li>
-            <li class="nav-small-cap"><span class="hide-menu">Member</span></li>
             <li class="sidebar-item">
               <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <i data-feather="file-text" class="feather-icon"></i>
-                <span class="hide-menu">sample </span>
+                <i data-feather="user" class="feather-icon"></i>
+                <span class="hide-menu">Member </span>
               </a>
               <ul aria-expanded="false" class="collapse  first-level base-level-line">
                 <li class="sidebar-item">
@@ -298,21 +297,12 @@
                 </li>
               </ul>
             </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link sidebar-link" href="app-calendar.html" aria-expanded="false">
-                <i data-feather="calendar" class="feather-icon"></i>
-                <span class="hide-menu">Calendar</span>
-              </a>
-            </li>
             <!-- Member end -->
             <li class="list-divider"></li>
             <!-- Movie st -->
-            <li class="nav-small-cap">
-              <span class="hide-menu"></span>
-            </li>
             <li class="sidebar-item">
               <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <i data-feather="file-text" class="feather-icon"></i>
+                <i data-feather="film" class="feather-icon"></i>
                 <span class="hide-menu">Movie</span>
               </a>
               <ul aria-expanded="false" class="collapse  first-level base-level-line">
@@ -333,22 +323,13 @@
                 </li>
               </ul>
             </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link sidebar-link" href="ui-cards.html" aria-expanded="false">
-              <i data-feather="sidebar" class="feather-icon"></i>
-              <span class="hide-menu">Cards</span>
-              </a>
-            </li>
             <!-- Movie end -->
             <li class="list-divider"></li>
             <!-- Theater st -->
-            <li class="nav-small-cap">
-              <span class="hide-menu">Theater</span>
-            </li>
             <li class="sidebar-item">
               <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <i data-feather="file-text" class="feather-icon"></i>
-                <span class="hide-menu">Forms </span>
+                <i data-feather="grid" class="feather-icon"></i>
+                <span class="hide-menu">Theater </span>
               </a>
               <ul aria-expanded="false" class="collapse  first-level base-level-line">
                 <li class="sidebar-item">
@@ -367,23 +348,14 @@
                   </a>
                 </li>
               </ul>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link sidebar-link" href="ui-cards.html" aria-expanded="false">
-              <i data-feather="sidebar" class="feather-icon"></i>
-              <span class="hide-menu">Cards</span>
-              </a>
             </li>
             <!-- theater end -->
             <li class="list-divider"></li>
             <!-- Theater st -->
-            <li class="nav-small-cap">
-              <span class="hide-menu">Ticketing</span>
-            </li>
             <li class="sidebar-item">
               <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <i data-feather="file-text" class="feather-icon"></i>
-                <span class="hide-menu">Forms </span>
+                <i data-feather="tag" class="feather-icon"></i>
+                <span class="hide-menu">Ticketing </span>
               </a>
               <ul aria-expanded="false" class="collapse  first-level base-level-line">
                 <li class="sidebar-item">
@@ -402,23 +374,14 @@
                   </a>
                 </li>
               </ul>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link sidebar-link" href="ui-cards.html" aria-expanded="false">
-              <i data-feather="sidebar" class="feather-icon"></i>
-              <span class="hide-menu">Cards</span>
-              </a>
             </li>
             <!-- Ticketing end -->
             <li class="list-divider"></li>
             <!-- board st -->
-            <li class="nav-small-cap">
-              <span class="hide-menu">Board</span>
-            </li>
             <li class="sidebar-item">
               <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <i data-feather="file-text" class="feather-icon"></i>
-                <span class="hide-menu">Forms </span>
+                <i data-feather="clipboard" class="feather-icon"></i>
+                <span class="hide-menu">board </span>
               </a>
               <ul aria-expanded="false" class="collapse  first-level base-level-line">
                 <li class="sidebar-item">
@@ -438,13 +401,28 @@
                 </li>
               </ul>
             </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link sidebar-link" href="ui-cards.html" aria-expanded="false">
-              <i data-feather="sidebar" class="feather-icon"></i>
-              <span class="hide-menu">Cards</span>
-              </a>
-            </li>
             <!-- board end -->
+              <li class="list-divider"></li>
+            <!-- Utility st -->
+            <li class="sidebar-item">
+              <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                <i data-feather="file-text" class="feather-icon"></i>
+                <span class="hide-menu">Utility</span>
+              </a>
+              <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                <li class="sidebar-item">
+                  <a href="/adm/adminCodeList.do" class="sidebar-link">
+                  <span class="hide-menu"> Code List </span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="form-input-grid.html" class="sidebar-link">
+                  <span class="hide-menu">not yet</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- Utility end -->
             <li class="list-divider"></li>
             <li class="sidebar-item">
               <a class="sidebar-link sidebar-link" href="authentication-login1.html" aria-expanded="false">
