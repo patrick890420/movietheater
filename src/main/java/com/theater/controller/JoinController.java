@@ -18,5 +18,8 @@ public class JoinController {
 	public void join() {
 		
 	}//join.do
+	
+//	@RequestMapping("")
+//	public void 
 
 }

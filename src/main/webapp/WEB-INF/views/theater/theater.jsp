@@ -20,25 +20,19 @@
     </ul>
 
 <div class="tab-content">
+  
   <div role="tabpanel" class="tab-pane active" id="home">
+    <c:forEach items="${thList}" var="thList">
     <div class="t_subcity">
     <div class="t_citydata t_citydataline">
-    <strong class=""><a href="">J-강남</a></strong>
+    <strong class=""><a href="">${thList.t_name}</a></strong>
+    
     </div>
-    <div class="t_citydata t_citydataline">
-     <strong class=""><a href="">J-강변</a></strong>
-    </div>
-    <div class="t_citydata t_citydataline">
-     <strong class="">J-건대입구</strong>
-    </div>
-    <div class="t_citydata t_citydataline">
-     <strong class="">J-동대문</strong>
-    </div>
-    <div class="t_citydata t_citydataline">
-     <strong class="">J-명동</strong>
-    </div>
+    
   </div>
+  </c:forEach>
   </div>
+  
   <div role="tabpanel" class="tab-pane" id="profile">
     <div class="t_subcity">
     <div class="t_citydata t_citydataline">
@@ -235,8 +229,28 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    ...
+                <div class="modal-body" style="padding:1rem 0.7rem 1rem 1rem;">
+     
+<!-- Modal -->
+
+<div id="googleMapModal" class="fade" role="dialog">
+<div class="modal-dialog">
+
+<!-- Modal content-->
+<div class="modal-body">
+<!-- 맵 출력 -->
+
+<div id="googleMap" style="width: 100%; height: 500px;">
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+                    
                 </div>
             </div>
         </div>
@@ -369,7 +383,7 @@
     <strong>2월</strong>
     <span><br>
       <label>
-        <input type="radio" name="date1">
+        <input type="radio" name="date1" checked>
           <strong>11</strong><br>
         <span>오늘</span>
       </label>
