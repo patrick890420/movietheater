@@ -16,6 +16,6 @@ public class LoginController {
 	@GetMapping("/login.do")
 	public void login() {
 		
-	}//login.do
+	}
 	
 }

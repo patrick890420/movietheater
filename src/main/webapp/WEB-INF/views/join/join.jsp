@@ -21,7 +21,7 @@
 			<div class="col-lg-12">
 				<div class="login__form" style="text-align: center;">
 					<h3 style="font-size: 50px;">Sign Up</h3>
-					<form action="#"
+					<form action="#" id=join_form
 						style="padding: 50px 300px; background: antiquewhite; padding-top: 100px;">
 						<div class="input__item">
 							<input type="text"  placeholder="이름을 입력해 주세요.">
@@ -72,9 +72,8 @@
 						<div class="input__item" style="background-color: white;">
 							<span class="icon_heart_alt"></span>
 							<div class="genderchoice">
-								<input type="radio" value="woman" class="gender" name="gender">
-								woman <input type="radio" value="man" class="gender"
-									name="gender"> man
+								<input type="radio" value="woman" class="gender" name="gender"> woman 
+								<input type="radio" value="man" class="gender" name="gender"> man
 							</div>
 						</div>
 					</form>
@@ -114,7 +113,7 @@
 
 					</form>
 					<input type="checkbox"> 약관에 동의합니다. &nbsp;&nbsp;
-					<button type="submit" class="btn btn-success">회원가입</button>
+					<button type="submit" class="btn btn-success" class="join_button">회원가입</button>
 
 				</div>
 			</div>
@@ -126,9 +125,5 @@
 
 
 <%@ include file="../footer.jsp"%>
-
-<script>
-
-</script>
 
 

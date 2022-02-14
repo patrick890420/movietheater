@@ -2,7 +2,76 @@
   pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
 <!-- Hero Section Begin -->
+  <div class="container">
+  <div class="t_post">
+<section class="">
+      <div class="row">
+        <div class="col-lg-12">
+     <ul class="nav t_city" role="tablist" id="myTab">
+      <li role="presentation" class="active col-lg-1 col-md-1 col-sm-1"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">서울</a></li>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">경기</a></li>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1"><a href="#profile2" aria-controls="profile2" role="tab" data-toggle="tab">인천</a></li>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1"><a href="#profile3" aria-controls="profile3" role="tab" data-toggle="tab">강원</a></li>
+      <li role="presentation" class="col-lg-2 col-md-2 col-sm-2"><a href="#profile4" aria-controls="profile4" role="tab" data-toggle="tab">대전/충청</a></li>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1"><a href="#profile5" aria-controls="profile5" role="tab" data-toggle="tab">대구</a></li>
+      <li role="presentation" class="col-lg-2 col-md-2 col-sm-2"><a href="#profile6" aria-controls="profile6" role="tab" data-toggle="tab">부산/울산</a></li>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1"><a href="#profile7" aria-controls="profile7" role="tab" data-toggle="tab">경상</a></li>
+      <li role="presentation" class="col-lg-2 col-md-2 col-sm-2"><a href="#profile8" aria-controls="profile8" role="tab" data-toggle="tab">광주/전라/제주</a></li>
+    </ul>
 
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="home">
+    <div class="t_subcity">
+    <div class="t_citydata t_citydataline">
+    <strong class=""><a href="">J-강남</a></strong>
+    </div>
+    <div class="t_citydata t_citydataline">
+     <strong class=""><a href="">J-강변</a></strong>
+    </div>
+    <div class="t_citydata t_citydataline">
+     <strong class="">J-건대입구</strong>
+    </div>
+    <div class="t_citydata t_citydataline">
+     <strong class="">J-동대문</strong>
+    </div>
+    <div class="t_citydata t_citydataline">
+     <strong class="">J-명동</strong>
+    </div>
+  </div>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="profile">
+    <div class="t_subcity">
+    <div class="t_citydata t_citydataline">
+    <strong class="">J-경기광주</strong>
+    </div>
+    <div class="t_citydata t_citydataline">
+     <strong class="">J-광교</strong>
+    </div>
+    <div class="t_citydata t_citydataline">
+     <strong class="">J-구리</strong>
+    </div>
+  </div>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="profile2">
+    <div class="t_subcity">
+    <div class="t_citydata t_citydataline">
+    <strong class="">J-부평</strong>
+    </div>
+    <div class="t_citydata t_citydataline">
+     <strong class="">J-남주안</strong>
+    </div>
+    <div class="t_citydata t_citydataline">
+     <strong class="">J-인천</strong>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+  </div>
+  
+  </div>
 <section class="hero">
   <div class="container" style="text-align: center;">
     <h3
@@ -18,60 +87,447 @@
     <div class="col-lg-12">
       <div class="">
         <div class="row">
-          <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="col-lg-7 col-md-7 col-sm-7">
             <div class="section-title">
-              <h4>CGV대전</h4>
+              <h2>CGV대전</h2>
+            </div>
+              <div class="t_infotext">
+                <strong> 총 상영관 수 <span>&ensp;8개관</span></strong>
+                <strong class="t_sit"> 총 좌석수 <span>&ensp;1,144석</span></strong>
+              </div>
+              <div class="t_infotext">
+              <strong > 대전 서구 계룡로 598 (괴정동)</strong>
+              </div>
+              <div class="t_icon">
+              
+              <!-- 수정중 -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn t_modaliconstart" id="modal_show">
+    <img src="/resources/img/theater/theatericon1.png" alt="대중교통 안내" class="t_iconimg">
+        <span class="t_modal_name">대중교통 안내</span>
+    </button>
+ 
+    <!-- Modal1 -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title t_modaltitle" id="exampleModalLabel">대중교통 안내</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="/resources/img/theater/theatericon5.png" alt="대중교통 안내" class="t_iconimg">
+                    <span class="t_modaltextname">지하철로 오시는 길</span>
+                    <ul class="t_modallisttext">
+                      <li>
+                        <span>
+                          <strong>[JSL-Movie 영업시간 내]</strong>
+                        </span>
+                        <p class="t_modaltext"> 오전 10시 30분 ~ 오후 10시 </p>
+                      </li>
+                      <li>
+                        <span>
+                          <strong>오룡역 하차 > 3번 출구로 이동 > JSL빌딩 진입</strong>
+                        </span>
+                        <p class="t_modaltext"> JSL빌딩 엘리베이터로 5층 이동 > JSL-Movie 입구 </p>
+                      </li>
+                      <li>
+                        <span>
+                          <strong>[JSL-Movie 영업시간 외]</strong>
+                        </span>
+                        <p class="t_modaltext"> 오후 10시 ~ 익일 오전 10시 30분 </p>
+                      </li>
+                      <li>
+                        <span>
+                          <strong>오룡역 하차 > 3번 출구 > 좌측 도보 200미터 이동 > JSL-Movie 입구</strong>
+                        </span>
+                      </li>
+                    </ul>
+                    <img src="/resources/img/theater/theatericon4.png" alt="대중교통 안내" class="t_iconimg">
+                    <span class="t_modaltextname">버스로 오시는 길</span>
+                    <ul class="t_modallisttext">
+                    <li>
+                        <span>
+                          <strong>JSL정류장하차> 좌측 도보 200미터 이동 > JSL-Movie 입구</strong>
+                        </span>
+                      </li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn" id="modal_show2">
+    <img src="/resources/img/theater/theatericon2.png" alt="자가용/주차 안내" class="t_iconimg">
+        <span class="t_modal_name">자가용/주차 안내</span>
+    </button>
+ 
+    <!-- Modal2 -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title t_modaltitle2" id="exampleModalLabel">자가용/주차 안내</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="/resources/img/theater/theatericon6.png" alt="자가용" class="t_iconimg">
+                    <span class="t_modaltextname">자가용으로 오시는 길</span>
+                    <ul class="t_modallisttext">
+                      <li>
+                        <span>
+                          <strong>[네비게이션 주소]</strong>
+                        </span>
+                        <p class="t_modaltext"> 대전 중구 계룡로 761, JSL-Movie </p>
+                      </li>
+                      <li>
+                        <span>
+                          <strong>[주차 TIP]</strong>
+                        </span>
+                        <p class="t_modaltext"> P1층 > G, H, J 15 ~ 19번 (옐로우 존) </p>
+                        <p class="t_modaltext"> P1층 > G, H, J 15 ~ 19번 (옐로우 존) </p>
+                        <p class="t_modaltext"> 해당 위치 주차 시 JSL-Movie 진입이 용이합니다. (전용 엘리베이터) </p>
+                      </li>
+                    </ul>
+                    <img src="/resources/img/theater/theatericon7.png" alt="주차요금" class="t_iconimg">
+                    <span class="t_modaltextname">주차요금 안내</span>
+                    <ul class="t_modallisttext">
+                    <li>
+                        <span>
+                          <strong>[주차 할인]</strong>
+                        </span>
+                        <p class="t_modaltext"> 무인정산기 주차권 인증 시 영화 관람 당일 3시간 무료(초과 시 30분당 1,000원 / JSL몰 구매 금액 합산 시 최대 12시간) </p>
+                      </li>
+                      <li>
+                        <span>
+                          <strong>[무인정산기 위치]</strong>
+                        </span>
+                        <p class="t_modaltext"> JSL-Movie 지상 1층, P1~ P3 전용 엘리베이터 로비 </p>
+                      </li>
+                      <li>
+                        <span>
+                          <strong>[주차권 안내]-사전정산 시스템</strong>
+                        </span>
+                        <p class="t_modaltext"> [모바일 티켓] </p>
+                        <p class="t_modaltext"> 바로티켓 상단 주차권 버튼 클릭 시 바코드 생성 </p>
+                        <p class="t_modaltext"> [지류 티켓] </p>
+                        <p class="t_modaltext"> 영화 티켓 하단 주차권 바코드 사용 </p>
+                      </li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-default btn-sm map" id="modal_show3">
+    <img src="/resources/img/theater/theatericon3.png" alt="지도보기" class="t_iconimg">
+       <span class="t_modal_name">지도보기</span>
+    </button>
+    <!-- Modal3 -->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title t_modaltitle3" id="exampleModalLabel">지도보기</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+            </div>
+        </div>
+    </div>
+              </div>
+          </div>
+         
+          <!-- 수정부분끝 -->
+          <div class="col-lg-3 col-md-3 col-sm-3 t_reco t_recoradi4">
+            <div class="t_recotitle">
+              <strong>CGV대전</strong>에서<br><span>나일강의 죽음</span><br>  어떠세요?
+            </div>
+            <div class="t_recoline"></div>
+            <div class="">
+              <span>나일강의 죽음</span><br>예매율 25.9%
+            </div>
+            <div class="t_icon2">
+            <a href=""><span class="icon_link_alt"></span></a>
+            <a href=""><span class="icon_heart_alt"></span></a>
             </div>
           </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 t_reco t_recoradi4">
+            <img src="/resources/img/trending/movie1.jpg" class="t_recoradi4">
+          </div>
         </div>
-      </div>
-      <div>
-        <img
-          src="https://img.cgv.co.kr/Theater/Theater/2014/1211/CGVgangnam.jpg"
-          alt="CGV강남 극장이미지" style="margin-left: 63px;">
-      </div>
-      <div>
-        <img
-          src="https://adimg.cgv.co.kr/images//202201/Uncharted/0127_980x90.jpg"
-          width="980" height="90" border="0" alt="광고-언차티드"
-          style="margin-left: 63px;">
       </div>
     </div>
   </div>
 </section>
+<!-- event start -->
+<section class="" style="padding-top:80px; padding-bottom:0px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="trending__product">
+            <div class="row">
+              <div class="col-lg-8 col-md-8 col-sm-8">
+                <div class="section-title">
+                  <h4>Event</h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="btn__all">
+                  <a href="#" class="primary-btn">View All <span
+                    class="arrow_right"></span></a>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="product__item">
+                  <div class="product__item__pic set-bg t_eventimg"
+                    data-setbg="/resources/img/trending/event1.jpg">
+                    <div class="ep">D-day</div>
+                    <div class="comment">
+                      <i class="fa fa-comments"></i> 11
+                    </div>
+                    <div class="view">
+                      <i class="fa fa-eye"></i> 9141
+                    </div>
+                  </div>
+                  <div class="product__item__text">
+                      <strong>[킹메이커]CGV필름마크</strong>
+                    <h5>
+                      <a href="#">2022.01.19~2022.02.27</a>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="product__item">
+                  <div class="product__item__pic set-bg t_eventimg"
+                    data-setbg="/resources/img/trending/event2.jpg">
+                    <div class="ep">D-day</div>
+                    <div class="comment">
+                      <i class="fa fa-comments"></i> 11
+                    </div>
+                    <div class="view">
+                      <i class="fa fa-eye"></i> 9141
+                    </div>
+                  </div>
+                  <div class="product__item__text">
+                  <strong>[킹메이커]CGV필름마크</strong>
+                    <h5>
+                      <a href="#">2022.01.19~2022.02.27</a>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="product__item">
+                  <div class="product__item__pic set-bg t_eventimg"
+                    data-setbg="/resources/img/trending/event3.jpg">
+                    <div class="ep">D-day</div>
+                    <div class="comment">
+                      <i class="fa fa-comments"></i> 11
+                    </div>
+                    <div class="view">
+                      <i class="fa fa-eye"></i> 9141
+                    </div>
+                  </div>
+                  <div class="product__item__text">
+                  <strong>[킹메이커]CGV필름마크</strong>
+                    <h5>
+                      <a href="#">2022.01.19~2022.02.27</a>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+     </section>
+     <!-- event end -->
+     <!-- sc start -->
+     <section class="">
+     <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+     <ul class="nav nav-tabs t_tablist" role="tablist" id="myTab">
+      <li role="presentation" class="active col-lg-6 col-md-6 col-sm-6"><a href="#date" aria-controls="date" role="tab" data-toggle="tab">상영시간표</a></li>
+      <li role="presentation" class="col-lg-6 col-md-6 col-sm-6 t_tableftline"><a href="#charge" aria-controls="charge" role="tab" data-toggle="tab">요금안내</a></li>
+    </ul>
+
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="date">
+    <div class="t_date">
+    <strong>2월</strong>
+    <span><br>
+      <label>
+        <input type="radio" name="date1">
+          <strong>11</strong><br>
+        <span>오늘</span>
+      </label>
+    </span>
+    </div>
+    <div class="t_date">
+    <span><br>
+      <label>
+      <input type="radio" name="date1">
+        <strong>12</strong><br>
+        <span>오늘</span>
+      </label>
+    </span>
+    </div>
+    <div class="t_date">
+    <span><br>
+      <label>
+      <input type="radio" name="date1">
+        <strong>13</strong><br>
+        <span>오늘</span>
+      </label>
+    </span>
+    </div>
+    <div class="t_date">
+    <span><br>
+      <label>
+      <input type="radio" name="date1">
+        <strong>14</strong><br>
+        <span>오늘</span>
+      </label>
+    </span>
+    </div>
+    <div class="t_date">
+    <span><br>
+      <label>
+      <input type="radio" name="date1">
+        <strong>15</strong><br>
+        <span>오늘</span>
+      </label>
+    </span>
+    </div>
+    <div class="t_date">
+    <span><br>
+      <label>
+      <input type="radio" name="date1">
+        <strong>16</strong><br>
+        <span>오늘</span>
+      </label>
+    </span>
+    </div>
+    <div class="t_date">
+    <span><br>
+      <label>
+      <input type="radio" name="date1">
+        <strong>17</strong><br>
+        <span>오늘</span>
+      </label>
+    </span>
+    </div>
+    <div class="t_date">
+    <span><br>
+      <label>
+      <input type="radio" name="date1">
+        <strong>11</strong><br>
+        <span>오늘</span>
+      </label>
+    </span>
+    </div>
+    <div class="t_date">
+    <span><br>
+      <label>
+      <input type="radio" name="date1">
+        <strong>18</strong><br>
+        <span>토</span>
+      </label>
+    </span>
+    </div>
+    <div class="t_date">
+    <span><br>
+      <label>
+      <input type="radio" name="date1">
+        <strong>19</strong><br>
+        <span>일</span>
+      </label>
+    </span>
+    </div>
+    <div class="t_date">
+    <span><br>
+      <label>
+      <input type="radio" name="date1">
+        <strong>19</strong><br>
+        <span>일</span>
+      </label>
+    </span>
+    </div>
+    <div class="t_date">
+    <span><br>
+      <label>
+      <input type="radio" name="date1">
+        <strong>19</strong><br>
+        <span>일</span>
+      </label>
+    </span>
+    </div>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="charge">
+    <strong>2D 일반석</strong>
+    <div class="row t_chargetext">
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <span>주중(월~목)</span>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <span>주말(금~일)</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
 <!-- Product Section End -->
-<ul style="margin: 20px 0 30px 0; text-align: center;">
-  <li style="display: inline-block; background: red;"><a href=""
-    style="color: black; padding: 10px;"> 상영시간표 </a></li>
-  <li style="display: inline-block; background: red"><a href=""
-    style="color: black; padding: 10px;"> 위치/주차안내 </a></li>
-</ul>
 <!-- Product Section Begin -->
 <section class="">
   <div class="container">
     <div class="row">
-      <div class="col-lg-9">
+      <div class="col-lg-12">
         <div class="">
           <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-              <div
-                style="border-top: solid; border-bottom: solid; padding: 50px 0;">
-                <h3>상영시간입력 (슬라이더)</h3>
-              </div>
-              <div class="section-title"
-                style="border-bottom: solid 1px gray; padding: 10px 0;">
-                <span>◎조조 ●심야 ＊시간을 클릭하시면 빠른 예매를 하실 수 있습니다.</span>
-              </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 t_age">
+
+                <div class="t_agelist">
+                <div class="t_ep0">전체</div>
+                <strong>전체관람가</strong>
+                </div>
+                <div class="t_agelist">
+                <div class="t_ep12">12</div>
+                <strong>12세 관람가</strong>
+                </div>
+                <div class="t_agelist">
+                <div class="t_ep15">15</div>
+                <strong>15세 관람가</strong>
+                </div>
+                <div class="t_agelist">
+                <div class="t_ep19">청불</div>
+                <strong>청소년 관람불가</strong>
+                </div>
+
+              
             </div>
           </div>
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
-              <div class="product__item"
-                style="border-bottom: solid 1px gray; padding-bottom: 30px;">
+              <div class="t_filminfo">
                 <div>
-                  <span
-                    style="margin: 30px; font-size: larger; font-weight: 900;">⑫
-                    해적-도깨비 깃발</span>
+                <div class="t_ep12">12</div>
+                  <span class="t_filmtitle">해적-도깨비 깃발</span>
                   <p style="margin: 30px 0 15px 30px;">▶2D 3관
                     8층[삼화페인트 안심닥터관]총 172석</p>
                   <ul style="margin-left: 30px;">
@@ -96,62 +552,141 @@
               </div>
             </div>
           </div>
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <img src="/resources/img/theater/post1.jpg" class="t_ranpost">
+            </div>
+          </div>
+          
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-8">
-        <div class="product__sidebar">
-          <div class="product__sidebar__view">
-            <div class="section-title">
-              <h5>New Film</h5>
-            </div>
-            <div class="filter__gallery">
-              <img
-                src="https://adimg.cgv.co.kr/images/202201/355/0207_160x300.jpg"
-                width="180" height="300" border="0" alt="355">
-            </div>
-            <img
-              src="https://adimg.cgv.co.kr/images/202201/cgvpass/160x300.png"
-              width="180" height="300" border="0" alt="광고-CGV">
-          </div>
-        </div>
-        <div class="product__sidebar__comment">
-          <div class="section-title">
-            <h5>New Comment</h5>
-          </div>
-          <div class="product__sidebar__comment__item">
-            <div class="product__sidebar__comment__item__pic">
-              <img src="img/sidebar/comment-1.jpg" alt="">
-            </div>
-            <div class="product__sidebar__comment__item__text">
-              <ul>
-                <li>Active</li>
-                <li>Movie</li>
-              </ul>
-              <h5>
-                <a href="#">The Seven Deadly Sins: Wrath of the Gods</a>
-              </h5>
-              <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
-            </div>
-          </div>
-          <div class="product__sidebar__comment__item">
-            <div class="product__sidebar__comment__item__pic">
-              <img src="img/sidebar/comment-4.jpg" alt="">
-            </div>
-            <div class="product__sidebar__comment__item__text">
-              <ul>
-                <li>Active</li>
-                <li>Movie</li>
-              </ul>
-              <h5>
-                <a href="#">Monogatari Series: Second Season</a>
-              </h5>
-              <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
 </section>
+
+<script>
+  $(function () {
+    $('#myTab a:last').tab('show')
+  })
+</script>
+<!-- 아이콘모달 -->
+<script>
+$(document).ready(function() {
+    $("#modal_show").click(function() {
+        $("#exampleModal").modal("show");
+    });
+    
+    $("#modal_show2").click(function() {
+      $("#exampleModal2").modal("show");
+  });
+    $("#modal_show3").click(function() {
+      $("#exampleModal3").modal("show");
+  });
+
+    $("#close_modal").click(function() {
+        $("#exampleModal").modal("hide");
+    });
+});
+</script>
+<!-- map modal -->
+<script>
+
+$(document).ready(function() {
+
+
+
+$("button.map").on("click", function() {
+
+$("div#googleMapModal").modal();
+
+/* myMap(); */
+
+});
+
+
+//모달창 이벤트 등록 -> myMap() 함수 호출, 동적 생성된 엘리먼트 삭제 연계
+
+$("div#googleMapModal").on("shown.bs.modal", function() {
+
+myMap();
+
+});
+
+$("div#googleMapModal").on("hidden.bs.modal", function() {
+
+$("div#googleMap").empty();
+
+});
+
+
+
+});
+
+</script>
+
+
+
+<script>
+
+function myMap() {
+
+
+
+//위도, 경도 
+
+var center = new google.maps.LatLng(37.500431, 127.033176);
+
+var handok = new google.maps.LatLng(37.499362, 127.033202);
+
+
+//맵 정보
+
+var mapProp = {
+
+center : center,
+
+zoom : 17,
+
+};
+
+//맵 요청
+
+var map = new google.maps.Map(document
+
+.getElementById("googleMap"), mapProp);
+
+
+
+//마커 표시
+
+var marker = new google.maps.Marker({
+
+position : handok
+
+});
+
+marker.setMap(map);
+
+
+
+//InfoWindow
+
+var infowindow = new google.maps.InfoWindow(
+
+{
+
+content : "<div style=\"text-align:center;\"><strong>한독약품빌딩</strong><br>서울특별시 강남구 역삼1동 735<br><img src=\"handok_small.png\"></div>"
+
+});
+
+infowindow.open(map, marker);
+
+
+
+}
+
+</script>
+
 <!-- Product Section End -->
 <%@ include file="../footer.jsp"%>

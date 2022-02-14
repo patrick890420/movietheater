@@ -14,11 +14,11 @@
 <meta name="author" content="">
 <!-- Favicon icon -->
 <link rel="icon" type="image/png" sizes="16x16" href="/resources/admin/assets/images/favicon.png">
-<title>Movie Theater Admin</title>
+<title>JSL Movie Admin</title>
 <!-- Custom CSS -->
 <link href="/resources/admin/assets/extra-libs/c3/c3.min.css" rel="stylesheet">
 <!-- datatables -->
-<link href="assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+<link href="/resources/admin/assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
 <!-- chartist -->
 <link href="/resources/admin/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
 <link href="/resources/admin/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
@@ -62,13 +62,13 @@
           <!-- ============================================================== -->
           <div class="navbar-brand">
             <!-- Logo icon -->
-            <a href="index.html"> <b class="logo-icon"> <!-- Dark Logo icon -->
-              <img src="/resources/admin/assets/images/logo-icon.png" alt="homepage" class="dark-logo" /> <!-- Light Logo icon -->
-              <img src="/resources/admin/assets/images/logo-icon.png" alt="homepage" class="light-logo" /> </b> <!--End Logo icon --> 
+            <a href="/"> <b class="logo-icon"> <!-- Dark Logo icon -->
+<!--               <img src="/resources/admin/assets/images/logo-icon.png" alt="homepage" class="dark-logo" /> Light Logo icon -->
+<!--               <img src="/resources/admin/assets/images/logo-icon.png" alt="homepage" class="light-logo" /> </b> End Logo icon  -->
               <!-- Logo text -->
               <span class="logo-text"> <!-- dark Logo text -->
-                <img src="/resources/admin/assets/images/logo-text.png" alt="homepage" class="dark-logo" /> <!-- Light Logo text -->
-                <img src="/resources/admin/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                <img src="/resources/img/newlogo.png" alt="homepage" class="dark-logo" style="height: 75px" /> <!-- Light Logo text -->
+                <img src="/resources/img/newlogo.png" class="light-logo" alt="homepage" style="height: 75px"/>
               </span>
             </a>
           </div>
@@ -274,21 +274,20 @@
             <!-- Menu start -->
             <!-- Member st -->
             <li class="list-divider"></li>
-            <li class="nav-small-cap"><span class="hide-menu">Member</span></li>
             <li class="sidebar-item">
               <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <i data-feather="file-text" class="feather-icon"></i>
-                <span class="hide-menu">Forms </span>
+                <i data-feather="user" class="feather-icon"></i>
+                <span class="hide-menu">Member </span>
               </a>
               <ul aria-expanded="false" class="collapse  first-level base-level-line">
                 <li class="sidebar-item">
-                  <a href="form-inputs.html" class="sidebar-link">
-                  <span class="hide-menu"> Form Inputs </span>
+                  <a href="/adm/adminMemberList.do" class="sidebar-link">
+                  <span class="hide-menu"> table sample </span>
                   </a>
                 </li>
                 <li class="sidebar-item">
-                  <a href="form-input-grid.html" class="sidebar-link">
-                  <span class="hide-menu"> Form Grids </span>
+                  <a href="/adm/adminMemberInsert.do" class="sidebar-link">
+                  <span class="hide-menu"> view & insert sample </span>
                   </a>
                 </li>
                 <li class="sidebar-item">
@@ -297,28 +296,19 @@
                   </a>
                 </li>
               </ul>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link sidebar-link" href="app-calendar.html" aria-expanded="false">
-                <i data-feather="calendar" class="feather-icon"></i>
-                <span class="hide-menu">Calendar</span>
-              </a>
             </li>
             <!-- Member end -->
             <li class="list-divider"></li>
             <!-- Movie st -->
-            <li class="nav-small-cap">
-              <span class="hide-menu">Movie</span>
-            </li>
             <li class="sidebar-item">
               <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <i data-feather="file-text" class="feather-icon"></i>
-                <span class="hide-menu">Forms </span>
+                <i data-feather="film" class="feather-icon"></i>
+                <span class="hide-menu">Movie</span>
               </a>
               <ul aria-expanded="false" class="collapse  first-level base-level-line">
                 <li class="sidebar-item">
-                  <a href="form-inputs.html" class="sidebar-link">
-                  <span class="hide-menu"> Form Inputs </span>
+                  <a href="/adm/adminMovieInsert.do" class="sidebar-link">
+                  <span class="hide-menu">Registration </span>
                   </a>
                 </li>
                 <li class="sidebar-item">
@@ -332,23 +322,14 @@
                   </a>
                 </li>
               </ul>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link sidebar-link" href="ui-cards.html" aria-expanded="false">
-              <i data-feather="sidebar" class="feather-icon"></i>
-              <span class="hide-menu">Cards</span>
-              </a>
             </li>
             <!-- Movie end -->
             <li class="list-divider"></li>
             <!-- Theater st -->
-            <li class="nav-small-cap">
-              <span class="hide-menu">Theater</span>
-            </li>
             <li class="sidebar-item">
               <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <i data-feather="file-text" class="feather-icon"></i>
-                <span class="hide-menu">Forms </span>
+                <i data-feather="grid" class="feather-icon"></i>
+                <span class="hide-menu">Theater </span>
               </a>
               <ul aria-expanded="false" class="collapse  first-level base-level-line">
                 <li class="sidebar-item">
@@ -367,23 +348,14 @@
                   </a>
                 </li>
               </ul>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link sidebar-link" href="ui-cards.html" aria-expanded="false">
-              <i data-feather="sidebar" class="feather-icon"></i>
-              <span class="hide-menu">Cards</span>
-              </a>
             </li>
             <!-- theater end -->
             <li class="list-divider"></li>
             <!-- Theater st -->
-            <li class="nav-small-cap">
-              <span class="hide-menu">Ticketing</span>
-            </li>
             <li class="sidebar-item">
               <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <i data-feather="file-text" class="feather-icon"></i>
-                <span class="hide-menu">Forms </span>
+                <i data-feather="tag" class="feather-icon"></i>
+                <span class="hide-menu">Ticketing </span>
               </a>
               <ul aria-expanded="false" class="collapse  first-level base-level-line">
                 <li class="sidebar-item">
@@ -402,23 +374,14 @@
                   </a>
                 </li>
               </ul>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link sidebar-link" href="ui-cards.html" aria-expanded="false">
-              <i data-feather="sidebar" class="feather-icon"></i>
-              <span class="hide-menu">Cards</span>
-              </a>
             </li>
             <!-- Ticketing end -->
             <li class="list-divider"></li>
             <!-- board st -->
-            <li class="nav-small-cap">
-              <span class="hide-menu">Board</span>
-            </li>
             <li class="sidebar-item">
               <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <i data-feather="file-text" class="feather-icon"></i>
-                <span class="hide-menu">Forms </span>
+                <i data-feather="clipboard" class="feather-icon"></i>
+                <span class="hide-menu">board </span>
               </a>
               <ul aria-expanded="false" class="collapse  first-level base-level-line">
                 <li class="sidebar-item">
@@ -438,13 +401,28 @@
                 </li>
               </ul>
             </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link sidebar-link" href="ui-cards.html" aria-expanded="false">
-              <i data-feather="sidebar" class="feather-icon"></i>
-              <span class="hide-menu">Cards</span>
-              </a>
-            </li>
             <!-- board end -->
+              <li class="list-divider"></li>
+            <!-- Utility st -->
+            <li class="sidebar-item">
+              <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                <i data-feather="file-text" class="feather-icon"></i>
+                <span class="hide-menu">Utility</span>
+              </a>
+              <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                <li class="sidebar-item">
+                  <a href="/adm/adminCodeList.do" class="sidebar-link">
+                  <span class="hide-menu"> Code List </span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="form-input-grid.html" class="sidebar-link">
+                  <span class="hide-menu">not yet</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- Utility end -->
             <li class="list-divider"></li>
             <li class="sidebar-item">
               <a class="sidebar-link sidebar-link" href="authentication-login1.html" aria-expanded="false">

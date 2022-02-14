@@ -25,6 +25,7 @@
 
 <!-- Css Styles -->
 <link rel="stylesheet" href="/resources/css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/font-awesome.min.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/elegant-icons.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/plyr.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/nice-select.css" type="text/css">
@@ -34,7 +35,17 @@
 <link rel="stylesheet" href="/resources/css/movie/movie.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/event_notice.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/ticket/ticket.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/theater/theater.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/member/member.css" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src='//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js'></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<!-- 확인중 -->
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<!-- 확인구간 -->
 </head>
 
 <body>
@@ -49,7 +60,7 @@
       <div class="row">
         <div class="col-lg-2">
           <div class="header__logo">
-            <a href="./index.html">NEW 포스터 입력</a>
+            <a href="./index.html"></a>
           </div>
         </div>
       </div>
@@ -61,9 +72,9 @@
     <div class="row">
       <div class="col-lg-2">
         <div class="header__logo">
-          <a href="/"> <span
-            style="font-size: x-large; font-weight: 800; color: black;">📽
-              JSL-Movie</span>
+          <a href="/"> 
+<!--             <span style="font-size: x-large; font-weight: 800; color: black;">📽 JSL-Movie</span> -->
+            <img alt="" src="/resources/img/newlogo.png">
           </a>
         </div>
       </div>
@@ -89,12 +100,8 @@
               <li><a href="/movie/movie.do">영화</a></li>
               <li><a href="/theater/theater.do">극장<span class="arrow_carrot-down"></span></a>
                 <ul class="dropdown">
-                  <li><a href="./categories.html">Categories</a></li>
-                  <li><a href="/movie/view.do">ViewPage</a></li>
-                  <li><a href="./anime-watching.html">Anime Watching</a></li>
-                  <li><a href="./blog-details.html">Blog Details</a></li>
-                  <li><a href="./signup.html">Sign Up</a></li>
-                  <li><a href="./login.html">Login</a></li>
+                  <li><a href="">JSL-Movie극장</a></li>
+                  <li><a href="">특별관</a></li>
                 </ul></li>
               <li><a href="/ticket/ticket.do">예매</a></li>
               <li><a href="/event/event.do">이벤트</a></li>
