@@ -37,4 +37,6 @@ public class NoticeController {
   public void eventview() {
     
   }
+
 }//class
+
