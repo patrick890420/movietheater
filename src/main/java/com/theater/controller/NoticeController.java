@@ -25,7 +25,7 @@ public class NoticeController {
   @GetMapping("/notice.do")
   public void notice(Criteria cri, Model model) {
 //  래코드 값
-    int total= service.getTotalcount(cri);
+//    int total= service.getTotalcount(cri);
 //    model.addAttribute("pageMaker",new PageVO(cri,total));
   }
   
