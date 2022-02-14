@@ -8,8 +8,7 @@
 	data-setbg="/resources/img/logintitle.jpg">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-12 text-center">
-			</div>
+			<div class="col-lg-12 text-center"></div>
 		</div>
 	</div>
 </section>
@@ -22,27 +21,39 @@
 			<div class="col-lg-12">
 				<div class="login__form" style="text-align: center;">
 					<h3 style="font-size: 50px;">Sign Up</h3>
-					<form action="#" style="padding: 50px 300px; background: antiquewhite;">
+					<form action="#" id=join_form
+						style="padding: 50px 300px; background: antiquewhite; padding-top: 100px;">
 						<div class="input__item">
-							<input type="text" placeholder="이름을 입력해 주세요."> <span
-								class="icon_profile"></span>
+							<input type="text"  placeholder="이름을 입력해 주세요.">
+							<span class="icon_profile"> </span>
 						</div>
-						<input type="button" value='중복확인' class="btn btn-primary"
-							style="position: absolute;">
-						<div class="input__item">
-							<input type="text" placeholder="아이디를 입력해 주세요."> <span
-								class="icon_id"></span>
+
+						<!-- 이자식 수정해라... 9랑 3으로 나눠봐라....... 버튼 이동시켜.. -->
+
+						<div class="col-lg-9">
+							<div class="input__item">
+								<input type="text" placeholder="아이디를 입력해 주세요."> <span
+									class="icon_id"></span>
+							</div>
 						</div>
-						<input type="button" value='중복확인' class="btn btn-primary"
-							style="position: absolute;">
-					
+
+						<div class="col-lg-3">
+							<div class="input__btn">
+								<input type="button" class="input__btn2" value='중복확인'>
+							</div>
+						</div>
+
+
+						<!--<input type="button" value='중복확인' class="btn btn-primary"
+							style="position: absolute;">  -->
+
 
 						<div class="input__item">
 							<input type="text" placeholder="이메일을 입력해 주세요."> <span
 								class="icon_mail"></span>
 						</div>
 						<div class="input__item">
-							<input type="tel" maxlength="13" placeholder="전화번호를 입력해 주세요."
+							<input type="number" maxlength="13" placeholder="전화번호를 입력해 주세요."
 								pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{3,4}"> <span
 								class="icon_phone"></span>
 						</div>
@@ -58,24 +69,23 @@
 						<div class="input__item">
 							<input type="date"><span class="icon_calendar"></span>
 						</div>
-						<div class="input__item">
+						<div class="input__item" style="background-color: white;">
 							<span class="icon_heart_alt"></span>
 							<div class="genderchoice">
-								<input type="radio" value="woman" class="gender" name="gender">
-								woman <input type="radio" value="man" class="gender"
-									name="gender"> man
+								<input type="radio" value="woman" class="gender" name="gender"> woman 
+								<input type="radio" value="man" class="gender" name="gender"> man
 							</div>
 						</div>
 					</form>
-					
-											<form action="" id="joinForm">
-							<ul class="join_box">
-								<li class="checkBox check02">
-									<ul class="clearfix">
-										<li>이용약관 동의(필수)</li>
-								</li>
-							</ul>
-							<textarea name="" id="">제1장 총칙
+
+					<form action="" id="joinForm">
+						<ul class="join_box" style="padding: 30px;">
+							<li class="checkBox check02">
+								<ul class="clearfix">
+									<li>이용약관 동의(필수)</li>
+							</li>
+						</ul>
+						<textarea name="" id="">제1장 총칙
 	제1조 (목적)
 	이 약관은 행정안전부의 정부혁신 공식 홈페이지 ‘정부혁신1번가’ (이하 "정부혁신1번가”라 합니다) 가 제공하는 모든 서비스(이하 "서비스"라 합니다)를 이용함에 있어 이용자와 "정부혁신1번가"간의 권리·의무 및 책임사항과 기타 필요한 사항을 정하는 데 목적이 있습니다.
 	
@@ -101,9 +111,9 @@
 
 </textarea>
 
-						</form>
-						<input type="checkbox"> 약관에 동의합니다. &nbsp;&nbsp;
-						<button type="submit" class="btn btn-success">회원가입</button>
+					</form>
+					<input type="checkbox"> 약관에 동의합니다. &nbsp;&nbsp;
+					<button type="submit" class="btn btn-success" class="join_button">회원가입</button>
 
 				</div>
 			</div>
@@ -115,3 +125,5 @@
 
 
 <%@ include file="../footer.jsp"%>
+
+
