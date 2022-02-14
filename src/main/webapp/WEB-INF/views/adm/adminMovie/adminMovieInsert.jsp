@@ -33,7 +33,7 @@
           <!-- ============================================================== -->
           <form action="adminMovieInsertPro.do" method="post">
           <div class="row">
-                               <div class="col-sm-12 col-md-6 col-lg-4">
+              <div class="col-sm-12 col-md-6 col-lg-4">
                   <div class="card">
                       <div class="card-body">
                           <h4 class="card-title">영화 제목</h4>
@@ -92,6 +92,47 @@
                       </div>
                   </div>
               </div>
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                  <div class="card">
+                      <div class="card-body">
+                          <h4 class="card-title">영화 배우</h4>
+                              <div class="form-group">
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#actors_modal">배우 검색</button>
+                              </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                  <div class="card">
+                      <div class="card-body">
+                          <h4 class="card-title">영화 감독</h4>
+                              <div class="form-group">
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#directors_modal">감독 검색</button>
+                              </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                  <div class="card">
+                      <div class="card-body">
+                          <h4 class="card-title">영화 장르</h4>
+                              <div class="form-group">
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#genres_modal">장르 검색</button>
+                              </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                  <div class="card">
+                      <div class="card-body">
+                          <h4 class="card-title">국가</h4>
+                              <div class="form-group">
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#full-width-modal">국가 검색</button>
+                              </div>
+                      </div>
+                  </div>
+              </div>
+  
               <div class="col-sm-12 col-md-12 col-lg-12">
                   <div class="card">
                       <div class="card-body">
@@ -137,9 +178,7 @@
                               </div>
                       </div>
                   </div>
-              </div>
-             
-             
+              </div>         
           </div>
           <div class="mx-auto" style="text-align:center;">
             <button type="submit" class="btn btn-info">Submit</button>
@@ -160,6 +199,110 @@
       <!-- ============================================================== -->
       <!-- End Container fluid  -->
       </div>
+                                                                        <!-- 모달 -->
+                                                                        
+                  <div id="actors-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="fullWidthModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-full-width">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title" id="fullWidthModalLabel">Modal Heading</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        </div>
+                          <div class="modal-body">
+                            <h6>Text in a modal</h6>
+                              <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                                <hr>
+                                  <h6>Overflowing text to show scroll behavior</h6>
+                                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.Vivamus sagittis lacus vel augue laoreet rutrum faucibus doloauctor.</p>
+                                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodocursus magna, vel scelerisque nisl consectetur et. Donec sed oddui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                           </div>
+                           <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                           </div>
+                        </div><!-- /.modal-content -->
+                      </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                                
+                                                                      <!-- 2번째 모달 -->
+                                                                      
+                  <div id="directros-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="fullWidthModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-full-width">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title" id="fullWidthModalLabel">Modal Heading</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        </div>
+                          <div class="modal-body">
+                            <h6>Text in a modal</h6>
+                              <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                                <hr>
+                                  <h6>Overflowing text to show scroll behavior</h6>
+                                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.Vivamus sagittis lacus vel augue laoreet rutrum faucibus doloauctor.</p>
+                                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodocursus magna, vel scelerisque nisl consectetur et. Donec sed oddui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                           </div>
+                           <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                           </div>
+                        </div><!-- /.modal-content -->
+                      </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                    
+                                                                 <!--  3번째 모달 -->
+                                
+                  <div id="genres-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="fullWidthModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-full-width">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title" id="fullWidthModalLabel">Modal Heading</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        </div>
+                          <div class="modal-body">
+                            <h6>Text in a modal</h6>
+                              <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                                <hr>
+                                  <h6>Overflowing text to show scroll behavior</h6>
+                                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.Vivamus sagittis lacus vel augue laoreet rutrum faucibus doloauctor.</p>
+                                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodocursus magna, vel scelerisque nisl consectetur et. Donec sed oddui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                           </div>
+                           <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                           </div>
+                        </div><!-- /.modal-content -->
+                      </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                    
+                                                                        <!-- 4번째 모달 -->
+                                                                        
+                  <div id="full-width-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="fullWidthModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-full-width">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title" id="fullWidthModalLabel">Modal Heading</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        </div>
+                          <div class="modal-body">
+                            <h6>Text in a modal</h6>
+                              <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                                <hr>
+                                  <h6>Overflowing text to show scroll behavior</h6>
+                                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.Vivamus sagittis lacus vel augue laoreet rutrum faucibus doloauctor.</p>
+                                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodocursus magna, vel scelerisque nisl consectetur et. Donec sed oddui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                           </div>
+                           <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                           </div>
+                        </div><!-- /.modal-content -->
+                      </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                                                              <!-- 모달 종료 -->
   <!-- ============================================================== -->
   <!-- End Page wrapper  -->
   <!-- ============================================================== -->
