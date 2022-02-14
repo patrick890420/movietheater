@@ -16,6 +16,12 @@ public class MembersServiceImpl implements MembersService {
 		
 		//MembersMapper.Memberinsert(mvo);
 	}
+	
+	public int idChk(MemberVO member) throws Exception {
+	  int result = MembersService.idChk(member);
+	  return result;
+	}
+	
 
   }
 
