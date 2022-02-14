@@ -97,7 +97,7 @@
         <div class="header__nav">
           <nav class="header__menu mobile-menu">
             <ul>
-              <li><a href="/movie/movie.do">영화</a></li>
+              <li><a href="/movie/movie.do">영화</a></li>
               <li><a href="/theater/theater.do">극장<span class="arrow_carrot-down"></span></a>
                 <ul class="dropdown">
                   <li><a href="">JSL-Movie극장</a></li>
