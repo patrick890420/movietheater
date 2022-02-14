@@ -5,7 +5,7 @@
 
 <!-- 회원가입 -->
 <insert id="Memberinsert">
-insert into member (id,pwd,name,birth,gender,phone,email) values (#{id}, #{pwd}, #{name}, #{birth}, #{gender}, #{phone}, #{email})
+insert into members (id,pwd,name,birth,gender,phone,email) values (#{id}, #{pwd}, #{name}, #{birth}, #{gender}, #{phone}, #{email})
 </insert>
 
 <!-- 아이디 중복 체크 -->

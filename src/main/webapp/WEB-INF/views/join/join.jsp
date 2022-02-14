@@ -121,7 +121,7 @@
 </textarea>
 
 					</form>
-					<input type="checkbox"> 약관에 동의합니다. &nbsp;&nbsp;
+					<input type="checkbox" id="box1" name="box1"> 약관에 동의합니다. &nbsp;&nbsp;
 					<button type="submit" class="btn btn-success" id="join_button"
 						name="join_button">회원가입</button>
 
@@ -141,7 +141,7 @@
 	$(document).ready(function() {
 		
 		$("#join_button").on("click", function() {
-			
+
 			//공백
 			if ($("#userName").val() == "") {
 				alert("성명을 입력해주세요.");
@@ -194,13 +194,17 @@
 		            return false;
 		        } 
 				
+				
+				if (!$("input:checked[id='box1']").is(":checked")){ 
+					alert("이용약관 동의가 필요합니다."); 
+				}
 		        //라디오 유효성 검사 (맞는지 아닌지 모름)
-		        if($(':radio[name="gender"]:checked').length < 1){
-		            alert('성별을 선택해주세요.');
-		            document.form.gender[0].focus();
-		            return false;
+		       // if($(':radio[name="gender"]:checked').length < 1){
+		       //     alert('성별을 선택해주세요.');
+		       //     document.form.gender[0].focus();
+		       //     return false;
 		            
-		        }  //return true;
+		       // }  //return true;
 				
 		        function fn_idChk(){
 		            $.ajax({
@@ -220,11 +224,17 @@
 		              }
 		            })
 		          }
+		        
+
 		
 
 		});
 	})
 	
+</script>
+
+<script>
+
 </script>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
