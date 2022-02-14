@@ -15,7 +15,10 @@ public class NoticeServiceImpl implements NoticeService {
 //  자동주입
   private NoticeMapper mapper;
 
-
+  @Override
+  public List<NoticeVO> getList(Criteria cri) {
+    return mapper.getList(cri);
+  }
   
 //  검색결과view page
   @Override
@@ -49,9 +52,6 @@ public NoticeVO prevPage(int nt_cd) {
   mapper.prevPage(nt_cd);
   return mapper.prevPage(nt_cd);
 }
-
-
-
 
   
   

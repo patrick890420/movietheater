@@ -8,7 +8,10 @@
 /****************************************
  *       Basic Table                   *
  ****************************************/
-$('#zero_config').DataTable();
+$('#actorsTable').DataTable();
+$('#directorsTable').DataTable();
+$('#nationsTable').DataTable();
+$('#genresTable').DataTable();
 
 /****************************************
  *       Default Order Table           *

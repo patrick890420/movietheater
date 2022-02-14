@@ -5,9 +5,10 @@ import java.util.List;
 import com.theater.domain.Criteria;
 import com.theater.domain.NoticeVO;
 
+
 public interface NoticeService {
 
-
+  public List<NoticeVO> getList(Criteria cri);
 
 //검색결과 view
   public NoticeVO view(int nt_cd);
