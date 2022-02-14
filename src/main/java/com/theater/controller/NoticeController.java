@@ -28,13 +28,9 @@ public class NoticeController {
     
     model.addAttribute("list", service.getList(cri));
 //  래코드 값
-<<<<<<< HEAD
-    int total= service.getTotalcount(cri);
-    model.addAttribute("pageMaker",new PageVO(cri,total));
-=======
+
 //    int total= service.getTotalcount(cri);
 //    model.addAttribute("pageMaker",new PageVO(cri,total));
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
   }
   
   @GetMapping("/noticeview.do")
