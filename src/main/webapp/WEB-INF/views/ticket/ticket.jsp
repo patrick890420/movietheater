@@ -15,8 +15,11 @@
         <c:forEach items="${mvList}" var="mvList">
             <tr>
               <td>
-                <button class="movie-list-btn">
-                  ${mvList.rate}    ${mvList.title}
+                <button class="movie-age-btn">
+                  ${mvList.rate}               
+                </button>
+                <button class="movie-name-btn">
+                  ${mvList.title}
                 </button>
               </td>
             </tr>
