@@ -35,7 +35,10 @@
 <link rel="stylesheet" href="/resources/css/movie/movie.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/event_notice.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/ticket/ticket.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/theater/theater.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/member/member.css" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src='//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js'></script>
 </head>
 
 <body>
@@ -50,7 +53,7 @@
       <div class="row">
         <div class="col-lg-2">
           <div class="header__logo">
-            <a href="./index.html">NEW 포스터 입력</a>
+            <a href="./index.html"></a>
           </div>
         </div>
       </div>
@@ -62,9 +65,9 @@
     <div class="row">
       <div class="col-lg-2">
         <div class="header__logo">
-          <a href="/"> <span
-            style="font-size: x-large; font-weight: 800; color: black;">📽
-              JSL-Movie</span>
+          <a href="/"> 
+<!--             <span style="font-size: x-large; font-weight: 800; color: black;">📽 JSL-Movie</span> -->
+            <img alt="" src="/resources/img/newlogo.png">
           </a>
         </div>
       </div>

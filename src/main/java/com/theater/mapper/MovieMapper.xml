@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.theater.mapper.MovieMapper">
+  
+  
+  <!-- 영화 insert -->
+  <insert id="MovieInsertPro">
+    insert into movies (m_cd,title,subtitle,rdate,rtime,rate,intro,poseter) values (m_cd_seq.NEXTVAL,#{title},#{subtitle},#{rdate},#{rtime},#{intro},#{poster})
+  </insert>
+  
+  
+  
+  
+</mapper>

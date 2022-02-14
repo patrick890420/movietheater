@@ -34,11 +34,11 @@ public class NoticeServiceImpl implements NoticeService {
   }
 
 //전체 레코드
-@Override
-public int getTotalcount(Criteria cri) {
-  return mapper.getTotalcount(cri);
-  
-}
+//@Override
+//public int getTotalcount(Criteria cri) {
+//  return mapper.getTotalcount(cri);
+//  
+//}
 
 //page 이전 다음
 @Override

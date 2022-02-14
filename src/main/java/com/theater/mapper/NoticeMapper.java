@@ -17,7 +17,7 @@ public interface NoticeMapper {
   public void viewcount(int nt_cd);
 
 //전체 레코드
-  public int getTotalcount(Criteria cri);
+//  public int getTotalcount(Criteria cri);
 
 //page= 이전/다음글
   public NoticeVO nextPage(int nt_cd);

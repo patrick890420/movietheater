@@ -23,11 +23,11 @@
 </update>
 
 <!-- 전체 래코드 갯수 -->
-<select id="getTotalcount" resultType="int">
-  select count(*) from notice where
-    <include refid="criteria"></include>
-   nt_cd > 0
-</select>
+<!-- <select id="getTotalcount" resultType="int"> -->
+<!--   select count(*) from notice where -->
+<!--     <include refid="criteria"></include> -->
+<!--    nt_cd > 0 -->
+<!-- </select> -->
 
 <!-- page -->
 <select id="nextPage" resultType="com.theater.domain.NoticeVO">
