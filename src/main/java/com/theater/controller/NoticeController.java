@@ -6,7 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
+import com.theater.domain.Criteria;
+import com.theater.domain.PageVO;
 import com.theater.service.NoticeService;
 
 import lombok.AllArgsConstructor;
@@ -22,9 +23,8 @@ public class NoticeController {
   @Setter(onMethod_=@Autowired)
   private NoticeService Nservice;
   
-  
-  @GetMapping("/notice.do")
-  public void notice(Model model) {
+    
+//  래코드 값
 
   }
   
