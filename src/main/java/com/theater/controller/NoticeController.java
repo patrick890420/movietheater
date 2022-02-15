@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.theater.domain.Criteria;
+import com.theater.domain.PageVO;
 import com.theater.service.NoticeService;
 
 import lombok.AllArgsConstructor;
@@ -22,10 +23,17 @@ public class NoticeController {
   @Setter(onMethod_=@Autowired)
   private NoticeService Nservice;
   
+<<<<<<< HEAD
 //  @GetMapping("/notice.do")
 //  public void notice(Criteria cri, Model model) {
 //
 //  }
+=======
+    
+//  래코드 값
+
+ 
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
   
   @GetMapping("/noticeview.do")
   public void eventview() {
