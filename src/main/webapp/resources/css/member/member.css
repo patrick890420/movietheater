@@ -3,7 +3,6 @@
 /*로그인 폼*/
 
 .input__btn .input__btn2{
-<<<<<<< HEAD
 	height: 50px;
     width: 100%;
     font-size: 15px;
@@ -13,23 +12,9 @@
     position: relative;
     width: 370px;
     margin-bottom: 20px;
-   margin-right: 30px;
-   
-   background: #b7b7b7;
+    margin-right: 30px;
+    background: #b7b7b7;
     color: white;
-=======
-  height: 50px;
-  width: 100%;
-  font-size: 15px;
-  color: #b7b7b7;
-  background: #ffffff;
-  border: none;
-  position: relative;
-  width: 370px;
-  margin-bottom: 20px;
-  margin-right: 30px;
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
-
   
 }
 
