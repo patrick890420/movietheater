@@ -33,20 +33,6 @@ public class NoticeServiceImpl implements NoticeService {
     mapper.viewcount(nt_cd);
   }
 
-//page 이전 다음
-@Override
-public NoticeVO nextPage(int nt_cd) {
-  mapper.nextPage(nt_cd);
-  return mapper.nextPage(nt_cd);
-}
 
-@Override
-public NoticeVO prevPage(int nt_cd) {
-  mapper.prevPage(nt_cd);
-  return mapper.prevPage(nt_cd);
-}
-
-  
-  
 
 }//class
