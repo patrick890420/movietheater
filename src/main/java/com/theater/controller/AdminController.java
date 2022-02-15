@@ -9,6 +9,7 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,7 @@ import com.theater.domain.MovieVO;
 import com.theater.service.EventService;
 import com.theater.service.MovieService;
 import com.theater.service.NoticeService;
+import com.theater.service.UtilityService;
 
 import lombok.AllArgsConstructor;
 import lombok.Setter;
@@ -32,6 +34,9 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class AdminController {
 
+  @Setter(onMethod_=@Autowired )
+  public UtilityService uService;
+  
   @GetMapping("/admin")
   public void admin() {
   }
@@ -164,11 +169,6 @@ public class AdminController {
     return "adm/adminEvent/adminEventview";
   }
   
-  @GetMapping("/adminEventwrite.do")
-  public void adminEventwrite() {
-    
-  }
-  
   
   @Setter(onMethod_=@Autowired )
   public NoticeService Nservice;
@@ -191,8 +191,12 @@ public class AdminController {
   
   /* Utility */
   @GetMapping("/adminCodeList.do")
-  public String codeList() {
+  public String codeList(Model model) {
     
+    model.addAttribute("actors", uService.getActorsList());
+    model.addAttribute("directors", uService.getDitrectorsList());
+    model.addAttribute("nations", uService.getNationsList());
+    model.addAttribute("genres",  uService.getGenresList());
     return "adm/adminUtility/adminCodeList";
   }
 }

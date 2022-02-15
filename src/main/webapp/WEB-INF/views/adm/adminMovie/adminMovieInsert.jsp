@@ -32,6 +32,7 @@
           <!-- Start Page Content -->
           <!-- ============================================================== -->
           <form name="adminMovieInsertPro" action="adminMovieInsertPro.do" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
           <div class="row">
               <div class="col-sm-12 col-md-6 col-lg-4">
                   <div class="card">

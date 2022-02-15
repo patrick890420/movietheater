@@ -48,7 +48,7 @@
 
 <!-- 총 게시글 -->
 <div class="col-md-3 event60">
-  <p>총게시글<span>${pageMaker.total}</span>&nbsp;&nbsp;건</p>
+  <p>총게시글&nbsp;&nbsp;<span>${pageMaker.total}</span>건</p>
 </div><!-- md-3 -->
 
 
@@ -100,7 +100,13 @@
     </div><!-- md-12 -->
   </div><!-- row -->
 </div><!-- container -->
-<div class="paging">
+<form id="actionForm" action="notice.do" method="get">
+    <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+    <input type="hidden" name="amount" value="${pageMaker.cri.amount}">
+    <input type="hidden" name="type" value="${pageMaker.cri.type}">
+    <input type="hidden" name="keyword" value="${pageMaker.cri.keyword}">
+  </form>
+<div class="product_pagination"style="text-align: center;">
     <c:if test="${pageMaker.prev}">
       <a href="${pageMaker.startPage-1}"><i class="fa  fa-angle-double-left"></i></a>
     </c:if>
@@ -117,12 +123,7 @@
                   
     </div><!-- padding -->
 </section><!-- hero -->
-<form id="actionForm" action="notice.do" method="get">
-    <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
-    <input type="hidden" name="amount" value="${pageMaker.cri.amount}">
-    <input type="hidden" name="type" value="${pageMaker.cri.type}">
-    <input type="hidden" name="keyword" value="${pageMaker.cri.keyword}">
-  </form>
+
 
 <script>
 $(function() {
@@ -142,6 +143,14 @@ var searchForm= $("#searchForm");
     
   searchForm.submit();
   })
+
+var actionForm = $("#actionForm");
+$(".product__pagination > a").on("click", function(e) {
+   e.preventDefault();
+   actionForm.find("input[name='pageNum']").val($(this).attr("href"));
+   actionForm.submit();
+   
+})
 
 
 });//function

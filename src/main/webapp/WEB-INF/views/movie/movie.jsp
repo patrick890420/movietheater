@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file ="../header.jsp" %>
 <body>
+    
     <section class="product-page spad">
         <div class="container">
             <div class="row">
@@ -27,35 +28,40 @@
                             </div>
                         </div>
                         <div class="row">
-                        <c:set var="num" value="${pageMaker.total - ((pageMaker.cri.pageNum-1) * 10)}"/>
-                          <c:forEach var="mlist" items="${list }">
+                        <c:set var="num" value="${pageMaker.total-((pageMaker.cri.pageNum-1) * 10)}"/>
+                          <c:forEach var="mlist" items="${list }"  >
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="c:/upload/${mlist.poster }">
+                                    <div class="product__item__pic set-bg" ><img src="/upload/${mlist.poster}" alt="">
                                         <div class="ep">${mlist.m_cd}</div>
                                         <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                     </div>
                                     <div class="product__item__text">
-                                        <ul>
-                                            <li>Active</li>
-                                            <li>Movie</li>
-                                        </ul>
-                                        <h5><a href="view.do?m_cd={mlsit.m_cd}&pageNum=${pageMaker.cri.pageNum}&type=${pageMaker.cri.type}&keyword=${pageMaker.cri.keyword }&amount=${pageMaker.cri.amount}">${mlist.title}</a></h5>
+                                        <h5><a href="view.do?m_cd=${mlsit.m_cd}&pageNum=${pageMaker.cri.pageNum}&type=${pageMaker.cri.type}&keyword=${pageMaker.cri.keyword }&amount=${pageMaker.cri.amount}">${mlist.title}</a></h5>
                                     </div>
                                 </div>
                             </div>
                             </c:forEach>
                         </div>
                     </div>
-                    <div class="product__pagination">
-                        <a href="#" class="current-page">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <a href="#">5</a>
-                        <a href="#"><i class="fa fa-angle-double-right"></i></a>
+                    <div class="product__pagination" style="text-align: center;">
+                      <c:if test="${pageMaker.prev}">
+                        <a href="${pageMaker.startPage-1 }"><i class="bi bi-arrow-left"></i></a>
+                        </c:if>
+                        <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage }">
+                        <a href="${num}" class="${pageMaker.cri.pageNum == num? 'active':'' }">${num }</a>
+                        </c:forEach>
+                        <c:if test="${pageMaker.next}">
+                        <a href="${pageMaker.startPage+1 }"><i class="bi bi-arrow-right"></i></a>
+                        </c:if>
                     </div>
                 </div>
+                <form id="actionForm" action="movie.do" method="get">
+                  <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+                  <input type="hidden" name="amount" value="${pageMaker.cri.amount }">
+                  <input type="hidden" name="sel" value="${pageMaker.cri.type }">
+                  <input type="hidden" name="word" value="${pageMaker.cri.keyword }">
+              </form>
                 <div class="col-lg-4 col-md-6 col-sm-8">
                     <div class="product__sidebar">
                         <div class="product__sidebar__view">
@@ -107,6 +113,16 @@
 </div>
 </div>
 </section>
+
+<script>
+var actionForm = $("#actionForm");
+$(".product__pagination > a").on("click", function(e) {
+   e.preventDefault();
+   actionForm.find("input[name='pageNum']").val($(this).attr("href"));
+   actionForm.submit();
+   
+})
+</script>
 
 
 

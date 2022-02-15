@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.theater.mapper.CodeMapper">
+
+<select id="getActorsList" resultType="com.theater.domain.ActorsVO">
+  SELECT * FROM ACTORS 
+</select>
+
+<select id="getDirectorsList" resultType="com.theater.domain.DirectorsVO">
+  SELECT * FROM DIRECTORS
+</select>
+
+<select id="getNationList" resultType="com.theater.domain.NationVO">
+  SELECT * FROM NATIONS
+</select>
+
+<select id="getGenresList" resultType="com.theater.domain.GenresVO">
+  SELECT * FROM GENRES
+</select>
+
+
+</mapper>

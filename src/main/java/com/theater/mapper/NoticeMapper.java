@@ -13,4 +13,17 @@ public interface NoticeMapper {
 //page
   public List<NoticeVO> getListWithPaging(Criteria cri);
 
+  public List<NoticeVO> getList(Criteria cri);
+
+//제목 검색 결과 view page
+  public NoticeVO read(int nt_cd);
+  public NoticeVO nextPage(int nt_cd);
+  public NoticeVO prevPage(int nt_cd);
+
+//조회수 readcound
+  public void readCount(int nt_cd);
+
+//전체 래코드 갯수
+  public int getTotalCount(Criteria cri);
+  
 }//class
