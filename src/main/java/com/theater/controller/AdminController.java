@@ -70,56 +70,48 @@ public class AdminController {
   
   @PostMapping(value="/adminMovieInsertPro.do", produces = "application/json; charset=utf8")
   public String adminMovieInsertPro(MovieVO mvo, @RequestParam("uploadFile01") MultipartFile uploadFile) {
-     
-       JsonObject jsonObject = new JsonObject();
-       
-       String uploadFolder="c:\\upload";
-       log.info("file name : "+uploadFile.getOriginalFilename());
-       
-       String uploadFileName = uploadFile.getOriginalFilename();
-       //IE
-       uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("//")+1);
-       log.info("only file name : "+uploadFileName);
-       
-       UUID uuid = UUID.randomUUID();
-       
-       uploadFileName = uuid.toString()+"_"+uploadFileName;
-       
-       File uploadPath = new File(uploadFolder, getFolder());
-       
-       if(uploadPath.exists() == false) {
-          uploadPath.mkdirs();
-       }
-       File savefile = new File(uploadPath,uploadFileName);
-       String saveUrl = uploadFileName.toString();
-       log.info(saveUrl);
-       
-       try {
-         uploadFile.transferTo(savefile);
-          uploadFileName = (savefile.toString().substring(10));
-          jsonObject.addProperty("url", "/upload/"+uploadFileName);
-          jsonObject.addProperty("responseCode", "success");
-          mvo.setPoster(uploadFileName);
-          log.info(uploadFileName);
+    JsonObject jsonObject = new JsonObject();
+    
+    String uploadFolder="c:\\upload";
+    log.info("file name : "+uploadFile.getOriginalFilename());
+    
+    String uploadFileName = uploadFile.getOriginalFilename();
+    //IE
+    uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("//")+1);
+    log.info("only file name : "+uploadFileName);
+    
+    UUID uuid = UUID.randomUUID();
+    
+    uploadFileName = uuid.toString()+"_"+uploadFileName;
+    
+    File uploadPath = new File(uploadFolder, getFolder());
+    
+    if(uploadPath.exists() == false) {
+       uploadPath.mkdirs();
+    }
+    File savefile = new File(uploadPath,uploadFileName);
+    String saveUrl = uploadFileName.toString();
+    log.info(saveUrl);
+    
+    try {
+      uploadFile.transferTo(savefile);
+      uploadFileName = (savefile.toString().substring(10));
+      jsonObject.addProperty("url", "/upload/"+uploadFileName);
+      jsonObject.addProperty("responseCode", "success");
+      mvo.setPoster(uploadFileName);
+      log.info(uploadFileName);
+    }catch(Exception e) {
+       e.printStackTrace();
+       jsonObject.addProperty("responseCode", "error");
+    }
+    
+    String upload = jsonObject.toString();
+    log.info(upload);
 
-       }catch(Exception e) {
-          e.printStackTrace();
-          jsonObject.addProperty("responseCode", "error");
-       }
-       
-       
-       
-
-      
-       
-       String upload = jsonObject.toString();
-       log.info(upload);
-
-       MovieService.MovieInsertPro(mvo);
-       
-       
-       return "redirect:/adm/adminMovieInsert.do";
-         }
+    MovieService.MovieInsertPro(mvo);
+    
+    return "redirect:/adm/adminMovieInsert.do";
+    }
   
   
   public void MultiUpload(MultipartHttpServletRequest mtfRequest) {
@@ -130,27 +122,24 @@ public class AdminController {
     String path = "C:\\upload\\";
 
     for (MultipartFile mf : fileList) {
-        String originFileName = mf.getOriginalFilename(); // 원본 파일 명
-        long fileSize = mf.getSize(); // 파일 사이즈
+      String originFileName = mf.getOriginalFilename(); // 원본 파일 명
+      long fileSize = mf.getSize(); // 파일 사이즈
 
-        System.out.println("originFileName : " + originFileName);
-        System.out.println("fileSize : " + fileSize);
+      System.out.println("originFileName : " + originFileName);
+      System.out.println("fileSize : " + fileSize);
 
-        String safeFile = path + System.currentTimeMillis() + originFileName;
-        try {
-            mf.transferTo(new File(safeFile));
-        } catch (IllegalStateException e) {
+      String safeFile = path + System.currentTimeMillis() + originFileName;
+      try {
+        mf.transferTo(new File(safeFile));
+      } catch (IllegalStateException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IOException e) {
+        e.printStackTrace();
+      } catch (IOException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        e.printStackTrace();
+      }
         
     }
-    
-    
-    
   }//multipart
   
   /* Theater */

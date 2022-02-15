@@ -23,22 +23,15 @@
 					<h3 style="font-size: 50px;">Sign Up</h3>
 					<form action="#" id=join_form onsubmit="return checkAll()"
 						style="padding: 50px 300px; background: antiquewhite; padding-top: 100px;">
-						
-						
 						<div class="input__item">
 							<input type="text" placeholder="이름을 입력해 주세요." id="userName"
 								name="userName"> <span class="icon_profile"> </span>
 						</div>
-
 						<!-- 이자식 수정해라... 9랑 3으로 나눠봐라....... 버튼 이동시켜.. -->
-
-	
 							<div class="input__item">
 								<input type="text" placeholder="아이디를 입력해 주세요." id="userId" name="userId"  maxlength='15'>
 								<span class="icon_id"></span>
 							</div>
-
-
 							<div class="input__btn">
 								<input type="button" class="input__btn2" value='중복확인'>
 							</div>

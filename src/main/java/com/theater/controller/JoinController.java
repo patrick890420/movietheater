@@ -33,17 +33,6 @@ public class JoinController {
 	public void join() {
 
 	}// join.do
-
-
-	
-
-
-	@ResponseBody
-	@RequestMapping(value="/idChk", method = RequestMethod.POST)
-	public int idChk(MemberVO member) throws Exception {
-	  int result = MembersService.idChk(member);
-	  return result;
-	}
 	
 	@PostMapping("joinPro.do")
 	public String register(MemberVO mvo, RedirectAttributes rdat) {
@@ -51,7 +40,6 @@ public class JoinController {
     mvo.setPwd(inputPass);
     
     mservice.register(mvo);
-    /* rdat.addAttribute("result",mvo.getUserid()); */
     return "redirect:/";
 	}
 
