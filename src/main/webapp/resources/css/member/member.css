@@ -2,6 +2,21 @@
 
 /*로그인 폼*/
 
+.input__btn .input__btn2{
+	height: 50px;
+  width: 100%;
+  font-size: 15px;
+  color: #b7b7b7;
+  background: #ffffff;
+  border: none;
+  position: relative;
+  width: 370px;
+  margin-bottom: 20px;
+  margin-right: 30px;
+  background: #b7b7b7;
+  color: white;
+}
+
 .login__form form .input__item .genderchoice {
 	padding-top: 15px;
 	text-align: left;
@@ -18,10 +33,12 @@
 #joinForm {
 	width: 460px;
 	margin: 0 auto;
+	width: 100%;
 	
 }
 
 ul.join_box {
+	margin-top: 50px;
 	border: 1px solid #ddd;
 	background-color: #fff;
 	list-style: none;
@@ -30,7 +47,16 @@ ul.join_box {
 .genderchoice {
 	margin-bottom: 50px;
 	background-color: #fff;
+	padding-bottom: 10px
 }
+
+.m_select {
+	background-color: #fff;
+    border-radius: 5px;
+}
+
+.id_ok{color:#fff; display: none;}
+.id_already{color:#6A82FB; display: none;}
 
 
 /*약관 동의*/
@@ -89,9 +115,7 @@ ul.join_box {
 	line-height: 60px;
 }
 
-.btnbtm {
-	margin-bottom: 30px;
-}
+
 
 /*.joinh5 {
 	margin-bottom: 50px;

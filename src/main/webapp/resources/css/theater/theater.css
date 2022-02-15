@@ -56,11 +56,11 @@
   border-left:1px solid #dee2e6;
 }
 .tab-content{
-  padding:15px 0;
+  padding:30px 10px;
 }
 .t_date{
   float:left;
-  margin-left:74px;
+  margin-left:48px;
   text-align:center;
   line-height: 2.5;
 }
@@ -114,6 +114,14 @@
 .t_filmtitle{
  font-size: larger; font-weight: 900;
 }
+.t_post{
+  height:530px;
+  background-image: url("/resources/img/theater/theatermain.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top:30px;
+  position: relative;
+}
 .t_ranpost{
   width:1155px;
   padding:35px 0;
@@ -122,3 +130,84 @@
   padding: 20px 0;
   background: #80808026;
 }
+.t_city{
+  text-align: center;
+  margin:90px 70px 0 70px;
+  border-top: solid 1px #cfcdcdb8;
+  border-bottom: solid 1px #cfcdcdb8;
+  box-sizing: content-box;  
+}
+.t_city a{
+  color:white;
+}
+.t_city li{
+  padding:10px 0;
+}
+.t_subcity{
+  margin:0 60px;
+}
+.t_citydata{
+  float:left;
+  margin-left:15px;
+  text-align:center;
+  line-height: 15px;
+  color:white;
+}
+.t_citydataline:nth-child(n+2) {
+  border-left: 1px solid #dee2e6;
+  padding-left: 15px;
+}
+input[type=radio] { display:none;} 
+input[type=radio] + strong {
+        display: inline-block;
+        padding: 0 10px;
+        border: 1px solid white;
+        background-color: #ffffff;
+        cursor: pointer; }
+input[type="radio"]:checked + strong {
+        text-align: center;
+        padding: 0 10px;
+        border: 1px solid #dfdfdf;
+        border-radius:50%;
+        background-color: #113a6b;
+        color: #ffffff;
+}
+.t_iconimg{
+        position: relative;
+        top:-2px;
+}
+
+.t_icon .t_modaliconstart {
+        padding-left:0;
+}
+.t_modal_name{
+        font-weight:600;
+        font-size:16px;
+}
+.t_modaltitle{
+        margin-left: 36%;
+}
+.t_modaltitle2{
+        margin-left: 33%;
+}
+.t_modaltitle3{
+        margin-left: 41%;
+}
+.modal-body img{
+        width:6%;
+}
+.t_modaltextname{
+        font-weight: 600;
+}
+.t_modallisttext{
+        padding:0 40px;
+}
+.t_modallisttext strong{
+        font-size:11px;
+}
+.t_modaltext{
+        font-size:10px;
+}
+.t_modallisttext .t_modaltext{
+        margin-bottom: 5px;
+} 
