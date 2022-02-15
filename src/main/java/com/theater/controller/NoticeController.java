@@ -26,7 +26,7 @@ public class NoticeController {
     
 //  래코드 값
 
-  }
+ 
   
   @GetMapping("/noticeview.do")
   public void eventview() {
