@@ -157,7 +157,8 @@
   border-left: 1px solid #dee2e6;
   padding-left: 15px;
 }
-input[type=radio] { display:none;} 
+
+.date1 { display:none;} 
 input[type=radio] + strong {
         display: inline-block;
         padding: 0 10px;

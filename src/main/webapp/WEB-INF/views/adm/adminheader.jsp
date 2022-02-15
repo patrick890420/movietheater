@@ -24,6 +24,7 @@
 <link href="/resources/admin/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
 <!-- Custom CSS -->
 <link href="/resources/admin/css/style.min.css" rel="stylesheet">
+<link href="/resources/css/event_notice/event_notice.css" rel="stylesheet">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -385,18 +386,13 @@
               </a>
               <ul aria-expanded="false" class="collapse  first-level base-level-line">
                 <li class="sidebar-item">
-                  <a href="form-inputs.html" class="sidebar-link">
-                  <span class="hide-menu"> Form Inputs </span>
+                  <a href="/adm/adminEvent.do" class="sidebar-link">
+                  <span class="hide-menu"> Event </span>
                   </a>
                 </li>
                 <li class="sidebar-item">
-                  <a href="form-input-grid.html" class="sidebar-link">
-                  <span class="hide-menu"> Form Grids </span>
-                  </a>
-                </li>
-                <li class="sidebar-item">
-                  <a href="form-checkbox-radio.html" class="sidebar-link">
-                  <span class="hide-menu"> Checkboxes & Radios </span>
+                  <a href="/adm/adminNotice.do" class="sidebar-link">
+                  <span class="hide-menu"> 공지사항 </span>
                   </a>
                 </li>
               </ul>

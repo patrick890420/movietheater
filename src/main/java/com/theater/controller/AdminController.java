@@ -18,7 +18,9 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.google.gson.JsonObject;
 import com.theater.domain.MovieVO;
+import com.theater.service.EventService;
 import com.theater.service.MovieService;
+import com.theater.service.NoticeService;
 
 import lombok.AllArgsConstructor;
 import lombok.Setter;
@@ -149,6 +151,38 @@ public class AdminController {
   
   
   /* Board*/
+  @Setter(onMethod_=@Autowired )
+  public EventService Eservice;
+  
+  @GetMapping("/adminEvent.do")
+  public String adminEvent() {
+    return "adm/adminEvent/adminEvent";
+  }
+  
+  @GetMapping("/adminEventview.do")
+  public String adminEventview() {
+    return "adm/adminEvent/adminEventview";
+  }
+  
+  @GetMapping("/adminEventwrite.do")
+  public void adminEventwrite() {
+    
+  }
+  
+  
+  @Setter(onMethod_=@Autowired )
+  public NoticeService Nservice;
+  
+  @GetMapping("/adminNotice.do")
+  public String adminNotice() {
+    return "adm/adminNotice/adminNotice";
+  }
+  
+  @GetMapping("/adminNoticeview.do")
+  public String adminNoticeview() {
+    return "adm/adminNotice/adminNoticeview";
+  }
+  
   
   /* Utility */
   @GetMapping("/adminCodeList.do")
