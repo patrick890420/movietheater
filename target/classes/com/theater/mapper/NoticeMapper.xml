@@ -21,7 +21,7 @@
       where
     ]]>
     
-    <include refid="criteria"/>
+<!--     <include refid="criteria"/> -->
         
     <![CDATA[
     rownum <= #{pageNum} * #{amount}

@@ -22,19 +22,10 @@ public class NoticeController {
   @Setter(onMethod_=@Autowired)
   private NoticeService Nservice;
   
-  @GetMapping("/notice.do")
-  public void notice(Criteria cri, Model model) {
-<<<<<<< HEAD
-//  model.addAttribute("list",service.getList(cri));
-=======
-    
-    model.addAttribute("list", service.getList(cri));
-//  래코드 값
-
-//    int total= service.getTotalcount(cri);
-//    model.addAttribute("pageMaker",new PageVO(cri,total));
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
-  }
+//  @GetMapping("/notice.do")
+//  public void notice(Criteria cri, Model model) {
+//
+//  }
   
   @GetMapping("/noticeview.do")
   public void eventview() {
