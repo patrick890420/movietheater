@@ -73,8 +73,8 @@
       <div class="col-lg-2">
         <div class="header__logo">
           <a href="/"> 
-<!--             <span style="font-size: x-large; font-weight: 800; color: black;">📽 JSL-Movie</span> -->
-            <img alt="" src="/resources/img/newlogo.png">
+            <span style="font-size: x-large; font-weight: 800; color: black;">📽 JSL-Movie</span>
+<!--             <img alt="" src="/resources/img/newlogo2.png"> -->
           </a>
         </div>
       </div>

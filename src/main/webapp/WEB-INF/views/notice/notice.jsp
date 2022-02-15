@@ -111,6 +111,5 @@
   </div><!-- row -->
 </div><!-- container -->
 </section><!-- hero -->
-	
-
-<%@ include file="../footer.jsp" %>	
+  
+<%@ include file="../footer.jsp" %> 
