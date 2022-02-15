@@ -8,7 +8,7 @@ import com.theater.domain.NoticeVO;
 public interface NoticeMapper {
   
 
-  public List<NoticeVO> getList(Criteria cri);
+//  public List<NoticeVO> getList(Criteria cri);
   
 //검색 결과view
   public NoticeVO view(int nt_cd);
@@ -16,8 +16,9 @@ public interface NoticeMapper {
 //조회수
   public void viewcount(int nt_cd);
 
-//전체 레코드
-//  public int getTotalcount(Criteria cri);
+//page 기법 처리
+  public List<NoticeVO> getListWithPaging(Criteria cri);
+
 
 //page= 이전/다음글
   public NoticeVO nextPage(int nt_cd);
