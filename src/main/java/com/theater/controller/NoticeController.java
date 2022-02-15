@@ -24,11 +24,7 @@ public class NoticeController {
   
   @Setter(onMethod_=@Autowired)
   private NoticeService Nservice;
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
   
   @GetMapping("/notice.do")
   public void notice(Criteria cri, Model model) {

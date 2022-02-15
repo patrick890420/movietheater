@@ -2,7 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="com.theater.mapper.NoticeMapper">
-<<<<<<< HEAD
 
 <sql id="criteria">
 <!-- class 이름과 같아야 함 -->
@@ -60,53 +59,8 @@
 <!--            검색된 결과를 noticeVO에 담는다     DB검색된 결과를 받는다 -->
   <![CDATA[
     select * from notice where nt_cd >0
-=======
-  <sql id ="criteria">
-    <trim prefix="(" suffix=") AND" prefixOverrides="OR">
-      <foreach item ='type' collection="typeArr">
-        <trim prefix="OR">  
-          <choose>
-            <when test="type == 'title'.toString()">
-              TITLE LIKE '%'||#{keyword}||'%'
-            </when>
-            <when test="type == 'content'.toString()">
-              CONTENT LIKE '%'||#{keyword}||'%'
-            </when>
-          </choose>
-        </trim>
-      </foreach>
-    </trim>
-  </sql>  
-  
-  <select id="getList" resultType="com.theater.domain.NoticeVO">
-    <![CDATA[
-      SELECT 
-        NT_CD, TITLE, CONTENT,E_IMG ,TO_CHAR(WDATE, 'YYYY-MM-DD') AS WDATE  , HITS 
-      FROM(SELECT/*+ INDEX_DESC(SYS_C008533)*/ 
-          ROWNUM RN, NT_CD, TITLE, CONTENT, E_IMG, WDATE, HITS 
-         FROM NOTICE WHERE 
-    ]]>
-    
-<!--     <include refid="criteria"></include> -->
-    
-    <![CDATA[       
-      ROWNUM <=(#{pageNum} * #{amount})
-        )WHERE RN > (#{pageNum}-1) * #{amount}
-    ]]>  
+]]>
   </select>
-  
-  <select id="getTotalCount" resultType="int">
-    <![CDATA[  
-      SELECT COUNT(*) AS TOTALCOUNT FROM NOTICE WHERE
-    ]]>
-      <include refid="criteria"></include>
-    <![CDATA[  
- 
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
-    ]]>
-  </select>
-<<<<<<< HEAD
-  
   
 <!--  검색 결과 -->
 <select id="read" resultType="com.theater.domain.NoticeVO">
@@ -138,7 +92,5 @@
    nt_cd > 0
 </select>
 
-=======
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
 
 </mapper>
