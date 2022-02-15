@@ -23,18 +23,13 @@ public class TheaterController {
   private TheaterService thservice;
   
   @GetMapping("/theater.do")
-  public void theater(Model model, @RequestParam(value="t_area", required=false, defaultValue= "1") int t_area,
+  public void theater(Model model, @RequestParam(value="t_area", required=false, defaultValue= "1") String t_area,
       @RequestParam(value="t_name", required=false, defaultValue= "J-강남") String t_name) {
+    
     System.out.println("t_area의 값?:"+t_area);
     model.addAttribute("thList", thservice.thread(t_area));
     model.addAttribute("thinfo", thservice.thinforead(t_name));
+    
+    System.out.println(t_area);
   }
-  @GetMapping("/city.do")
-  public String theatercity(Model model, @RequestParam int t_area) {
-    System.out.println("t_area의 값:"+t_area);
-    model.addAttribute("cityList", thservice.cityread(t_area));
-    return "/theater/theater";
-  }
-  
-  
 }

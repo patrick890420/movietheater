@@ -28,6 +28,7 @@
          FROM NOTICE WHERE 
     ]]>
     
+<<<<<<< HEAD
 <!--     <include refid="criteria"></include> -->
     
     <![CDATA[       
@@ -43,6 +44,15 @@
       <include refid="criteria"></include>
     <![CDATA[  
        NT_CD > 0
+=======
+
+<!--     <include refid="criteria"/> -->
+
+        
+    <![CDATA[
+    rownum <= #{pageNum} * #{amount}
+    ) where rn > (#{pageNum}-1)*#{amount}
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
     ]]>
   </select>
 

@@ -9,13 +9,13 @@
         <div class="col-lg-12">
      <ul class="nav t_city" role="tablist" id="myTab">
       <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-      <a href="/theater/theater.do?t_area=1">서울</a>
+      <a href="#" id="1" onclick="citycheck(this.id)">서울</a>
       </li>
       <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-      <a href="/theater/theater.do?t_area=2">경기</a>
+      <a href="#" id="2" onclick="citycheck(this.id)">경기</a>
       </li>
       <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-      <a href="/theater/theater.do?t_area=3">인천</a>
+      <a href="#" id="3" onclick="citycheck(this.id)">인천</a>
       </li>
       <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
       <a href="/theater/theater.do?t_area=4">강원</a>
@@ -42,7 +42,9 @@
     <div class="t_subcity">
     <c:forEach items="${thList}" var="thList">
     <div class="t_citydata t_citydataline">
-    <strong class=""><a href="/theater/theater.do?t_name=${thList.t_name}">${thList.t_name}</a></strong>
+    <strong>
+    <a href="/theater/theater.do?t_name=${thList.t_name}">${thList.t_name}</a>
+    </strong>
     </div>
     </c:forEach>
   </div>
@@ -538,21 +540,32 @@
                   <p style="margin: 30px 0 15px 30px;">▶2D 3관
                     8층[삼화페인트 안심닥터관]총 172석</p>
                   <ul style="margin-left: 30px;">
-                    <li
-                      style="width: 70px; height: 55px; list-style: none; padding-top: 5px; border: 1px solid #cbcabe; line-height: 1.4; text-align: center;">
+                    <li class="t_filmtime">
+                      <strong>
                       <a href="">7:30<br> <span
                         style="font-size: 11px;">150석</span>
                     </a>
+                    </strong>
+                    </li>
+                  </ul>
+                  <ul style="margin-left: 30px;">
+                    <li class="t_filmtime">
+                      <strong>
+                      <a href="">7:30<br> <span
+                        style="font-size: 11px;">150석</span>
+                    </a>
+                    </strong>
                     </li>
                   </ul>
                   <p style="margin: 30px 0 15px 30px;">▶2D 3관
                     8층[삼화페인트 안심닥터관]총 172석</p>
                   <ul style="margin-left: 30px;">
-                    <li
-                      style="width: 70px; height: 55px; list-style: none; padding-top: 5px; border: 1px solid #cbcabe; line-height: 1.4; text-align: center;">
+                    <li class="t_filmtime">
+                    <strong>
                       <a href="">7:30<br> <span
                         style="font-size: 11px;">150석</span>
                     </a>
+                    </strong>
                     </li>
                   </ul>
                 </div>
@@ -598,8 +611,22 @@ $(document).ready(function() {
 </script>
 <!-- city -->
 <script>
+    function citycheck(clecked_id) {
+      alert(clecked_id);
 
-</script>
+      $.ajax({
+        url : "/theater/theater.do",
+        type : "get",
+        data : "t_area=" + clecked_id,
+        success : function(data) {
+          alert("됨!!!!!");
+        },
+        error : function() {
+          alert("슈발");
+        }
+      })
+    }
+  </script>
 
 
 <!-- map modal -->

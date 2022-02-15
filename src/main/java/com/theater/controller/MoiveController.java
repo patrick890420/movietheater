@@ -19,7 +19,7 @@ import lombok.extern.log4j.Log4j;
 @AllArgsConstructor
 @Log4j
 public class MoiveController {
-	private MovieService service;
+	private MovieService Movieservice;
   
   
 	
@@ -30,16 +30,16 @@ public class MoiveController {
 	
 	@GetMapping("/movie.do") 
 	public void MovieList(Criteria cri, Model model) {
-	  model.addAttribute("list",service.MovieList(cri));
-	  int total = service.getTotalCount(cri);
+	  model.addAttribute("list",Movieservice.MovieList(cri));
+	  int total = Movieservice.getTotalCount(cri);
 	  model.addAttribute("pageMaker", new PageVO(cri,total));
 	  }
 	
 	@GetMapping({"/MovieView.do"})
 	public void read(@RequestParam("m_cd") int m_cd,@ModelAttribute("cri") Criteria cri,Model model) {
-	  model.addAttribute("view", service.read(m_cd));
-	  model.addAttribute("nextPage",service.nextPage(m_cd));
-	  model.addAttribute("prevPage",service.prevPage(m_cd));
+	  model.addAttribute("view", Movieservice.read(m_cd));
+	  model.addAttribute("nextPage",Movieservice.nextPage(m_cd));
+	  model.addAttribute("prevPage",Movieservice.prevPage(m_cd));
 	}
 	
 	
