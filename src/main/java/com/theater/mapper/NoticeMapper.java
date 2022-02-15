@@ -24,6 +24,6 @@ public interface NoticeMapper {
   public void readCount(int nt_cd);
 
 //전체 래코드 갯수
-  public int getTotalCount(Criteria cri);
+  public int getTotal(Criteria cri);
   
 }//class

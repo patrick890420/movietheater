@@ -70,15 +70,17 @@
   <!-- Header End -->
   <div class="container">
     <div class="row">
-      <div class="col-lg-2">
+      <div class="col-lg-3">
         <div class="header__logo">
           <a href="/"> 
-            <span style="font-size: x-large; font-weight: 800; color: black;">📽 JSL-Movie</span>
+            <span
+            style="font-size: x-large; font-weight: 800; color: black;">📽
+              JSL-Movie</span>
 <!--             <img alt="" src="/resources/img/newlogo2.png"> -->
           </a>
         </div>
       </div>
-      <div class="col-lg-10">
+      <div class="col-lg-8">
         <div class="header__right">
           <a href="/login/login.do" style="text-align: center;"><span class="icon_lock"><br>로그인</span></a>
           <a href="/join/join.do" style="text-align: center;"><span

@@ -11,7 +11,7 @@ public interface NoticeService {
   public void register(NoticeVO notice);
 
 //전체 래코드갯수
-  public int getTotalCount(Criteria cri); 
+  public int getTotal(Criteria cri); 
 
   public List<NoticeVO> getList(Criteria cri);
 

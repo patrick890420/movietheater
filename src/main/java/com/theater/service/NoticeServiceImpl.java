@@ -27,14 +27,14 @@ public class NoticeServiceImpl implements NoticeService {
 
 //전체 래코드
   @Override
-  public int getTotalCount(Criteria cri){
-    return Nmapper.getTotalCount(cri);
+  public int getTotal(Criteria cri){
+    return Nmapper.getTotal(cri);
   }
 
   
   @Override
   public List<NoticeVO> getList(Criteria cri){
-    return Nmapper.getListWithPaging(cri);
+    return Nmapper.getList(cri);
   }
 
 //view page 

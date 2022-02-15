@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -28,10 +29,9 @@ public class NoticeController {
   
   @GetMapping("/notice.do")
   public void notice(Criteria cri, Model model) {
+    PageVO pageVO = new PageVO(cri, Nservice.getTotal(cri));
+    model.addAttribute("pageMaker", pageVO);
     model.addAttribute("list", Nservice.getList(cri));
-//전체 래코드 값
-    int total= Nservice.getTotalCount(cri);
-    model.addAttribute("pageMaker",new PageVO(cri,total));
     
   }
 
