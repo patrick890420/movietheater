@@ -12,22 +12,6 @@
   ]]>
 </select>
 
-<!-- page 기법 처리/ 해당 페이지 검색 -->
-  <select id="getListWithPaging" resultType="com.theater.domain.NoticeVO">
-    <![CDATA[
-    select bno,title,content,wdate,hits from(
-      select /*+ index_desc(notice notice_pk)*/ rownum rn, nt_cd,title,content,wdate,hits
-      from notice
-      where
-    ]]>
-    
-    <include refid="criteria"/>
-        
-    <![CDATA[
-    rownum <= #{pageNum} * #{amount}
-    ) where rn > (#{pageNum}-1)*#{amount}
-    ]]>
-  </select>
 
 <!--   검색결과 view -->
 <select id="view" resultType="com.theater.domain.NoticeVO">

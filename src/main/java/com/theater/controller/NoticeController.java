@@ -23,17 +23,9 @@ public class NoticeController {
   private NoticeService Nservice;
   
   @GetMapping("/notice.do")
-  public void notice(Criteria cri, Model model) {
-<<<<<<< HEAD
-//  model.addAttribute("list",service.getList(cri));
-=======
+  public void notice(Model model) {
     
-    model.addAttribute("list", service.getList(cri));
-//  래코드 값
-
-//    int total= service.getTotalcount(cri);
-//    model.addAttribute("pageMaker",new PageVO(cri,total));
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
+//  model.addAttribute("list", Nservice.getList());
   }
   
   @GetMapping("/noticeview.do")
