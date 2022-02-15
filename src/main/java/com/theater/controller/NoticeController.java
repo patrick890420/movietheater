@@ -23,14 +23,20 @@ public class NoticeController {
   @Setter(onMethod_=@Autowired)
   private NoticeService Nservice;
   
-    
-//  래코드 값
+  
+  @GetMapping("/notice.do")
+  public void notice() {
 
+  }
  
-  
   @GetMapping("/noticeview.do")
-  public void eventview() {
+  public void noticeview() {
   
+  }
+  
+  @GetMapping("/noticewrite.do")
+  public void noticewrite() {
+    
   }
 
 }//class

@@ -6,20 +6,11 @@ import com.theater.domain.Criteria;
 import com.theater.domain.NoticeVO;
 
 public interface NoticeMapper {
-  
 
-//  public List<NoticeVO> getList();
+//입력
+  public void insert(NoticeVO notice);
   
-//검색 결과view
-  public NoticeVO view(int nt_cd);
+//page
+  public List<NoticeVO> getListWithPaging(Criteria cri);
 
-//조회수
-  public void viewcount(int nt_cd);
-
-//page= 이전/다음글
-  public NoticeVO nextPage(int nt_cd);
-  public NoticeVO prevPage(int nt_cd);
-  
-
-  
 }//class

@@ -183,6 +183,11 @@ public class AdminController {
     return "adm/adminNotice/adminNoticeview";
   }
   
+  @GetMapping("/adminWrite.do")
+  public String adminWrite() {
+    return "/adm/adminNotice/adminNoticewrite";
+  }
+  
   
   /* Utility */
   @GetMapping("/adminCodeList.do")

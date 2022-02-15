@@ -19,31 +19,36 @@
 
 
 <!-- search -->
-<form name="myform" method="get" action="/notice/notice.do">
+<div class="notice_search">
+<form name="myform" method="get" action="/notice/notice.do" id="searchForm">
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
   <div class="container">
     <div class="row notice24">
-      <div class="col-lg-9 event39">
-      <select name="sel" class="select">
-    <option value="title">제목</option>
-    <option value="content">내용</option>
-  </select>
+      <div class="col-lg-9" style="padding-left: 790px;">
+      <select name="type" class="select">
+        <option value=""<c:out value="${pageMaker.cri.type==null?'selected':''}"/>>선택</option>
+        <option value="T"<c:out value="${pageMaker.cri.type eq 'T'?'selected':''}"/>>제목</option>
+      </select>
         </div>
         <div class="col-lg-3 event45">
-          <label style="margin-bottom: 1.5rem;">
-          <input type="text" class="event47" placeholder="검색어를 입력해 주세요">
-          <button type="button" style="background:none; border:none;">
-          <span class="icon_search"></span>
+          <label>
+          <input type="text" class="event47" name="keyword" value='<c:out value="${pageMaker.cri.keyword}"/>' placeholder="검색어를 입력해 주세요">
+          <input type="hidden" name="pageNun" value="${pageMaker.cri.pageNum}">
+          <input type="hidden" name="amount" value="${pageMaker.cri.amount}">
+          <button type="submit" style="background:none; border:none;">
+            <span class="icon_search"></span>
           </button>
           </label>
         </div><!-- lg3 -->
     </div><!-- row -->
   </div><!-- container -->
 </form>
+</div><!-- notice_search -->
 
 
 <!-- 총 게시글 -->
 <div class="col-md-3 event60">
-  <p>총게시글<span>10</span>건</p>
+  <p>총게시글<span>${pageMaker.total}</span>&nbsp;&nbsp;건</p>
 </div><!-- md-3 -->
 
 
@@ -91,7 +96,11 @@
         </tbody>
       </table>
       
-      <div class="paging">
+      
+    </div><!-- md-12 -->
+  </div><!-- row -->
+</div><!-- container -->
+<div class="paging">
     <c:if test="${pageMaker.prev}">
       <a href="${pageMaker.startPage-1}"><i class="fa  fa-angle-double-left"></i></a>
     </c:if>
@@ -105,12 +114,37 @@
       <a href="${pageMaker.startPage+1}"><i class="fa  fa-angle-double-right"></i></a>
     </c:if> 
     
+                  
     </div><!-- padding -->
-      
-    </div><!-- md-12 -->
-  </div><!-- row -->
-</div><!-- container -->
 </section><!-- hero -->
-	
+<form id="actionForm" action="notice.do" method="get">
+    <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+    <input type="hidden" name="amount" value="${pageMaker.cri.amount}">
+    <input type="hidden" name="type" value="${pageMaker.cri.type}">
+    <input type="hidden" name="keyword" value="${pageMaker.cri.keyword}">
+  </form>
+
+<script>
+$(function() {
+//검색
+var searchForm= $("#searchForm");
+  $(".btn_search").on("click",function(e){
+    if(!searchForm.find("option:selected").val()){
+      alert("검색종류 선택하세요");
+      return false;
+  }
+  if(!searchForm.find("input[name='keyword']").val()){
+    alert("키워드 입력");
+    return false;
+  }
+  searchForm.find("input[name='pageNum']").val("1");
+  e.preventDefault();
+    
+  searchForm.submit();
+  })
+
+
+});//function
+</script>
 
 <%@ include file="../footer.jsp" %>	
