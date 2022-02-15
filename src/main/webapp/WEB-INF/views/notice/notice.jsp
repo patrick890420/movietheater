@@ -123,6 +123,7 @@
                   
     </div><!-- padding -->
 </section><!-- hero -->
+<<<<<<< HEAD
 
 
 <script>
@@ -157,3 +158,7 @@ $(".product__pagination > a").on("click", function(e) {
 </script>
 
 <%@ include file="../footer.jsp" %>	
+=======
+  
+<%@ include file="../footer.jsp" %> 
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
