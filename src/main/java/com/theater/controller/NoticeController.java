@@ -23,12 +23,17 @@ public class NoticeController {
   @Setter(onMethod_=@Autowired)
   private NoticeService Nservice;
   
-  @GetMapping("/notice.do")
-  public void notice(Criteria cri, Model model) {
+<<<<<<< HEAD
+//  @GetMapping("/notice.do")
+//  public void notice(Criteria cri, Model model) {
+//
+//  }
+=======
     
 //  래코드 값
 
-  }
+ 
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
   
   @GetMapping("/noticeview.do")
   public void eventview() {

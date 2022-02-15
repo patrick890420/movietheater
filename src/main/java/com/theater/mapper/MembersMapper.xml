@@ -4,15 +4,15 @@
 <mapper namespace="com.theater.mapper.MembersMapper">
 
 <!-- 회원가입 -->
-<insert id="Memberinsert">
-insert into members (id,pwd,name,birth,gender,phone,email) values (#{id}, #{pwd}, #{name}, #{birth}, #{gender}, #{phone}, #{email})
+<insert id="MemberInsert">
+	insert into members (id,pwd,name,birth,gender,phone,email) values (#{id}, #{pwd}, #{name}, #{birth}, #{gender}, #{phone}, #{email})
 </insert>
 
-<!-- 아이디 중복 체크 -->
+<!-- 아이디 중복 체크 
 <select id="idChk" resultType="int">
 	SELECT COUNT(*) FROM MEMBERS
 	WHERE id = #{id}
-</select>
+</select>-->
 
 
 

@@ -16,17 +16,13 @@ public class MembersServiceImpl implements MembersService {
 	@Setter(onMethod_ = @Autowired)
 	private MembersMapper mmapper;
 
-  @Override
-  public int idCheck(String id) {
-    // TODO Auto-generated method stub
-    return 0;
-  }
+	@Override
+	public void register(MemberVO mvo) {
+		mmapper.MemberInsert(mvo);
+		
+	}
 
-  @Override
-  public void register(MemberVO mvo) {
-    // TODO Auto-generated method stub
-    
-  }
+
 }
 
 
