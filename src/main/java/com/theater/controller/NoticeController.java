@@ -23,8 +23,6 @@ public class NoticeController {
   @Setter(onMethod_=@Autowired)
   private NoticeService Nservice;
   
-  @GetMapping("/notice.do")
-  public void notice(Criteria cri, Model model) {
     
 //  래코드 값
 
