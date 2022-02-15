@@ -21,21 +21,16 @@ import lombok.extern.log4j.Log4j;
 public class NoticeController {
   
   @Setter(onMethod_=@Autowired)
-  private NoticeService service;
+  private NoticeService Nservice;
   
-  @GetMapping("/notice.do")
-  public void notice(Criteria cri, Model model) {
     
-    model.addAttribute("list", service.getList(cri));
 //  래코드 값
 
-//    int total= service.getTotalcount(cri);
-//    model.addAttribute("pageMaker",new PageVO(cri,total));
   }
   
   @GetMapping("/noticeview.do")
   public void eventview() {
-    
+  
   }
 
 }//class

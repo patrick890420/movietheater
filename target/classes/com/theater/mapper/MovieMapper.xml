@@ -3,14 +3,76 @@
 
 
 <mapper namespace="com.theater.mapper.MovieMapper">
-  
+    <sql id="criteria">
+    <trim prefix="(" suffix=") AND" prefixOverrides="OR">
+      <foreach item='type' collection="typeArr">
+        <trim prefix="OR">
+          <choose>
+            <when test="type == 'T'.toString()">
+              title like '%' || #{keyword}||'%'
+            </when>
+            <when test="type == 'C'.toString()">
+              content like '%' || #{keyword}||'%'
+            </when>
+            <when test="type == 'W'.toString()">
+              writer like '%' || #{keyword}||'%'
+            </when>
+          </choose>
+        </trim>
+      </foreach>
+    </trim>   
+  </sql>
   
   <!-- 영화 insert -->
   <insert id="MovieInsertPro">
-    insert into movies (m_cd,title,subtitle,rdate,rtime,rate,intro,poseter) values (m_cd_seq.NEXTVAL,#{title},#{subtitle},#{rdate},#{rtime},#{intro},#{poster})
-  </insert>
+  <selectKey keyProperty="m_cd" order="BEFORE" resultType="int">
+        select m_cd_seq.nextval from dual
+      </selectKey>
+    insert into movies (m_cd, title, subtitle, rdate, rtime, rate, intro, poster) values (#{m_cd}, #{title}, #{subtitle}, to_date(#{rdate},'YYYY-MM-DD HH24:MI:SS'), #{rtime},#{rate},#{intro}, #{poster})
+  </insert> 
   
+  <select id="MovieList" resultType="com.theater.domain.MovieVO">
+    <![CDATA[
+      select * from movies where m_cd > 0 order by m_cd desc
+    ]]>
+    
+  </select>
   
+  <select id="read" resultType="com.theater.domain.MovieVO">
+    select * from movies where m_cd = #{m_cd} 
+  </select>
   
+  <select id="nextPage" resultType="com.theater.domain.MovieVO">
+    <![CDATA[
+      select * from movies where m_cd < #{m_cd} and rownum=1 order by m_cd desc
+    ]]>
+  </select>
+  
+  <select id="prevPage" resultType="com.theater.domain.MovieVO">
+    <![CDATA[
+      select * from movies where m_cd > #{m_cd} and rownum=1 order by m_cd asc
+    ]]>
+  </select>
+  
+  <select id="MovieListPaging" resultType="com.theater.domain.MovieVO">
+    <![CDATA[
+    select * from 
+    ( 
+      select /*+ index_desc(movies movies_pk) */ rownum rn, M_CD,TITLE,SUBTITLE,RDATE,RTIME,RATE,INTRO,POSTER from Movies
+      where 
+    ]]>
+    <include refid="criteria"/>
+    <![CDATA[
+      rownum <= #{pageNum} * #{amount}
+    ) 
+    where rn > (#{pageNum}-1) * #{amount}
+    ]]>
+  </select>
+  
+  <select id="getTotalCount" resultType="int">
+    select count(*) from movies where
+      <include refid="criteria"/>
+    m_cd > 0
+  </select>
   
 </mapper>
