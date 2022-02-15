@@ -19,8 +19,15 @@ public class TheaterServiceImpl implements TheaterService {
   private TheaterMapper thmapper;
 
   @Override
-  public List<TheatersVO> thread() {
-    return thmapper.theaterList();
+  public List<TheatersVO> thread(int t_area) {
+    return thmapper.theaterList(t_area);
   }
-
+  @Override
+  public List<TheatersVO> thinforead(String t_name) {
+    return thmapper.theaterinfo(t_name);
+  }
+  @Override
+  public List<TheatersVO> cityread(int t_area) {
+    return thmapper.theatercity(t_area);
+  }
 }

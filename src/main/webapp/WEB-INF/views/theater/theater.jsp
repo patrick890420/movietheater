@@ -8,55 +8,43 @@
       <div class="row">
         <div class="col-lg-12">
      <ul class="nav t_city" role="tablist" id="myTab">
-      <li role="presentation" class="active col-lg-1 col-md-1 col-sm-1"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">서울</a></li>
-      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">경기</a></li>
-      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1"><a href="#profile2" aria-controls="profile2" role="tab" data-toggle="tab">인천</a></li>
-      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1"><a href="#profile3" aria-controls="profile3" role="tab" data-toggle="tab">강원</a></li>
-      <li role="presentation" class="col-lg-2 col-md-2 col-sm-2"><a href="#profile4" aria-controls="profile4" role="tab" data-toggle="tab">대전/충청</a></li>
-      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1"><a href="#profile5" aria-controls="profile5" role="tab" data-toggle="tab">대구</a></li>
-      <li role="presentation" class="col-lg-2 col-md-2 col-sm-2"><a href="#profile6" aria-controls="profile6" role="tab" data-toggle="tab">부산/울산</a></li>
-      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1"><a href="#profile7" aria-controls="profile7" role="tab" data-toggle="tab">경상</a></li>
-      <li role="presentation" class="col-lg-2 col-md-2 col-sm-2"><a href="#profile8" aria-controls="profile8" role="tab" data-toggle="tab">광주/전라/제주</a></li>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
+      <a href="/theater/theater.do?t_area=1">서울</a>
+      </li>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
+      <a href="/theater/theater.do?t_area=2">경기</a>
+      </li>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
+      <a href="/theater/theater.do?t_area=3">인천</a>
+      </li>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
+      <a href="/theater/theater.do?t_area=4">강원</a>
+      </li>
+      <li role="presentation" class="col-lg-2 col-md-2 col-sm-2">
+      <a href="/theater/theater.do?t_area=5">대전/충청</a>
+      </li>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
+      <a href="/theater/theater.do?t_area=6">대구</a>
+      </li>
+      <li role="presentation" class="col-lg-2 col-md-2 col-sm-2">
+      <a href="/theater/theater.do?t_area=7">부산/울산</a>
+      </li>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
+      <a href="/theater/theater.do?t_area=8">경상</a>
+      </li>
+      <li role="presentation" class="col-lg-2 col-md-2 col-sm-2">
+      <a href="/theater/theater.do?t_area=9">광주/전라/제주</a>
+      </li>
     </ul>
 
 <div class="tab-content">
-  
   <div role="tabpanel" class="tab-pane active" id="home">
+    <div class="t_subcity">
     <c:forEach items="${thList}" var="thList">
-    <div class="t_subcity">
     <div class="t_citydata t_citydataline">
-    <strong class=""><a href="">${thList.t_name}</a></strong>
-    
+    <strong class=""><a href="/theater/theater.do?t_name=${thList.t_name}">${thList.t_name}</a></strong>
     </div>
-    
-  </div>
-  </c:forEach>
-  </div>
-  
-  <div role="tabpanel" class="tab-pane" id="profile">
-    <div class="t_subcity">
-    <div class="t_citydata t_citydataline">
-    <strong class="">J-경기광주</strong>
-    </div>
-    <div class="t_citydata t_citydataline">
-     <strong class="">J-광교</strong>
-    </div>
-    <div class="t_citydata t_citydataline">
-     <strong class="">J-구리</strong>
-    </div>
-  </div>
-  </div>
-  <div role="tabpanel" class="tab-pane" id="profile2">
-    <div class="t_subcity">
-    <div class="t_citydata t_citydataline">
-    <strong class="">J-부평</strong>
-    </div>
-    <div class="t_citydata t_citydataline">
-     <strong class="">J-남주안</strong>
-    </div>
-    <div class="t_citydata t_citydataline">
-     <strong class="">J-인천</strong>
-    </div>
+    </c:forEach>
   </div>
   </div>
 </div>
@@ -81,17 +69,20 @@
     <div class="col-lg-12">
       <div class="">
         <div class="row">
+        
           <div class="col-lg-7 col-md-7 col-sm-7">
+          <c:forEach items="${thinfo}" var="thinfo">
             <div class="section-title">
-              <h2>CGV대전</h2>
+              <h2>${thinfo.t_name}</h2>
             </div>
               <div class="t_infotext">
-                <strong> 총 상영관 수 <span>&ensp;8개관</span></strong>
-                <strong class="t_sit"> 총 좌석수 <span>&ensp;1,144석</span></strong>
+                <strong> 총 상영관 수 <span>&ensp;${thinfo.t_screen}개관</span></strong>
+                <strong class="t_sit"> 총 좌석수 <span>&ensp;${thinfo.t_seat}석</span></strong>
               </div>
               <div class="t_infotext">
-              <strong > 대전 서구 계룡로 598 (괴정동)</strong>
+              <strong > ${thinfo.t_address}</strong>
               </div>
+              </c:forEach>
               <div class="t_icon">
               
               <!-- 수정중 -->
@@ -260,8 +251,9 @@
          
           <!-- 수정부분끝 -->
           <div class="col-lg-3 col-md-3 col-sm-3 t_reco t_recoradi4">
+          <c:forEach items="${thinfo}" var="thinfo">
             <div class="t_recotitle">
-              <strong>CGV대전</strong>에서<br><span>나일강의 죽음</span><br>  어떠세요?
+              <strong>${thinfo.t_name}</strong>에서<br><span>나일강의 죽음</span><br>  어떠세요?
             </div>
             <div class="t_recoline"></div>
             <div class="">
@@ -271,6 +263,7 @@
             <a href=""><span class="icon_link_alt"></span></a>
             <a href=""><span class="icon_heart_alt"></span></a>
             </div>
+            </c:forEach>
           </div>
           <div class="col-lg-2 col-md-2 col-sm-2 t_reco t_recoradi4">
             <img src="/resources/img/trending/movie1.jpg" class="t_recoradi4">
@@ -383,7 +376,7 @@
     <strong>2월</strong>
     <span><br>
       <label>
-        <input type="radio" name="date1" checked>
+        <input type="radio" name="date1" checked class="date1">
           <strong>11</strong><br>
         <span>오늘</span>
       </label>
@@ -392,7 +385,7 @@
     <div class="t_date">
     <span><br>
       <label>
-      <input type="radio" name="date1">
+      <input type="radio" name="date1" class="date1">
         <strong>12</strong><br>
         <span>오늘</span>
       </label>
@@ -401,7 +394,7 @@
     <div class="t_date">
     <span><br>
       <label>
-      <input type="radio" name="date1">
+      <input type="radio" name="date1" class="date1">
         <strong>13</strong><br>
         <span>오늘</span>
       </label>
@@ -410,7 +403,7 @@
     <div class="t_date">
     <span><br>
       <label>
-      <input type="radio" name="date1">
+      <input type="radio" name="date1" class="date1">
         <strong>14</strong><br>
         <span>오늘</span>
       </label>
@@ -419,7 +412,7 @@
     <div class="t_date">
     <span><br>
       <label>
-      <input type="radio" name="date1">
+      <input type="radio" name="date1" class="date1">
         <strong>15</strong><br>
         <span>오늘</span>
       </label>
@@ -428,7 +421,7 @@
     <div class="t_date">
     <span><br>
       <label>
-      <input type="radio" name="date1">
+      <input type="radio" name="date1" class="date1">
         <strong>16</strong><br>
         <span>오늘</span>
       </label>
@@ -437,7 +430,7 @@
     <div class="t_date">
     <span><br>
       <label>
-      <input type="radio" name="date1">
+      <input type="radio" name="date1" class="date1">
         <strong>17</strong><br>
         <span>오늘</span>
       </label>
@@ -446,7 +439,7 @@
     <div class="t_date">
     <span><br>
       <label>
-      <input type="radio" name="date1">
+      <input type="radio" name="date1" class="date1">
         <strong>11</strong><br>
         <span>오늘</span>
       </label>
@@ -455,7 +448,7 @@
     <div class="t_date">
     <span><br>
       <label>
-      <input type="radio" name="date1">
+      <input type="radio" name="date1" class="date1">
         <strong>18</strong><br>
         <span>토</span>
       </label>
@@ -464,7 +457,7 @@
     <div class="t_date">
     <span><br>
       <label>
-      <input type="radio" name="date1">
+      <input type="radio" name="date1" class="date1">
         <strong>19</strong><br>
         <span>일</span>
       </label>
@@ -473,7 +466,7 @@
     <div class="t_date">
     <span><br>
       <label>
-      <input type="radio" name="date1">
+      <input type="radio" name="date1" class="date1">
         <strong>19</strong><br>
         <span>일</span>
       </label>
@@ -482,7 +475,7 @@
     <div class="t_date">
     <span><br>
       <label>
-      <input type="radio" name="date1">
+      <input type="radio" name="date1" class="date1">
         <strong>19</strong><br>
         <span>일</span>
       </label>
@@ -603,6 +596,12 @@ $(document).ready(function() {
     });
 });
 </script>
+<!-- city -->
+<script>
+
+</script>
+
+
 <!-- map modal -->
 <script>
 

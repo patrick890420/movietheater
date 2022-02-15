@@ -27,22 +27,24 @@
                             </div>
                         </div>
                         <div class="row">
+                        <c:set var="num" value="${pageMaker.total - ((pageMaker.cri.pageNum-1) * 10)}"/>
+                          <c:forEach var="mlist" items="${list }">
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="/resources/img/popular/popular-1.jpg">
-                                        <div class="ep">18 / 18</div>
+                                    <div class="product__item__pic set-bg" data-setbg="c:/upload/${mlist.poster }">
+                                        <div class="ep">${mlist.m_cd}</div>
                                         <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                     </div>
                                     <div class="product__item__text">
                                         <ul>
                                             <li>Active</li>
                                             <li>Movie</li>
                                         </ul>
-                                        <h5><a href="#">Sen to Chihiro no Kamikakushi</a></h5>
+                                        <h5><a href="view.do?m_cd={mlsit.m_cd}&pageNum=${pageMaker.cri.pageNum}&type=${pageMaker.cri.type}&keyword=${pageMaker.cri.keyword }&amount=${pageMaker.cri.amount}">${mlist.title}</a></h5>
                                     </div>
                                 </div>
                             </div>
+                            </c:forEach>
                         </div>
                     </div>
                     <div class="product__pagination">
