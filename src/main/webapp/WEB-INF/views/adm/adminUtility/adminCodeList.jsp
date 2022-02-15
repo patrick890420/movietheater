@@ -77,37 +77,30 @@
                       <table id="actorsTable" class="table table-striped table-bordered no-wrap">
                         <thead>
                           <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
+                            <th>CODE</th>
+                            <th>NAME</th>
+                            <th>PHOTO</th>
                           </tr>
                         </thead>
                           <tbody>
-                            <tr>
-                              <td>Tiger Nixon</td>
-                              <td>System Architect</td>
-                              <td>Edinburgh</td>
-                            </tr>
-                            <tr>
-                              <td>Garrett Winters</td>
-                              <td>Accountant</td>
-                              <td>Tokyo</td>
-                            </tr>
-                            <tr>
-                              <td>Donna Snider</td>
-                              <td>Customer Support</td>
-                              <td>New York</td>
-                            </tr>
+                            <c:forEach items="${actors}" var="actors">
+                              <tr>
+                                <td>${actors.a_cd}</td>
+                                <td>${actors.a_name}</td>
+                                <td>${actors.a_img}</td>
+                              </tr>
+                            </c:forEach>
                           </tbody>
                           <tfoot>
                             <tr>
-                              <th>Name</th>
-                              <th>Position</th>
-                              <th>Office</th>
+                              <th>CODE</th>
+                              <th>NAME</th>
+                              <th>PHOTO</th>
                             </tr>
                           </tfoot>
                         </table>
                       </div>
+                      <button class="btn btn-primary">actors register</button>
                     </div>
                   </div>
                 </div>
@@ -127,37 +120,30 @@
                         <table id="directorsTable" class="table table-striped table-bordered no-wrap">
                         <thead>
                           <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
+                            <th>CODE</th>
+                            <th>NAME</th>
+                            <th>PHOTO</th>
                           </tr>
                         </thead>
                           <tbody>
-                            <tr>
-                              <td>Tiger Nixon</td>
-                              <td>System Architect</td>
-                              <td>Edinburgh</td>
-                            </tr>
-                            <tr>
-                              <td>Garrett Winters</td>
-                              <td>Accountant</td>
-                              <td>Tokyo</td>
-                            </tr>
-                            <tr>
-                              <td>Donna Snider</td>
-                              <td>Customer Support</td>
-                              <td>New York</td>
-                            </tr>
+                             <c:forEach items="${directors}" var="directors">
+                              <tr>
+                                <td>${directors.d_cd}</td>
+                                <td>${directors.d_name}</td>
+                                <td>${directors.d_img}</td>
+                              </tr>
+                            </c:forEach>
                           </tbody>
                           <tfoot>
                             <tr>
-                              <th>Name</th>
-                              <th>Position</th>
-                              <th>Office</th>
+                              <th>CODE</th>
+                              <th>NAME</th>
+                              <th>PHOTO</th>
                             </tr>
                           </tfoot>
                         </table>
                         </div>
+                        <button class="btn btn-primary">directors register</button>
                       </div>
                     </div>
                   </div>
@@ -177,48 +163,22 @@
                           <table id="nationsTable" class="table table-striped table-bordered no-wrap">
                             <thead>
                               <tr>
+                                <th>Code</th>
                                 <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                              </tr>
-                              <tr>
-                                <td>Garrett Winters</td>
-                                <td>Accountant</td>
-                                <td>Tokyo</td>
-                                <td>63</td>
-                                <td>2011/07/25</td>
-                                <td>$170,750</td>
-                              </tr>
-                              <tr>
-                                <td>Donna Snider</td>
-                                <td>Customer Support</td>
-                                <td>New York</td>
-                                <td>27</td>
-                                <td>2011/01/25</td>
-                                <td>$112,000</td>
-                              </tr>
+                              <c:forEach items="${nations}" var="nations">
+                                <tr>
+                                  <td>${nations.n_cd}</td>
+                                  <td>${nations.n_name}</td>
+                                </tr>
+                              </c:forEach>
                             </tbody>
                             <tfoot>
                               <tr>
+                                <th>Code</th>
                                 <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
                               </tr>
                             </tfoot>
                           </table>
@@ -242,48 +202,22 @@
                           <table id="genresTable" class="table table-striped table-bordered no-wrap">
                             <thead>
                               <tr>
+                                <th>Code</th>
                                 <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                              </tr>
-                              <tr>
-                                <td>Garrett Winters</td>
-                                <td>Accountant</td>
-                                <td>Tokyo</td>
-                                <td>63</td>
-                                <td>2011/07/25</td>
-                                <td>$170,750</td>
-                              </tr>
-                              <tr>
-                                <td>Donna Snider</td>
-                                <td>Customer Support</td>
-                                <td>New York</td>
-                                <td>27</td>
-                                <td>2011/01/25</td>
-                                <td>$112,000</td>
-                              </tr>
+                              <c:forEach items="${genres}" var="genres">
+                                <tr>
+                                  <td>${genres.g_cd}</td>
+                                  <td>${genres.g_name}</td>
+                                </tr>
+                              </c:forEach>
                             </tbody>
                             <tfoot>
                               <tr>
+                                <th>Code</th>
                                 <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
                               </tr>
                             </tfoot>
                           </table>
