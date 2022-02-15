@@ -8,17 +8,16 @@ import com.theater.domain.NoticeVO;
 public interface NoticeService {
 
 
+  public void register(NoticeVO notice);
 
-//검색결과 view
-  public NoticeVO view(int nt_cd);
+//전체 래코드갯수
+  public int getTotal(Criteria cri); 
 
-//조회수
-  public void viewcount(int nt_cd);
-  
-//전체 레코드
-  public int getTotalcount(Criteria cri);
+  public List<NoticeVO> getList(Criteria cri);
 
-//page 이전 다음
+//view page 
+  public NoticeVO read(int nt_cd);
+
   public NoticeVO nextPage(int nt_cd);
   public NoticeVO prevPage(int nt_cd);
   

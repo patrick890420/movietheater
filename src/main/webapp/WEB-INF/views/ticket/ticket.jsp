@@ -7,13 +7,33 @@
   <div class="movie-part">
     <div class="reserve-title">영화</div>
     <div class="sort-wrapper">
-      <div class="sort-rate sort-selected">예매율순</div>
       <div class="sort-korean">가나다순</div>
     </div>
     <div class="movie-list-wrapper">
       <div class="movie-list">
-        <%-- <div class="movie-list-age">15</div>
-             <div class="movie-list-title">1917</div> --%>
+        <table>
+        <c:forEach items="${mvList}" var="mvList">
+            <tr>
+              <td>
+                <c:if test="${mvList.rate == 12}">
+                  <img alt="" src="/resources/img/ageLimit/12.png">
+                </c:if>
+                <c:if test="${mvList.rate == 15}">
+                  <img alt="" src="/resources/img/ageLimit/15.png">
+                </c:if>
+                <c:if test="${mvList.rate == 19}">
+                  <img alt="" src="/resources/img/ageLimit/19.png">
+                </c:if>
+                <c:if test="${mvList.rate == 0}">
+                  <img alt="" src="/resources/img/ageLimit/all.png">
+                </c:if>
+                <button class="movie-name-btn">
+                  ${mvList.title}
+                </button>
+              </td>
+            </tr>
+        </c:forEach>
+        </table>  
       </div>
     </div>
   </div>
@@ -22,30 +42,15 @@
     <div class="theater-container">
       <div class="theater-wrapper">
         <div class="theater-location-wrapper">
-          <button class="theater-location">서울(30)</button>
-          <button class="theater-location">경기(43)</button>
-          <button class="theater-location">인천(10)</button>
-          <button class="theater-location">강원(5)</button>
+          <button class="theater-location">대전(1)</button>
+          <button class="theater-location">서울(2)</button>
+          <button class="theater-location">청주(3)</button>
         </div>
         <div class="theater-place-wrapper">
-          <button class="theater-place">천호</button>
-          <button class="theater-place">강변</button>
-          <button class="theater-place">건대입구</button>
-          <button class="theater-place">구로</button>
-          <button class="theater-place">대학로</button>
-          <button class="theater-place">동대문</button>
-          <button class="theater-place">목동</button>
-          <button class="theater-place">명동</button>
-          <button class="theater-place">미아</button>
-          <button class="theater-place">불광</button>
-          <button class="theater-place">상봉</button>
-          <button class="theater-place">송파</button>
-          <button class="theater-place">수유</button>
-          <button class="theater-place">압구정</button>
-          <button class="theater-place">여의도</button>
-          <button class="theater-place">영등포</button>
-          <button class="theater-place">왕십리</button>
-          <button class="theater-place">중계</button>
+          <button class="theater-place">서대전</button>
+          <button class="theater-place">유성</button>
+          <button class="theater-place">둔산</button>
+          <button class="theater-place">복합</button>
         </div>
       </div>
     </div>
@@ -81,14 +86,14 @@
     </div>
   </div>
 </div>
-  <div id="ticket_tnb">
-     <form class="moveSeatForm" action="moveSeat.do" method="post">
-        <input type="hidden" class="title" name="title">
-        <input type="hidden" class="movieAge" name="movieAge">
-        <input type="hidden" class="selectedTheater" name="selectedTheater">
-        <input type="hidden" class="reserveDate" name="movieDate">
-        <input type="hidden" class="runningTime" name="runningTime">
-        <button class="moveSeatButton" type="button" onclick="location.href='/ticket/seat.do'">예약하기</button>
-      </form>
-  </div>
+<div id="ticket_tnb">
+  <form class="moveSeatForm" action="moveSeat.do" method="post">
+    <input type="hidden" class="title" name="title">
+    <input type="hidden" class="movieAge" name="movieAge">
+    <input type="hidden" class="selectedTheater" name="selectedTheater">
+    <input type="hidden" class="reserveDate" name="movieDate">
+    <input type="hidden" class="runningTime" name="runningTime">
+    <button class="moveSeatButton btn btn-primary" type="button" onclick="location.href='/ticket/seat.do'">예약하기</button>
+  </form>
+</div>
 <%@ include file="../footer.jsp"%>

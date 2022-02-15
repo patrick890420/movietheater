@@ -7,18 +7,18 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 event9">
-      <h2>イベント</h2><!-- EVENT -->
+      <h2>EVENT</h2><!-- EVENT -->
     </div><!-- md12 -->
     </div><!-- row -->
     <div class="row event13">
-      <div class="col-md-9">
-        <ol class="breadcrumb event15">
+      <div class="col-md-12">
+        <ol class="breadcrumb15">
           <li>
-            <a href="/ticket/ticket.do">영화 / 예매</a>
-            <a href="/theater/theater.do">CGV 극장별</a>
+            <a href="/ticket/ticket.do">영화 / 예매</a><!-- 영화 / 예매 -->
+            <a href="/theater/theater.do">CGV 극장별</a><!-- CGV 극장별 -->
           </li>
           <li class="event24">
-            <a href="#"style="color: #e53637;">종료 이벤트</a>
+            <a href="#"style="color: #e53637;">종료 이벤트</a><!-- 종료 이벤트 -->
           </li><!--  -->
 <!--           <li><a href="#">당첨자 발표</a></li> -->
 <!--           <li><a href="#">SPECIAL</a></li> -->
@@ -36,11 +36,11 @@
 <form name="myform" method="get" action="/event/event.do">
   <div class="container">
     <div class="row">
-      <div class="col-lg-9 event39">
+      <div class="col-lg-9" style="padding-left: 790px;">
       <select name="sel" class="select">
-    <option value="title">제목</option>
-    <option value="content">내용</option>
-  </select>
+        <option value="title">제목</option><!-- 제목 -->
+        <option value="content">내용</option><!-- 내용 -->
+      </select>
         </div>
         <div class="col-lg-3 event45">
           <label>
@@ -65,7 +65,7 @@
 <section class="event">
   <div class="container event36">
     <div class="row">
-      <div class="col-sm-6 col-md-3 event38">
+      <div class="col-sm-6 col-md-3 event68">
         <div class="thumbnail">
           <a href="/event/eventview.do">
             <img src="/resources/img/anime/details-pic.jpg" alt="...">
@@ -76,17 +76,7 @@
           </a>
         </div>
       </div>
-              <div class="col-sm-6 col-md-3 event38">
-                <div class="thumbnail">
-                  <img src="/resources/img/anime/details-pic.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>...</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-3 event38">
+              <div class="col-sm-6 col-md-3 event68">
                 <div class="thumbnail">
                   <img src="/resources/img/anime/details-pic.jpg" alt="...">
                   <div class="caption">
@@ -97,6 +87,16 @@
                 </div>
               </div>
               <div class="col-sm-6 col-md-3 event68">
+                <div class="thumbnail">
+                  <img src="/resources/img/anime/details-pic.jpg" alt="...">
+                  <div class="caption">
+                    <h3>Thumbnail label</h3>
+                    <p>...</p>
+                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
                 <a href="#" class="thumbnail">
                   <img src="/resources/img/recent/recent-6.jpg" alt="...">
                 </a>
@@ -106,27 +106,7 @@
         
         <div class="container">
             <div class="row">      
-              <div class="col-sm-6 col-md-3 event38">
-                <div class="thumbnail">
-                  <img src="/resources/img/anime/details-pic.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>...</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-3 event38">
-                <div class="thumbnail">
-                  <img src="/resources/img/anime/details-pic.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>...</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-3 event38">
+              <div class="col-sm-6 col-md-3 event68">
                 <div class="thumbnail">
                   <img src="/resources/img/anime/details-pic.jpg" alt="...">
                   <div class="caption">
@@ -137,6 +117,26 @@
                 </div>
               </div>
               <div class="col-sm-6 col-md-3 event68">
+                <div class="thumbnail">
+                  <img src="/resources/img/anime/details-pic.jpg" alt="...">
+                  <div class="caption">
+                    <h3>Thumbnail label</h3>
+                    <p>...</p>
+                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3 event68">
+                <div class="thumbnail">
+                  <img src="/resources/img/anime/details-pic.jpg" alt="...">
+                  <div class="caption">
+                    <h3>Thumbnail label</h3>
+                    <p>...</p>
+                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
                 <a href="#" class="thumbnail">
                   <img src="/resources/img/recent/recent-6.jpg" alt="...">
                 </a>

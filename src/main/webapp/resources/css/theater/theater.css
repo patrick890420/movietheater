@@ -1,2 +1,232 @@
 @charset "UTF-8";
 
+.t_infotext{
+  margin-bottom:25px;
+}
+.t_sit{
+  margin-left:15px;
+  padding-left:15px;
+  border-left:groove;
+}
+.t_icon{
+  margin-top:60px;
+}
+.t_icon2{
+  margin-top:20px;
+  font-size: x-large;
+}
+.t_icon2 span{
+  margin-right:10px;
+}
+.t_icon strong {
+  margin-right:25px;
+}
+.t_reco{
+  background:#8080801c;
+  padding:20px;
+}
+.t_recoline{
+    border-bottom: groove;
+    width: 22px;
+    margin: 10px 0;
+}
+.t_reco .t_recotitle span{
+  
+    font-size: 25px;
+    color: lightslategray;
+    font-weight: 500;
+
+}
+.t_recoradi4{
+  border-radius:4px;
+}
+.t_eventimg{
+  height:230px;
+}
+.t_tablist{
+  text-align:center;
+  padding:10px;
+}
+.t_tablist a {
+  font-size:16px;
+  font-weight: 600;
+  color:black;
+}
+.t_tableftline{
+  border-left:1px solid #dee2e6;
+}
+.tab-content{
+  padding:30px 10px;
+}
+.t_date{
+  float:left;
+  margin-left:48px;
+  text-align:center;
+  line-height: 2.5;
+}
+.t_age{
+  border-top:2px solid #dee2e6;
+  border-bottom:1px solid #dee2e6;
+  background:#dee2e62e;
+  padding:10px;
+}
+.t_agelist{
+  float:right;
+  margin-left:20px;
+}
+.t_ep0{
+  font-size: 1px;
+    color: white;
+    background: #5BC77E;
+    display: inline-block;
+    padding: 6px 4px;
+    border-radius: 50px;
+}
+.t_ep19{
+  font-size: 1px;
+    color: white;
+    background: #ED4C6B;
+    display: inline-block;
+    padding: 6px 4px;
+    border-radius: 50px;
+}
+.t_ep12{
+  font-size: 13px;
+    color: white;
+    background: #0484dfd9;
+    display: inline-block;
+    padding: 4px 7px;
+    border-radius: 50px;
+}
+.t_ep15{
+  font-size: 13px;
+    color: white;
+    background: #ff8100;
+    display: inline-block;
+    padding: 4px 7px;
+    border-radius: 50px;
+}
+.t_filminfo{
+  padding:30px 0;
+  border-bottom: solid 1px gray;
+  padding-bottom: 30px;
+}
+.t_filmtitle{
+ font-size: larger; font-weight: 900;
+}
+.t_post{
+  height:530px;
+  background-image: url("/resources/img/theater/theatermain.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top:30px;
+  position: relative;
+}
+.t_ranpost{
+  width:1155px;
+  padding:35px 0;
+}
+.t_chargetext{
+  padding: 20px 0;
+  background: #80808026;
+}
+.t_city{
+  text-align: center;
+  margin:90px 70px 0 70px;
+  border-top: solid 1px #cfcdcdb8;
+  border-bottom: solid 1px #cfcdcdb8;
+  box-sizing: content-box;  
+}
+.t_city a{
+  color:white;
+}
+.t_city li{
+  padding:10px 0;
+}
+.t_subcity{
+  margin:0 60px;
+}
+.t_citydata{
+  float:left;
+  margin-left:15px;
+  text-align:center;
+  line-height: 15px;
+  color:white;
+}
+.t_citydataline:nth-child(n+2) {
+  border-left: 1px solid #dee2e6;
+  padding-left: 15px;
+}
+
+.date1 { display:none;} 
+input[type=radio] + strong {
+        display: inline-block;
+        padding: 0 10px;
+        border: 1px solid white;
+        background-color: #ffffff;
+        cursor: pointer; }
+input[type="radio"]:checked + strong {
+        text-align: center;
+        padding: 0 10px;
+        border: 1px solid #dfdfdf;
+        border-radius:50%;
+        background-color: #113a6b;
+        color: #ffffff;
+}
+.t_iconimg{
+        position: relative;
+        top:-2px;
+}
+
+.t_icon .t_modaliconstart {
+        padding-left:0;
+}
+.t_modal_name{
+        font-weight:600;
+        font-size:16px;
+}
+.t_modaltitle{
+        margin-left: 36%;
+}
+.t_modaltitle2{
+        margin-left: 33%;
+}
+.t_modaltitle3{
+        margin-left: 41%;
+}
+.modal-body img{
+        width:6%;
+}
+.t_modaltextname{
+        font-weight: 600;
+}
+.t_modallisttext{
+        padding:0 40px;
+}
+.t_modallisttext strong{
+        font-size:11px;
+}
+.t_modaltext{
+        font-size:10px;
+}
+.t_modallisttext .t_modaltext{
+        margin-bottom: 5px;
+}
+.t_filmtime {
+  border-radius: 5%;
+  width: 120px; 
+  height: 55px; 
+  list-style: none; 
+  padding-top: 5px; 
+  border: 1px solid #ddd; 
+  line-height: 1.4; 
+  text-align: center;
+  background: #f8f8f8;
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(248, 248, 248, 1) 100%);
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(248, 248, 248, 1) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(248, 248, 248, 1) 100%);
+    filter: 
+}
+.t_filmtime strong a{
+  color:black;
+}
