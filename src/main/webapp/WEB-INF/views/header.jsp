@@ -33,7 +33,7 @@
 <link rel="stylesheet" href="/resources/css/slicknav.min.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/style.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/movie/movie.css" type="text/css">
-<link rel="stylesheet" href="/resources/css/event_notice.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/event_notice/event_notice.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/ticket/ticket.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/theater/theater.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/member/member.css" type="text/css">
@@ -97,7 +97,7 @@
         <div class="header__nav">
           <nav class="header__menu mobile-menu">
             <ul>
-              <li><a href="/movie/movie.do">영화</a></li>
+              <li><a href="/movie/movie.do">영화</a></li>
               <li><a href="/theater/theater.do">극장<span class="arrow_carrot-down"></span></a>
                 <ul class="dropdown">
                   <li><a href="">JSL-Movie극장</a></li>

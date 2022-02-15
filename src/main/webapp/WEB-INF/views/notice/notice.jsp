@@ -62,22 +62,51 @@
           <col width="10%">
         </colgroup>
         <tr>
-          <th>番号</th><!-- 번호 -->
-          <th>題目</th><!-- 제목 -->
-          <th>イメージ</th><!-- 이미지 -->
+          <th>번호</th>
+          <th>제목</th>
+          <th>이미지</th>
 <!--           <th>内容</th>내용 -->
-          <th>作成日</th><!-- 작성일 -->
-          <th>照会数</th><!-- 조회수 -->
+          <th>작성일</th>
+          <th>조회수</th>
         </tr>
+        
+        <tbody>
+          <c:set var="num" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}"/>
+          <c:forEach var="list" items="${list}">
+        
+<!--         내용 -->
         <tr>
-          <td>번호</td>
-          <td><a href="#"></a>제목</td>
+          <td>${num}</td>
+          <td class="title"><a href="noticeview.do?bno=${list.nt_cd}&pageNum=${pageMaker.cri.pageNum}&amount=${pageMaker.cri.amount}&type=${pageMaker.cri.type}&keyword=${pageMaker.cri.keyword}">${list.title}</a></td>
           <td>이미지</td>
 <!--           <td>내용</td> -->
-          <td>작성일</td>
-          <td>조회수</td>
+          <td>
+            <fmt:parseDate var="dateString" pattern="yyyy-MM-dd" value="${nlist.wdate}"/></td>
+            <fmt:formatDate var="dateString" value="${dateString}" pattern="yyyy-MM-dd"/>
+          </td>
+          <td>${list.hits}</td>
         </tr>
+        <c:set var="num" value="${num-1}"/>
+        </c:forEach>
+        </tbody>
       </table>
+      
+      <div class="paging">
+    <c:if test="${pageMaker.prev}">
+      <a href="${pageMaker.startPage-1}"><i class="fa  fa-angle-double-left"></i></a>
+    </c:if>
+    
+    <!-- 반복실행하라는 뜻 -->
+    <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+      <a href="${num}" class="${pageMaker.cri.pageNum == num?'active':''}">${num}</a>
+    <!--                  연산자 조건이 참이면 active 추가/아니면''  -->
+    </c:forEach>
+    <c:if test="${pageMaker.next}"> 
+      <a href="${pageMaker.startPage+1}"><i class="fa  fa-angle-double-right"></i></a>
+    </c:if> 
+    
+    </div><!-- padding -->
+      
     </div><!-- md-12 -->
   </div><!-- row -->
 </div><!-- container -->

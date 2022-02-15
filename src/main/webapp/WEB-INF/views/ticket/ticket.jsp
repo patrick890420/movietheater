@@ -15,9 +15,18 @@
         <c:forEach items="${mvList}" var="mvList">
             <tr>
               <td>
-                <button class="movie-age-btn">
-                  ${mvList.rate}               
-                </button>
+                <c:if test="${mvList.rate == 12}">
+                  <img alt="" src="/resources/img/ageLimit/12.png">
+                </c:if>
+                <c:if test="${mvList.rate == 15}">
+                  <img alt="" src="/resources/img/ageLimit/15.png">
+                </c:if>
+                <c:if test="${mvList.rate == 19}">
+                  <img alt="" src="/resources/img/ageLimit/19.png">
+                </c:if>
+                <c:if test="${mvList.rate == 0}">
+                  <img alt="" src="/resources/img/ageLimit/all.png">
+                </c:if>
                 <button class="movie-name-btn">
                   ${mvList.title}
                 </button>
@@ -84,7 +93,7 @@
     <input type="hidden" class="selectedTheater" name="selectedTheater">
     <input type="hidden" class="reserveDate" name="movieDate">
     <input type="hidden" class="runningTime" name="runningTime">
-    <button class="moveSeatButton" type="button" onclick="location.href='/ticket/seat.do'">예약하기</button>
+    <button class="moveSeatButton btn btn-primary" type="button" onclick="location.href='/ticket/seat.do'">예약하기</button>
   </form>
 </div>
 <%@ include file="../footer.jsp"%>
