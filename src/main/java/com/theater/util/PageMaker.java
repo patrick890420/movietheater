@@ -31,7 +31,7 @@ public class PageMaker {
     //전체 마지막 페이지
      int realEnd =(int)(Math.ceil(total * 1.0/cri.getAmount()));
      
-     //전체 마지막 페이지가 화며에 보이는 페이지보다 작은경우 보이는 페이지 조정
+     //전체 마지막 페이지가 화면에 보이는 페이지보다 작은경우 보이는 페이지 조정
      if(realEnd < this.endPage) {
        this.endPage = realEnd;
      }

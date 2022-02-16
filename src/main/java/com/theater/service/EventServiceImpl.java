@@ -1,8 +1,11 @@
 package com.theater.service;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
-@Repository
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
 public class EventServiceImpl implements EventService {
 
 }

@@ -100,10 +100,8 @@
               <!-- Directors tab -->
               
 <!--               글쓰기 -->
-              <div class="adminevent127">
-                <a href="/adm/adminNotice/adminWrite.do" class="btn_write">글쓰기</a>
-              </div>
-              
+                <button type="button" class="btn admin103"
+                  onClick="location.href='adminWrite.do'">글쓰기</button>
           </div><!-- tab-content -->
       </div> <!-- end card-body-->
   </div> <!-- end card-->
