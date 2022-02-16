@@ -70,7 +70,7 @@
   SELECT COUNT(*) AS TOTAL FROM NOTICE
   WHERE  <if test="searchType == 'title'">TITLE LIKE '%'||#{searchName}||'%'</if>
          <if test="searchType == 'content'">CONTNENT LIKE '%'||#{searchType}||'%'</if>
-         <if test="searchType == 'total'">CONTENT LIKE '%'||#{searchType}||'%' OR TITLE LIKE '%'||#{searchName}||'%'</if>
+         <if test="searchType == 'total'">CONT                                                                                                                                                                                                                                                                          ENT LIKE '%'||#{searchType}||'%' OR TITLE LIKE '%'||#{searchName}||'%'</if>
          <if test="searchType == null or searchType == ''"> 1=1</if>
 </select>
 
