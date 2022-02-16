@@ -20,11 +20,8 @@
       from notice
       where
     ]]>
-    
-<<<<<<< HEAD
 <!--     <include refid="criteria"/> -->
-=======
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
+
         
     <![CDATA[
     rownum <= #{pageNum} * #{amount}
