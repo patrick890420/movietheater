@@ -22,4 +22,6 @@ public interface MovieMapper {
   public MovieVO nextPage(int m_cd);
   
   public MovieVO prevPage(int m_cd);
+  
+  //view  페이지
 }

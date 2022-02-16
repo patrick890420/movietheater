@@ -27,6 +27,21 @@
                                 </div>
                             </div>
                         </div>
+                         <form name="myform" method="get" action="movie.do" id="searchForm">
+                           <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
+                              <select name="type" class="select">
+                              <option value="" <c:out value="${pageMaker.cri.type==null? 'selected':''}"/>>선택</option>
+          <option value="T" <c:out value="${pageMaker.cri.type eq 'T'? 'selected':''}"/> >제목</option>
+          <option value="C" <c:out value="${pageMaker.cri.type eq 'C'? 'selected':''}"/>>내용</option>
+          <option value="W" <c:out value="${pageMaker.cri.type eq 'W'? 'selected':''}"/>>글쓴이</option>
+          <option value="TC" <c:out value="${pageMaker.cri.type eq 'TC'? 'selected':''}"/>>제목/내용</option>
+          
+        </select>
+        <input type="text" name="keyword" class="search_word" value="<c:out value="${pageMaker.cri.keyword }"/>">
+        <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+        <input type="hidden" name="amount" value="${pageMaker.cri.amount }">  
+        <button class="btn_search" type="submit" id="searchForm"><i class="fa fa-search"></i><span class="sr-only">검색버튼</span></button>
+      </form>
                         <div class="row">
                         <c:set var="num" value="${pageMaker.total-((pageMaker.cri.pageNum-1) * 10)}"/>
                           <c:forEach var="mlist" items="${list }"  >
@@ -44,6 +59,12 @@
                             </c:forEach>
                         </div>
                     </div>
+                    <form id="actionForm" action="movie.do" method="get">
+                      <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+                      <input type="hidden" name="amount" value="${pageMaker.cri.amount }">
+                      <input type="hidden" name="sel" value="${pageMaker.cri.type }">
+                      <input type="hidden" name="word" value="${pageMaker.cri.keyword }">
+                    </form>
                     <div class="product__pagination" style="text-align: center;">
                       <c:if test="${pageMaker.prev}">
                         <a href="${pageMaker.startPage-1 }"><i class="bi bi-arrow-left"></i></a>
@@ -56,12 +77,6 @@
                         </c:if>
                     </div>
                 </div>
-                <form id="actionForm" action="movie.do" method="get">
-                  <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
-                  <input type="hidden" name="amount" value="${pageMaker.cri.amount }">
-                  <input type="hidden" name="sel" value="${pageMaker.cri.type }">
-                  <input type="hidden" name="word" value="${pageMaker.cri.keyword }">
-              </form>
                 <div class="col-lg-4 col-md-6 col-sm-8">
                     <div class="product__sidebar">
                         <div class="product__sidebar__view">
