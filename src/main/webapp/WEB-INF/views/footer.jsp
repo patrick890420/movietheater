@@ -9,7 +9,7 @@
       <div class="row">
         <div class="col-lg-3">
           <div class="footer__logo">
-            <a href="./index.html"> 
+            <a href="/"> 
             <span style="font-size: x-large; font-weight: 800; color: black;">📽JSL-Movie</span>
           </a>
           </div>
@@ -60,5 +60,6 @@
   <script src="/resources/js/main.js"></script>
   <script src="/resources/js/ticket/ticket.js"></script>
   <script src="/resources/js/ticket/seat.js"></script>
+  <script src="/resources/js/theater/theater.js"></script>
 </body>
 </html>

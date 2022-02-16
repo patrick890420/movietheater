@@ -1,56 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-
 <mapper namespace="com.theater.mapper.NoticeMapper">
- 
-<!--  검색을 도와줌 -->
+
+<sql id="criteria">
+  <trim prefix="(" suffix=") AND" prefixOverrides="OR">
+    <foreach item="type" collection="typeArr">
+            <!-- Criteria->이름 같으면 getTypeArr(자동 호출) 실행 -->
+      <trim prefix="OR">
+        <choose>
+          <when test="type== 'T'.toString()">
+            title like '%'||#{keyword}||'%'
+          </when>
+          <when test="type== 'C'.toString()">
+            content like '%'||#{keyword}||'%'
+          </when>
+        </choose>
+      </trim>
+    </foreach>
+  </trim>
+</sql>
+
+<!-- 삽입 -->
+<insert id="insert">
+  <selectKey keyProperty="nt_cd" order="BEFORE" resultType="int">
+    select notice_seq.nextval from dual
+  </selectKey>
+  insert into notice (nt_cd,title,e_img,content,wdate,hits)
+  values (#{nt_cd},#{e_img},#{content},#{hits},sysdate,0)
+</insert>
+
 <select id="getList" resultType="com.theater.domain.NoticeVO">
-<!--            검색된 결과를 noticeVO에 담는다     DB검색된 결과를 받는다 -->
-<![CDATA[
-  select * from notice where nt_cd >0
+  <![CDATA[
+  SELECT *
+  FROM ( SELECT ROWNUM RN,
+          A.*
+        FROM (SELECT * FROM NOTICE
+              WHERE
+  ]]> 
+              <if test="searchType == 'title'">TITLE LIKE '%'||#{searchName}||'%'</if>
+              <if test="searchType == 'content'">CONTNENT LIKE '%'||#{searchName}||'%'</if>
+              <if test="searchType == null or searchType == ''"> 1=1</if>
+  <![CDATA[
+              ORDER BY NT_CD DESC) A)
+  WHERE RN > (#{pageNum}-1) * #{amount} AND RN <= #{pageNum} * #{amount}
   ]]>
-</select>
-
-<!-- page 기법 처리/ 해당 페이지 검색 -->
-  <select id="getListWithPaging" resultType="com.theater.domain.NoticeVO">
-    <![CDATA[
-    select bno,title,content,wdate,hits from(
-      select /*+ index_desc(notice notice_pk)*/ rownum rn, nt_cd,title,content,wdate,hits
-      from notice
-      where
-    ]]>
-    
-        
-    <![CDATA[
-    rownum <= #{pageNum} * #{amount}
-    ) where rn > (#{pageNum}-1)*#{amount}
-    ]]>
-  </select>
-
-<!--   검색결과 view -->
-<select id="view" resultType="com.theater.domain.NoticeVO">
-  select * from notice where nt_cd= #{nt_cd}
-</select>
-
-<!-- 조회수 -->
-<update id="viewcount">
-  update notice set hits= hits+ 1 where nt_cd= #{nt_cd}
-</update>
-
-
-
+ </select> 
+  
 <!-- page -->
 <select id="nextPage" resultType="com.theater.domain.NoticeVO">
   <![CDATA[
     select * from notice where nt_cd< #{nt_cd} and rownum=1 order by nt_cd desc
-    ]]>
+    ]]>                   <!-- 오라클 페이지 기법 -->
 </select>
 <select id="prevPage" resultType="com.theater.domain.NoticeVO">
   <![CDATA[
     select * from notice where nt_cd> #{nt_cd} and rownum=1 order by nt_cd asc
     ]]>
-</select>   
+</select>
+
+<!-- 조회수 -->
+<update id="readCount">
+  update notice set hits= hits+ 1 where nt_cd= #{nt_cd}
+</update>
+  
+  
+<!-- 전체 래코드 갯수 -->
+<select id="getTotal" resultType="int">
+  SELECT COUNT(*) AS TOTAL FROM NOTICE
+  WHERE  <if test="searchType == 'title'">TITLE LIKE '%'||#{searchName}||'%'</if>
+         <if test="searchType == 'content'">CONTNENT LIKE '%'||#{searchType}||'%'</if>
+         <if test="searchType == 'total'">CONTENT LIKE '%'||#{searchType}||'%' OR TITLE LIKE '%'||#{searchName}||'%'</if>
+         <if test="searchType == null or searchType == ''"> 1=1</if>
+</select>
 
 
 </mapper>

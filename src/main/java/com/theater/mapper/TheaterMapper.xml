@@ -3,12 +3,9 @@
 <mapper namespace="com.theater.mapper.TheaterMapper">
 
 <select id="theaterList" resultType="com.theater.domain.TheatersVO"> <!-- 기본극장 리스트 -->
-  SELECT * FROM THEATERS where t_area=#{t_area}
+  SELECT * FROM THEATERS where t_area= #{t_area}
 </select>
 <select id="theaterinfo" resultType="com.theater.domain.TheatersVO"> <!-- 기본극장 정보 -->
   SELECT * FROM THEATERS where t_name= #{t_name}
-</select>
-<select id="theatercity" resultType="com.theater.domain.TheatersVO"> <!-- 도시  정보 -->
-  SELECT * FROM THEATERS where t_area=#{t_area}
 </select>
 </mapper>

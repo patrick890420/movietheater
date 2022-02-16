@@ -44,67 +44,9 @@
               </a>
             </li>
           </ul>
-          <div class="tab-content">
-              <div class="tab-pane show active" id="actors">
-                <!-- basic table -->
-                <div class="row">
-                  <div class="col-12">
-                    <div class="card">
-                      <div class="card-body">
-            <!--             <code> $().DataTable();</code> -->
-                        <!-- DataTable 사용법 -->
-            <!--        <code> $("#테이블id").DataTable();</code> -->
-                        <div class="table-responsive">
-                          <table id="actorsTable" class="table table-striped table-bordered no-wrap">
-                          <colgroup>
-                            <col width="10%">
-                            <col width="*">
-                            <col width="10%">
-                            <col width="10%">
-                            <col width="10%">
-                          </colgroup>
-                            <thead>
-                              <tr>
-                                <th>번호</th>
-                                <th>제목</th>
-                                <th>관리자</th>
-                                <th>작성일</th>
-                                <th>조회수</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>1</td>
-                                <td>Tiger Nixon</td>
-                                <td><a href="#">System Architect</a></td>
-                                <td>Edinburgh</td>
-                                <td>Edinburgh</td>
-                              </tr>
-                            </tbody>
-                            <tfoot>
-                              <tr>
-                                <th>Number</th>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <td>Edinburgh</td>
-                              </tr>
-                            </tfoot>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Directors tab -->
-              
-<!--               글쓰기 -->
-              <div class="adminevent127">
-                <a href="/adm/adminNotice/adminWrite.do" class="btn_write">글쓰기</a>
-              </div>
-              
-          </div><!-- tab-content -->
+          
+          
+          
       </div> <!-- end card-body-->
   </div> <!-- end card-->
 </div> <!-- col-xl-12 -->
