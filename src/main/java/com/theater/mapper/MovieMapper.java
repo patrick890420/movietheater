@@ -11,13 +11,15 @@ public interface MovieMapper {
   
   public List<MovieVO> MovieList();
   
+  public List<MovieVO> MovieSelect();
+  
   public MovieVO read(int m_cd);
   
   public void readCount(int m_cd);
   
   public List<MovieVO> MovieListPaging(Criteria cri);
   
-  public int getTotalCount(Criteria cri);
+  public int getTotal(Criteria cri);
   
   public MovieVO nextPage(int m_cd);
   
