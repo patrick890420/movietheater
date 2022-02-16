@@ -24,9 +24,10 @@ public class MoiveController {
   
 	
 	@GetMapping("/view.do")
-	public void view() {
-		
+	public void view(@RequestParam("m_cd") int m_cd,Criteria cri, Model model) {
+		model.addAttribute("view", Movieservice.read(m_cd));
 	}//view.do
+	
 	
 	@GetMapping("/movie.do") 
 	public void MovieList(Criteria cri, Model model) {
