@@ -27,31 +27,19 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class JoinController {
 
-  @Setter(onMethod_ = @Autowired)
+  @Setter(onMethod_ = @Autowired) /* pw암호화 해주는것 */
   private MembersService mservice;
-<<<<<<< HEAD
-=======
-    
-  @Setter(onMethod_ = @Autowired) /* pw암호화 해주는것 */
-  private PasswordEncoder pwEncoder;
-    
-  @GetMapping("/join.do")
-  public void join() {
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
+  
 
-<<<<<<< HEAD
   @Setter(onMethod_ = @Autowired) /* pw암호화 해주는것 */
   private PasswordEncoder pwEncoder;
-=======
-  }// join.do
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
+
 
   @GetMapping("/join.do")
   public void join() {
 
   }
 
-<<<<<<< HEAD
   @GetMapping("/idChk.do")
   public @ResponseBody int idChk(@RequestParam("id") String id) {
     int result = mservice.idChk(id);
@@ -59,23 +47,10 @@ public class JoinController {
     return result;
 
   }
-
-  @PostMapping("/joinPro.do") // 레지스터 등록
-  public String register(MemberVO mvo, RedirectAttributes rdat) {
-
-=======
   
   @PostMapping("/joinPro.do") //레지스터 등록
   public String register(MemberVO mvo, RedirectAttributes rdat) {
-    log.info(mvo.getId());
-    log.info(mvo.getName());
-    log.info(mvo.getBirth());
-    log.info(mvo.getEmail());
-    log.info(mvo.getGender());
-    log.info(mvo.getPhone());
-    log.info(mvo.getPwd());
-    
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
+
     String inputPass = pwEncoder.encode(mvo.getPwd()); /* 암호화 */
     mvo.setPwd(inputPass);
 
@@ -83,9 +58,5 @@ public class JoinController {
     /* rdat.addAttribute("result",mvo.getUserid()); */
     return "redirect:/";
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
 
 }
