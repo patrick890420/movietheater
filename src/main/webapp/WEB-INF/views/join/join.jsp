@@ -37,11 +37,12 @@
             <div class="input__item">
               <input type="text" placeholder="아이디를 입력해 주세요." id="userId"
                 name="id" maxlength='15'> <span class="icon_id"></span>
+                <div id="checkMsg"></div>
             </div>
 
 
             <div class="input__btn">
-              <input type="button" class="input__btn2" value='중복확인'>
+              <input type="button" id="checkbtn" class="input__btn2" value='중복확인'>
             </div>
 
             <span class="id_ok">사용 가능한 아이디입니다.</span> <span
@@ -87,7 +88,7 @@
               <span class="icon_heart_alt"></span>
               <div class="genderchoice">
                 <input type="radio" value="2" class="gender"
-                  name="gender">woman <input type="radio"
+                  name="gender"> woman <input type="radio"
                   value="1" class="gender" name="gender"> man
 
               </div>
@@ -95,7 +96,7 @@
 
 
           
-            <ul class="join_box" style="padding: 30px;">
+            <ul class="join_box">
               <li class="checkBox check02">
                 <ul class="clearfix">
                   <li>이용약관 동의(필수)</li>
@@ -206,6 +207,7 @@
 
     $("#join_button").on("click", function() {
 
+
       //공백
       if ($("#userName").val() == "") {
         alert("성명을 입력해주세요.");
@@ -217,6 +219,7 @@
         $("#userId").focus();
         return false;
       }
+
 
       if ($("#userMail").val() == "") {
         alert("이메일을 입력해주세요.");
@@ -251,46 +254,57 @@
       //비밀번호 일치-불일치
       if ($("#userPass").val() != $("#userPass2").val()) {
         alert("두 비밀번호가 맞지 않습니다.");
-        // form.userPass.value = "";
         document.form.userPass2.value = "";
         document.form.userPass2.focus();
         return false;
-      }
+      } //비밀번호가 맞지 않으면 오류 화면으로 감
+      
+      
+      //라디오 유효성 검사 (성별을 선택해 주세요 뜬 다음 오류로 넘어감)
+   //   if($(':radio[name="gender"]:checked').length < 1){
+  //        alert('성별을 선택해주세요.');
+    //     document.form.gender[0].focus();
+    //     return false;
+    //  } 
+      
+      if($("input[name=gender]:radio:checked").length == 0){
+        alert('선택해주세요');
+        return false;
+}
+
 
       if (!$("input:checked[id='box1']").is(":checked")) {
         alert("이용약관 동의가 필요합니다.");
-      }
-      //라디오 유효성 검사 (맞는지 아닌지 모름)
-      // if($(':radio[name="gender"]:checked').length < 1){
-      //     alert('성별을 선택해주세요.');
-      //     document.form.gender[0].focus();
-      //     return false;
-
-      // }  //return true;
-
-      function fn_idChk() {
-        $.ajax({
-          url : "member/idChk",
-          type : "post",
-          dataType : "json",
-          data : {
-            "id" : $("#id").val()
-          },
-          success : function(data) {
-            if (data == 1) {
-              alert("중복된 아이디입니다.");
-            } else if (data == 0) {
-              $("#idChk").attr("value", "Y");
-              alert("사용가능한 아이디입니다.");
-            } else {
-              alert("아이디를 입력해주세요.");
-            }
-          }
-        })
+        return false;
       }
 
     });
   })
+  //아이디 중복
+  $("#userId").blur(function(){
+      var idCheck = $("input[name=id]").val();
+      
+      $.ajax({
+         type : "get",
+         url : '/join/idChk.do?id='+idCheck,
+//          data : {id : $("#id").val()},
+         dataType : "json",
+         success : function(data) {
+            
+           if (data == 0) {
+               if ($("#userId").val() != "") {
+               alert("사용 가능한 아이디 입니다.");
+                 }
+            } else{
+              alert("사용 불가능한 아이디 입니다.");
+               $("#userId").val("");
+               $("#userId").focus();
+               return false();
+            }
+         },
+         error : function() {
+            alert("error");
+         }
+      }); //ajax end
+   }); //blur end
 </script>
-
-
