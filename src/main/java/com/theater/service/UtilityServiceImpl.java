@@ -41,4 +41,27 @@ public class UtilityServiceImpl implements UtilityService {
     return cmapper.getGenresList();
   }
 
+  @Override
+  public ActorsVO getActorsView(int a_cd) {
+    return cmapper.getActorsView(a_cd);
+  }
+
+  @Override
+  public DirectorsVO getDirectorsView(int d_cd) {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public NationVO getNationVOView(int n_cd) {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public GenresVO getGenresView(int g_cd) {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
 }

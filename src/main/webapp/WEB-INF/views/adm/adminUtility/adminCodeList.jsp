@@ -70,9 +70,44 @@
               <div class="col-12">
                 <div class="card">
                   <div class="card-body">
-            <!--             <code> $().DataTable();</code> -->
-                        <!-- DataTable 사용법 -->
-            <!--        <code> $("#테이블id").DataTable();</code> -->
+                    <div class="col-12">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="card-title">Actors Register</h4>
+                          <h6 class="card-subtitle"><code>* </code>新しい俳優情報の入力</h6>
+                            <form class="mt-4">
+                              <div class="form-group">
+                                <div class="row">
+                                  <label class="col-lg-1 text-center">Name</label>
+                                  <div class="col-lg-11">
+                                    <div class="row">
+                                      <div class="col-md-3">
+                                        <input type="text" class="form-control">
+                                      </div>
+                                      <label class="col-lg-1 text-center">Photo</label>
+                                      <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                          <div class="input-group-prepend">
+                                            <span class="input-group-text">Upload</span>
+                                          </div>
+                                          <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-1">
+                                        <button type="submit" class="btn btn-primary text-center">Register</button>
+                                        
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
                     <div class="table-responsive">
                       <table id="actorsTable" class="table table-striped table-bordered no-wrap">
                         <thead>
@@ -84,11 +119,17 @@
                         </thead>
                           <tbody>
                             <c:forEach items="${actors}" var="actors">
-                              <tr>
-                                <td>${actors.a_cd}</td>
-                                <td>${actors.a_name}</td>
-                                <td>${actors.a_img}</td>
-                              </tr>
+                                <tr class="actorsTr">
+                                  <td>
+                                    <p class="actorsCode mb-0" data-toggle="modal" data-target="#primary-header-modal">${actors.a_cd}</p>
+                                  </td>
+                                  <td>
+                                    <p class="actorsName mb-0" data-toggle="modal" data-target="#primary-header-modal">${actors.a_name}</p>
+                                  </td>
+                                  <td>
+                                    <p class="actorsImg mb-0" data-toggle="modal" data-target="#primary-header-modal">${actors.a_img}</p>
+                                  </td>
+                                </tr>
                             </c:forEach>
                           </tbody>
                           <tfoot>
@@ -113,9 +154,6 @@
                 <div class="col-12">
                   <div class="card">
                     <div class="card-body">
-            <!--             <code> $().DataTable();</code> -->
-                        <!-- DataTable 사용법 -->
-            <!--        <code> $("#테이블id").DataTable();</code> -->
                       <div class="table-responsive">
                         <table id="directorsTable" class="table table-striped table-bordered no-wrap">
                         <thead>
@@ -156,9 +194,6 @@
                   <div class="col-12">
                     <div class="card">
                       <div class="card-body">
-            <!--             <code> $().DataTable();</code> -->
-                        <!-- DataTable 사용법 -->
-            <!--        <code> $("#테이블id").DataTable();</code> -->
                         <div class="table-responsive">
                           <table id="nationsTable" class="table table-striped table-bordered no-wrap">
                             <thead>
@@ -195,9 +230,6 @@
                   <div class="col-12">
                     <div class="card">
                       <div class="card-body">
-            <!--             <code> $().DataTable();</code> -->
-                        <!-- DataTable 사용법 -->
-            <!--        <code> $("#테이블id").DataTable();</code> -->
                         <div class="table-responsive">
                           <table id="genresTable" class="table table-striped table-bordered no-wrap">
                             <thead>
@@ -234,27 +266,67 @@
 <!-- ============================================================== -->
 <!-- End PAge Content -->
 <!-- ============================================================== -->
+ <!-- Primary Header Modal -->
+<div id="primary-header-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="primary-header-modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal-colored-header bg-primary">
+        <h4 class="modal-title" id="primary-header-modalLabel">ACTORS INFO</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="a_cd">CODE</label>
+            <input class="form-control" id="a_cd" name="a_cd" readonly>
+          </div>
+          <div class="form-group">
+            <label for="actors_name">NAME</label>
+            <input class="form-control" id="a_name" name="a_name">
+          </div>
+          <div class="form-group">
+            <label for="actors_photo">PHOTO</label>
+            <input class="form-control" type="hidden" id="a_img" name="a_img">
+            <img class="form-control" id="showImg" name="showImg" alt="" src="" style="height:50px;">
+          </div>
+          <div>
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Change Photo Upload</h4>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Upload</span>
+                  </div>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01">
+                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 </div>
+
 <script>
-  $(function() {
-    // tab operation
-    $('.nav-item').click(function() {
-      var activeTab = $(this).attr('data-tab');
-      $('li').css('background-color', 'white');
-      $(this).css('background-color', 'green');
-      $.ajax({
-        type : 'GET',                 //get방식으로 통신
-        url : activeTab + ".html",    //탭의 data-tab속성의 값으로 된 html파일로 통신
-        dataType : "html",            //html형식으로 값 읽기
-        error : function() {          //통신 실패시
-          alert('통신실패!');
-        },
-        success : function(data) {    //통신 성공시 탭 내용담는 div를 읽어들인 값으로 채운다.
-          $('#tabcontent').html(data);
-        }
-      });
-    });
-    $('#default').click();          
+
+$(".actorsTr").on("click", function () {
+  var actorsInfo = $(this);
+  var acd = actorsInfo.find(".actorsCode").text();
+  var aname = actorsInfo.find(".actorsName").text(); 
+  var aimg = actorsInfo.find(".actorsImg").text();
+    $("#a_cd").val(acd);
+    $("#a_name").val(aname);
+    $("#a_img").val(aimg);
+    $("#showImg").attr("src","/resources/img/"+aimg);
   });
 </script>
 <!-- ============================================================== -->

@@ -13,4 +13,9 @@ public interface UtilityService {
   public List<DirectorsVO> getDitrectorsList();  //영화감독리스트
   public List<NationVO> getNationsList();        //국가리스트
   public List<GenresVO> getGenresList();         //장르리스트
+  
+  public ActorsVO getActorsView(int a_cd);         //배우 정보
+  public DirectorsVO getDirectorsView(int d_cd);         //배우 정보
+  public NationVO getNationVOView(int n_cd);         //배우 정보
+  public GenresVO getGenresView(int g_cd);         //배우 정보
 }
