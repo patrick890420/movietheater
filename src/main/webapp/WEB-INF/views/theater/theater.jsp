@@ -548,15 +548,6 @@
                     </strong>
                     </li>
                   </ul>
-                  <ul style="margin-left: 30px;">
-                    <li class="t_filmtime">
-                      <strong>
-                      <a href="">7:30<br> <span
-                        style="font-size: 11px;">150석</span>
-                    </a>
-                    </strong>
-                    </li>
-                  </ul>
                   <p style="margin: 30px 0 15px 30px;">▶2D 3관
                     8층[삼화페인트 안심닥터관]총 172석</p>
                   <ul style="margin-left: 30px;">

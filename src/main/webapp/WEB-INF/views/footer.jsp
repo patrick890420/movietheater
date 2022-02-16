@@ -60,5 +60,6 @@
   <script src="/resources/js/main.js"></script>
   <script src="/resources/js/ticket/ticket.js"></script>
   <script src="/resources/js/ticket/seat.js"></script>
+  <script src="/resources/js/theater/theater.js"></script>
 </body>
 </html>
