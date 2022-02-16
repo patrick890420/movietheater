@@ -35,7 +35,7 @@ public class NoticeController {
     
   }  @GetMapping("/noticeview.do")
   public void noticeview(@RequestParam("nt_cd") int nt_cd,@ModelAttribute("cri") Criteria cri, Model model) {
-    model.addAttribute("view",Nservice.read(nt_cd));     //NoticeVO type 코워딩 자동으로/합쳐진거와 같은 문장=Criteria cri 값이 @ModelAttribute
+    model.addAttribute("view",Nservice.read(nt_cd));
   //page
       model.addAttribute("nextVO",Nservice.nextPage(nt_cd));
       model.addAttribute("preVO",Nservice.prevPage(nt_cd));
