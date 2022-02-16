@@ -169,11 +169,6 @@ public class AdminController {
     return "adm/adminEvent/adminEventview";
   }
   
-  @GetMapping("/adminEventwrite.do")
-  public void adminEventwrite() {
-    
-  }
-  
   
   @Setter(onMethod_=@Autowired )
   public NoticeService Nservice;
@@ -186,6 +181,11 @@ public class AdminController {
   @GetMapping("/adminNoticeview.do")
   public String adminNoticeview() {
     return "adm/adminNotice/adminNoticeview";
+  }
+  
+  @GetMapping("/adminWrite.do")
+  public String adminWrite() {
+    return "/adm/adminNotice/adminNoticewrite";
   }
   
   

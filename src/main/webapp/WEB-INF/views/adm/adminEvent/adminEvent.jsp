@@ -69,7 +69,7 @@
                             <col width="10%">
                           </colgroup>
                             <thead>
-                              <tr class="adminevent66">
+                              <tr class="adminevent72">
                                 <th>번호</th>
                                 <th>이미지</th>
                                 <th>제목</th>
@@ -149,8 +149,8 @@
                 </div>
               </div><!-- "tab-pane" -->
 <!--               글쓰기 -->
-              <div class="adminevent127">
-                <a href="/adm/adminNotice/adminWrite.do" class="btn_write">글쓰기</a>
+              <button type="button" class="btn admin103"
+                  onClick="location.href='adminWrite.do'">글쓰기</button>
               </div>
               
           </div><!-- tab-content -->

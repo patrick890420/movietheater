@@ -30,13 +30,13 @@ public class MovieServiceImpl implements MovieService {
   
   @Override
   public MovieVO read(int m_cd) {
-    mapper.readCount(m_cd);
+    mapper.read(m_cd);
     return mapper.read(m_cd);
-  }
+  } 
   @Override
   public MovieVO nextPage(int m_cd) {
     return mapper.nextPage(m_cd);
-  }
+  }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
   @Override
   public MovieVO prevPage(int m_cd) {
     return mapper.prevPage(m_cd);

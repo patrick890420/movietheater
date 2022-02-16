@@ -14,8 +14,8 @@
                     <div class="col-lg-9">
                         <div class="anime__details__text">
                             <div class="anime__details__title">
-                                <h3>Title</h3>
-                                <span>Sub Title</span>
+                                <h3>${view.title }</h3>
+                                <span>${view.subtitle }</span>
                             </div>
                             <div class="anime__details__rating">
                               <fieldset class="rating">
@@ -36,8 +36,8 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
                                         <ul>
-                                            <li><span>Genre:</span> 장르</li>
-                                            <li><span>Date aired:</span> 개봉일</li>
+                                            <li><span>장르</span> 장르</li>
+                                            <li><span>개봉일</span> ${view.rdate }</li>
                                             <li><span>Type:</span> 감독</li>
                                             <li><span>Studios:</span> 배우</li>
                                         </ul>
@@ -46,16 +46,16 @@
                                         <ul>
                                             <li><span>Scores:</span> 평점(별점)</li>
                                             <li><span>Status:</span> 상영 상태</li>
-                                            <li><span>Duration:</span> 상영시간</li>
-                                            <li><span>Quality:</span> 상영등급</li>
+                                            <li><span>Duration:</span>${view.rtime }</li>
+                                            <li><span>Quality:</span> ${view.rate }</li>
                                         </ul>
                                     </div>
-                                    <p>영화 간단 소개(intro)</p>
+                                    <p>${view.intro }</p>
                                 </div>
                             </div>
                             <div class="anime__details__btn mv-txt-center">
                                 <a href="#" class="watch-btn btn btn-primary"><span>Watch Now</span></a>
-<!--                                 <i class="fa fa-angle-right"></i></a> -->
+                                <a><i class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>
                         </div>

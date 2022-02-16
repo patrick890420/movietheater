@@ -58,7 +58,7 @@
     <![CDATA[
     select * from 
     ( 
-      select /*+ index_desc(movies movies_pk) */ rownum rn, M_CD,TITLE,SUBTITLE,RDATE,RTIME,RATE,INTRO,POSTER from Movies
+      select /*+ index_desc(movies SYS_C007529) */ rownum rn, M_CD,TITLE,SUBTITLE,RDATE,RTIME,RATE,INTRO,POSTER from Movies
       where 
     ]]>
     <include refid="criteria"/>
@@ -74,5 +74,8 @@
       <include refid="criteria"/>
     m_cd > 0
   </select>
+  
+  <!-- View 페이지 -->
+  
   
 </mapper>
