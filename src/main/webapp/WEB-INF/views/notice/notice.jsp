@@ -48,7 +48,7 @@
 <!-- Table -->
 <section class="notice">
 <div class="container">
-  <div class="row">
+  <div class="row51">
     <div class="col-md-12 pb-5">
       <table class="table table-hover">
         <colgroup>
