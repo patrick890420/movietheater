@@ -18,8 +18,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.google.gson.JsonObject;
-import com.theater.domain.Criteria;
+import com.theater.domain.EventVO;
 import com.theater.domain.MovieVO;
+import com.theater.domain.NoticeVO;
 import com.theater.service.EventService;
 import com.theater.service.MovieService;
 import com.theater.service.NoticeService;
@@ -165,16 +166,25 @@ public class AdminController {
   /* Ticketing */
   
   
-/*Common(공용)*/
-  @GetMapping("/adminWrite.do")
-  public String adminWrite() {
-    return "/adm/adminCommon/adminWrite";
+/*adminBoard*/
+  @GetMapping("/adminBoardWrite.do")
+  public String adminBoardWrite() {
+    return "/adm/adminBoard/adminBoardWrite";
   }
-  
+
+  @GetMapping("/adminBoardWritePro.do")
+  public String adminBoardWritePro(@RequestParam("choice")String choice, NoticeVO nvo, EventVO evo) {
+    if(choice.equals("N")) {
+      nservice.noticeInsert(nvo);
+    }else if(choice.equals("E")) {
+      eservice.eventInsert(evo);
+    }
+    return "adm/adminNotice/adminNotice";
+  }
 
 /* Board-> Event*/
   @Setter(onMethod_=@Autowired )
-  public EventService Eservice;
+  public EventService eservice;
   
   @GetMapping("/adminEvent.do")
   public String adminEvent() {
@@ -188,7 +198,7 @@ public class AdminController {
   
 /*Board-> Notice*/
   @Setter(onMethod_=@Autowired )
-  public NoticeService Nservice;
+  public NoticeService nservice;
   
   @GetMapping("/adminNotice.do")
   public String adminNotice() {

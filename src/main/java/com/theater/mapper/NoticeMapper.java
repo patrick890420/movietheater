@@ -7,8 +7,9 @@ import com.theater.domain.NoticeVO;
 
 public interface NoticeMapper {
 
-//입력
-  public void insert(NoticeVO notice);
+  
+//admin
+  public void noticeInsert(NoticeVO nvo);
   
 //page
   public List<NoticeVO> getListWithPaging(Criteria cri);

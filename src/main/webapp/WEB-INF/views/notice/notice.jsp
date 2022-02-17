@@ -66,7 +66,6 @@
           <th>번호</th>
           <th>제목</th>
           <th>이미지</th>
-<!--           <th>内容</th>내용 -->
           <th>작성일</th>
           <th>조회수</th>
         </tr>
@@ -77,10 +76,9 @@
             <tr>
               <td>${num1}</td><!-- 번호 -->
               <td class="notice76"><a href="#">${list.title}</a></td><!-- 제목 -->
-              <td>이미지</td>
-    <!--           <td>내용</td> -->
+              <td>${list.e_img}</td>
               <td>
-                <fmt:parseDate var="dateString" pattern="yyyy-MM-dd" value="${nlist.wdate}"/>
+                <fmt:parseDate var="dateString" pattern="yyyy-MM-dd" value="${list.wdate}"/>
                 <fmt:formatDate var="dateString" value="${dateString}" pattern="yyyy-MM-dd"/>
               </td>
               <td>${list.hits}</td>

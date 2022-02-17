@@ -38,8 +38,7 @@
       <div class="card-body">
 
 <!--           Table -->
-<form name="admin" method="post" action="boardInsert.do" enctype="multipart/form-data" onsubmit="return check()">
-<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+<form name="admin" method="get" action="adminBoardWritePro.do" enctype="multipart/form-data" onsubmit="return check()">
   <table class="table table-striped table-bordered no-wrap dataTable">
     <colgroup>
       <col width= "20%">
@@ -49,16 +48,12 @@
       <tr>
         <th>선택</th>
         <td>
-          <select name="zero_config_length" aria-controls="zero_config" class="form-control form-control-sm">
+          <select name="choice" aria-controls="zero_config" class="form-control form-control-sm">
             <option value="">선택</option>
             <option value="E">EVENT</option>
             <option value="N">공지사항</option>
           </select>
         </td>
-      </tr>
-      <tr>
-        <th>작성자</th>
-        <td><input class="form-control" type="text" name="write" value="관리자"></td>
       </tr>
       <tr>
         <th>제목</th>
@@ -179,7 +174,7 @@ function sendFile(file, el) {
          $.ajax({
            data: form_data,
            type: "POST",
-           url: '#',
+           url: 'upload.do',
            cache: false,
            contentType: false,
            enctype: 'multipart/form-data',

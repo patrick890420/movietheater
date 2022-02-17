@@ -8,7 +8,8 @@ import com.theater.domain.NoticeVO;
 public interface NoticeService {
 
 
-  public void register(NoticeVO notice);
+//admin
+  public void noticeInsert(NoticeVO nvo);
 
 //전체 래코드갯수
   public int getTotal(Criteria cri); 

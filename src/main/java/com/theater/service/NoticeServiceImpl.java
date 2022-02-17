@@ -16,41 +16,43 @@ public class NoticeServiceImpl implements NoticeService {
 
   
 //  자동주입
-  private NoticeMapper Nmapper;
+  private NoticeMapper nmapper;
 
-
+//admin
   @Override
-  public void register(NoticeVO notice) {
-    Nmapper.insert(notice);
-
+  public void noticeInsert(NoticeVO nvo) {
+    nmapper.noticeInsert(nvo);
+    
   }
-
+  
 //전체 래코드
   @Override
   public int getTotal(Criteria cri){
-    return Nmapper.getTotal(cri);
+    return nmapper.getTotal(cri);
   }
 
   
   @Override
   public List<NoticeVO> getList(Criteria cri){
-    return Nmapper.getList(cri);
+    return nmapper.getList(cri);
   }
 
 //view page 
   @Override
   public NoticeVO read(int nt_cd) {
-    Nmapper.readCount(nt_cd);    //조회수
-    return Nmapper.read(nt_cd);
+    nmapper.readCount(nt_cd);    //조회수
+    return nmapper.read(nt_cd);
   }
     
   @Override
   public NoticeVO nextPage(int nt_cd) {
-    return Nmapper.nextPage(nt_cd);
+    return nmapper.nextPage(nt_cd);
   }
   @Override
   public NoticeVO prevPage(int nt_cd) {
-    return Nmapper.prevPage(nt_cd);
+    return nmapper.prevPage(nt_cd);
   }
+
+  
   
 }//class
