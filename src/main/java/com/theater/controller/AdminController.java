@@ -218,5 +218,10 @@ public class AdminController {
     return "adm/adminUtility/adminCodeList";
   }
 
+  @GetMapping
+  public void actorsInsert(Model model,@RequestParam("a_cd") int a_cd) {
+    uService.actorsInsert(a_cd);
+    
+  }
   
 }

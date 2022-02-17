@@ -64,4 +64,76 @@ public class UtilityServiceImpl implements UtilityService {
     return null;
   }
 
+  @Override
+  public void actorsInsert(int c_cd) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void directorsInsert(int d_cd) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void nationInsert(int n_cd) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void genresInsert(int g_cd) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void actorsModify(int c_cd) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void directorsModify(int d_cd) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void nationModify(int n_cd) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void genresModify(int g_cd) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void actorsDelete(int c_cd) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void directorsDelete(int d_cd) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void nationDelete(int n_cd) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void genresDelete(int g_cd) {
+    // TODO Auto-generated method stub
+    
+  }
+
 }

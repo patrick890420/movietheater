@@ -73,31 +73,31 @@
                     <div class="col-12">
                       <div class="card">
                         <div class="card-body">
-                          <h4 class="card-title">Actors Register</h4>
+                          <h4 class="card-title">俳優登録</h4>
                           <h6 class="card-subtitle"><code>* </code>新しい俳優情報の入力</h6>
                             <form class="mt-4">
                               <div class="form-group">
                                 <div class="row">
-                                  <label class="col-lg-1 text-center">Name</label>
+                                  <label class="col-lg-1 text-center">声明</label>
                                   <div class="col-lg-11">
                                     <div class="row">
                                       <div class="col-md-3">
                                         <input type="text" class="form-control">
                                       </div>
-                                      <label class="col-lg-1 text-center">Photo</label>
+                                      <label class="col-lg-1 text-center">写真</label>
                                       <div class="col-md-6">
                                         <div class="input-group mb-3">
                                           <div class="input-group-prepend">
-                                            <span class="input-group-text">Upload</span>
+                                            <span class="input-group-text">アップロード</span>
                                           </div>
                                           <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="inputGroupFile01">
-                                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                            <label class="custom-file-label" for="inputGroupFile01">ファイル選択</label>
                                           </div>
                                         </div>
                                       </div>
-                                      <div class="col-md-1">
-                                        <button type="submit" class="btn btn-primary text-center">Register</button>
+                                      <div class="col-md-2">
+                                        <button type="submit" class="btn btn-primary text-center">登録</button>
                                         
                                     </div>
                                   </div>
