@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
+
+
 	 <!-- Normal Breadcrumb Begin -->
     <section class="normal-breadcrumb set-bg" data-setbg="/resources/img/logintitle.jpg">
         <div class="container">
@@ -22,7 +24,7 @@
                 <div class="col-lg-6">
                     <div class="login__form">
                         <h3>Login</h3>
-                        <form action="#">
+                        <form action="/login/loginPro.do">
                             <div class="input__item">
                                 <input type="text" placeholder="ID">
                                 <span class="icon_id"></span>
@@ -38,8 +40,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="login__register">
-                        <h3>Dont’t Have An Account?</h3>
-                        <a href="#" class="primary-btn">Register Now</a>
+                        <h3>会員登録の方はこちらへ</h3>
+                        <a href="/join/join.do" class="primary-btn">회원등록</a>
                     </div>
                 </div>
             </div>

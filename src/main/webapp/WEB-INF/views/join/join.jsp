@@ -21,7 +21,8 @@
       <div class="col-lg-12">
         <div class="login__form" style="text-align: center;">
           <h3 style="font-size: 50px;">Sign Up</h3>
-          <form action="/join/joinPro.do" method="post" id=join_form style="padding: 50px 300px; background: antiquewhite; padding-top: 100px;">
+          <form action="/join/joinPro.do" method="post" id=join_form
+          style="padding: 50px 300px; background: antiquewhite; padding-top: 100px;">
           <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 
 
@@ -42,7 +43,7 @@
 
 
             <div class="input__btn">
-              <input type="button" id="checkbtn" class="input__btn2" value='중복확인'>
+              <input type="button" id="checkbtn" name="checkbtn" class="input__btn2" value='중복확인'>
             </div>
 
             <span class="id_ok">사용 가능한 아이디입니다.</span> <span
@@ -136,68 +137,7 @@
     </div>
   </div>
 </section>
-<!-- Signup Section End -->
 
-
-<!--  <script type="text/javascript">
-   $(document).ready(function() {
-      
-      $("#join_button").on("click", function() {
-         
-         //공백
-         if ($("#userName").val() == "") {
-            alert("성명을 입력해주세요.");
-            $("#userName").focus();
-            return false;
-         }
-         if ($("#userId").val() == "") {
-            alert("아이디를 입력해주세요.");
-            $("#userId").focus();
-            return false;
-         }
-         if ($("#userMail").val() == "") {
-            alert("이메일을 입력해주세요.");
-            $("#userMail").focus();
-            return false;
-         }
-         if ($("#userTel").val() == "") {
-            alert("전화번호를 입력해주세요.");
-            $("#userTel").focus();
-            return false;
-         }
-         if ($("#userPass").val() == "") {
-            alert("비밀번호를 입력해주세요.");
-            $("#userPass").focus();
-            return false;
-         }
-         if ($("#userPass2").val() == "") {
-            alert("비밀번호를 재입력해주세요.");
-            $("#userPass2").focus();
-            return false;
-         }
-         
-            //비밀번호 일치-불일치
-              if ($("#userPass") != ("#userPass2")) {
-                  alert("두 비밀번호가 맞지 않습니다.");
-                  form.userPass.value = "";
-                  form.userPass2.value = "";
-                  form.userPass2.focus();
-                  return false;
-              }
-            
-              //라디오 유효성 검사 (맞는지 아닌지 모름)
-              if($(':radio[name="gender"]:checked').length < 1){
-                  alert('테스트를 선택해주세요.');
-                  document.form.gender[0].focus();
-                  return false;
-              }
-            
-      
-
-      });
-
-   })
-</script>  -->
 
 <%@ include file="../footer.jsp"%>
 
@@ -207,17 +147,6 @@
 
     $("#join_button").on("click", function() {
 
-<<<<<<< HEAD
-
-=======
-/*       //라디오 유효성 검사 (맞는지 아닌지 모름)
-      if($(':radio[name="gender"]:checked').length < 1){
-          alert('성별을 선택해주세요.');
-         document.form.gender[0].focus();
-         return false;
-
-      }  return true; */
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
       //공백
       if ($("#userName").val() == "") {
         alert("성명을 입력해주세요.");
@@ -229,7 +158,6 @@
         $("#userId").focus();
         return false;
       }
-
 
       if ($("#userMail").val() == "") {
         alert("이메일을 입력해주세요.");
@@ -264,8 +192,8 @@
       //비밀번호 일치-불일치
       if ($("#userPass").val() != $("#userPass2").val()) {
         alert("두 비밀번호가 맞지 않습니다.");
-        document.form.userPass2.value = "";
-        document.form.userPass2.focus();
+        //document.form.userPass2.value = "";
+       // document.form.userPass2.focus();
         return false;
       } //비밀번호가 맞지 않으면 오류 화면으로 감
       
@@ -278,39 +206,13 @@
     //  } 
       
       if($("input[name=gender]:radio:checked").length == 0){
-        alert('선택해주세요');
+        alert('성별을 선택해주세요');
         return false;
 }
-
-
+      
       if (!$("input:checked[id='box1']").is(":checked")) {
-        alert("이용약관 동의가 필요합니다.");
-<<<<<<< HEAD
+        alert("이용약관 동의가 필요합니다."); 
         return false;
-=======
-      }
-
-
-      function fn_idChk() {
-        $.ajax({
-          url : "member/idChk",
-          type : "post",
-          dataType : "json",
-          data : {
-            "id" : $("#id").val()
-          },
-          success : function(data) {
-            if (data == 1) {
-              alert("중복된 아이디입니다.");
-            } else if (data == 0) {
-              $("#idChk").attr("value", "Y");
-              alert("사용가능한 아이디입니다.");
-            } else {
-              alert("아이디를 입력해주세요.");
-            }
-          }
-        })
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
       }
 
     });
@@ -338,12 +240,9 @@
             }
          },
          error : function() {
-            alert("error");
+            alert("id error");
          }
       }); //ajax end
    }); //blur end
-</script>
-<<<<<<< HEAD
-=======
 
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
+</script>
