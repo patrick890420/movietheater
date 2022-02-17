@@ -22,6 +22,11 @@ public class MembersServiceImpl implements MembersService {
 		
 	}
 
+  @Override
+  public int idChk(String id) {
+    return mmapper.idChk(id);
+  }
+
 
 }
 

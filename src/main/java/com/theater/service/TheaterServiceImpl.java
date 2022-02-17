@@ -20,6 +20,7 @@ public class TheaterServiceImpl implements TheaterService {
 
   @Override
   public List<TheatersVO> thread(String t_area) {
+    System.out.println("ser:"+t_area);
     return thmapper.theaterList(t_area);
   }
   @Override

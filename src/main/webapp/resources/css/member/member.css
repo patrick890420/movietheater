@@ -53,15 +53,21 @@ ul.join_box {
   border-radius: 5px;
 }
 
+
 .id_ok {
   color: #fff;
   display: none;
 }
 
-.id_already {
+
+ .id_already {
   color: #6A82FB;
   display: none;
 }
+
+#join_button {
+  margin-bottom: 15px;
+} 
 
 /*약관 동의*/
 .checkBox, .checkBox>ul {
@@ -74,7 +80,7 @@ ul.join_box {
 }
 
 .checkBox>ul>li:first-child {
-  width: 85%;
+  width: 65%;
   padding: 15px;
   font-weight: 600;
   color: #888;

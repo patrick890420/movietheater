@@ -1,16 +1,4 @@
 @charset "UTF-8";
-
-/*                                adminEvent*/
-.adminevent72 th{
-  text-align: center;
-  
-}
-/*                                 adminNotice*/
-.admin103{
-  float: right;
-  border: 1px solid;
-}
-
 /*                                Event*/
 
 .event9{
@@ -91,6 +79,13 @@
   border: 1px solid #ccc;
 }
 
+.event68>p{
+  text-align: center;
+  background: #ff0000;
+  color: #fff;
+  margin-bottom: 0px;
+}
+
 
 /*                            하단 배너*/
 .event142>img{
@@ -125,6 +120,7 @@
 
 .view53{
   margin: 10px;
+  border: 1px solid #ccc;
 }
 
 .view54{
@@ -132,7 +128,7 @@
 }
 
 .btnbtn{
-  width: 1170px;
+  width: 5%;
   display: block;
   margin: 0 auto;
   font-weight: 400;
@@ -152,4 +148,10 @@
 }
 
 /*                            notice*/
+.notice76 a{/*title*/
+  color: #000;
+}
 
+.pagination{
+  justify-content: center;
+}
