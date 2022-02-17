@@ -42,8 +42,19 @@ public class MovieServiceImpl implements MovieService {
     return mapper.prevPage(m_cd);
   }
   @Override
-  public int getTotalCount(Criteria cri) {
-    return mapper.getTotalCount(cri);
+  public int getTotal(Criteria cri) {
+    return mapper.getTotal(cri);
+  }
+  
+  @Override
+  public List<MovieVO> MovieSelect() {
+    return mapper.MovieSelect();
+  }
+
+  @Override
+  public List<MovieVO> MovieSelect(int m_cd) {
+    // TODO Auto-generated method stub
+    return null;
   }
 
 }//Impl

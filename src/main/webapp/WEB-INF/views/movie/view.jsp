@@ -7,7 +7,7 @@
             <div class="anime__details__content">
                 <div class="row">
                     <div class="col-lg-3">
-                        <div class="anime__details__pic set-bg" data-setbg="/resources/img/anime/details-pic.jpg">
+                        <div class="anime__details__pic set-bg"><img style="height:420px;" src="/upload/${view.poster}" alt="">
                             <div class="comment"><i class="fa fa-comments"></i> 11</div>
                         </div>
                     </div>
@@ -37,7 +37,8 @@
                                     <div class="col-lg-6 col-md-6">
                                         <ul>
                                             <li><span>장르</span> 장르</li>
-                                            <li><span>개봉일</span> ${view.rdate }</li>
+                                            <fmt:parseDate value="${view.rdate}" var="dateValue" pattern="yyyy-MM-dd"/>
+                                            <li><span>개봉일</span><fmt:formatDate value="${dateValue}" pattern="yyyy-MM-dd"/></li>
                                             <li><span>Type:</span> 감독</li>
                                             <li><span>Studios:</span> 배우</li>
                                         </ul>
@@ -46,8 +47,8 @@
                                         <ul>
                                             <li><span>Scores:</span> 평점(별점)</li>
                                             <li><span>Status:</span> 상영 상태</li>
-                                            <li><span>Duration:</span>${view.rtime }</li>
-                                            <li><span>Quality:</span> ${view.rate }</li>
+                                            <li><span>상영 시간</span>${view.rtime }</li>
+                                            <li><span>상영 등급</span> ${view.rate }</li>
                                         </ul>
                                     </div>
                                     <p>${view.intro }</p>
@@ -55,7 +56,7 @@
                             </div>
                             <div class="anime__details__btn mv-txt-center">
                                 <a href="#" class="watch-btn btn btn-primary"><span>Watch Now</span></a>
-                                <a><i class="fa fa-angle-right"></i></a>
+<!--                                 <a><i class="fa fa-angle-right"></i></a> -->
                                 </div>
                             </div>
                         </div>

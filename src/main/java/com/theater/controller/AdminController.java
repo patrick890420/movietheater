@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.google.gson.JsonObject;
+import com.theater.domain.Criteria;
 import com.theater.domain.MovieVO;
 import com.theater.service.EventService;
 import com.theater.service.MovieService;
@@ -73,6 +74,12 @@ public class AdminController {
   public String adminMovieInsert() {
     
     return "adm/adminMovie/adminMovieInsert";
+  }
+  
+  @GetMapping("/adminMovieSelect.do" )
+  public String adminMovieSelect(Model model,MovieVO mvo) {
+    model.addAttribute("list",MovieService.MovieSelect());
+    return "adm/adminMovie/adminMovieSelect";
   }
   
   @PostMapping(value="/adminMovieInsertPro.do", produces = "application/json; charset=utf8")
@@ -149,6 +156,9 @@ public class AdminController {
     }
   }//multipart
   
+  
+  
+  
   /* Theater */
   
   
@@ -201,4 +211,19 @@ public class AdminController {
     model.addAttribute("genres",  uService.getGenresList());
     return "adm/adminUtility/adminCodeList";
   }
+  
+  @GetMapping("/adminActorsView.do")
+  public String actorsView(Model model, @RequestParam("a_cd") int a_cd) {
+    log.info("code"+a_cd);
+    model.addAttribute("actorsView", uService.getActorsView(a_cd));
+    
+    return "adm/adminUtility/adminCodeList";
+  }
+
+  @GetMapping
+  public void actorsInsert(Model model,@RequestParam("a_cd") int a_cd) {
+    uService.actorsInsert(a_cd);
+    
+  }
+  
 }

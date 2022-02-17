@@ -31,6 +31,7 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+  <script src="/resources/admin/assets/libs/jquery/dist/jquery.min.js"></script>
 </head>
 
 <body>
@@ -63,7 +64,7 @@
           <!-- ============================================================== -->
           <div class="navbar-brand">
             <!-- Logo icon -->
-            <a href="/"> <b class="logo-icon"> <!-- Dark Logo icon -->
+            <a href="/"> <b class="logo-icon" style="width: 100%;"> <!-- Dark Logo icon -->
 <!--               <img src="/resources/admin/assets/images/logo-icon.png" alt="homepage" class="dark-logo" /> Light Logo icon -->
 <!--               <img src="/resources/admin/assets/images/logo-icon.png" alt="homepage" class="light-logo" /> </b> End Logo icon  -->
               <!-- Logo text -->
@@ -313,8 +314,8 @@
                   </a>
                 </li>
                 <li class="sidebar-item">
-                  <a href="form-input-grid.html" class="sidebar-link">
-                  <span class="hide-menu"> Form Grids </span>
+                  <a href="/adm/adminMovieSelect.do" class="sidebar-link">
+                  <span class="hide-menu"> SomethingList </span>
                   </a>
                 </li>
                 <li class="sidebar-item">
