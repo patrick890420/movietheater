@@ -15,7 +15,6 @@
             <ol class="breadcrumb m-0 p-0">
               <li class="breadcrumb-item"><a href="admin.do" class="text-muted">Home</a></li>
               <li class="breadcrumb-item"><a href="adminEvent.do" class="text-muted">공지사항</a></li>
-              <li class="breadcrumb-item"><a href="adminNotice.do" class="text-muted">이벤트</a></li>
             </ol>
           </nav>
         </div>
@@ -36,24 +35,16 @@
     <div class="col-xl-12">
     <div class="card">
       <div class="card-body">
-          <ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
-            <li class="nav-item">
-              <a href="#actors" data-toggle="tab" aria-expanded="true" class="nav-link rounded-0 active">
-                <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
-                <span class="d-none d-lg-block">공지사항</span>
-              </a>
-            </li>
-          </ul>
-          <div class="tab-content">
-              <div class="tab-pane show active" id="actors">
-                <!-- basic table -->
+        <div class="tab-content">
+          <div class="tab-pane show active" id="actors">
+<!-- basic table -->
                 <div class="row">
                   <div class="col-12">
                     <div class="card">
                       <div class="card-body">
-            <!--             <code> $().DataTable();</code> -->
-                        <!-- DataTable 사용법 -->
-            <!--        <code> $("#테이블id").DataTable();</code> -->
+<!--             <code> $().DataTable();</code> -->
+<!-- DataTable 사용법 -->
+<!--        <code> $("#테이블id").DataTable();</code> -->
                         <div class="table-responsive">
                           <table id="actorsTable" class="table table-striped table-bordered no-wrap">
                           <colgroup>
@@ -100,7 +91,7 @@
               <!-- Directors tab -->
               
 <!--               글쓰기 -->
-                <button type="button" class="btn admin103"
+                <button type="button" class="btn waves-effect waves-light btn-rounded btn-outline-primary admin103"
                   onClick="location.href='adminWrite.do'">글쓰기</button>
           </div><!-- tab-content -->
       </div> <!-- end card-body-->

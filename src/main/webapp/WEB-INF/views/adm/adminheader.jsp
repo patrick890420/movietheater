@@ -24,13 +24,14 @@
 <link href="/resources/admin/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
 <!-- Custom CSS -->
 <link href="/resources/admin/css/style.min.css" rel="stylesheet">
-<link href="/resources/css/event_notice/event_notice.css" rel="stylesheet">
+<link href="/resources/admin/css/event_notice/admin_event_notice.css" rel="stylesheet">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+  <script src="/resources/admin/assets/libs/jquery/dist/jquery.min.js"></script>
 </head>
 
 <body>
@@ -63,7 +64,7 @@
           <!-- ============================================================== -->
           <div class="navbar-brand">
             <!-- Logo icon -->
-            <a href="/"> <b class="logo-icon"> <!-- Dark Logo icon -->
+            <a href="/"> <b class="logo-icon" style="width: 100%;"> <!-- Dark Logo icon -->
 <!--               <img src="/resources/admin/assets/images/logo-icon.png" alt="homepage" class="dark-logo" /> Light Logo icon -->
 <!--               <img src="/resources/admin/assets/images/logo-icon.png" alt="homepage" class="light-logo" /> </b> End Logo icon  -->
               <!-- Logo text -->
@@ -313,8 +314,8 @@
                   </a>
                 </li>
                 <li class="sidebar-item">
-                  <a href="form-input-grid.html" class="sidebar-link">
-                  <span class="hide-menu"> Form Grids </span>
+                  <a href="/adm/adminMovieSelect.do" class="sidebar-link">
+                  <span class="hide-menu"> SomethingList </span>
                   </a>
                 </li>
                 <li class="sidebar-item">
