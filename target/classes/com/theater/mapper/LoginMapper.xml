@@ -23,5 +23,4 @@
     WHERE SM.USERID = #{userid}
   </select>
 
-
 </mapper>

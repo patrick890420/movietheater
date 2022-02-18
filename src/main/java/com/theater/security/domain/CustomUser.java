@@ -24,8 +24,8 @@ public class CustomUser extends User {
 	    
 	    private MemberVO member;
 	    
-	    public CustomUser(String username,String password, Collection<? extends GrantedAuthority> authorities) {
-	        super(username, password, authorities); //user 클래스를 상속하기 때문에 부모 클래스 생성자를 호출해야 정상적인 객체 생성가능.
+	    public CustomUser(String username,String userpw, Collection<? extends GrantedAuthority> authorities) {
+	        super(username, userpw, authorities); //user 클래스를 상속하기 때문에 부모 클래스 생성자를 호출해야 정상적인 객체 생성가능.
 	    }
 
 	    // AuthVO 인스턴스는 GrantedAuthority 객체로 변환해야하므로, stream()과 map()을 이용해 처리.

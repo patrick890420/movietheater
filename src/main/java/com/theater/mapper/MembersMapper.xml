@@ -5,13 +5,13 @@
 
 <!-- 회원가입 -->
 <insert id="MemberInsert">
-	insert into members (id,pwd,name,birth,gender,phone,email) values (#{id}, #{pwd}, #{name}, #{birth}, #{gender}, #{phone}, #{email})
+	insert into members (userid,userpw,username,birth,gender,phone,email) values (#{userid}, #{userpw}, #{username}, #{birth}, #{gender}, #{phone}, #{email})
 </insert>
 
 
 <select id="idChk" resultType="int">
 	SELECT COUNT(*) FROM MEMBERS
-	WHERE id = #{id}
+	WHERE userid = #{userid}
 </select>
 
 

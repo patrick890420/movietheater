@@ -23,41 +23,16 @@ import lombok.extern.log4j.Log4j;
 
 @Controller
 @AllArgsConstructor
-@RequestMapping("/join/*")
+@RequestMapping("/mypage/*")
 @Log4j
-public class JoinController {
-
-  @Setter(onMethod_ = @Autowired) 
-  private MembersService mservice;
-  
-
-  @Setter(onMethod_ = @Autowired) /* pw암호화 해주는것 */
-  private PasswordEncoder pwEncoder;
+public class MypageController {
 
 
-  @GetMapping("/join.do")
-  public void join() {
+
+  @GetMapping("/mypage.do")
+  public void mypage() {
 
   }
 
-  @GetMapping("/idChk.do")
-  public @ResponseBody int idChk(@RequestParam("userid") String userid) {
-    int result = mservice.idChk(userid);
-    log.info("result"+ result);
-    return result;
-
-  }
-  
-  @PostMapping("/joinPro.do") //레지스터 등록
-  public String register(MemberVO mvo, RedirectAttributes rdat) {
-
-    String inputPass = pwEncoder.encode(mvo.getUserid()); /* 암호화 */
-    mvo.setUserid(inputPass);
-
-
-    mservice.register(mvo);
-    /* rdat.addAttribute("result",mvo.getUserid()); */
-    return "redirect:/";
-  }
 
 }

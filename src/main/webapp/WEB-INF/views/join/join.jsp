@@ -11,6 +11,7 @@
   </div>
 </section>
 <!-- Normal Breadcrumb End -->
+
 <!-- Signup Section Begin -->
 <section class="signup spad">
   <div class="container">
@@ -18,14 +19,15 @@
       <div class="col-lg-12">
         <div class="login__form" style="text-align: center;">
           <h3 style="font-size: 50px;">Sign Up</h3>
-          <form action="/join/joinPro.do" method="post" id=join_form style="padding: 50px 300px; background: antiquewhite; padding-top: 100px;">
+          <form action="/join/joinPro.do" method="post" id=join_form
+          style="padding: 50px 300px; background: antiquewhite; padding-top: 100px;">
           <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
           <div class="input__item">
-            <input type="text" placeholder="이름을 입력해 주세요." id="userName" name="name"> 
+            <input type="text" placeholder="이름을 입력해 주세요." id="userName" name="username"> 
             <span class="icon_profile"></span>
           </div>
           <div class="input__item">
-            <input type="text" placeholder="아이디를 입력해 주세요." id="userId" name="id" maxlength='15'>
+            <input type="text" placeholder="아이디를 입력해 주세요." id="userId" name="userid" maxlength='15'>
             <span class="icon_id"></span>
             <div id="checkMsg"></div>
           </div>
@@ -49,7 +51,7 @@
             </div>
             <div class="input__item">
               <input type="password" placeholder="비밀번호를 입력해 주세요."
-                id="userPass" name="pwd"> <span
+                id="userPass" name="userpw"> <span
                 class="icon_lock"></span>
             </div>
             <div class="input__item">
@@ -108,6 +110,8 @@
     </div>
   </div>
 </section>
+
+
 <!-- Signup Section End -->
 <script type="text/javascript">
   $(document).ready(function() {
@@ -144,25 +148,28 @@
       }
       if ($("#userPass").val() != $("#userPass2").val()) {
         alert("두 비밀번호가 맞지 않습니다.");
-        document.form.userPass2.value = "";
-        document.form.userPass2.focus();
+        //document.form.userPass2.value = "";
+       // document.form.userPass2.focus();
         return false;
       }
       if($("input[name=gender]:radio:checked").length == 0){
-        alert('선택해주세요');
+        alert('성별을 선택해주세요');
+        return false;
+}
+
+      if (!$("input:checked[id='box1']").is(":checked")) {
+        alert("이용약관 동의가 필요합니다."); 
         return false;
       }
-      if (!$("input:checked[id='box1']").is(":checked")) {
-        alert("이용약관 동의가 필요합니다.");
-      }
+    
     });
   })
   //아이디 중복
   $("#userId").blur(function(){
-      var idCheck = $("input[name=id]").val();
+      var idCheck = $("input[name=userid]").val();
       $.ajax({
          type : "get",
-         url : '/join/idChk.do?id='+idCheck,
+         url : '/join/idChk.do?userid='+idCheck,
          dataType : "json",
          success : function(data) {
            if (data == 0) {
@@ -177,7 +184,7 @@
             }
          },
          error : function() {
-            alert("error");
+            alert("id error");
          }
       }); //ajax end
    }); //blur end
@@ -185,3 +192,4 @@
 
 
 <%@ include file="../footer.jsp"%>
+

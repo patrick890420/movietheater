@@ -47,8 +47,8 @@
                                         <ul>
                                             <li><span>Scores:</span> 평점(별점)</li>
                                             <li><span>Status:</span> 상영 상태</li>
-                                            <li><span>Duration:</span>${view.rtime }</li>
-                                            <li><span>Quality:</span> ${view.rate }</li>
+                                            <li><span>상영 시간</span>${view.rtime }</li>
+                                            <li><span>상영 등급</span> ${view.rate }</li>
                                         </ul>
                                     </div>
                                     <p>${view.intro }</p>

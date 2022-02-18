@@ -18,15 +18,12 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.google.gson.JsonObject;
-import com.theater.domain.ActorsVO;
-import com.theater.domain.Criteria;
-import com.theater.domain.DirectorsVO;
-import com.theater.domain.GenresVO;
+import com.theater.domain.MovieInfoVO;
 import com.theater.domain.MovieVO;
-import com.theater.domain.NationVO;
 import com.theater.service.EventService;
 import com.theater.service.MovieService;
 import com.theater.service.NoticeService;
+import com.theater.service.TheaterService;
 import com.theater.service.UtilityService;
 
 import lombok.AllArgsConstructor;
@@ -86,8 +83,20 @@ public class AdminController {
   
   @GetMapping("/adminMovieSelect.do" )
   public String adminMovieSelect(Model model,MovieVO mvo) {
-    model.addAttribute("list",MovieService.MovieSelect());
+    model.addAttribute("list",MovieService.movieSelect());
     return "adm/adminMovie/adminMovieSelect";
+  }
+  
+  @GetMapping("/adminMovieInfoInsert.do")
+  public String adminMovieInfoInsert(MovieInfoVO ivo,Model model, @RequestParam("m_cd")int m_cd){
+    
+    model.addAttribute("m_cd", m_cd);
+    model.addAttribute("actors", uService.getActorsList());
+    model.addAttribute("directors", uService.getDitrectorsList());
+    model.addAttribute("nations", uService.getNationsList());
+    model.addAttribute("genres",  uService.getGenresList());
+    
+    return "adm/adminMovie/adminMovieInfoInsert";
   }
   
   @PostMapping(value="/adminMovieInsertPro.do", produces = "application/json; charset=utf8")
@@ -130,50 +139,68 @@ public class AdminController {
     String upload = jsonObject.toString();
     log.info(upload);
 
-    MovieService.MovieInsertPro(mvo);
+    MovieService.movieInsertPro(mvo);
     
-    return "redirect:/adm/adminMovieInsert.do";
+    return "redirect:/adm/adminMovie/adminMovieInsert";
     }
   
-  
-  public void MultiUpload(MultipartHttpServletRequest mtfRequest) {
-    List<MultipartFile> fileList = mtfRequest.getFiles("steelcut");
+  @PostMapping(value="/adminMovieInfoInsertPro.do")
+  public String movieInfoInsertPro(MultipartHttpServletRequest mtfRequest,MovieInfoVO ivo) {
+    List<MultipartFile> fileList = mtfRequest.getFiles("stillcut");
     String src = mtfRequest.getParameter("src");
     System.out.println("src value : " + src);
 
     String path = "C:\\upload\\";
-
+    
     for (MultipartFile mf : fileList) {
       String originFileName = mf.getOriginalFilename(); // 원본 파일 명
       long fileSize = mf.getSize(); // 파일 사이즈
-
       System.out.println("originFileName : " + originFileName);
       System.out.println("fileSize : " + fileSize);
-
       String safeFile = path + System.currentTimeMillis() + originFileName;
+
       try {
         mf.transferTo(new File(safeFile));
       } catch (IllegalStateException e) {
-            // TODO Auto-generated catch block
         e.printStackTrace();
       } catch (IOException e) {
-            // TODO Auto-generated catch block
         e.printStackTrace();
       }
         
     }
-  }//multipart
+    ivo.setStill_img1(fileList.get(0).getOriginalFilename()); 
+    ivo.setStill_img2(fileList.get(1).getOriginalFilename()); 
+    ivo.setStill_img3(fileList.get(2).getOriginalFilename()); 
+    ivo.setStill_img4(fileList.get(3).getOriginalFilename()); 
+    
+    MovieService.movieInfoInsertPro(ivo);
+    return "redirect:/adm/adminMovieSelect";
+  }
   
   
   
   
   /* Theater */
+  @Setter(onMethod_=@Autowired )
+  public TheaterService TheaterService;
   
+  @GetMapping("/adminTheaterInsert.do")
+  public String adminTheaterInsert() {
+    
+    return "adm/adminTheater/adminTheaterInsert";
+  }
   
   /* Ticketing */
   
   
-  /* Board*/
+/*Common(공용)*/
+  @GetMapping("/adminWrite.do")
+  public String adminWrite() {
+    return "/adm/adminCommon/adminWrite";
+  }
+  
+
+/* Board-> Event*/
   @Setter(onMethod_=@Autowired )
   public EventService Eservice;
   
@@ -187,7 +214,7 @@ public class AdminController {
     return "adm/adminEvent/adminEventview";
   }
   
-  
+/*Board-> Notice*/
   @Setter(onMethod_=@Autowired )
   public NoticeService Nservice;
   
@@ -199,11 +226,6 @@ public class AdminController {
   @GetMapping("/adminNoticeview.do")
   public String adminNoticeview() {
     return "adm/adminNotice/adminNoticeview";
-  }
-  
-  @GetMapping("/adminWrite.do")
-  public String adminWrite() {
-    return "/adm/adminNotice/adminNoticewrite";
   }
   
   
@@ -218,38 +240,6 @@ public class AdminController {
     return "adm/adminUtility/adminCodeList";
   }
   
-  @GetMapping("/adminActorsView.do")
-  public String actorsView(Model model, @RequestParam("a_cd") int a_cd) {
-    log.info("code"+a_cd);
-    
-    return "adm/adminUtility/adminCodeList";
-  }
 
-  /* insert */
-  @GetMapping("/actorsInsert.do")
-  public void actorsInsert(ActorsVO avo) {
-    uService.actorsInsert(avo);
-    
-  }
-  
-  @GetMapping("/directorsInsert.do")
-  public void directorsInsert(DirectorsVO dvo) {
-    uService.directorsInsert(dvo);
-    
-  }
-  
-  @GetMapping("/nationInsert.do")
-  public void nationInsert(NationVO nvo) {
-    uService.nationInsert(nvo);
-    
-  }
-  
-  @GetMapping("/genresInsert.do")
-  public void genresInsert(GenresVO gvo) {
-    uService.genresInsert(gvo);
-    
-  }
-  /* end insert */
-  
   
 }

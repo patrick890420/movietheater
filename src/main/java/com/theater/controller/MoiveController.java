@@ -30,11 +30,11 @@ public class MoiveController {
 	
 	
 	@GetMapping("/movie.do") 
-	public void MovieList(Criteria cri, Model model) {
+	public void movieList(Criteria cri, Model model) {
 	  cri.setAmount(9);
 	  PageVO pageVO = new PageVO(cri, Movieservice.getTotal(cri));
 	  model.addAttribute("pageMaker", pageVO);
-	  model.addAttribute("list",Movieservice.MovieList(cri));
+	  model.addAttribute("list",Movieservice.movieList(cri));
     
 	  }
 	

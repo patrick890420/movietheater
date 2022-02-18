@@ -8,7 +8,6 @@
         <h2>공지사항</h2>
       </div>
     </div>
-    <div class="row "></div>
   </div>
 </section>
 <!-- Section End -->
@@ -20,7 +19,7 @@
     <div class="row notice24">
       <div class="col-lg-9" style="padding-left: 790px;">
         <select name="searchType" class="select">
-          <option value="total"<c:out value="${pageMaker.cri.searchType==null?'selected':''}"/>>선택</option>
+          <option value=""<c:out value="${pageMaker.cri.searchType==null?'selected':''}"/>>선택</option>
           <option value="title"<c:out value="${pageMaker.cri.searchType eq 'title'?'selected':''}"/>>제목</option>
           <option value="content"<c:out value="${pageMaker.cri.searchType eq 'content'?'selected':''}"/>>내용</option>
         </select>
@@ -41,14 +40,18 @@
   </div><!-- container -->
 </form>
 </div><!-- notice_search -->
+
+
 <!-- 총 게시글 -->
-<div class="col-md-3 event60">
+<div class="col-md-4 event60" style="max-width: 27.333333%">
   <p>총게시글&nbsp;&nbsp;<span>${pageMaker.total}</span>건</p>
 </div><!-- md-3 -->
+
+
 <!-- Table -->
 <section class="notice">
 <div class="container">
-  <div class="row">
+  <div class="row51">
     <div class="col-md-12 pb-5">
       <table class="table table-hover">
         <colgroup>
@@ -72,8 +75,8 @@
           <c:set var="num1" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}"/>
           <c:forEach var="list" items="${list}">
             <tr>
-              <td>${num1}</td>
-              <td class="title">${list.title}</td>
+              <td>${num1}</td><!-- 번호 -->
+              <td class="notice76"><a href="#">${list.title}</a></td><!-- 제목 -->
               <td>이미지</td>
     <!--           <td>내용</td> -->
               <td>
@@ -86,32 +89,42 @@
          </c:forEach>
        </tbody>
      </table>
-        <form action="notice.do" name ="pageForm" method="get">
-          <div class="text-center">
-            <hr>
-            <ul class="pagination pagination-sm">
-            <!-- 2. 이전페이지 활성화여부 -->
-            <c:if test="${pageMaker.prev }">
-                <li><a href="#" data-pagenum='${pageMaker.startPage - 1 }'>이전</a></li>
-            </c:if>
-            <!-- 1. 페이지네이션 처리 -->
-            <c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
-                <li class="${pageMaker.pageNum eq num ? 'active' : ''}">
-                    <a href="#" data-pagenum='${num}'>${num}</a>
-                </li>
-            </c:forEach>
-            <!-- 3. 다음버튼 활성화여부 -->
-            <c:if test="${pageMaker.next }">
-                <li><a href="#" data-pagenum='${pageMaker.endPage + 1 }'>다음</a></li>
-            </c:if>
-          </ul>
-        </div>
-        <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
-        <input type="hidden" name="amount" value="${pageMaker.cri.amount }">
-        <input type="hidden" name="searchType" value="${pageMaker.cri.searchType }">
-        <input type="hidden" name="searchName" value="${pageMaker.cri.searchName }">
-      </form>
-    </div><!-- md-12 -->
+     
+<!-- paging -->
+<form action="notice.do" name ="pageForm" method="get">
+  <div class="product__pagination">
+  <hr>
+    <ul class="pagination pagination-sm">
+<!-- 2. 이전페이지 활성화여부 -->
+      <c:if test="${pageMaker.prev }">
+        <li>
+          <a href="#" data-pagenum='${pageMaker.startPage - 1 }'>
+            <i class="fa fa-angle-double-left"></i>
+          </a>
+        </li>
+      </c:if>
+<!-- 1. 페이지네이션 처리 -->
+      <c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
+        <li class="${pageMaker.pageNum eq num ? 'active' : ''}">
+         <a href="#" data-pagenum='${num}'>${num}</a>
+        </li>
+      </c:forEach>
+<!-- 3. 다음버튼 활성화여부 -->
+      <c:if test="${pageMaker.next }">
+        <li>
+          <a href="#" data-pagenum='${pageMaker.endPage + 1 }'>
+            <i class="fa fa-angle-double-right"></i>
+          </a>
+        </li>
+      </c:if>
+    </ul>
+  </div>
+  <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+  <input type="hidden" name="amount" value="${pageMaker.cri.amount }">
+  <input type="hidden" name="searchType" value="${pageMaker.cri.searchType }">
+  <input type="hidden" name="searchName" value="${pageMaker.cri.searchName }">
+</form>
+</div><!-- md-12 -->
   </div><!-- row -->
 </div><!-- container -->
 </section>

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.theater.domain.Criteria;
+import com.theater.domain.MovieInfoVO;
 import com.theater.domain.MovieVO;
 import com.theater.mapper.MovieMapper;
 
@@ -17,15 +18,14 @@ public class MovieServiceImpl implements MovieService {
 
   
   @Override
-    public void MovieInsertPro(MovieVO mvo) {
-    mapper.MovieInsertPro(mvo);
-    
+    public void movieInsertPro(MovieVO mvo) {
+    mapper.movieInsertPro(mvo);
   }
   
   @Override
-  public List<MovieVO> MovieList(Criteria cri) {
+  public List<MovieVO> movieList(Criteria cri) {
     
-    return mapper.MovieListPaging(cri);
+    return mapper.movieListPaging(cri);
   }
   
   @Override
@@ -47,14 +47,17 @@ public class MovieServiceImpl implements MovieService {
   }
   
   @Override
-  public List<MovieVO> MovieSelect() {
-    return mapper.MovieSelect();
+  public List<MovieVO> movieSelect() {
+    return mapper.movieSelect();
   }
 
   @Override
-  public List<MovieVO> MovieSelect(int m_cd) {
-    // TODO Auto-generated method stub
-    return null;
+  public List<MovieVO> movieSelect(int m_cd) {
+    return mapper.movieSelect();
+  }
+  @Override
+  public void movieInfoInsertPro(MovieInfoVO ivo) {
+    mapper.movieInfoInsertPro(ivo);
   }
 
 }//Impl
