@@ -37,6 +37,7 @@
 <link rel="stylesheet" href="/resources/css/ticket/ticket.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/theater/theater.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/member/member.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/mypage/mypage.css" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src='//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js'></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -48,7 +49,7 @@
 <!-- 확인구간 -->
 </head>
 
-<body>
+<body onload = "showImage2()">
   <!-- Page Preloder -->
   <div id="preloder">
     <div class="loader"></div>
@@ -84,7 +85,7 @@
         <div class="header__right">
           <a href="/login/login.do" style="text-align: center;"><span class="icon_lock"><br>로그인</span></a>
           <a href="/join/join.do" style="text-align: center;"><span
-            class="icon_profile"><br>회원가입</span></a> <a href=""
+            class="icon_profile"><br>회원가입</span></a> <a href="/mypage/mypage.do"
             style="text-align: center;"><span class="icon_profile"><br>마이페이지</span></a>
           <a href="" style="text-align: center;"><span
             class="icon_profile"><br>고객센터</span></a>

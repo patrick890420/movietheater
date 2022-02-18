@@ -25,6 +25,7 @@ import com.theater.domain.MovieVO;
 import com.theater.service.EventService;
 import com.theater.service.MovieService;
 import com.theater.service.NoticeService;
+import com.theater.service.TheaterService;
 import com.theater.service.UtilityService;
 
 import lombok.AllArgsConstructor;
@@ -178,12 +179,26 @@ public class AdminController {
   
   
   /* Theater */
+  @Setter(onMethod_=@Autowired )
+  public TheaterService TheaterService;
   
+  @GetMapping("/adminTheaterInsert.do")
+  public String adminTheaterInsert() {
+    
+    return "adm/adminTheater/adminTheaterInsert";
+  }
   
   /* Ticketing */
   
   
-  /* Board*/
+/*Common(공용)*/
+  @GetMapping("/adminWrite.do")
+  public String adminWrite() {
+    return "/adm/adminCommon/adminWrite";
+  }
+  
+
+/* Board-> Event*/
   @Setter(onMethod_=@Autowired )
   public EventService Eservice;
   
@@ -197,7 +212,7 @@ public class AdminController {
     return "adm/adminEvent/adminEventview";
   }
   
-  
+/*Board-> Notice*/
   @Setter(onMethod_=@Autowired )
   public NoticeService Nservice;
   
@@ -209,11 +224,6 @@ public class AdminController {
   @GetMapping("/adminNoticeview.do")
   public String adminNoticeview() {
     return "adm/adminNotice/adminNoticeview";
-  }
-  
-  @GetMapping("/adminWrite.do")
-  public String adminWrite() {
-    return "/adm/adminNotice/adminNoticewrite";
   }
   
   

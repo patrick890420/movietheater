@@ -24,7 +24,7 @@
 <link href="/resources/admin/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
 <!-- Custom CSS -->
 <link href="/resources/admin/css/style.min.css" rel="stylesheet">
-<link href="/resources/css/event_notice/event_notice.css" rel="stylesheet">
+<link href="/resources/admin/css/event_notice/admin_event_notice.css" rel="stylesheet">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -335,8 +335,8 @@
               </a>
               <ul aria-expanded="false" class="collapse  first-level base-level-line">
                 <li class="sidebar-item">
-                  <a href="form-inputs.html" class="sidebar-link">
-                  <span class="hide-menu"> Form Inputs </span>
+                  <a href="/adm/adminTheaterInsert.do" class="sidebar-link">
+                  <span class="hide-menu"> Inputs </span>
                   </a>
                 </li>
                 <li class="sidebar-item">

@@ -61,6 +61,5 @@
 <section class="product spad">
   
 </section><!-- hero -->
-	
 
 <%@ include file="../footer.jsp" %>	
