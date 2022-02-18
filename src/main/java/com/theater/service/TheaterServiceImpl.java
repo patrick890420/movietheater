@@ -27,4 +27,13 @@ public class TheaterServiceImpl implements TheaterService {
   public List<TheatersVO> thinforead(String t_name) {
     return thmapper.theaterinfo(t_name);
   }
+  @Override 
+  public List<TheatersVO> totalthread() {
+    return thmapper.totaltheaterList();
+  }
+  @Override
+  public void theaterInsertPro(TheatersVO tvo) {
+    thmapper.theaterInsertPro(tvo);
+    
+  }
 }
