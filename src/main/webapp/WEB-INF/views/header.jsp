@@ -49,7 +49,7 @@
 <!-- 확인구간 -->
 </head>
 
-<body>
+<body onload = "showImage2()">
   <!-- Page Preloder -->
   <div id="preloder">
     <div class="loader"></div>
