@@ -55,16 +55,18 @@
                     <th>SUBTITLE</th>
                     <th>DATE</th>
                     <th>RATE</th>
+                    <th>INPUT</th>
                   </tr>
                 </thead>
                 <tbody>
                   <c:forEach items="${list}" var="mlist" >
                   <tr>
                     <td>${mlist.m_cd }</td>
-                    <td><a href="/adm/adminMovieInfoInsert.do?m_cd=${mlist.m_cd }">${mlist.title}</a></td>
+                    <td><a href="/adm/adminMovieView.do">${mlist.title}</a></td>
                     <td>${mlist.subtitle}</td>
                     <td>${mlist.rdate}</td>
                     <td>${mlist.rate}</td>
+                    <td><a class="btn btn-danger" href="/adm/adminMovieInfoInsert.do?m_cd=${mlist.m_cd }" >정보 입력</a></td>
                   </tr>
                   </c:forEach>
                 </tbody>
@@ -75,6 +77,7 @@
                     <th>SUBTITLE</th>
                     <th>DATE</th>
                     <th>RATE</th>
+                    <th>INPUT</th>
                   </tr>
                 </tfoot>
               </table>

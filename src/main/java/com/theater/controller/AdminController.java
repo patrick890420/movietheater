@@ -98,6 +98,10 @@ public class AdminController {
     
     return "adm/adminMovie/adminMovieInfoInsert";
   }
+  @GetMapping("/adminMovieView.do")
+  public String adminMovieView() {
+    return "adm/adminMovie/adminMovieView";
+  }
   
   @PostMapping(value="/adminMovieInsertPro.do", produces = "application/json; charset=utf8")
   public String adminMovieInsertPro(MovieVO mvo, @RequestParam("uploadFile01") MultipartFile uploadFile) {
