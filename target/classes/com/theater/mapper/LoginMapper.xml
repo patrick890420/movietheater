@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.theater.mapper.LoginMapper">
-
-<!-- 로그인 --> 
-  <select id="memberLogin" resultType="com.theater.domain.MemberVO">
-    select * from members
-    where userid = #{userid} and userpw = #{userpw}
+  <!-- property는 vo변수명, column는 db 필드명 -->
+  <resultMap type="com.theater.domain.MemberVO" id="memberMap">
+    <id property="userid" column="userid"></id>
+    <result property="userpw"  column="userpw"/>
+    <result property="userName"  column="username"/>
+    <result property="birth"  column="birth"/>
+    <result property="gender"  column="gender"/>
+    <result property="phone"  column="phone"/>
+    <result property="email"  column="email"/>
+    <collection property="authList" resultMap="authMap"></collection>
+  </resultMap>
+  <resultMap type="com.theater.domain.Member_authVO" id="authMap">
+    <result property="userid"  column="userid"/>
+    <result property="auth"  column="auth"/>
+  </resultMap>
+  
+  <select id="read" resultMap="memberMap">
+    SELECT SM.USERID, USERPW, USERNAME, BIRTH, GENDER, PHONE, EMAIL, MA.AUTH
+    FROM MEMBERS SM LEFT OUTER JOIN MEMBER_AUTH MA ON SM.USERID = MA.USERID
+    WHERE SM.USERID = #{userid}
   </select>
+
 </mapper>

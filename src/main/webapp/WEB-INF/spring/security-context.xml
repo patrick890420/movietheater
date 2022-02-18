@@ -18,13 +18,13 @@
 <!-- 	<security:form-login />  default login page -->
 	
 	<!-- 접근권한 모두허락 --> 
-	<security:intercept-url pattern="/adm/admin" access="permitAll"/>
+	<security:intercept-url pattern="/adm/adminLogin" access="permitAll"/>
 	 
 	<!-- 접근권한 ROLE_ADMIN 만 --> 
-	<security:intercept-url pattern="/adm/adminManager" access="hasRole('ROLE_ADMIN')"/>
+	<security:intercept-url pattern="/adm/admin" access="hasRole('ROLE_ADMIN')"/>
 		
 	<!-- 접근권한 없으면 여기로 가고 로그인 성공하면 CustomLoginSuccess 실행-->
-	<security:form-login login-page="/adm/admin" authentication-success-handler-ref="CustomLoginSuccess"/>
+	<security:form-login login-page="/login/login" authentication-success-handler-ref="CustomLoginSuccess"/>
 	
 	<!--로그아웃 버튼 클릭경로, 로그아웃 성공시 /로 이동 -->
 	<security:logout logout-url="/adm/adminLogout" invalidate-session="true" logout-success-url="/"/>

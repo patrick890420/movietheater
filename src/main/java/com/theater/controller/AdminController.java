@@ -4,9 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +41,10 @@ public class AdminController {
   
   @GetMapping("/admin")
   public void admin() {
+  }
+  
+  @GetMapping("/adminLogin")
+  public void adminLogin() {
   }
   
   /* Member */
@@ -139,11 +141,11 @@ public class AdminController {
 
     MovieService.movieInsertPro(mvo);
     
-    return "redirect:/adm/adminMovie/adminMovieInsert";
+    return "redirect:/adm/adminMovieInsert.do";
     }
   
   @PostMapping(value="/adminMovieInfoInsertPro.do")
-  public String movieInfoInsertPro(MultipartHttpServletRequest mtfRequest,MovieInfoVO ivo) {
+  public String movieInfoInsertPro(MultipartHttpServletRequest mtfRequest,MovieInfoVO ivo,MovieVO mvo,Model model) {
     List<MultipartFile> fileList = mtfRequest.getFiles("stillcut");
     String src = mtfRequest.getParameter("src");
     System.out.println("src value : " + src);
@@ -153,8 +155,8 @@ public class AdminController {
     for (MultipartFile mf : fileList) {
       String originFileName = mf.getOriginalFilename(); // 원본 파일 명
       long fileSize = mf.getSize(); // 파일 사이즈
-      System.out.println("originFileName : " + originFileName);
-      System.out.println("fileSize : " + fileSize);
+//      System.out.println("originFileName : " + originFileName);
+//      System.out.println("fileSize : " + fileSize);
       String safeFile = path + System.currentTimeMillis() + originFileName;
 
       try {
@@ -172,7 +174,7 @@ public class AdminController {
     ivo.setStill_img4(fileList.get(3).getOriginalFilename()); 
     
     MovieService.movieInfoInsertPro(ivo);
-    return "redirect:/adm/adminMovieSelect";
+    return "redirect:/adm/adminMovieSelect.do";
   }
   
   
@@ -237,18 +239,6 @@ public class AdminController {
     return "adm/adminUtility/adminCodeList";
   }
   
-  @GetMapping("/adminActorsView.do")
-  public String actorsView(Model model, @RequestParam("a_cd") int a_cd) {
-    log.info("code"+a_cd);
-    model.addAttribute("actorsView", uService.getActorsView(a_cd));
-    
-    return "adm/adminUtility/adminCodeList";
-  }
 
-  @GetMapping
-  public void actorsInsert(Model model,@RequestParam("a_cd") int a_cd) {
-    uService.actorsInsert(a_cd);
-    
-  }
   
 }

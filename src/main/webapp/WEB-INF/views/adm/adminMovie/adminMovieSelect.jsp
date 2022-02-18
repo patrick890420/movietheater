@@ -55,7 +55,6 @@
                     <th>SUBTITLE</th>
                     <th>DATE</th>
                     <th>RATE</th>
-                    <th>INTRO</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -66,7 +65,6 @@
                     <td>${mlist.subtitle}</td>
                     <td>${mlist.rdate}</td>
                     <td>${mlist.rate}</td>
-                    <td>${mlist.intro}</td>
                   </tr>
                   </c:forEach>
                 </tbody>
@@ -77,7 +75,6 @@
                     <th>SUBTITLE</th>
                     <th>DATE</th>
                     <th>RATE</th>
-                    <th>INTRO</th>
                   </tr>
                 </tfoot>
               </table>

@@ -54,6 +54,7 @@ public class JoinController {
     String inputPass = pwEncoder.encode(mvo.getUserid()); /* 암호화 */
     mvo.setUserid(inputPass);
 
+
     mservice.register(mvo);
     /* rdat.addAttribute("result",mvo.getUserid()); */
     return "redirect:/";

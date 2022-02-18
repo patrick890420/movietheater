@@ -7,9 +7,9 @@ import lombok.Data;
 @Data
 public class MemberVO {
 
-  private String userid; //회원id
-  private String userpw;  //비밀번호
-  private String username; //이름
+  private String userid;
+  private String userpw;
+  private String userName;
   private String birth; //생년월일
   private String gender; //성별
   private String phone; //연락처
