@@ -33,7 +33,7 @@
     <!-- Start Page Content -->
     <!-- ============================================================== -->
     
-    <div class="col-xl-10 adminwrite36">
+    <div class="col-xl-10 write36">
     <div class="card">
       <div class="card-body">
 
@@ -44,7 +44,7 @@
       <col width= "20%">
       <col width= "*">
     </colgroup>
-    <tbody class="adminwrite47">
+    <tbody class="write56">
       <tr>
         <th>선택</th>
         <td>
@@ -60,14 +60,14 @@
         <td><input class="form-control" type="text" name="title" placeholder="제목"></td>
       </tr>
       <tr>
-        <th class="adminwrite66">내용</th>
+        <th class="write66">내용</th>
         <td><textarea class="form-control" name="content" id="summernote" rows="8" placeholder="내용"></textarea></td>
       </tr>
     </tbody>
   </table>
 
 <!-- button -->
-<div class="adminwrite77">
+<div class="write77">
   <button type="submit" class="btn btn-outline-primary btn-rounded">
     <i class="fas fa-check"></i>&nbsp;저장
   </button>&nbsp;

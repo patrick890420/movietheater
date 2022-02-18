@@ -27,7 +27,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class JoinController {
 
-  @Setter(onMethod_ = @Autowired) /* pw암호화 해주는것 */
+  @Setter(onMethod_ = @Autowired) 
   private MembersService mservice;
   
 

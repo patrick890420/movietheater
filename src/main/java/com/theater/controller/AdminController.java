@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,15 +19,18 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.google.gson.JsonObject;
+import com.theater.domain.Criteria;
 import com.theater.domain.EventVO;
 import com.theater.domain.MovieVO;
 import com.theater.domain.NoticeVO;
+import com.theater.domain.PageVO;
 import com.theater.service.EventService;
 import com.theater.service.MovieService;
 import com.theater.service.NoticeService;
 import com.theater.service.UtilityService;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
@@ -181,6 +185,12 @@ public class AdminController {
     }
     return "adm/adminNotice/adminNotice";
   }
+  
+  @GetMapping("/adminBoardView.do")
+  public String adminBoardView(@RequestParam("nt_cd")int nt_cd,Model model) {
+    model.addAttribute("view",nservice.getAdminBoardView(nt_cd));
+    return "adm/adminBoard/adminBoardView";
+  }
 
 /* Board-> Event*/
   @Setter(onMethod_=@Autowired )
@@ -201,14 +211,15 @@ public class AdminController {
   public NoticeService nservice;
   
   @GetMapping("/adminNotice.do")
-  public String adminNotice() {
+  public String adminNotice(Criteria cri,Model model) {
+    model.addAttribute("list",nservice.getAdminList(cri));
+//전체 조회값
+    int total=nservice.getTotal(cri);
+    model.addAttribute("pageMaker",new PageVO(cri, total));
     return "adm/adminNotice/adminNotice";
   }
   
-  @GetMapping("/adminNoticeview.do")
-  public String adminNoticeview() {
-    return "adm/adminNotice/adminNoticeview";
-  }
+  
   
   
   /* Utility */

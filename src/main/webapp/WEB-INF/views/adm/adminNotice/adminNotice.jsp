@@ -14,7 +14,7 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb m-0 p-0">
               <li class="breadcrumb-item"><a href="admin.do" class="text-muted">Home</a></li>
-              <li class="breadcrumb-item"><a href="adminEvent.do" class="text-muted">공지사항</a></li>
+              <li class="breadcrumb-item"><a href="adminNotice.do" class="text-muted">공지사항</a></li>
             </ol>
           </nav>
         </div>
@@ -46,11 +46,10 @@
 <!-- DataTable 사용법 -->
 <!--        <code> $("#테이블id").DataTable();</code> -->
                         <div class="table-responsive">
-                          <table id="actorsTable" class="table table-striped table-bordered no-wrap">
+                          <table id="noticeTable" class="table table-striped table-bordered no-wrap">
                           <colgroup>
                             <col width="10%">
                             <col width="*">
-                            <col width="10%">
                             <col width="10%">
                             <col width="10%">
                           </colgroup>
@@ -67,10 +66,10 @@
                               <c:forEach var="list" items="${list}">
                                 <tr>
                                   <td>${num1}</td><!-- 번호 -->
-                                  <td class="notice76"><a href="#">${list.title}</a></td><!-- 제목 -->
+                                  <td class="notice76"><a href="adminBoardView.do?nt_cd=${list.nt_cd}">${list.title}</a></td><!-- 제목 -->
                                   <td>
-                                    <fmt:parseDate var="dateString" pattern="yyyy-MM-dd" value="${list.wdate}"/>
-                                    <fmt:formatDate var="dateString" value="${dateString}" pattern="yyyy-MM-dd"/>
+                                    <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${list.wdate}"/>
+                                    <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>
                                   </td>
                                   <td>${list.hits}</td>
                                 </tr>

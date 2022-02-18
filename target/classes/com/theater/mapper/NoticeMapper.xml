@@ -30,22 +30,12 @@
   values (#{nt_cd},#{title},'test',#{content},0)
 </insert>
 
-<select id="getList" resultType="com.theater.domain.NoticeVO">
-  <![CDATA[
-  SELECT *
-  FROM ( SELECT ROWNUM RN,
-          A.*
-        FROM (SELECT * FROM NOTICE
-              WHERE
-  ]]> 
-              <if test="searchType == 'title'">TITLE LIKE '%'||#{searchName}||'%'</if>
-              <if test="searchType == 'content'">CONTNENT LIKE '%'||#{searchName}||'%'</if>
-              <if test="searchType == null or searchType == ''"> 1=1</if>
-  <![CDATA[
-              ORDER BY NT_CD DESC) A)
-  WHERE RN > (#{pageNum}-1) * #{amount} AND RN <= #{pageNum} * #{amount}
-  ]]>
- </select> 
+
+<!-- view -->
+<select id="getAdminBoardView" resultType="com.theater.domain.NoticeVO">
+select * from notice where nt_cd= #{nt_cd}
+</select>
+
   
 <!-- page -->
 <select id="nextPage" resultType="com.theater.domain.NoticeVO">
@@ -58,6 +48,13 @@
     select * from notice where nt_cd> #{nt_cd} and rownum=1 order by nt_cd asc
     ]]>
 </select>
+
+
+<select id="getAdminList" resultType="com.theater.domain.NoticeVO">
+  select * from notice  
+</select>
+
+
 
 <!-- 조회수 -->
 <update id="readCount">

@@ -3,7 +3,7 @@
 <%@ include file="../header.jsp" %>
 
 <!-- Hero Section Begin -->
-<section class="hero view6">
+<section class="hero eventview6">
 <div class="container">
   <div class="row event8">
     <div class="col-md-12 event9">
@@ -29,7 +29,7 @@
 
 <!-- 제목 -->
 <div class="container">
-  <div class="row view36">
+  <div class="row eventview36">
     <div class="col-md-1">
       <ol class="breadcrumb38">
           <li style="color: #ff0000;">이벤트</li>
@@ -50,8 +50,8 @@
 
 
 <!-- img -->
-<div class="container view53">
-    <img src="/resources/img/anime/details-pic.jpg" alt="..." class="img-rounded view54">
+<div class="container eventview53">
+    <img src="/resources/img/anime/details-pic.jpg" alt="..." class="img-rounded eventview54">
 </div>
 
 <!-- button -->
