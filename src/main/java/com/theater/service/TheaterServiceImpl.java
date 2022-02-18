@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.theater.domain.ScreensVO;
 import com.theater.domain.TheatersVO;
 import com.theater.mapper.TheaterMapper;
 
@@ -34,6 +35,9 @@ public class TheaterServiceImpl implements TheaterService {
   @Override
   public void theaterInsertPro(TheatersVO tvo) {
     thmapper.theaterInsertPro(tvo);
-    
+  }
+  @Override
+  public void theaterInsertPro2(ScreensVO svo) {
+    thmapper.theaterInsertPro2(svo);
   }
 }

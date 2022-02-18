@@ -98,10 +98,10 @@
 
 /*                            view*/
 
-.view6{
+.eventview6{
   padding-bottom: 0px;
 }
-.view36{
+.eventview36{
   background: #e9ecef;
   border-bottom: 1px solid #ccc;
 }
@@ -118,12 +118,12 @@
     font-weight: 600;
 }
 
-.view53{
+.eventview53{
   margin: 10px;
   border: 1px solid #ccc;
 }
 
-.view54{
+.eventview54{
   width: 1140px;
 }
 
@@ -148,6 +148,10 @@
 }
 
 /*                            notice*/
+.notice68{
+  text-align: center;
+}
+
 .notice76 a{/*title*/
   color: #000;
 }

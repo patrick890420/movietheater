@@ -5,6 +5,7 @@
 
 <!-- 회원가입 -->
 <insert id="MemberInsert">
+	insert into members (userid,userpw,username,birth,gender,phone,email) values (#{userid}, #{userpw}, #{userName}, #{birth}, #{gender}, #{phone}, #{email})
   insert all
     into members (userid,userpw,username,birth,gender,phone,email) 
     values (#{userid}, #{userpw}, #{username}, #{birth}, #{gender}, #{phone}, #{email})

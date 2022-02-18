@@ -149,7 +149,7 @@
               </div><!-- "tab-pane" -->
 <!--               글쓰기 -->
               <button type="button" class="btn waves-effect waves-light btn-rounded btn-outline-primary admin103"
-                  onClick="location.href='adminWrite.do'">글쓰기</button>
+                  onClick="location.href='adminBoardWrite.do'">글쓰기</button>
               </div>
               
           </div><!-- tab-content -->

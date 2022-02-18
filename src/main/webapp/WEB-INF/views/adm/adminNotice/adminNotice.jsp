@@ -14,7 +14,7 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb m-0 p-0">
               <li class="breadcrumb-item"><a href="admin.do" class="text-muted">Home</a></li>
-              <li class="breadcrumb-item"><a href="adminEvent.do" class="text-muted">공지사항</a></li>
+              <li class="breadcrumb-item"><a href="adminNotice.do" class="text-muted">공지사항</a></li>
             </ol>
           </nav>
         </div>
@@ -46,11 +46,10 @@
 <!-- DataTable 사용법 -->
 <!--        <code> $("#테이블id").DataTable();</code> -->
                         <div class="table-responsive">
-                          <table id="actorsTable" class="table table-striped table-bordered no-wrap">
+                          <table id="noticeTable" class="table table-striped table-bordered no-wrap">
                           <colgroup>
                             <col width="10%">
                             <col width="*">
-                            <col width="10%">
                             <col width="10%">
                             <col width="10%">
                           </colgroup>
@@ -58,29 +57,25 @@
                               <tr>
                                 <th>번호</th>
                                 <th>제목</th>
-                                <th>관리자</th>
                                 <th>작성일</th>
                                 <th>조회수</th>
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <td>1</td>
-                                <td>Tiger Nixon</td>
-                                <td><a href="#">System Architect</a></td>
-                                <td>Edinburgh</td>
-                                <td>Edinburgh</td>
-                              </tr>
+                              <c:set var="num1" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}"/>
+                              <c:forEach var="list" items="${list}">
+                                <tr>
+                                  <td>${num1}</td><!-- 번호 -->
+                                  <td class="notice76"><a href="adminBoardView.do?nt_cd=${list.nt_cd}">${list.title}</a></td><!-- 제목 -->
+                                  <td>
+                                    <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${list.wdate}"/>
+                                    <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>
+                                  </td>
+                                  <td>${list.hits}</td>
+                                </tr>
+                               <c:set var="num1" value="${num1-1}"/>
+                             </c:forEach> 
                             </tbody>
-                            <tfoot>
-                              <tr>
-                                <th>Number</th>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <td>Edinburgh</td>
-                              </tr>
-                            </tfoot>
                           </table>
                         </div>
                       </div>
@@ -92,7 +87,7 @@
               
 <!--               글쓰기 -->
                 <button type="button" class="btn waves-effect waves-light btn-rounded btn-outline-primary admin103"
-                  onClick="location.href='adminWrite.do'">글쓰기</button>
+                  onClick="location.href='adminBoardWrite.do'">글쓰기</button>
           </div><!-- tab-content -->
       </div> <!-- end card-body-->
   </div> <!-- end card-->
