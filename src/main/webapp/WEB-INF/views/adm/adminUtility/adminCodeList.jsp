@@ -75,7 +75,8 @@
                         <div class="card-body">
                           <h4 class="card-title">俳優登録</h4>
                           <h6 class="card-subtitle"><code>* </code>新しい俳優情報の入力</h6>
-                            <form class="mt-4" action="actorsInsert.do" method="get" enctype="multipart/form-data">
+                            <form class="mt-4" action="actorsInsert.do" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
                               <div class="form-group">
                                 <div class="row">
                                   <label class="col-lg-1 text-center">声明</label>
@@ -91,8 +92,8 @@
                                             <span class="input-group-text">アップロード</span>
                                           </div>
                                           <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="inputGroupFile01" name="uploadFile">
-                                            <label class="custom-file-label" for="inputGroupFile01">ファイル選択</label>
+                                            <input type="file" class="custom-file-input" id="inputGroupFile" name="uploadFile">
+                                            <label class="custom-file-label" for="inputGroupFile">ファイル選択</label>
                                           </div>
                                         </div>
                                       </div>
@@ -119,11 +120,11 @@
                             <c:forEach items="${actors}" var="actors">
                                 <tr class="actorsTr">
                                   <td>
-                                    <p class="actorsCode mb-0" data-toggle="modal" data-target="#primary-header-modal">${actors.a_cd}</p>
+                                    <p class="actorsCode mb-0" data-toggle="modal" data-target="#actors-header-modal">${actors.a_cd}</p>
                                   </td>
                                   <td>
-                                    <p class="actorsName mb-0" data-toggle="modal" data-target="#primary-header-modal">${actors.a_name}</p>
-                                    <input type="hidden" class="actorsImg mb-0" data-toggle="modal" data-target="#primary-header-modal" value="${actors.a_img}">
+                                    <p class="actorsName mb-0" data-toggle="modal" data-target="#actors-header-modal">${actors.a_name}</p>
+                                    <input type="hidden" class="actorsImg mb-0" data-toggle="modal" data-target="#actors-header-modal" value="${actors.a_img}">
                                   </td>
                                 </tr>
                             </c:forEach>
@@ -148,21 +149,62 @@
                 <div class="col-12">
                   <div class="card">
                     <div class="card-body">
+                      <div class="col-12">
+                        <div class="card">
+                          <div class="card-body">
+                            <h4 class="card-title">俳優登録</h4>
+                            <h6 class="card-subtitle"><code>* </code>新しい俳優情報入力</h6>
+                              <form class="mt-4" action="directorsInsert.do" method="post" enctype="multipart/form-data">
+                              <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
+                                <div class="form-group">
+                                  <div class="row">
+                                    <label class="col-lg-1 text-center">声明</label>
+                                    <div class="col-lg-11">
+                                      <div class="row">
+                                        <div class="col-md-3">
+                                          <input type="text" id="d_name" name="d_name" class="form-control">
+                                        </div>
+                                        <label class="col-lg-1 text-center">写真</label>
+                                        <div class="col-md-6">
+                                          <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                              <span class="input-group-text">アップロード</span>
+                                            </div>
+                                            <div class="custom-file">
+                                              <input type="file" class="custom-file-input" id="inputGroupFile" name="uploadFile">
+                                              <label class="custom-file-label" for="inputGroupFile">ファイル選択</label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                          <button type="submit" class="btn btn-primary text-center">登録</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
                       <div class="table-responsive">
                         <table id="directorsTable" class="table table-striped table-bordered no-wrap">
                         <thead>
                           <tr>
                             <th>CODE</th>
                             <th>NAME</th>
-                            <th>PHOTO</th>
                           </tr>
                         </thead>
                           <tbody>
                              <c:forEach items="${directors}" var="directors">
                               <tr>
-                                <td>${directors.d_cd}</td>
-                                <td>${directors.d_name}</td>
-                                <td>${directors.d_img}</td>
+                                <td>
+                                  <p class="directorsCode mb-0" data-toggle="modal" data-target="#directors-header-modal">${directors.d_cd}</p>
+                                </td>
+                                <td>
+                                  <p class="directorsName mb-0" data-toggle="modal" data-target="#directors-header-modal">${directors.d_name}</p>
+                                  <input type="hidden" class="directorsImg mb-0" data-toggle="modal" data-target="#directors-header-modal" value="${directors.d_img}">
+                                </td>
                               </tr>
                             </c:forEach>
                           </tbody>
@@ -170,12 +212,10 @@
                             <tr>
                               <th>CODE</th>
                               <th>NAME</th>
-                              <th>PHOTO</th>
                             </tr>
                           </tfoot>
                         </table>
                         </div>
-                        <button class="btn btn-primary">directors register</button>
                       </div>
                     </div>
                   </div>
@@ -188,6 +228,31 @@
                   <div class="col-12">
                     <div class="card">
                       <div class="card-body">
+                        <div class="col-12">
+                          <div class="card">
+                            <div class="card-body">
+                              <h4 class="card-title">国家登録</h4>
+                              <form class="mt-4" action="nationsInsert.do" method="post">
+                                <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
+                                  <div class="form-group">
+                                    <div class="row">
+                                      <label class="col-lg-1 text-center">国家</label>
+                                      <div class="col-lg-11">
+                                        <div class="row">
+                                          <div class="col-md-3">
+                                            <input type="text" id="n_name" name="n_name" class="form-control">
+                                          </div>
+                                          <div class="col-md-2">
+                                            <button type="submit" class="btn btn-primary text-center">登録</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
                         <div class="table-responsive">
                           <table id="nationsTable" class="table table-striped table-bordered no-wrap">
                             <thead>
@@ -199,8 +264,12 @@
                             <tbody>
                               <c:forEach items="${nations}" var="nations">
                                 <tr>
-                                  <td>${nations.n_cd}</td>
-                                  <td>${nations.n_name}</td>
+                                  <td>
+                                    <p class="nationsCode mb-0" data-toggle="modal" data-target="#nations-header-modal">${nations.n_cd}</p>
+                                  </td>
+                                  <td>
+                                    <p class="nationsName mb-0" data-toggle="modal" data-target="#nations-header-modal">${nations.n_name}</p>
+                                  </td>
                                 </tr>
                               </c:forEach>
                             </tbody>
@@ -224,6 +293,31 @@
                   <div class="col-12">
                     <div class="card">
                       <div class="card-body">
+                        <div class="col-12">
+                          <div class="card">
+                            <div class="card-body">
+                              <h4 class="card-title">ジャンル登録</h4>
+                              <form class="mt-4" action="genresInsert.do" method="post">
+                                <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
+                                  <div class="form-group">
+                                    <div class="row">
+                                      <div class="col-lg-11">
+                                        <div class="row">
+                                        <label class="col-lg-2 text-center">ジャンル</label>
+                                          <div class="col-md-5">
+                                            <input type="text" id="g_name" name="g_name" class="form-control">
+                                          </div>
+                                          <div class="col-md-2">
+                                            <button type="submit" class="btn btn-primary text-center">登録</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
                         <div class="table-responsive">
                           <table id="genresTable" class="table table-striped table-bordered no-wrap">
                             <thead>
@@ -235,8 +329,12 @@
                             <tbody>
                               <c:forEach items="${genres}" var="genres">
                                 <tr>
-                                  <td>${genres.g_cd}</td>
-                                  <td>${genres.g_name}</td>
+                                  <td>
+                                    <p class="genresCode mb-0" data-toggle="modal" data-target="#genres-header-modal">${genres.g_cd}</p>
+                                  </td>
+                                  <td>
+                                    <p class="genresName mb-0" data-toggle="modal" data-target="#genres-header-modal">${genres.g_name}</p>
+                                  </td>
                                 </tr>
                               </c:forEach>
                             </tbody>
@@ -260,8 +358,8 @@
 <!-- ============================================================== -->
 <!-- End PAge Content -->
 <!-- ============================================================== -->
- <!-- Primary Header Modal -->
-<div id="primary-header-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="primary-header-modalLabel" aria-hidden="true">
+ <!-- actors Header Modal -->
+<div id="actors-header-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="primary-header-modalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header modal-colored-header bg-primary">
@@ -272,16 +370,16 @@
         <form>
           <div class="form-group">
             <label for="a_cd">CODE</label>
-            <input class="form-control" id="a_cd" name="a_cd" readonly>
+            <input class="form-control" id="modalA_cd" name="a_cd" readonly>
           </div>
           <div class="form-group">
             <label for="actors_name">NAME</label>
-            <input class="form-control" id="a_name" name="a_name">
+            <input class="form-control" id="modalA_name" name="a_name">
           </div>
           <div class="form-group">
             <label for="actors_photo">PHOTO</label>
-            <input class="form-control" type="hidden" id="a_img" name="a_img">
-            <img class="form-control" id="showImg" name="showImg" alt="" src="" style="height:50px;">
+            <input class="form-control" type="hidden" id="modalA_img" name="a_img">
+            <img class="form-control" id="showImg" name="showImg" alt="" src="" style="height:250px;">
           </div>
           <div>
             <div class="card">
@@ -304,6 +402,112 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+   <!-- directors Header Modal -->
+<div id="directors-header-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="primary-header-modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal-colored-header bg-primary">
+        <h4 class="modal-title" id="primary-header-modalLabel">DIRECTORS INFO</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="a_cd">CODE</label>
+            <input class="form-control" id="modalA_cd" name="a_cd" readonly>
+          </div>
+          <div class="form-group">
+            <label for="actors_name">NAME</label>
+            <input class="form-control" id="modalA_name" name="a_name">
+          </div>
+          <div class="form-group">
+            <label for="actors_photo">PHOTO</label>
+            <input class="form-control" type="hidden" id="modalA_img" name="a_img">
+            <img class="form-control" id="showImg" name="showImg" alt="" src="" style="height:250px;">
+          </div>
+          <div>
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Change Photo Upload</h4>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Upload</span>
+                  </div>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01">
+                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+   <!-- nations Header Modal -->
+<div id="nations-header-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="primary-header-modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal-colored-header bg-primary">
+        <h4 class="modal-title" id="primary-header-modalLabel">NATIONS INFO</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="n_cd">CODE</label>
+            <input class="form-control" id="modalN_cd" name="n_cd" readonly>
+          </div>
+          <div class="form-group">
+            <label for="nations_name">NAME</label>
+            <input class="form-control" id="modalN_name" name="n_name">
+          </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+   <!-- genres Header Modal -->
+  <div id="genres-header-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="primary-header-modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header modal-colored-header bg-primary">
+          <h4 class="modal-title" id="primary-header-modalLabel">GENRES INFO</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="a_cd">CODE</label>
+              <input class="form-control" id="modalG_cd" name="g_cd" readonly>
+            </div>
+            <div class="form-group">
+              <label for="actors_name">NAME</label>
+              <input class="form-control" id="modalG_name" name="g_name">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-danger">Delete</button>
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -315,11 +519,24 @@ $(".actorsTr").on("click", function () {
   var actorsInfo = $(this);
   var acd = actorsInfo.find(".actorsCode").text();
   var aname = actorsInfo.find(".actorsName").text(); 
+  console.log(actorsInfo.find(".actorsName").text());
   var aimg = actorsInfo.find(".actorsImg").val();
-    $("#a_cd").val(acd);
-    $("#a_name").val(aname);
-    $("#a_img").val(aimg);
-    $("#showImg").attr("src","/resources/img/"+aimg);
+    $("#modalA_cd").val(acd);
+    $("#modalA_name").val(aname);
+    $("#modalA_img").val(aimg);
+    $("#showImg").attr("src","/upload/"+aimg);
+  });
+  
+$(".actorsTr").on("click", function () {
+  var actorsInfo = $(this);
+  var acd = actorsInfo.find(".actorsCode").text();
+  var aname = actorsInfo.find(".actorsName").text(); 
+  console.log(actorsInfo.find(".actorsName").text());
+  var aimg = actorsInfo.find(".actorsImg").val();
+    $("#modalA_cd").val(acd);
+    $("#modalA_name").val(aname);
+    $("#modalA_img").val(aimg);
+    $("#showImg").attr("src","/upload/"+aimg);
   });
 </script>
 <!-- ============================================================== -->

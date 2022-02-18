@@ -5,7 +5,7 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
-public class paymentsVO {
+public class PaymentsVO {
 
   private int tkt_cd; //예매코드
   private int charge;  //결제금액

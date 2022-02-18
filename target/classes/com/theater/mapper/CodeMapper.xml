@@ -23,10 +23,10 @@
 </select>
 
 <insert id="actorsInsert">
-  <selectKey keyProperty="a_cd" order="BEFORE" resultType="int">
+  <selectKey keyProperty="a_cd" order="BEFORE" resultType="String">
     select actors_seq.nextval from dual
   </selectKey>
-    insert into actors ('a'||a_cd, a_name, a_img) values (#{a_cd}, #{a_name}, #{a_img})
+    insert into actors (a_cd, a_name, a_img) values ('a'||#{a_cd}, #{a_name}, #{a_img})
 </insert>
 
 <select id="directorsInsert">
