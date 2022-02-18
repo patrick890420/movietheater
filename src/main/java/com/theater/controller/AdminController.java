@@ -187,7 +187,6 @@ public class AdminController {
     
     return "adm/adminTheater/adminTheaterInsert";
   }
-  
   /* Ticketing */
   
   
