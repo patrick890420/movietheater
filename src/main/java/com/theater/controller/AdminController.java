@@ -22,6 +22,7 @@ import com.theater.domain.MovieVO;
 import com.theater.service.EventService;
 import com.theater.service.MovieService;
 import com.theater.service.NoticeService;
+import com.theater.service.TheaterService;
 import com.theater.service.UtilityService;
 
 import lombok.AllArgsConstructor;
@@ -150,7 +151,14 @@ public class AdminController {
   }//multipart
   
   /* Theater */
+  @Setter(onMethod_=@Autowired )
+  public TheaterService TheaterService;
   
+  @GetMapping("/adminTheaterInsert.do")
+  public String adminTheaterInsert() {
+    
+    return "adm/adminTheater/adminTheaterInsert";
+  }
   
   /* Ticketing */
   
