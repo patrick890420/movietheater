@@ -20,6 +20,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.google.gson.JsonObject;
 import com.theater.domain.MovieInfoVO;
 import com.theater.domain.MovieVO;
+import com.theater.domain.TheatersVO;
 import com.theater.service.EventService;
 import com.theater.service.MovieService;
 import com.theater.service.NoticeService;
@@ -188,6 +189,17 @@ public class AdminController {
   public String adminTheaterInsert() {
     
     return "adm/adminTheater/adminTheaterInsert";
+  }
+  @PostMapping("/adminteatherInsertPro.do")
+  public String adminteatherInsertPro(TheatersVO tvo) {
+    TheaterService.theaterInsertPro(tvo);
+    
+    return "redirect:/adm/adminTheaterInsert2.do";
+    }
+  @GetMapping("/adminTheaterInsert2.do")
+  public String adminTheaterInsert2() {
+    
+    return "adm/adminTheater/adminTheaterInsert2";
   }
   /* Ticketing */
   
