@@ -5,7 +5,7 @@
   <resultMap type="com.theater.domain.MemberVO" id="memberMap">
     <id property="userid" column="userid"></id>
     <result property="userpw"  column="userpw"/>
-    <result property="userName"  column="username"/>
+    <result property="username"  column="username"/>
     <result property="birth"  column="birth"/>
     <result property="gender"  column="gender"/>
     <result property="phone"  column="phone"/>
