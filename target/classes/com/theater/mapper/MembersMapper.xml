@@ -8,11 +8,11 @@
 	insert into members (id,pwd,name,birth,gender,phone,email) values (#{id}, #{pwd}, #{name}, #{birth}, #{gender}, #{phone}, #{email})
 </insert>
 
-<!-- 아이디 중복 체크 
+
 <select id="idChk" resultType="int">
 	SELECT COUNT(*) FROM MEMBERS
 	WHERE id = #{id}
-</select>-->
+</select>
 
 
 

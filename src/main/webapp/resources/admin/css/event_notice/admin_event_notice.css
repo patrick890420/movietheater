@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/*                                adminWrite*/
+.write36{
+  margin: auto;
+}
+
+.write56 tr th{
+  text-align: center;
+}
+
+.write56 input,.write56 textarea{
+  width: 100%;
+}
+
+.form-control{
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.2rem 0.2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #4F5467;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #e9ecef;
+  border-radius: 2px;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.write66{
+  line-height: 222px;
+}
+
+.write77{
+  text-align: center;
+  margin-top: 25px;
+}
+
+/*                                adminEvent*/
+.adminevent72 th{
+  text-align: center;
+  
+}
+
+/*                                 adminNotice*/
+.admin103{
+  float: right;
+  border: 1px solid;
+}

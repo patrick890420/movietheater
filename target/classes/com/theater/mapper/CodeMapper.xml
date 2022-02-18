@@ -18,5 +18,8 @@
   SELECT * FROM GENRES
 </select>
 
+<select id="getActorsView" resultType="com.theater.domain.GenresVO">
+  SELECT * FROM ACTORS WHERE A_CD = #{a_cd}
+</select>
 
 </mapper>

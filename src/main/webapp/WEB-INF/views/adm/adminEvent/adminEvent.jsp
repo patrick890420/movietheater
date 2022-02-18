@@ -15,7 +15,6 @@
             <ol class="breadcrumb m-0 p-0">
               <li class="breadcrumb-item"><a href="admin.do" class="text-muted">Home</a></li>
               <li class="breadcrumb-item"><a href="adminEvent.do" class="text-muted">이벤트</a></li>
-              <li class="breadcrumb-item"><a href="adminNotice.do" class="text-muted">공지사항</a></li>
             </ol>
           </nav>
         </div>
@@ -61,7 +60,7 @@
                         <!-- DataTable 사용법 -->
             <!--        <code> $("#테이블id").DataTable();</code> -->
                         <div class="table-responsive">
-                          <table id="actorsTable" class="table table-striped table-bordered no-wrap">
+                          <table id="adminEventTable" class="table table-striped table-bordered no-wrap">
                           <colgroup>
                             <col width="10%">
                             <col width="10%">
@@ -149,7 +148,7 @@
                 </div>
               </div><!-- "tab-pane" -->
 <!--               글쓰기 -->
-              <button type="button" class="btn admin103"
+              <button type="button" class="btn waves-effect waves-light btn-rounded btn-outline-primary admin103"
                   onClick="location.href='adminWrite.do'">글쓰기</button>
               </div>
               

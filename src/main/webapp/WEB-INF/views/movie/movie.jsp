@@ -27,21 +27,29 @@
                                 </div>
                             </div>
                         </div>
-                         <form name="myform" method="get" action="movie.do" id="searchForm">
-                           <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
-                              <select name="type" class="select">
-                              <option value="" <c:out value="${pageMaker.cri.type==null? 'selected':''}"/>>선택</option>
-          <option value="T" <c:out value="${pageMaker.cri.type eq 'T'? 'selected':''}"/> >제목</option>
-          <option value="C" <c:out value="${pageMaker.cri.type eq 'C'? 'selected':''}"/>>내용</option>
-          <option value="W" <c:out value="${pageMaker.cri.type eq 'W'? 'selected':''}"/>>글쓴이</option>
-          <option value="TC" <c:out value="${pageMaker.cri.type eq 'TC'? 'selected':''}"/>>제목/내용</option>
-          
-        </select>
-        <input type="text" name="keyword" class="search_word" value="<c:out value="${pageMaker.cri.keyword }"/>">
-        <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
-        <input type="hidden" name="amount" value="${pageMaker.cri.amount }">  
-        <button class="btn_search" type="submit" id="searchForm"><i class="fa fa-search"></i><span class="sr-only">검색버튼</span></button>
-      </form>
+                        <div class="notice_search">
+                          <form name="myform" method="get" action="movie.do" id="searchForm">
+                            <div class="container-fluid product__page__filter">
+                              <div class="row">
+                                <div class="col-lg-12 " style="padding-right: 5px;">
+                                <div class="float-lg-right" style="padding-bottom: 30px;">
+                                  <select  name="searchType" class="select">
+                                    <option value=""<c:out value="${pageMaker.cri.searchType==null?'selected':''}"/>>선택</option>
+                                    <option value="title"<c:out value="${pageMaker.cri.searchType eq 'title'?'selected':''}"/>>제목</option>
+                                    <option value="intro"><c:out value="${pageMaker.cri.searchType eq 'intro'?'selected':''}"/>내용</option>
+                                  </select>
+                                  <label>
+                                    <input type="text" class="event47" name="searchName" placeholder="검색어를 입력해 주세요">
+                                    <input type="hidden" name="pageNum" value="1">
+                                    <input type="hidden" name="amount" value="9">
+                                    <button type="submit" style="background:none; border:none;"><i class="icon_search"></i></button>
+                                    </label>
+                                    </div>
+                                    </div>
+                              </div><!-- row -->
+                            </div><!-- container -->
+                          </form>
+                        </div><!-- notice_search -->
                         <div class="row">
                         <c:set var="num" value="${pageMaker.total-((pageMaker.cri.pageNum-1) * 10)}"/>
                           <c:forEach var="mlist" items="${list }"  >
@@ -52,30 +60,38 @@
                                         <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                     </div>
                                     <div class="product__item__text">
-                                        <h5><a href="view.do?m_cd=${mlsit.m_cd}&pageNum=${pageMaker.cri.pageNum}&type=${pageMaker.cri.type}&keyword=${pageMaker.cri.keyword }&amount=${pageMaker.cri.amount}">${mlist.title}</a></h5>
+                                        <h5><a href="view.do?m_cd=${mlist.m_cd}">${mlist.title}</a></h5>
                                     </div>
                                 </div>
                             </div>
                             </c:forEach>
                         </div>
                     </div>
-                    <form id="actionForm" action="movie.do" method="get">
+                    <form action="movie.do" name ="pageForm" method="get">
+                      <div class="product__pagination"  >
+                        <hr>
+                        <ul class="pagination pagination-sm" style="justify-content: center;">
+                        <!-- 2. 이전페이지 활성화여부 -->
+                        <c:if test="${pageMaker.prev }">
+                            <li><a href="#" data-pagenum='${pageMaker.startPage - 1 }'><i class="fa fa-angle-double-left"></i></a></li>
+                        </c:if>
+                        <!-- 1. 페이지네이션 처리 -->
+                        <c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
+                            <li class="${pageMaker.pageNum eq num ? 'active' : ''}">
+                                <a href="#" data-pagenum='${num}'>${num}</a>
+                            </li>
+                        </c:forEach>
+                        <!-- 3. 다음버튼 활성화여부 -->
+                        <c:if test="${pageMaker.next }">
+                            <li><a href="#" data-pagenum='${pageMaker.endPage + 1 }'><i class="fa fa-angle-double-right"></i></a></li>
+                        </c:if>
+                      </ul>
+                      </div>
                       <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
                       <input type="hidden" name="amount" value="${pageMaker.cri.amount }">
-                      <input type="hidden" name="sel" value="${pageMaker.cri.type }">
-                      <input type="hidden" name="word" value="${pageMaker.cri.keyword }">
+                      <input type="hidden" name="searchType" value="${pageMaker.cri.searchType }">
+                      <input type="hidden" name="searchName" value="${pageMaker.cri.searchName }">
                     </form>
-                    <div class="product__pagination" style="text-align: center;">
-                      <c:if test="${pageMaker.prev}">
-                        <a href="${pageMaker.startPage-1 }"><i class="bi bi-arrow-left"></i></a>
-                        </c:if>
-                        <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage }">
-                        <a href="${num}" class="${pageMaker.cri.pageNum == num? 'active':'' }">${num }</a>
-                        </c:forEach>
-                        <c:if test="${pageMaker.next}">
-                        <a href="${pageMaker.startPage+1 }"><i class="bi bi-arrow-right"></i></a>
-                        </c:if>
-                    </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-8">
                     <div class="product__sidebar">
@@ -130,15 +146,21 @@
 </section>
 
 <script>
-var actionForm = $("#actionForm");
-$(".product__pagination > a").on("click", function(e) {
-   e.preventDefault();
-   actionForm.find("input[name='pageNum']").val($(this).attr("href"));
-   actionForm.submit();
-   
-})
-</script>
+//    페이지 처리
+//      모든 a버튼을 눌렀을 때 a가 가지고 있는 pageNum값을 가지고 form태그로 이동하도록 처리
+//      동적쿼리 이용해서 sql문 변경
+//      화면에 검색키워드가 미리 남겨지도록 처리.
+  var product__pagination = document.querySelector(".pagination");
+  product__pagination.onclick = function() {
+    event.preventDefault(); // 고유이벤트 속성 중지
+    if(event.target.tagName != 'A') return;
 
+    // 사용자가 클릭한 페이지 번호를 form에 넣고 서브밋을 보냅니다.
+    document.pageForm.pageNum.value = event.target.dataset.pagenum;
+    document.pageForm.submit(); // 서브밋
+  }
+
+</script>
 
 
 <%@ include file ="../footer.jsp" %>

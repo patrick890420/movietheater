@@ -13,5 +13,10 @@ public interface CodeMapper {
   public List<DirectorsVO> getDirectorsList();
   public List<NationVO> getNationList();
   public List<GenresVO> getGenresList();
+ 
+  public ActorsVO getActorsView(int a_cd);
+  public DirectorsVO getDirectorsView(int d_cd);
+  public NationVO getNationView(int n_cd);
+  public GenresVO getGenresView(int g_cd);
   
 }
