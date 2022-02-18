@@ -24,16 +24,17 @@
                 <div class="col-lg-6">
                     <div class="login__form">
                         <h3>Login</h3>
-                        <form action="/login/loginPro.do">
+                        <form name="login" id="login" action="/login/loginPro.do" method="post">
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
                             <div class="input__item">
-                                <input type="text" placeholder="ID">
+                                <input type="text" placeholder="ID" name="username">
                                 <span class="icon_id"></span>
                             </div>
                             <div class="input__item">
-                                <input type="password" placeholder="Password">
+                                <input type="password" placeholder="Password" name="password">
                                 <span class="icon_lock"></span>
                             </div>
-                            <button type="submit" class="site-btn">Login Now</button>
+                            <input type="button" class="site-btn" id="login"><a href="javascript:fn_login();">Login Now</a>
                         </form>
                         <a href="#" class="forget_pass">Forgot Your Password?</a>
                     </div>
@@ -64,6 +65,17 @@
         </div>
     </section>
     <!-- Login Section End -->
-	
+
+<script>
+
+  function fn_login(){
+//       var lgn = document.login;
+       var lgn = document.getElementById("login"); //getElementById에는 "#id"말고 걍 id적는다
+       lgn.action="/login";
+       lgn.method="post";
+       lgn.submit();
+  }
+</script>
 
 <%@ include file="../footer.jsp" %>	
+

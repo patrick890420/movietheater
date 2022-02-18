@@ -157,7 +157,7 @@
         return false;
 }
 
-      }
+      
       if (!$("input:checked[id='box1']").is(":checked")) {
         alert("이용약관 동의가 필요합니다."); 
         return false;
