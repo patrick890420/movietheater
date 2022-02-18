@@ -30,7 +30,6 @@ import com.theater.service.NoticeService;
 import com.theater.service.UtilityService;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
@@ -83,7 +82,7 @@ public class AdminController {
   
   @GetMapping("/adminMovieSelect.do" )
   public String adminMovieSelect(Model model,MovieVO mvo) {
-    model.addAttribute("list",MovieService.MovieSelect());
+    model.addAttribute("list",MovieService.movieSelect());
     return "adm/adminMovie/adminMovieSelect";
   }
   
@@ -127,7 +126,7 @@ public class AdminController {
     String upload = jsonObject.toString();
     log.info(upload);
 
-    MovieService.MovieInsertPro(mvo);
+    MovieService.movieInsertPro(mvo);
     
     return "redirect:/adm/adminMovieInsert.do";
     }
@@ -231,20 +230,6 @@ public class AdminController {
     model.addAttribute("nations", uService.getNationsList());
     model.addAttribute("genres",  uService.getGenresList());
     return "adm/adminUtility/adminCodeList";
-  }
-  
-  @GetMapping("/adminActorsView.do")
-  public String actorsView(Model model, @RequestParam("a_cd") int a_cd) {
-    log.info("code"+a_cd);
-    model.addAttribute("actorsView", uService.getActorsView(a_cd));
-    
-    return "adm/adminUtility/adminCodeList";
-  }
-
-  @GetMapping
-  public void actorsInsert(Model model,@RequestParam("a_cd") int a_cd) {
-    uService.actorsInsert(a_cd);
-    
   }
   
 }

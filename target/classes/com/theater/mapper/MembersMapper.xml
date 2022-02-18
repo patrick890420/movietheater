@@ -5,13 +5,17 @@
 
 <!-- 회원가입 -->
 <insert id="MemberInsert">
-	insert into members (id,pwd,name,birth,gender,phone,email) values (#{id}, #{pwd}, #{name}, #{birth}, #{gender}, #{phone}, #{email})
+  insert all
+    into members (userid,userpw,username,birth,gender,phone,email) 
+    values (#{userid}, #{userpw}, #{username}, #{birth}, #{gender}, #{phone}, #{email})
+    into member_auth (userid,auth) values (#{userid},'ROLE_USER')
+  select*from dual
 </insert>
 
 
 <select id="idChk" resultType="int">
 	SELECT COUNT(*) FROM MEMBERS
-	WHERE id = #{id}
+	WHERE userid = #{userid}
 </select>
 
 

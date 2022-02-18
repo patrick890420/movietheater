@@ -23,11 +23,11 @@
           style="padding: 50px 300px; background: antiquewhite; padding-top: 100px;">
           <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
           <div class="input__item">
-            <input type="text" placeholder="이름을 입력해 주세요." id="userName" name="name"> 
+            <input type="text" placeholder="이름을 입력해 주세요." id="userName" name="username"> 
             <span class="icon_profile"></span>
           </div>
           <div class="input__item">
-            <input type="text" placeholder="아이디를 입력해 주세요." id="userId" name="id" maxlength='15'>
+            <input type="text" placeholder="아이디를 입력해 주세요." id="userId" name="userid" maxlength='15'>
             <span class="icon_id"></span>
             <div id="checkMsg"></div>
           </div>
@@ -50,25 +50,24 @@
               <span class="icon_phone"></span>
             </div>
             <div class="input__item">
-              <input type="password" placeholder="비밀번호를 입력해 주세요."
-                id="userPass" name="pwd"> <span
-                class="icon_lock"></span>
+              <input type="password" placeholder="비밀번호를 입력해 주세요." id="userPass" name="userpw"> 
+              <span class="icon_lock"></span>
             </div>
             <div class="input__item">
-              <input type="password" placeholder="비밀번호를 재입력 해 주세요."
-                id="userPass2"> <span
-                class="icon_lock"></span>
+              <input type="password" placeholder="비밀번호를 재입력 해 주세요." id="userPass2">
+              <span class="icon_lock"></span>
             </div>
             <div class="input__item">
-              <input type="date" id="date" name="birth"><span
-                class="icon_calendar"></span>
+              <input type="date" id="date" name="birth">
+              <span class="icon_calendar"></span>
             </div>
             <div class="input__item" style="background-color: white;">
               <span class="icon_heart_alt"></span>
               <div class="genderchoice">
                 <input type="radio" value="2" class="gender" name="gender">
                   woman
-                <input type="radio" value="1" class="gender" name="gender"> man
+                <input type="radio" value="1" class="gender" name="gender">
+                  man
               </div>
             </div>
             <ul class="join_box">
@@ -157,20 +156,19 @@
         return false;
 }
 
-      }
       if (!$("input:checked[id='box1']").is(":checked")) {
         alert("이용약관 동의가 필요합니다."); 
         return false;
       }
-
+    
     });
   })
   //아이디 중복
   $("#userId").blur(function(){
-      var idCheck = $("input[name=id]").val();
+      var idCheck = $("input[name=userid]").val();
       $.ajax({
          type : "get",
-         url : '/join/idChk.do?id='+idCheck,
+         url : '/join/idChk.do?userid='+idCheck,
          dataType : "json",
          success : function(data) {
            if (data == 0) {

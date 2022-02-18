@@ -55,18 +55,16 @@
                     <th>SUBTITLE</th>
                     <th>DATE</th>
                     <th>RATE</th>
-                    <th>INTRO</th>
                   </tr>
                 </thead>
                 <tbody>
                   <c:forEach items="${list}" var="mlist" >
                   <tr>
                     <td>${mlist.m_cd }</td>
-                    <td>${mlist.title}</td>
+                    <td><a href="/adm/adminMovieInfoInsert.do?m_cd=${mlist.m_cd }">${mlist.title}</a></td>
                     <td>${mlist.subtitle}</td>
                     <td>${mlist.rdate}</td>
                     <td>${mlist.rate}</td>
-                    <td>${mlist.intro}</td>
                   </tr>
                   </c:forEach>
                 </tbody>
@@ -77,7 +75,6 @@
                     <th>SUBTITLE</th>
                     <th>DATE</th>
                     <th>RATE</th>
-                    <th>INTRO</th>
                   </tr>
                 </tfoot>
               </table>

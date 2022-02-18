@@ -24,16 +24,18 @@
                 <div class="col-lg-6">
                     <div class="login__form">
                         <h3>Login</h3>
-                        <form action="/login/loginPro.do">
+                        <form name="login" id="login">
+                          <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
                             <div class="input__item">
-                                <input type="text" placeholder="ID">
-                                <span class="icon_id"></span>
+                              <input type="text" placeholder="ID" name="username">
+                              <span class="icon_id"></span>
                             </div>
                             <div class="input__item">
-                                <input type="password" placeholder="Password">
-                                <span class="icon_lock"></span>
+                              <input type="password" name="password" placeholder="Password">
+                              <span class="icon_lock"></span>
                             </div>
-                            <button type="submit" class="site-btn">Login Now</button>
+<!--                             <button type="submit" class="site-btn">Login Now</button> -->
+                            <a class="btn btn-primary" href="javascript:fn_login();">Login Now</a>
                         </form>
                         <a href="#" class="forget_pass">Forgot Your Password?</a>
                     </div>
@@ -64,6 +66,13 @@
         </div>
     </section>
     <!-- Login Section End -->
-	
+<script>
+    function fn_login(){
+        var lgn = document.getElementById("login");
+        lgn.action="/login";
+        lgn.method="post";
+        lgn.submit();
+    }
+  </script>	
 
 <%@ include file="../footer.jsp" %>	

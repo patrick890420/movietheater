@@ -54,8 +54,8 @@
 </div>
 </section>
   </div>
-  
   </div>
+  
 <section class="hero">
   <div class="container" style="text-align: center;">
     <h3
@@ -373,117 +373,11 @@
     </ul>
 
 <div class="tab-content">
-  <div role="tabpanel" class="tab-pane active" id="date">
-    <div class="t_date">
-    <strong>2월</strong>
-    <span><br>
-      <label>
-        <input type="radio" name="date1" checked class="date1">
-          <strong>11</strong><br>
-        <span>오늘</span>
-      </label>
-    </span>
-    </div>
-    <div class="t_date">
-    <span><br>
-      <label>
-      <input type="radio" name="date1" class="date1">
-        <strong>12</strong><br>
-        <span>오늘</span>
-      </label>
-    </span>
-    </div>
-    <div class="t_date">
-    <span><br>
-      <label>
-      <input type="radio" name="date1" class="date1">
-        <strong>13</strong><br>
-        <span>오늘</span>
-      </label>
-    </span>
-    </div>
-    <div class="t_date">
-    <span><br>
-      <label>
-      <input type="radio" name="date1" class="date1">
-        <strong>14</strong><br>
-        <span>오늘</span>
-      </label>
-    </span>
-    </div>
-    <div class="t_date">
-    <span><br>
-      <label>
-      <input type="radio" name="date1" class="date1">
-        <strong>15</strong><br>
-        <span>오늘</span>
-      </label>
-    </span>
-    </div>
-    <div class="t_date">
-    <span><br>
-      <label>
-      <input type="radio" name="date1" class="date1">
-        <strong>16</strong><br>
-        <span>오늘</span>
-      </label>
-    </span>
-    </div>
-    <div class="t_date">
-    <span><br>
-      <label>
-      <input type="radio" name="date1" class="date1">
-        <strong>17</strong><br>
-        <span>오늘</span>
-      </label>
-    </span>
-    </div>
-    <div class="t_date">
-    <span><br>
-      <label>
-      <input type="radio" name="date1" class="date1">
-        <strong>11</strong><br>
-        <span>오늘</span>
-      </label>
-    </span>
-    </div>
-    <div class="t_date">
-    <span><br>
-      <label>
-      <input type="radio" name="date1" class="date1">
-        <strong>18</strong><br>
-        <span>토</span>
-      </label>
-    </span>
-    </div>
-    <div class="t_date">
-    <span><br>
-      <label>
-      <input type="radio" name="date1" class="date1">
-        <strong>19</strong><br>
-        <span>일</span>
-      </label>
-    </span>
-    </div>
-    <div class="t_date">
-    <span><br>
-      <label>
-      <input type="radio" name="date1" class="date1">
-        <strong>19</strong><br>
-        <span>일</span>
-      </label>
-    </span>
-    </div>
-    <div class="t_date">
-    <span><br>
-      <label>
-      <input type="radio" name="date1" class="date1">
-        <strong>19</strong><br>
-        <span>일</span>
-      </label>
-    </span>
-    </div>
-  </div>
+<div role="tabpanel" class="theater_date tab-pane active" id="date">
+<div class="t_date2">
+
+</div>
+</div>
   <div role="tabpanel" class="tab-pane" id="charge">
     <strong>2D 일반석</strong>
     <div class="row t_chargetext">
@@ -563,17 +457,16 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-              <img src="/resources/img/theater/post1.jpg" class="t_ranpost">
-            </div>
-          </div>
-          
         </div>
       </div>
       
     </div>
   </div>
+  <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <img id = "introImg2" border="0" class="t_ranpost">
+            </div>
+          </div>
 </section>
 
 <script>
@@ -708,15 +601,37 @@ var infowindow = new google.maps.InfoWindow(
 {
 
 content : "<div style=\"text-align:center;\"><strong>한독약품빌딩</strong><br>서울특별시 강남구 역삼1동 735<br><img src=\"handok_small.png\"></div>"
-
 });
-
 infowindow.open(map, marker);
-
-
-
 }
 
+</script>
+
+<!-- 랜덤배너출력1 -->
+<script type="text/javascript">
+  var imgArray = new Array();
+  imgArray[0] = '/resources/img/theater/post1.jpg';
+  imgArray[1] = '/resources/img/theater/post2.jpg';
+  imgArray[2] = '/resources/img/theater/post3.jpg';
+  
+  function showImage(){
+    var imgNum = Math.round(Math.random()*2);
+    var objImg = document.getElementById("introImg");
+    objImg.src = imgArray[imgNum];
+  }
+</script>
+
+<!-- 랜덤배너출력2 -->
+<script type="text/javascript">
+  var imgArray = new Array();
+  imgArray[0] = '/resources/img/theater/footpost1.jpg';
+  imgArray[1] = '/resources/img/theater/footpost2.jpg';
+  
+  function showImage2(){
+    var imgNum = Math.round(Math.random()*1);
+    var objImg = document.getElementById("introImg2");
+    objImg.src = imgArray[imgNum];
+  }
 </script>
 
 <!-- Product Section End -->

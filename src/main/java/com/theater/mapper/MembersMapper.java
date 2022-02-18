@@ -9,6 +9,6 @@ public interface MembersMapper {
 	 public void MemberInsert(MemberVO mvo);
 	 
 	 //아이디 중복 체크
-	 public int idChk(String id);
+	 public int idChk(String userid);
 
 }

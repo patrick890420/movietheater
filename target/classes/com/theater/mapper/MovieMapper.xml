@@ -22,14 +22,14 @@
   </sql>
 
   <!-- 영화 insert -->
-  <insert id="MovieInsertPro">
+  <insert id="movieInsertPro">
   <selectKey keyProperty="m_cd" order="BEFORE" resultType="int">
         select m_cd_seq.nextval from dual
       </selectKey>
-    insert into movies (m_cd, title, subtitle, rdate, rtime, rate, intro, poster) values (#{m_cd}, #{title}, #{subtitle}, to_date(#{rdate},'YYYY-MM-DD HH24:MI:SS'), #{rtime},#{rate},#{intro}, #{poster})
+    insert into movies (m_cd, title, subtitle, rdate, rtime, rate, intro, poster) values (#{m_cd}, #{title}, #{subtitle}, to_date(#{rdate},'YYYY-MM-DD'), #{rtime},#{rate},#{intro}, #{poster})
   </insert> 
   
-  <select id="MovieList" resultType="com.theater.domain.MovieVO">
+  <select id="movieList" resultType="com.theater.domain.MovieVO">
      <![CDATA[
         SELECT *
         FROM ( SELECT ROWNUM RN,
@@ -68,7 +68,7 @@
     ]]>
   </select>
   
-  <select id="MovieListPaging" resultType="com.theater.domain.MovieVO">
+  <select id="movieListPaging" resultType="com.theater.domain.MovieVO">
     <![CDATA[
     select * from 
     ( 
@@ -92,8 +92,18 @@
   
   
   <!-- View 페이지 -->
-  <select id="MovieSelect" resultType="com.theater.domain.MovieVO">
+  <select id="movieSelect" resultType="com.theater.domain.MovieVO">
     select * from movies order by m_cd desc
   </select>
+  
+  <insert id="movieInfoInsertPro">
+    insert all 
+      into M_ACTORS (m_a_cd,m_cd,a_cd) values (m_a_cd_seq.nextval,#{m_cd},#{a_cd}) 
+      into M_DIRECTORS (M_D_CD,M_CD,D_CD) values (m_d_cd_seq.nextval,#{m_cd},#{d_cd}) 
+      into M_GENRES (M_G_CD,M_CD,G_CD) values (m_g_cd_seq.nextval,#{m_cd},#{g_cd}) 
+      into M_NATIONS(M_N_CD,M_CD,N_CD) values (m_n_cd_seq.nextval,#{m_cd},#{n_cd}) 
+      into M_STILLCUT(STILL_CD,M_CD,STILL_IMG1,STILL_IMG2,STILL_IMG3,STILL_IMG4) values(STILLCUT_SEQ.nextval,#{m_cd},#{still_img1},#{still_img2},#{still_img3},#{still_img4})
+    select * from sys.dual
+  </insert>
   
 </mapper>
