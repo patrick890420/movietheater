@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.google.gson.JsonObject;
+import com.theater.domain.ActorsVO;
 import com.theater.domain.MovieInfoVO;
 import com.theater.domain.MovieVO;
 import com.theater.domain.TheatersVO;
@@ -98,6 +99,10 @@ public class AdminController {
     model.addAttribute("genres",  uService.getGenresList());
     
     return "adm/adminMovie/adminMovieInfoInsert";
+  }
+  @GetMapping("/adminMovieView.do")
+  public String adminMovieView() {
+    return "adm/adminMovie/adminMovieView";
   }
   
   @PostMapping(value="/adminMovieInsertPro.do", produces = "application/json; charset=utf8")
@@ -250,6 +255,51 @@ public class AdminController {
     model.addAttribute("genres",  uService.getGenresList());
     return "adm/adminUtility/adminCodeList";
   }
+  
+  @PostMapping(value="/actorsInsert.do", produces = "application/json; charset=utf8")
+  public String actorsInsert(Model model, ActorsVO avo, @RequestParam("uploadFile") MultipartFile uploadFile) {
+    JsonObject jsonObject = new JsonObject();
+    
+    String uploadFolder="c:\\upload";
+    log.info("file name : "+uploadFile.getOriginalFilename());
+    
+    String uploadFileName = uploadFile.getOriginalFilename();
+    //IE
+    uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("//")+1);
+    log.info("only file name : "+uploadFileName);
+    
+    UUID uuid = UUID.randomUUID();
+    
+    uploadFileName = uuid.toString()+"_"+uploadFileName;
+    
+    File uploadPath = new File(uploadFolder, getFolder());
+    
+    if(uploadPath.exists() == false) {
+       uploadPath.mkdirs();
+    }
+    File savefile = new File(uploadPath,uploadFileName);
+    String saveUrl = uploadFileName.toString();
+    log.info(saveUrl);
+    
+    try {
+      uploadFile.transferTo(savefile);
+      uploadFileName = (savefile.toString().substring(10));
+      jsonObject.addProperty("url", "/upload/"+uploadFileName);
+      jsonObject.addProperty("responseCode", "success");
+      avo.setA_img(uploadFileName);
+      log.info(uploadFileName);
+    }catch(Exception e) {
+       e.printStackTrace();
+       jsonObject.addProperty("responseCode", "error");
+    }
+    
+    String upload = jsonObject.toString();
+    log.info(upload);
+
+    uService.actorsInsert(avo);
+    return "redirect:/adm/adminCodeList.do";
+  }
+
   
 
   

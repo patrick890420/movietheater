@@ -9,7 +9,7 @@ public class MemberVO {
 
   private String userid;
   private String userpw;
-  private String userName;
+  private String username;
   private String birth; //생년월일
   private String gender; //성별
   private String phone; //연락처
