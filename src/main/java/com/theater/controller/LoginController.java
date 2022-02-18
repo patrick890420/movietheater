@@ -34,6 +34,9 @@ public class LoginController {
 		
 	}
 	
+	
+  
+	
   @PostMapping("/loginPro.do") //레지스터 등록 천규형거 베껴벌임 ㅎ
   public String memberLogin(MemberVO mvo, RedirectAttributes rdat) {
 

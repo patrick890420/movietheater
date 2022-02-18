@@ -4,9 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +41,10 @@ public class AdminController {
   
   @GetMapping("/admin")
   public void admin() {
+  }
+  
+  @GetMapping("/adminLogin")
+  public void adminLogin() {
   }
   
   /* Member */
@@ -238,18 +240,6 @@ public class AdminController {
     return "adm/adminUtility/adminCodeList";
   }
   
-  @GetMapping("/adminActorsView.do")
-  public String actorsView(Model model, @RequestParam("a_cd") int a_cd) {
-    log.info("code"+a_cd);
-    model.addAttribute("actorsView", uService.getActorsView(a_cd));
-    
-    return "adm/adminUtility/adminCodeList";
-  }
 
-  @GetMapping
-  public void actorsInsert(Model model,@RequestParam("a_cd") int a_cd) {
-    uService.actorsInsert(a_cd);
-    
-  }
   
 }

@@ -41,8 +41,8 @@ public class JoinController {
   }
 
   @GetMapping("/idChk.do")
-  public @ResponseBody int idChk(@RequestParam("id") String id) {
-    int result = mservice.idChk(id);
+  public @ResponseBody int idChk(@RequestParam("userid") String userid) {
+    int result = mservice.idChk(userid);
     log.info("result"+ result);
     return result;
 
@@ -51,8 +51,9 @@ public class JoinController {
   @PostMapping("/joinPro.do") //레지스터 등록
   public String register(MemberVO mvo, RedirectAttributes rdat) {
 
-    String inputPass = pwEncoder.encode(mvo.getPwd()); /* 암호화 */
-    mvo.setPwd(inputPass);
+    String inputPass = pwEncoder.encode(mvo.getUserid()); /* 암호화 */
+    mvo.setUserid(inputPass);
+
 
     mservice.register(mvo);
     /* rdat.addAttribute("result",mvo.getUserid()); */

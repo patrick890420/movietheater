@@ -39,7 +39,7 @@
       <div class="card-body">
         <ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
           <li class="nav-item" id="default">
-            <a href="#actors" data-toggle="tab" aria-expanded="true" class="nav-link rounded-0">
+            <a href="#actors" data-toggle="tab" aria-expanded="true" class="nav-link rounded-0 active">
               <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
               <span class="d-none d-lg-block">Actors</span>
             </a>
@@ -75,14 +75,14 @@
                         <div class="card-body">
                           <h4 class="card-title">俳優登録</h4>
                           <h6 class="card-subtitle"><code>* </code>新しい俳優情報の入力</h6>
-                            <form class="mt-4">
+                            <form class="mt-4" action="actorsInsert.do" method="get" enctype="multipart/form-data">
                               <div class="form-group">
                                 <div class="row">
                                   <label class="col-lg-1 text-center">声明</label>
                                   <div class="col-lg-11">
                                     <div class="row">
                                       <div class="col-md-3">
-                                        <input type="text" class="form-control">
+                                        <input type="text" id="a_name" name="a_name" class="form-control">
                                       </div>
                                       <label class="col-lg-1 text-center">写真</label>
                                       <div class="col-md-6">
@@ -91,14 +91,13 @@
                                             <span class="input-group-text">アップロード</span>
                                           </div>
                                           <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                            <input type="file" class="custom-file-input" id="inputGroupFile01" name="uploadFile">
                                             <label class="custom-file-label" for="inputGroupFile01">ファイル選択</label>
                                           </div>
                                         </div>
                                       </div>
                                       <div class="col-md-2">
                                         <button type="submit" class="btn btn-primary text-center">登録</button>
-                                        
                                     </div>
                                   </div>
                                 </div>
@@ -109,12 +108,11 @@
                       </div>
                     </div>
                     <div class="table-responsive">
-                      <table id="actorsTable" class="table table-striped table-bordered no-wrap">
+                      <table id="actorsTable" class="table table-striped table-bordered no-wrap text-center">
                         <thead>
                           <tr>
                             <th>CODE</th>
                             <th>NAME</th>
-                            <th>PHOTO</th>
                           </tr>
                         </thead>
                           <tbody>
@@ -125,9 +123,7 @@
                                   </td>
                                   <td>
                                     <p class="actorsName mb-0" data-toggle="modal" data-target="#primary-header-modal">${actors.a_name}</p>
-                                  </td>
-                                  <td>
-                                    <p class="actorsImg mb-0" data-toggle="modal" data-target="#primary-header-modal">${actors.a_img}</p>
+                                    <input type="hidden" class="actorsImg mb-0" data-toggle="modal" data-target="#primary-header-modal" value="${actors.a_img}">
                                   </td>
                                 </tr>
                             </c:forEach>
@@ -136,12 +132,10 @@
                             <tr>
                               <th>CODE</th>
                               <th>NAME</th>
-                              <th>PHOTO</th>
                             </tr>
                           </tfoot>
                         </table>
                       </div>
-                      <button class="btn btn-primary">actors register</button>
                     </div>
                   </div>
                 </div>
@@ -321,7 +315,7 @@ $(".actorsTr").on("click", function () {
   var actorsInfo = $(this);
   var acd = actorsInfo.find(".actorsCode").text();
   var aname = actorsInfo.find(".actorsName").text(); 
-  var aimg = actorsInfo.find(".actorsImg").text();
+  var aimg = actorsInfo.find(".actorsImg").val();
     $("#a_cd").val(acd);
     $("#a_name").val(aname);
     $("#a_img").val(aimg);
