@@ -5,7 +5,6 @@
 <!-- 로그인 --> 
   <select id="memberLogin" resultType="com.theater.domain.MemberVO">
     select * from members
-    where id = #{id} and pwd = #{pwd}
+    where userid = #{userid} and userpw = #{userpw}
   </select>
-
 </mapper>

@@ -23,11 +23,11 @@
           style="padding: 50px 300px; background: antiquewhite; padding-top: 100px;">
           <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
           <div class="input__item">
-            <input type="text" placeholder="이름을 입력해 주세요." id="userName" name="name"> 
+            <input type="text" placeholder="이름을 입력해 주세요." id="userName" name="username"> 
             <span class="icon_profile"></span>
           </div>
           <div class="input__item">
-            <input type="text" placeholder="아이디를 입력해 주세요." id="userId" name="id" maxlength='15'>
+            <input type="text" placeholder="아이디를 입력해 주세요." id="userId" name="userid" maxlength='15'>
             <span class="icon_id"></span>
             <div id="checkMsg"></div>
           </div>
@@ -51,7 +51,7 @@
             </div>
             <div class="input__item">
               <input type="password" placeholder="비밀번호를 입력해 주세요."
-                id="userPass" name="pwd"> <span
+                id="userPass" name="userpw"> <span
                 class="icon_lock"></span>
             </div>
             <div class="input__item">
@@ -161,15 +161,15 @@
         alert("이용약관 동의가 필요합니다."); 
         return false;
       }
-    }
+    
     });
   })
   //아이디 중복
   $("#userId").blur(function(){
-      var idCheck = $("input[name=id]").val();
+      var idCheck = $("input[name=userid]").val();
       $.ajax({
          type : "get",
-         url : '/join/idChk.do?id='+idCheck,
+         url : '/join/idChk.do?userid='+idCheck,
          dataType : "json",
          success : function(data) {
            if (data == 0) {

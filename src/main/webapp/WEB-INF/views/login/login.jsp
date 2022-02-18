@@ -31,7 +31,7 @@
                                 <span class="icon_id"></span>
                             </div>
                             <div class="input__item">
-                                <input type="password" placeholder="Password" name="password">
+                                <input type="password" placeholder="Password" name="userpw">
                                 <span class="icon_lock"></span>
                             </div>
                             <input type="button" class="site-btn" id="login"><a href="javascript:fn_login();">Login Now</a>
