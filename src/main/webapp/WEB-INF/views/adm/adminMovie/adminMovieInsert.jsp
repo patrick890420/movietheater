@@ -58,9 +58,9 @@
                   <div class="card">
                       <div class="card-body">
                           <h4 class="card-title">영화 개봉일</h4>
-                          <h6 class="card-subtitle">Using <code>input type="datetime-local"</code></h6>
+                          <h6 class="card-subtitle"><code></code></h6>
                               <div class="form-group">
-                                  <input name="rdate" type="text" class="form-control" value="2008-05-13">
+                                  <input name="rdate" type="text" class="form-control" value="2022-05-13">
                               </div>
                       </div>
                   </div>
@@ -69,7 +69,7 @@
                   <div class="card">
                       <div class="card-body">
                           <h4 class="card-title">상영 시간</h4>
-                          <h6 class="card-subtitle">Using <code>input type="time"</code></h6>
+                          <h6 class="card-subtitle"><code></code></h6>
                               <div class="form-group">
                                   <input name="rtime" type="text" class="form-control" value="">
                               </div>
@@ -80,7 +80,7 @@
                   <div class="card">
                       <div class="card-body">
                           <h4 class="card-title">상영 등급</h4>
-                          <h6 class="card-subtitle">To use add <code>.custom-select</code> class</h6>
+                          <h6 class="card-subtitle"><code></code></h6>
                               <div class="form-group mb-4">
                                   <select class="custom-select mr-sm-2" name="rate" id="rate">
                                       <option selected>등급 선택</option>
@@ -93,63 +93,11 @@
                       </div>
                   </div>
               </div>
-              <div class="col-sm-12 col-md-6 col-lg-4">
-                  <div class="card">
-                      <div class="card-body">
-                          <h4 class="card-title">영화 배우</h4>
-                              <div class="form-group">
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#actorsmodal">배우 검색</button>
-                              </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-sm-12 col-md-6 col-lg-4">
-                  <div class="card">
-                      <div class="card-body">
-                          <h4 class="card-title">영화 감독</h4>
-                              <div class="form-group">
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#directrosmodal">감독 검색</button>
-                              </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-sm-12 col-md-6 col-lg-4">
-                  <div class="card">
-                      <div class="card-body">
-                          <h4 class="card-title">영화 장르</h4>
-                              <div class="form-group">
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#genresmodal">장르 검색</button>
-                              </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-sm-12 col-md-6 col-lg-4">
-                  <div class="card">
-                      <div class="card-body">
-                          <h4 class="card-title">국가</h4>
-                              <div class="form-group">
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nationsmodal">국가 검색</button>
-                              </div>
-                      </div>
-                  </div>
-              </div>
-  
-              <div class="col-sm-12 col-md-12 col-lg-12">
-                  <div class="card">
-                      <div class="card-body">
-                          <h4 class="card-title">영화 간단 소개</h4>
-                              <div class="form-group">
-                                  <textarea class="form-control" rows="8" placeholder="영화 간단 소개를 입력해주세요." name="intro"></textarea>
-                              </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-sm-12 col-md-6">
+               <div class="col-sm-12 col-md-6 col-lg-4">
                   <div class="card">
                       <div class="card-body">
                           <h4 class="card-title">영화 포스터</h4>
-                          <h6 class="card-subtitle">To use add <code>.input-group-append</code> class to the div
-                          </h6>
+                          <h6 class="card-subtitle"><code></code></h6>
                               <div class="input-group">
                                   <div class="custom-file">
                                       <input type="file" class="custom-file-input" id="inputGroupFile04" name="uploadFile01">
@@ -162,25 +110,17 @@
                       </div>
                   </div>
               </div>
-              <div class="col-sm-12 col-md-6">
+          </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
                   <div class="card">
                       <div class="card-body">
-                          <h4 class="card-title">영화 스냅샷</h4>
-                          <h6 class="card-subtitle">To use add <code>.input-group-append</code> class to the div
-                          </h6>
-                              <div class="input-group">
-                                  <div class="custom-file">
-                                      <input multiple="multiple" type="file" class="custom-file-input" id="inputGroupFile05" name="steelcut">
-                                      <label class="custom-file-label" for="inputGroupFile05">Choose file</label>
-                                  </div>
-                                  <div class="input-group-append">
-                                      <button class="btn btn-outline-secondary" type="button">업로드</button>
-                                  </div>
+                          <h4 class="card-title">영화 간단 소개</h4>
+                              <div class="form-group">
+                                  <textarea class="form-control" rows="8" placeholder="영화 간단 소개를 입력해주세요." name="intro"></textarea>
                               </div>
                       </div>
                   </div>
-              </div>         
-          </div>
+              </div>
           <div class="mx-auto" style="text-align:center;">
             <button type="submit" class="btn btn-info">Submit</button>
             <button type="reset" class="btn btn-dark">Reset</button>
