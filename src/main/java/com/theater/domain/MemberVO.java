@@ -9,11 +9,7 @@ public class MemberVO {
 
   private String userid;
   private String userpw;
-<<<<<<< HEAD
   private String username;
-=======
-  private String userName;
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
   private String birth; //생년월일
   private String gender; //성별
   private String phone; //연락처
