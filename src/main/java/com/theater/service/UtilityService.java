@@ -14,22 +14,17 @@ public interface UtilityService {
   public List<NationVO> getNationsList();        //국가리스트
   public List<GenresVO> getGenresList();         //장르리스트
   
-  public ActorsVO getActorsView(int a_cd);         //배우 정보
-  public DirectorsVO getDirectorsView(int d_cd);         //배우 정보
-  public NationVO getNationVOView(int n_cd);         //배우 정보
-  public GenresVO getGenresView(int g_cd);         //배우 정보
+  public void actorsInsert(ActorsVO avo);
+  public void directorsInsert(DirectorsVO dvo);
+  public void nationInsert(NationVO nvo);
+  public void genresInsert(GenresVO gvo);
   
-  public void actorsInsert(int c_cd);
-  public void directorsInsert(int d_cd);
-  public void nationInsert(int n_cd);
-  public void genresInsert(int g_cd);
-  
-  public void actorsModify(int c_cd);
+  public void actorsModify(int a_cd);
   public void directorsModify(int d_cd);
   public void nationModify(int n_cd);
   public void genresModify(int g_cd);
   
-  public void actorsDelete(int c_cd);
+  public void actorsDelete(int a_cd);
   public void directorsDelete(int d_cd);
   public void nationDelete(int n_cd);
   public void genresDelete(int g_cd);

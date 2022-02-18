@@ -19,4 +19,19 @@ public interface CodeMapper {
   public NationVO getNationView(int n_cd);
   public GenresVO getGenresView(int g_cd);
   
+  public void actorsInsert(ActorsVO avo); 
+  public void directorsInsert(DirectorsVO dvo); 
+  public void nationInsert(NationVO nvo); 
+  public void genresInsert(GenresVO gvo); 
+  
+  public void actorsDelete(int a_cd); 
+  public void directorsDelete(int d_cd); 
+  public void nationDelete(int n_cd); 
+  public void genresDelete(int g_cd); 
+  
+  public void actorsModify(int a_cd); 
+  public void directorsModify(int d_cd); 
+  public void nationModify(int n_cd); 
+  public void genresModify(int g_cd);
+  
 }

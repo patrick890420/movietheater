@@ -18,8 +18,12 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.google.gson.JsonObject;
+import com.theater.domain.ActorsVO;
 import com.theater.domain.Criteria;
+import com.theater.domain.DirectorsVO;
+import com.theater.domain.GenresVO;
 import com.theater.domain.MovieVO;
+import com.theater.domain.NationVO;
 import com.theater.service.EventService;
 import com.theater.service.MovieService;
 import com.theater.service.NoticeService;
@@ -40,6 +44,10 @@ public class AdminController {
   
   @GetMapping("/admin")
   public void admin() {
+  }
+  
+  @GetMapping("/adminLogin")
+  public void adminLogin() {
   }
   
   /* Member */
@@ -213,15 +221,35 @@ public class AdminController {
   @GetMapping("/adminActorsView.do")
   public String actorsView(Model model, @RequestParam("a_cd") int a_cd) {
     log.info("code"+a_cd);
-    model.addAttribute("actorsView", uService.getActorsView(a_cd));
     
     return "adm/adminUtility/adminCodeList";
   }
 
-  @GetMapping
-  public void actorsInsert(Model model,@RequestParam("a_cd") int a_cd) {
-    uService.actorsInsert(a_cd);
+  /* insert */
+  @GetMapping("/actorsInsert.do")
+  public void actorsInsert(ActorsVO avo) {
+    uService.actorsInsert(avo);
     
   }
+  
+  @GetMapping("/directorsInsert.do")
+  public void directorsInsert(DirectorsVO dvo) {
+    uService.directorsInsert(dvo);
+    
+  }
+  
+  @GetMapping("/nationInsert.do")
+  public void nationInsert(NationVO nvo) {
+    uService.nationInsert(nvo);
+    
+  }
+  
+  @GetMapping("/genresInsert.do")
+  public void genresInsert(GenresVO gvo) {
+    uService.genresInsert(gvo);
+    
+  }
+  /* end insert */
+  
   
 }

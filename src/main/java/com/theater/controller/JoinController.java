@@ -51,8 +51,8 @@ public class JoinController {
   @PostMapping("/joinPro.do") //레지스터 등록
   public String register(MemberVO mvo, RedirectAttributes rdat) {
 
-    String inputPass = pwEncoder.encode(mvo.getPwd()); /* 암호화 */
-    mvo.setPwd(inputPass);
+    String inputPass = pwEncoder.encode(mvo.getUserpw()); /* 암호화 */
+    mvo.setUserpw(inputPass);
 
     mservice.register(mvo);
     /* rdat.addAttribute("result",mvo.getUserid()); */

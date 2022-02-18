@@ -40,54 +40,32 @@ public class UtilityServiceImpl implements UtilityService {
   public List<GenresVO> getGenresList() {
     return cmapper.getGenresList();
   }
-
+  
+  /* insert */
   @Override
-  public ActorsVO getActorsView(int a_cd) {
-    return cmapper.getActorsView(a_cd);
+  public void actorsInsert(ActorsVO avo) {
+    cmapper.actorsInsert(avo);
   }
 
   @Override
-  public DirectorsVO getDirectorsView(int d_cd) {
-    // TODO Auto-generated method stub
-    return null;
-  }
-
-  @Override
-  public NationVO getNationVOView(int n_cd) {
-    // TODO Auto-generated method stub
-    return null;
-  }
-
-  @Override
-  public GenresVO getGenresView(int g_cd) {
-    // TODO Auto-generated method stub
-    return null;
-  }
-
-  @Override
-  public void actorsInsert(int c_cd) {
+  public void directorsInsert(DirectorsVO dvo) {
     // TODO Auto-generated method stub
     
   }
 
   @Override
-  public void directorsInsert(int d_cd) {
+  public void nationInsert(NationVO nvo) {
     // TODO Auto-generated method stub
     
   }
 
   @Override
-  public void nationInsert(int n_cd) {
+  public void genresInsert(GenresVO gvo) {
     // TODO Auto-generated method stub
     
   }
-
-  @Override
-  public void genresInsert(int g_cd) {
-    // TODO Auto-generated method stub
-    
-  }
-
+  /* end insert */
+  
   @Override
   public void actorsModify(int c_cd) {
     // TODO Auto-generated method stub

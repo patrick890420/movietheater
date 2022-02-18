@@ -29,11 +29,10 @@ public class CustomUserDetailService implements UserDetailsService { //UserDetai
 		 * UserDetailsService를 구현하고, LoginMapper타입의
 		 * 인스턴스를 주입받아 실제 기능을 구현한다.
 		 */
-		
+//		log.info(username);
 		MemberVO smvo = mapper.read(username);
 		
-		//		log.warn("smvo : "+smvo);
-		
+//				log.warn("smvo : "+smvo);
 		/* 삼항연산자 조건식 ? 맞으면 이거 : 아니면 이거*/
 		return smvo == null ? null : new CustomUser(smvo);
 		//		return null;

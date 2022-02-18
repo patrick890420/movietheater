@@ -30,7 +30,7 @@ public class CustomUser extends User {
 
 	    // AuthVO 인스턴스는 GrantedAuthority 객체로 변환해야하므로, stream()과 map()을 이용해 처리.
 	    public CustomUser(MemberVO vo) {  //CustomUserDetailService에서 vo넘어옴
-	        super(vo.getId(), vo.getPwd(), vo.getAuthList().stream().map(auth ->
+	        super(vo.getUserid(), vo.getUserpw(), vo.getAuthList().stream().map(auth ->
 	        	new SimpleGrantedAuthority(auth.getAuth())).collect(Collectors.toList()));
 	        //다수의(3) 권한이 Collectors 타입으로 
 
