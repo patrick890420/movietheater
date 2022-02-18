@@ -316,8 +316,7 @@
   </div><!-- /.modal -->
 </div>
 
-<script>
-
+<script>  
 $(".actorsTr").on("click", function () {
   var actorsInfo = $(this);
   var acd = actorsInfo.find(".actorsCode").text();

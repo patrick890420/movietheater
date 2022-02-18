@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.google.gson.JsonObject;
-import com.theater.domain.Criteria;
+import com.theater.domain.MovieInfoVO;
 import com.theater.domain.MovieVO;
 import com.theater.service.EventService;
 import com.theater.service.MovieService;
@@ -78,8 +80,20 @@ public class AdminController {
   
   @GetMapping("/adminMovieSelect.do" )
   public String adminMovieSelect(Model model,MovieVO mvo) {
-    model.addAttribute("list",MovieService.MovieSelect());
+    model.addAttribute("list",MovieService.movieSelect());
     return "adm/adminMovie/adminMovieSelect";
+  }
+  
+  @GetMapping("/adminMovieInfoInsert.do")
+  public String adminMovieInfoInsert(MovieInfoVO ivo,Model model, @RequestParam("m_cd")int m_cd){
+    
+    model.addAttribute("m_cd", m_cd);
+    model.addAttribute("actors", uService.getActorsList());
+    model.addAttribute("directors", uService.getDitrectorsList());
+    model.addAttribute("nations", uService.getNationsList());
+    model.addAttribute("genres",  uService.getGenresList());
+    
+    return "adm/adminMovie/adminMovieInfoInsert";
   }
   
   @PostMapping(value="/adminMovieInsertPro.do", produces = "application/json; charset=utf8")
@@ -122,39 +136,43 @@ public class AdminController {
     String upload = jsonObject.toString();
     log.info(upload);
 
-    MovieService.MovieInsertPro(mvo);
+    MovieService.movieInsertPro(mvo);
     
-    return "redirect:/adm/adminMovieInsert.do";
+    return "redirect:/adm/adminMovie/adminMovieInsert";
     }
   
-  
-  public void MultiUpload(MultipartHttpServletRequest mtfRequest) {
-    List<MultipartFile> fileList = mtfRequest.getFiles("steelcut");
+  @PostMapping(value="/adminMovieInfoInsertPro.do")
+  public String movieInfoInsertPro(MultipartHttpServletRequest mtfRequest,MovieInfoVO ivo) {
+    List<MultipartFile> fileList = mtfRequest.getFiles("stillcut");
     String src = mtfRequest.getParameter("src");
     System.out.println("src value : " + src);
 
     String path = "C:\\upload\\";
-
+    
     for (MultipartFile mf : fileList) {
       String originFileName = mf.getOriginalFilename(); // 원본 파일 명
       long fileSize = mf.getSize(); // 파일 사이즈
-
       System.out.println("originFileName : " + originFileName);
       System.out.println("fileSize : " + fileSize);
-
       String safeFile = path + System.currentTimeMillis() + originFileName;
+
       try {
         mf.transferTo(new File(safeFile));
       } catch (IllegalStateException e) {
-            // TODO Auto-generated catch block
         e.printStackTrace();
       } catch (IOException e) {
-            // TODO Auto-generated catch block
         e.printStackTrace();
       }
         
     }
-  }//multipart
+    ivo.setStill_img1(fileList.get(0).getOriginalFilename()); 
+    ivo.setStill_img2(fileList.get(1).getOriginalFilename()); 
+    ivo.setStill_img3(fileList.get(2).getOriginalFilename()); 
+    ivo.setStill_img4(fileList.get(3).getOriginalFilename()); 
+    
+    MovieService.movieInfoInsertPro(ivo);
+    return "redirect:/adm/adminMovieSelect";
+  }
   
   
   
