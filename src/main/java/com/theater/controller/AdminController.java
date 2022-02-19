@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.google.gson.JsonObject;
 import com.theater.domain.Criteria;
@@ -178,22 +179,47 @@ public class AdminController {
   @GetMapping("/adminBoardWritePro.do")
   public String adminBoardWritePro(@RequestParam("choice")String choice, NoticeVO nvo, EventVO evo) {
     if(choice.equals("N")) {
-      nservice.noticeInsert(nvo);
+      nService.noticeInsert(nvo);
     }else if(choice.equals("E")) {
-      eservice.eventInsert(evo);
+      eService.eventInsert(evo);
     }
     return "adm/adminNotice/adminNotice";
   }
   
   @GetMapping("/adminBoardView.do")
   public String adminBoardView(@RequestParam("nt_cd")int nt_cd,Model model) {
-    model.addAttribute("view",nservice.getAdminBoardView(nt_cd));
+    model.addAttribute("view",nService.getAdminBoardView(nt_cd));
+    model.addAttribute("next",nService.nextPage(nt_cd));
+    model.addAttribute("prev",nService.prevPage(nt_cd));
     return "adm/adminBoard/adminBoardView";
   }
+  
+  @GetMapping("adminBoardModify.do")
+  public String adminBoardModify(@RequestParam("nt_cd")int nt_cd,Model model) {
+    model.addAttribute("view",nService.getAdminBoardView(nt_cd));
+    return "adm/adminBoard/adminBoardModify";
+  }
+  
+  @PostMapping("/adminBoardModifyPro.do")
+  public String modify(NoticeVO notice, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) {
+    if(nService.modify(notice)) {
+      rttr.addFlashAttribute("result","success");
+    }
+    return "redirect:/notice/notice";
+  }
+
+ @GetMapping("/adminBoardDelete.do")
+  public String delete(int nt_cd, RedirectAttributes rttr) {
+    if(nService.delete(nt_cd)) {
+      rttr.addFlashAttribute("result","success");
+    }
+    return "redirect:/notice/notice";
+  }
+
 
 /* Board-> Event*/
   @Setter(onMethod_=@Autowired )
-  public EventService eservice;
+  public EventService eService;
   
   @GetMapping("/adminEvent.do")
   public String adminEvent() {
@@ -207,14 +233,11 @@ public class AdminController {
   
 /*Board-> Notice*/
   @Setter(onMethod_=@Autowired )
-  public NoticeService nservice;
+  public NoticeService nService;
   
   @GetMapping("/adminNotice.do")
   public String adminNotice(Criteria cri,Model model) {
-    model.addAttribute("list",nservice.getAdminList(cri));
-//전체 조회값
-    int total=nservice.getTotal(cri);
-    model.addAttribute("pageMaker",new PageVO(cri, total));
+    model.addAttribute("list",nService.getNoticeList(cri));
     return "adm/adminNotice/adminNotice";
   }
   

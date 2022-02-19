@@ -50,15 +50,13 @@
                           <colgroup>
                             <col width="10%">
                             <col width="*">
-                            <col width="10%">
-                            <col width="10%">
+                            <col width="20%">
                           </colgroup>
                             <thead>
                               <tr>
                                 <th>번호</th>
                                 <th>제목</th>
                                 <th>작성일</th>
-                                <th>조회수</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -71,7 +69,6 @@
                                     <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${list.wdate}"/>
                                     <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>
                                   </td>
-                                  <td>${list.hits}</td>
                                 </tr>
                                <c:set var="num1" value="${num1-1}"/>
                              </c:forEach> 

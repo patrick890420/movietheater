@@ -57,19 +57,19 @@
       </tr>
       <tr>
         <th>제목</th>
-        <td><input class="form-control" type="text" name="title" placeholder="제목"></td>
+        <td><input class="form-control" type="text" name="title" value="${view.title}"></td>
       </tr>
       <tr>
         <th class="write66">내용</th>
-        <td><textarea class="form-control" name="content" id="summernote" rows="8" placeholder="내용"></textarea></td>
+        <td><textarea class="form-control" name="content" id="summernote" rows="8">${view.content}</textarea></td>
       </tr>
     </tbody>
   </table>
 
 <!-- button -->
-<div class="write77">
+<div class="adminbutton">
   <button type="submit" class="btn btn-outline-primary btn-rounded">
-    <i class="fas fa-check"></i>&nbsp;저장
+    <i class="fas fa-check"></i>&nbsp;수정
   </button>&nbsp;
   <button type="reset" class="btn btn-outline-primary btn-rounded">다시쓰기</button>&nbsp;
   <button type="button" class="btn btn-outline-primary btn-rounded" onclick="location.href='admin.do'">

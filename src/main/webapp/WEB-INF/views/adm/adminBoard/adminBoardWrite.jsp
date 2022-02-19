@@ -67,7 +67,7 @@
   </table>
 
 <!-- button -->
-<div class="adminwrite77">
+<div class="adminbutton">
   <button type="submit" class="btn btn-outline-primary btn-rounded">
     <i class="fas fa-check"></i>&nbsp;저장
   </button>&nbsp;
