@@ -197,7 +197,7 @@
                         </thead>
                           <tbody>
                              <c:forEach items="${directors}" var="directors">
-                              <tr>
+                              <tr class="directorsTr">
                                 <td>
                                   <p class="directorsCode mb-0" data-toggle="modal" data-target="#directors-header-modal">${directors.d_cd}</p>
                                 </td>
@@ -418,16 +418,16 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="a_cd">CODE</label>
-            <input class="form-control" id="modalA_cd" name="a_cd" readonly>
+            <label for="d_cd">CODE</label>
+            <input class="form-control" id="modalD_cd" name="d_cd" readonly>
           </div>
           <div class="form-group">
-            <label for="actors_name">NAME</label>
-            <input class="form-control" id="modalA_name" name="a_name">
+            <label for="directors_name">NAME</label>
+            <input class="form-control" id="modalD_name" name="d_name">
           </div>
           <div class="form-group">
-            <label for="actors_photo">PHOTO</label>
-            <input class="form-control" type="hidden" id="modalA_img" name="a_img">
+            <label for="directors_photo">PHOTO</label>
+            <input class="form-control" type="hidden" id="modalD_img" name="d_img">
             <img class="form-control" id="showImg" name="showImg" alt="" src="" style="height:250px;">
           </div>
           <div>
@@ -519,7 +519,6 @@ $(".actorsTr").on("click", function () {
   var actorsInfo = $(this);
   var acd = actorsInfo.find(".actorsCode").text();
   var aname = actorsInfo.find(".actorsName").text(); 
-  console.log(actorsInfo.find(".actorsName").text());
   var aimg = actorsInfo.find(".actorsImg").val();
     $("#modalA_cd").val(acd);
     $("#modalA_name").val(aname);
@@ -527,16 +526,23 @@ $(".actorsTr").on("click", function () {
     $("#showImg").attr("src","/upload/"+aimg);
   });
   
-$(".actorsTr").on("click", function () {
-  var actorsInfo = $(this);
-  var acd = actorsInfo.find(".actorsCode").text();
-  var aname = actorsInfo.find(".actorsName").text(); 
-  console.log(actorsInfo.find(".actorsName").text());
-  var aimg = actorsInfo.find(".actorsImg").val();
-    $("#modalA_cd").val(acd);
-    $("#modalA_name").val(aname);
-    $("#modalA_img").val(aimg);
-    $("#showImg").attr("src","/upload/"+aimg);
+$(".directorsTr").on("click", function () {
+  var directorsInfo = $(this);
+  var dcd = directorsInfo.find(".directorsCode").text();
+  var dname = directorsInfo.find(".directorsName").text(); 
+  var dimg = directorsInfo.find(".directorsImg").val();
+    $("#modalD_cd").val(dcd);
+    $("#modalD_name").val(dname);
+    $("#modalD_img").val(dimg);
+    $("#showImg").attr("src","/upload/"+dimg);
+  });
+  
+$(".nationsTr").on("click", function () {
+  var nationsInfo = $(this);
+  var ncd = nationsInfo.find(".nationsCode").text();
+  var nname = nationsInfo.find(".nationsName").text(); 
+    $("#modalN_cd").val(ncd);
+    $("#modalN_name").val(nname);
   });
 </script>
 <!-- ============================================================== -->
