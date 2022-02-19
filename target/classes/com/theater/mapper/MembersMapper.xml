@@ -19,6 +19,12 @@
 	WHERE userid = #{userid}
 </select>
 
+<!-- <select id="myres">
+select 
+where ?=? 
+인것인가
+</select> -->
+
 
 
 
