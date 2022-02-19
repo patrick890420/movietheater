@@ -45,76 +45,71 @@
                                 <form action="#">
                                     <div class="form-body">
                                         <div class="row">
-                                            <div class="col-md-1">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="1">
+                                                <div class="anime__details__pic set-bg"><img style="height:800px;" src="/upload/bb794cc2-e6d3-44da-8256-92456ea74372_걸스_앤_판처_극장판.jpeg" alt="">
                                                 </div>
-                                            </div>
-                                            <div class="col-md-11">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="col-md-11">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
                                             <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="col-md-2">
+                                                    <p>영화 제목<p>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-10">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="col-md-10">
+                                                    <p></p>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="col-md-3">
+                                                    <p></p>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-9">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="col-md-9">
+                                                    <p></p>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="col-md-4">
+                                                    <p></p>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-8">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="col-md-8">
+                                                    <p></p>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-5">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="col-md-5">
+                                                    <p></p>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-7">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="col-md-7">
+                                                    <p></p>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="col-md-6">
+                                                    <p></p>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="col-md-6">
+                                                    <p></p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <p></p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <p></p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <p></p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <p></p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <p></p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <p></p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <p></p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <p></p>
                                                 </div>
                                             </div>
+                                            <div class="col-md-2">
+                                              <div class="form-group">
+                                                <p>걸스 앤 판처</p>
+                                              </div>
+                                            </div>
+                                             
+                                            
                                         </div>
                                     </div>
                                     <div class="form-actions">
