@@ -24,14 +24,14 @@ public interface CodeMapper {
   public void nationInsert(NationVO nvo); 
   public void genresInsert(GenresVO gvo); 
   
-  public void actorsDelete(int a_cd); 
-  public void directorsDelete(int d_cd); 
-  public void nationDelete(int n_cd); 
-  public void genresDelete(int g_cd); 
+  public void actorsDelete(String a_cd); 
+  public void directorsDelete(String d_cd); 
+  public void nationDelete(String n_cd); 
+  public void genresDelete(String g_cd); 
   
-  public void actorsModify(int a_cd); 
-  public void directorsModify(int d_cd); 
-  public void nationModify(int n_cd); 
-  public void genresModify(int g_cd);
+  public void actorsModify(ActorsVO avo); 
+  public void directorsModify(DirectorsVO dvo); 
+  public void nationModify(NationVO nvo); 
+  public void genresModify(GenresVO gvo);
   
 }

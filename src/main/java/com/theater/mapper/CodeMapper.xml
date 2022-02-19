@@ -45,11 +45,41 @@
 
 <insert id="genresInsert">
 <selectKey keyProperty="g_cd" order="BEFORE" resultType="String">
-    select qenres_seq.nextval from dual
+    select genres_seq.nextval from dual
   </selectKey>
     insert into genres (g_cd, g_name) values ('g'||#{g_cd}, #{g_name})
 </insert>
   
+<update id="actorsModify">
+  UPDATE ACTORS SET A_NAME=#{a_name}, A_IMG=#{a_img} WHERE A_CD = #{a_cd}
+</update>
 
+<update id="directorsModify">
+  UPDATE DIRECTORS SET D_NAME=#{d_name}, D_IMG=#{d_img} WHERE D_CD = #{d_cd}
+</update>
+
+<update id="nationModify">
+  UPDATE NATIONS SET N_NAME=#{n_name} WHERE N_CD = #{n_cd}
+</update>
+
+<update id="genresModify">
+  UPDATE GENRES SET G_NAME=#{g_name} WHERE G_CD = #{g_cd}
+</update>
+
+<delete id="actorsDelete">
+  DELETE FROM ACTORS WHERE A_CD = #{a_cd} 
+</delete>
+
+<delete id="directorsDelete">
+  DELETE FROM DIRECTORS WHERE D_CD = #{d_cd} 
+</delete>
+
+<delete id="nationDelete">
+  DELETE FROM NATIONS WHERE N_CD = #{n_cd} 
+</delete>
+
+<delete id="genresDelete">
+  DELETE FROM GENRES WHERE G_CD = #{g_cd} 
+</delete>
 
 </mapper>

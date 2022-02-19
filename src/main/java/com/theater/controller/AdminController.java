@@ -21,10 +21,10 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.google.gson.JsonObject;
 import com.theater.domain.ActorsVO;
 import com.theater.domain.DirectorsVO;
-import com.theater.domain.M_stillcutVO;
+import com.theater.domain.GenresVO;
 import com.theater.domain.MovieInfoVO;
-import com.theater.domain.MovieSelectVO;
 import com.theater.domain.MovieVO;
+import com.theater.domain.NationVO;
 import com.theater.domain.TheatersVO;
 import com.theater.service.EventService;
 import com.theater.service.MovieService;
@@ -353,6 +353,61 @@ public class AdminController {
     uService.directorsInsert(dvo);
     return "redirect:/adm/adminCodeList.do";
   }
-
+  @PostMapping("/nationInsert.do")
+  public String nationsInsert(Model model, NationVO nvo) {
+    uService.nationInsert(nvo);
+    return "redirect:/adm/adminCodeList.do";
+  }
+  
+  @PostMapping("/genresInsert.do")
+  public String genresInsert(Model model, GenresVO gvo) {
+    uService.genresInsert(gvo);
+    return "redirect:/adm/adminCodeList.do";
+  }
+  
+  @GetMapping("/actorsModify.do")
+  public String actorsModify(Model model, ActorsVO avo) {
+    uService.actorsModify(avo);
+    return "redirect:/adm/adminCodeList.do";
+  }
+  
+  @GetMapping("/directorsModify.do")
+  public String directorsModify(Model model, DirectorsVO dvo) {
+    uService.directorsModify(dvo);
+    return "redirect:/adm/adminCodeList.do";
+  }
+  
+  @GetMapping("/nationModify.do")
+  public String nationModify(Model model, NationVO nvo) {
+    uService.nationModify(nvo);
+    return "redirect:/adm/adminCodeList.do";
+  }
+  
+  @GetMapping("/genresModify.do")
+  public String genresModify(Model model, GenresVO gvo) {
+    uService.genresModify(gvo);
+    return "redirect:/adm/adminCodeList.do";
+  }
+  
+  @GetMapping("/actorsDelete.do")
+  public String actorsDelete(Model model, @RequestParam("a_cd") String a_cd) {
+    uService.actorsDelete(a_cd);
+    return "redirect:/adm/adminCodeList.do";
+  }
+  @GetMapping("/directorsDelete.do")
+  public String directorsDelete(Model model, @RequestParam("d_cd") String d_cd) {
+    uService.directorsDelete(d_cd);
+    return "redirect:/adm/adminCodeList.do";
+  }
+  @GetMapping("/nationDelete.do")
+  public String nationDelete(Model model, @RequestParam("n_cd") String n_cd) {
+    uService.nationDelete(n_cd);
+    return "redirect:/adm/adminCodeList.do";
+  }
+  @GetMapping("/genresDelete.do")
+  public String genresDelete(Model model, @RequestParam("g_cd") String g_cd) {
+    uService.genresDelete(g_cd);
+    return "redirect:/adm/adminCodeList.do";
+  }
   
 }
