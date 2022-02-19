@@ -168,7 +168,7 @@
   overflow-x: hidden;
 }
 
-#ticket_tnb {
+.ticket_tnb {
   position: relative;
   width: 100%;
   min-width: 996px;
@@ -178,6 +178,7 @@
 
 .movie-date-wrapper {
   display: flex;
+  border:none;
   justify-content: center;
   align-items: center;
   padding: 5px 2px;
@@ -249,7 +250,6 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   vertical-align: middle;
-  background-color: #E6E4D9;
   padding: 6px 6px 6px 0;
   margin-top: 1px;
 }
@@ -310,6 +310,11 @@ button.theater-location , button.theater-place{
 
 .movie-list-wrapper {
   padding: 4px 15px;
+  overflow : scroll;
+  overflow-x: hidden;
+  flex-direction: column;
+  height: 305px;
+  border : 1px solid #b3b3b3;
 }
 
 .movie-list {
@@ -681,6 +686,68 @@ button.theater-location , button.theater-place{
 }
 
 .movie-name-btn{
-  width: 80%;
+  width: 205px;;
   border: 0px;
+  text-overflow: ellipsis;
+}
+.movie-list .tk-ep0{
+  font-size: 12px;
+  font-weight: bold;
+  height:29px;
+  width:28px;
+  color: white;
+  background: #5BC77E;
+  display: inline-block;
+  padding: 6px 4px;
+  border-radius: 50px;
+}
+.movie-list .tk-ep12{
+  font-size: 13px;
+  height:29px;
+  font-weight: bold;
+  width:28px;
+  color: white;
+  background: #0484dfd9;
+  display: inline-block;
+  padding: 4px 7px;
+  border-radius: 50px;
+}
+.movie-list .tk-ep15{
+  font-size: 13px;
+  height:29px;
+  font-weight: bold;
+  width:28px;
+  color: white;
+  background: #ff8100;
+  display: inline-block;
+  padding: 4px 7px;
+  border-radius: 50px;
+}
+.movie-list .tk-ep19{
+  font-size: 13px;
+  height:29px;
+  width:28px;
+  font-weight: bold;
+  color: white;
+  background: #ED4C6B;
+  display: inline-block;
+  padding: 6px 4px;
+  border-radius: 50px;
+}
+
+.movie-wrapper{
+  padding-right: 2px;
+  margin-top: 2px;
+  height: 300px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.clicked {
+  color: white;
+  font-weight: bold;
+  background-color:black;
+  
 }
