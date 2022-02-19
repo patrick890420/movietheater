@@ -49,19 +49,19 @@ public class UtilityServiceImpl implements UtilityService {
 
   @Override
   public void directorsInsert(DirectorsVO dvo) {
-    // TODO Auto-generated method stub
+    cmapper.directorsInsert(dvo);
     
   }
 
   @Override
   public void nationInsert(NationVO nvo) {
-    // TODO Auto-generated method stub
+    cmapper.nationInsert(nvo);
     
   }
 
   @Override
   public void genresInsert(GenresVO gvo) {
-    // TODO Auto-generated method stub
+    cmapper.genresInsert(gvo);
     
   }
   /* end insert */

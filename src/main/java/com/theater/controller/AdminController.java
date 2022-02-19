@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.google.gson.JsonObject;
 import com.theater.domain.ActorsVO;
+import com.theater.domain.DirectorsVO;
 import com.theater.domain.MovieInfoVO;
 import com.theater.domain.MovieVO;
 import com.theater.domain.TheatersVO;
@@ -300,7 +301,48 @@ public class AdminController {
     return "redirect:/adm/adminCodeList.do";
   }
 
-  
+  @PostMapping(value="/directorsInsert.do", produces = "application/json; charset=utf8")
+  public String directorsInsert(Model model, DirectorsVO dvo, @RequestParam("uploadFile") MultipartFile uploadFile) {
+    JsonObject jsonObject = new JsonObject();
+    
+    String uploadFolder="c:\\upload";
+    log.info("file name : "+uploadFile.getOriginalFilename());
+    
+    String uploadFileName = uploadFile.getOriginalFilename();
+    //IE
+    uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("//")+1);
+    log.info("only file name : "+uploadFileName);
+    
+    UUID uuid = UUID.randomUUID();
+    
+    uploadFileName = uuid.toString()+"_"+uploadFileName;
+    
+    File uploadPath = new File(uploadFolder, getFolder());
+    
+    if(uploadPath.exists() == false) {
+       uploadPath.mkdirs();
+    }
+    File savefile = new File(uploadPath,uploadFileName);
+    String saveUrl = uploadFileName.toString();
+    log.info(saveUrl);
+    
+    try {
+      uploadFile.transferTo(savefile);
+      uploadFileName = (savefile.toString().substring(10));
+      jsonObject.addProperty("url", "/upload/"+uploadFileName);
+      jsonObject.addProperty("responseCode", "success");
+      dvo.setD_img(uploadFileName);
+      log.info(uploadFileName);
+    }catch(Exception e) {
+       e.printStackTrace();
+       jsonObject.addProperty("responseCode", "error");
+    }
+    
+    String upload = jsonObject.toString();
+
+    uService.directorsInsert(dvo);
+    return "redirect:/adm/adminCodeList.do";
+  }
 
   
 }
