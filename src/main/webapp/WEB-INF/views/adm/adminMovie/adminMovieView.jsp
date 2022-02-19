@@ -80,7 +80,8 @@
                                                 <p>${view.subtitle}</p>
                                               </div>
                                               <div class="form-group">
-                                                <p>${view.rdate}</p>
+                                                <fmt:parseDate value="${view.rdate}" var="dateValue" pattern="yyyy-MM-dd"/>
+                                                <p><fmt:formatDate value="${dateValue}" pattern="yyyy-MM-dd"/></p>
                                               </div>
                                               <div class="form-group">
                                                 <p>${view.d_name}</p>
@@ -89,7 +90,7 @@
                                                 <p>${view.a_name }</p>
                                               </div>
                                               <div class="form-group">
-                                                <p>${view.rtime }</p>
+                                                 <p>${view.rtime } 분</p>
                                               </div>
                                               <div class="form-group">
                                                 <p>${view.rate }</p>
@@ -108,22 +109,22 @@
                                               <h2>영화 스틸샷</h2>
                                             </div>
                                           <div class="anime__details__pic set-bg pr-2">
-                                              <img style="height:250px; width:320px;" src="/upload/${cut.still_img1}" alt="">
+                                              <img style="height:250px; width:280px;" src="/upload/${cut.still_img1}" alt="">
                                           </div>
                                           <div class="anime__details__pic set-bg pr-2">
-                                              <img style="height:250px; width:320px;" src="/upload/${cut.still_img2}" alt="">
+                                              <img style="height:250px; width:280px;" src="/upload/${cut.still_img2}" alt="">
                                           </div>
                                           <div class="anime__details__pic set-bg pr-2">
-                                              <img style="height:250px; width:320px;" src="/upload/${cut.still_img3}" alt="">
+                                              <img style="height:250px; width:280px;" src="/upload/${cut.still_img3}" alt="">
                                           </div>
                                           <div class="anime__details__pic set-bg">
-                                              <img style="height:250px; width:320px;" src="/upload/${cut.still_img4}" alt="">
+                                              <img style="height:250px; width:280px;" src="/upload/${cut.still_img4}" alt="">
                                           </div>
                                       </div>
                                     <div class="form-actions pt-5">
                                         <div class="text-right">
-                                            <button type="submit" class="btn btn-info">수정</button>
-                                            <button type="reset" class="btn btn-dark">삭제</button>
+                                            <button type="button" class="btn btn-info">수정</button>
+                                            <button type="button" onclick="location.href='adminMovieDelete.do';" class="btn btn-dark">삭제</button>
                                         </div>
                                     </div>
                                            <!--오른쪽 -->

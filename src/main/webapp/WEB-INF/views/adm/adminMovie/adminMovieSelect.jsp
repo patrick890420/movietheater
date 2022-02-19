@@ -64,7 +64,8 @@
                     <td>${mlist.m_cd }</td>
                     <td><a href="/adm/adminMovieView.do?m_cd=${mlist.m_cd }">${mlist.title}</a></td>
                     <td>${mlist.subtitle}</td>
-                    <td>${mlist.rdate}</td>
+                    <fmt:parseDate value="${mlist.rdate}" var="dateValue" pattern="yyyy-MM-dd"/>
+                    <td><fmt:formatDate value="${dateValue}" pattern="yyyy-MM-dd"/></td>
                     <td>${mlist.rate}</td>
                     <td><a class="btn btn-danger" href="/adm/adminMovieInfoInsert.do?m_cd=${mlist.m_cd }" >정보 입력</a></td>
                   </tr>

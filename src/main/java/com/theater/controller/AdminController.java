@@ -194,7 +194,12 @@ public class AdminController {
     return "redirect:/adm/adminMovieSelect.do";
   }
   
-  
+// @GetMapping("/adminMovieDelete.do") 
+//  public String adminMovieDelete(@RequestParam("m_cd") int m_cd) {
+//    movieService.movieDelete(m_cd);
+//   return "redirect:/adm/adminMovieSelect.do";
+//  }
+    
   
   
   /* Theater */
