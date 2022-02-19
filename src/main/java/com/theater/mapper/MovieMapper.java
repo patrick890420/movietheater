@@ -33,6 +33,8 @@ public interface MovieMapper {
   public MovieSelectVO adminMovieSelect(int m_cd);
   
   public M_stillcutVO movieStillcutSelect(int m_cd);
+  
+  public void movieDelete(int m_cd);
   //view  페이지
   
   

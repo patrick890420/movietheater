@@ -24,4 +24,5 @@ public interface MovieService {
   public void movieInfoInsertPro(MovieInfoVO ivo);
   public MovieSelectVO adminMovieSelect(int m_cd);
   public M_stillcutVO movieStillcutSelect(int m_cd);
+  public void movieDelete(int m_cd);
 }

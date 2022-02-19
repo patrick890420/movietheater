@@ -71,4 +71,9 @@ public class MovieServiceImpl implements MovieService {
   public M_stillcutVO movieStillcutSelect(int m_cd) {
     return mapper.movieStillcutSelect(m_cd);
   }
+  
+  @Override
+  public void movieDelete(int m_cd) {
+    mapper.movieDelete(m_cd);
+  }
 }//Impl

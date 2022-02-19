@@ -118,4 +118,8 @@
  <select id="movieStillcutSelect" resultType="com.theater.domain.M_stillcutVO">
   select * from M_stillcut where m_cd=#{m_cd}
  </select>
+ 
+ <delete id="movieDelete">
+  delete from movies m_cd=#{m_cd}
+ </delete>
 </mapper>
