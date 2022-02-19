@@ -4,8 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -24,26 +22,22 @@ import lombok.extern.log4j.Log4j;
 public class NoticeController {
   
   @Setter(onMethod_=@Autowired)
-  private NoticeService Nservice;
+  private NoticeService nservice;
 
   
   @GetMapping("/notice.do")
   public void notice(Criteria cri, Model model) {
-    PageVO pageVO = new PageVO(cri, Nservice.getTotal(cri));
-    model.addAttribute("pageMaker", pageVO);
-    model.addAttribute("list", Nservice.getList(cri));
-    
-  }  @GetMapping("/noticeview.do")
-  public void noticeview(@RequestParam("nt_cd") int nt_cd,@ModelAttribute("cri") Criteria cri, Model model) {
-    model.addAttribute("view",Nservice.read(nt_cd));
-  //page
-      model.addAttribute("nextVO",Nservice.nextPage(nt_cd));
-      model.addAttribute("preVO",Nservice.prevPage(nt_cd));
-  }
-  
-  @GetMapping("/noticewrite.do")
-  public void noticewrite() {
+    model.addAttribute("list", nservice.getAdminList(cri));
+//전체조회값
+    int total= nservice.getTotal(cri);
+    model.addAttribute("pageMaker",new PageVO(cri, total));
     
   }
+  @GetMapping("/adminBoardView.do")
+  public String adminBoardView(@RequestParam("nt_cd")int nt_cd,Model model) {
+    model.addAttribute("view",nservice.getAdminBoardView(nt_cd));
+    return "adm/adminBoard/adminBoardView";
+  }
+
 
 }//class

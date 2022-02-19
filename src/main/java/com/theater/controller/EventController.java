@@ -2,9 +2,11 @@ package com.theater.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.theater.domain.Criteria;
 import com.theater.service.EventService;
 
 import lombok.AllArgsConstructor;
@@ -21,8 +23,8 @@ public class EventController {
   private EventService Eservice;
   
   @GetMapping("/event.do")
-  public void event() {
-    
+  public void event(Criteria cri, Model model) {
+    model.addAttribute("elist",Eservice.getList(cri));
   }
   
   @GetMapping("/eventview.do")

@@ -50,25 +50,24 @@
               <span class="icon_phone"></span>
             </div>
             <div class="input__item">
-              <input type="password" placeholder="비밀번호를 입력해 주세요."
-                id="userPass" name="userpw"> <span
-                class="icon_lock"></span>
+              <input type="password" placeholder="비밀번호를 입력해 주세요." id="userPass" name="userpw"> 
+              <span class="icon_lock"></span>
             </div>
             <div class="input__item">
-              <input type="password" placeholder="비밀번호를 재입력 해 주세요."
-                id="userPass2"> <span
-                class="icon_lock"></span>
+              <input type="password" placeholder="비밀번호를 재입력 해 주세요." id="userPass2">
+              <span class="icon_lock"></span>
             </div>
             <div class="input__item">
-              <input type="date" id="date" name="birth"><span
-                class="icon_calendar"></span>
+              <input type="date" id="date" name="birth">
+              <span class="icon_calendar"></span>
             </div>
             <div class="input__item" style="background-color: white;">
               <span class="icon_heart_alt"></span>
               <div class="genderchoice">
                 <input type="radio" value="2" class="gender" name="gender">
                   woman
-                <input type="radio" value="1" class="gender" name="gender"> man
+                <input type="radio" value="1" class="gender" name="gender">
+                  man
               </div>
             </div>
             <ul class="join_box">

@@ -58,32 +58,29 @@
           <col width="10%">
           <col width="*">
           <col width="10%">
-<!--           <col width="10%"> -->
           <col width="10%">
           <col width="10%">
         </colgroup>
         <tr>
-          <th>번호</th>
+          <th class="notice68">번호</th>
           <th>제목</th>
           <th>이미지</th>
-<!--           <th>内容</th>내용 -->
-          <th>작성일</th>
-          <th>조회수</th>
+          <th class="notice68">작성일</th>
+          <th class="notice68">조회수</th>
         </tr>
         
         <tbody>
           <c:set var="num1" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}"/>
           <c:forEach var="list" items="${list}">
             <tr>
-              <td>${num1}</td><!-- 번호 -->
-              <td class="notice76"><a href="#">${list.title}</a></td><!-- 제목 -->
-              <td>이미지</td>
-    <!--           <td>내용</td> -->
+              <td class="notice68">${num1}</td><!-- 번호 -->
+              <td class="notice76"><a href="adminBoardView.do?nt_cd=${list.nt_cd}">${list.title}</a></td><!-- 제목 -->
+              <td>${list.e_img}</td>
               <td>
-                <fmt:parseDate var="dateString" pattern="yyyy-MM-dd" value="${nlist.wdate}"/>
-                <fmt:formatDate var="dateString" value="${dateString}" pattern="yyyy-MM-dd"/>
+                <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${list.wdate}"/>
+                <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>
               </td>
-              <td>${list.hits}</td>
+              <td class="notice68">${list.hits}</td>
             </tr>
            <c:set var="num1" value="${num1-1}"/>
          </c:forEach>
@@ -96,7 +93,7 @@
   <hr>
     <ul class="pagination pagination-sm">
 <!-- 2. 이전페이지 활성화여부 -->
-      <c:if test="${pageMaker.prev }">
+      <c:if test="${pageMaker.prev}">
         <li>
           <a href="#" data-pagenum='${pageMaker.startPage - 1 }'>
             <i class="fa fa-angle-double-left"></i>

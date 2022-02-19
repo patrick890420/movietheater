@@ -22,4 +22,34 @@
   SELECT * FROM ACTORS WHERE A_CD = #{a_cd}
 </select>
 
+<insert id="actorsInsert">
+  <selectKey keyProperty="a_cd" order="BEFORE" resultType="String">
+    select actors_seq.nextval from dual
+  </selectKey>
+    insert into actors (a_cd, a_name, a_img) values ('a'||#{a_cd}, #{a_name}, #{a_img})
+</insert>
+
+<insert id="directorsInsert">
+<selectKey keyProperty="d_cd" order="BEFORE" resultType="String">
+    select directors_seq.nextval from dual
+  </selectKey>
+    insert into directors (d_cd, d_name, d_img) values ('d'||#{d_cd}, #{d_name}, #{d_img})
+</insert>
+
+<insert id="nationInsert">
+<selectKey keyProperty="n_cd" order="BEFORE" resultType="String">
+    select nations_seq.nextval from dual
+  </selectKey>
+    insert into nations (n_cd, n_name) values ('n'||#{n_cd}, #{n_name})
+</insert>
+
+<insert id="genresInsert">
+<selectKey keyProperty="g_cd" order="BEFORE" resultType="String">
+    select qenres_seq.nextval from dual
+  </selectKey>
+    insert into genres (g_cd, g_name) values ('g'||#{g_cd}, #{g_name})
+</insert>
+  
+
+
 </mapper>

@@ -4,9 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +18,11 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.google.gson.JsonObject;
+import com.theater.domain.ActorsVO;
+import com.theater.domain.DirectorsVO;
 import com.theater.domain.MovieInfoVO;
 import com.theater.domain.MovieVO;
+import com.theater.domain.TheatersVO;
 import com.theater.service.EventService;
 import com.theater.service.MovieService;
 import com.theater.service.NoticeService;
@@ -43,6 +44,10 @@ public class AdminController {
   
   @GetMapping("/admin")
   public void admin() {
+  }
+  
+  @GetMapping("/adminLogin")
+  public void adminLogin() {
   }
   
   /* Member */
@@ -96,6 +101,10 @@ public class AdminController {
     
     return "adm/adminMovie/adminMovieInfoInsert";
   }
+  @GetMapping("/adminMovieView.do")
+  public String adminMovieView() {
+    return "adm/adminMovie/adminMovieView";
+  }
   
   @PostMapping(value="/adminMovieInsertPro.do", produces = "application/json; charset=utf8")
   public String adminMovieInsertPro(MovieVO mvo, @RequestParam("uploadFile01") MultipartFile uploadFile) {
@@ -139,11 +148,11 @@ public class AdminController {
 
     MovieService.movieInsertPro(mvo);
     
-    return "redirect:/adm/adminMovie/adminMovieInsert";
+    return "redirect:/adm/adminMovieInsert.do";
     }
   
   @PostMapping(value="/adminMovieInfoInsertPro.do")
-  public String movieInfoInsertPro(MultipartHttpServletRequest mtfRequest,MovieInfoVO ivo) {
+  public String movieInfoInsertPro(MultipartHttpServletRequest mtfRequest,MovieInfoVO ivo,MovieVO mvo,Model model) {
     List<MultipartFile> fileList = mtfRequest.getFiles("stillcut");
     String src = mtfRequest.getParameter("src");
     System.out.println("src value : " + src);
@@ -153,8 +162,8 @@ public class AdminController {
     for (MultipartFile mf : fileList) {
       String originFileName = mf.getOriginalFilename(); // 원본 파일 명
       long fileSize = mf.getSize(); // 파일 사이즈
-      System.out.println("originFileName : " + originFileName);
-      System.out.println("fileSize : " + fileSize);
+//      System.out.println("originFileName : " + originFileName);
+//      System.out.println("fileSize : " + fileSize);
       String safeFile = path + System.currentTimeMillis() + originFileName;
 
       try {
@@ -172,7 +181,7 @@ public class AdminController {
     ivo.setStill_img4(fileList.get(3).getOriginalFilename()); 
     
     MovieService.movieInfoInsertPro(ivo);
-    return "redirect:/adm/adminMovieSelect";
+    return "redirect:/adm/adminMovieSelect.do";
   }
   
   
@@ -187,7 +196,17 @@ public class AdminController {
     
     return "adm/adminTheater/adminTheaterInsert";
   }
-  
+  @PostMapping("/adminteatherInsertPro.do")
+  public String adminteatherInsertPro(TheatersVO tvo) {
+    TheaterService.theaterInsertPro(tvo);
+    
+    return "redirect:/adm/adminTheaterInsert2.do";
+    }
+  @GetMapping("/adminTheaterInsert2.do")
+  public String adminTheaterInsert2() {
+    
+    return "adm/adminTheater/adminTheaterInsert2";
+  }
   /* Ticketing */
   
   
@@ -238,18 +257,92 @@ public class AdminController {
     return "adm/adminUtility/adminCodeList";
   }
   
-  @GetMapping("/adminActorsView.do")
-  public String actorsView(Model model, @RequestParam("a_cd") int a_cd) {
-    log.info("code"+a_cd);
-    model.addAttribute("actorsView", uService.getActorsView(a_cd));
+  @PostMapping(value="/actorsInsert.do", produces = "application/json; charset=utf8")
+  public String actorsInsert(Model model, ActorsVO avo, @RequestParam("uploadFile") MultipartFile uploadFile) {
+    JsonObject jsonObject = new JsonObject();
     
-    return "adm/adminUtility/adminCodeList";
+    String uploadFolder="c:\\upload";
+    log.info("file name : "+uploadFile.getOriginalFilename());
+    
+    String uploadFileName = uploadFile.getOriginalFilename();
+    //IE
+    uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("//")+1);
+    log.info("only file name : "+uploadFileName);
+    
+    UUID uuid = UUID.randomUUID();
+    
+    uploadFileName = uuid.toString()+"_"+uploadFileName;
+    
+    File uploadPath = new File(uploadFolder, getFolder());
+    
+    if(uploadPath.exists() == false) {
+       uploadPath.mkdirs();
+    }
+    File savefile = new File(uploadPath,uploadFileName);
+    String saveUrl = uploadFileName.toString();
+    log.info(saveUrl);
+    
+    try {
+      uploadFile.transferTo(savefile);
+      uploadFileName = (savefile.toString().substring(10));
+      jsonObject.addProperty("url", "/upload/"+uploadFileName);
+      jsonObject.addProperty("responseCode", "success");
+      avo.setA_img(uploadFileName);
+      log.info(uploadFileName);
+    }catch(Exception e) {
+       e.printStackTrace();
+       jsonObject.addProperty("responseCode", "error");
+    }
+    
+    String upload = jsonObject.toString();
+    log.info(upload);
+
+    uService.actorsInsert(avo);
+    return "redirect:/adm/adminCodeList.do";
   }
 
-  @GetMapping
-  public void actorsInsert(Model model,@RequestParam("a_cd") int a_cd) {
-    uService.actorsInsert(a_cd);
+  @PostMapping(value="/directorsInsert.do", produces = "application/json; charset=utf8")
+  public String directorsInsert(Model model, DirectorsVO dvo, @RequestParam("uploadFile") MultipartFile uploadFile) {
+    JsonObject jsonObject = new JsonObject();
     
+    String uploadFolder="c:\\upload";
+    log.info("file name : "+uploadFile.getOriginalFilename());
+    
+    String uploadFileName = uploadFile.getOriginalFilename();
+    //IE
+    uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("//")+1);
+    log.info("only file name : "+uploadFileName);
+    
+    UUID uuid = UUID.randomUUID();
+    
+    uploadFileName = uuid.toString()+"_"+uploadFileName;
+    
+    File uploadPath = new File(uploadFolder, getFolder());
+    
+    if(uploadPath.exists() == false) {
+       uploadPath.mkdirs();
+    }
+    File savefile = new File(uploadPath,uploadFileName);
+    String saveUrl = uploadFileName.toString();
+    log.info(saveUrl);
+    
+    try {
+      uploadFile.transferTo(savefile);
+      uploadFileName = (savefile.toString().substring(10));
+      jsonObject.addProperty("url", "/upload/"+uploadFileName);
+      jsonObject.addProperty("responseCode", "success");
+      dvo.setD_img(uploadFileName);
+      log.info(uploadFileName);
+    }catch(Exception e) {
+       e.printStackTrace();
+       jsonObject.addProperty("responseCode", "error");
+    }
+    
+    String upload = jsonObject.toString();
+
+    uService.directorsInsert(dvo);
+    return "redirect:/adm/adminCodeList.do";
   }
+
   
 }
