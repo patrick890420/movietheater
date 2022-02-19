@@ -38,7 +38,7 @@
     <!-- Start Page Content -->
     <!-- ============================================================== -->
     <!-- order table -->
-
+<input type="hidden" name="m_cd" value="${m_cd}">
     <!-- multi-column ordering -->
     <div class="row">
       <div class="col-12">
@@ -62,7 +62,7 @@
                   <c:forEach items="${list}" var="mlist" >
                   <tr>
                     <td>${mlist.m_cd }</td>
-                    <td><a href="/adm/adminMovieView.do">${mlist.title}</a></td>
+                    <td><a href="/adm/adminMovieView.do?m_cd=${mlist.m_cd }">${mlist.title}</a></td>
                     <td>${mlist.subtitle}</td>
                     <td>${mlist.rdate}</td>
                     <td>${mlist.rate}</td>

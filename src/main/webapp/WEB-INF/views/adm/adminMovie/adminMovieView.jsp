@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
     <%@ include file="../adminheader.jsp" %>
         <div class="page-wrapper">
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Form Input Grid</h4>
+                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">영화 상세 페이지</h4>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
@@ -18,11 +17,6 @@
                     </div>
                     <div class="col-5 align-self-center">
                         <div class="customize-input float-right">
-                            <select class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
-                                <option selected>Aug 19</option>
-                                <option value="1">July 19</option>
-                                <option value="2">Jun 19</option>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -41,92 +35,106 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Horizontal Grid</h4>
-                                <form action="#">
+                                <h2 class="card-title" style="text-align:center; padding-bottom:35px;">영화 상세 정보</h2>
                                     <div class="form-body">
                                         <div class="row">
-                                                <div class="anime__details__pic set-bg"><img style="height:800px;" src="/upload/bb794cc2-e6d3-44da-8256-92456ea74372_걸스_앤_판처_극장판.jpeg" alt="">
-                                                </div>
-                                            <div class="col-md-2">
+                                                <div class="anime__details__pic set-bg" style="padding-right:30px;"><img style="height:700px;" src="/upload/${view.poster}" alt=""></div>
+                                            <div class="col-md-2 pt-5">
                                                 <div class="form-group">
                                                     <p>영화 제목<p>
                                                 </div>
                                                 <div class="form-group">
-                                                    <p></p>
+                                                    <p>영화 부제목</p>
                                                 </div>
                                                 <div class="form-group">
-                                                    <p></p>
+                                                    <p>개봉일</p>
                                                 </div>
                                                 <div class="form-group">
-                                                    <p></p>
+                                                    <p>감독</p>
                                                 </div>
                                                 <div class="form-group">
-                                                    <p></p>
+                                                    <p>배우</p>
                                                 </div>
                                                 <div class="form-group">
-                                                    <p></p>
+                                                    <p>상영 시간</p>
                                                 </div>
                                                 <div class="form-group">
-                                                    <p></p>
+                                                    <p>상영 등급</p>
                                                 </div>
                                                 <div class="form-group">
-                                                    <p></p>
+                                                    <p>상영 상태</p>
                                                 </div>
                                                 <div class="form-group">
-                                                    <p></p>
+                                                    <p>제작 국가</p>
                                                 </div>
                                                 <div class="form-group">
-                                                    <p></p>
+                                                    <p>영화 소개</p>
                                                 </div>
-                                                <div class="form-group">
-                                                    <p></p>
-                                                </div>
-                                                <div class="form-group">
-                                                    <p></p>
-                                                </div>
-                                                <div class="form-group">
-                                                    <p></p>
-                                                </div>
-                                                <div class="form-group">
-                                                    <p></p>
-                                                </div>
-                                                <div class="form-group">
-                                                    <p></p>
-                                                </div>
-                                                <div class="form-group">
-                                                    <p></p>
-                                                </div>
-                                                <div class="form-group">
-                                                    <p></p>
-                                                </div>
-                                                <div class="form-group">
-                                                    <p></p>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
+                                                
+                                            </div><!-- 왼쪽 -->
+                                            <div class="col-md-4 pt-5">
                                               <div class="form-group">
-                                                <p>걸스 앤 판처</p>
+                                                <p>${view.title}</p>
+                                              </div>
+                                              <div class="form-group">
+                                                <p>${view.subtitle}</p>
+                                              </div>
+                                              <div class="form-group">
+                                                <p>${view.rdate}</p>
+                                              </div>
+                                              <div class="form-group">
+                                                <p>${view.d_name}</p>
+                                              </div>
+                                              <div class="form-group">
+                                                <p>${view.a_name }</p>
+                                              </div>
+                                              <div class="form-group">
+                                                <p>${view.rtime }</p>
+                                              </div>
+                                              <div class="form-group">
+                                                <p>${view.rate }</p>
+                                              </div>
+                                              <div class="form-group">
+                                                <p>상영 중</p>
+                                              </div>
+                                              <div class="form-group">
+                                                <p>${view.n_name }</p>
+                                              </div>
+                                              <div class="form-group">
+                                                <p>${view.intro }</p>
                                               </div>
                                             </div>
-                                             
-                                            
-                                        </div>
-                                    </div>
-                                    <div class="form-actions">
+                                            <div class="col-md-12 pt-5 pb-3" style="text-align: center;" >
+                                              <h2>영화 스틸샷</h2>
+                                            </div>
+                                          <div class="anime__details__pic set-bg pr-2">
+                                              <img style="height:250px; width:320px;" src="/upload/${cut.still_img1}" alt="">
+                                          </div>
+                                          <div class="anime__details__pic set-bg pr-2">
+                                              <img style="height:250px; width:320px;" src="/upload/${cut.still_img2}" alt="">
+                                          </div>
+                                          <div class="anime__details__pic set-bg pr-2">
+                                              <img style="height:250px; width:320px;" src="/upload/${cut.still_img3}" alt="">
+                                          </div>
+                                          <div class="anime__details__pic set-bg">
+                                              <img style="height:250px; width:320px;" src="/upload/${cut.still_img4}" alt="">
+                                          </div>
+                                      </div>
+                                    <div class="form-actions pt-5">
                                         <div class="text-right">
-                                            <button type="submit" class="btn btn-info">Submit</button>
-                                            <button type="reset" class="btn btn-dark">Reset</button>
+                                            <button type="submit" class="btn btn-info">수정</button>
+                                            <button type="reset" class="btn btn-dark">삭제</button>
                                         </div>
                                     </div>
-                                </form>
+                                           <!--오른쪽 -->
+                                                    
+                                        </div><!-- row -->
+                                    </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                                    
-                        </div>
-                    </div>
+           </div>
     
     
     

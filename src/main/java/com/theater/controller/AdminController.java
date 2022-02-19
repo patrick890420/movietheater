@@ -3,6 +3,7 @@ package com.theater.controller;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -20,7 +21,9 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.google.gson.JsonObject;
 import com.theater.domain.ActorsVO;
 import com.theater.domain.DirectorsVO;
+import com.theater.domain.M_stillcutVO;
 import com.theater.domain.MovieInfoVO;
+import com.theater.domain.MovieSelectVO;
 import com.theater.domain.MovieVO;
 import com.theater.domain.TheatersVO;
 import com.theater.service.EventService;
@@ -76,7 +79,7 @@ public class AdminController {
   
   
   @Setter(onMethod_=@Autowired )
-  public MovieService MovieService;
+  public MovieService movieService;
   
   @GetMapping("/adminMovieInsert.do")
   public String adminMovieInsert() {
@@ -86,7 +89,7 @@ public class AdminController {
   
   @GetMapping("/adminMovieSelect.do" )
   public String adminMovieSelect(Model model,MovieVO mvo) {
-    model.addAttribute("list",MovieService.movieSelect());
+    model.addAttribute("list",movieService.movieSelect());
     return "adm/adminMovie/adminMovieSelect";
   }
   
@@ -101,8 +104,13 @@ public class AdminController {
     
     return "adm/adminMovie/adminMovieInfoInsert";
   }
+  
   @GetMapping("/adminMovieView.do")
-  public String adminMovieView() {
+  public String adminMovieView(@RequestParam("m_cd") int m_cd,Model model) {
+    model.addAttribute("view",movieService.adminMovieSelect(m_cd));
+    model.addAttribute("cut",movieService.movieStillcutSelect(m_cd));
+
+    
     return "adm/adminMovie/adminMovieView";
   }
   
@@ -111,12 +119,12 @@ public class AdminController {
     JsonObject jsonObject = new JsonObject();
     
     String uploadFolder="c:\\upload";
-    log.info("file name : "+uploadFile.getOriginalFilename());
+//    log.info("file name : "+uploadFile.getOriginalFilename());
     
     String uploadFileName = uploadFile.getOriginalFilename();
     //IE
     uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("//")+1);
-    log.info("only file name : "+uploadFileName);
+//    log.info("only file name : "+uploadFileName);
     
     UUID uuid = UUID.randomUUID();
     
@@ -129,7 +137,7 @@ public class AdminController {
     }
     File savefile = new File(uploadPath,uploadFileName);
     String saveUrl = uploadFileName.toString();
-    log.info(saveUrl);
+//    log.info(saveUrl);
     
     try {
       uploadFile.transferTo(savefile);
@@ -137,16 +145,16 @@ public class AdminController {
       jsonObject.addProperty("url", "/upload/"+uploadFileName);
       jsonObject.addProperty("responseCode", "success");
       mvo.setPoster(uploadFileName);
-      log.info(uploadFileName);
+//      log.info(uploadFileName);
     }catch(Exception e) {
        e.printStackTrace();
        jsonObject.addProperty("responseCode", "error");
     }
     
     String upload = jsonObject.toString();
-    log.info(upload);
+//    log.info(upload);
 
-    MovieService.movieInsertPro(mvo);
+    movieService.movieInsertPro(mvo);
     
     return "redirect:/adm/adminMovieInsert.do";
     }
@@ -159,13 +167,15 @@ public class AdminController {
 
     String path = "C:\\upload\\";
     
+    ArrayList<String> fileNameArr = new ArrayList<String>();
     for (MultipartFile mf : fileList) {
       String originFileName = mf.getOriginalFilename(); // 원본 파일 명
       long fileSize = mf.getSize(); // 파일 사이즈
 //      System.out.println("originFileName : " + originFileName);
 //      System.out.println("fileSize : " + fileSize);
-      String safeFile = path + System.currentTimeMillis() + originFileName;
-
+      UUID uuid = UUID.randomUUID();
+      String safeFile = uuid.toString()+originFileName;
+      fileNameArr.add(safeFile.substring(safeFile.lastIndexOf("//")+1));
       try {
         mf.transferTo(new File(safeFile));
       } catch (IllegalStateException e) {
@@ -175,12 +185,12 @@ public class AdminController {
       }
         
     }
-    ivo.setStill_img1(fileList.get(0).getOriginalFilename()); 
-    ivo.setStill_img2(fileList.get(1).getOriginalFilename()); 
-    ivo.setStill_img3(fileList.get(2).getOriginalFilename()); 
-    ivo.setStill_img4(fileList.get(3).getOriginalFilename()); 
+    ivo.setStill_img1(fileNameArr.get(0)); 
+    ivo.setStill_img2(fileNameArr.get(1)); 
+    ivo.setStill_img3(fileNameArr.get(2)); 
+    ivo.setStill_img4(fileNameArr.get(3)); 
     
-    MovieService.movieInfoInsertPro(ivo);
+    movieService.movieInfoInsertPro(ivo);
     return "redirect:/adm/adminMovieSelect.do";
   }
   
