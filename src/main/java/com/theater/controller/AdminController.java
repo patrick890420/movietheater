@@ -231,18 +231,7 @@ public class AdminController {
   @GetMapping("/adminTicketing.do")
   public String adminTicketing() {
     return "/adm/adminTicket/adminTicket";
-<<<<<<< HEAD
-=======
   }
-  
-/*Common(공용)* 안쓰는 거면 지워/
-  @GetMapping("/adminWrite.do")
-  public String adminWrite() {
-    return "/adm/adminCommon/adminWrite";
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
-  }
-  
-
   /*adminBoard*/
   @GetMapping("/adminBoardWrite.do")
   public String adminBoardWrite() {
