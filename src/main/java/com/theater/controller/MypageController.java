@@ -71,7 +71,7 @@ private MembersService mservice;
   
   /*천규형...*/
   @PostMapping("/memberUpdate.do")
-  public String studentinfoModify(HttpServletRequest request, MemberVO mvo){
+  public String memberUpdate(HttpServletRequest request, MemberVO mvo){
      log.info("============== VO : " + mvo);
      mservice.memberUpdate(mvo);
      HttpSession session = request.getSession();
