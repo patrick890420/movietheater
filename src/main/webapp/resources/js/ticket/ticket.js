@@ -4,9 +4,11 @@ console.log(date.getFullYear());
 const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
 const reserveDate = document.querySelector('.reserve-date');
 const theaterPlace = document.querySelectorAll('.theater-place');
+const theaterLocation = document.querySelectorAll('.theater-location');
 const reserveTimeWant = document.querySelectorAll('.reserve-time-want');
 const inputTitle = document.querySelector('.title');
 const inputSelectedTheater = document.querySelector('.selectedTheater');
+const inputSelectedLocation = document.querySelector('.selectedLocation');
 const inputReserveDate = document.querySelector('.reserveDate');
 const inputRunningTime = document.querySelector('.runningTime');
 const moveSeatForm = document.querySelector('.moveSeatForm');
@@ -22,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function addDate() {
-    const weekOfDay = ['일', '월', '화', '수', '목', '금', '토'];
+    const weekOfDay = ['日', '月', '火', '水', '木', '金', '土'];
     year = date.getFullYear();
     month = date.getMonth()+1;
     reserveDate.append(year + '/' + month);
@@ -41,10 +43,10 @@ function addDate() {
             weekOfDay[new Date(year + '-' + month + '-' + i).getDay()];
 
         //요일 넣기
-        if (dayOfWeek === '토') {
+        if (dayOfWeek === '土') {
             spanWeekOfDay.classList.add('saturday');
             spanDay.classList.add('saturday');
-        } else if (dayOfWeek === '일') {
+        } else if (dayOfWeek === '日') {
             spanWeekOfDay.classList.add('sunday');
             spanDay.classList.add('sunday');
         }
@@ -86,17 +88,26 @@ function dayClickEvent(button) {
 
 theaterPlace.forEach(list => {
     list.addEventListener('click', function() {
-        const theaterPlaceWrapper = document.querySelectorAll(
-            '.theater-place-active'
-        );
-        theaterPlaceWrapper.forEach(li => {
-            li.classList.remove('theater-place-active');
+        const theaterPlaceWrapper = document.querySelectorAll('.theater-place-active');
+        theaterPlaceWrapper.forEach(li => {li.classList.remove('theater-place-active');
         });
         list.classList.add('theater-place-active');
         console.log(list.innerHTML);
         inputSelectedTheater.value = list.innerHTML;
     });
 });
+
+theaterLocation.forEach(list => {
+    list.addEventListener('click', function() {
+        const theaterLocationWrapper = document.querySelectorAll('.theater-location-active');
+        theaterLocationWrapper.forEach(li => {li.classList.remove('theater-location-active');
+        });
+        list.classList.add('theater-location-active');
+        console.log(list.innerHTML);
+        inputSelectedLocation.value = list.innerHTML;
+    });
+});
+
 
 reserveTimeWant.forEach(list => {
     list.addEventListener('click', function() {
@@ -124,10 +135,32 @@ moveSeatButton.addEventListener('click', function() {
             timeOut: 1000,
         };
         toastr.error(
-            '<div style="color:white">모든 항목을 체크해 주세요</div>',
-            '<div style="color:white">경고</div>', {
+            '<div style="color:white">すべての項目をチェックしてください</div>',
+            '<div style="color:white">警告</div>', {
                 timeOut: 3000,
             }
         );
     }
 });
+
+var movieDiv = document.getElementsByClassName('movie-name-btn');
+
+function handleClick(event) {
+ // console.log(event.target);
+//  console.log(event.target.classList);
+  if (event.target.classList[1] === "clicked") {
+    event.target.classList.remove("clicked");
+  } else {
+    for (var i = 0; i < movieDiv.length; i++) {
+      movieDiv[i].classList.remove("clicked");
+    }
+      event.target.classList.add("clicked");
+    }
+  }
+  function init() {
+    for (var i = 0; i < movieDiv.length; i++) {
+      movieDiv[i].addEventListener("click", handleClick);
+    }
+  }
+init();
+
