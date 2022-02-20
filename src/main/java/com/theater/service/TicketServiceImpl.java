@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.theater.domain.MovieVO;
+import com.theater.domain.ReserveVO;
+import com.theater.domain.TheatersVO;
 import com.theater.mapper.TicketMapper;
 
 import lombok.AllArgsConstructor;
@@ -18,8 +20,18 @@ public class TicketServiceImpl implements TicketService {
   private TicketMapper tmapper;
 
   @Override
-  public List<MovieVO> mvread() {
+  public List<MovieVO> mvRead() {
     return tmapper.movieList();
+  }
+
+  @Override
+  public List<ReserveVO> getAreaSelect(int m_cd) {
+    return tmapper.getAreaSelect(m_cd);
+  }
+
+  @Override
+  public List<ReserveVO> getTheaterSelect(ReserveVO rvo) {
+    return tmapper.getTheaterSelect(rvo);
   }
 
 }

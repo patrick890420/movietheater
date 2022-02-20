@@ -24,9 +24,11 @@
                 <c:if test="${mvList.rate == 0}">
                   <div class="tk-ep0">ALL</div>
                 </c:if>
-                  <button class="btn movie-name-btn">
+                  <button class="btn movie-name-btn" id="areaSelect" onclick="roadArea(${mvList.m_cd });">
                     ${mvList.title}
                   </button>
+                  <input id="hdMcd" type="hidden" value="${mvList.m_cd }">
+                  <input id="hdTitle" type="hidden" value="${mvList.title }">
                 </td>
               </tr>
           </c:forEach>
@@ -38,16 +40,10 @@
     <div class="reserve-title">극장</div>
     <div class="theater-container">
       <div class="theater-wrapper">
-        <div class="theater-location-wrapper">
-          <button class="theater-location">대전(1)</button>
-          <button class="theater-location">서울(2)</button>
-          <button class="theater-location">청주(3)</button>
+        <div class="theater-location-wrapper" id="theater-location-wrapper">
+<!--           <button class="theater-location" id="theater-location" onclick="roadTeather();"></button> -->
         </div>
-        <div class="theater-place-wrapper">
-          <button class="theater-place">서대전</button>
-          <button class="theater-place">유성</button>
-          <button class="theater-place">둔산</button>
-          <button class="theater-place">복합</button>
+        <div class="theater-place-wrapper" id="theater-place-wrapper">
         </div>
       </div>
     </div>
@@ -88,8 +84,8 @@
   </div>
   <div id="ticket_tnb">
     <form class="moveSeatForm" action="moveSeat.do" method="post">
-      <input type="hidden" class="title" name="title">
-      <input type="hidden" class="movieAge" name="movieAge">
+      <input type="hidden" class="m_cd" name="m_cd" id="mvcd">
+      
       <input type="hidden" class="selectedTheater" name="selectedTheater">
       <input type="hidden" class="selectedLocation" name="selectedLocation">
       <input type="hidden" class="reserveDate" name="movieDate">

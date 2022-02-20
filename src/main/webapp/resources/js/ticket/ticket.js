@@ -97,16 +97,7 @@ theaterPlace.forEach(list => {
     });
 });
 
-theaterLocation.forEach(list => {
-    list.addEventListener('click', function() {
-        const theaterLocationWrapper = document.querySelectorAll('.theater-location-active');
-        theaterLocationWrapper.forEach(li => {li.classList.remove('theater-location-active');
-        });
-        list.classList.add('theater-location-active');
-        console.log(list.innerHTML);
-        inputSelectedLocation.value = list.innerHTML;
-    });
-});
+
 
 
 reserveTimeWant.forEach(list => {
@@ -143,7 +134,31 @@ moveSeatButton.addEventListener('click', function() {
     }
 });
 
-var movieDiv = document.getElementsByClassName('movie-name-btn');
+var movieBtn = document.getElementsByClassName("movie-name-btn");
+
+      function handleClick(event) {
+        console.log(event.target);
+        // console.log(this);
+        // 콘솔창을 보면 둘다 동일한 값이 나온다
+        console.log(event.target.classList);
+        if (event.target.classList[1] === "clicked") {
+          event.target.classList.remove("clicked");
+        } else {
+          for (var i = 0; i < movieBtn.length; i++) {
+            movieBtn[i].classList.remove("clicked");
+          }
+          event.target.classList.add("clicked");
+        }
+      }
+      function init() {
+        for (var i = 0; i < movieBtn.length; i++) {
+          movieBtn[i].addEventListener("click", handleClick);
+        }
+      }
+      init();
+
+var areaDiv = document.getElementsByClassName('theater-location');
+//var areaDiv = theaterLocation;
 
 function handleClick(event) {
  // console.log(event.target);
@@ -151,16 +166,91 @@ function handleClick(event) {
   if (event.target.classList[1] === "clicked") {
     event.target.classList.remove("clicked");
   } else {
-    for (var i = 0; i < movieDiv.length; i++) {
-      movieDiv[i].classList.remove("clicked");
+    for (var i = 0; i < areaDiv.length; i++) {
+      areaDiv[i].classList.remove("clicked");
     }
       event.target.classList.add("clicked");
     }
   }
-  function init() {
-    for (var i = 0; i < movieDiv.length; i++) {
-      movieDiv[i].addEventListener("click", handleClick);
+  function ainit() {
+    for (var i = 0; i < areaDiv.length; i++) {
+      areaDiv[i].addEventListener("click", handleClick);
     }
   }
-init();
+ainit();
+
+//영화 제목 선택시 지역 로딩기능
+   var csrfHeaderName = "${_csrf.headerName}";
+   var csrfTokenValue = "${_csrf.token}";
+ function roadArea(mcd){
+   $("#theater-location").empty();
+   $.ajax({
+         type : "get",
+         url : '/ticket/areaSelect.do?m_cd='+mcd,
+         dataType : "json",
+         success : function(data) {
+          
+            let res="";
+            for(let i=0;i<data.length;i++){
+            res+="<button class='theater-location' id='theater-location' onclick='roadTheater("+data[i].t_area+","+data[i].m_cd+");'>"+data[i].t_area+"</button>";
+            }
+            $('#theater-location-wrapper').html(res);
+            
+            var areaDiv = document.getElementsByClassName('theater-location');
+            //var areaDiv = theaterLocation;
+            
+            function handleClick(event) {
+             // console.log(event.target);
+            //  console.log(event.target.classList);
+              if (event.target.classList[1] === "clicked") {
+                event.target.classList.remove("clicked");
+              } else {
+                for (var i = 0; i < areaDiv.length; i++) {
+                  areaDiv[i].classList.remove("clicked");
+                }
+                  event.target.classList.add("clicked");
+                }
+              }
+              function ainit() {
+                for (var i = 0; i < areaDiv.length; i++) {
+                  areaDiv[i].addEventListener("click", handleClick);
+                }
+              }
+            ainit();
+            
+         },
+         error : function() {
+            alert("error");
+         }
+      }); //ajax end
+}
+
+function roadTheater(tcd,mcd){
+   $.ajax({
+         type : "get",
+         url : '/ticket/theaterSelect.do?t_cd='+tcd+'&m_cd='+mcd,
+         dataType : "json",
+         success : function(data1) {
+            let res1="";
+            for(let j=0;j<data1.length;j++){
+            res1+="<button class='theater-place' id='theater-place' onclick='matchDate("+data1[j].t_area+","+data1[j].m_cd+","+data1[j].t_cd+","+data1[j].t_name+");'>"+data1[j].t_name+"</button>";
+            }
+            $('#theater-place-wrapper').html(res1);
+            
+            document.querySelectorAll('.theater-place').forEach(list => {
+              list.addEventListener('click', function() {
+                  const theaterPlaceWrapper = document.querySelectorAll('.theater-place-active');
+                  theaterPlaceWrapper.forEach(li => {li.classList.remove('theater-place-active');
+                  });
+                  list.classList.add('theater-place-active');
+                  console.log(list.innerHTML);
+                  inputSelectedTheater.value = list.innerHTML;
+              });
+          });
+         },
+         error : function() {
+            alert("error");
+         }
+      }); //ajax end
+}
 
