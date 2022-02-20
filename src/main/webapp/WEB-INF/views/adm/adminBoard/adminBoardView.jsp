@@ -14,8 +14,8 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb m-0 p-0">
               <li class="breadcrumb-item"><a href="admin.do" class="text-muted">Home</a></li>
-              <li class="breadcrumb-item"><a href="adminEvent.do" class="text-muted">EVENT</a></li>
-              <li class="breadcrumb-item"><a href="adminNotice.do" class="text-muted">공지사항</a></li>
+              <li class="breadcrumb-item"><a href="adminEvent.do" class="text-muted">イベント</a></li><!-- EVENT -->
+              <li class="breadcrumb-item"><a href="adminNotice.do" class="text-muted">お知らせ</a></li><!-- 공지 -->
             </ol>
           </nav>
         </div>
@@ -46,27 +46,21 @@
 <!-- DataTable 사용법 -->
 <!--        <code> $("#테이블id").DataTable();</code> -->
                         <h2>${view.title}</h2>
-                          <p class=""> | ${view.wdate} |
-                            <i class="fa fa-eye"></i>${view.hits}
-                          </p>
+                          <p class=""> | ${view.wdate} |</p>
+                          
                           <input type="hidden" class="" value="${view.nt_cd}">
 
-                            <div class="">
-                              ${view.content}
-                            </div>
+                            <div class="">${view.content}</div>
 
 <!-- button -->
   <div class="adminbutton">
-<%--     <c:if test="${pinfo eq prev.title }"> --%>
     <a href="adminBoardModify.do?nt_cd=${prev.nt_cd}&pageNum=${cri.pageNum}&amount=${cri.amount}&type=${cri.type}&keyword=${cri.keyword}"
-       class="btn btn-outline-primary btn-rounded"><i class="fas fa-check"></i>수정</a>
-    <a href="adminBoardDelete.do?nt_cd=${prev.nt_cd}" onClick="return confirm('삭제하시겠어요?')"
-       class="btn btn-outline-primary btn-rounded"><i class="fas fa-times"></i>삭제</a>
+       class="btn btn-outline-primary btn-rounded"><i class="fas fa-check"></i>修整</a><!-- 수정 -->
+    <a href="adminBoardDelete.do?nt_cd=${view.nt_cd}" onClick="return confirm('削除しますか？')"
+       class="btn btn-outline-primary btn-rounded" id="delete_btn"><i class="fas fa-times"></i>削除</a><!-- 삭제 -->
     <button type="button" class="btn btn-outline-primary btn-rounded" onclick="location.href='adminNotice.do'">
-      <i class="fas fa-list"></i>&nbsp;목록
+      <i class="fas fa-list"></i>&nbsp;リスト<!-- 리스트(목록) -->
     </button>
-<%--     </c:if>  --%>
-
 
 </div><!-- write77 -->
 </div>
