@@ -36,7 +36,6 @@
 <link rel="stylesheet" href="/resources/css/event_notice/event_notice.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/theater/theater.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/member/member.css" type="text/css">
-<link rel="stylesheet" href="/resources/css/mypage/mypage.css" type="text/css">
 <link rel="stylesheet" href="/resources/css/ticket/ticket.css" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src='//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js'></script>
@@ -108,8 +107,8 @@
                   <li><a href="">특별관</a></li>
                 </ul></li>
               <li><a href="/ticket/ticket.do">예매</a></li>
-              <li><a href="/event/event.do">이벤트</a></li>
-              <li><a href="/notice/notice.do">공지사항</a></li>
+              <li><a href="/event/event.do">イベント</a></li><!-- EVENT -->
+              <li><a href="/notice/notice.do">お知らせ</a></li><!-- 공지 -->
             </ul>
           </nav>
         </div>

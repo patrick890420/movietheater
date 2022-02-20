@@ -1,4 +1,10 @@
 @charset "UTF-8";
+/*                                Common*/
+.button{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
 /*                                Event*/
 
 .event9{
@@ -73,6 +79,8 @@
 
 .event60>p{
   float: right;
+  font-weight: bold;
+  color: #ff0000;
 }
 
 .event68{
@@ -150,7 +158,7 @@
 /*                            notice*/
 .notice68{
   text-align: center;
-}
+  }
 
 .notice76 a{/*title*/
   color: #000;
@@ -159,3 +167,10 @@
 .pagination{
   justify-content: center;
 }
+
+/*                            view*/
+.view20 h2, .view20 p{
+  text-align: center;
+}
+
+

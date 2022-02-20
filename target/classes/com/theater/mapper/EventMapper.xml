@@ -26,9 +26,17 @@
 <!-- 삽입 -->
     select event_seq.nextval from dual
   </selectKey>
-  insert into event (event_cd,title,e_img,content,)
+  insert into event (event_cd,title,e_img,content)
   values (#{event_cd},#{title},'test',#{content})
 </insert>
+
+<select id="getAdminList" resultType="com.theater.domain.EventVO">
+  select * from event
+</select>
+
+<select id="getAdminBoardView" resultType="com.theater.domain.EventVO">
+select * from event where nt_cd= #{nt_cd}
+</select>
 
 
 

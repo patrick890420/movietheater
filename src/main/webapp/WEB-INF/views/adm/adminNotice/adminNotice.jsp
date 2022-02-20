@@ -9,12 +9,12 @@
   <div class="page-breadcrumb">
     <div class="row">
       <div class="col-7 align-self-center">
-        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">공지사항</h4>
+        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">お知らせ</h4><!-- 공지 -->
         <div class="d-flex align-items-center">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb m-0 p-0">
               <li class="breadcrumb-item"><a href="admin.do" class="text-muted">Home</a></li>
-              <li class="breadcrumb-item"><a href="adminNotice.do" class="text-muted">공지사항</a></li>
+              <li class="breadcrumb-item"><a href="adminNotice.do" class="text-muted">お知らせ</a></li><!-- 공지 -->
             </ol>
           </nav>
         </div>
@@ -51,27 +51,24 @@
                             <col width="10%">
                             <col width="*">
                             <col width="10%">
-                            <col width="10%">
                           </colgroup>
                             <thead>
                               <tr>
-                                <th>번호</th>
-                                <th>제목</th>
-                                <th>작성일</th>
-                                <th>조회수</th>
+                                <th class="adminview57">番号</th><!-- 번호 -->
+                                <th>題目</th><!-- 제목 -->
+                                <th class="adminview57">作成日</th><!-- 작성일 -->
                               </tr>
                             </thead>
                             <tbody>
                               <c:set var="num1" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}"/>
                               <c:forEach var="list" items="${list}">
                                 <tr>
-                                  <td>${num1}</td><!-- 번호 -->
+                                  <td class="adminview57">${list.nt_cd}</td><!-- 번호 -->
                                   <td class="notice76"><a href="adminBoardView.do?nt_cd=${list.nt_cd}">${list.title}</a></td><!-- 제목 -->
-                                  <td>
+                                  <td class="adminview57">
                                     <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${list.wdate}"/>
                                     <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>
                                   </td>
-                                  <td>${list.hits}</td>
                                 </tr>
                                <c:set var="num1" value="${num1-1}"/>
                              </c:forEach> 
@@ -87,7 +84,7 @@
               
 <!--               글쓰기 -->
                 <button type="button" class="btn waves-effect waves-light btn-rounded btn-outline-primary admin103"
-                  onClick="location.href='adminBoardWrite.do'">글쓰기</button>
+                  onClick="location.href='adminBoardWrite.do'">書き物</button><!-- 글쓰기 -->
           </div><!-- tab-content -->
       </div> <!-- end card-body-->
   </div> <!-- end card-->
