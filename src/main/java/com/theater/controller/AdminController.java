@@ -3,6 +3,7 @@ package com.theater.controller;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -20,14 +21,20 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.google.gson.JsonObject;
+import com.theater.domain.ActorsVO;
 import com.theater.domain.Criteria;
+import com.theater.domain.DirectorsVO;
 import com.theater.domain.EventVO;
+import com.theater.domain.GenresVO;
+import com.theater.domain.MovieInfoVO;
 import com.theater.domain.MovieVO;
+import com.theater.domain.NationVO;
 import com.theater.domain.NoticeVO;
-import com.theater.domain.PageVO;
+import com.theater.domain.TheatersVO;
 import com.theater.service.EventService;
 import com.theater.service.MovieService;
 import com.theater.service.NoticeService;
+import com.theater.service.TheaterService;
 import com.theater.service.UtilityService;
 
 import lombok.AllArgsConstructor;
@@ -45,6 +52,10 @@ public class AdminController {
   
   @GetMapping("/admin")
   public void admin() {
+  }
+  
+  @GetMapping("/adminLogin")
+  public void adminLogin() {
   }
   
   /* Member */
@@ -73,7 +84,7 @@ public class AdminController {
   
   
   @Setter(onMethod_=@Autowired )
-  public MovieService MovieService;
+  public MovieService movieService;
   
   @GetMapping("/adminMovieInsert.do")
   public String adminMovieInsert() {
@@ -83,8 +94,29 @@ public class AdminController {
   
   @GetMapping("/adminMovieSelect.do" )
   public String adminMovieSelect(Model model,MovieVO mvo) {
-    model.addAttribute("list",MovieService.movieSelect());
+    model.addAttribute("list",movieService.movieSelect());
     return "adm/adminMovie/adminMovieSelect";
+  }
+  
+  @GetMapping("/adminMovieInfoInsert.do")
+  public String adminMovieInfoInsert(MovieInfoVO ivo,Model model, @RequestParam("m_cd")int m_cd){
+    
+    model.addAttribute("m_cd", m_cd);
+    model.addAttribute("actors", uService.getActorsList());
+    model.addAttribute("directors", uService.getDitrectorsList());
+    model.addAttribute("nations", uService.getNationsList());
+    model.addAttribute("genres",  uService.getGenresList());
+    
+    return "adm/adminMovie/adminMovieInfoInsert";
+  }
+  
+  @GetMapping("/adminMovieView.do")
+  public String adminMovieView(@RequestParam("m_cd") int m_cd,Model model) {
+    model.addAttribute("view",movieService.adminMovieSelect(m_cd));
+    model.addAttribute("cut",movieService.movieStillcutSelect(m_cd));
+
+    
+    return "adm/adminMovie/adminMovieView";
   }
   
   @PostMapping(value="/adminMovieInsertPro.do", produces = "application/json; charset=utf8")
@@ -92,12 +124,12 @@ public class AdminController {
     JsonObject jsonObject = new JsonObject();
     
     String uploadFolder="c:\\upload";
-    log.info("file name : "+uploadFile.getOriginalFilename());
+//    log.info("file name : "+uploadFile.getOriginalFilename());
     
     String uploadFileName = uploadFile.getOriginalFilename();
     //IE
     uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("//")+1);
-    log.info("only file name : "+uploadFileName);
+//    log.info("only file name : "+uploadFileName);
     
     UUID uuid = UUID.randomUUID();
     
@@ -110,7 +142,7 @@ public class AdminController {
     }
     File savefile = new File(uploadPath,uploadFileName);
     String saveUrl = uploadFileName.toString();
-    log.info(saveUrl);
+//    log.info(saveUrl);
     
     try {
       uploadFile.transferTo(savefile);
@@ -118,59 +150,91 @@ public class AdminController {
       jsonObject.addProperty("url", "/upload/"+uploadFileName);
       jsonObject.addProperty("responseCode", "success");
       mvo.setPoster(uploadFileName);
-      log.info(uploadFileName);
+//      log.info(uploadFileName);
     }catch(Exception e) {
        e.printStackTrace();
        jsonObject.addProperty("responseCode", "error");
     }
     
     String upload = jsonObject.toString();
-    log.info(upload);
+//    log.info(upload);
 
-    MovieService.movieInsertPro(mvo);
+    movieService.movieInsertPro(mvo);
     
     return "redirect:/adm/adminMovieInsert.do";
     }
   
-  
-  public void MultiUpload(MultipartHttpServletRequest mtfRequest) {
-    List<MultipartFile> fileList = mtfRequest.getFiles("steelcut");
+  @PostMapping(value="/adminMovieInfoInsertPro.do")
+  public String movieInfoInsertPro(MultipartHttpServletRequest mtfRequest,MovieInfoVO ivo,MovieVO mvo,Model model) {
+    List<MultipartFile> fileList = mtfRequest.getFiles("stillcut");
     String src = mtfRequest.getParameter("src");
     System.out.println("src value : " + src);
 
     String path = "C:\\upload\\";
-
+    
+    ArrayList<String> fileNameArr = new ArrayList<String>();
     for (MultipartFile mf : fileList) {
       String originFileName = mf.getOriginalFilename(); // 원본 파일 명
       long fileSize = mf.getSize(); // 파일 사이즈
-
-      System.out.println("originFileName : " + originFileName);
-      System.out.println("fileSize : " + fileSize);
-
-      String safeFile = path + System.currentTimeMillis() + originFileName;
+//      System.out.println("originFileName : " + originFileName);
+//      System.out.println("fileSize : " + fileSize);
+      UUID uuid = UUID.randomUUID();
+      String safeFile = uuid.toString()+originFileName;
+      fileNameArr.add(safeFile.substring(safeFile.lastIndexOf("//")+1));
       try {
         mf.transferTo(new File(safeFile));
       } catch (IllegalStateException e) {
-            // TODO Auto-generated catch block
         e.printStackTrace();
       } catch (IOException e) {
-            // TODO Auto-generated catch block
         e.printStackTrace();
       }
         
     }
-  }//multipart
+    ivo.setStill_img1(fileNameArr.get(0)); 
+    ivo.setStill_img2(fileNameArr.get(1)); 
+    ivo.setStill_img3(fileNameArr.get(2)); 
+    ivo.setStill_img4(fileNameArr.get(3)); 
+    
+    movieService.movieInfoInsertPro(ivo);
+    return "redirect:/adm/adminMovieSelect.do";
+  }
   
-  
+// @GetMapping("/adminMovieDelete.do") 
+//  public String adminMovieDelete(@RequestParam("m_cd") int m_cd) {
+//    movieService.movieDelete(m_cd);
+//   return "redirect:/adm/adminMovieSelect.do";
+//  }
+    
   
   
   /* Theater */
+  @Setter(onMethod_=@Autowired )
+  public TheaterService TheaterService;
   
-  
+  @GetMapping("/adminTheaterInsert.do")
+  public String adminTheaterInsert() {
+    
+    return "adm/adminTheater/adminTheaterInsert";
+  }
+  @PostMapping("/adminteatherInsertPro.do")
+  public String adminteatherInsertPro(TheatersVO tvo) {
+    TheaterService.theaterInsertPro(tvo);
+    
+    return "redirect:/adm/adminTheaterInsert2.do";
+    }
+  @GetMapping("/adminTheaterInsert2.do")
+  public String adminTheaterInsert2() {
+    
+    return "adm/adminTheater/adminTheaterInsert2";
+  }
   /* Ticketing */
+  @GetMapping("/adminTicketing.do")
+  public String adminTicketing() {
+    return "/adm/adminTicket/adminTicket";
+  }
   
-  
-/*adminBoard*/
+
+  /*adminBoard*/
   @GetMapping("/adminBoardWrite.do")
   public String adminBoardWrite() {
     return "/adm/adminBoard/adminBoardWrite";
@@ -220,6 +284,7 @@ public class AdminController {
 /* Board-> Event*/
   @Setter(onMethod_=@Autowired )
   public EventService eService;
+
   
   @GetMapping("/adminEvent.do")
   public String adminEvent() {
@@ -234,6 +299,7 @@ public class AdminController {
 /*Board-> Notice*/
   @Setter(onMethod_=@Autowired )
   public NoticeService nService;
+
   
   @GetMapping("/adminNotice.do")
   public String adminNotice(Criteria cri,Model model) {
@@ -241,8 +307,10 @@ public class AdminController {
     return "adm/adminNotice/adminNotice";
   }
   
-  
-  
+  @GetMapping("/adminNoticeview.do")
+  public String adminNoticeview() {
+    return "adm/adminNotice/adminNoticeview";
+  }
   
   /* Utility */
   @GetMapping("/adminCodeList.do")
@@ -253,6 +321,149 @@ public class AdminController {
     model.addAttribute("nations", uService.getNationsList());
     model.addAttribute("genres",  uService.getGenresList());
     return "adm/adminUtility/adminCodeList";
+  }
+  
+  @PostMapping(value="/actorsInsert.do", produces = "application/json; charset=utf8")
+  public String actorsInsert(Model model, ActorsVO avo, @RequestParam("uploadFile") MultipartFile uploadFile) {
+    JsonObject jsonObject = new JsonObject();
+    
+    String uploadFolder="c:\\upload";
+    log.info("file name : "+uploadFile.getOriginalFilename());
+    
+    String uploadFileName = uploadFile.getOriginalFilename();
+    //IE
+    uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("//")+1);
+    log.info("only file name : "+uploadFileName);
+    
+    UUID uuid = UUID.randomUUID();
+    
+    uploadFileName = uuid.toString()+"_"+uploadFileName;
+    
+    File uploadPath = new File(uploadFolder, getFolder());
+    
+    if(uploadPath.exists() == false) {
+       uploadPath.mkdirs();
+    }
+    File savefile = new File(uploadPath,uploadFileName);
+    String saveUrl = uploadFileName.toString();
+    log.info(saveUrl);
+    
+    try {
+      uploadFile.transferTo(savefile);
+      uploadFileName = (savefile.toString().substring(10));
+      jsonObject.addProperty("url", "/upload/"+uploadFileName);
+      jsonObject.addProperty("responseCode", "success");
+      avo.setA_img(uploadFileName);
+      log.info(uploadFileName);
+    }catch(Exception e) {
+       e.printStackTrace();
+       jsonObject.addProperty("responseCode", "error");
+    }
+    
+    String upload = jsonObject.toString();
+    log.info(upload);
+
+    uService.actorsInsert(avo);
+    return "redirect:/adm/adminCodeList.do";
+  }
+
+  @PostMapping(value="/directorsInsert.do", produces = "application/json; charset=utf8")
+  public String directorsInsert(Model model, DirectorsVO dvo, @RequestParam("uploadFile") MultipartFile uploadFile) {
+    JsonObject jsonObject = new JsonObject();
+    
+    String uploadFolder="c:\\upload";
+    log.info("file name : "+uploadFile.getOriginalFilename());
+    
+    String uploadFileName = uploadFile.getOriginalFilename();
+    //IE
+    uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("//")+1);
+    log.info("only file name : "+uploadFileName);
+    
+    UUID uuid = UUID.randomUUID();
+    
+    uploadFileName = uuid.toString()+"_"+uploadFileName;
+    
+    File uploadPath = new File(uploadFolder, getFolder());
+    
+    if(uploadPath.exists() == false) {
+       uploadPath.mkdirs();
+    }
+    File savefile = new File(uploadPath,uploadFileName);
+    String saveUrl = uploadFileName.toString();
+    log.info(saveUrl);
+    
+    try {
+      uploadFile.transferTo(savefile);
+      uploadFileName = (savefile.toString().substring(10));
+      jsonObject.addProperty("url", "/upload/"+uploadFileName);
+      jsonObject.addProperty("responseCode", "success");
+      dvo.setD_img(uploadFileName);
+      log.info(uploadFileName);
+    }catch(Exception e) {
+       e.printStackTrace();
+       jsonObject.addProperty("responseCode", "error");
+    }
+    
+    String upload = jsonObject.toString();
+
+    uService.directorsInsert(dvo);
+    return "redirect:/adm/adminCodeList.do";
+  }
+  @PostMapping("/nationInsert.do")
+  public String nationsInsert(Model model, NationVO nvo) {
+    uService.nationInsert(nvo);
+    return "redirect:/adm/adminCodeList.do";
+  }
+  
+  @PostMapping("/genresInsert.do")
+  public String genresInsert(Model model, GenresVO gvo) {
+    uService.genresInsert(gvo);
+    return "redirect:/adm/adminCodeList.do";
+  }
+  
+  @GetMapping("/actorsModify.do")
+  public String actorsModify(Model model, ActorsVO avo) {
+    uService.actorsModify(avo);
+    return "redirect:/adm/adminCodeList.do";
+  }
+  
+  @GetMapping("/directorsModify.do")
+  public String directorsModify(Model model, DirectorsVO dvo) {
+    uService.directorsModify(dvo);
+    return "redirect:/adm/adminCodeList.do";
+  }
+  
+  @GetMapping("/nationModify.do")
+  public String nationModify(Model model, NationVO nvo) {
+    uService.nationModify(nvo);
+    return "redirect:/adm/adminCodeList.do";
+  }
+  
+  @GetMapping("/genresModify.do")
+  public String genresModify(Model model, GenresVO gvo) {
+    uService.genresModify(gvo);
+    return "redirect:/adm/adminCodeList.do";
+  }
+  
+  @GetMapping("/actorsDelete.do")
+  public String actorsDelete(Model model, @RequestParam("a_cd") String a_cd) {
+    uService.actorsDelete(a_cd);
+    return "redirect:/adm/adminCodeList.do";
+  }
+  @GetMapping("/directorsDelete.do")
+  public String directorsDelete(Model model, @RequestParam("d_cd") String d_cd) {
+    uService.directorsDelete(d_cd);
+    return "redirect:/adm/adminCodeList.do";
+  }
+  @GetMapping("/nationDelete.do")
+  public String nationDelete(Model model, @RequestParam("n_cd") String n_cd) {
+    uService.nationDelete(n_cd);
+    return "redirect:/adm/adminCodeList.do";
+  }
+  @GetMapping("/genresDelete.do")
+  public String genresDelete(Model model, @RequestParam("g_cd") String g_cd) {
+    uService.genresDelete(g_cd);
+    return "redirect:/adm/adminCodeList.do";
   }
   
 }

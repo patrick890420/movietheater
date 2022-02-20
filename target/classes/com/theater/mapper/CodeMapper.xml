@@ -23,22 +23,63 @@
 </select>
 
 <insert id="actorsInsert">
-  <selectKey keyProperty="a_cd" order="BEFORE" resultType="int">
+  <selectKey keyProperty="a_cd" order="BEFORE" resultType="String">
     select actors_seq.nextval from dual
   </selectKey>
-    insert into actors ('a'||a_cd, a_name, a_img) values (#{a_cd}, #{a_name}, #{a_img})
+    insert into actors (a_cd, a_name, a_img) values ('a'||#{a_cd}, #{a_name}, #{a_img})
 </insert>
 
-<select id="directorsInsert">
-  
-</select>
+<insert id="directorsInsert">
+<selectKey keyProperty="d_cd" order="BEFORE" resultType="String">
+    select directors_seq.nextval from dual
+  </selectKey>
+    insert into directors (d_cd, d_name, d_img) values ('d'||#{d_cd}, #{d_name}, #{d_img})
+</insert>
 
-<select id="nationInsert">
-  
-</select>
+<insert id="nationInsert">
+<selectKey keyProperty="n_cd" order="BEFORE" resultType="String">
+    select nations_seq.nextval from dual
+  </selectKey>
+    insert into nations (n_cd, n_name) values ('n'||#{n_cd}, #{n_name})
+</insert>
 
-<select id="genresInsert">
+<insert id="genresInsert">
+<selectKey keyProperty="g_cd" order="BEFORE" resultType="String">
+    select genres_seq.nextval from dual
+  </selectKey>
+    insert into genres (g_cd, g_name) values ('g'||#{g_cd}, #{g_name})
+</insert>
   
-</select>
+<update id="actorsModify">
+  UPDATE ACTORS SET A_NAME=#{a_name}, A_IMG=#{a_img} WHERE A_CD = #{a_cd}
+</update>
+
+<update id="directorsModify">
+  UPDATE DIRECTORS SET D_NAME=#{d_name}, D_IMG=#{d_img} WHERE D_CD = #{d_cd}
+</update>
+
+<update id="nationModify">
+  UPDATE NATIONS SET N_NAME=#{n_name} WHERE N_CD = #{n_cd}
+</update>
+
+<update id="genresModify">
+  UPDATE GENRES SET G_NAME=#{g_name} WHERE G_CD = #{g_cd}
+</update>
+
+<delete id="actorsDelete">
+  DELETE FROM ACTORS WHERE A_CD = #{a_cd} 
+</delete>
+
+<delete id="directorsDelete">
+  DELETE FROM DIRECTORS WHERE D_CD = #{d_cd} 
+</delete>
+
+<delete id="nationDelete">
+  DELETE FROM NATIONS WHERE N_CD = #{n_cd} 
+</delete>
+
+<delete id="genresDelete">
+  DELETE FROM GENRES WHERE G_CD = #{g_cd} 
+</delete>
 
 </mapper>

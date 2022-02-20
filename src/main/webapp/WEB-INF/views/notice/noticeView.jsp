@@ -12,7 +12,6 @@
 </section>
 <!-- Section End -->
 
-
 <!-- View -->
 <section class="view">
   <div class="container">

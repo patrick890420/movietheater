@@ -49,68 +49,65 @@ public class UtilityServiceImpl implements UtilityService {
 
   @Override
   public void directorsInsert(DirectorsVO dvo) {
-    // TODO Auto-generated method stub
+    cmapper.directorsInsert(dvo);
     
   }
 
   @Override
   public void nationInsert(NationVO nvo) {
-    // TODO Auto-generated method stub
+    cmapper.nationInsert(nvo);
     
   }
 
   @Override
   public void genresInsert(GenresVO gvo) {
-    // TODO Auto-generated method stub
+    cmapper.genresInsert(gvo);
     
   }
   /* end insert */
   
+
   @Override
-  public void actorsModify(int c_cd) {
-    // TODO Auto-generated method stub
+  public void actorsDelete(String a_cd) {
+    cmapper.actorsDelete(a_cd);
+  }
+
+  @Override
+  public void directorsDelete(String d_cd) {
+    cmapper.directorsDelete(d_cd);
+  }
+
+  @Override
+  public void nationDelete(String n_cd) {
+    cmapper.nationDelete(n_cd);
+  }
+
+  @Override
+  public void genresDelete(String g_cd) {
+    cmapper.genresDelete(g_cd);
+  }
+
+  @Override
+  public void actorsModify(ActorsVO avo) {
+    cmapper.actorsModify(avo);
     
   }
 
   @Override
-  public void directorsModify(int d_cd) {
-    // TODO Auto-generated method stub
+  public void directorsModify(DirectorsVO dvo) {
+    cmapper.directorsModify(dvo);
     
   }
 
   @Override
-  public void nationModify(int n_cd) {
-    // TODO Auto-generated method stub
+  public void nationModify(NationVO nvo) {
+    cmapper.nationModify(nvo);
     
   }
 
   @Override
-  public void genresModify(int g_cd) {
-    // TODO Auto-generated method stub
-    
-  }
-
-  @Override
-  public void actorsDelete(int c_cd) {
-    // TODO Auto-generated method stub
-    
-  }
-
-  @Override
-  public void directorsDelete(int d_cd) {
-    // TODO Auto-generated method stub
-    
-  }
-
-  @Override
-  public void nationDelete(int n_cd) {
-    // TODO Auto-generated method stub
-    
-  }
-
-  @Override
-  public void genresDelete(int g_cd) {
-    // TODO Auto-generated method stub
+  public void genresModify(GenresVO gvo) {
+    cmapper.genresModify(gvo);
     
   }
 

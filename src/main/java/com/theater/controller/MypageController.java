@@ -33,6 +33,16 @@ public class MypageController {
   public void mypage() {
 
   }
+  
+  @GetMapping("/myreser.do")
+  public void myreser() {
+
+  }
+  
+  @GetMapping("/mycash.do")
+  public void mycash() {
+
+  }
 
 
 }
