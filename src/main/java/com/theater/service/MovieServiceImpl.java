@@ -9,6 +9,7 @@ import com.theater.domain.M_stillcutVO;
 import com.theater.domain.MovieInfoVO;
 import com.theater.domain.MovieSelectVO;
 import com.theater.domain.MovieVO;
+import com.theater.domain.ReviewVO;
 import com.theater.mapper.MovieMapper;
 
 import lombok.AllArgsConstructor;
@@ -75,5 +76,26 @@ public class MovieServiceImpl implements MovieService {
   @Override
   public void movieDelete(int m_cd) {
     mapper.movieDelete(m_cd);
+  }
+  
+  @Override
+  public int register(ReviewVO rvo) {
+    return mapper.movieReview(rvo);
+  }
+  @Override
+  public ReviewVO get(int rcode) {
+    return mapper.movieReviewRead(rcode);
+  }
+  @Override
+  public int modify(ReviewVO rvo) {
+    return mapper.movieReviewUpdate(rvo);
+}
+  @Override
+  public int remove(int rcode) {
+    return mapper.movieReviewDelete(rcode);
+  }
+  @Override
+  public List<ReviewVO> getList(Criteria cri, int m_cd) {
+    return mapper.getListWithPageing(cri, m_cd);
   }
 }//Impl

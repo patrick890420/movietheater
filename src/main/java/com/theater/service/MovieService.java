@@ -8,6 +8,7 @@ import com.theater.domain.M_stillcutVO;
 import com.theater.domain.MovieInfoVO;
 import com.theater.domain.MovieSelectVO;
 import com.theater.domain.MovieVO;
+import com.theater.domain.ReviewVO;
 
 
 
@@ -25,4 +26,10 @@ public interface MovieService {
   public MovieSelectVO adminMovieSelect(int m_cd);
   public M_stillcutVO movieStillcutSelect(int m_cd);
   public void movieDelete(int m_cd);
+  
+  public int register(ReviewVO rvo);
+  public ReviewVO get(int rcode);
+  public int modify(ReviewVO rvo);
+  public int remove(int rcode);
+  public List<ReviewVO> getList(Criteria cri, int m_cd);
 }
