@@ -223,9 +223,12 @@ public class AdminController {
     return "adm/adminTheater/adminTheaterInsert2";
   }
   /* Ticketing */
+  @GetMapping("/adminTicketing.do")
+  public String adminTicketing() {
+    return "/adm/adminTicket/adminTicket";
+  }
   
-  
-/*Common(공용)*/
+/*Common(공용)* 안쓰는 거면 지워/
   @GetMapping("/adminWrite.do")
   public String adminWrite() {
     return "/adm/adminCommon/adminWrite";
