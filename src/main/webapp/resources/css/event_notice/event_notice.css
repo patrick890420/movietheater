@@ -1,4 +1,10 @@
 @charset "UTF-8";
+/*                                Common*/
+.button{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
 /*                                Event*/
 
 .event9{
@@ -159,3 +165,10 @@
 .pagination{
   justify-content: center;
 }
+
+/*                            view*/
+.view20 h2, .view20 p{
+  text-align: center;
+}
+
+

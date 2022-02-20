@@ -3,7 +3,9 @@ package com.theater.mapper;
 import java.util.List;
 
 import com.theater.domain.Criteria;
+import com.theater.domain.M_stillcutVO;
 import com.theater.domain.MovieInfoVO;
+import com.theater.domain.MovieSelectVO;
 import com.theater.domain.MovieVO;
 
 public interface MovieMapper {
@@ -28,6 +30,11 @@ public interface MovieMapper {
   
   public void movieInfoInsertPro(MovieInfoVO ivo);
   
+  public MovieSelectVO adminMovieSelect(int m_cd);
+  
+  public M_stillcutVO movieStillcutSelect(int m_cd);
+  
+  public void movieDelete(int m_cd);
   //view  페이지
   
   

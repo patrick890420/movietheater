@@ -363,8 +363,8 @@
               </a>
               <ul aria-expanded="false" class="collapse  first-level base-level-line">
                 <li class="sidebar-item">
-                  <a href="form-inputs.html" class="sidebar-link">
-                  <span class="hide-menu"> Form Inputs </span>
+                  <a href="adminTicketing.do" class="sidebar-link">
+                  <span class="hide-menu"> Ticketing details </span>
                   </a>
                 </li>
                 <li class="sidebar-item">

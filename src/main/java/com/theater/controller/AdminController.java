@@ -3,6 +3,7 @@ package com.theater.controller;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -11,19 +12,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.google.gson.JsonObject;
 import com.theater.domain.ActorsVO;
+import com.theater.domain.Criteria;
 import com.theater.domain.DirectorsVO;
+import com.theater.domain.EventVO;
 import com.theater.domain.GenresVO;
 import com.theater.domain.MovieInfoVO;
 import com.theater.domain.MovieVO;
 import com.theater.domain.NationVO;
+import com.theater.domain.NoticeVO;
 import com.theater.domain.TheatersVO;
 import com.theater.service.EventService;
 import com.theater.service.MovieService;
@@ -78,7 +84,7 @@ public class AdminController {
   
   
   @Setter(onMethod_=@Autowired )
-  public MovieService MovieService;
+  public MovieService movieService;
   
   @GetMapping("/adminMovieInsert.do")
   public String adminMovieInsert() {
@@ -88,7 +94,7 @@ public class AdminController {
   
   @GetMapping("/adminMovieSelect.do" )
   public String adminMovieSelect(Model model,MovieVO mvo) {
-    model.addAttribute("list",MovieService.movieSelect());
+    model.addAttribute("list",movieService.movieSelect());
     return "adm/adminMovie/adminMovieSelect";
   }
   
@@ -103,8 +109,13 @@ public class AdminController {
     
     return "adm/adminMovie/adminMovieInfoInsert";
   }
+  
   @GetMapping("/adminMovieView.do")
-  public String adminMovieView() {
+  public String adminMovieView(@RequestParam("m_cd") int m_cd,Model model) {
+    model.addAttribute("view",movieService.adminMovieSelect(m_cd));
+    model.addAttribute("cut",movieService.movieStillcutSelect(m_cd));
+
+    
     return "adm/adminMovie/adminMovieView";
   }
   
@@ -113,12 +124,12 @@ public class AdminController {
     JsonObject jsonObject = new JsonObject();
     
     String uploadFolder="c:\\upload";
-    log.info("file name : "+uploadFile.getOriginalFilename());
+//    log.info("file name : "+uploadFile.getOriginalFilename());
     
     String uploadFileName = uploadFile.getOriginalFilename();
     //IE
     uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("//")+1);
-    log.info("only file name : "+uploadFileName);
+//    log.info("only file name : "+uploadFileName);
     
     UUID uuid = UUID.randomUUID();
     
@@ -131,7 +142,7 @@ public class AdminController {
     }
     File savefile = new File(uploadPath,uploadFileName);
     String saveUrl = uploadFileName.toString();
-    log.info(saveUrl);
+//    log.info(saveUrl);
     
     try {
       uploadFile.transferTo(savefile);
@@ -139,16 +150,16 @@ public class AdminController {
       jsonObject.addProperty("url", "/upload/"+uploadFileName);
       jsonObject.addProperty("responseCode", "success");
       mvo.setPoster(uploadFileName);
-      log.info(uploadFileName);
+//      log.info(uploadFileName);
     }catch(Exception e) {
        e.printStackTrace();
        jsonObject.addProperty("responseCode", "error");
     }
     
     String upload = jsonObject.toString();
-    log.info(upload);
+//    log.info(upload);
 
-    MovieService.movieInsertPro(mvo);
+    movieService.movieInsertPro(mvo);
     
     return "redirect:/adm/adminMovieInsert.do";
     }
@@ -161,13 +172,15 @@ public class AdminController {
 
     String path = "C:\\upload\\";
     
+    ArrayList<String> fileNameArr = new ArrayList<String>();
     for (MultipartFile mf : fileList) {
       String originFileName = mf.getOriginalFilename(); // 원본 파일 명
       long fileSize = mf.getSize(); // 파일 사이즈
 //      System.out.println("originFileName : " + originFileName);
 //      System.out.println("fileSize : " + fileSize);
-      String safeFile = path + System.currentTimeMillis() + originFileName;
-
+      UUID uuid = UUID.randomUUID();
+      String safeFile = uuid.toString()+originFileName;
+      fileNameArr.add(safeFile.substring(safeFile.lastIndexOf("//")+1));
       try {
         mf.transferTo(new File(safeFile));
       } catch (IllegalStateException e) {
@@ -177,16 +190,21 @@ public class AdminController {
       }
         
     }
-    ivo.setStill_img1(fileList.get(0).getOriginalFilename()); 
-    ivo.setStill_img2(fileList.get(1).getOriginalFilename()); 
-    ivo.setStill_img3(fileList.get(2).getOriginalFilename()); 
-    ivo.setStill_img4(fileList.get(3).getOriginalFilename()); 
+    ivo.setStill_img1(fileNameArr.get(0)); 
+    ivo.setStill_img2(fileNameArr.get(1)); 
+    ivo.setStill_img3(fileNameArr.get(2)); 
+    ivo.setStill_img4(fileNameArr.get(3)); 
     
-    MovieService.movieInfoInsertPro(ivo);
+    movieService.movieInfoInsertPro(ivo);
     return "redirect:/adm/adminMovieSelect.do";
   }
   
-  
+// @GetMapping("/adminMovieDelete.do") 
+//  public String adminMovieDelete(@RequestParam("m_cd") int m_cd) {
+//    movieService.movieDelete(m_cd);
+//   return "redirect:/adm/adminMovieSelect.do";
+//  }
+    
   
   
   /* Theater */
@@ -210,18 +228,61 @@ public class AdminController {
     return "adm/adminTheater/adminTheaterInsert2";
   }
   /* Ticketing */
-  
-  
-/*Common(공용)*/
-  @GetMapping("/adminWrite.do")
-  public String adminWrite() {
-    return "/adm/adminCommon/adminWrite";
+  @GetMapping("/adminTicketing.do")
+  public String adminTicketing() {
+    return "/adm/adminTicket/adminTicket";
+  }
+  /*adminBoard*/
+  @GetMapping("/adminBoardWrite.do")
+  public String adminBoardWrite() {
+    return "/adm/adminBoard/adminBoardWrite";
+  }
+
+  @GetMapping("/adminBoardWritePro.do")
+  public String adminBoardWritePro(@RequestParam("choice")String choice, NoticeVO nvo, EventVO evo) {
+    if(choice.equals("N")) {
+      nService.noticeInsert(nvo);
+    }else if(choice.equals("E")) {
+      eService.eventInsert(evo);
+    }
+    return "adm/adminNotice/adminNotice";
   }
   
+  @GetMapping("/adminBoardView.do")
+  public String adminBoardView(@RequestParam("nt_cd")int nt_cd,Model model) {
+    model.addAttribute("view",nService.getAdminBoardView(nt_cd));
+    model.addAttribute("next",nService.nextPage(nt_cd));
+    model.addAttribute("prev",nService.prevPage(nt_cd));
+    return "adm/adminBoard/adminBoardView";
+  }
+  
+  @GetMapping("adminBoardModify.do")
+  public String adminBoardModify(@RequestParam("nt_cd")int nt_cd,Model model) {
+    model.addAttribute("view",nService.getAdminBoardView(nt_cd));
+    return "adm/adminBoard/adminBoardModify";
+  }
+  
+  @PostMapping("/adminBoardModifyPro.do")
+  public String modify(NoticeVO notice, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) {
+    if(nService.modify(notice)) {
+      rttr.addFlashAttribute("result","success");
+    }
+    return "redirect:/notice/notice";
+  }
+
+ @GetMapping("/adminBoardDelete.do")
+  public String delete(int nt_cd, RedirectAttributes rttr) {
+    if(nService.delete(nt_cd)) {
+      rttr.addFlashAttribute("result","success");
+    }
+    return "redirect:/notice/notice";
+  }
+
 
 /* Board-> Event*/
   @Setter(onMethod_=@Autowired )
-  public EventService Eservice;
+  public EventService eService;
+
   
   @GetMapping("/adminEvent.do")
   public String adminEvent() {
@@ -235,10 +296,12 @@ public class AdminController {
   
 /*Board-> Notice*/
   @Setter(onMethod_=@Autowired )
-  public NoticeService Nservice;
+  public NoticeService nService;
+
   
   @GetMapping("/adminNotice.do")
-  public String adminNotice() {
+  public String adminNotice(Criteria cri,Model model) {
+    model.addAttribute("list",nService.getNoticeList(cri));
     return "adm/adminNotice/adminNotice";
   }
   
@@ -246,7 +309,6 @@ public class AdminController {
   public String adminNoticeview() {
     return "adm/adminNotice/adminNoticeview";
   }
-  
   
   /* Utility */
   @GetMapping("/adminCodeList.do")
@@ -345,7 +407,6 @@ public class AdminController {
     uService.directorsInsert(dvo);
     return "redirect:/adm/adminCodeList.do";
   }
-  
   @PostMapping("/nationInsert.do")
   public String nationsInsert(Model model, NationVO nvo) {
     uService.nationInsert(nvo);
@@ -402,6 +463,5 @@ public class AdminController {
     uService.genresDelete(g_cd);
     return "redirect:/adm/adminCodeList.do";
   }
-
   
 }

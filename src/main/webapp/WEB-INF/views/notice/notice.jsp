@@ -59,12 +59,10 @@
           <col width="*">
           <col width="10%">
           <col width="10%">
-          <col width="10%">
         </colgroup>
         <tr>
           <th class="notice68">번호</th>
           <th>제목</th>
-          <th>이미지</th>
           <th class="notice68">작성일</th>
           <th class="notice68">조회수</th>
         </tr>
@@ -74,8 +72,7 @@
           <c:forEach var="list" items="${list}">
             <tr>
               <td class="notice68">${num1}</td><!-- 번호 -->
-              <td class="notice76"><a href="adminBoardView.do?nt_cd=${list.nt_cd}">${list.title}</a></td><!-- 제목 -->
-              <td>${list.e_img}</td>
+              <td class="notice76"><a href="noticeView.do?nt_cd=${list.nt_cd}">${list.title}</a></td><!-- 제목 -->
               <td>
                 <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${list.wdate}"/>
                 <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>
