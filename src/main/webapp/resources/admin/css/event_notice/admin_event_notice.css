@@ -1,4 +1,11 @@
 @charset "UTF-8";
+/*                                Common*/
+/*                                adminbutton*/
+.adminbutton{
+  text-align: center;
+  margin-top: 25px;
+}
+
 /*                                adminBoardWrite*/
 .adminwrite36{
   margin: auto;
@@ -30,15 +37,16 @@
 .adminwrite66{
   line-height: 222px;
 }
-/*                                adminbutton*/
-.adminbutton{
-  text-align: center;
-  margin-top: 25px;
-}
+
 /*                                adminBoardView*/
 .adminview45 h2,.adminview45 p{
   text-align: center;
 }
+
+.adminview57{
+  text-align: center;
+}
+
 /*                                adminEvent*/
 .adminevent72 th{
   text-align: center;

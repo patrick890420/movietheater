@@ -232,6 +232,8 @@ public class AdminController {
   public String adminTicketing() {
     return "/adm/adminTicket/adminTicket";
   }
+
+
   /*adminBoard*/
   @GetMapping("/adminBoardWrite.do")
   public String adminBoardWrite() {
@@ -245,7 +247,7 @@ public class AdminController {
     }else if(choice.equals("E")) {
       eService.eventInsert(evo);
     }
-    return "adm/adminNotice/adminNotice";
+    return "redirect:/adm/adminNotice.do";
   }
   
   @GetMapping("/adminBoardView.do")
@@ -264,20 +266,17 @@ public class AdminController {
   
   @PostMapping("/adminBoardModifyPro.do")
   public String modify(NoticeVO notice, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) {
-    if(nService.modify(notice)) {
+    nService.modify(notice);
       rttr.addFlashAttribute("result","success");
-    }
-    return "redirect:/notice/notice";
+    return "adm/adminNotice/adminNotice";
   }
 
  @GetMapping("/adminBoardDelete.do")
-  public String delete(int nt_cd, RedirectAttributes rttr) {
-    if(nService.delete(nt_cd)) {
-      rttr.addFlashAttribute("result","success");
-    }
-    return "redirect:/notice/notice";
-  }
-
+  public String delete(@RequestParam("nt_cd") int nt_cd) {
+    nService.delete(nt_cd);
+  
+    return "redirect:/adm/adminNotice.do";
+ }
 
 /* Board-> Event*/
   @Setter(onMethod_=@Autowired )

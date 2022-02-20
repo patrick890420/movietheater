@@ -19,11 +19,18 @@
 	WHERE userid = #{userid}
 </select>
 
-<!-- <select id="myres">
-select 
-where ?=? 
-인것인가
-</select> -->
+<select id="selectMember" resultType="com.theater.domain.MemberVO">
+  select * from members where userid = #{userid}
+  </select>
+  
+<update id="memberUpdate" parameterType="com.theater.domain.MemberVO">
+   update members set 
+   username = #{username},
+   phone = #{phone},
+   email = #{email}
+   where userid = #{userid} 
+</update>
+
 
 
 
