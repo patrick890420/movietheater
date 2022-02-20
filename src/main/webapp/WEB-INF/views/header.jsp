@@ -107,8 +107,8 @@
                   <li><a href="">특별관</a></li>
                 </ul></li>
               <li><a href="/ticket/ticket.do">예매</a></li>
-              <li><a href="/event/event.do">이벤트</a></li>
-              <li><a href="/notice/notice.do">공지사항</a></li>
+              <li><a href="/event/event.do">イベント</a></li><!-- EVENT -->
+              <li><a href="/notice/notice.do">お知らせ</a></li><!-- 공지 -->
             </ul>
           </nav>
         </div>

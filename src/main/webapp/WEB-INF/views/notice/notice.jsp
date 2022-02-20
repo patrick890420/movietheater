@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row event8">
       <div class="col-md-12 event9">
-        <h2>공지사항</h2>
+        <h2>お知らせ</h2><!-- 공지 -->
       </div>
     </div>
   </div>
@@ -17,16 +17,16 @@
 <form name="myform" method="get" action="notice.do" id="searchForm">
   <div class="container">
     <div class="row notice24">
-      <div class="col-lg-9" style="padding-left: 790px;">
+      <div class="col-lg-9" style="padding-left: 800px;">
         <select name="searchType" class="select">
-          <option value=""<c:out value="${pageMaker.cri.searchType==null?'selected':''}"/>>선택</option>
-          <option value="title"<c:out value="${pageMaker.cri.searchType eq 'title'?'selected':''}"/>>제목</option>
-          <option value="content"<c:out value="${pageMaker.cri.searchType eq 'content'?'selected':''}"/>>내용</option>
+          <option value=""<c:out value="${pageMaker.cri.searchType==null?'selected':''}"/>>選択</option><!-- 선택 -->
+          <option value="title"<c:out value="${pageMaker.cri.searchType eq 'title'?'selected':''}"/>>題目</option><!-- 제목 -->
+          <option value="content"<c:out value="${pageMaker.cri.searchType eq 'content'?'selected':''}"/>>内容</option><!-- 내용 -->
         </select>
       </div>
       <div class="col-lg-3 event45">
         <label>
-          <input type="text" class="event47" name="searchName" placeholder="검색어를 입력해 주세요">
+          <input type="text" class="event47" name="searchName" placeholder="検索語 入力 "><!-- 검색어 입력 -->
 <%--           <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}"> --%>
 <%--           <input type="hidden" name="amount" value="${pageMaker.cri.amount}"> --%>
           <input type="hidden" name="pageNum" value="1">
@@ -44,8 +44,9 @@
 
 <!-- 총 게시글 -->
 <div class="col-md-4 event60" style="max-width: 27.333333%">
-  <p>총게시글&nbsp;&nbsp;<span>${pageMaker.total}</span>건</p>
-</div><!-- md-3 -->
+  <p>銃の掲示板&nbsp;&nbsp;<span>${pageMaker.total}</span>件</p>
+<!-- 총 게시글                                                                                         건-->
+</div><!-- col-md-4 -->
 
 
 <!-- Table -->
@@ -58,21 +59,24 @@
           <col width="10%">
           <col width="*">
           <col width="10%">
-          <col width="10%">
+          <col width="11%">
+          <col width="9%">
         </colgroup>
         <tr>
-          <th class="notice68">번호</th>
-          <th>제목</th>
-          <th class="notice68">작성일</th>
-          <th class="notice68">조회수</th>
+          <th>番号</th><!-- 번호 -->
+          <th>題目</th><!-- 제목 -->
+          <th>管理者</th><!-- 관리자 -->
+          <th class="notice68">作成日</th><!-- 작성일 -->
+          <th>照会数</th><!-- 조회수 -->
         </tr>
         
         <tbody>
           <c:set var="num1" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}"/>
           <c:forEach var="list" items="${list}">
             <tr>
-              <td class="notice68">${num1}</td><!-- 번호 -->
+              <td>${num1}</td><!-- 번호 -->
               <td class="notice76"><a href="noticeView.do?nt_cd=${list.nt_cd}">${list.title}</a></td><!-- 제목 -->
+              <td>管理者</td><!-- 관리자 -->
               <td>
                 <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${list.wdate}"/>
                 <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>
@@ -139,5 +143,4 @@
   }
 
 </script>
-
 <%@ include file="../footer.jsp" %>	

@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row event8">
       <div class="col-md-12 event9">
-        <h2>공지사항</h2>
+        <h2>お知らせ</h2><!-- 공지 -->
       </div>
     </div>
   </div>
@@ -22,7 +22,7 @@
           
           <input type="hidden" class="hdBno" value="${view.nt_cd}">
           
-          <div>${view.content}</div>
+            <div>${view.content}</div>
           
 <!-- 이전 -->
           <div class="">
@@ -34,7 +34,7 @@
             </c:if>
             <c:if test="${prev ==null}">
             <a href="javascript:void(0)" class="btn"><i class="fa fa-angle-left"></i>
-              <span class="btn btn-outline-primary btn-rounded">마지막입니다</span>
+              <span class="btn btn-outline-primary btn-rounded">ListPage</span>
             </a>
             </c:if>
 <!-- 다음 -->
@@ -47,7 +47,7 @@
             </c:if>
             <c:if test="${next ==null}">
             <a href="javascript:void(0)"  class="btn pull-right">
-              <span class="btn btn-outline-primary btn-rounded">마지막입니다</span>
+              <span class="btn btn-outline-primary btn-rounded">ListPage</span>
                 <i class="fa fa-angle-right"></i>
             </a>
             </c:if>
@@ -56,7 +56,7 @@
 <!-- button -->
           <div class="button">
             <button type="button" class="btn btn-outline-primary btn-rounded" onclick="location.href='notice.do'">
-              <i class="fa fa-list"></i>&nbsp;목록
+              <i class="fa fa-list"></i>&nbsp;リスト<!-- 리스트(목록) -->
             </button>
           </div><!-- button -->
           
@@ -81,5 +81,4 @@
   }
 
 </script>
-
 <%@ include file="../footer.jsp" %>	
