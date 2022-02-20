@@ -4,7 +4,7 @@
 	<section class="hero" style="background:#000000eb; border-top:solid 3px red;">
 		<div class="container">
 			<div class="hero__slider owl-carousel">
-				<div class="hero__items set-bg" data-setbg="/resources/img/hero/hero-1.jpg">
+				<div class="hero__items set-bg" data-setbg="/resources/img/index/cbg1.png">
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="hero__text">
@@ -17,7 +17,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="hero__items set-bg" data-setbg="/resources/img/hero/hero-1.jpg">
+				<div class="hero__items set-bg" data-setbg="/resources/img/index/cbg1.png">
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="hero__text">
@@ -30,7 +30,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="hero__items set-bg" data-setbg="/resources/img/hero/hero-1.jpg">
+				<div class="hero__items set-bg" data-setbg="/resources/img/index/cbg1.png">
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="hero__text">

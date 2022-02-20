@@ -4,9 +4,11 @@ console.log(date.getFullYear());
 const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
 const reserveDate = document.querySelector('.reserve-date');
 const theaterPlace = document.querySelectorAll('.theater-place');
+const theaterLocation = document.querySelectorAll('.theater-location');
 const reserveTimeWant = document.querySelectorAll('.reserve-time-want');
 const inputTitle = document.querySelector('.title');
 const inputSelectedTheater = document.querySelector('.selectedTheater');
+const inputSelectedLocation = document.querySelector('.selectedLocation');
 const inputReserveDate = document.querySelector('.reserveDate');
 const inputRunningTime = document.querySelector('.runningTime');
 const moveSeatForm = document.querySelector('.moveSeatForm');
@@ -95,6 +97,18 @@ theaterPlace.forEach(list => {
     });
 });
 
+theaterLocation.forEach(list => {
+    list.addEventListener('click', function() {
+        const theaterLocationWrapper = document.querySelectorAll('.theater-location-active');
+        theaterLocationWrapper.forEach(li => {li.classList.remove('theater-location-active');
+        });
+        list.classList.add('theater-location-active');
+        console.log(list.innerHTML);
+        inputSelectedLocation.value = list.innerHTML;
+    });
+});
+
+
 reserveTimeWant.forEach(list => {
     list.addEventListener('click', function() {
         const reserveTimeActive = document.querySelectorAll('.reserve-time-active');
@@ -150,23 +164,3 @@ function handleClick(event) {
   }
 init();
 
-var areaDiv = document.getElementsByClassName('theater-location-wrapper');
-
-function areaHandleClick(event) {
- // console.log(event.target);
-//  console.log(event.target.classList);
-  if (event.target.classList[1] === "clicked") {
-    event.target.classList.remove("clicked");
-  } else {
-    for (var i = 0; i < areaDiv.length; i++) {
-      areaDiv[i].classList.remove("clicked");
-    }
-      event.target.classList.add("clicked");
-    }
-  }
-  function initArea() {
-    for (var i = 0; i < areaDiv.length; i++) {
-      areaDiv[i].addEventListener("click", areaHandleClick);
-    }
-  }
-initArea();

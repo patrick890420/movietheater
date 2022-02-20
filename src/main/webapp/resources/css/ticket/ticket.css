@@ -93,7 +93,7 @@
 
 /* content */
 .reserve-container {
-  margin-top: 140px;
+  margin-top: 90px;
   display: flex;
   justify-content: center;
   height: 350px;
@@ -220,7 +220,7 @@
 
 .theater-wrapper {
   padding-left: 12px;
-  padding-top: 2px;
+  padding-top: 15px;
   display: flex;
 }
 
@@ -299,13 +299,20 @@ button.theater-location , button.theater-place{
 }
 
 .reserve-time-active {
-  background-color: #333333;
   color: white;
+  font-weight: bold;
+  background-color:black;
 }
 
-.theater-place-active {
-  background-color: #333333;
+.theater-location-active{
   color: white;
+  font-weight: bold;
+  background-color:black;
+}
+.theater-place-active {
+  color: white;
+  font-weight: bold;
+  background-color:black;
 }
 
 .movie-list-wrapper {

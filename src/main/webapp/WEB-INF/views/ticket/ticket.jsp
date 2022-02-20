@@ -91,6 +91,7 @@
       <input type="hidden" class="title" name="title">
       <input type="hidden" class="movieAge" name="movieAge">
       <input type="hidden" class="selectedTheater" name="selectedTheater">
+      <input type="hidden" class="selectedLocation" name="selectedLocation">
       <input type="hidden" class="reserveDate" name="movieDate">
       <input type="hidden" class="runningTime" name="runningTime">
       <button class="moveSeatButton btn btn-primary" type="button" onclick="location.href='/ticket/seat.do'">예약하기</button>
