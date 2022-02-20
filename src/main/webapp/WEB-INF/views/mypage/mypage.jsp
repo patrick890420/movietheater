@@ -14,8 +14,11 @@
 <div class="d-flex" id="wrapper">
   <!-- Sidebar-->
 
-  <div class="border-end bg-white" id="sidebar-wrapper">
-    <div class="sidebar-heading border-bottom bg-light">My page</div>
+  <div class="border-end bg-white" id="sidebar-wrapper"
+    style="margin-left: 30px;">
+    <div class="sidebar-heading border-bottom bg-light"
+      style="padding: 20px 16px;">My page</div>
+    <!-- margin-top: 70px; -->
     <div class="list-group list-group-flush">
       <a
         class="list-group-item list-group-item-action list-group-item-light p-3"
@@ -23,31 +26,25 @@
         class="list-group-item list-group-item-action list-group-item-light p-3"
         href="myreser.do">My Reservation</a> <a
         class="list-group-item list-group-item-action list-group-item-light p-3"
-        href="mycash.do">My Payment</a>
+        href="mycash.do">My Payment</a> <a
+        class="list-group-item list-group-item-action list-group-item-light p-3"
+        href="mypass.do">パスワード変更</a>
     </div>
   </div>
   <!-- Page content wrapper-->
   <div id="page-content-wrapper">
     <!-- Top navigation-->
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" style="width: 1180px;">
       <div class="container-fluid">
-
         <div class="main-content">
-
-
-
           <div class="container mt-7">
             <!-- Table -->
             <div class="row" style="margin-top: -6%;">
               <div class="col-xl-8 m-auto order-xl-1">
-
-
                 <div class="card-body">
-                  <form class="formform">
-                    <h2>My account.</h2>
-                    <h6 class="heading-small text-muted mb-4">User
-                      information</h6>
+                  <form class="formform" name="form1" method="post" style="margin-left: 150px;">
+                    <h2 style="margin-top: 80px;">My account.</h2>
+                    <h6 class="heading-small text-muted mb-4">私のアカウント</h6>
                     <div class="pl-lg-4">
                       <div class="row">
                         <div class="col-lg-6">
@@ -56,7 +53,7 @@
                               for="input-username">name</label> <input
                               type="text" id="input-username"
                               class="form-control form-control-alternative"
-                              placeholder="Username" value="lucky.jesse">
+                              value="${mvo.username }">
                           </div>
                         </div>
                         <div class="col-lg-6">
@@ -65,27 +62,18 @@
                               for="input-email">Email</label> <input
                               type="email" id="input-email"
                               class="form-control form-control-alternative"
-                              placeholder="jesse@example.com">
+                              value="${mvo.email }">
                           </div>
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                           <div class="form-group focused">
                             <label class="form-control-label"
                               for="input-first-name">Phone</label> <input
                               type="text" id="input-first-name"
                               class="form-control form-control-alternative"
-                              placeholder="First name" value="Lucky">
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="form-group focused">
-                            <label class="form-control-label"
-                              for="input-last-name">Password</label> <input
-                              type="text" id="input-last-name"
-                              class="form-control form-control-alternative"
-                              placeholder="Last name" value="Jesse">
+                              value="${mvo.phone }">
                           </div>
                         </div>
                       </div>
@@ -107,36 +95,35 @@
                         <div class="col-lg-4">
                           <div class="form-group focused">
                             <label class="form-control-label"
-                              for="input-city">Id</label> <input
-                              type="text" id="input-city"
+                              for="">Id</label> <input
+                              type="text" id=""
                               class="form-control form-control-alternative"
-                              value="New York" readonly>
+                              value="${mvo.userid }" readonly>
                           </div>
                         </div>
                         <div class="col-lg-4">
                           <div class="form-group focused">
                             <label class="form-control-label"
-                              for="input-country">gender</label> <input
-                              type="text" id="input-country"
+                              for="">gender</label> <input
+                              type="text" id=""
                               class="form-control form-control-alternative"
-                              value="United States" readonly>
+                              value="${mvo.gender }" readonly>
                           </div>
                         </div>
                         <div class="col-lg-4">
                           <div class="form-group">
                             <label class="form-control-label"
-                              for="input-country">birthday</label> <input
-                              type="number" id="input-postal-code"
+                              for="">birthday</label> <input
+                              type="number" id=""
                               class="form-control form-control-alternative"
-                              readonly>
+                              value="" readonly>
                           </div>
                         </div>
                       </div>
                     </div>
                     <hr class="my-4">
                     <!-- Description -->
-                    <h6 class="heading-small text-muted mb-4">이용약관
-                      동의 내역</h6>
+                    <h6 class="heading-small text-muted mb-4">이용약관 동의 내역</h6>
                     <div class="pl-lg-4">
                       <div class="form-group focused">
                         <label>About Me</label>
@@ -160,9 +147,11 @@
                2. 가입 : “정부혁신1번가”가 제공하는 신청서 양식에 해당 정보를 기입하고, 이 약관에 동의하여 서비스 이용계약을 완료시키는 행위
             </textarea>
                       </div>
-                      
-                       <input type="button" class="input__btn input__btn2" value="수정 완료">
-                       <button type="reset" class=".input__btn input__btn2" value="수정 완료">reset</button>
+
+                      <input type="button" id="updatebtn"
+                        class="input__btn input__btn2" value="수정 완료">
+                      <button type="reset"
+                        class=".input__btn input__btn2" value="수정 완료">reset</button>
                     </div>
                   </form>
                 </div>
@@ -199,29 +188,16 @@
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
 
+<script>
+    $(document).ready(function(){
+        $("#updatebtn").click(function(){
+           alert("수정완료 하였습니다.");
+            document.form1.action = "/mypage/memberUpdate.do";
+            document.form1.submit();
+        });
+    });
+</script>
 
 
 <%@ include file="../footer.jsp"%>
 
-
-<script>
-
-window.addEventListener('DOMContentLoaded', event => {
-
-    // Toggle the side navigation
-    const sidebarToggle = document.body.querySelector('#sidebarToggle');
-    if (sidebarToggle) {
-        // Uncomment Below to persist sidebar toggle between refreshes
-        // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
-        //     document.body.classList.toggle('sb-sidenav-toggled');
-        // }
-        sidebarToggle.addEventListener('click', event => {
-            event.preventDefault();
-            document.body.classList.toggle('sb-sidenav-toggled');
-            localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
-        });
-    }
-
-});
-
-</script>
