@@ -267,7 +267,7 @@ public class AdminController {
     return "redirect:/adm/admin.do";
   }
   
-  @GetMapping(value="/boardImage.do", produces = "application/json; charset=utf8")
+  @PostMapping(value="/boardImage.do", produces = "application/json; charset=utf8")
   public @ResponseBody String boardImage(@RequestParam("file") MultipartFile file) {
      
      JsonObject jsonObject = new JsonObject();
@@ -364,11 +364,7 @@ public class AdminController {
   public String adminNoticeview() {
     return "adm/adminNotice/adminNoticeview";
   }
-  @PostMapping("/boardImage.do")
-  public void boardImage() {
-    
-  }
-  
+
   /* Utility */
   @GetMapping("/adminCodeList.do")
   public String codeList(Model model) {

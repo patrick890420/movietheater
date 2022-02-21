@@ -19,8 +19,8 @@
       <div class="col-lg-12">
         <div class="login__form" style="text-align: center;">
           <h3 style="font-size: 50px;">Sign Up</h3>
-          <form action="/join/joinPro.do" method="post" id=join_form
-          style="padding: 50px 300px; background: antiquewhite; padding-top: 100px;">
+          <form action="/join/joinPro.do" method="post" id=join_form  pg)
+          style="padding: 50px 300px; background:url(/resources/img/auth-bg2.jpg); padding-top: 100px;">
           <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
           <div class="input__item">
             <input type="text" placeholder="이름을 입력해 주세요." id="userName" name="username"> 
