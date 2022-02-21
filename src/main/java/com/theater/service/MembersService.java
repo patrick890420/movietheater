@@ -14,6 +14,9 @@ public interface MembersService {
 	 
 	 public void memberUpdate(MemberVO mvo);
 
+	 
+	 
+
   
 	 
 

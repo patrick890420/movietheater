@@ -1,14 +1,100 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
+<link rel="stylesheet" href="/resources/css/mypage/mypage.css"
+  type="text/css">
 
 
-  
 <!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
 
+<!-- Table -->
+<section class="cash">
+  <div class="container">
+    <div class="row51">
+      <div class="col-md-12 pb-5">
+        <table class="table table-hover">
+          <colgroup>
+            <col width="10%">
+            <col width="*">
+            <col width="10%">
+            <col width="11%">
+            <col width="9%">
+          </colgroup>
+          <tr>
+            <th>코드</th>
+            <!-- 코드 -->
+            <th>영화이름</th>
+            <!-- 영화이름 -->
+            <th>예매일</th>
+            <!-- 예매일 -->
+            <th>금액</th>
+            <!-- 금액 -->
+            <th>결제상태</th>
+            <!-- 결제상태 -->
+          </tr>
+
+          <tbody>
+            <c:set var="num1" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}" />
+            <c:forEach var="list" items="${list}">
+              <tr>
+                <td>${num1}</td>
+                <!-- 코드 -->
+                <td class="cash76"><a href="cashView.do?nt_cd=${list.nt_cd}">${list.title}</a></td>
+                <!-- 영화이름 -->
+                <td>예매일</td>
+                <!-- 예매일 -->
+                <td><fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${list.wdate}" />
+                <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}" /></td>
+                <td class="cash68">${list.hits}</td>
+              </tr>
+              <c:set var="num1" value="${num1-1}" />
+            </c:forEach>
+          </tbody>
+        </table>
+
+        <!-- paging 나중에 다 수정하기-->
+        <form action="mycash.do" name="pageForm" method="get">
+          <div class="product__pagination">
+            <hr>
+            <ul class="pagination pagination-sm">
+              <!-- 2. 이전페이지 활성화여부 -->
+              <c:if test="${pageMaker.prev}">
+                <li>
+                    <a href="#" data-pagenum='${pageMaker.startPage - 1 }'>
+                       <i class="fa fa-angle-double-left"></i>
+                    </a>
+                </li>
+              </c:if>
+              <!-- 1. 페이지네이션 처리 -->
+              <c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
+                <li class="${pageMaker.pageNum eq num ? 'active' : ''}">
+                  <a href="#" data-pagenum='${num}'>${num}</a>
+                </li>
+              </c:forEach>
+              <!-- 3. 다음버튼 활성화여부 -->
+              <c:if test="${pageMaker.next }">
+                <li><a href="#" data-pagenum='${pageMaker.endPage + 1 }'>
+                <i class="fa fa-angle-double-right"></i>
+                </a></li>
+              </c:if>
+            </ul>
+          </div>
+          <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+            <input type="hidden" name="amount" value="${pageMaker.cri.amount }">
+          <input type="hidden" name="searchType" value="${pageMaker.cri.searchType }">
+            <input  type="hidden" name="searchName" value="${pageMaker.cri.searchName }">
+        </form>
+      </div>
+      <!-- md-12 -->
+    </div>
+    <!-- row -->
+  </div>
+  <!-- container -->
+</section>
 
 
 <%@ include file="../footer.jsp"%>
