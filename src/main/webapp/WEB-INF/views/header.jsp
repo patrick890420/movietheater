@@ -84,11 +84,9 @@
       <div class="col-lg-8">
         <div class="header__right">
           <a href="/login/login.do" style="text-align: center;"><span class="icon_lock"><br>로그인</span></a>
-          <a href="/join/join.do" style="text-align: center;"><span
-            class="icon_profile"><br>회원가입</span></a> <a href="/mypage/mypage.do"
-            style="text-align: center;"><span class="icon_profile"><br>마이페이지</span></a>
-          <a href="" style="text-align: center;"><span
-            class="icon_profile"><br>고객센터</span></a>
+          <a href="/join/join.do" style="text-align: center;"><span class="icon_profile"><br>회원가입</span></a>
+            <a href="/mypage/memberUp" style="text-align: center;"> <span class="icon_profile"><!-- 여기까진 했는데 너무 어려워요 ㅠㅠ --><br>마이페이지</span></a>
+          <a href="" style="text-align: center;"><span class="icon_profile"><br>고객센터</span></a>
         </div>
       </div>
     </div>

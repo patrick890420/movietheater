@@ -16,6 +16,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/resources/admin/assets/images/favicon.png">
 <title>JSL Movie Admin</title>
 <!-- Custom CSS -->
+  <script src="/resources/admin/assets/libs/jquery/dist/jquery.min.js"></script>
 <link href="/resources/admin/assets/extra-libs/c3/c3.min.css" rel="stylesheet">
 <!-- datatables -->
 <link href="/resources/admin/assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
@@ -26,6 +27,8 @@
 <link href="/resources/admin/css/style.min.css" rel="stylesheet">
 <link href="/resources/admin/css/event_notice/admin_event_notice.css" rel="stylesheet">
 <link href="/resources/admin/css/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.css" rel="stylesheet">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,7 +37,6 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-  <script src="/resources/admin/assets/libs/jquery/dist/jquery.min.js"></script>
 
 <body>
   <!-- ============================================================== -->

@@ -122,4 +122,26 @@
  <delete id="movieDelete">
   delete from movies m_cd=#{m_cd}
  </delete>
+ 
+ 
+ <insert id="movieReview">
+  insert into review (tkt_cd,review,rwriter,rdate,rgrade,rcode,m_cd) values(#{tkt_cd},#{review},#{rwriter},sysdate,#{rgrade},#{rcode},#{m_cd})
+ </insert>
+ 
+ <select id="moviewReviewRead">
+  select * from review where rcode=#{rcode}
+ </select>
+ 
+ <delete id="movieReviewDelete">
+  delete from review where rcode=#{rcode}
+ </delete>
+ 
+ <update id="moviewReviewUpdate">
+  update from review set review =#{review}, rdate = sysdate where rcode =#{rcode}
+ </update>
+ 
+ <select id="getListWithPageing">
+  select rcode,m_cd,review,rwriter,rdate from review where m_cd=#{m_cd} order by rcode asc
+ </select>
+ 
 </mapper>

@@ -75,7 +75,7 @@
           
           <div class="caption">
             <h3>${elist.title}</h3><!-- 제목 -->
-            <p>基幹</p><!-- 기간 -->
+            <p>${elist.sdate} ~ ${elist.fdate}</p><!-- 기간 -->
           </div>
           </a>
         </div>

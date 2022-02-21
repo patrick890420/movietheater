@@ -9,9 +9,12 @@ import com.theater.domain.NoticeVO;
 public interface EventMapper {
 
 
-//admin입력
+//Common(일반 list와 admin 이름만 같음)
   public void eventInsert(EventVO evo);
-  public List<EventVO>getAdminList(Criteria cri);
   public EventVO getAdminBoardView(int event_cd);
+
+//admin입력
+  public List<EventVO>getAdminList(Criteria cri);
+
   
 }//inter

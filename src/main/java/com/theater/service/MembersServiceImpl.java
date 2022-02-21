@@ -38,6 +38,19 @@ public class MembersServiceImpl implements MembersService {
       return mvo;
 
   }
+  
+  @Override
+  public MemberVO selectMember(String userid) {
+     MemberVO mvo = mmapper.selectMember(userid);
+     return mvo;
+  }
+  
+  @Override
+  public void memberUpdate (MemberVO mvo) {
+    mmapper.memberUpdate(mvo);
+
+  }
+  
 
 
 }
