@@ -9,8 +9,10 @@ import com.theater.domain.NoticeVO;
 public interface EventService {
 
 
-//admin
+//Common
   public void eventInsert(EventVO evo);
+  
+//admin
   public List<EventVO> getAdminList(Criteria cri);
   public EventVO getAdminBoardView(int event_cd);
   

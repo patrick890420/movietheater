@@ -11,6 +11,18 @@
 <select id="totaltheaterList" resultType="com.theater.domain.TheatersVO"> <!-- 기본극장 리스트 -->
   SELECT * FROM THEATERS
 </select>
+<select id="theaterlist" resultType="com.theater.domain.TheatersVO"> <!-- admin 극장 리스트 -->
+  SELECT * FROM THEATERS
+</select>
+<select id="adminScreenInfo" resultType="com.theater.domain.ScreensVO"> <!-- admin 극장 리스트 -->
+  SELECT * FROM SCREENS where t_cd= #{t_cd}
+</select>
+<select id="theatercode" resultType="int"> <!-- 극장코드 -->
+  select max(t_cd) from theaters
+</select>
+<select id="screencode" resultType="int"> <!-- 극장코드 -->
+  select max(screen_cd) from screens
+</select>
 
 <!-- 영화 insert -->
   <insert id="theaterInsertPro">
@@ -26,5 +38,20 @@
       </selectKey>
     insert into screens (screen_cd, t_cd, screen_type, screen_name, seat_amount) values (#{screen_cd}, #{t_cd}, #{screen_type}, #{screen_name}, #{seat_amount})
   </insert>  
+<!-- 영화 insert3 -->
+  <insert id="theaterInsertPro3" parameterType="java.util.List">
+      
+      <selectKey keyProperty="seat_cd" order="BEFORE"  resultType="int">
+        select seat_cd_seq.nextval from dual 
+      </selectKey>
+
+    <foreach collection="list" item="list" open="insert all" close="SELECT * FROM SYS.DUAL" separator=" ">
+      into seats2 
+        (seat_cd, screen_cd, ary) 
+      values
+        (#{seat_cd}, #{screen_cd}, #{list})
+    </foreach>
+  </insert>    
   
 </mapper>
+

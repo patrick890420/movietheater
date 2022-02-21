@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ include file="../header.jsp" %>
+
+<!-- Hero Section Begin -->
 <section class="hero">
   <div class="container">
     <div class="row event8">
@@ -43,7 +45,7 @@
 
 
 <!-- 총 게시글 -->
-<div class="col-md-4 event60" style="max-width: 27.333333%">
+<div class="col-md-4 notice46" style="max-width: 27.333333%">
   <p>銃の掲示板&nbsp;&nbsp;<span>${pageMaker.total}</span>件</p>
 <!-- 총 게시글                                                                                         건-->
 </div><!-- col-md-4 -->
@@ -56,14 +58,16 @@
     <div class="col-md-12 pb-5">
       <table class="table table-hover">
         <colgroup>
-          <col width="10%">
+          <col width="6%">
+          <col width="12%">
           <col width="*">
           <col width="10%">
           <col width="11%">
-          <col width="9%">
+          <col width="7%">
         </colgroup>
         <tr>
           <th>番号</th><!-- 번호 -->
+          <th class="notice70">イメージ</th><!-- img -->
           <th>題目</th><!-- 제목 -->
           <th>管理者</th><!-- 관리자 -->
           <th class="notice68">作成日</th><!-- 작성일 -->
@@ -72,16 +76,19 @@
         
         <tbody>
           <c:set var="num1" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}"/>
-          <c:forEach var="list" items="${list}">
+          <c:forEach var="nlist" items="${nlist}">
             <tr>
               <td>${num1}</td><!-- 번호 -->
-              <td class="notice76"><a href="noticeView.do?nt_cd=${list.nt_cd}">${list.title}</a></td><!-- 제목 -->
+              <td>
+                <button type="button" class="btn" data-toggle="modal" data-target="#bs-example-modal-lg">${nlist.n_img}</button>
+              </td><!-- img -->
+              <td class="notice85"><a href="noticeView.do?nt_cd=${nlist.nt_cd}">${nlist.title}</a></td><!-- 제목 -->
               <td>管理者</td><!-- 관리자 -->
               <td>
-                <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${list.wdate}"/>
+                <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${nlist.wdate}"/>
                 <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>
               </td>
-              <td class="notice68">${list.hits}</td>
+              <td class="notice68">${nlist.hits}</td>
             </tr>
            <c:set var="num1" value="${num1-1}"/>
          </c:forEach>

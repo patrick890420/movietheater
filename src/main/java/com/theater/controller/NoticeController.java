@@ -24,19 +24,20 @@ import lombok.extern.log4j.Log4j;
 @AllArgsConstructor
 @Log4j
 public class NoticeController {
-  
+
+
   @Setter(onMethod_=@Autowired)
   private NoticeService nService;
   
   
   @GetMapping("/notice.do")
   public void notice(Criteria cri, Model model) {
-    model.addAttribute("list", nService.getNoticeList(cri));
+    model.addAttribute("nlist", nService.getNoticeList(cri));
 //전체조회값
     int total= nService.getTotal(cri);
     model.addAttribute("pageMaker",new PageVO(cri, total));
-    
   }
+  
   @GetMapping("/noticeView.do")
   public void adminBoardView(@RequestParam("nt_cd")int nt_cd,Model model) {
     nService.getViewCount(nt_cd);

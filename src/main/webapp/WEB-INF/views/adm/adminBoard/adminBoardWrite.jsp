@@ -38,7 +38,8 @@
       <div class="card-body">
 
 <!--           Table -->
-<form name="admin" method="get" action="adminBoardWritePro.do" enctype="multipart/form-data" onsubmit="return check()">
+<form id="borad" name="admin" method="post" action="adminBoardWritePro.do" onsubmit="return check()">
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
   <table class="table table-striped table-bordered no-wrap dataTable">
     <colgroup>
       <col width= "20%">
@@ -60,9 +61,16 @@
         <td><input class="form-control" type="text" name="title" placeholder="題目"></td>
       </tr>
       <tr>
-        <th class="adminwrite66">内容</th><!-- 제목 -->
-        <td><textarea class="form-control" name="content" id="summernote" rows="8" placeholder="内容"></textarea></td>
+        <th class="adminwrite66">内容</th><!-- 내용 -->
+        
+        <td>
+        <textarea class="form-control summernote" name="content" id="summernote" rows="8" placeholder="内容"></textarea>
+        </td>
       </tr>
+<!--       <tr> -->
+<!--         <th>첨부</th> -->
+<!--         <td><input type="file" name="uploadFile" id="appfile"></td> -->
+<!--       </tr> -->
     </tbody>
   </table>
 
@@ -91,8 +99,8 @@
   <!-- ============================================================== -->
   
 <script>
-//summernote jquery
-$(function(){
+
+$(document).ready(function() {
   $('#summernote').summernote({
   height: 300,
   fontNames : [ '맑은고딕', 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', ],
@@ -106,7 +114,36 @@ $(function(){
               }
           }
   }
-  });
-  });//function
+  })
+
+  function sendFile(file,  el) {
+    var form_data = new FormData();
+    var csrfHeaderName = "${_csrf.headerName}";
+    var csrfTokenValue = "${_csrf.token}";
+    //스프링 시큐리티 이용하면 CSRF 토큰을 같이 전송해야한다
+    $(document).ajaxSend(function(e, xhr, options) {
+          xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+       });
+       form_data.append('file', file);
+       
+       $.ajax({
+         //data: form_data,
+         type: "get",
+         url: '/adm/boardImage.do?file='+file.name,
+         cache: false,
+         contentType: false,
+         enctype: 'multipart/form-data',
+         processData: false,
+         success: function(img_name) {
+           alert(img_name);
+          $(el).summernote('editor.insertImage',img_name.url);
+         }, error: function (e) { 
+           // 전송 후 에러 발생 시 실행 코드
+         }  
+       });
+  }
+
+});//function
+  
 </script>
 <%@ include file="../adminfooter.jsp"%>

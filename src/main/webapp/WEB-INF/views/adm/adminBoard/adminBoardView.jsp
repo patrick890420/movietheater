@@ -55,11 +55,13 @@
 <!-- button -->
   <div class="adminbutton">
     <a href="adminBoardModify.do?nt_cd=${prev.nt_cd}&pageNum=${cri.pageNum}&amount=${cri.amount}&type=${cri.type}&keyword=${cri.keyword}"
-       class="btn btn-outline-primary btn-rounded"><i class="fas fa-check"></i>修整</a><!-- 수정 -->
+       class="btn btn-outline-primary btn-rounded"><i class="fas fa-check"></i>修整
+    </a>&nbsp;<!-- 수정 -->
     <a href="adminBoardDelete.do?nt_cd=${view.nt_cd}" onClick="return confirm('削除しますか？')"
-       class="btn btn-outline-primary btn-rounded" id="delete_btn"><i class="fas fa-times"></i>削除</a><!-- 삭제 -->
+       class="btn btn-outline-primary btn-rounded" id="delete_btn"><i class="fas fa-times"></i>削除
+    </a>&nbsp;<!-- 삭제 -->
     <button type="button" class="btn btn-outline-primary btn-rounded" onclick="location.href='adminNotice.do'">
-      <i class="fas fa-list"></i>&nbsp;リスト<!-- 리스트(목록) -->
+      <i class="fas fa-list"></i>リスト<!-- 리스트(목록) -->
     </button>
 
 </div><!-- write77 -->

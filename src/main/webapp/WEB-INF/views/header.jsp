@@ -69,7 +69,7 @@
     </div>
   </header>
   <!-- Header End -->
-  <div class="container">
+  <div class="container" style="height: 82px;">
     <div class="row">
       <div class="col-lg-3">
         <div class="header__logo">
@@ -83,10 +83,24 @@
       </div>
       <div class="col-lg-8">
         <div class="header__right">
-          <a href="/login/login.do" style="text-align: center;"><span class="icon_lock"><br>로그인</span></a>
-          <a href="/join/join.do" style="text-align: center;"><span class="icon_profile"><br>회원가입</span></a>
-            <a href="/mypage/memberUp" style="text-align: center;"> <span class="icon_profile"><!-- 여기까진 했는데 너무 어려워요 ㅠㅠ --><br>마이페이지</span></a>
-          <a href="" style="text-align: center;"><span class="icon_profile"><br>고객센터</span></a>
+          <sec:authorize access="isAnonymous()">
+            <a href="/login/login.do" style="text-align: center;"><span class="icon_lock"><br>로그인</span></a>
+            <a href="/join/join.do" style="text-align: center;"><span class="icon_profile"><br>회원가입</span></a>
+          </sec:authorize>
+          
+          <sec:authorize access="isAuthenticated()">
+            <!-- <a href="/login/logout.do" style="text-align: center;"><span class="icon_lock"><br>로그아웃</span></a> -->
+              <form name="lg" action="/adm/adminLogout" method="post"><!-- spring security 로그아웃은 get 불가 -->
+                     
+                <a href="/mypage/memberUp" style="text-align: center;"> <span class="icon_profile"><br>마이페이지</span></a>
+                               
+                <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
+                <button type="submit" style="border:0 none; background:transparent; top: -24px; right: 10px; position: relative;" ><span class="icon_profile"><br>로그아웃</span></button> 
+
+                <a href="" style="text-align: center;"><span class="icon_profile"><br>고객센터</span></a>
+               
+              </form>
+          </sec:authorize>
         </div>
       </div>
     </div>
