@@ -197,7 +197,7 @@
                         </thead>
                           <tbody>
                              <c:forEach items="${directors}" var="directors">
-                              <tr>
+                              <tr class="directorsTr">
                                 <td>
                                   <p class="directorsCode mb-0" data-toggle="modal" data-target="#directors-header-modal">${directors.d_cd}</p>
                                 </td>
@@ -232,7 +232,7 @@
                           <div class="card">
                             <div class="card-body">
                               <h4 class="card-title">国家登録</h4>
-                              <form class="mt-4" action="nationsInsert.do" method="post">
+                              <form class="mt-4" action="nationInsert.do" method="post">
                                 <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
                                   <div class="form-group">
                                     <div class="row">
@@ -263,7 +263,7 @@
                             </thead>
                             <tbody>
                               <c:forEach items="${nations}" var="nations">
-                                <tr>
+                                <tr class="nationsTr">
                                   <td>
                                     <p class="nationsCode mb-0" data-toggle="modal" data-target="#nations-header-modal">${nations.n_cd}</p>
                                   </td>
@@ -328,7 +328,7 @@
                             </thead>
                             <tbody>
                               <c:forEach items="${genres}" var="genres">
-                                <tr>
+                                <tr class="genresTr">
                                   <td>
                                     <p class="genresCode mb-0" data-toggle="modal" data-target="#genres-header-modal">${genres.g_cd}</p>
                                   </td>
@@ -401,8 +401,8 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-          <button type="button" class="btn btn-danger">Delete</button>
+          <input type="button" class="btn btn-primary" onclick="aModify();" value="Save changes">
+          <input type="button" class="btn btn-danger" onclick="aDelete();" value="Delete">
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -416,18 +416,18 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
       </div>
       <div class="modal-body">
-        <form>
+        <form id="directorsForm">
           <div class="form-group">
-            <label for="a_cd">CODE</label>
-            <input class="form-control" id="modalA_cd" name="a_cd" readonly>
+            <label for="d_cd">CODE</label>
+            <input class="form-control" id="modalD_cd" name="d_cd" readonly>
           </div>
           <div class="form-group">
-            <label for="actors_name">NAME</label>
-            <input class="form-control" id="modalA_name" name="a_name">
+            <label for="directors_name">NAME</label>
+            <input class="form-control" id="modalD_name" name="d_name">
           </div>
           <div class="form-group">
-            <label for="actors_photo">PHOTO</label>
-            <input class="form-control" type="hidden" id="modalA_img" name="a_img">
+            <label for="directors_photo">PHOTO</label>
+            <input class="form-control" type="hidden" id="modalD_img" name="d_img">
             <img class="form-control" id="showImg" name="showImg" alt="" src="" style="height:250px;">
           </div>
           <div>
@@ -449,15 +449,15 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-          <button type="button" class="btn btn-danger">Delete</button>
+           <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+          <input type="button" class="btn btn-primary" onclick="dModify();" value="Save changes">
+          <input type="button" class="btn btn-danger" onclick="dDelete();" value="Delete">
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
    <!-- nations Header Modal -->
-<div id="nations-header-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="primary-header-modalLabel" aria-hidden="true">
+  <div id="nations-header-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="primary-header-modalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header modal-colored-header bg-primary">
@@ -465,7 +465,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
       </div>
       <div class="modal-body">
-        <form>
+        <form id="nationsForm">
           <div class="form-group">
             <label for="n_cd">CODE</label>
             <input class="form-control" id="modalN_cd" name="n_cd" readonly>
@@ -478,8 +478,8 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-          <button type="button" class="btn btn-danger">Delete</button>
+          <input type="button" class="btn btn-primary" onclick="nModify();" value="Save changes">
+          <input type="button" class="btn btn-danger" onclick="nDelete();" value="Delete">
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -493,21 +493,21 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         </div>
         <div class="modal-body">
-          <form>
+          <form id="genresForm">
             <div class="form-group">
-              <label for="a_cd">CODE</label>
+              <label for="g_cd">CODE</label>
               <input class="form-control" id="modalG_cd" name="g_cd" readonly>
             </div>
             <div class="form-group">
-              <label for="actors_name">NAME</label>
+              <label for="genres_name">NAME</label>
               <input class="form-control" id="modalG_name" name="g_name">
             </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-          <button type="button" class="btn btn-danger">Delete</button>
+          <input type="button" class="btn btn-primary" onclick="gModify();" value="Save changes">
+          <input type="button" class="btn btn-danger" onclick="gDelete();" value="Delete">
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -519,7 +519,6 @@ $(".actorsTr").on("click", function () {
   var actorsInfo = $(this);
   var acd = actorsInfo.find(".actorsCode").text();
   var aname = actorsInfo.find(".actorsName").text(); 
-  console.log(actorsInfo.find(".actorsName").text());
   var aimg = actorsInfo.find(".actorsImg").val();
     $("#modalA_cd").val(acd);
     $("#modalA_name").val(aname);
@@ -527,17 +526,86 @@ $(".actorsTr").on("click", function () {
     $("#showImg").attr("src","/upload/"+aimg);
   });
   
-$(".actorsTr").on("click", function () {
-  var actorsInfo = $(this);
-  var acd = actorsInfo.find(".actorsCode").text();
-  var aname = actorsInfo.find(".actorsName").text(); 
-  console.log(actorsInfo.find(".actorsName").text());
-  var aimg = actorsInfo.find(".actorsImg").val();
-    $("#modalA_cd").val(acd);
-    $("#modalA_name").val(aname);
-    $("#modalA_img").val(aimg);
-    $("#showImg").attr("src","/upload/"+aimg);
+$(".directorsTr").on("click", function () {
+  var directorsInfo = $(this);
+  var dcd = directorsInfo.find(".directorsCode").text();
+  var dname = directorsInfo.find(".directorsName").text(); 
+  var dimg = directorsInfo.find(".directorsImg").val();
+    $("#modalD_cd").val(dcd);
+    $("#modalD_name").val(dname);
+    $("#modalD_img").val(dimg);
+    $("#showImg").attr("src","/upload/"+dimg);
   });
+  
+$(".nationsTr").on("click", function () {
+  var nationsInfo = $(this);
+  var ncd = nationsInfo.find(".nationsCode").text();
+  var nname = nationsInfo.find(".nationsName").text(); 
+    $("#modalN_cd").val(ncd);
+    $("#modalN_name").val(nname);
+  });
+  
+$(".genresTr").on("click", function () {
+  var genresInfo = $(this);
+  var gcd = genresInfo.find(".genresCode").text();
+  var gname = genresInfo.find(".genresName").text(); 
+    $("#modalG_cd").val(gcd);
+    $("#modalG_name").val(gname);
+  });
+  
+function aModify() {
+  var aForm = document.getElementById('actorsForm');
+  aForm.action = "actorsModify.do";
+  aForm.method = "get";
+  aForm.submit();
+} 
+function dModify() {
+  var dForm = document.getElementById('directorsForm');
+  dForm.action = "directorsModify.do";
+  dForm.method = "get";
+  dForm.submit();
+} 
+function nModify() {
+  var nForm = document.getElementById('nationsForm');
+  nForm.action = "nationModify.do";
+  nForm.method = "get";
+  nForm.submit();
+} 
+function gModify() {
+  var gForm = document.getElementById('genresForm');
+  gForm.action = "genresModify.do";
+  gForm.method = "get";
+  gForm.submit();
+} 
+
+
+function aDelete() {
+  var aForm = document.getElementById('actorsForm');
+  aForm.action = "actorsDelete.do";
+  aForm.method = "get";
+  aForm.submit();
+}
+
+function dDelete() {
+  var dForm = document.getElementById('directorsForm');
+  dForm.action = "directorsDelete.do";
+  dForm.method = "get";
+  dForm.submit();
+}
+
+function nDelete() {
+  var nForm = document.getElementById('nationsForm');
+  nForm.action = "nationDelete.do";
+  nForm.method = "get";
+  nForm.submit();
+}
+
+function gDelete() {
+  var gForm = document.getElementById('genresForm');
+  gForm.action = "genresDelete.do";
+  gForm.method = "get";
+  gForm.submit();
+}
 </script>
 <!-- ============================================================== -->
 <!-- End Container fluid  -->

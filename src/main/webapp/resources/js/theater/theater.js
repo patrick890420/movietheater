@@ -71,7 +71,6 @@ function filmDate() {
         dayClickEvent(button1);
     }
 }
-
 function dayClickEvent(button) {
     button.addEventListener('click', function() {
         const movieDateWrapperActive = document.querySelectorAll(

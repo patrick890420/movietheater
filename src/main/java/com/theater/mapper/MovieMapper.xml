@@ -106,4 +106,42 @@
     select * from sys.dual
   </insert>
   
+  <select id="adminMovieSelect" resultType="com.theater.domain.MovieSelectVO">
+  
+  select a.a_cd as a_cd, a.a_name as a_name, a.a_img as a_img,d.d_cd as d_cd, d.d_name as d_name, d.d_img as d_img, n.n_cd as n_cd,n.n_name as n_name,g.g_cd as g_cd,g.g_name as g_name,m.m_cd as m_cd,title,subtitle,rdate,rtime,rate,intro,poster
+  from movies m, m_actors ma, actors a, m_directors md, directors d,m_nations mn, nations n,m_genres mg,genres g
+  where m.m_cd = ma.m_cd and ma.a_cd = a.a_cd and m.m_cd = md.m_cd and md.d_cd = d.d_cd and m.m_cd = mn.m_cd and mn.n_cd = n.n_cd and m.m_cd=mg.m_cd and mg.g_cd = g.g_cd
+  and m.m_cd=#{m_cd}
+  
+  </select>
+  
+ <select id="movieStillcutSelect" resultType="com.theater.domain.M_stillcutVO">
+  select * from M_stillcut where m_cd=#{m_cd}
+ </select>
+ 
+ <delete id="movieDelete">
+  delete from movies m_cd=#{m_cd}
+ </delete>
+ 
+ 
+ <insert id="movieReview">
+  insert into review (tkt_cd,review,rwriter,rdate,rgrade,rcode,m_cd) values(#{tkt_cd},#{review},#{rwriter},sysdate,#{rgrade},#{rcode},#{m_cd})
+ </insert>
+ 
+ <select id="moviewReviewRead">
+  select * from review where rcode=#{rcode}
+ </select>
+ 
+ <delete id="movieReviewDelete">
+  delete from review where rcode=#{rcode}
+ </delete>
+ 
+ <update id="moviewReviewUpdate">
+  update from review set review =#{review}, rdate = sysdate where rcode =#{rcode}
+ </update>
+ 
+ <select id="getListWithPageing">
+  select rcode,m_cd,review,rwriter,rdate from review where m_cd=#{m_cd} order by rcode asc
+ </select>
+ 
 </mapper>

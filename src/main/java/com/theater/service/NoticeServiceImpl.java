@@ -16,44 +16,64 @@ public class NoticeServiceImpl implements NoticeService {
 
   
 //  자동주입
-  private NoticeMapper nmapper;
+  private NoticeMapper nMapper;
 
 
   @Override
   public void noticeInsert(NoticeVO nvo) {
-    nmapper.noticeInsert(nvo); 
+    nMapper.noticeInsert(nvo); 
   }
   @Override
-  public List<NoticeVO> getAdminList(Criteria cri) {
-    return nmapper.getAdminList(cri);
+  public List<NoticeVO> getNoticeList(Criteria cri) {
+    return nMapper.getNoticeList(cri);
   }
   @Override
   public NoticeVO getAdminBoardView(int nt_cd) {
-    nmapper.getAdminBoardView(nt_cd);
-    return nmapper.getAdminBoardView(nt_cd);
+    nMapper.getAdminBoardView(nt_cd);
+    return nMapper.getAdminBoardView(nt_cd);
   }
   
 //전체 조회값
   @Override
   public int getTotal(Criteria cri){
-    return nmapper.getTotal(cri);
+    return nMapper.getTotal(cri);
   }
-
+  
+  @Override
+  public boolean modify(NoticeVO notice) {
+    return nMapper.modify(notice)==1;
+  }
+  
+  @Override
+  public boolean delete(int nt_cd) {
+    return nMapper.delete(nt_cd)== 1;
+  }
     
   @Override
   public NoticeVO nextPage(int nt_cd) {
-    return nmapper.nextPage(nt_cd);
+    return nMapper.nextPage(nt_cd);
   }
   @Override
   public NoticeVO prevPage(int nt_cd) {
-    return nmapper.prevPage(nt_cd);
+    return nMapper.prevPage(nt_cd);
+  }
+  @Override
+  public List<NoticeVO> getNoticeList() {
+    return nMapper.getNoticeList();
   }
 
-  
-  
 
+//User
+//view
+  @Override
+  public NoticeVO getNoticeView(int nt_cd) {
+   return nMapper.getNoticeView(nt_cd);
+  }
+//조회수
+  @Override
+  public void getViewCount(int nt_cd) {
+    nMapper.getViewCount(nt_cd);
   
-
-  
+}
   
 }//class

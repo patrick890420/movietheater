@@ -1,117 +1,136 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
+<link rel="stylesheet" href="/resources/css/mypage/mypage.css" type="text/css">
 
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Simple Sidebar - Start Bootstrap Template</title>
-
-
-        <div class="d-flex" id="wrapper">
-            <!-- Sidebar-->
-            <div class="border-end bg-white" id="sidebar-wrapper">
-                <div class="sidebar-heading border-bottom bg-light">List</div>
-                <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="">Home</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">My account</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">나의 예약</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">결제...수단..?</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
-                </div>
-            </div>
-            <!-- Page content wrapper-->
-            <div id="page-content-wrapper">
-                <!-- Top navigation-->
-                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                    <div class="container-fluid">
-                    
-                    <div class="main-content">
-                    
-                    
-                    
-<div class="container mt-7">
-<!-- Table -->
-<div class="row" style="margin-top: -6%;">
-<div class="col-xl-8 m-auto order-xl-1">
+<meta charset="utf-8" />
+<meta name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>Simple Sidebar - Start Bootstrap Template</title>
 
 
-<div class="card-body">
-<form class="formform">
-<h2>My account.</h2>
-<h6 class="heading-small text-muted mb-4">User information</h6>
-<div class="pl-lg-4">
-<div class="row">
-<div class="col-lg-6">
-<div class="form-group focused">
-<label class="form-control-label" for="input-username">name</label>
-<input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="lucky.jesse">
-</div>
-</div>
-<div class="col-lg-6">
-<div class="form-group">
-<label class="form-control-label" for="input-email">Email</label>
-<input type="email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com">
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-lg-6">
-<div class="form-group focused">
-<label class="form-control-label" for="input-first-name">Phone</label>
-<input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="Lucky">
-</div>
-</div>
-<div class="col-lg-6">
-<div class="form-group focused">
-<label class="form-control-label" for="input-last-name">Password</label>
-<input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="Jesse">
-</div>
-</div>
-</div>
-</div>
-<hr class="my-4">
-<!-- Address -->
-<h6 class="heading-small text-muted mb-4">이하의 정보는 수정할 수 없습니다.</h6>
-<div class="pl-lg-4">
-<div class="row">
-<div class="col-md-12">
-<div class="form-group focused">
-<!-- <label class="form-control-label" for="input-address">Address</label>
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar-->
+
+  <div class="border-end bg-white" id="sidebar-wrapper"
+    style="margin-left: 30px;">
+    <div class="sidebar-heading border-bottom bg-light"
+      style="padding: 20px 16px;">My page</div>
+    <!-- margin-top: 70px; -->
+    <div class="list-group list-group-flush">
+      <a
+        class="list-group-item list-group-item-action list-group-item-light p-3"
+        href="mypage.do">My account</a> <a
+        class="list-group-item list-group-item-action list-group-item-light p-3"
+        href="myreser.do">My Reservation</a> <a
+        class="list-group-item list-group-item-action list-group-item-light p-3"
+        href="mycash.do">My Payment</a> <a
+        class="list-group-item list-group-item-action list-group-item-light p-3"
+        href="mypass.do">パスワード変更</a>
+    </div>
+  </div>
+  <!-- Page content wrapper-->
+  <div id="page-content-wrapper">
+    <!-- Top navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" style="width: 1180px;">
+      <div class="container-fluid">
+        <div class="main-content">
+          <div class="container mt-7">
+            <!-- Table -->
+            <div class="row" style="margin-top: -6%;">
+              <div class="col-xl-8 m-auto order-xl-1">
+                <div class="card-body">
+                  <form class="formform" name="form1" method="post" style="margin-left: 150px;">
+                    <h2 style="margin-top: 80px;">My account.</h2>
+                    <h6 class="heading-small text-muted mb-4">私のアカウント</h6>
+                    <div class="pl-lg-4">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="form-group focused">
+                            <label class="form-control-label"
+                              for="input-username">name</label> <input
+                              type="text" id="input-username"
+                              class="form-control form-control-alternative"
+                              value="${mvo.username }">
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <label class="form-control-label"
+                              for="input-email">Email</label> <input
+                              type="email" id="input-email"
+                              class="form-control form-control-alternative"
+                              value="${mvo.email }">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="form-group focused">
+                            <label class="form-control-label"
+                              for="input-first-name">Phone</label> <input
+                              type="text" id="input-first-name"
+                              class="form-control form-control-alternative"
+                              value="${mvo.phone }">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="my-4">
+                    <!-- Address -->
+                    <h6 class="heading-small text-muted mb-4">이하의
+                      정보는 수정할 수 없습니다.</h6>
+                    <div class="pl-lg-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group focused">
+                            <!-- <label class="form-control-label" for="input-address">Address</label>
 <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text"> -->
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-lg-4">
-<div class="form-group focused">
-<label class="form-control-label" for="input-city">Id</label>
-<input type="text" id="input-city" class="form-control form-control-alternative" value="New York" readonly>
-</div>
-</div>
-<div class="col-lg-4">
-<div class="form-group focused">
-<label class="form-control-label" for="input-country">gender</label>
-<input type="text" id="input-country" class="form-control form-control-alternative" value="United States" readonly>
-</div>
-</div>
-<div class="col-lg-4">
-<div class="form-group">
-<label class="form-control-label" for="input-country">birthday</label>
-<input type="number" id="input-postal-code" class="form-control form-control-alternative" readonly>
-</div>
-</div>
-</div>
-</div>
-<hr class="my-4">
-<!-- Description -->
-<h6 class="heading-small text-muted mb-4">이용약관 동의 내역</h6>
-<div class="pl-lg-4">
-<div class="form-group focused">
-<label>About Me</label>
-<textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ..." readonly>제1장 총칙
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-4">
+                          <div class="form-group focused">
+                            <label class="form-control-label"
+                              for="">Id</label> <input
+                              type="text" id=""
+                              class="form-control form-control-alternative"
+                              value="${mvo.userid }" readonly>
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="form-group focused">
+                            <label class="form-control-label"
+                              for="">gender</label> <input
+                              type="text" id=""
+                              class="form-control form-control-alternative"
+                              value="${mvo.gender }" readonly>
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="form-group">
+                            <label class="form-control-label"
+                              for="">birthday</label> <input
+                              type="number" id=""
+                              class="form-control form-control-alternative"
+                              value="" readonly>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="my-4">
+                    <!-- Description -->
+                    <h6 class="heading-small text-muted mb-4">이용약관 동의 내역</h6>
+                    <div class="pl-lg-4">
+                      <div class="form-group focused">
+                        <label>About Me</label>
+                        <textarea rows="4"
+                          class="form-control form-control-alternative"
+                          placeholder="A few words about you ..."
+                          readonly>제1장 총칙
                                  제1조 (목적)
                                  이 약관은 행정안전부의 정부혁신 공식 홈페이지 ‘정부혁신1번가’ (이하 "정부혁신1번가”라 합니다) 가 제공하는 모든 서비스(이하 "서비스"라 합니다)를 이용함에 있어 이용자와 "정부혁신1번가"간의 권리·의무 및 책임사항과 기타 필요한 사항을 정하는 데 목적이 있습니다.
                                  
@@ -127,16 +146,21 @@
                
                2. 가입 : “정부혁신1번가”가 제공하는 신청서 양식에 해당 정보를 기입하고, 이 약관에 동의하여 서비스 이용계약을 완료시키는 행위
             </textarea>
-</div>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!--                         <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+                      </div>
+
+                      <input type="button" id="updatebtn"
+                        class="input__btn input__btn2" value="수정 완료">
+                      <button type="reset"
+                        class=".input__btn input__btn2" value="수정 완료">reset</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--                         <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
@@ -153,39 +177,27 @@
                                 </li>
                             </ul>
                         </div> -->
-                    </div>
-                </nav>
+  </div>
+  </nav>
 
-            </div>
+</div>
 
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+<!-- Bootstrap core JS-->
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
 
+<script>
+    $(document).ready(function(){
+        $("#updatebtn").click(function(){
+           alert("수정완료 하였습니다.");
+            document.form1.action = "/mypage/memberUpdate.do";
+            document.form1.submit();
+        });
+    });
+</script>
 
 
 <%@ include file="../footer.jsp"%>
 
-
-<script>
-
-window.addEventListener('DOMContentLoaded', event => {
-
-    // Toggle the side navigation
-    const sidebarToggle = document.body.querySelector('#sidebarToggle');
-    if (sidebarToggle) {
-        // Uncomment Below to persist sidebar toggle between refreshes
-        // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
-        //     document.body.classList.toggle('sb-sidenav-toggled');
-        // }
-        sidebarToggle.addEventListener('click', event => {
-            event.preventDefault();
-            document.body.classList.toggle('sb-sidenav-toggled');
-            localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
-        });
-    }
-
-});
-
-</script>

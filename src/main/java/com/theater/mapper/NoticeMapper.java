@@ -7,25 +7,25 @@ import com.theater.domain.NoticeVO;
 
 public interface NoticeMapper {
 
-  
-//admin
+
+//Common(일반 list와 admin 이름만 같음)
   public void noticeInsert(NoticeVO nvo);
-  public List<NoticeVO>getAdminList(Criteria cri);
+  public int modify(NoticeVO notice);
+  public int delete(int nt_cd);
+
+//admin
+  public List<NoticeVO>getNoticeList(Criteria cri);
+  public List<NoticeVO>getNoticeList();
   public NoticeVO getAdminBoardView(int nt_cd);
 
-//전체 조회값
+//User
+  public NoticeVO getNoticeView(int nt_cd);
+  public void getViewCount(int nt_cd);
   public int getTotal(Criteria cri);
-
-//page
-  public List<NoticeVO> getListWithPaging(Criteria cri);
-
-//제목 검색 결과 view page
   public NoticeVO nextPage(int nt_cd);
   public NoticeVO prevPage(int nt_cd);
-
-//조회수 readcound
-  public void readCount(int nt_cd);
-
+//pageing
+  public List<NoticeVO> getListWithPaging(Criteria cri);
 
   
 }//class

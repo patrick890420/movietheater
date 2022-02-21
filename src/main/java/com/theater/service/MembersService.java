@@ -9,5 +9,12 @@ public interface MembersService {
 	public int idChk(String userid);
 	
 	 public MemberVO memberLogin(MemberVO mvo);
+	 
+	 public MemberVO selectMember(String userid);
+	 
+	 public void memberUpdate(MemberVO mvo);
+
+  
+	 
 
 }

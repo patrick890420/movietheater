@@ -38,7 +38,7 @@
     <!-- Start Page Content -->
     <!-- ============================================================== -->
     <!-- order table -->
-
+<input type="hidden" name="m_cd" value="${m_cd}">
     <!-- multi-column ordering -->
     <div class="row">
       <div class="col-12">
@@ -55,16 +55,19 @@
                     <th>SUBTITLE</th>
                     <th>DATE</th>
                     <th>RATE</th>
+                    <th>INPUT</th>
                   </tr>
                 </thead>
                 <tbody>
                   <c:forEach items="${list}" var="mlist" >
                   <tr>
                     <td>${mlist.m_cd }</td>
-                    <td><a href="/adm/adminMovieInfoInsert.do?m_cd=${mlist.m_cd }">${mlist.title}</a></td>
+                    <td><a href="/adm/adminMovieView.do?m_cd=${mlist.m_cd }">${mlist.title}</a></td>
                     <td>${mlist.subtitle}</td>
-                    <td>${mlist.rdate}</td>
+                    <fmt:parseDate value="${mlist.rdate}" var="dateValue" pattern="yyyy-MM-dd"/>
+                    <td><fmt:formatDate value="${dateValue}" pattern="yyyy-MM-dd"/></td>
                     <td>${mlist.rate}</td>
+                    <td><a class="btn btn-danger" href="/adm/adminMovieInfoInsert.do?m_cd=${mlist.m_cd }" >정보 입력</a></td>
                   </tr>
                   </c:forEach>
                 </tbody>
@@ -75,6 +78,7 @@
                     <th>SUBTITLE</th>
                     <th>DATE</th>
                     <th>RATE</th>
+                    <th>INPUT</th>
                   </tr>
                 </tfoot>
               </table>

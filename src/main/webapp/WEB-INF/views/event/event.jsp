@@ -7,45 +7,37 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 event9">
-      <h2>EVENT</h2><!-- EVENT -->
+      <h2>イベント</h2><!-- EVENT -->
     </div><!-- md12 -->
-    </div><!-- row -->
-    <div class="row event13">
-      <div class="col-md-12">
-        <ol class="breadcrumb15">
-          <li>
-            <a href="/ticket/ticket.do">영화 / 예매</a><!-- 영화 / 예매 -->
-            <a href="/theater/theater.do">CGV 극장별</a><!-- CGV 극장별 -->
-          </li>
-          <li class="event24">
-            <a href="#"style="color: #e53637;">종료 이벤트</a><!-- 종료 이벤트 -->
-          </li><!--  -->
-<!--           <li><a href="#">당첨자 발표</a></li> -->
-<!--           <li><a href="#">SPECIAL</a></li> -->
-<!--           <li><a href="#">Membership / CLUB</a></li> -->
-<!--           <li><a href="#">제휴 / 할인</a></li> -->
-        </ol>
-      </div><!-- md9 -->
-    </div><!-- row -->
-  </div><!-- container -->
+  </div><!-- row -->
+  <div class="row event13">
+    <div class="col-md-12">
+      <ol class="breadcrumb15">
+        <li>
+          <a href="/ticket/ticket.do">映画 / 前売り</a><!-- 영화 / 예매 -->
+          <a href="/theater/theater.do">CGV 劇場別</a><!-- CGV 극장별 -->
+        </li>
+      </ol>
+    </div><!-- md9 -->
+  </div><!-- row -->
+</div><!-- container -->
 </section><!-- hero -->
 <!-- Hero Section End -->
-
 
 <!-- search -->
 <form name="myform" method="get" action="event.do" id="searchForm">
   <div class="container">
     <div class="row">
-      <div class="col-lg-9" style="padding-left: 790px;">
+      <div class="col-lg-9" style="padding-left: 800px;">
       <select name="searchType" class="select">
-        <option value=""<c:out value="${pageMaker.cri.searchType==null?'selected':''}"/>>선택</option>
-          <option value="title"<c:out value="${pageMaker.cri.searchType eq 'title'?'selected':''}"/>>제목</option>
-          <option value="content"<c:out value="${pageMaker.cri.searchType eq 'content'?'selected':''}"/>>내용</option>
+        <option value=""<c:out value="${pageMaker.cri.searchType==null?'selected':''}"/>>選択</option><!-- 선택 -->
+        <option value="title"<c:out value="${pageMaker.cri.searchType eq 'title'?'selected':''}"/>>題目</option><!-- 제목 -->
+        <option value="content"<c:out value="${pageMaker.cri.searchType eq 'content'?'selected':''}"/>>内容</option><!-- 내용 -->
       </select>
-        </div>
-        <div class="col-lg-3 event45">
-          <label>
-          <input type="text" class="event47" placeholder="검색어를 입력해 주세요">
+      </div>
+      <div class="col-lg-3 event45">
+        <label>
+        <input type="text" class="event47" placeholder="検索語 入力 "><!-- 검색어 입력 -->
 <%--           <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}"> --%>
 <%--           <input type="hidden" name="amount" value="${pageMaker.cri.amount}"> --%>
           <input type="hidden" name="pageNum" value="1">
@@ -61,9 +53,10 @@
 
 
 <!-- 총 게시글 -->
-<div class="col-md-4 event60" style="max-width: 27.333333%">
-  <p>총게시글&nbsp;&nbsp;<span>${pageMaker.total}</span>건</p>
-</div><!-- md-3 -->
+<div class="col-md-12 event64">
+  <p>銃の掲示板&nbsp;&nbsp;<span>${pageMaker.total}</span>件</p>
+<!-- 총 게시글                                                                                         건-->
+</div><!-- col-md-12 -->
 
 
 <!-- Product Section Begin -->
@@ -72,25 +65,30 @@
     <div class="row">
       <div class="col-sm-6 col-md-3 event68">
         <c:set var="num1" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}"/>
-        <p>No.&nbsp;<span>${num1}</span></p>
-       <c:set var="num1" value="${num1-1}"/>
-          <div class="thumbnail">
-          <a href="/event/eventview.do">
-            <img src="/resources/img/anime/details-pic.jpg" alt="...">
-              <div class="caption">
-                <h3>제목</h3>
-                <p>날짜</p>
-              </div>
+          <p>No.&nbsp;<span>${num1}</span></p>
+        <c:set var="num1" value="${num1-1}"/>
+        <c:forEach var="elist" items="${elist}">
+        
+        <div class="thumbnail">
+          <a href="eventView.do?event_cd=${elist.event_cd}">
+          <img src="/upload/${elist.e.img}" alt="...">
+          
+          <div class="caption">
+            <h3>${elist.title}</h3><!-- 제목 -->
+            <p>${elist.sdate} ~ ${elist.fdate}</p><!-- 기간 -->
+          </div>
           </a>
         </div>
-      </div>
+        </c:forEach>
+      </div><!-- col-sm-6 -->
               <div class="col-sm-6 col-md-3 event68">
                 <div class="thumbnail">
+                <a href="eventView.do">
                   <img src="/resources/img/anime/details-pic.jpg" alt="...">
                   <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>...</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                    <h3>題目</h3><!-- 제목 -->
+                    <p>基幹</p><!-- 기간 -->
+                    </a>
                   </div>
                 </div>
               </div>

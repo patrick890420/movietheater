@@ -20,48 +20,45 @@
   </trim>
 </sql>
 
-<!-- admin -->
+
+<!-- Common -->
 <insert id="noticeInsert">
   <selectKey keyProperty="nt_cd" order="BEFORE" resultType="int">
-<!-- 삽입 -->
     select notice_seq.nextval from dual
   </selectKey>
-  insert into notice (nt_cd,title,e_img,content,hits)
-  values (#{nt_cd},#{title},'test',#{content},0)
+  insert into notice (nt_cd,title,n_img,content,hits)
+  values (#{nt_cd},#{title},'TEST',#{content},0)
 </insert>
 
+<update id="modify">
+  update notice set title= #{title}, n_img= #{n_img}, content= #{content}
+  where nt_cd= #{nt_cd}
+</update>
 
-<!-- view -->
+<delete id="delete">
+  delete notice where nt_cd= #{nt_cd}
+</delete>
+
+<!-- admin -->
+<select id="getNoticeList" resultType="com.theater.domain.NoticeVO">
+  select * from notice  
+</select>
+
 <select id="getAdminBoardView" resultType="com.theater.domain.NoticeVO">
 select * from notice where nt_cd= #{nt_cd}
 </select>
 
-  
-<!-- page -->
-<select id="nextPage" resultType="com.theater.domain.NoticeVO">
-  <![CDATA[
-    select * from notice where nt_cd< #{nt_cd} and rownum=1 order by nt_cd desc
-    ]]>                   <!-- 오라클 페이지 기법 -->
+
+<!-- User -->
+<select id="getNoticeView" resultType="com.theater.domain.NoticeVO">
+  select * from notice where nt_cd= #{nt_cd}
 </select>
-<select id="prevPage" resultType="com.theater.domain.NoticeVO">
-  <![CDATA[
-    select * from notice where nt_cd> #{nt_cd} and rownum=1 order by nt_cd asc
-    ]]>
-</select>
-
-
-<select id="getAdminList" resultType="com.theater.domain.NoticeVO">
-  select * from notice  
-</select>
-
-
 
 <!-- 조회수 -->
-<update id="readCount">
+<update id="getViewCount">
   update notice set hits= hits+ 1 where nt_cd= #{nt_cd}
 </update>
-  
-  
+
 <!-- 전체 래코드 갯수 -->
 <select id="getTotal" resultType="int">
   SELECT COUNT(*) AS TOTAL FROM NOTICE
@@ -69,6 +66,18 @@ select * from notice where nt_cd= #{nt_cd}
          <if test="searchType == 'content'">CONTNENT LIKE '%'||#{searchType}||'%'</if>
          <if test="searchType == 'total'">CONT                                                                                                                                                                                                                                                                          ENT LIKE '%'||#{searchType}||'%' OR TITLE LIKE '%'||#{searchName}||'%'</if>
          <if test="searchType == null or searchType == ''"> 1=1</if>
+</select>
+
+<select id="nextPage" resultType="com.theater.domain.NoticeVO">
+  <![CDATA[
+    select * from notice where nt_cd< #{nt_cd} and rownum=1 order by nt_cd desc
+    ]]>
+</select>
+
+<select id="prevPage" resultType="com.theater.domain.NoticeVO">
+  <![CDATA[
+    select * from notice where nt_cd> #{nt_cd} and rownum=1 order by nt_cd asc
+    ]]>
 </select>
 
 

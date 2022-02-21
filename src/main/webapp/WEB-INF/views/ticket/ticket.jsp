@@ -6,33 +6,32 @@
 <div class="reserve-container">
   <div class="movie-part">
     <div class="reserve-title">영화</div>
-    <div class="sort-wrapper">
-      <div class="sort-korean">가나다순</div>
-    </div>
     <div class="movie-list-wrapper">
       <div class="movie-list">
         <table>
-        <c:forEach items="${mvList}" var="mvList">
+          <c:forEach items="${mvList}" var="mvList">
             <tr>
               <td>
                 <c:if test="${mvList.rate == 12}">
-                  <img alt="" src="/resources/img/ageLimit/12.png">
+                  <div class="tk-ep12">12</div>
                 </c:if>
                 <c:if test="${mvList.rate == 15}">
-                  <img alt="" src="/resources/img/ageLimit/15.png">
+                  <div class="tk-ep15">15</div>
                 </c:if>
                 <c:if test="${mvList.rate == 19}">
-                  <img alt="" src="/resources/img/ageLimit/19.png">
+                  <div class="tk-ep19">19</div>
                 </c:if>
                 <c:if test="${mvList.rate == 0}">
-                  <img alt="" src="/resources/img/ageLimit/all.png">
+                  <div class="tk-ep0">ALL</div>
                 </c:if>
-                <button class="movie-name-btn">
-                  ${mvList.title}
-                </button>
-              </td>
-            </tr>
-        </c:forEach>
+                  <button class="btn movie-name-btn" id="areaSelect" onclick="roadArea(${mvList.m_cd });">
+                    ${mvList.title}
+                  </button>
+                  <input id="hdMcd" type="hidden" value="${mvList.m_cd }">
+                  <input id="hdTitle" type="hidden" value="${mvList.title }">
+                </td>
+              </tr>
+          </c:forEach>
         </table>  
       </div>
     </div>
@@ -41,16 +40,10 @@
     <div class="reserve-title">극장</div>
     <div class="theater-container">
       <div class="theater-wrapper">
-        <div class="theater-location-wrapper">
-          <button class="theater-location">대전(1)</button>
-          <button class="theater-location">서울(2)</button>
-          <button class="theater-location">청주(3)</button>
+        <div class="theater-location-wrapper" id="theater-location-wrapper">
+<!--           <button class="theater-location" id="theater-location" onclick="roadTeather();"></button> -->
         </div>
-        <div class="theater-place-wrapper">
-          <button class="theater-place">서대전</button>
-          <button class="theater-place">유성</button>
-          <button class="theater-place">둔산</button>
-          <button class="theater-place">복합</button>
+        <div class="theater-place-wrapper" id="theater-place-wrapper">
         </div>
       </div>
     </div>
@@ -86,14 +79,19 @@
     </div>
   </div>
 </div>
-<div id="ticket_tnb">
-  <form class="moveSeatForm" action="moveSeat.do" method="post">
-    <input type="hidden" class="title" name="title">
-    <input type="hidden" class="movieAge" name="movieAge">
-    <input type="hidden" class="selectedTheater" name="selectedTheater">
-    <input type="hidden" class="reserveDate" name="movieDate">
-    <input type="hidden" class="runningTime" name="runningTime">
-    <button class="moveSeatButton btn btn-primary" type="button" onclick="location.href='/ticket/seat.do'">예약하기</button>
-  </form>
+<div class="col-md-12 p-0 ticket_tnb">
+  <div class="col-md-7">
+  </div>
+  <div id="ticket_tnb">
+    <form class="moveSeatForm" action="moveSeat.do" method="post">
+      <input type="hidden" class="m_cd" name="m_cd" id="mvcd">
+      
+      <input type="hidden" class="selectedTheater" name="selectedTheater">
+      <input type="hidden" class="selectedLocation" name="selectedLocation">
+      <input type="hidden" class="reserveDate" name="movieDate">
+      <input type="hidden" class="runningTime" name="runningTime">
+      <button class="moveSeatButton btn btn-primary" type="button" onclick="location.href='/ticket/seat.do'">예약하기</button>
+    </form>
+  </div>
 </div>
 <%@ include file="../footer.jsp"%>

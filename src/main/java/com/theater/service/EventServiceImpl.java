@@ -16,21 +16,28 @@ public class EventServiceImpl implements EventService {
   
   
 //자동 주입
-  private EventMapper emapper;
+  private EventMapper eMapper;
 
-//admin입력
+//Common
   @Override
   public void eventInsert(EventVO evo) {
-    emapper.eventInsert(evo);
+    eMapper.eventInsert(evo);
     
   }
 
-
-//list
+//admin
   @Override
-  public List<EventVO> getList(Criteria cri) {
-    return emapper.getList(cri);
+  public List<EventVO> getAdminList(Criteria cri) {
+    return eMapper.getAdminList(cri);
   }
 
+  @Override
+  public EventVO getAdminBoardView(int event_cd) {
+    eMapper.getAdminBoardView(event_cd);
+    return eMapper.getAdminBoardView(event_cd);
+  }
+
+//User
+  
 
 }//class
