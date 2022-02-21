@@ -41,8 +41,8 @@ public interface MovieMapper {
   public void movieDelete(int m_cd);
   
   //댓글
-  public int movieReview(ReviewVO rvo);
-  public ReviewVO movieReviewRead(int rcode);
+  public int movieReviewInsert(ReviewVO rvo);
+  public List<ReviewVO> movieReviewRead(int m_cd);
   public int movieReviewDelete(int rcode);
   public int movieReviewUpdate(ReviewVO rvo);
   public List<ReviewVO> getListWithPageing (
