@@ -54,7 +54,6 @@ public class MoiveController {
 	  model.addAttribute("prevPage",movieService.prevPage(m_cd));
 	}
 	
-	
-	  
+
 	
 }//moive controller
