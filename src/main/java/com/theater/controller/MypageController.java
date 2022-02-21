@@ -1,9 +1,12 @@
 package com.theater.controller;
 
+import java.security.Principal;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -58,10 +61,11 @@ private MembersService mservice;
     return "redirect:/";
   }
   
+  //@Secured({"ROLE_ADMIN","ROLE_USER"}) /* 접근권한 제어 1 */
+  //@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')") /* 접근권한 제어 2 */
   @GetMapping("/memberUp")
-  public String memberUp(HttpServletRequest request, Model model) throws Exception {
-     HttpSession session = request.getSession();
-     String userid = (String) session.getAttribute("userid");
+  public String memberUp(HttpServletRequest request, Model model, Principal principal) throws Exception {
+     String userid = principal.getName();
      log.info("userid : " + userid);
      MemberVO mvo = mservice.selectMember(userid);
      log.info("member Data : " + mvo);
