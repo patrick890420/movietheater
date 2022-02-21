@@ -80,11 +80,11 @@ public class MovieServiceImpl implements MovieService {
   
   @Override
   public int register(ReviewVO rvo) {
-    return mapper.movieReview(rvo);
+    return mapper.movieReviewInsert(rvo);
   }
   @Override
-  public ReviewVO get(int rcode) {
-    return mapper.movieReviewRead(rcode);
+  public List<ReviewVO> get(int m_cd) {
+    return mapper.movieReviewRead(m_cd);
   }
   @Override
   public int modify(ReviewVO rvo) {

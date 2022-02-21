@@ -4,6 +4,14 @@
 	<section class="hero" style="background:#000000eb; border-top:solid 3px red;">
 		<div class="container">
 			<div class="hero__slider owl-carousel">
+<<<<<<< HEAD
+				
+				<div class="hero__items set-bg">
+       <video autoplay="" muted="">
+        <source src="https://adimg.cgv.co.kr/images/202202/Nightmare/Nightmare_1080x608_0214.mp4" type="video/mp4">
+       </video>
+        
+=======
 				<div class="hero__items set-bg" data-setbg="/resources/img/index/cbg1.png">
 					<div class="row">
 						<div class="col-lg-6">
@@ -31,6 +39,7 @@
 					</div>
 				</div>
 				<div class="hero__items set-bg" data-setbg="/resources/img/index/cbg1.png">
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="hero__text">

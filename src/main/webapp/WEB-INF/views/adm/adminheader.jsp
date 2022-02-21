@@ -344,8 +344,8 @@
                   </a>
                 </li>
                 <li class="sidebar-item">
-                  <a href="form-input-grid.html" class="sidebar-link">
-                  <span class="hide-menu"> Form Grids </span>
+                  <a href="/adm/adminTheaterList.do" class="sidebar-link">
+                  <span class="hide-menu"> Theater-List </span>
                   </a>
                 </li>
                 <li class="sidebar-item">

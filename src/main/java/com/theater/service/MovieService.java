@@ -28,7 +28,7 @@ public interface MovieService {
   public void movieDelete(int m_cd);
   
   public int register(ReviewVO rvo);
-  public ReviewVO get(int rcode);
+  public List<ReviewVO> get(int m_cd);
   public int modify(ReviewVO rvo);
   public int remove(int rcode);
   public List<ReviewVO> getList(Criteria cri, int m_cd);

@@ -1,11 +1,15 @@
 package com.theater.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.theater.domain.MemberVO;
@@ -34,11 +38,19 @@ public class LoginController {
 		
 	}
 
-  @PostMapping("/loginPro.do") //레지스터 등록 천규형거 베껴벌임 ㅎ
+  @PostMapping("/loginPro.do") 
   public String memberLogin(MemberVO mvo, RedirectAttributes rdat) {
 
     return "redirect:/";
   }
+  
+  /* 로그아웃 */
+  @RequestMapping(value="logout.do", method=RequestMethod.POST)
+  public String logout(HttpServletRequest request) throws Exception{
+    HttpSession session = request.getSession();
+    return "redirect:/";    
+  }
+
 
 	
 }

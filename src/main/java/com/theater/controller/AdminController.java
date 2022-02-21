@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -32,6 +31,8 @@ import com.theater.domain.MovieInfoVO;
 import com.theater.domain.MovieVO;
 import com.theater.domain.NationVO;
 import com.theater.domain.NoticeVO;
+import com.theater.domain.ScreensVO;
+import com.theater.domain.SeatsVO;
 import com.theater.domain.TheatersVO;
 import com.theater.service.EventService;
 import com.theater.service.MovieService;
@@ -225,6 +226,20 @@ public class AdminController {
   @Setter(onMethod_=@Autowired )
   public TheaterService TheaterService;
   
+  @GetMapping("/adminTheaterList.do")
+  public String adminTheaterList(Model model, TheatersVO tvo) {
+    model.addAttribute("athlist",TheaterService.theaterlist());
+    return "adm/adminTheater/adminTheaterList";
+  }
+  //수정중
+  @GetMapping("/adminScreenInfo.do")
+  public String adminScreenInfo(Model model, @RequestParam("t_cd")int t_cd){
+    
+    model.addAttribute("t_slist", TheaterService.adminScreenInfo(t_cd));
+    System.out.println(TheaterService.adminScreenInfo(t_cd));
+    return "adm/adminTheater/adminScreenInfo";
+  }
+  //수정부분끝
   @GetMapping("/adminTheaterInsert.do")
   public String adminTheaterInsert() {
     
@@ -236,11 +251,32 @@ public class AdminController {
     
     return "redirect:/adm/adminTheaterInsert2.do";
     }
+  
   @GetMapping("/adminTheaterInsert2.do")
-  public String adminTheaterInsert2() {
-    
+    public String adminTheaterInsert2(Model model,ScreensVO svo) {
+    model.addAttribute("thcode", TheaterService.theatercode(svo));
+
     return "adm/adminTheater/adminTheaterInsert2";
   }
+  @PostMapping("/adminteatherInsertPro2.do")
+  public String adminteatherInsertPro2(ScreensVO svo) {
+    TheaterService.theaterInsertPro2(svo);
+    
+    return "redirect:/adm/adminTheaterInsert3.do";
+    }
+  @GetMapping("/adminTheaterInsert3.do")
+  public String adminTheaterInsert3(Model model,SeatsVO sevo) {
+    model.addAttribute("sccode", TheaterService.screencode(sevo));
+  
+    return "adm/adminTheater/adminTheaterInsert3";
+}
+  @PostMapping("/adminteatherInsertPro3.do")
+  public String adminteatherInsertPro3(SeatsVO sevo) {
+    TheaterService.theaterInsertPro3(sevo);
+    
+    return "redirect:/adm/adminTheaterInsert.do";
+    }
+  
   /* Ticketing */
   @GetMapping("/adminTicketing.do")
   public String adminTicketing() {
