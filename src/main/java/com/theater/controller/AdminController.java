@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -47,9 +48,21 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class AdminController {
 
+
+//Service
   @Setter(onMethod_=@Autowired )
   public UtilityService uService;
-  
+
+/* Board-> Event*/
+  @Setter(onMethod_=@Autowired )
+  public EventService eService;
+
+/*Board-> Notice*/
+  @Setter(onMethod_=@Autowired )
+  public NoticeService nService;
+
+
+
   @GetMapping("/admin")
   public void admin() {
   }
@@ -240,8 +253,48 @@ public class AdminController {
     return "/adm/adminBoard/adminBoardWrite";
   }
 
-  @GetMapping("/adminBoardWritePro.do")
-  public String adminBoardWritePro(@RequestParam("choice")String choice, NoticeVO nvo, EventVO evo) {
+  @RequestMapping(value="/adminBoardWritePro.do" , produces = "application/json; charset=utf8")
+  @ResponseBody
+  public String adminBoardWritePro(@RequestParam("choice")String choice,
+      @RequestParam("file") MultipartFile multipartFile,NoticeVO nvo, EventVO evo) {
+    
+    JsonObject jsonObject = new JsonObject();
+    
+    String uploadFolder="c:\\upload";
+//    log.info("file name : "+uploadFile.getOriginalFilename());
+    
+    String uploadFileName = multipartFile.getOriginalFilename();
+    //IE
+    uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("//")+1);
+//    log.info("only file name : "+uploadFileName);
+    
+    UUID uuid = UUID.randomUUID();
+    
+    uploadFileName = uuid.toString()+"_"+uploadFileName;
+    
+    File uploadPath = new File(uploadFolder, getFolder());
+    
+    if(uploadPath.exists() == false) {
+       uploadPath.mkdirs();
+    }
+    File savefile = new File(uploadPath,uploadFileName);
+    String saveUrl = uploadFileName.toString();
+//    log.info(saveUrl);
+    
+    try {
+      multipartFile.transferTo(savefile);
+      uploadFileName = (savefile.toString().substring(10));
+      jsonObject.addProperty("url", "/upload/"+uploadFileName);
+      jsonObject.addProperty("responseCode", "success");
+//      nvo
+    }catch(Exception e) {
+       e.printStackTrace();
+       jsonObject.addProperty("responseCode", "error");
+    }
+    
+    String upload = jsonObject.toString();
+//  log.info(upload);
+    
     if(choice.equals("N")) {
       nService.noticeInsert(nvo);
     }else if(choice.equals("E")) {
@@ -278,10 +331,8 @@ public class AdminController {
     return "redirect:/adm/adminNotice.do";
  }
 
+ 
 /* Board-> Event*/
-  @Setter(onMethod_=@Autowired )
-  public EventService eService;
-
   
   @GetMapping("/adminEvent.do")
   public String adminEvent() {
@@ -292,21 +343,23 @@ public class AdminController {
   public String adminEventview() {
     return "adm/adminEvent/adminEventview";
   }
-  
-/*Board-> Notice*/
-  @Setter(onMethod_=@Autowired )
-  public NoticeService nService;
 
   
+/*Board-> Notice*/
+
   @GetMapping("/adminNotice.do")
   public String adminNotice(Criteria cri,Model model) {
-    model.addAttribute("list",nService.getNoticeList(cri));
+    model.addAttribute("nlist",nService.getNoticeList(cri));
     return "adm/adminNotice/adminNotice";
   }
   
   @GetMapping("/adminNoticeview.do")
   public String adminNoticeview() {
     return "adm/adminNotice/adminNoticeview";
+  }
+  @PostMapping("/boardImage.do")
+  public void boardImage() {
+    
   }
   
   /* Utility */

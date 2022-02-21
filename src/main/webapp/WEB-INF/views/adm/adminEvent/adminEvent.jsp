@@ -9,12 +9,12 @@
   <div class="page-breadcrumb">
     <div class="row">
       <div class="col-7 align-self-center">
-        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">이벤트</h4>
+        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">イベント</h4><!-- 이벤트 -->
         <div class="d-flex align-items-center">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb m-0 p-0">
               <li class="breadcrumb-item"><a href="admin.do" class="text-muted">Home</a></li>
-              <li class="breadcrumb-item"><a href="adminEvent.do" class="text-muted">이벤트</a></li>
+              <li class="breadcrumb-item"><a href="adminEvent.do" class="text-muted">イベント</a></li><!-- 이벤트 -->
             </ol>
           </nav>
         </div>
@@ -39,13 +39,13 @@
             <li class="nav-item">
               <a href="#actors" data-toggle="tab" aria-expanded="true" class="nav-link rounded-0 active">
                 <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
-                <span class="d-none d-lg-block">진행중인 이벤트</span>
+                <span class="d-none d-lg-block">進行中の イベント</span><!-- 진행중인 이벤트 -->
               </a>
             </li>
             <li class="nav-item">
               <a href="#directors" data-toggle="tab" aria-expanded="false" class="nav-link rounded-0 ">
                 <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
-                <span class="d-none d-lg-block">종료된 이벤트</span>
+                <span class="d-none d-lg-block">終了 イベント</span><!-- 종료 이벤트 -->
               </a>
             </li>
           </ul>
@@ -62,17 +62,17 @@
                         <div class="table-responsive">
                           <table id="adminEventTable" class="table table-striped table-bordered no-wrap">
                           <colgroup>
-                            <col width="10%">
-                            <col width="10%">
+                            <col width="6%">
+                            <col width="12%">
                             <col width="*">
                             <col width="10%">
                           </colgroup>
                             <thead>
                               <tr class="adminevent72">
-                                <th>번호</th>
-                                <th>이미지</th>
-                                <th>제목</th>
-                                <th>기간</th>
+                                <th>番号</th><!-- 번호 -->
+                                <th>イメージ</th><!-- img -->
+                                <th>題目</th><!-- 제목 -->
+                                <th>基幹</th><!-- 기간 -->
                               </tr>
                             </thead>
                             <tbody>

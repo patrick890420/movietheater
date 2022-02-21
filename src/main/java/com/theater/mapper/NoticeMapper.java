@@ -8,11 +8,14 @@ import com.theater.domain.NoticeVO;
 public interface NoticeMapper {
 
 
+//Common
+  public NoticeVO getAdminBoardView(int nt_cd);
+
 //admin
   public void noticeInsert(NoticeVO nvo);
   public List<NoticeVO>getNoticeList(Criteria cri);
   public List<NoticeVO>getNoticeList();
-  public NoticeVO getAdminBoardView(int nt_cd);
+
 
 
 

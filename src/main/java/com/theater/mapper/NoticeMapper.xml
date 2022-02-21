@@ -27,8 +27,8 @@
 <!-- 삽입 -->
     select notice_seq.nextval from dual
   </selectKey>
-  insert into notice (nt_cd,title,content,hits)
-  values (#{nt_cd},#{title},#{content},0)
+  insert into notice (nt_cd,title,n_img,content,hits)
+  values (#{nt_cd},#{title},#{n_img},#{content},0)
 </insert>
 
 <select id="getNoticeList" resultType="com.theater.domain.NoticeVO">
@@ -51,7 +51,7 @@ select * from notice where nt_cd= #{nt_cd}
 </select>
 
 <update id="modify">
-  update notice set title= #{title}, content= #{content}
+  update notice set title= #{title}, n_img= #{n_img}, content= #{content}
   where nt_cd= #{nt_cd}
 </update>
 

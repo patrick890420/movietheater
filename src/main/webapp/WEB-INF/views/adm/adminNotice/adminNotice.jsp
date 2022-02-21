@@ -48,25 +48,30 @@
                         <div class="table-responsive">
                           <table id="noticeTable" class="table table-striped table-bordered no-wrap">
                           <colgroup>
-                            <col width="10%">
+                            <col width="6%">
+                            <col width="12%">
                             <col width="*">
                             <col width="10%">
                           </colgroup>
                             <thead>
                               <tr>
                                 <th class="adminview57">番号</th><!-- 번호 -->
-                                <th>題目</th><!-- 제목 -->
+                                <th class="adminview57">イメージ</th><!-- img -->
+                                <th class="adminview57">題目</th><!-- 제목 -->
                                 <th class="adminview57">作成日</th><!-- 작성일 -->
                               </tr>
                             </thead>
                             <tbody>
                               <c:set var="num1" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}"/>
-                              <c:forEach var="list" items="${list}">
+                              <c:forEach var="nlist" items="${nlist}">
                                 <tr>
-                                  <td class="adminview57">${list.nt_cd}</td><!-- 번호 -->
-                                  <td class="notice76"><a href="adminBoardView.do?nt_cd=${list.nt_cd}">${list.title}</a></td><!-- 제목 -->
+                                  <td class="adminview57">${nlist.nt_cd}</td><!-- 번호 -->
+                                  <td>
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#bs-example-modal-lg">${nlist.n_img}</button>
+                                  </td>
+                                  <td class="notice76"><a href="adminBoardView.do?nt_cd=${nlist.nt_cd}">${nlist.title}</a></td><!-- 제목 -->
                                   <td class="adminview57">
-                                    <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${list.wdate}"/>
+                                    <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${nlist.wdate}"/>
                                     <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>
                                   </td>
                                 </tr>
@@ -91,11 +96,11 @@
 </div> <!-- col-xl-12 -->
     
 
-    <!-- ============================================================== -->
-    <!-- End PAge Content -->
-    <!-- ============================================================== -->
-  </div>
-  <!-- ============================================================== -->
-  <!-- End Container fluid  -->
-  <!-- ============================================================== -->
-  <%@ include file="../adminfooter.jsp"%>
+<!-- ============================================================== -->
+<!-- End PAge Content -->
+<!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Container fluid  -->
+<!-- ============================================================== -->
+<%@ include file="../adminfooter.jsp"%>

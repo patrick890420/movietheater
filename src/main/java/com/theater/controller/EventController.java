@@ -19,6 +19,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class EventController {
 
+
   @Setter(onMethod_=@Autowired)
   private EventService eService;
   
@@ -27,8 +28,8 @@ public class EventController {
     model.addAttribute("elist",eService.getAdminList(cri));
   }
   
-  @GetMapping("/eventview.do")
-  public void eventview() {
+  @GetMapping("/eventView.do")
+  public void eventView() {
     
   }
   

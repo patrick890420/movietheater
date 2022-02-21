@@ -385,17 +385,17 @@
             <li class="sidebar-item">
               <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
                 <i data-feather="clipboard" class="feather-icon"></i>
-                <span class="hide-menu">board </span>
+                <span class="hide-menu">board</span>
               </a>
               <ul aria-expanded="false" class="collapse  first-level base-level-line">
                 <li class="sidebar-item">
                   <a href="/adm/adminEvent.do" class="sidebar-link">
-                  <span class="hide-menu"> Event </span>
+                  <span class="hide-menu">イベント</span><!-- EVENT -->
                   </a>
                 </li>
                 <li class="sidebar-item">
                   <a href="/adm/adminNotice.do" class="sidebar-link">
-                  <span class="hide-menu"> 공지사항 </span>
+                  <span class="hide-menu">お知らせ</span><!-- 공지 -->
                   </a>
                 </li>
               </ul>
