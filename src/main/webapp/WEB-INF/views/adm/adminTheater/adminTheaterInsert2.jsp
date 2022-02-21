@@ -14,9 +14,8 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
                                     <li class="breadcrumb-item"><a href="adminTheaterInsert.do" class="text-muted">Theater</a></li>
-                                    <li class="breadcrumb-item text-muted" aria-current="page">
-                                    <a href="adminTheaterInsert.do" class="text-muted">Screen</a></li>
-                                    <li class="breadcrumb-item"><a href="adminTheaterInsert.do" class="text-muted">Seat</a></li>
+                                    <li class="breadcrumb-item text-muted active" aria-current="page">Screen</li>
+                                    <li class="breadcrumb-item"><a href="adminTheaterInsert3.do" class="text-muted">Seat</a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -29,194 +28,13 @@
                 <!-- ============================================================== -->
                 <div class="row">
                     <div class="col-lg-12">
-                    
-                        <div class="card">
-                        <h4 id="list-item-1" class="bg-primary text-white" style="padding:15px;">Screen info</h4>
-                            <div class="card-body">
-                                <form name="adminteatherInsertPro" action="adminteatherInsertPro.do" method="post" enctype="multipart/form-data">
-              <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Theater Code</h4>
-                  <h6 class="card-subtitle">설정된<code>Theater Code</code>는 수정불가 입니다.</h6>
-                  <div class="col-sm-3 col-md-3 col-lg-3"
-                    style="padding: 0;">
-                    <div class="mt-2">
-                      <div class="form-group">
-                        <input type="text" class="form-control"
-                          id="t_cd" placeholder="Theater Code"
-                          disabled>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-5 col-md-5 col-lg-5"
-                    style="padding: 0;">
-                    <div>
-                      <div class="form-group mb-4">
-                        <h4 class="card-title">Area</h4>
-                        <select class="custom-select mr-sm-2"
-                          id="t_area">
-                          <option selected>Area Select</option>
-                          <option value="1">1번째</option>
-                          <option value="2">2번째</option>
-                          <option value="3">3번째</option>
-                          <option value="4">4번째</option>
-                          <option value="5">5번째</option>
-                          <option value="6">6번째</option>
-                          <option value="7">7번째</option>
-                          <option value="8">8번째</option>
-                          <option value="9">9번째</option>
-                          <option value="10">10번째</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3 col-md-3 col-lg-3"
-                    style="padding: 0;">
-                    <h4 class="card-title">Theater name</h4>
-<!--                     <form class="mt-3"> -->
-                      <div class="form-group">
-                        <input type="text" class="form-control"
-                          id="t_name" name="t_name" aria-describedby="name"
-                          placeholder="Name">
-                      </div>
-<!--                     </form> -->
-                  </div>
-                  <div class="col-sm-6 col-md-6 col-lg-6"
-                    style="padding: 0;">
-                    <h4 class="card-title">Theater Address</h4>
-                    
-                      <div class="form-group">
-                        <input type="text" class="form-control"
-                          id="t_address" name="t_address" aria-describedby="name"
-                          placeholder="Theater Address">
-                      </div>
-                    
-                  </div>
-                  <div class="col-sm-12 col-md-12 col-lg-12"
-                    style="padding: 0;">
-                    <h4 class="card-title">Inline Custom Radios</h4>
-                    <div class="form-check form-check-inline mt-2">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" value="1" class="custom-control-input"
-                          id="t_screen" name="t_screen"
-                          name="radio-stacked"> <label
-                          class="custom-control-label"
-                          for="t_screen">1개관</label>
-                      </div>
-                    </div>
-                    <div class="form-check form-check-inline mt-2">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input"
-                          id="customControlValidation3"
-                          name="radio-stacked"> <label
-                          class="custom-control-label"
-                          for="customControlValidation3">2개관</label>
-                      </div>
-                    </div>
-                    <div class="form-check form-check-inline mt-2">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input"
-                          id="customControlValidation4"
-                          name="radio-stacked"> <label
-                          class="custom-control-label"
-                          for="customControlValidation4">3개관</label>
-                      </div>
-                    </div>
-                    <div class="form-check form-check-inline mt-2">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input"
-                          id="customControlValidation5"
-                          name="radio-stacked"> <label
-                          class="custom-control-label"
-                          for="customControlValidation5">4개관</label>
-                      </div>
-                    </div>
-                    <div class="form-check form-check-inline mt-2">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input"
-                          id="customControlValidation6"
-                          name="radio-stacked"> <label
-                          class="custom-control-label"
-                          for="customControlValidation6">5개관</label>
-                      </div>
-                    </div>
-                    <div class="form-check form-check-inline mt-2">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input"
-                          id="customControlValidation7"
-                          name="radio-stacked"> <label
-                          class="custom-control-label"
-                          for="customControlValidation7">6개관</label>
-                      </div>
-                    </div>
-                    <div class="form-check form-check-inline mt-2">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input"
-                          id="customControlValidation8"
-                          name="radio-stacked"> <label
-                          class="custom-control-label"
-                          for="customControlValidation8">7개관</label>
-                      </div>
-                    </div>
-                    <div class="form-check form-check-inline mt-2">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input"
-                          id="customControlValidation9"
-                          name="radio-stacked"> <label
-                          class="custom-control-label"
-                          for="customControlValidation9">8개관</label>
-                      </div>
-                    </div>
-                  </div>
-                  <h4 class="card-title mt-3">Total Seats</h4>
-                  <h6 class="card-subtitle">
-                    자동계산
-                    <code>Total Seats</code>
-                    수정불가.
-                  </h6>
-                  <div class="col-sm-3 col-md-3 col-lg-3"
-                    style="padding: 0;">
-                    
-                      <div class="form-group">
-                        <input type="text" class="form-control"
-                          id="t_seat" name="t_seat" value="100" placeholder="Total Seats" readonly>
-                      </div>
-                    
-                  </div>
-                </div>
-                <div class="col-lg-12 mb-3" style="text-align: right;">
-                  <div class="btn-list">
-                    <button type="submit" class="btn btn-success">
-                      <i class="fas fa-check"></i> Success
-                    </button>
-                  </div>
-                </div>
-              </div>
-              </form>
-                                
-                            </div>
-                        </div>
-                    </div>                    
-                </div>
-            </div>
-</div>
-<%@ include file="../adminfooter.jsp"%>
-
-
-
-
-
-
-
-
-
-
-<h4 id="list-item-2">Screen info</h4>
-            <div class="col-sm-12 col-md-12 col-lg-12">
-              <div class="card">
+                    <form name="adminteatherInsertPro2" action="adminteatherInsertPro2.do" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
+                    <div class="card">
+                    <h4 id="list-item-1" class="bg-primary text-white" style="padding:15px;">Seat info</h4>
               <div id="Screeninfo">
                 <div class="card-body" id="plustext">
+                  <input type="hidden" id="thcode" name="t_cd" value="${thcode}">
                 <button type="button" value="삭제" onclick="removeBox(this);" class="btn btn-danger btn-rounded" style="float:right"><i class=" fas fa-minus"></i> </button>
                   <h4 class="card-title">Screen Code</h4>
                   <h6 class="card-subtitle">
@@ -226,15 +44,15 @@
                   </h6>
                   <div class="col-sm-3 col-md-3 col-lg-3"
                     style="padding: 0;">
-                    <form class="mt-2">
+                    <div class="mt-2">
                       <div class="form-group">
                         <input type="text" class="form-control"
                           id="nametext1" placeholder="Theater Code"
                           disabled>
                       </div>
-                    </form>
+                    </div>
                   </div>
-                  <div class="col-sm-8 col-md-8 col-lg-8"
+                  <div class="col-sm-5 col-md-5 col-lg-5"
                     style="padding: 0;">
                     <h4 class="card-title">Screen Type</h4>
                     <h6 class="card-subtitle">
@@ -242,41 +60,42 @@
                       <code>.input-group-prepend</code>
                       class to the div
                     </h6>
-                    <form>
+                    <div>
                       <div class="input-group mb-3">
                         <div class="input-group-prepend">
                           <label class="input-group-text"
                             for="inputGroupSelect01">Options</label>
                         </div>
                         <select class="custom-select"
-                          id="inputGroupSelect01">
-                          <option selected>1-type</option>
-                          <option value="1">2-type</option>
-                          <option value="2">3-type</option>
-                          <option value="3">4-type</option>
+                          id="inputGroupSelect01" name="screen_type">
+                          <option selected>screen-type Select</option>
+                          <option value="1-type">1-type</option>
+                          <option value="2-type">2-type</option>
+                          <option value="3-type">3-type</option>
+                          <option value="4-type">4-type</option>
                         </select>
                       </div>
-                    </form>
+                    </div>
                   </div>
-                  <div class="col-sm-6 col-md-6 col-lg-6"
+                  <div class="col-sm-3 col-md-3 col-lg-3"
                     style="padding: 0;">
-                    <form>
+                    <div>
                       <div class="form-group mb-4">
                         <h4 class="card-title">Screen Name</h4>
                         <select class="custom-select mr-sm-2"
-                          id="inlineFormCustomSelect">
-                          <option selected>Screen Selcect</option>
-                          <option value="1">1극장</option>
-                          <option value="2">2극장</option>
-                          <option value="3">3극장</option>
-                          <option value="4">4극장</option>
-                          <option value="5">5극장</option>
-                          <option value="6">6극장</option>
-                          <option value="7">7극장</option>
-                          <option value="8">8극장</option>
+                          id="inlineFormCustomSelect" name="screen_name">
+                          <option selected>Screen Select</option>
+                          <option value="1극장">1극장</option>
+                          <option value="2극장">2극장</option>
+                          <option value="3극장">3극장</option>
+                          <option value="4극장">4극장</option>
+                          <option value="5극장">5극장</option>
+                          <option value="6극장">6극장</option>
+                          <option value="7극장">7극장</option>
+                          <option value="8극장">8극장</option>
                         </select>
                       </div>
-                    </form>
+                    </div>
                   </div>
                   <h4 class="card-title mt-3">Screen Seats</h4>
                   <h6 class="card-subtitle">
@@ -286,19 +105,19 @@
                   </h6>
                   <div class="col-sm-3 col-md-3 col-lg-3"
                     style="padding: 0;">
-                    <form class="mt-2">
+                    <div class="mt-2">
                       <div class="form-group">
                         <input type="text" class="form-control"
-                          id="nametext1" placeholder="Screen Seats"
-                          disabled>
+                          id="nametext1" name="seat_amount" value="150" placeholder="Screen Seats"
+                          readonly>
                       </div>
-                    </form>
+                    </div>
                   </div>
                 </div>
                 </div>
                 <div class="col-lg-12 mb-3" style="margin-left: 10px;">
                   <div class="btn-list">
-                    <form name="form" method="post">
+                    
                       <table>
                         <tr>
                           <td colspan="2" align="left" bgcolor="#FFFFFF">
@@ -324,13 +143,29 @@
                       </table>
                       <div class="col-lg-12 mb-3" style="text-align: right;">
                   <div class="btn-list">
-                    <button type="button" class="btn btn-success">
+                    <button type="submit" class="btn btn-success">
                       <i class="fas fa-check"></i> Success
                     </button>
                   </div>
                 </div>
-                    </form>
+                   
                   </div>
                 </div>
-                
               </div>
+              </form>
+                    </div>
+                </div>
+            </div>
+</div>
+<script>
+function addBox(){
+  var divClone = document.getElementById("plustext").cloneNode(true);
+  var addbox = document.getElementById("Screeninfo");
+  addbox.append(divClone);
+ }
+function removeBox(obj){
+  document.getElementById('Screeninfo').removeChild(obj.parentNode);
+}
+</script>
+<%@ include file="../adminfooter.jsp"%>
+              

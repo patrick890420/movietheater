@@ -4,33 +4,12 @@
 	<section class="hero" style="background:#000000eb; border-top:solid 3px red;">
 		<div class="container">
 			<div class="hero__slider owl-carousel">
-				<div class="hero__items set-bg" data-setbg="/resources/img/hero/hero-1.jpg">
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="hero__text">
-								<div class="label">Adventure</div>
-								<h2>Fate / Stay Night: Unlimited Blade s</h2>
-								<p>After 30 days of travel across  the world...</p>
-								<a href="#"><span>Watch Now</span> <i
-									class="fa fa-angle-right"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hero__items set-bg" data-setbg="/resources/img/hero/hero-1.jpg">
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="hero__text">
-								<div class="label">Adventure</div>
-								<h2>Fate / Stay Night: Unlimited Blade Works</h2>
-								<p>After 30 days of travel across the world...</p>
-								<a href="#"><span>Watch Now</span> <i
-									class="fa fa-angle-right"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hero__items set-bg" data-setbg="/resources/img/hero/hero-1.jpg">
+				
+				<div class="hero__items set-bg">
+       <video autoplay="" muted="">
+        <source src="https://adimg.cgv.co.kr/images/202202/Nightmare/Nightmare_1080x608_0214.mp4" type="video/mp4">
+       </video>
+        
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="hero__text">

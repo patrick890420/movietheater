@@ -13,10 +13,10 @@
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="adminTheaterInsert.do" class="text-muted">Theater</a></li>
+                                    <li class="breadcrumb-item active">Theater</li>
                                     <li class="breadcrumb-item text-muted" aria-current="page">
-                                    <a href="adminTheaterInsert.do" class="text-muted">Screen</a></li>
-                                    <li class="breadcrumb-item"><a href="adminTheaterInsert.do" class="text-muted">Seat</a></li>
+                                    <a href="adminTheaterInsert2.do" class="text-muted">Screen</a></li>
+                                    <li class="breadcrumb-item"><a href="adminTheaterInsert3.do" class="text-muted">Seat</a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -55,7 +55,7 @@
                       <div class="form-group mb-4">
                         <h4 class="card-title">Area</h4>
                         <select class="custom-select mr-sm-2"
-                          id="t_area">
+                          id="inlineFormCustomSelect" name="t_area">
                           <option selected>Area Select</option>
                           <option value="1">1번째</option>
                           <option value="2">2번째</option>
@@ -97,75 +97,15 @@
                     style="padding: 0;">
                     <h4 class="card-title">Inline Custom Radios</h4>
                     <div class="form-check form-check-inline mt-2">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" value="1" class="custom-control-input"
-                          id="t_screen" name="t_screen"
-                          name="radio-stacked"> <label
-                          class="custom-control-label"
-                          for="t_screen">1개관</label>
-                      </div>
-                    </div>
-                    <div class="form-check form-check-inline mt-2">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input"
-                          id="customControlValidation3"
-                          name="radio-stacked"> <label
-                          class="custom-control-label"
-                          for="customControlValidation3">2개관</label>
-                      </div>
-                    </div>
-                    <div class="form-check form-check-inline mt-2">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input"
-                          id="customControlValidation4"
-                          name="radio-stacked"> <label
-                          class="custom-control-label"
-                          for="customControlValidation4">3개관</label>
-                      </div>
-                    </div>
-                    <div class="form-check form-check-inline mt-2">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input"
-                          id="customControlValidation5"
-                          name="radio-stacked"> <label
-                          class="custom-control-label"
-                          for="customControlValidation5">4개관</label>
-                      </div>
-                    </div>
-                    <div class="form-check form-check-inline mt-2">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input"
-                          id="customControlValidation6"
-                          name="radio-stacked"> <label
-                          class="custom-control-label"
-                          for="customControlValidation6">5개관</label>
-                      </div>
-                    </div>
-                    <div class="form-check form-check-inline mt-2">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input"
-                          id="customControlValidation7"
-                          name="radio-stacked"> <label
-                          class="custom-control-label"
-                          for="customControlValidation7">6개관</label>
-                      </div>
-                    </div>
-                    <div class="form-check form-check-inline mt-2">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input"
-                          id="customControlValidation8"
-                          name="radio-stacked"> <label
-                          class="custom-control-label"
-                          for="customControlValidation8">7개관</label>
-                      </div>
-                    </div>
-                    <div class="form-check form-check-inline mt-2">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input"
-                          id="customControlValidation9"
-                          name="radio-stacked"> <label
-                          class="custom-control-label"
-                          for="customControlValidation9">8개관</label>
+                      <div class="custom-control custom-radio radiobutton" style="padding:0;">
+                        <input type="radio" name="t_screen" id="r1" value="1" checked><label for="r1">1개관</label>
+                        <input type="radio" name="t_screen" id="r2" value="2"><label for="r2">2개관</label>
+                        <input type="radio" name="t_screen" id="r3" value="3"><label for="r2">3개관</label>
+                        <input type="radio" name="t_screen" id="r4" value="4"><label for="r2">4개관</label>
+                        <input type="radio" name="t_screen" id="r5" value="5"><label for="r2">5개관</label>
+                        <input type="radio" name="t_screen" id="r6" value="6"><label for="r2">6개관</label>
+                        <input type="radio" name="t_screen" id="r7" value="7"><label for="r2">7개관</label>
+                        <input type="radio" name="t_screen" id="r8" value="8"><label for="r2">8개관</label>
                       </div>
                     </div>
                   </div>
@@ -180,13 +120,14 @@
                     
                       <div class="form-group">
                         <input type="text" class="form-control"
-                          id="t_seat" name="t_seat" value="100" placeholder="Total Seats" readonly>
+                          id="t_seat" name="t_seat" readonly>
                       </div>
                     
                   </div>
                 </div>
                 <div class="col-lg-12 mb-3" style="text-align: right;">
                   <div class="btn-list">
+                    
                     <button type="submit" class="btn btn-success">
                       <i class="fas fa-check"></i> Success
                     </button>
@@ -201,4 +142,31 @@
                 </div>
             </div>
 </div>
+
+<script>
+$(document).ready(function(){
+  
+  // 라디오버튼 클릭시 이벤트 발생
+  $("input:radio[name=t_screen]").click(function(){
+
+      if($("input[name=t_screen]:checked").val() == "1"){
+           $("#t_seat").val('150');
+      }else if($("input[name=t_screen]:checked").val() == "2"){
+            $("#t_seat").val('300');
+      }else if($("input[name=t_screen]:checked").val() == "3"){
+        $("#t_seat").val('450');
+      }else if($("input[name=t_screen]:checked").val() == "4"){
+        $("#t_seat").val('600');
+      }else if($("input[name=t_screen]:checked").val() == "5"){
+        $("#t_seat").val('750');
+      }else if($("input[name=t_screen]:checked").val() == "6"){
+        $("#t_seat").val('900');
+      }else if($("input[name=t_screen]:checked").val() == "7"){
+        $("#t_seat").val('1050');
+      }else if($("input[name=t_screen]:checked").val() == "8"){
+        $("#t_seat").val('1200');
+      }
+  });
+});
+</script>
 <%@ include file="../adminfooter.jsp"%>
