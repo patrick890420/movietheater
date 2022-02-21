@@ -77,7 +77,7 @@ private MembersService mservice;
      HttpSession session = request.getSession();
      session.setAttribute("userid", mvo.getUserid());
      
-      return "redirect:/mypage/studentinfo";
+      return "redirect:/mypage/뭐임";
   }
 
 
