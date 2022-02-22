@@ -11,52 +11,91 @@
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
 
-<!-- Table -->
-<section class="cash">
-  <div class="container">
-    <div class="row51">
-      <div class="col-md-12 pb-5">
-        <table class="table table-hover">
-          <colgroup>
-            <col width="10%">
-            <col width="*">
-            <col width="10%">
-            <col width="11%">
-            <col width="9%">
-          </colgroup>
-          <tr>
-            <th>코드</th>
-            <!-- 코드 -->
-            <th>영화이름</th>
-            <!-- 영화이름 -->
-            <th>예매일</th>
-            <!-- 예매일 -->
-            <th>금액</th>
-            <!-- 금액 -->
-            <th>결제상태</th>
-            <!-- 결제상태 -->
-          </tr>
 
-          <tbody>
-            <c:set var="num1" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}" />
-            <c:forEach var="list" items="${list}">
-              <tr>
-                <td>${num1}</td>
-                <!-- 코드 -->
-                <td class="cash76"><a href="cashView.do?nt_cd=${list.nt_cd}">${list.title}</a></td>
-                <!-- 영화이름 -->
-                <td>예매일</td>
-                <!-- 예매일 -->
-                <td><fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${list.wdate}" />
-                <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}" /></td>
-                <td class="cash68">${list.hits}</td>
-              </tr>
-              <c:set var="num1" value="${num1-1}" />
-            </c:forEach>
-          </tbody>
-        </table>
+<div class="d-flex" id="wrapper">
 
-        <!-- paging 나중에 다 수정하기-->
+  <!-- Sidebar-->
+
+  <div class="border-end bg-white" id="sidebar-wrapper"
+    style="margin-left: 30px;">
+    <div class="sidebar-heading border-bottom bg-light"
+      style="padding: 20px 16px;">My page</div>
+    <!-- margin-top: 70px; -->
+    <div class="list-group list-group-flush">
+      <a
+        class="list-group-item list-group-item-action list-group-item-light p-3"
+        href="mypage.do">アカウント管理</a> <a
+        class="list-group-item list-group-item-action list-group-item-light p-3"
+        href="myreser.do">私の予約</a> <a
+        class="list-group-item list-group-item-action list-group-item-light p-3"
+        href="mycash.do">決済リスト</a> <a
+        class="list-group-item list-group-item-action list-group-item-light p-3"
+        href="mypass.do">パスワード変更</a>
+    </div>
+  </div>
+
+  <nav
+    class="navbar navbar-expand-lg navbar-light bg-light border-bottom"
+    style="width: 1180px;">
+    <div class="container-fluid">
+      <div class="main-content">
+        <div class="container mt-7">
+
+          <!-- Table -->
+          <section class="cash">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 pb-5">
+                <div>
+                <h2 style="margin-top: 50px; text-align: center;">My Payment.</h2>
+<!--                 <h6 class="heading-small text-muted mb-4" style="margin-bottom: 1.5rem;">現在までの決済リストを確認できます。</h6> -->
+                  <table class="table table-hover" style="width: 1000px; margin-top: 50px; text-align: center;">
+                    <colgroup>
+                      <!-- 어떻게 나눌지도 생각해 보긔 (똑같이? or 다르게?) -->
+                      <col width="20%">
+                      <col width="20%">
+                      <col width="20%">
+                      <col width="20%">
+                      <col width="20%">
+                    </colgroup>
+                    <tr>
+                      <th>코드</th>
+                      <th>영화이름</th>
+                      <th>예매일</th>
+                      <th>금액</th>
+                      <th>결제상태</th>
+                    </tr>
+
+                    <tbody>
+                      <c:set var="num1" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}" />
+                      <c:forEach var="list" items="${list}">
+                        <tr>
+                          <!-- 코드 -->
+                          <td>코드</td>
+                          
+                          <!-- 영화이름 (영화정보 페이지로 넘어가게 할까?)-->
+                          <td class="cash76">
+                          <a href="??.do?nt_cd=${list.nt_cd}">${list.title}</a></td>
+                          
+                          <td>
+                            <!-- 예매일 --> <fmt:parseDate
+                              pattern="yyyy-MM-dd" var="dateString"
+                              value="${list.wdate}" /> <fmt:formatDate
+                              pattern="yyyy-MM-dd" value="${dateString}" />
+                          </td>
+                          
+                          <td>금액</td>
+                          
+                          <td>결제상태</td>
+                          
+                        </tr>
+                        <c:set var="num1" value="${num1-1}" />
+                      </c:forEach>
+                    </tbody>
+                  </table>
+                  </div>
+
+                  <%--        <!-- paging 나중에 다 수정하기-->
         <form action="mycash.do" name="pageForm" method="get">
           <div class="product__pagination">
             <hr>
@@ -87,14 +126,23 @@
             <input type="hidden" name="amount" value="${pageMaker.cri.amount }">
           <input type="hidden" name="searchType" value="${pageMaker.cri.searchType }">
             <input  type="hidden" name="searchName" value="${pageMaker.cri.searchName }">
-        </form>
+        </form> --%>
+                </div>
+                <!-- md-12 -->
+              </div>
+              <!-- row -->
+            </div>
+            <!-- container -->
+          </section>
+        </div>
       </div>
-      <!-- md-12 -->
     </div>
-    <!-- row -->
-  </div>
-  <!-- container -->
-</section>
+  </nav>
+
+
+
+
+</div>
 
 
 <%@ include file="../footer.jsp"%>

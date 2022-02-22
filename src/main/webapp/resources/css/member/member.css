@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+/*join 조인*/
+
+
 /*로그인 폼*/
 .input__btn .input__btn2 {
   height: 50px;
@@ -14,6 +17,10 @@
   margin-right: 30px;
   background: #b7b7b7;
   color: white;
+}
+
+.radisol {
+  color: #b7b7b7;background-color: white;     border: solid;
 }
 
 .login__form form .input__item .genderchoice {
@@ -43,7 +50,6 @@ ul.join_box {
 }
 
 .genderchoice {
-  margin-bottom: 50px;
   background-color: #fff;
   padding-bottom: 10px
 }

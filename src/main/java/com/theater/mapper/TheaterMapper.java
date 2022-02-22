@@ -2,6 +2,7 @@ package com.theater.mapper;
 
 import java.util.List;
 
+import com.theater.domain.ScheduleVO;
 import com.theater.domain.ScreensVO;
 import com.theater.domain.SeatsVO;
 import com.theater.domain.TheatersVO;
@@ -18,4 +19,5 @@ public interface TheaterMapper {
   public List<TheatersVO> totaltheaterList();//극장 전체리스트
   public List<TheatersVO> theaterlist();//극장list
   public List<ScreensVO> adminScreenInfo(int t_cd);//극장list-screen
+  public List<ScheduleVO> adminScheduleSelect();
 }

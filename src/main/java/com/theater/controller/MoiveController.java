@@ -1,6 +1,5 @@
 package com.theater.controller;
 
-import org.slf4j.spi.LocationAwareLogger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,8 +27,11 @@ public class MoiveController {
 	
 	@GetMapping("/view.do")
 	public void view(@RequestParam("m_cd") int m_cd,Criteria cri, Model model) {
+	  
 		model.addAttribute("view", movieService.read(m_cd));
     model.addAttribute("review",movieService.get(m_cd));
+    model.addAttribute("cut",movieService.movieStillcutSelect(m_cd));
+    model.addAttribute("info",movieService.adminMovieSelect(m_cd));
 
 	}//view.do
 	
@@ -40,6 +42,7 @@ public class MoiveController {
 	  PageVO pageVO = new PageVO(cri, movieService.getTotal(cri));
 	  model.addAttribute("pageMaker", pageVO);
 	  model.addAttribute("list",movieService.movieList(cri));
+	  log.info(movieService.movieList(cri));
     
 	  }
 	
@@ -48,6 +51,7 @@ public class MoiveController {
 	  model.addAttribute("view", movieService.read(m_cd));
 	  model.addAttribute("nextPage",movieService.nextPage(m_cd));
 	  model.addAttribute("prevPage",movieService.prevPage(m_cd));
+
 	}
 	
 	@PostMapping("/movieReviewInsert.do")
