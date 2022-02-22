@@ -76,14 +76,14 @@ private MembersService mservice;
      return "/mypage/mypage";
   }
   
-  @PostMapping("/memberUpdate.do")
-  public String memberUpdate(HttpServletRequest request, MemberVO mvo){
+  @PostMapping("/memberUpdate")
+  public String memberUpdate(MemberVO mvo){
      log.info("============== VO : " + mvo);
      mservice.memberUpdate(mvo);
-     HttpSession session = request.getSession();
-     session.setAttribute("userid", mvo.getUserid());
+  
+   
      
-      return "redirect:/mypage/뭐임";
+      return "redirect:/mypage/mypage";
   }
   
 

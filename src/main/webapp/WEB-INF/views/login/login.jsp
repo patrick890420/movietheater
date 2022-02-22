@@ -3,13 +3,13 @@
 
 
 	 <!-- Normal Breadcrumb Begin -->
-    <section class="normal-breadcrumb set-bg" data-setbg="/resources/img/logintitle.jpg">
+    <section class="normal-breadcrumb set-bg"
+    style="background-color: #001064;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="normal__breadcrumb__text">
                         <h2 style="color: #fff;">Login</h2>
-                        
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
 
     <!-- Login Section Begin -->
     <section class="login spad">
-        <div class="container" style="border: solid 1px; padding: 100px 0;">
+        <div class="container" style="padding: 100px 0; border: groove; background:url(/resources/img/sky.jpg);"  >
             <div class="row">
                 <div class="col-lg-6">
                     <div class="login__form">
@@ -27,23 +27,22 @@
                         <form name="login" id="login">
                           <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
                             <div class="input__item">
-                              <input type="text" placeholder="ID" name="username">
+                              <input type="text" placeholder="ユーザーID" name="username">
                               <span class="icon_id"></span>
                             </div>
                             <div class="input__item">
-                              <input type="password" name="password" placeholder="Password">
+                              <input type="password" name="password" placeholder="パスワード">
                               <span class="icon_lock"></span>
                             </div>
 <!--                             <button type="submit" class="site-btn">Login Now</button> -->
-                            <a class="btn btn-primary" href="javascript:fn_login();">Login Now</a>
+                            <a class="btn btn-primary" href="javascript:fn_login();">ログイン</a>
                         </form>
-                        <a href="#" class="forget_pass">Forgot Your Password?</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="login__register">
                         <h3>会員登録の方はこちらへ</h3>
-                        <a href="/join/join.do" class="primary-btn">회원등록</a>
+                        <a href="/join/join.do" class="btn btn-primary">新規登録</a>
                     </div>
                 </div>
             </div>

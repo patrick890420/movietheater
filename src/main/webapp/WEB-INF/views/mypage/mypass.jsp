@@ -22,11 +22,11 @@
     <div class="list-group list-group-flush">
       <a
         class="list-group-item list-group-item-action list-group-item-light p-3"
-        href="mypage.do">My account</a> <a
+        href="mypage.do">アカウント管理</a> <a
         class="list-group-item list-group-item-action list-group-item-light p-3"
-        href="myreser.do">My Reservation</a> <a
+        href="myreser.do">私の予約</a> <a
         class="list-group-item list-group-item-action list-group-item-light p-3"
-        href="mycash.do">My Payment</a> <a
+        href="mycash.do">決済リスト</a> <a
         class="list-group-item list-group-item-action list-group-item-light p-3"
         href="mypass.do">パスワード変更</a>
     </div>

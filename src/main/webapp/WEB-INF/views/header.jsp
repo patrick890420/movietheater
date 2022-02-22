@@ -84,20 +84,20 @@
       <div class="col-lg-8">
         <div class="header__right">
           <sec:authorize access="isAnonymous()">
-            <a href="/login/login.do" style="text-align: center;"><span class="icon_lock"><br>로그인</span></a>
-            <a href="/join/join.do" style="text-align: center;"><span class="icon_profile"><br>회원가입</span></a>
+            <a href="/login/login.do" style="text-align: center;"><span class="icon_lock_alt"><br>로그인</span></a>
+            <a href="/join/join.do" style="text-align: center;"><span class="icon_contacts_alt"><br>회원가입</span></a>
           </sec:authorize>
           
           <sec:authorize access="isAuthenticated()">
             <!-- <a href="/login/logout.do" style="text-align: center;"><span class="icon_lock"><br>로그아웃</span></a> -->
               <form name="lg" action="/adm/adminLogout" method="post"><!-- spring security 로그아웃은 get 불가 -->
                      
-                <a href="/mypage/memberUp" style="text-align: center;"> <span class="icon_profile"><br>마이페이지</span></a>
-                               
                 <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
-                <button type="submit" style="border:0 none; background:transparent; top: -24px; right: 10px; position: relative;" ><span class="icon_profile"><br>로그아웃</span></button> 
+                <a href="/mypage/memberUp" style="text-align: center;"> <span class="icon_pencil-edit"><br>마이페이지</span></a>
+                               
+                <button type="submit" style="border:0 none; background:transparent; top: -24px; right: 10px; position: relative;" ><span class="icon_lock-open_alt"><br>로그아웃</span></button> 
 
-                <a href="" style="text-align: center;"><span class="icon_profile"><br>고객센터</span></a>
+                <a href="" style="text-align: center;"><span class="icon_chat_alt"><br>고객센터</span></a>
                
               </form>
           </sec:authorize>
