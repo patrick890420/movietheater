@@ -28,11 +28,6 @@ public class MoiveController {
 	@GetMapping("/view.do")
 	public void view(@RequestParam("m_cd") int m_cd,Criteria cri, Model model) {
 	  
-	  log.info(movieService.read(m_cd));
-	  log.info(movieService.get(m_cd));
-	  log.info(movieService.movieStillcutSelect(m_cd));
-	  log.info(movieService.adminMovieSelect(m_cd));
-	
 		model.addAttribute("view", movieService.read(m_cd));
     model.addAttribute("review",movieService.get(m_cd));
     model.addAttribute("cut",movieService.movieStillcutSelect(m_cd));
