@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
-
     <section class="anime-details spad">
         <div class="container">
             <div class="anime__details__content">
@@ -36,7 +35,7 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
                                         <ul>
-                                            <li><span>장르</span> 장르</li>
+                                            <li><span>장르</span>${info.g_name }</li>
                                             <fmt:parseDate value="${view.rdate}" var="dateValue" pattern="yyyy-MM-dd"/>
                                             <li><span>개봉일</span><fmt:formatDate value="${dateValue}" pattern="yyyy-MM-dd"/></li>
                                             <li><span>감독</span>${info.d_name}</li>
@@ -78,146 +77,6 @@
                                 </div>
                                 <div class="anime__review__item__text">
                                     <h6>${review.rwriter }<span>${review.rdate}</span></h6>
-                                    <c:if test="${review.rgrade == 5 }">
-                                    <fieldset class="rating2 col-lg-12 col-md-12" id="rating2" >
-                                      <input type="radio" id="star5.2" name="rgrade1" value="5" checked onclick="return(false);"/><label class = "full" for="star5.2" title="Awesome - 5 stars"></label>
-                                      <input type="radio" id="star4.2half" name="rgrade1" value="4.5" onclick="return(false);"/><label class="half" for="star4.2half" title="Pretty good - 4.5 stars"></label>
-                                      <input type="radio" id="star4.2" name="rgrade1" value="4" onclick="return(false);"/><label class = "full" for="star4.2" title="Pretty good - 4 stars"></label>
-                                      <input type="radio" id="star3.2half" name="rgrade1" value="3.5" onclick="return(false);"/><label class="half" for="star3.2half" title="Meh - 3.5 stars"></label>
-                                      <input type="radio" id="star3.2" name="rgrade1" value="3" onclick="return(false);"/><label class = "full" for="star3.2" title="Meh - 3 stars"></label>
-                                      <input type="radio" id="star2.2half" name="rgrade1" value="2.5" onclick="return(false);"/><label class="half" for="star2.2half" title="Kinda bad - 2.5 stars"></label>
-                                      <input type="radio" id="star2.2" name="rgrade1" value="2" onclick="return(false);"/><label class = "full" for="star2.2" title="Kinda bad - 2 stars"></label>
-                                      <input type="radio" id="star1.2half" name="rgrade1" value="1.5" onclick="return(false);"/><label class="half" for="star1.2half" title="Meh - 1.5 stars"></label>
-                                      <input type="radio" id="star1.2" name="rgrade1" value="1" onclick="return(false);"/><label class = "full" for="star1.2" title="Sucks big time - 1 star"></label>
-                                      <input type="radio" id="starhalf.2" name="rgrade1" value="half" onclick="return(false);"/><label class="half" for="starhalf.2" title="Sucks big time - 0.5 stars"></label>
-                                    </fieldset>
-                                    </c:if>
-                                    <c:if test="${review.rgrade == 4.5 }">
-                                    <fieldset class="rating2 col-lg-12 col-md-12" id="rating2" >
-                                      <input type="radio" id="star5.2" name="rgrade1" value="5"  onclick="return(false);"/><label class = "full" for="star5.2" title="Awesome - 5 stars"></label>
-                                      <input type="radio" id="star4.2half" name="rgrade1" value="4.5" checked onclick="return(false);"/><label class="half" for="star4.2half" title="Pretty good - 4.5 stars"></label>
-                                      <input type="radio" id="star4.2" name="rgrade1" value="4" onclick="return(false);"/><label class = "full" for="star4.2" title="Pretty good - 4 stars"></label>
-                                      <input type="radio" id="star3.2half" name="rgrade1" value="3.5" onclick="return(false);"/><label class="half" for="star3.2half" title="Meh - 3.5 stars"></label>
-                                      <input type="radio" id="star3.2" name="rgrade1" value="3" onclick="return(false);"/><label class = "full" for="star3.2" title="Meh - 3 stars"></label>
-                                      <input type="radio" id="star2.2half" name="rgrade1" value="2.5" onclick="return(false);"/><label class="half" for="star2.2half" title="Kinda bad - 2.5 stars"></label>
-                                      <input type="radio" id="star2.2" name="rgrade1" value="2" onclick="return(false);"/><label class = "full" for="star2.2" title="Kinda bad - 2 stars"></label>
-                                      <input type="radio" id="star1.2half" name="rgrade1" value="1.5" onclick="return(false);"/><label class="half" for="star1.2half" title="Meh - 1.5 stars"></label>
-                                      <input type="radio" id="star1.2" name="rgrade1" value="1" onclick="return(false);"/><label class = "full" for="star1.2" title="Sucks big time - 1 star"></label>
-                                      <input type="radio" id="starhalf.2" name="rgrade1" value="half" onclick="return(false);"/><label class="half" for="starhalf.2" title="Sucks big time - 0.5 stars"></label>
-                                    </fieldset>
-                                    </c:if>
-                                    <c:if test="${review.rgrade == 4 }">
-                                    <fieldset class="rating2 col-lg-12 col-md-12" id="rating2" >
-                                      <input type="radio" id="star5.2" name="rgrade1" value="5"  onclick="return(false);"/><label class = "full" for="star5.2" title="Awesome - 5 stars"></label>
-                                      <input type="radio" id="star4.2half" name="rgrade1" value="4.5" onclick="return(false);"/><label class="half" for="star4.2half" title="Pretty good - 4.5 stars"></label>
-                                      <input type="radio" id="star4.2" name="rgrade1" value="4" checked onclick="return(false);"/><label class = "full" for="star4.2" title="Pretty good - 4 stars"></label>
-                                      <input type="radio" id="star3.2half" name="rgrade1" value="3.5" onclick="return(false);"/><label class="half" for="star3.2half" title="Meh - 3.5 stars"></label>
-                                      <input type="radio" id="star3.2" name="rgrade1" value="3" onclick="return(false);"/><label class = "full" for="star3.2" title="Meh - 3 stars"></label>
-                                      <input type="radio" id="star2.2half" name="rgrade1" value="2.5" onclick="return(false);"/><label class="half" for="star2.2half" title="Kinda bad - 2.5 stars"></label>
-                                      <input type="radio" id="star2.2" name="rgrade1" value="2" onclick="return(false);"/><label class = "full" for="star2.2" title="Kinda bad - 2 stars"></label>
-                                      <input type="radio" id="star1.2half" name="rgrade1" value="1.5" onclick="return(false);"/><label class="half" for="star1.2half" title="Meh - 1.5 stars"></label>
-                                      <input type="radio" id="star1.2" name="rgrade1" value="1" onclick="return(false);"/><label class = "full" for="star1.2" title="Sucks big time - 1 star"></label>
-                                      <input type="radio" id="starhalf.2" name="rgrade1" value="half" onclick="return(false);"/><label class="half" for="starhalf.2" title="Sucks big time - 0.5 stars"></label>
-                                    </fieldset>
-                                    </c:if>
-                                    <c:if test="${review.rgrade == 3.5 }">
-                                    <fieldset class="rating2 col-lg-12 col-md-12" id="rating2" >
-                                      <input type="radio" id="star5.2" name="rgrade1" value="5"  onclick="return(false);"/><label class = "full" for="star5.2" title="Awesome - 5 stars"></label>
-                                      <input type="radio" id="star4.2half" name="rgrade1" value="4.5" onclick="return(false);"/><label class="half" for="star4.2half" title="Pretty good - 4.5 stars"></label>
-                                      <input type="radio" id="star4.2" name="rgrade1" value="4"  onclick="return(false);"/><label class = "full" for="star4.2" title="Pretty good - 4 stars"></label>
-                                      <input type="radio" id="star3.2half" name="rgrade1" value="3.5" checked onclick="return(false);"/><label class="half" for="star3.2half" title="Meh - 3.5 stars"></label>
-                                      <input type="radio" id="star3.2" name="rgrade1" value="3" onclick="return(false);"/><label class = "full" for="star3.2" title="Meh - 3 stars"></label>
-                                      <input type="radio" id="star2.2half" name="rgrade1" value="2.5" onclick="return(false);"/><label class="half" for="star2.2half" title="Kinda bad - 2.5 stars"></label>
-                                      <input type="radio" id="star2.2" name="rgrade1" value="2" onclick="return(false);"/><label class = "full" for="star2.2" title="Kinda bad - 2 stars"></label>
-                                      <input type="radio" id="star1.2half" name="rgrade1" value="1.5" onclick="return(false);"/><label class="half" for="star1.2half" title="Meh - 1.5 stars"></label>
-                                      <input type="radio" id="star1.2" name="rgrade1" value="1" onclick="return(false);"/><label class = "full" for="star1.2" title="Sucks big time - 1 star"></label>
-                                      <input type="radio" id="starhalf.2" name="rgrade1" value="half" onclick="return(false);"/><label class="half" for="starhalf.2" title="Sucks big time - 0.5 stars"></label>
-                                    </fieldset>
-                                    </c:if>
-                                    <c:if test="${review.rgrade == 3 }">
-                                    <fieldset class="rating2 col-lg-12 col-md-12" id="rating2" >
-                                      <input type="radio" id="star5.2" name="rgrade1" value="5"  onclick="return(false);"/><label class = "full" for="star5.2" title="Awesome - 5 stars"></label>
-                                      <input type="radio" id="star4.2half" name="rgrade1" value="4.5" onclick="return(false);"/><label class="half" for="star4.2half" title="Pretty good - 4.5 stars"></label>
-                                      <input type="radio" id="star4.2" name="rgrade1" value="4"  onclick="return(false);"/><label class = "full" for="star4.2" title="Pretty good - 4 stars"></label>
-                                      <input type="radio" id="star3.2half" name="rgrade1" value="3.5"  onclick="return(false);"/><label class="half" for="star3.2half" title="Meh - 3.5 stars"></label>
-                                      <input type="radio" id="star3.2" name="rgrade1" value="3" checked onclick="return(false);"/><label class = "full" for="star3.2" title="Meh - 3 stars"></label>
-                                      <input type="radio" id="star2.2half" name="rgrade1" value="2.5" onclick="return(false);"/><label class="half" for="star2.2half" title="Kinda bad - 2.5 stars"></label>
-                                      <input type="radio" id="star2.2" name="rgrade1" value="2" onclick="return(false);"/><label class = "full" for="star2.2" title="Kinda bad - 2 stars"></label>
-                                      <input type="radio" id="star1.2half" name="rgrade1" value="1.5" onclick="return(false);"/><label class="half" for="star1.2half" title="Meh - 1.5 stars"></label>
-                                      <input type="radio" id="star1.2" name="rgrade1" value="1" onclick="return(false);"/><label class = "full" for="star1.2" title="Sucks big time - 1 star"></label>
-                                      <input type="radio" id="starhalf.2" name="rgrade1" value="half" onclick="return(false);"/><label class="half" for="starhalf.2" title="Sucks big time - 0.5 stars"></label>
-                                    </fieldset>
-                                    </c:if>
-                                    <c:if test="${review.rgrade == 2.5 }">
-                                    <fieldset class="rating2 col-lg-12 col-md-12" id="rating2" >
-                                      <input type="radio" id="star5.2" name="rgrade1" value="5"  onclick="return(false);"/><label class = "full" for="star5.2" title="Awesome - 5 stars"></label>
-                                      <input type="radio" id="star4.2half" name="rgrade1" value="4.5" onclick="return(false);"/><label class="half" for="star4.2half" title="Pretty good - 4.5 stars"></label>
-                                      <input type="radio" id="star4.2" name="rgrade1" value="4"  onclick="return(false);"/><label class = "full" for="star4.2" title="Pretty good - 4 stars"></label>
-                                      <input type="radio" id="star3.2half" name="rgrade1" value="3.5"  onclick="return(false);"/><label class="half" for="star3.2half" title="Meh - 3.5 stars"></label>
-                                      <input type="radio" id="star3.2" name="rgrade1" value="3" onclick="return(false);"/><label class = "full" for="star3.2" title="Meh - 3 stars"></label>
-                                      <input type="radio" id="star2.2half" name="rgrade1" value="2.5" checked onclick="return(false);"/><label class="half" for="star2.2half" title="Kinda bad - 2.5 stars"></label>
-                                      <input type="radio" id="star2.2" name="rgrade1" value="2" onclick="return(false);"/><label class = "full" for="star2.2" title="Kinda bad - 2 stars"></label>
-                                      <input type="radio" id="star1.2half" name="rgrade1" value="1.5" onclick="return(false);"/><label class="half" for="star1.2half" title="Meh - 1.5 stars"></label>
-                                      <input type="radio" id="star1.2" name="rgrade1" value="1" onclick="return(false);"/><label class = "full" for="star1.2" title="Sucks big time - 1 star"></label>
-                                      <input type="radio" id="starhalf.2" name="rgrade1" value="half" onclick="return(false);"/><label class="half" for="starhalf.2" title="Sucks big time - 0.5 stars"></label>
-                                    </fieldset>
-                                    </c:if>
-                                    <c:if test="${review.rgrade == 2 }">
-                                    <fieldset class="rating2 col-lg-12 col-md-12" id="rating2" >
-                                      <input type="radio" id="star5.2" name="rgrade1" value="5"  onclick="return(false);"/><label class = "full" for="star5.2" title="Awesome - 5 stars"></label>
-                                      <input type="radio" id="star4.2half" name="rgrade1" value="4.5" onclick="return(false);"/><label class="half" for="star4.2half" title="Pretty good - 4.5 stars"></label>
-                                      <input type="radio" id="star4.2" name="rgrade1" value="4"  onclick="return(false);"/><label class = "full" for="star4.2" title="Pretty good - 4 stars"></label>
-                                      <input type="radio" id="star3.2half" name="rgrade1" value="3.5"  onclick="return(false);"/><label class="half" for="star3.2half" title="Meh - 3.5 stars"></label>
-                                      <input type="radio" id="star3.2" name="rgrade1" value="3" onclick="return(false);"/><label class = "full" for="star3.2" title="Meh - 3 stars"></label>
-                                      <input type="radio" id="star2.2half" name="rgrade1" value="2.5" onclick="return(false);"/><label class="half" for="star2.2half" title="Kinda bad - 2.5 stars"></label>
-                                      <input type="radio" id="star2.2" name="rgrade1" value="2" checked onclick="return(false);"/><label class = "full" for="star2.2" title="Kinda bad - 2 stars"></label>
-                                      <input type="radio" id="star1.2half" name="rgrade1" value="1.5" onclick="return(false);"/><label class="half" for="star1.2half" title="Meh - 1.5 stars"></label>
-                                      <input type="radio" id="star1.2" name="rgrade1" value="1" onclick="return(false);"/><label class = "full" for="star1.2" title="Sucks big time - 1 star"></label>
-                                      <input type="radio" id="starhalf.2" name="rgrade1" value="half" onclick="return(false);"/><label class="half" for="starhalf.2" title="Sucks big time - 0.5 stars"></label>
-                                    </fieldset>
-                                    </c:if>
-                                    <c:if test="${review.rgrade == 1.5 }">
-                                    <fieldset class="rating2 col-lg-12 col-md-12" id="rating2" >
-                                      <input type="radio" id="star5.2" name="rgrade1" value="5"  onclick="return(false);"/><label class = "full" for="star5.2" title="Awesome - 5 stars"></label>
-                                      <input type="radio" id="star4.2half" name="rgrade1" value="4.5" onclick="return(false);"/><label class="half" for="star4.2half" title="Pretty good - 4.5 stars"></label>
-                                      <input type="radio" id="star4.2" name="rgrade1" value="4"  onclick="return(false);"/><label class = "full" for="star4.2" title="Pretty good - 4 stars"></label>
-                                      <input type="radio" id="star3.2half" name="rgrade1" value="3.5"  onclick="return(false);"/><label class="half" for="star3.2half" title="Meh - 3.5 stars"></label>
-                                      <input type="radio" id="star3.2" name="rgrade1" value="3" onclick="return(false);"/><label class = "full" for="star3.2" title="Meh - 3 stars"></label>
-                                      <input type="radio" id="star2.2half" name="rgrade1" value="2.5" onclick="return(false);"/><label class="half" for="star2.2half" title="Kinda bad - 2.5 stars"></label>
-                                      <input type="radio" id="star2.2" name="rgrade1" value="2"  onclick="return(false);"/><label class = "full" for="star2.2" title="Kinda bad - 2 stars"></label>
-                                      <input type="radio" id="star1.2half" name="rgrade1" value="1.5" checked onclick="return(false);"/><label class="half" for="star1.2half" title="Meh - 1.5 stars"></label>
-                                      <input type="radio" id="star1.2" name="rgrade1" value="1" onclick="return(false);"/><label class = "full" for="star1.2" title="Sucks big time - 1 star"></label>
-                                      <input type="radio" id="starhalf.2" name="rgrade1" value="half" onclick="return(false);"/><label class="half" for="starhalf.2" title="Sucks big time - 0.5 stars"></label>
-                                    </fieldset>
-                                    </c:if>
-                                    <c:if test="${review.rgrade == 1 }">
-                                    <fieldset class="rating2 col-lg-12 col-md-12" id="rating2" >
-                                      <input type="radio" id="star5.2" name="rgrade1" value="5"  onclick="return(false);"/><label class = "full" for="star5.2" title="Awesome - 5 stars"></label>
-                                      <input type="radio" id="star4.2half" name="rgrade1" value="4.5" onclick="return(false);"/><label class="half" for="star4.2half" title="Pretty good - 4.5 stars"></label>
-                                      <input type="radio" id="star4.2" name="rgrade1" value="4"  onclick="return(false);"/><label class = "full" for="star4.2" title="Pretty good - 4 stars"></label>
-                                      <input type="radio" id="star3.2half" name="rgrade1" value="3.5"  onclick="return(false);"/><label class="half" for="star3.2half" title="Meh - 3.5 stars"></label>
-                                      <input type="radio" id="star3.2" name="rgrade1" value="3" onclick="return(false);"/><label class = "full" for="star3.2" title="Meh - 3 stars"></label>
-                                      <input type="radio" id="star2.2half" name="rgrade1" value="2.5" onclick="return(false);"/><label class="half" for="star2.2half" title="Kinda bad - 2.5 stars"></label>
-                                      <input type="radio" id="star2.2" name="rgrade1" value="2"  onclick="return(false);"/><label class = "full" for="star2.2" title="Kinda bad - 2 stars"></label>
-                                      <input type="radio" id="star1.2half" name="rgrade1" value="1.5"  onclick="return(false);"/><label class="half" for="star1.2half" title="Meh - 1.5 stars"></label>
-                                      <input type="radio" id="star1.2" name="rgrade1" value="1" checked onclick="return(false);"/><label class = "full" for="star1.2" title="Sucks big time - 1 star"></label>
-                                      <input type="radio" id="starhalf.2" name="rgrade1" value="half" onclick="return(false);"/><label class="half" for="starhalf.2" title="Sucks big time - 0.5 stars"></label>
-                                    </fieldset>
-                                    </c:if>
-                                    <c:if test="${review.rgrade == 0.5 }">
-                                    <fieldset class="rating2 col-lg-12 col-md-12" id="rating2" >
-                                      <input type="radio" id="star5.2" name="rgrade1" value="5"  onclick="return(false);"/><label class = "full" for="star5.2" title="Awesome - 5 stars"></label>
-                                      <input type="radio" id="star4.2half" name="rgrade1" value="4.5" onclick="return(false);"/><label class="half" for="star4.2half" title="Pretty good - 4.5 stars"></label>
-                                      <input type="radio" id="star4.2" name="rgrade1" value="4"  onclick="return(false);"/><label class = "full" for="star4.2" title="Pretty good - 4 stars"></label>
-                                      <input type="radio" id="star3.2half" name="rgrade1" value="3.5"  onclick="return(false);"/><label class="half" for="star3.2half" title="Meh - 3.5 stars"></label>
-                                      <input type="radio" id="star3.2" name="rgrade1" value="3" onclick="return(false);"/><label class = "full" for="star3.2" title="Meh - 3 stars"></label>
-                                      <input type="radio" id="star2.2half" name="rgrade1" value="2.5" onclick="return(false);"/><label class="half" for="star2.2half" title="Kinda bad - 2.5 stars"></label>
-                                      <input type="radio" id="star2.2" name="rgrade1" value="2"  onclick="return(false);"/><label class = "full" for="star2.2" title="Kinda bad - 2 stars"></label>
-                                      <input type="radio" id="star1.2half" name="rgrade1" value="1.5"  onclick="return(false);"/><label class="half" for="star1.2half" title="Meh - 1.5 stars"></label>
-                                      <input type="radio" id="star1.2" name="rgrade1" value="1"  onclick="return(false);"/><label class = "full" for="star1.2" title="Sucks big time - 1 star"></label>
-                                      <input type="radio" id="starhalf.2" name="rgrade1" value="0.5" checked onclick="return(false);"/><label class="half" for="starhalf.2" title="Sucks big time - 0.5 stars"></label>
-                                    </fieldset>
-                                    </c:if>
                                     <div>
                                     <span>${review.review }</span>
                                     </div>
@@ -225,6 +84,7 @@
                             </div>
                             </c:forEach>
                         </div>
+                        <sec:authorize access="isAuthenticated()">
                         <div class="anime__details__form">
                           <div class="section-title">
                                 <h5>Your Comment</h5>
@@ -243,44 +103,37 @@
                             </fieldset>
                             </div>
                             </div>
+                            <sec:authorize access="isAuthenticated()">
                             <input type="hidden" name="rwriter" value="<sec:authentication property="principal.member.userid"/>" >
-                             <textarea class="cmt-border "  name="review" placeholder="Your Comment"></textarea>
+                            </sec:authorize>
+                             <textarea class="cmt-border"  name="review" placeholder="Your Comment"></textarea>
                                 <button class="btn btn-primary fa fa-location-arrow register finish" type="submit"> Review</button>
                         </div>
+                        </sec:authorize>
                         </form>
                     </div>
-                    <div class="col-lg-12 col-md-12">
+                    <div class="col-lg-12 col-md-12 pt-4">
                         <div class="anime__details__sidebar">
                             <div class="section-title">
-                                <h5>you might like...</h5>
+                                <h5>스틸 컷</h5>
                             </div>
+                            <div class="row">
                             <div class="col-lg-3 col-md-3">
                               <div class="product__sidebar__view__item set-bg" data-setbg="/upload/${cut.still_img1}">
-                                  <div class="ep">18 / ?</div>
-                                  <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                  <h5><a href="#">Boruto: Naruto next generations</a></h5>
                               </div>
                             </div>
                             <div class="col-lg-3 col-md-3">
                               <div class="product__sidebar__view__item set-bg" data-setbg="/upload/${cut.still_img2}">
-                                  <div class="ep">18 / ?</div>
-                                  <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                  <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
                               </div>
                             </div>
                             <div class="col-lg-3 col-md-3">
                               <div class="product__sidebar__view__item set-bg" data-setbg="/upload/${cut.still_img3}">
-                                  <div class="ep">18 / ?</div>
-                                  <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                  <h5><a href="#">Sword art online alicization war of underworld</a></h5>
                               </div>
                             </div>
                             <div class="col-lg-3 col-md-3">
                               <div class="product__sidebar__view__item set-bg" data-setbg="/upload/${cut.still_img4}">
-                                  <div class="ep">18 / ?</div>
-                                  <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                  <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
                               </div>
+                            </div>
                             </div>
                         </div>
                     </div>

@@ -72,7 +72,7 @@
     <![CDATA[
     select * from 
     ( 
-      select /*+ index_desc(movies SYS_C007529) */ rownum rn, M_CD,TITLE,SUBTITLE,RDATE,RTIME,RATE,INTRO,POSTER from Movies
+      select /*+ index_desc(movies SYS_C007998) */ rownum rn, M_CD,TITLE,SUBTITLE,RDATE,RTIME,RATE,INTRO,POSTER from Movies
       where 
     ]]>
     <include refid="criteria"/>

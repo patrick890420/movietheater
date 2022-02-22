@@ -131,7 +131,6 @@ public class AdminController {
     model.addAttribute("view",movieService.adminMovieSelect(m_cd));
     model.addAttribute("cut",movieService.movieStillcutSelect(m_cd));
 
-    
     return "adm/adminMovie/adminMovieView";
   }
   
