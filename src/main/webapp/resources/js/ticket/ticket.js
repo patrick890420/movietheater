@@ -38,6 +38,9 @@ function addDate() {
         spanWeekOfDay.classList = 'movie-week-of-day';
         spanDay.classList = 'movie-day';
 
+        //onclick 넣기
+        button.onclick = function(){dateSelect();};
+        
         //weekOfDay[new Date(2022-03-날짜)]
         const dayOfWeek =
             weekOfDay[new Date(year + '-' + month + '-' + i).getDay()];
@@ -193,7 +196,7 @@ ainit();
           
             let res="";
             for(let i=0;i<data.length;i++){
-            res+="<button class='theater-location' id='theater-location' onclick='roadTheater("+data[i].t_area+","+data[i].m_cd+");'>"+data[i].t_area+"</button>";
+            res+="<button class='theater-location' id='theater-location' onclick='roadTheater("+data[i].t_area+","+data[i].m_cd+");'>"+data[i].area_name+"</button>";
             }
             $('#theater-location-wrapper').html(res);
             

@@ -3,16 +3,28 @@
 <mapper namespace="com.theater.mapper.TicketMapper">
 
 <select id="movieList" resultType="com.theater.domain.MovieVO"> <!-- 예매화면 영화 리스트 -->
-  SELECT * FROM MOVIES
+  SELECT* 
+  FROM MOVIES M, FILMS F
+  WHERE M.M_CD = F.M_CD
+  AND F.FILM_STATUS = 1
 </select>
 
 
 <select id="getAreaSelect" resultType="com.theater.domain.ReserveVO"> <!-- 예매화면 영화 리스트 -->
-  SELECT
-    DISTINCT(t.t_area),f.m_cd
-    FROM FILMS F, SCREENS S, THEATERS T
+    SELECT
+    DISTINCT(A.AREA_NAME),F.M_CD
+    ,(SELECT
+    DISTINCT(T.T_AREA)
+    FROM FILMS F, SCREENS S, THEATERS T,AREAINFO A
     WHERE F.SCREEN_CD = S.SCREEN_CD AND S.T_CD = T.T_CD
+    AND T.T_AREA = A.AREA_CD
     AND F.M_CD = #{m_cd}
+    AND F.FILM_STATUS = 1) AS T_AREA
+    FROM FILMS F, SCREENS S, THEATERS T,AREAINFO A
+    WHERE F.SCREEN_CD = S.SCREEN_CD AND S.T_CD = T.T_CD
+    AND T.T_AREA = A.AREA_CD
+    AND F.M_CD = #{m_cd}
+    AND F.FILM_STATUS = 1
 </select>
 
 <select id="getTheaterSelect" resultType="com.theater.domain.ReserveVO"> <!-- 예매화면 영화 리스트 -->

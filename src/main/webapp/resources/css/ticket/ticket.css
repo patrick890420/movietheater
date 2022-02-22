@@ -284,6 +284,7 @@ button.theater-location , button.theater-place{
 
 .reserve-time-button {
   margin-top: 10px;
+  border: none;
 }
 
 .reserve-time-want {
