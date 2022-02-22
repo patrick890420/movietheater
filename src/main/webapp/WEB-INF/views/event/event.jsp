@@ -59,96 +59,44 @@
 </div><!-- col-md-12 -->
 
 
-<!-- Product Section Begin -->
-<section class="event">
-  <div class="container event36">
-    <div class="row">
-      <div class="col-sm-6 col-md-3 event68">
-        <c:set var="num1" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}"/>
-          <p>No.&nbsp;<span>${num1}</span></p>
-        <c:set var="num1" value="${num1-1}"/>
-        <c:forEach var="elist" items="${elist}">
+<!-- Table -->
+<section class="notice">
+<div class="container">
+  <div class="row51">
+    <div class="col-md-12 pb-5">
+      <table class="table table-hover">
+        <colgroup>
+          <col width="6%">
+          <col width="*">
+          <col width="10%">
+          <col width="11%">
+          <col width="7%">
+        </colgroup>
+        <tr>
+          <th>番号</th><!-- 번호 -->
+          <th>題目</th><!-- 제목 -->
+          <th>管理者</th><!-- 관리자 -->
+          <th class="notice68">作成日</th><!-- 작성일 -->
+          <th>照会数</th><!-- 조회수 -->
+        </tr>
         
-        <div class="thumbnail">
-          <a href="eventView.do?event_cd=${elist.event_cd}">
-          <img src="/upload/${elist.e.img}" alt="...">
-          
-          <div class="caption">
-            <h3>${elist.title}</h3><!-- 제목 -->
-            <p>${elist.sdate} ~ ${elist.fdate}</p><!-- 기간 -->
-          </div>
-          </a>
-        </div>
-        </c:forEach>
-      </div><!-- col-sm-6 -->
-              <div class="col-sm-6 col-md-3 event68">
-                <div class="thumbnail">
-                <a href="eventView.do">
-                  <img src="/resources/img/anime/details-pic.jpg" alt="...">
-                  <div class="caption">
-                    <h3>題目</h3><!-- 제목 -->
-                    <p>基幹</p><!-- 기간 -->
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-3 event68">
-                <div class="thumbnail">
-                  <img src="/resources/img/anime/details-pic.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>...</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-3">
-                <a href="#" class="thumbnail">
-                  <img src="/resources/img/recent/recent-6.jpg" alt="...">
-                </a>
-              </div>
-              </div><!-- row -->
-        </div><!-- container -->
-        
-        <div class="container">
-            <div class="row">      
-              <div class="col-sm-6 col-md-3 event68">
-                <div class="thumbnail">
-                  <img src="/resources/img/anime/details-pic.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>...</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-3 event68">
-                <div class="thumbnail">
-                  <img src="/resources/img/anime/details-pic.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>...</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-3 event68">
-                <div class="thumbnail">
-                  <img src="/resources/img/anime/details-pic.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>...</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-3">
-                <a href="#" class="thumbnail">
-                  <img src="/resources/img/recent/recent-6.jpg" alt="...">
-                </a>
-              </div>
-            </div><!-- row -->
-        </div><!-- container -->
+        <tbody>
+          <c:set var="num1" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}"/>
+          <c:forEach var="elist" items="${elist}">
+            <tr>
+              <td>${num1}</td><!-- 번호 -->
+              <td class="notice85"><a href="eventView.do?event_cd=${elist.event_cd}">${elist.title}</a></td><!-- 제목 -->
+              <td>管理者</td><!-- 관리자 -->
+              <td>
+                <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${elist.wdate}"/>
+                <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>
+              </td>
+              <td class="notice68">${elist.hits}</td>
+            </tr>
+           <c:set var="num1" value="${num1-1}"/>
+         </c:forEach>
+       </tbody>
+     </table>
 
 <!-- paging -->
 <form action="notice.do" name ="pageForm" method="get">
@@ -156,15 +104,15 @@
   <hr>
       <ul class="pagination pagination-sm">
 <!-- 2. 이전페이지 활성화여부 -->
-        <c:if test="${pageMaker.prev }">
+        <c:if test="${pageMaker.prev}">
           <li>
-            <a href="#" data-pagenum='${pageMaker.startPage - 1 }'>
+            <a href="#" data-pagenum='${pageMaker.startPage - 1}'>
               <i class="fa fa-angle-double-left"></i>
             </a>
           </li>
         </c:if>
 <!-- 1. 페이지네이션 처리 -->
-        <c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
+        <c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage}">
           <li class="${pageMaker.pageNum eq num ? 'active' : ''}">
             <a href="#" data-pagenum='${num}'>${num}</a>
           </li>
@@ -172,18 +120,21 @@
 <!-- 3. 다음버튼 활성화여부 -->
         <c:if test="${pageMaker.next }">
           <li>
-            <a href="#" data-pagenum='${pageMaker.endPage + 1 }'>
+            <a href="#" data-pagenum='${pageMaker.endPage + 1}'>
               <i class="fa fa-angle-double-right"></i>
             </a>
           </li>
         </c:if>
       </ul>
     </div>
-  <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
-  <input type="hidden" name="amount" value="${pageMaker.cri.amount }">
-  <input type="hidden" name="searchType" value="${pageMaker.cri.searchType }">
-  <input type="hidden" name="searchName" value="${pageMaker.cri.searchName }">
+  <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+  <input type="hidden" name="amount" value="${pageMaker.cri.amount}">
+  <input type="hidden" name="searchType" value="${pageMaker.cri.searchType}">
+  <input type="hidden" name="searchName" value="${pageMaker.cri.searchName}">
 </form>
+</div><!-- md-12 -->
+</div><!-- row -->
+</div><!-- container -->
 </section><!-- hero -->
 
 <!-- 하단 배너 -->

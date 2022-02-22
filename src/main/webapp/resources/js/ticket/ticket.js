@@ -135,12 +135,13 @@ moveSeatButton.addEventListener('click', function() {
 });
 
 var movieBtn = document.getElementsByClassName("movie-name-btn");
+//var movieBtn = document.getElementById('areaSelect');
 
-      function handleClick(event) {
-        console.log(event.target);
-        // console.log(this);
+      function handleClick1(event) {
+        //console.log(event.target);
+        //console.log(this);
         // 콘솔창을 보면 둘다 동일한 값이 나온다
-        console.log(event.target.classList);
+        //console.log(event.target.classList);
         if (event.target.classList[1] === "clicked") {
           event.target.classList.remove("clicked");
         } else {
@@ -152,7 +153,7 @@ var movieBtn = document.getElementsByClassName("movie-name-btn");
       }
       function init() {
         for (var i = 0; i < movieBtn.length; i++) {
-          movieBtn[i].addEventListener("click", handleClick);
+          movieBtn[i].addEventListener("click", handleClick1);
         }
       }
       init();

@@ -9,13 +9,13 @@
   <div class="page-breadcrumb">
     <div class="row">
       <div class="col-7 align-self-center">
-        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">View</h4>
+        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">お知らせView</h4><!-- 공지view -->
         <div class="d-flex align-items-center">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb m-0 p-0">
               <li class="breadcrumb-item"><a href="admin.do" class="text-muted">Home</a></li>
-              <li class="breadcrumb-item"><a href="adminEvent.do" class="text-muted">イベント</a></li><!-- EVENT -->
               <li class="breadcrumb-item"><a href="adminNotice.do" class="text-muted">お知らせ</a></li><!-- 공지 -->
+<!--               <li class="breadcrumb-item"><a href="adminEvent.do" class="text-muted">イベント</a></li>이벤트 -->
             </ol>
           </nav>
         </div>
@@ -45,19 +45,18 @@
 <!--             <code> $().DataTable();</code> -->
 <!-- DataTable 사용법 -->
 <!--        <code> $("#테이블id").DataTable();</code> -->
-                        <h2>${view.title}</h2>
-                          <p class=""> | ${view.wdate} |</p>
+                        <h2>${nview.title}</h2>
+                          <p class=""> | ${nview.wdate} |</p>
                           
-                          <input type="hidden" class="" value="${view.nt_cd}">
-
-                            <div class="">${view.content}</div>
+                          <input type="hidden" class="" value="${nview.nt_cd}">
+                            <div class="">${nview.content}</div>
 
 <!-- button -->
   <div class="adminbutton">
     <a href="adminBoardModify.do?nt_cd=${prev.nt_cd}&pageNum=${cri.pageNum}&amount=${cri.amount}&type=${cri.type}&keyword=${cri.keyword}"
        class="btn btn-outline-primary btn-rounded"><i class="fas fa-check"></i>修整
     </a>&nbsp;<!-- 수정 -->
-    <a href="adminBoardDelete.do?nt_cd=${view.nt_cd}" onClick="return confirm('削除しますか？')"
+    <a href="adminBoardDelete.do?nt_cd=${nview.nt_cd}" onClick="return confirm('削除しますか？')"
        class="btn btn-outline-primary btn-rounded" id="delete_btn"><i class="fas fa-times"></i>削除
     </a>&nbsp;<!-- 삭제 -->
     <button type="button" class="btn btn-outline-primary btn-rounded" onclick="location.href='adminNotice.do'">

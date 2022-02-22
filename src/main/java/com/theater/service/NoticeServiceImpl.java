@@ -64,11 +64,6 @@ public class NoticeServiceImpl implements NoticeService {
 
 
 //User
-//view
-  @Override
-  public NoticeVO getNoticeView(int nt_cd) {
-   return nMapper.getNoticeView(nt_cd);
-  }
 //조회수
   @Override
   public void getViewCount(int nt_cd) {

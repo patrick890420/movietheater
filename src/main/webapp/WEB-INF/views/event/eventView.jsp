@@ -24,40 +24,58 @@
 </section><!-- hero -->
 <!-- Hero Section End -->
 
-<!-- 제목 -->
-<div class="container">
-  <div class="row eventview36">
-    <div class="col-md-1">
-      <ol class="breadcrumb38">
-        <li style="color: #ff0000;">イベント</li><!-- EVENT -->
-      </ol>
-    </div><!-- col-md-1 -->
-    
-    <div class="col-md-8">
-      <ol class="breadcrumb38">
-        <li>題目</li><!-- 제목 -->
-      </ol>
-    </div><!-- col-md-8 -->
-    
-    <div class="col-md-3">
-      <ol class="breadcrumb38 pull-right">
-        <li>기간: 2022.02.00 ~ 2022.02.00</li>
-      </ol>
-    </div><!-- md3 -->
-  </div><!-- row -->
-</div><!-- container -->
-
-<!-- img -->
-<div class="container eventview53 img-responsive center-block">
-  <img src="/resources/img/anime/details-pic.jpg" alt="..." class="img-rounded eventview54">
-</div>
-
+<!-- View -->
+<section class="view">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 view20">
+        <h2>${eview.title}</h2>
+          <p> | ${eview.wdate} |&nbsp;<i class="fa fa-eye"></i>&nbsp;${eview.hits}</p>
+          
+          <input type="hidden" class="hdBno" value="${eview.event_cd}">
+          
+            <div>${eview.content}</div>
+          
+<!-- 이전 -->
+          <div class="">
+            <c:if test="${prev !=null}">
+            <a href="eventView.do?nt_cd=${prev.event_cd}&pageNum=${cri.pageNum}&amount=${cri.amount}"
+              class="btn"><i class="fa fa-angle-left"></i>
+              <span class="btn btn-outline-primary btn-rounded">${prev.title}</span>
+            </a>
+            </c:if>
+            <c:if test="${prev ==null}">
+            <a href="javascript:void(0)" class="btn"><i class="fa fa-angle-left"></i>
+              <span class="btn btn-outline-primary btn-rounded">ListPage</span>
+            </a>
+            </c:if>
+<!-- 다음 -->
+            <c:if test="${next !=null}">
+            <a href="eventView.do?nt_cd=${next.event_cd}&pageNum=${cri.pageNum}&amount=${cri.amount}"
+              class="btn pull-right">
+              <span class="btn btn-outline-primary btn-rounded">${next.title}</span>
+                <i class="fa fa-angle-right"></i>
+            </a>
+            </c:if>
+            <c:if test="${next ==null}">
+            <a href="javascript:void(0)"  class="btn pull-right">
+              <span class="btn btn-outline-primary btn-rounded">ListPage</span>
+                <i class="fa fa-angle-right"></i>
+            </a>
+            </c:if>
+          </div><!-- "" -->
+          
 <!-- button -->
-<div class="button">
-  <button type="button" class="btn btn-outline-primary btn-rounded" onClick="location.href='event.do'">
-    <i class="fa fa-list"></i>&nbsp;リスト<!-- 리스트(목록) -->
-  </button>
-</div>
+          <div class="button">
+            <button type="button" class="btn btn-outline-primary btn-rounded" onclick="location.href='event.do'">
+              <i class="fa fa-list"></i>&nbsp;リスト<!-- 리스트(목록) -->
+            </button>
+          </div><!-- button -->
+          
+      </div><!-- col-md-12 -->
+    </div><!-- row -->
+  </div><!-- container -->
+</section>
 
 <!-- Product Section Begin -->
 <section class="product spad">

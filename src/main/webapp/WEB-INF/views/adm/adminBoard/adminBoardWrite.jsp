@@ -38,7 +38,7 @@
       <div class="card-body">
 
 <!--           Table -->
-<form id="borad" name="admin" method="post" action="adminBoardWritePro.do" onsubmit="return check()">
+<form id="borad" name="admin" method="post" action="adminBoardWritePro.do" enctype="multipart/form-data" onsubmit="return check()">
 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
   <table class="table table-striped table-bordered no-wrap dataTable">
     <colgroup>
@@ -127,9 +127,9 @@ $(document).ready(function() {
        form_data.append('file', file);
        
        $.ajax({
-         //data: form_data,
-         type: "get",
-         url: '/adm/boardImage.do?file='+file.name,
+         data: form_data,
+         type: "post",
+         url: '/adm/boardImage.do',
          cache: false,
          contentType: false,
          enctype: 'multipart/form-data',

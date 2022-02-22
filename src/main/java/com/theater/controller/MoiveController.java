@@ -1,17 +1,11 @@
 package com.theater.controller;
 
-import java.util.List;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.slf4j.spi.LocationAwareLogger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -35,6 +29,8 @@ public class MoiveController {
 	@GetMapping("/view.do")
 	public void view(@RequestParam("m_cd") int m_cd,Criteria cri, Model model) {
 		model.addAttribute("view", movieService.read(m_cd));
+    model.addAttribute("review",movieService.get(m_cd));
+
 	}//view.do
 	
 	
@@ -54,6 +50,13 @@ public class MoiveController {
 	  model.addAttribute("prevPage",movieService.prevPage(m_cd));
 	}
 	
-
-	
+	@PostMapping("/movieReviewInsert.do")
+	public String movieReviewInsert(@RequestParam("m_cd") int m_cd,Model model,ReviewVO rvo) {
+	  model.addAttribute("m_cd",m_cd);
+	  movieService.register(rvo);
+	  
+	  System.out.println(rvo);
+	  
+	  return "redirect:/movie/view.do";
+	}
 }//moive controller

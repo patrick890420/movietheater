@@ -17,12 +17,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 view20">
-        <h2>${view.title}</h2>
-          <p> | ${view.wdate} |&nbsp;<i class="fa fa-eye"></i>&nbsp;${view.hits}</p>
+        <h2>${nview.title}</h2>
+          <p> | ${nview.wdate} |&nbsp;<i class="fa fa-eye"></i>&nbsp;${nview.hits}</p>
           
-          <input type="hidden" class="hdBno" value="${view.nt_cd}">
+          <input type="hidden" class="hdBno" value="${nview.nt_cd}">
           
-            <div>${view.content}</div>
+            <div>${nview.content}</div>
           
 <!-- 이전 -->
           <div class="">

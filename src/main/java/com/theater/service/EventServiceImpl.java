@@ -27,8 +27,8 @@ public class EventServiceImpl implements EventService {
 
 //admin
   @Override
-  public List<EventVO> getAdminList(Criteria cri) {
-    return eMapper.getAdminList(cri);
+  public List<EventVO> getEventList(Criteria cri) {
+    return eMapper.getEventList(cri);
   }
 
   @Override
@@ -37,7 +37,43 @@ public class EventServiceImpl implements EventService {
     return eMapper.getAdminBoardView(event_cd);
   }
 
-//User
+  @Override
+  public boolean modify(EventVO evo) {
+    return eMapper.modify(evo)==1;
+  }
+
+  @Override
+  public boolean delete(int event_cd) {
+    return eMapper.delete(event_cd)== 1;
+  }
+
   
+
+  @Override
+  public void getViewCount(int event_cd) {
+    eMapper.getViewCount(event_cd);
+    
+  }
+
+  @Override
+  public int getTotal(Criteria cri) {
+    return eMapper.getTotal(cri);
+  }
+
+  @Override
+  public EventVO nextPage(int event_cd) {
+    return eMapper.nextPage(event_cd);
+  }
+
+  @Override
+  public EventVO prevPage(int event_cd) {
+    return eMapper.prevPage(event_cd);
+  }
+
+  @Override
+  public List<EventVO> getEventList() {
+    // TODO Auto-generated method stub
+    return null;
+  }
 
 }//class
