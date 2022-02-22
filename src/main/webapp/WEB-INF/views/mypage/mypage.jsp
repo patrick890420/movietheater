@@ -22,11 +22,11 @@
     <div class="list-group list-group-flush">
       <a
         class="list-group-item list-group-item-action list-group-item-light p-3"
-        href="mypage.do">My account</a> <a
+        href="mypage.do">アカウント管理</a> <a
         class="list-group-item list-group-item-action list-group-item-light p-3"
-        href="myreser.do">My Reservation</a> <a
+        href="myreser.do">私の予約</a> <a
         class="list-group-item list-group-item-action list-group-item-light p-3"
-        href="mycash.do">My Payment</a> <a
+        href="mycash.do">決済リスト</a> <a
         class="list-group-item list-group-item-action list-group-item-light p-3"
         href="mypass.do">パスワード変更</a>
     </div>
@@ -43,8 +43,8 @@
               <div class="col-xl-8 m-auto order-xl-1">
                 <div class="card-body">
                   <form class="formform" name="form1" method="post" style="margin-left: 150px;">
-                    <h2 style="margin-top: 80px;">My account.</h2>
-                    <h6 class="heading-small text-muted mb-4">私のアカウント</h6>
+                    <h2 style="margin-top: 80px; text-align: center; margin-bottom: 50px;">My account.</h2>
+<!--                     <h6 class="heading-small text-muted mb-4">私のアカウント</h6> -->
                     <div class="pl-lg-4">
                       <div class="row">
                         <div class="col-lg-6">
@@ -123,10 +123,10 @@
                     </div>
                     <hr class="my-4">
                     <!-- Description -->
-                    <h6 class="heading-small text-muted mb-4">이용약관 동의 내역</h6>
+                   
                     <div class="pl-lg-4">
                       <div class="form-group focused">
-                        <label>About Me</label>
+                        <label>会員規約</label>
                         <textarea rows="4"
                           class="form-control form-control-alternative"
                           placeholder="A few words about you ..."
@@ -148,10 +148,10 @@
             </textarea>
                       </div>
 
-                      <input type="button" id="updatebtn"
-                        class="input__btn input__btn2" value="수정 완료">
-                      <button type="reset"
-                        class=".input__btn input__btn2" value="수정 완료">reset</button>
+                      <input type="button" id="updatebtn" class="btn btn-primary class="input__btn input__btn2" value="수정 완료">
+                      <button type="reset" class="btn btn-secondary" value="리셋">reset</button>
+                       <!-- <button type="submit" class="btn btn-primary"
+              id="join_button" name="join_button">会員登録へ</button> -->
                     </div>
                   </form>
                 </div>
