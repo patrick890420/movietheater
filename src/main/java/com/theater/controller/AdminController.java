@@ -183,7 +183,6 @@ public class AdminController {
   public String movieInfoInsertPro(MultipartHttpServletRequest mtfRequest,MovieInfoVO ivo,MovieVO mvo,Model model) {
     List<MultipartFile> fileList = mtfRequest.getFiles("stillcut");
     String src = mtfRequest.getParameter("src");
-    System.out.println("src value : " + src);
 
     String path = "C:\\upload\\";
     
@@ -191,8 +190,6 @@ public class AdminController {
     for (MultipartFile mf : fileList) {
       String originFileName = mf.getOriginalFilename(); // 원본 파일 명
       long fileSize = mf.getSize(); // 파일 사이즈
-//      System.out.println("originFileName : " + originFileName);
-//      System.out.println("fileSize : " + fileSize);
       UUID uuid = UUID.randomUUID();
       String safeFile = uuid.toString()+originFileName;
       fileNameArr.add(safeFile.substring(safeFile.lastIndexOf("//")+1));
@@ -276,6 +273,7 @@ public class AdminController {
     
     return "redirect:/adm/adminTheaterInsert.do";
     }
+  
   
   /* Ticketing */
   @GetMapping("/adminTicketing.do")
