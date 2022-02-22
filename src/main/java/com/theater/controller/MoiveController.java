@@ -48,6 +48,8 @@ public class MoiveController {
 	  model.addAttribute("view", movieService.read(m_cd));
 	  model.addAttribute("nextPage",movieService.nextPage(m_cd));
 	  model.addAttribute("prevPage",movieService.prevPage(m_cd));
+	  model.addAttribute("cut",movieService.movieStillcutSelect(m_cd));
+	  model.addAttribute("info",movieService.adminMovieSelect(m_cd));
 	}
 	
 	@PostMapping("/movieReviewInsert.do")

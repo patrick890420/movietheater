@@ -23,20 +23,18 @@
     <div class="row">
       <div class="col-lg-12" style="margin-left: -60px;">
         <div class="login__form" style="text-align: center;">
-          <h3 style="font-size: 50px;">Sign Up</h3>
+        
           <form action="/join/joinPro.do" method="post" id=join_form
             style="padding: 50px 300px; background: url(/resources/img/sky.jpg); padding-top: 100px; border: groove;">
-            <input type="hidden" name="${_csrf.parameterName}"
-              value="${_csrf.token}" />
+            <input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}" />
             <div class="input__item">
               <input type="text" placeholder="お名前"
                 id="userName" name="username"> <span
                 class="icon_profile"></span>
             </div>
             <div class="input__item">
-              <input type="text" placeholder="ユーザーID" id="userId"
-                name="userid" maxlength='15'> <span
-                class="icon_id"></span>
+              <input type="text" placeholder="ユーザーID" id="userId" name="userid" maxlength='15'> 
+              <span class="icon_id"></span>
               <div id="checkMsg"></div>
             </div>
 
@@ -71,7 +69,7 @@
                 id="userPass2"> <span class="icon_lock"></span>
             </div>
             <div class="input__item">
-              <input type="text" placeholder="生年月日 例)950505"
+              <input type="text" placeholder="生年月日 例)1995-05-05"
                 id="birth" name="birth" maxlength="8"> <span
                 class="icon_calendar"></span>
             </div>

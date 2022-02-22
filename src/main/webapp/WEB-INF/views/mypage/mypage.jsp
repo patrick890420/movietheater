@@ -42,27 +42,22 @@
             <div class="row" style="margin-top: -6%;">
               <div class="col-xl-8 m-auto order-xl-1">
                 <div class="card-body">
-                  <form class="formform" name="form1" method="post" style="margin-left: 150px;">
+                  <form class="formform" name="form1" id="form1" method="post" action="/mypage/memberUpdate.do" style="margin-left: 150px;">
+                    <input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}" />
                     <h2 style="margin-top: 80px; text-align: center; margin-bottom: 50px;">My account.</h2>
 <!--                     <h6 class="heading-small text-muted mb-4">私のアカウント</h6> -->
                     <div class="pl-lg-4">
                       <div class="row">
                         <div class="col-lg-6">
                           <div class="form-group focused">
-                            <label class="form-control-label"
-                              for="input-username">name</label> <input
-                              type="text" id="input-username"
-                              class="form-control form-control-alternative"
-                              value="${mvo.username }">
+                            <label class="form-control-label" for="input-username">name</label> 
+                            <input type="text" id="input-username" class="form-control form-control-alternative" value="${member.username }">
                           </div>
                         </div>
                         <div class="col-lg-6">
                           <div class="form-group">
-                            <label class="form-control-label"
-                              for="input-email">Email</label> <input
-                              type="email" id="input-email"
-                              class="form-control form-control-alternative"
-                              value="${mvo.email }">
+                            <label class="form-control-label" for="input-email">Email</label>
+                            <input type="email" id="input-email" class="form-control form-control-alternative" value="${member.email }">
                           </div>
                         </div>
                       </div>
@@ -73,7 +68,7 @@
                               for="input-first-name">Phone</label> <input
                               type="text" id="input-first-name"
                               class="form-control form-control-alternative"
-                              value="${mvo.phone }">
+                              value="${member.phone }">
                           </div>
                         </div>
                       </div>
@@ -98,7 +93,7 @@
                               for="">Id</label> <input
                               type="text" id=""
                               class="form-control form-control-alternative"
-                              value="${mvo.userid }" readonly>
+                              value="${member.userid }" readonly>
                           </div>
                         </div>
                         <div class="col-lg-4">
@@ -107,7 +102,7 @@
                               for="">gender</label> <input
                               type="text" id=""
                               class="form-control form-control-alternative"
-                              value="${mvo.gender }" readonly>
+                              value="${member.gender }" readonly>
                           </div>
                         </div>
                         <div class="col-lg-4">
@@ -116,7 +111,7 @@
                               for="">birthday</label> <input
                               type="number" id=""
                               class="form-control form-control-alternative"
-                              value="" readonly>
+                              value="${member.birth }" readonly>
                           </div>
                         </div>
                       </div>
@@ -148,7 +143,7 @@
             </textarea>
                       </div>
 
-                      <input type="button" id="updatebtn" class="btn btn-primary class="input__btn input__btn2" value="수정 완료">
+                      <button type="submit" id="updatebtn" class="btn btn-primary">수정 완료</button>
                       <button type="reset" class="btn btn-secondary" value="리셋">reset</button>
                        <!-- <button type="submit" class="btn btn-primary"
               id="join_button" name="join_button">会員登録へ</button> -->
@@ -182,21 +177,6 @@
 
 </div>
 
-<!-- Bootstrap core JS-->
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
-
-<script>
-    $(document).ready(function(){
-        $("#updatebtn").click(function(){
-           alert("수정완료 하였습니다.");
-            document.form1.action = "/mypage/memberUpdate.do";
-            document.form1.submit();
-        });
-    });
-</script>
 
 
 <%@ include file="../footer.jsp"%>

@@ -39,8 +39,8 @@
                                             <li><span>장르</span> 장르</li>
                                             <fmt:parseDate value="${view.rdate}" var="dateValue" pattern="yyyy-MM-dd"/>
                                             <li><span>개봉일</span><fmt:formatDate value="${dateValue}" pattern="yyyy-MM-dd"/></li>
-                                            <li><span>Type:</span> 감독</li>
-                                            <li><span>Studios:</span> 배우</li>
+                                            <li><span>감독</span>${info.d_name}</li>
+                                            <li><span>배우</span>${info.a_name }</li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
@@ -48,7 +48,7 @@
                                             <li><span>Scores:</span> 평점(별점)</li>
                                             <li><span>Status:</span> 상영 상태</li>
                                             <li><span>상영 시간</span>${view.rtime } 분</li>
-                                            <li><span>상영 등급</span> ${view.rate }</li>
+                                            <li><span>상영 등급</span> ${view.rate }세 이용가</li>
                                         </ul>
                                     </div>
                                     <p>${view.intro }</p>
@@ -254,33 +254,33 @@
                             <div class="section-title">
                                 <h5>you might like...</h5>
                             </div>
-                            <div class="col-lg-4 col-md-4">
-                            <div class="product__sidebar__view__item set-bg" data-setbg="/resources/img/sidebar/tv-1.jpg">
-                                <div class="ep">18 / ?</div>
-                                <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                <h5><a href="#">Boruto: Naruto next generations</a></h5>
+                            <div class="col-lg-3 col-md-3">
+                              <div class="product__sidebar__view__item set-bg" data-setbg="/upload/${cut.still_img1}">
+                                  <div class="ep">18 / ?</div>
+                                  <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                  <h5><a href="#">Boruto: Naruto next generations</a></h5>
+                              </div>
                             </div>
+                            <div class="col-lg-3 col-md-3">
+                              <div class="product__sidebar__view__item set-bg" data-setbg="/upload/${cut.still_img2}">
+                                  <div class="ep">18 / ?</div>
+                                  <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                  <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+                              </div>
                             </div>
-                            <div class="col-lg-4 col-md-4">
-                            <div class="product__sidebar__view__item set-bg" data-setbg="/resources/img/sidebar/tv-2.jpg">
-                                <div class="ep">18 / ?</div>
-                                <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+                            <div class="col-lg-3 col-md-3">
+                              <div class="product__sidebar__view__item set-bg" data-setbg="/upload/${cut.still_img3}">
+                                  <div class="ep">18 / ?</div>
+                                  <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                  <h5><a href="#">Sword art online alicization war of underworld</a></h5>
+                              </div>
                             </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                            <div class="product__sidebar__view__item set-bg" data-setbg="/resources/img/sidebar/tv-3.jpg">
-                                <div class="ep">18 / ?</div>
-                                <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                <h5><a href="#">Sword art online alicization war of underworld</a></h5>
-                            </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                            <div class="product__sidebar__view__item set-bg" data-setbg="/resources/img/sidebar/tv-4.jpg">
-                                <div class="ep">18 / ?</div>
-                                <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
-                            </div>
+                            <div class="col-lg-3 col-md-3">
+                              <div class="product__sidebar__view__item set-bg" data-setbg="/upload/${cut.still_img4}">
+                                  <div class="ep">18 / ?</div>
+                                  <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                  <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
+                              </div>
                             </div>
                         </div>
                     </div>

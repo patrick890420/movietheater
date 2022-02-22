@@ -92,9 +92,9 @@
             <!-- <a href="/login/logout.do" style="text-align: center;"><span class="icon_lock"><br>로그아웃</span></a> -->
               <form name="lg" action="/adm/adminLogout" method="post"><!-- spring security 로그아웃은 get 불가 -->
                      
+                <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
                 <a href="/mypage/memberUp" style="text-align: center;"> <span class="icon_pencil-edit"><br>마이페이지</span></a>
                                
-                <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
                 <button type="submit" style="border:0 none; background:transparent; top: -24px; right: 10px; position: relative;" ><span class="icon_lock-open_alt"><br>로그아웃</span></button> 
 
                 <a href="" style="text-align: center;"><span class="icon_chat_alt"><br>고객센터</span></a>
