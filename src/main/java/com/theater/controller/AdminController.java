@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -274,6 +275,11 @@ public class AdminController {
     return "redirect:/adm/adminTheaterInsert.do";
     }
   
+  @GetMapping("/adminSchedule.do") 
+  public String  admintheatherSchedule(Model model) {
+    model.addAttribute("mlist",TheaterService.adminScheduleSelect());
+    return "adm/adminTheater/adminSchedule";
+  }
   
   /* Ticketing */
   @GetMapping("/adminTicketing.do")

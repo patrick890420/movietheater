@@ -28,88 +28,52 @@
       <!-- Container fluid  -->
       <!-- ============================================================== -->
       <div class="container-fluid">
+       <div class="card">
+        <div class="card-body">
           <!-- ============================================================== -->
           <!-- Start Page Content -->
           <!-- ============================================================== -->
           <form name="adminMovieInsertPro" action="adminMovieInfoInsertPro.do" method="post" enctype="multipart/form-data">
             <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
-            <input type="hidden" name="m_cd" value="${m_cd}">
+<%--             <input type="hidden" name="m_cd" value="${mlist.m_cd}"> --%>
 <%--             <c:set target="${list}" property="list" /> --%>
 <%--             <c:out value="${list.m_cd}" /> --%>
           <div class="row">
               <div class="col-sm-12 col-md-6 col-lg-4">
                   <div class="card">
                       <div class="card-body">
-                          <h4 class="card-title">영화 배우</h4>
+                          <h4 class="card-title">영화 선택</h4>
                               <div class="form-group actorsForm">
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#actorsmodal">배우 검색</button>
-                                  <input class="form-contorl" id="a_name" name="a_name">
-                                  <input type="hidden" id="a_cd" name="a_cd">
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#actorsmodal">영화 검색</button>
+                                  <input class="form-contorl" id="m_name" name="m_name">
+                                  <input type="hidden" id="m_cd" name="m_cd">
                               </div>
                       </div>
                   </div>
               </div>
               <div class="col-sm-12 col-md-6 col-lg-4">
-                  <div class="card">
-                      <div class="card-body">
-                          <h4 class="card-title">영화 감독</h4>
-                              <div class="form-group">
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#directrosmodal">감독 검색</button>
-                                  <input class="form-contorl" id="d_name" name="d_name">
-                                  <input type="hidden" id="d_cd" name="d_cd">
-                              </div>
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Input Type Date Time</h4>
+                    <h6 class="card-subtitle">Using <code>input type="datetime-local"</code></h6>
+<!--                <form class="mt-4"> -->
+                      <div class="form-group">
+                        <input type="datetime-local" class="form-control" value="2008-05-13T22:33:00">
                       </div>
+<!--                </form> -->
                   </div>
+                </div>
               </div>
-              <div class="col-sm-12 col-md-6 col-lg-4">
-                  <div class="card">
-                      <div class="card-body">
-                          <h4 class="card-title">영화 장르</h4>
-                              <div class="form-group">
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#genresmodal">장르 검색</button>
-                                  <input class="form-contorl" id="g_name" name="g_name">
-                                  <input type="hidden" id="g_cd" name="g_cd">
-                              </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-sm-12 col-md-6 col-lg-4">
-                  <div class="card">
-                      <div class="card-body">
-                          <h4 class="card-title">국가</h4>
-                              <div class="form-group">
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nationsmodal">국가 검색</button>
-                                  <input class="form-contorl" id="n_name" name="n_name">
-                                  <input type="hidden" id="n_cd" name="n_cd">
-                              </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-sm-12 col-md-6 col-lg-8">
-                  <div class="card">
-                      <div class="card-body">
-                          <h4 class="card-title">영화 스냅샷</h4>
-                          <h6 class="card-subtitle"><code>스킬컷은 4장까지만 가능합니다.</code>
-                          </h6>
-                              <div class="input-group">
-                                  <div class="custom-file">
-                                      <input multiple="multiple" type="file" class="custom-file-input" id="inputGroupFile05" name="stillcut">
-                                      <label class="custom-file-label" for="inputGroupFile05">Choose file</label>
-                                  </div>
-                                  <div class="input-group-append">
-                                      <button class="btn btn-outline-secondary" type="button">업로드</button>
-                                  </div>
-                              </div>
-                      </div>
-                  </div>
-              </div>         
+              
+             
           <div class="mx-auto" style="text-align:center;">
             <button type="submit" class="btn btn-info">Submit</button>
             <button type="reset" class="btn btn-dark">Reset</button>
           </div>
-          
       </div><!-- 2-1 -->
       </form>
+      </div>
+      </div>
           <!-- ============================================================== -->
           <!-- End PAge Content -->
           <!-- ============================================================== -->
@@ -134,7 +98,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
       </div>
       <div class="modal-body">
-      <div style="text-align: center;"><h3>배우 검색</h3></div>
+      <div style="text-align: center;"><h3>영화 검색</h3></div>
       <div class="tab-content">
       <div class="tab-pane show active" id="actors">
       <!-- basic table -->
@@ -147,25 +111,41 @@
                     <thead>
                       <tr>
                         <th>CODE</th>
-                        <th>NAME</th>
+                        <th>TITLE</th>
+                        <th>RDATE</th>
+                        <th>RTIME</th>
+                        <th>RATE</th>
                       </tr>
                     </thead>
                     <tbody>
-                        <c:forEach items="${actors}" var="actors">
+                        <c:forEach items="${mlist }" var="mlist">
                           <tr class="actorsTr">
                             <td>
-                              <p class="actorsCode" data-toggle="modal" data-target="#primary-header-modal">${actors.a_cd}</p>
+                              <p class="movieCode" data-toggle="modal" data-target="#primary-header-modal">${mlist.m_cd }</p>
+                            </td> 
+                            <td>
+                              <p class="movieTitle" data-toggle="modal" data-target="#primary-header-modal">${mlist.title}</p>
                             </td>
                             <td>
-                              <p class="actorsName" data-toggle="modal" data-target="#primary-header-modal">${actors.a_name}</p>
-                            </td>
+                              <p class="movieRdate" data-toggle="modal" data-target="#primary-header-modal"><fmt:parseDate value="${mlist.rdate}" var="dateValue" pattern="yyyy-MM-dd"/>
+                                                                                                            <fmt:formatDate value="${dateValue}" pattern="yyyy-MM-dd"/></p>
+                            </td> 
+                            <td>
+                              <p class="movieRtime" data-toggle="modal" data-target="#primary-header-modal">${mlist.rtime }분</p>
+                            </td> 
+                            <td>
+                              <p class="movieRate" data-toggle="modal" data-target="#primary-header-modal">${mlist.rate }</p>
+                            </td> 
                           </tr>
                         </c:forEach>
                     </tbody>
                     <tfoot>
                       <tr>
                         <th>CODE</th>
-                        <th>NAME</th>
+                        <th>TITLE</th>
+                        <th>RDATE</th>
+                        <th>RTIME</th>
+                        <th>RATE</th>
                       </tr>
                     </tfoot>
                     </table>
@@ -181,208 +161,17 @@
   </div> <!-- end  -->
 </div>
            
-<!-- 2번째 모달 -->
-<div id="directrosmodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="fullWidthModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-full-width">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="fullWidthModalLabel">Modal Heading</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-      </div>
-      <div class="modal-body">
-        <div style="text-align: center;"><h3>감독 검색</h3></div>
-          <!-- Directors tab -->
-        <div class="tab-pane" id="directors">
-        <!-- basic table -->
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table id="directorsTable" class="table table-striped table-bordered no-wrap">
-                    <thead>
-                      <tr>
-                        <th>CODE</th>
-                        <th>NAME</th>
-                      </tr>
-                   </thead>
-                   <tbody>
-                     <c:forEach items="${directors }" var="directors">
-                       <tr class="directorsTr">
-                         <td>
-                          <p class="directorsCode" data-toggle="modal" data-target="#primary-header-modal">${directors.d_cd }</p>
-                         </td>
-                         <td>
-                          <p class="directorsName" data-toggle="modal" data-target="#primary-header-modal">${directors.d_name }</p>
-                         </td>
-                       </tr>
-                     </c:forEach>
-                   </tbody>
-                   <tfoot>
-                     <tr>
-                       <th>CODE</th>
-                       <th>NAME</th>
-                     </tr>
-                   </tfoot>
-                 </table>
-               </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-  
-<!--  3번째 모달 -->
-              
-<div id="nationsmodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="fullWidthModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-full-width">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="fullWidthModalLabel">Modal Heading</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-      </div>
-      <div class="modal-body">
-      <div style="text-align: center;"><h3>장르 검색</h3></div>
-        <div class="tab-pane" id="genres">
-          <!-- basic table -->
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-body">
-                  <div class="table-responsive">
-                   <table id="genresTable" class="table table-striped table-bordered no-wrap">
-                   <thead>
-                     <tr>
-                       <th>CODE</th>
-                       <th>NAME</th>
-                     </tr>
-                   </thead>
-                   <tbody>
-                     <c:forEach items="${nations }" var="nations">
-                       <tr class="nationsTr">
-                         <td>
-                          <p class="nationsCode">${nations.n_cd }</p>
-                        </td>
-                         <td>
-                          <p class="nationsName">${nations.n_name }</p>
-                        </td>
-                       </tr>
-                     </c:forEach>
-                   </tbody>
-                   <tfoot>
-                     <tr>
-                       <th>CODE</th>
-                       <th>NAME</th>
-                     </tr>
-                   </tfoot>
-                 </table>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-     </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
-</div>
-                                                      <!-- 4번째 모달 -->
-                                                      
-<div id="genresmodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="fullWidthModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-full-width">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="fullWidthModalLabel">Modal Heading</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-      </div>
-      <div class="modal-body">
-        <div style="text-align: center;"><h3>국가 검색</h3></div>
-        <div class="tab-pane" id="nations">
-        <!-- basic table -->
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-body">
-                 <div class="table-responsive">
-                   <table id="nationsTable" class="table table-striped table-bordered no-wrap">
-                     <thead>
-                       <tr>
-                         <th>CODE</th>
-                         <th>NAME</th>
-                       </tr>
-                     </thead>
-                     <tbody>
-                       <c:forEach items="${genres }" var="genres">
-                         <tr class="genresTr">
-                          <td>
-                            <p class="genresCode">${genres.g_cd }</p>
-                          </td>
-                          <td>
-                            <p class="genresName">${genres.g_name }</p>
-                          </td>
-                        </tr>
-                      </c:forEach>
-                    </tbody>
-                    <tfoot>
-                      <tr>
-                        <th>CODE</th>
-                        <th>NAME</th>
-                      </tr>
-                    </tfoot>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+
 <script>
 $(".actorsTr").on("click", function () {
   var actorsForm =$(this);
-  var aname=actorsForm.find(".actorsName").text();
-  var acd=actorsForm.find(".actorsCode").text();
-  $("#a_name").val(aname);
-  $("#a_cd").val(acd);
+  var mname=actorsForm.find(".movieTitle").text();
+  var mcd=actorsForm.find(".movieCode").text();
+  $("#m_name").val(mname);
+  $("#m_cd").val(mcd);
   $("#actorsmodal").modal('hide');
 });
-
-$(".directorsTr").on("click", function () {
-  var directorsForm =$(this);
-  var dname=directorsForm.find(".directorsName").text();
-  var dcd=directorsForm.find(".directorsCode").text();
-  $("#d_name").val(dname);
-  $("#d_cd").val(dcd);
-  $("#directrosmodal").modal('hide');
-});
-
-$(".nationsTr").on("click", function () {
-  var nationsForm =$(this);
-  var nname=nationsForm.find(".nationsName").text();
-  var ncd=nationsForm.find(".nationsCode").text();
-  $("#n_name").val(nname);
-  $("#n_cd").val(ncd);
-  $("#nationsmodal").modal('hide');
-});
-
-$(".genresTr").on("click", function () {
-  var genresForm =$(this);
-  var gname=genresForm.find(".genresName").text();
-  var gcd=genresForm.find(".genresCode").text();
-  $("#g_name").val(gname);
-  $("#g_cd").val(gcd);
-  $("#genresmodal").modal('hide');
-});
 </script>
-<!-- 모달 종료 -->
-  <!-- ============================================================== -->
   <!-- End Page wrapper  -->
   <!-- ============================================================== -->
 <%@ include file ="../adminfooter.jsp" %>
