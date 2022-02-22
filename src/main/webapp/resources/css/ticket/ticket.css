@@ -647,17 +647,17 @@ button.theater-location , button.theater-place{
   font-size: 13px;
   background-color: #555555;
   color: white;
-  border: 1px solid rgba(255, 0, 0, 0.6);
+  border: 1px solid rgba(255, 25, 255, 0.6);
 }
 
 .seat:hover {
-  background-color: red;
+  background-color: yellow;
   color: white;
   cursor: pointer;
 }
 
 .seat:active {
-  background-color: red;
+  background-color: green;
   color: white;
 }
 

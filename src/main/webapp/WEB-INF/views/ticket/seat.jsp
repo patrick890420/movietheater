@@ -87,8 +87,9 @@
           <input type="hidden" class="selectedSeat" name="selectedSeat">
           <!-- 결제 정보 -->
           <input type="hidden" class="payMoney" name="payMoney">
-          <button type="button" class="reserve-button btn btn-primary">결제하기
-          </button>
+          <div class="">
+            <button type="button" class="reserve-button btn btn-primary">결제하기</button>
+          </div>
         </form>
       </div>
     </div>

@@ -8,9 +8,7 @@ const selectedSeats = document.querySelector('.selected-seats');
 const allSeat = document.querySelector('.all-seats');
 const remainSeat = document.querySelector('.remain-seats');
 const reserveNumber = document.querySelector('.reserve-number');
-const selectSeatListNormal = document.querySelectorAll(
-    '.select-seat-ul-normal li'
-);
+const selectSeatListNormal = document.querySelectorAll('.select-seat-ul-normal li');
 const selectSeatListTeen = document.querySelectorAll('.select-seat-ul-teen li');
 const selectSeatListOld = document.querySelectorAll('.select-seat-ul-old li');
 let selectSeatListUlActive = '';
