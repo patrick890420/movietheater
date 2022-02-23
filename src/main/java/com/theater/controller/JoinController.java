@@ -39,12 +39,14 @@ public class JoinController {
   public void join() {
 
   }
-
+//아이디 체크
   @GetMapping("/idChk.do")
   public @ResponseBody int idChk(@RequestParam("userid") String userid) {
     int result = mservice.idChk(userid);
     return result;
   }
+  //라이언트에서 서버로 필요한 데이터를 전송하기 위해서 JSON이라는 데이터를 요청 본문에 담아서 서버로 보내면, 서버에서는 @RequestBody 어노테이션을 사용하여 HTTP 요청 본문에 담긴 값들을 자바 객체로 변환 시켜, 객체에 저장시킵니다.
+  //서버에서 클라이언트로 응답 데이터를 전송하기 위해서 @ResponseBody 를 사용하여 자바 객체를 HTTP 응답 본문의 객체로 변환하여 클라이언트로 전송시키는 역할
   
   @PostMapping("/joinPro.do") //레지스터 등록
   public String register(MemberVO mvo, RedirectAttributes rdat) {
