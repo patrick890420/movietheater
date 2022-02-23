@@ -136,5 +136,7 @@ function dayClickEvent1(button) {
          error : function() {
             alert("error");
          }
-      }); //ajax end
+      }); 
+      
+      //ajax end
 }
