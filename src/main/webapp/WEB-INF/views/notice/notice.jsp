@@ -14,6 +14,8 @@
 </section>
 <!-- Section End -->
 
+
+
 <!-- search -->
 <div class="notice_search">
 <form name="myform" method="get" action="notice.do" id="searchForm">
@@ -56,10 +58,9 @@
 <div class="container">
   <div class="row51">
     <div class="col-md-12 pb-5">
-      <table class="table table-hover">
+      <table class="table table-hover" id="NoticeTable">
         <colgroup>
           <col width="6%">
-          <col width="12%">
           <col width="*">
           <col width="10%">
           <col width="11%">
@@ -67,8 +68,7 @@
         </colgroup>
         <tr>
           <th>番号</th><!-- 번호 -->
-          <th class="notice70">イメージ</th><!-- img -->
-          <th>題目</th><!-- 제목 -->
+          <th class="notice68">題目</th><!-- 제목 -->
           <th>管理者</th><!-- 관리자 -->
           <th class="notice68">作成日</th><!-- 작성일 -->
           <th>照会数</th><!-- 조회수 -->
@@ -79,9 +79,6 @@
           <c:forEach var="nlist" items="${nlist}">
             <tr>
               <td>${num1}</td><!-- 번호 -->
-              <td>
-                <button type="button" class="btn" data-toggle="modal" data-target="#bs-example-modal-lg">${nlist.n_img}</button>
-              </td><!-- img -->
               <td class="notice85"><a href="noticeView.do?nt_cd=${nlist.nt_cd}">${nlist.title}</a></td><!-- 제목 -->
               <td>管理者</td><!-- 관리자 -->
               <td>
@@ -130,9 +127,11 @@
   <input type="hidden" name="searchName" value="${pageMaker.cri.searchName }">
 </form>
 </div><!-- md-12 -->
-  </div><!-- row -->
+</div><!-- row -->
 </div><!-- container -->
 </section>
+
+</div><!-- background -->
 
 <script>
 //    페이지 처리
