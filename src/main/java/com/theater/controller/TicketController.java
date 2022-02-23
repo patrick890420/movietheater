@@ -60,6 +60,11 @@ public class TicketController {
     
   }
   
+  @GetMapping("/reserve.do")
+  public void reserve() {
+    
+  }
+  
   @GetMapping("/seat.do")
   public void seat() {
     

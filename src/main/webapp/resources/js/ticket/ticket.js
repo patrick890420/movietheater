@@ -117,9 +117,6 @@ theaterPlace.forEach(list => {
     });
 });
 
-
-
-
 reserveTimeWant.forEach(list => {
     list.addEventListener('click', function() {
         const reserveTimeActive = document.querySelectorAll('.reserve-time-active');

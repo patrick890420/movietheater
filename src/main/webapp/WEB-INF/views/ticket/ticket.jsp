@@ -84,8 +84,8 @@
   <div class="col-md-3">
   </div>
   <div class="col-md-6">
-    <img class="tk-poster" alt="" src="/resources/img/ticket/popcon2.png"/>
-    <p>영화 제목</p>
+<!--     <img class="tk-poster" alt="" src="/resources/img/ticket/popcon2.png"/> -->
+<!--     <p>영화 제목</p> -->
   </div>
   <div id="ticket_tnb class="col-md-3"">
     <form class="moveSeatForm" action="moveSeat.do" method="get">
