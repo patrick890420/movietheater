@@ -1961,21 +1961,45 @@ ol {
 
 .page-up {
 	position: absolute;
-	left: 75%;
+	left: 83%;
 	top: -80px;
 	margin-left: -25px;
 }
 
-.page-up a {
+<!--
+.index_scbt2 {
 	display: inline-block;
-    font-size: 27px;
-    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
     height: 50px;
-    width: 200px;
-    background: #e53637;
+    width: 170px;
     line-height: 50px;
     text-align: center;
     border-radius: 30%;
+    background-image: linear-gradient(to left, #b7b7b7, #212529);
+    box-shadow: 1px 3px 6px 0 rgb(0 0 0 / 30%);
+    border-radius: 25px;
+    position: fixed;
+    right: 470px;
+    top:1100px;
+}
+.index_scbt1 {
+  display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 30%;
+    background-image: linear-gradient(to left, #b7b7b7, #212529);
+    box-shadow: 1px 3px 6px 0 rgb(0 0 0 / 30%);
+    border-radius: 25px;
+    position: fixed;
+    right: 400px;
+    top:1100px;
 }
 
 .page-up a span {
@@ -2433,3 +2457,61 @@ ol {
 .dateblack{
   color:black !important;
 }
+
+
+
+
+.rolling_box{
+            width: 100%;
+            height: 40px;
+            text-align: center;
+
+        }
+
+        .rolling_box ul {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .rolling_box ul li {
+            width: 100%;
+            height: 100%;
+            transition: .5s;
+            position:absolute;
+            transition: top .75s;
+            top: 100%;
+            z-index: 1;
+            background-color: #ffffff;
+        }
+
+        .card_sliding{
+            top: 0 !important;
+            z-index: 100 !important;
+        } 
+
+        .card_sliding_after{
+            top: -100% !important;
+            z-index: 10 !important;
+        }
+
+        .rolling_box ul li p {
+            font-size: 15px;
+            line-height: 23px;
+            font-weight: bold;
+            float:left;
+            margin-left:25px;
+        }
+
+        .before_slide {
+            transform: translateY(100%);
+        }
+
+        .after_slide {
+            transform: translateY(0);
+        }
+        
+        .T_button{
+            padding-left: 2px;
+        }
