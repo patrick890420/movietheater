@@ -95,48 +95,28 @@ function dayClickEvent1(button) {
         //console.log(inputReserveDate.value);
     });
 }
-      //area ajax
 
-   $.ajax({
-         type : "get",
-         url : '/ticket/areaSelect.do?m_cd='+mcd,
-         dataType : "json",
-         success : function(data) {
-          
-            let res="";
-            for(let i=0;i<data.length;i++){
-            res+="<button class='btn theater-location' id='theater-location' onclick='roadTheater("+data[i].t_area+","+data[i].m_cd+");'>"+data[i].area_name+"</button>";
-            res+="<input type='hidden' id='area' "+data[i].t_area+"/>";
-            }
-            $('#theater-location-wrapper').html(res);
-            
-            var areaDiv = document.getElementsByClassName('theater-location');
-            //var areaDiv = theaterLocation;
-            
-            function handleClick(event) {
-             // console.log(event.target);
-            //  console.log(event.target.classList);
-              if (event.target.classList[1] === "clicked") {
-                event.target.classList.remove("clicked");
-              } else {
-                for (var i = 0; i < areaDiv.length; i++) {
-                  areaDiv[i].classList.remove("clicked");
-                }
-                  event.target.classList.add("clicked");
-                }
-              }
-              function ainit() {
-                for (var i = 0; i < areaDiv.length; i++) {
-                  areaDiv[i].addEventListener("click", handleClick);
-                }
-              }
-            ainit();
-            
-         },
-         error : function() {
-            alert("error");
-         }
-      }); 
-      
-      //ajax end
+//상단탭 메뉴 시작
+function citycheck(tharea){
+  $.ajax({
+        type : "get",
+        url : '/theater/cityCheck.do?t_area='+tharea,
+        dataType : "json",
+        success : function(data1) {
+           let city="";
+           for(let j=0;j<data1.length;j++){
+             
+             city+="<div class='t_citydata t_citydataline'>";
+             city+=" <strong><a href='/theater/theater.do?t_name="+data1[j].t_name+"'>"+data1[j].t_name+"</a></strong>";
+             city+="</div>";
+             
+           }
+           
+           $('#sub-low').remove();
+           $('#t_subcity').html(city);
+        },
+        error : function() {
+           alert("error");
+        }
+     }); //ajax end
 }

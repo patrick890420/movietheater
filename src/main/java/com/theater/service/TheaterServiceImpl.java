@@ -91,4 +91,9 @@ public class TheaterServiceImpl implements TheaterService {
   public List<ScheduleVO> adminScheduleSelect() {
     return thmapper.adminScheduleSelect();
   }
+  @Override
+  public List<TheatersVO> getCityCheck(TheatersVO tvo) {
+    
+    return thmapper.getCityCheck(tvo);
+  }
 }
