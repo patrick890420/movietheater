@@ -3,44 +3,48 @@
 <mapper namespace="com.theater.mapper.TicketMapper">
 
 <select id="movieList" resultType="com.theater.domain.MovieVO"> <!-- 예매화면 영화 리스트 -->
-  SELECT* 
+  SELECT
+  DISTINCT (F.M_CD) AS M_CD ,M.TITLE,M.RATE 
   FROM MOVIES M, FILMS F
   WHERE M.M_CD = F.M_CD
   AND F.FILM_STATUS = 1
 </select>
 
 
-<select id="getAreaSelect" resultType="com.theater.domain.ReserveVO"> <!-- 예매화면 영화 리스트 -->
-    SELECT
-    DISTINCT(A.AREA_NAME),F.M_CD
-    ,(SELECT
-    DISTINCT(T.T_AREA)
+<select id="getAreaSelect" resultType="com.theater.domain.ReserveVO"> <!-- 지억 리스트 -->
+      SELECT
+    DISTINCT(A.AREA_NAME),F.M_CD,T_AREA 
     FROM FILMS F, SCREENS S, THEATERS T,AREAINFO A
-    WHERE F.SCREEN_CD = S.SCREEN_CD AND S.T_CD = T.T_CD
-    AND T.T_AREA = A.AREA_CD
-    AND F.M_CD = #{m_cd}
-    AND F.FILM_STATUS = 1) AS T_AREA
-    FROM FILMS F, SCREENS S, THEATERS T,AREAINFO A
-    WHERE F.SCREEN_CD = S.SCREEN_CD AND S.T_CD = T.T_CD
+    WHERE F.SCREEN_CD = S.SCREEN_CD 
+    AND S.T_CD = T.T_CD
     AND T.T_AREA = A.AREA_CD
     AND F.M_CD = #{m_cd}
     AND F.FILM_STATUS = 1
 </select>
 
-<select id="getTheaterSelect" resultType="com.theater.domain.ReserveVO"> <!-- 예매화면 영화 리스트 -->
+<select id="getTheaterSelect" resultType="com.theater.domain.ReserveVO"> <!--영화관 리스트 -->     
   SELECT
-    t.t_area,f.m_cd,t.t_name,t.t_cd
-    FROM FILMS F, SCREENS S, THEATERS T
-    WHERE F.SCREEN_CD = S.SCREEN_CD AND S.T_CD = T.T_CD
-    AND F.M_CD = #{m_cd}
-    AND T.T_AREA = #{t_area}
+        DISTINCT (T.T_AREA) AS T_AREA ,F.M_CD,T.T_NAME,T.T_CD
+  FROM FILMS F, SCREENS S, THEATERS T,AREAINFO A
+  WHERE F.SCREEN_CD = S.SCREEN_CD 
+  AND S.T_CD = T.T_CD
+  AND T.T_AREA = A.AREA_CD
+  AND F.M_CD = #{m_cd}
+  AND F.FILM_STATUS = 1;
 </select>
 <select id="getDaySelect" resultType="com.theater.domain.ReserveVO"> 
-  SELECT
-    t.t_area,f.m_cd,t.t_name,t.t_cd
-    FROM FILMS F, SCREENS S, THEATERS T
-    WHERE F.SCREEN_CD = S.SCREEN_CD AND S.T_CD = T.T_CD
+ SELECT
+    (t.t_seat/t.t_screen) AS t_seat, to_char(ft.start_time,'HH24:MI') AS start_time 
+    FROM FILMS F, SCREENS S, THEATERS T, FILM_TIMETABLE FT
+    WHERE S.SCREEN_CD =  F.SCREEN_CD 
+    AND S.T_CD = T.T_CD
+    AND F.SCREEN_CD  = S.SCREEN_CD 
+    AND F.FILM_CD = FT.FILM_CD 
+    AND T.T_NAME = #{t_name}
     AND F.M_CD = #{m_cd}
-    AND T.T_AREA = #{t_area}
+    AND TO_CHAR(FT.start_time,'yyyy-MM-dd') = #{start_time}
+    AND F.FILM_STATUS = 1
 </select>
+
+
 </mapper>
