@@ -1,10 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- Footer Section Begin -->
   <footer class="footer">
-    <div class="page-up">
-      <a href="#" id="scrollToTopButton">
-      <span class="">예약하기</span></a>
-    </div>
+    
+    
     <div class="container">
       <div class="row">
         <div class="col-lg-3">
@@ -62,5 +60,6 @@
   <script src="/resources/js/ticket/ticket.js"></script>
   <script src="/resources/js/ticket/seat.js"></script>
   <script src="/resources/js/theater/theater.js"></script>
+  
 </body>
 </html>

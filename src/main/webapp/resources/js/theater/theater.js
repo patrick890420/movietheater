@@ -95,3 +95,46 @@ function dayClickEvent1(button) {
         //console.log(inputReserveDate.value);
     });
 }
+      //area ajax
+
+   $.ajax({
+         type : "get",
+         url : '/ticket/areaSelect.do?m_cd='+mcd,
+         dataType : "json",
+         success : function(data) {
+          
+            let res="";
+            for(let i=0;i<data.length;i++){
+            res+="<button class='btn theater-location' id='theater-location' onclick='roadTheater("+data[i].t_area+","+data[i].m_cd+");'>"+data[i].area_name+"</button>";
+            res+="<input type='hidden' id='area' "+data[i].t_area+"/>";
+            }
+            $('#theater-location-wrapper').html(res);
+            
+            var areaDiv = document.getElementsByClassName('theater-location');
+            //var areaDiv = theaterLocation;
+            
+            function handleClick(event) {
+             // console.log(event.target);
+            //  console.log(event.target.classList);
+              if (event.target.classList[1] === "clicked") {
+                event.target.classList.remove("clicked");
+              } else {
+                for (var i = 0; i < areaDiv.length; i++) {
+                  areaDiv[i].classList.remove("clicked");
+                }
+                  event.target.classList.add("clicked");
+                }
+              }
+              function ainit() {
+                for (var i = 0; i < areaDiv.length; i++) {
+                  areaDiv[i].addEventListener("click", handleClick);
+                }
+              }
+            ainit();
+            
+         },
+         error : function() {
+            alert("error");
+         }
+      }); //ajax end
+}
