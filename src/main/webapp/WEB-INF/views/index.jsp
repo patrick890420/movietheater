@@ -642,4 +642,8 @@ $(function(){
     });
 });
 </script>
+<<<<<<< HEAD
 <%@ include file="footer.jsp" %>   
+=======
+<%@ include file="footer.jsp" %>   
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
