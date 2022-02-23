@@ -143,7 +143,7 @@
             </textarea>
                       </div>
 
-                      <button type="submit" id="updatebtn" class="btn btn-primary">수정 완료</button>
+                      <button type="submit" id="updatebtn" class="btn btn-primary" style="margin-left: 110px;">수정 완료</button>
                       <button type="reset" class="btn btn-secondary" value="리셋">reset</button>
                        <!-- <button type="submit" class="btn btn-primary"
               id="join_button" name="join_button">会員登録へ</button> -->

@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -48,25 +50,33 @@ private MembersService mservice;
 
   }
   
+  //비밀번호 수정 페이지
   @GetMapping("/mypass.do")
   public void mypass() {
 
   }
   
-  @GetMapping("/mypass2.do")
-  public void mypass2() {
-
+//비밀번호 체크
+  @GetMapping("/pwChk.do")
+  public @ResponseBody int pwChk(@RequestParam("userpw") String userpw) {
+    int result = mservice.pwChk(userpw);
+    return result;
   }
   
+  //비밀번호 수정 처리
   @PostMapping("/mypasspro.do")
-  public String mypasspro(MemberVO mvo, RedirectAttributes rdat) {
+  public String mypasspro(MemberVO mvo) { //RedirectAttributes rdat
+    //RedirectAttributes 폼 형식의 문서를 작성 후, 서버로 보내면(POST 방식) 곧이어 다른 페이지로 리다이렉트 한다.
+    //문제는 이러한 리다이렉트 방식이 GET 방식​ 이라 데이터 전송에는 적절하지 않다 //-----하지만 POST 방식은 아니다.
+    mservice.mypasspro(mvo);
 
     return "redirect:/";
   }
   
+  //회원정보 수정 페이지
   //@Secured({"ROLE_ADMIN","ROLE_USER"}) /* 접근권한 제어 1 */
   @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')") /* 접근권한 제어 2 */
-  @GetMapping("/memberUp")
+  @GetMapping("/memberUp.do")
   public String memberUp(HttpServletRequest request, Model model, Principal principal) throws Exception {
      String userid = principal.getName();
      log.info("userid : " + userid);
@@ -75,20 +85,17 @@ private MembersService mservice;
      model.addAttribute("member", mvo);
      return "/mypage/mypage";
   }
-  
+  //회원정보 수정 처리
   @PostMapping("/memberUpdate")
   public String memberUpdate(MemberVO mvo){
      mservice.memberUpdate(mvo);
      log.info(mvo);
-      return "redirect:/";
+      return "redirect:/";  
   }
   
-  /*return "redirect:/주소"는 해당 주소로 URL 요청을 다시 하는 것이고,
-return "view"는 단순히 지정한 view 페이지를 보여주는 것이다.
-redirect는 response.sendRedirect처럼 화면 넘기기만 가능하고, 데이터를 전달하지는 못한다.
-redirect 시 데이터를 유지하려면 RedirectAttributes의 addFlashAttribute("key", data)를 사용해 데이터를 저장해야 한다.
-라고 하는데 그래서 redirect:/mypage/mypage를 하면 값을 못 가져오는 것인가요 ㅇㅅㅇ? 아니면 세션이 없어서?
-*/
+
+  
+  
   
 
 

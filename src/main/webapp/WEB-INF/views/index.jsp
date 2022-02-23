@@ -2,12 +2,64 @@
 <%@ include file="header.jsp" %>
 	<!-- Hero Section Begin -->
 	<section class="hero" style="background:#000000eb; border-top:solid 3px red;">
+<<<<<<< HEAD
+		<div class="container">
+			<div class="hero__slider owl-carousel">
+				
+				<div class="hero__items set-bg">
+       <video autoplay="" muted="">
+=======
 		<div class="">
 
 				<div class="hero__items set-bg" style="margin:0 auto; max-width:1155px; text-align:center;">
        <video autoplay="" muted="" style="width:100%;">
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
         <source src="https://adimg.cgv.co.kr/images/202202/Nightmare/Nightmare_1080x608_0214.mp4" type="video/mp4">
        </video>
+<<<<<<< HEAD
+        
+				<div class="hero__items set-bg" data-setbg="/resources/img/index/cbg1.png">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="hero__text">
+								<div class="label">Adventure</div>
+								<h2>Fate / Stay Night: Unlimited Blade s</h2>
+								<p>After 30 days of travel across  the world...</p>
+								<a href="#"><span>Watch Now</span> <i
+									class="fa fa-angle-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="hero__items set-bg" data-setbg="/resources/img/index/cbg1.png">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="hero__text">
+								<div class="label">Adventure</div>
+								<h2>Fate / Stay Night: Unlimited Blade Works</h2>
+								<p>After 30 days of travel across the world...</p>
+								<a href="#"><span>Watch Now</span> <i
+									class="fa fa-angle-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="hero__items set-bg" data-setbg="/resources/img/index/cbg1.png">
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="hero__text">
+								<div class="label">Adventure</div>
+								<h2>Fate / Stay Night: Unlimited Blade Works</h2>
+								<p>After 30 days of travel across the world...</p>
+								<a href="#"><span>Watch Now</span> <i
+									class="fa fa-angle-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+=======
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
 			</div>
 		</div>
 
