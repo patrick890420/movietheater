@@ -47,21 +47,36 @@
 <!-- 확인중 -->
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <!-- 확인구간 -->
+
+<script language = "javascript">
+  var imgArray = new Array();
+  imgArray[0] = '/resources/img/theater/post1.jpg';
+  imgArray[1] = '/resources/img/theater/post3.jpg';
+  
+  function showImage(){
+    var imgNum = Math.round(Math.random()*1);
+    var objImg = document.getElementById("introImg");
+    objImg.src = imgArray[imgNum];
+  }
+</script>
+
 </head>
 
-<body>
+<body onload="showImage()">
   <!-- Page Preloder -->
   <div id="preloder">
     <div class="loader"></div>
   </div>
 
   <!-- Header Section Begin -->
-  <header class="header">
+  <header class="header" style="background:black;">
     <div class="container">
       <div class="row">
-        <div class="col-lg-2">
-          <div class="header__logo">
-            <a href="./index.html"></a>
+        <div class="col-lg-12">
+          <div class="">
+            <a href="./index.html">
+            <img id = "introImg" border="0">
+            </a>
           </div>
         </div>
       </div>
@@ -71,17 +86,24 @@
   <!-- Header End -->
   <div class="container" style="height: 82px;">
     <div class="row">
-      <div class="col-lg-3">
-        <div class="header__logo">
+          <div class="col-lg-4">
+        <div class="header__left">
+          <a href="/login/login.do" style="text-align: center;"><span class="icon_lock">페이스북</span></a>
+          <a href="/join/join.do" style="text-align: center;"><span class="icon_profile">유튜브</span></a>
+          <a href="/mypage/memberUp" style="text-align: center;"> <span class="icon_profile">인스타그램</span></a>
+          <a href="" style="text-align: center;"><span class="icon_profile">트위터</span></a>
+        </div>
+      </div>
+      <div class="col-lg-4" style="padding-top:13px;">
+        <div class="header__logo" style="text-align:center;">
           <a href="/"> 
             <span
             style="font-size: x-large; font-weight: 800; color: black;">📽
-              JSL-Movie</span>
-<!--             <img alt="" src="/resources/img/newlogo2.png"> -->
+              JSL-CINEMA</span>
           </a>
         </div>
       </div>
-      <div class="col-lg-8">
+      <div class="col-lg-4">
         <div class="header__right">
           <sec:authorize access="isAnonymous()">
             <a href="/login/login.do" style="text-align: center;"><span class="icon_lock_alt"><br>로그인</span></a>
@@ -108,10 +130,10 @@
   </div>
   <div class="container">
     <div class="row" style="border-top: solid 2px #eeeeee; padding:10px 0; border-bottom: solid 2px #eeeeee;">
-      <div class="col-lg-5" style="margin-left: -15px;">
+      <div class="col-lg-9" style="margin-left: -15px;">
         <div class="header__nav">
           <nav class="header__menu mobile-menu">
-            <ul>
+            <ul class="index_navtab">
               <li><a href="/movie/movie.do">영화</a></li>
               <li><a href="/theater/theater.do">극장<span class="arrow_carrot-down"></span></a>
                 <ul class="dropdown">
@@ -126,8 +148,6 @@
         </div>
       </div>
       <div class="col-lg-3" style="text-align:right;">
-      </div>
-      <div class="col-lg-4" style="text-align:right;">
         <label style="margin:10px 0;">
           <input type="text">
           <button type="button" style="background:none; border:none;"><span

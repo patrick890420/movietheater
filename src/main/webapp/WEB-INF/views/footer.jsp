@@ -3,7 +3,7 @@
   <footer class="footer">
     <div class="page-up">
       <a href="#" id="scrollToTopButton">
-      <span class="arrow_carrot-up"></span></a>
+      <span class="">예약하기</span></a>
     </div>
     <div class="container">
       <div class="row">
@@ -51,6 +51,7 @@
   <!-- Search model end -->
   <!-- Js Plugins -->
 <!--   <script src="/resources/js/jquery-3.3.1.min.js"></script> -->
+
   <script src="/resources/js/bootstrap.min.js"></script>
   <script src="/resources/js/player.js"></script>
   <script src="/resources/js/jquery.nice-select.min.js"></script>

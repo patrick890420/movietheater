@@ -51,13 +51,13 @@
                         <div class="col-lg-6">
                           <div class="form-group focused">
                             <label class="form-control-label" for="input-username">name</label> 
-                            <input type="text" id="input-username" class="form-control form-control-alternative" value="${member.username }">
+                            <input type="text" name="username" id="input-username" class="form-control form-control-alternative" value="${member.username }">
                           </div>
                         </div>
                         <div class="col-lg-6">
                           <div class="form-group">
                             <label class="form-control-label" for="input-email">Email</label>
-                            <input type="email" id="input-email" class="form-control form-control-alternative" value="${member.email }">
+                            <input type="email" name="email" id="input-email" class="form-control form-control-alternative" value="${member.email }">
                           </div>
                         </div>
                       </div>
@@ -66,7 +66,7 @@
                           <div class="form-group focused">
                             <label class="form-control-label"
                               for="input-first-name">Phone</label> <input
-                              type="text" id="input-first-name"
+                              type="text" id="input-first-name" name="phone"
                               class="form-control form-control-alternative"
                               value="${member.phone }">
                           </div>
@@ -91,7 +91,7 @@
                           <div class="form-group focused">
                             <label class="form-control-label"
                               for="">Id</label> <input
-                              type="text" id=""
+                              type="text" id="" name="userid"
                               class="form-control form-control-alternative"
                               value="${member.userid }" readonly>
                           </div>
@@ -100,7 +100,7 @@
                           <div class="form-group focused">
                             <label class="form-control-label"
                               for="">gender</label> <input
-                              type="text" id=""
+                              type="text" id="" name="gender"
                               class="form-control form-control-alternative"
                               value="${member.gender }" readonly>
                           </div>
@@ -109,7 +109,7 @@
                           <div class="form-group">
                             <label class="form-control-label"
                               for="">birthday</label> <input
-                              type="number" id=""
+                              type="number" id="" name="birth"
                               class="form-control form-control-alternative"
                               value="${member.birth }" readonly>
                           </div>

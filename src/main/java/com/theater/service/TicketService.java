@@ -11,4 +11,5 @@ public interface TicketService {
   public List<MovieVO> mvRead();
   public List<ReserveVO> getAreaSelect(int m_cd);
   public List<ReserveVO> getTheaterSelect(ReserveVO rvo);
+  public List<ReserveVO> getDaySelect(ReserveVO rvo);
 }

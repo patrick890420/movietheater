@@ -44,7 +44,6 @@ public class JoinController {
   public @ResponseBody int idChk(@RequestParam("userid") String userid) {
     int result = mservice.idChk(userid);
     return result;
-
   }
   
   @PostMapping("/joinPro.do") //레지스터 등록
