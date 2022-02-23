@@ -24,6 +24,5 @@ public interface EventMapper {
   public int getTotal(Criteria cri);
   public EventVO nextPage(int event_cd);
   public EventVO prevPage(int event_cd);
-//pageing
-  public List<EventVO> getListWithPaging(Criteria cri);
+
 }//inter

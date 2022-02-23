@@ -43,11 +43,11 @@
                   <div class="col-12">
                     <div class="card">
                       <div class="card-body">
-<!--             <code> $().DataTable();</code> -->
-<!-- DataTable 사용법 -->
-<!--        <code> $("#테이블id").DataTable();</code> -->
+            <!--             <code> $().DataTable();</code> -->
+            <!-- DataTable 사용법 -->
+            <!--        <code> $("#테이블id").DataTable();</code> -->
                         <div class="table-responsive">
-                          <table id="noticeTable" class="table table-striped table-bordered no-wrap">
+                          <table id="adminNoticeTable" class="table table-striped table-bordered no-wrap">
                           <colgroup>
                             <col width="10%">
                             <col width="*">

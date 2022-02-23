@@ -18,6 +18,7 @@
       <div class="col-md-12 pb-5">
         <table class="table table-hover">
           <colgroup>
+          <!-- 어떻게 나눌지도 생각해 보긔 (똑같이? or 다르게?) -->
             <col width="10%">
             <col width="*">
             <col width="10%">
@@ -26,30 +27,27 @@
           </colgroup>
           <tr>
             <th>코드</th>
-            <!-- 코드 -->
             <th>영화이름</th>
-            <!-- 영화이름 -->
             <th>예매일</th>
-            <!-- 예매일 -->
             <th>금액</th>
-            <!-- 금액 -->
             <th>결제상태</th>
-            <!-- 결제상태 -->
           </tr>
 
           <tbody>
             <c:set var="num1" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}" />
             <c:forEach var="list" items="${list}">
               <tr>
-                <td>${num1}</td>
                 <!-- 코드 -->
-                <td class="cash76"><a href="cashView.do?nt_cd=${list.nt_cd}">${list.title}</a></td>
-                <!-- 영화이름 -->
-                <td>예매일</td>
-                <!-- 예매일 -->
-                <td><fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${list.wdate}" />
-                <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}" /></td>
-                <td class="cash68">${list.hits}</td>
+                <td>코드</td>
+                <!-- 영화이름 (영화정보 페이지로 넘어가게 할까?)-->       
+                <td class="cash76"><a href="??.do?nt_cd=${list.nt_cd}">${list.title}</a></td>
+                <td>
+                  <!-- 예매일 -->
+                  <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${list.wdate}" />
+                  <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}" />
+                </td>
+                <td>금액</td>
+                <td>결제상태</td>
               </tr>
               <c:set var="num1" value="${num1-1}" />
             </c:forEach>

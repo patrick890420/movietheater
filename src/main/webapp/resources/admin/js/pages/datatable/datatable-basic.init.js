@@ -13,7 +13,7 @@ $('#directorsTable').DataTable();
 $('#nationsTable').DataTable();
 $('#genresTable').DataTable();
 $('#adminEventTable').DataTable();
-$('#noticeTable').DataTable();
+$('#adminNoticeTable').DataTable();
 
 
 /****************************************

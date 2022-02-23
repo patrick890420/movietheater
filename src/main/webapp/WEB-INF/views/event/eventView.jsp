@@ -27,8 +27,8 @@
 <!-- View -->
 <section class="view">
   <div class="container">
-    <div class="row">
-      <div class="col-md-12 view20">
+    <div class="row eventview30">
+      <div class="col-md-12 viewrow viewbg">
         <h2>${eview.title}</h2>
           <p> | ${eview.wdate} |&nbsp;<i class="fa fa-eye"></i>&nbsp;${eview.hits}</p>
           
@@ -41,25 +41,25 @@
             <c:if test="${prev !=null}">
             <a href="eventView.do?nt_cd=${prev.event_cd}&pageNum=${cri.pageNum}&amount=${cri.amount}"
               class="btn"><i class="fa fa-angle-left"></i>
-              <span class="btn btn-outline-primary btn-rounded">${prev.title}</span>
+              <span class="btn waves-effect waves-light btn-rounded btn-outline-danger">${prev.title}</span>
             </a>
             </c:if>
             <c:if test="${prev ==null}">
             <a href="javascript:void(0)" class="btn"><i class="fa fa-angle-left"></i>
-              <span class="btn btn-outline-primary btn-rounded">ListPage</span>
+              <span class="btn waves-effect waves-light btn-rounded btn-outline-danger">ListPage</span>
             </a>
             </c:if>
 <!-- 다음 -->
             <c:if test="${next !=null}">
             <a href="eventView.do?nt_cd=${next.event_cd}&pageNum=${cri.pageNum}&amount=${cri.amount}"
               class="btn pull-right">
-              <span class="btn btn-outline-primary btn-rounded">${next.title}</span>
+              <span class="btn waves-effect waves-light btn-rounded btn-outline-danger">${next.title}</span>
                 <i class="fa fa-angle-right"></i>
             </a>
             </c:if>
             <c:if test="${next ==null}">
             <a href="javascript:void(0)"  class="btn pull-right">
-              <span class="btn btn-outline-primary btn-rounded">ListPage</span>
+              <span class="btn waves-effect waves-light btn-rounded btn-outline-danger">ListPage</span>
                 <i class="fa fa-angle-right"></i>
             </a>
             </c:if>
@@ -67,7 +67,7 @@
           
 <!-- button -->
           <div class="button">
-            <button type="button" class="btn btn-outline-primary btn-rounded" onclick="location.href='event.do'">
+            <button type="button" class="btn waves-effect waves-light btn-rounded btn-outline-danger" onclick="location.href='event.do'">
               <i class="fa fa-list"></i>&nbsp;リスト<!-- 리스트(목록) -->
             </button>
           </div><!-- button -->
@@ -76,10 +76,5 @@
     </div><!-- row -->
   </div><!-- container -->
 </section>
-
-<!-- Product Section Begin -->
-<section class="product spad">
-  
-</section><!-- hero -->
 
 <%@ include file="../footer.jsp" %>	

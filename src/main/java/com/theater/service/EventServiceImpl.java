@@ -72,8 +72,7 @@ public class EventServiceImpl implements EventService {
 
   @Override
   public List<EventVO> getEventList() {
-    // TODO Auto-generated method stub
-    return null;
+    return eMapper.getEventList();
   }
 
 }//class

@@ -37,7 +37,23 @@ select * from notice where nt_cd= #{nt_cd}
 
 <!-- admin -->
 <select id="getNoticeList" resultType="com.theater.domain.NoticeVO">
-  select * from notice  
+  <![CDATA[
+        SELECT *
+        FROM ( SELECT ROWNUM RN,
+                A.*
+              FROM (SELECT * FROM NOTICE
+                    WHERE
+        ]]> 
+                    <if test="searchType == 'title'">TITLE LIKE '%'||#{searchName}||'%'</if>
+                    <if test="searchType == 'content'">CONTENT LIKE '%'||#{searchName}||'%'</if>
+                    <if test="searchType == null or searchType == ''"> 1=1</if>
+        <![CDATA[
+                    ORDER BY NT_CD DESC) A)
+        WHERE RN > (#{pageNum}-1) * #{amount} AND RN <= #{pageNum} * #{amount}
+        ]]>
+<!--     <![CDATA[ -->
+<!--       select * from notice where nt_cd > 0 order by nt_cd desc -->
+<!--     ]]> -->
 </select>
 
 <update id="modify">
@@ -59,9 +75,8 @@ select * from notice where nt_cd= #{nt_cd}
 <!-- 전체 래코드 갯수 -->
 <select id="getTotal" resultType="int">
   SELECT COUNT(*) AS TOTAL FROM NOTICE
-  WHERE  <if test="searchType == 'title'">TITLE LIKE '%'||#{searchType}||'%'</if>
-         <if test="searchType == 'content'">CONTNENT LIKE '%'||#{searchType}||'%'</if>
-         <if test="searchType == 'total'">CONT                                                                                                                                                                                                                                                                          ENT LIKE '%'||#{searchType}||'%' OR TITLE LIKE '%'||#{searchName}||'%'</if>
+  WHERE  <if test="searchType == 'title'">TITLE LIKE '%'||#{searchName}||'%'</if>
+         <if test="searchType == 'content'">CONTENT LIKE '%'||#{searchName}||'%'</if>
          <if test="searchType == null or searchType == ''"> 1=1</if>
 </select>
 

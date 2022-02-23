@@ -56,7 +56,7 @@
 <div class="container">
   <div class="row51">
     <div class="col-md-12 pb-5">
-      <table class="table table-hover">
+      <table class="table table-hover" id="NoticeTable">
         <colgroup>
           <col width="6%">
           <col width="*">
@@ -83,7 +83,7 @@
                 <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${nlist.wdate}"/>
                 <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>
               </td>
-              <td class="notice68">${elist.hits}</td>
+              <td class="notice68">${nlist.hits}</td>
             </tr>
            <c:set var="num1" value="${num1-1}"/>
          </c:forEach>

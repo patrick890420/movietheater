@@ -24,8 +24,5 @@ public interface NoticeMapper {
   public int getTotal(Criteria cri);
   public NoticeVO nextPage(int nt_cd);
   public NoticeVO prevPage(int nt_cd);
-//pageing
-  public List<NoticeVO> getListWithPaging(Criteria cri);
 
-  
 }//class
