@@ -51,11 +51,11 @@
                             <label class="form-control-label"
                               for="input-first-name">비밀번호를 변경하시려면,<br> 로그인 시 사용하시는 비밀번호를 입력해 주세요.</label> 
                               <input type="password" id="input-first-name" class="form-control form-control-alternative"
-                              placeholder="기존 비밀번호를 입력해 주세요." value="" style="margin-top: 30px;">
+                              placeholder="기존 비밀번호를 입력해 주세요." name="userpw" style="margin-top: 30px;">
                               <input type="password" id="userPass" class="form-control form-control-alternative"
-                              placeholder="바꿀 비밀번호를 입력해 주세요." value="" style="margin-top: 30px;">
+                              placeholder="바꿀 비밀번호를 입력해 주세요." style="margin-top: 30px;" name="userpw">
                                <input type="password" id="userPass2" class="form-control form-control-alternative"
-                              placeholder="바꿀 비밀번호를 재입력해 주세요." value="" style="margin-top: 30px;">
+                              placeholder="바꿀 비밀번호를 재입력해 주세요." style="margin-top: 30px;"> <!-- name="userpw" -->
                               <input type="button" value="확인" class="input__btn4">
                           </div>
                         </div>
@@ -74,14 +74,6 @@
   </nav>
 
 </div>
-
-<!-- Bootstrap core JS-->
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
-
-
 
 <%@ include file="../footer.jsp"%>
 

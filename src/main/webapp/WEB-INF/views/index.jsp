@@ -240,11 +240,19 @@
                 </div>
               </div>
     </div>
+<<<<<<< HEAD
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="width:2%;">
+=======
+  <a class="carousel-control-prev float-left" href="#carouselExampleIndicators" role="button" data-slide="prev">
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
+<<<<<<< HEAD
   <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="width:2%;">
+=======
+  <a class="carousel-control-next float-right" href="#carouselExampleIndicators" role="button" data-slide="next">
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
