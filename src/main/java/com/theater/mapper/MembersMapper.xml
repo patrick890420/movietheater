@@ -7,7 +7,7 @@
 <insert id="MemberInsert">
   insert all
     into members (userid,userpw,username,birth,gender,phone,email) 
-    values (#{userid}, #{userpw}, #{username}, #{birth}, #{gender}, #{phone}, #{email})
+        values (#{userid}, #{userpw}, #{username}, #{birth}, #{gender}, #{phone}, #{email})
     into member_auth (userid,auth) values (#{userid},'ROLE_USER')
   select*from dual
 </insert>

@@ -98,4 +98,9 @@ public class MovieServiceImpl implements MovieService {
   public List<ReviewVO> getList(Criteria cri, int m_cd) {
     return mapper.getListWithPageing(cri, m_cd);
   }
+  
+  @Override
+  public double cmtAVG(int m_cd) {
+    return mapper.cmtAVG(m_cd);
+  }
 }//Impl

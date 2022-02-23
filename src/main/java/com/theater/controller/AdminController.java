@@ -131,7 +131,6 @@ public class AdminController {
     model.addAttribute("view",movieService.adminMovieSelect(m_cd));
     model.addAttribute("cut",movieService.movieStillcutSelect(m_cd));
 
-    
     return "adm/adminMovie/adminMovieView";
   }
   
@@ -363,19 +362,6 @@ public class AdminController {
       return "adm/adminEvent/adminEventView";
     }
   }
-  
-  @GetMapping("adminBoardModify.do")
-  public String adminBoardModify(@RequestParam("nt_cd")int nt_cd,Model model) {
-    model.addAttribute("view",nService.getAdminBoardView(nt_cd));
-    return "adm/adminBoard/adminBoardModify";
-  }
-  
-  @PostMapping("/adminBoardModifyPro.do")
-  public String modify(NoticeVO notice, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) {
-    nService.modify(notice);
-      rttr.addFlashAttribute("result","success");
-    return "adm/adminNotice/adminNotice";
-  }
 
  @GetMapping("/adminBoardDelete.do")
   public String delete(@RequestParam("nt_cd") int nt_cd) {
@@ -400,6 +386,19 @@ public class AdminController {
     model.addAttribute("prev",eService.prevPage(event_cd));
     return "adm/adminBoard/adminBoardView";
   }
+  
+  @GetMapping("/adminEventModify.do")
+  public String adminEventModify(@RequestParam("event_cd")int event_cd,Model model) {
+    model.addAttribute("eview",eService.getAdminBoardView(event_cd));
+    return "adm/adminEvent/adminEventModify";
+  }
+
+  
+  @GetMapping("/adminEventModifyPro.do")
+  public String adminEventModifyPro(EventVO evo) {
+    eService.modify(evo);
+    return "redirect:/adm/adminEvent.do";
+  }
 
   
 /*Board-> Notice*/
@@ -413,6 +412,19 @@ public class AdminController {
   @GetMapping("/adminNoticeview.do")
   public String adminNoticeview() {
     return "adm/adminNotice/adminNoticeview";
+  }
+  
+  @GetMapping("/adminNoticeModify.do")
+  public String adminNoticeModify(@RequestParam("nt_cd")int nt_cd,Model model) {
+    model.addAttribute("nview",nService.getAdminBoardView(nt_cd));
+    return "adm/adminNotice/adminNoticeModify";
+  }
+
+  
+  @GetMapping("/adminNoticeModifyPro.do")
+  public String adminNoticeModifyPro(NoticeVO nvo) {
+    nService.modify(nvo);
+    return "redirect:/adm/adminNotice.do";
   }
 
   /* Utility */

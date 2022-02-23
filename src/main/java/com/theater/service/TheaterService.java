@@ -2,6 +2,7 @@ package com.theater.service;
 
 import java.util.List;
 
+import com.theater.domain.AreainfoVO;
 import com.theater.domain.ScheduleVO;
 import com.theater.domain.ScreensVO;
 import com.theater.domain.SeatsVO;
@@ -19,5 +20,6 @@ public interface TheaterService {
   public List<TheatersVO> totalthread();
   public List<TheatersVO> theaterlist();
   public List<ScreensVO> adminScreenInfo(int t_cd);
+  public List<AreainfoVO> areainfo();
   public List<ScheduleVO> adminScheduleSelect();
 }

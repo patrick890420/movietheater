@@ -41,25 +41,25 @@
             <c:if test="${prev !=null}">
             <a href="eventView.do?nt_cd=${prev.event_cd}&pageNum=${cri.pageNum}&amount=${cri.amount}"
               class="btn"><i class="fa fa-angle-left"></i>
-              <span class="btn waves-effect waves-light btn-rounded btn-outline-danger">${prev.title}</span>
+              <span class="btn waves-effect waves-light btn-rounded btn-outline-secondary">${prev.title}</span>
             </a>
             </c:if>
             <c:if test="${prev ==null}">
             <a href="javascript:void(0)" class="btn"><i class="fa fa-angle-left"></i>
-              <span class="btn waves-effect waves-light btn-rounded btn-outline-danger">ListPage</span>
+              <span class="btn waves-effect waves-light btn-rounded btn-outline-secondary">ListPage</span>
             </a>
             </c:if>
 <!-- 다음 -->
             <c:if test="${next !=null}">
             <a href="eventView.do?nt_cd=${next.event_cd}&pageNum=${cri.pageNum}&amount=${cri.amount}"
               class="btn pull-right">
-              <span class="btn waves-effect waves-light btn-rounded btn-outline-danger">${next.title}</span>
+              <span class="btn waves-effect waves-light btn-rounded btn-outline-secondary">${next.title}</span>
                 <i class="fa fa-angle-right"></i>
             </a>
             </c:if>
             <c:if test="${next ==null}">
             <a href="javascript:void(0)"  class="btn pull-right">
-              <span class="btn waves-effect waves-light btn-rounded btn-outline-danger">ListPage</span>
+              <span class="btn waves-effect waves-light btn-rounded btn-outline-secondary">ListPage</span>
                 <i class="fa fa-angle-right"></i>
             </a>
             </c:if>
@@ -67,7 +67,7 @@
           
 <!-- button -->
           <div class="button">
-            <button type="button" class="btn waves-effect waves-light btn-rounded btn-outline-danger" onclick="location.href='event.do'">
+            <button type="button" class="btn waves-effect waves-light btn-rounded btn-outline-secondary" onclick="location.href='event.do'">
               <i class="fa fa-list"></i>&nbsp;リスト<!-- 리스트(목록) -->
             </button>
           </div><!-- button -->

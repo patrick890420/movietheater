@@ -72,7 +72,7 @@
     <![CDATA[
     select * from 
     ( 
-      select /*+ index_desc(movies SYS_C007529) */ rownum rn, M_CD,TITLE,SUBTITLE,RDATE,RTIME,RATE,INTRO,POSTER from Movies
+      select /*+ index_desc(movies SYS_C007998) */ rownum rn, M_CD,TITLE,SUBTITLE,RDATE,RTIME,RATE,INTRO,POSTER from Movies
       where 
     ]]>
     <include refid="criteria"/>
@@ -143,5 +143,15 @@
  <select id="getListWithPageing">
   select rcode,m_cd,review,rwriter,rdate from review where m_cd=#{m_cd} order by rcode asc
  </select>
+ 
+ <select id="cmtAVG" resultType="double">
+   select
+  (SELECT ROUND(AVG(#{rgrade}),1) as rgrade
+  from review
+  where m_cd = #{m_cd}) as reviewavg
+  ,(select count(rcode) from review where m_cd = 225) as reviewcount
+  from dual
+ </select>
+ 
  
 </mapper>

@@ -14,6 +14,8 @@
 </section>
 <!-- Section End -->
 
+
+
 <!-- search -->
 <div class="notice_search">
 <form name="myform" method="get" action="notice.do" id="searchForm">
@@ -66,7 +68,7 @@
         </colgroup>
         <tr>
           <th>番号</th><!-- 번호 -->
-          <th>題目</th><!-- 제목 -->
+          <th class="notice68">題目</th><!-- 제목 -->
           <th>管理者</th><!-- 관리자 -->
           <th class="notice68">作成日</th><!-- 작성일 -->
           <th>照会数</th><!-- 조회수 -->
@@ -128,6 +130,8 @@
 </div><!-- row -->
 </div><!-- container -->
 </section>
+
+</div><!-- background -->
 
 <script>
 //    페이지 처리

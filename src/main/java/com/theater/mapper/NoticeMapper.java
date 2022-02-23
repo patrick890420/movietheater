@@ -11,7 +11,7 @@ public interface NoticeMapper {
 //Common(일반 list와 admin 이름만 같음)
   public void noticeInsert(NoticeVO nvo);
   public NoticeVO getAdminBoardView(int nt_cd);
-  public int modify(NoticeVO notice);
+  public void modify(NoticeVO notice);
   public int delete(int nt_cd);
 
 //admin

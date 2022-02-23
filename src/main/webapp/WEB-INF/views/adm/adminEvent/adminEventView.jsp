@@ -53,12 +53,14 @@
 
 <!-- button -->
   <div class="adminbutton">
-    <a href="adminBoardModify.do?nt_cd=${prev.event_cd}&pageNum=${cri.pageNum}&amount=${cri.amount}&type=${cri.type}&keyword=${cri.keyword}"
+    <a href="adminEventModify.do?event_cd=${prev.event_cd}"
        class="btn btn-outline-primary btn-rounded"><i class="fas fa-check"></i>修整
     </a>&nbsp;<!-- 수정 -->
+    
     <a href="adminBoardDelete.do?nt_cd=${eview.event_cd}" onClick="return confirm('削除しますか？')"
        class="btn btn-outline-primary btn-rounded" id="delete_btn"><i class="fas fa-times"></i>削除
     </a>&nbsp;<!-- 삭제 -->
+    
     <button type="button" class="btn btn-outline-primary btn-rounded" onclick="location.href='adminEvent.do'">
       <i class="fas fa-list"></i>リスト<!-- 리스트(목록) -->
     </button>

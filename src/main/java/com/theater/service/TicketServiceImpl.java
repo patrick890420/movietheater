@@ -34,4 +34,9 @@ public class TicketServiceImpl implements TicketService {
     return tmapper.getTheaterSelect(rvo);
   }
 
+  @Override
+  public List<ReserveVO> getDaySelect(ReserveVO rvo) {
+    return tmapper.getDaySelect(rvo);
+  }
+
 }

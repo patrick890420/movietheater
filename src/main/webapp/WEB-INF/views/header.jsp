@@ -47,21 +47,40 @@
 <!-- 확인중 -->
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <!-- 확인구간 -->
-</head>
 
-<body>
+<script language = "javascript">
+  var imgArray = new Array();
+  imgArray[0] = '/resources/img/theater/post1.jpg';
+  imgArray[1] = '/resources/img/theater/post3.jpg';
+  var imgArray2 = new Array();
+  imgArray2[0] = '/resources/img/theater/footpost1.jpg';
+  imgArray2[1] = '/resources/img/theater/footpost2.jpg';
+  
+  function showImage(){
+    var imgNum = Math.round(Math.random()*1);
+    var objImg = document.getElementById("introImg");
+    objImg.src = imgArray[imgNum];
+    var imgNum2 = Math.round(Math.random()*1);
+    var objImg2 = document.getElementById("introImg2");
+    objImg2.src = imgArray2[imgNum2];
+  }
+</script>
+</head>
+<body onload="showImage()">
   <!-- Page Preloder -->
   <div id="preloder">
     <div class="loader"></div>
   </div>
 
   <!-- Header Section Begin -->
-  <header class="header">
+  <header class="header" style="background:black;">
     <div class="container">
       <div class="row">
-        <div class="col-lg-2">
-          <div class="header__logo">
-            <a href="./index.html"></a>
+        <div class="col-lg-12">
+          <div class="">
+            <a href="./index.html">
+            <img id = "introImg" border="0">
+            </a>
           </div>
         </div>
       </div>
@@ -71,33 +90,40 @@
   <!-- Header End -->
   <div class="container" style="height: 82px;">
     <div class="row">
-      <div class="col-lg-3">
-        <div class="header__logo">
+          <div class="col-lg-4">
+        <div class="header__left">
+          <a href="/login/login.do" style="text-align: center;"><span class="icon_lock">페이스북</span></a>
+          <a href="/join/join.do" style="text-align: center;"><span class="icon_profile">유튜브</span></a>
+          <a href="/mypage/memberUp" style="text-align: center;"> <span class="icon_profile">인스타그램</span></a>
+          <a href="" style="text-align: center;"><span class="icon_profile">트위터</span></a>
+        </div>
+      </div>
+      <div class="col-lg-4" style="padding-top:13px;">
+        <div class="header__logo" style="text-align:center;">
           <a href="/"> 
             <span
             style="font-size: x-large; font-weight: 800; color: black;">📽
-              JSL-Movie</span>
-<!--             <img alt="" src="/resources/img/newlogo2.png"> -->
+              JSL-CINEMA</span>
           </a>
         </div>
       </div>
-      <div class="col-lg-8">
+      <div class="col-lg-4">
         <div class="header__right">
           <sec:authorize access="isAnonymous()">
-            <a href="/login/login.do" style="text-align: center;"><span class="icon_lock"><br>로그인</span></a>
-            <a href="/join/join.do" style="text-align: center;"><span class="icon_profile"><br>회원가입</span></a>
+            <a href="/login/login.do" style="text-align: center;"><span class="icon_lock_alt"><br>로그인</span></a>
+            <a href="/join/join.do" style="text-align: center;"><span class="icon_contacts_alt"><br>회원가입</span></a>
           </sec:authorize>
           
           <sec:authorize access="isAuthenticated()">
             <!-- <a href="/login/logout.do" style="text-align: center;"><span class="icon_lock"><br>로그아웃</span></a> -->
               <form name="lg" action="/adm/adminLogout" method="post"><!-- spring security 로그아웃은 get 불가 -->
                      
-                <a href="/mypage/memberUp" style="text-align: center;"> <span class="icon_profile"><br>마이페이지</span></a>
-                               
                 <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
-                <button type="submit" style="border:0 none; background:transparent; top: -24px; right: 10px; position: relative;" ><span class="icon_profile"><br>로그아웃</span></button> 
+                <a href="/mypage/memberUp" style="text-align: center;"> <span class="icon_pencil-edit"><br>마이페이지</span></a>
+                               
+                <button type="submit" style="border:0 none; background:transparent; top: -24px; right: 10px; position: relative;" ><span class="icon_lock-open_alt"><br>로그아웃</span></button> 
 
-                <a href="" style="text-align: center;"><span class="icon_profile"><br>고객센터</span></a>
+                <a href="" style="text-align: center;"><span class="icon_chat_alt"><br>고객센터</span></a>
                
               </form>
           </sec:authorize>
@@ -108,10 +134,10 @@
   </div>
   <div class="container">
     <div class="row" style="border-top: solid 2px #eeeeee; padding:10px 0; border-bottom: solid 2px #eeeeee;">
-      <div class="col-lg-5" style="margin-left: -15px;">
+      <div class="col-lg-9" style="margin-left: -15px;">
         <div class="header__nav">
           <nav class="header__menu mobile-menu">
-            <ul>
+            <ul class="index_navtab">
               <li><a href="/movie/movie.do">영화</a></li>
               <li><a href="/theater/theater.do">극장<span class="arrow_carrot-down"></span></a>
                 <ul class="dropdown">
@@ -125,11 +151,9 @@
           </nav>
         </div>
       </div>
-      <div class="col-lg-3" style="text-align:right;">
-      </div>
-      <div class="col-lg-4" style="text-align:right;">
+      <div class="col-lg-3" style="text-align:right; padding:0 !important;">
         <label style="margin:10px 0;">
-          <input type="text">
+          <input type="text" style="border:groove;">
           <button type="button" style="background:none; border:none;"><span
             class="icon_search"></span></button>
         </label>

@@ -172,7 +172,7 @@
   position: relative;
   width: 100%;
   min-width: 996px;
-  height: 128px;
+  height: 150px;
   background-color: #1d1d1c;
 }
 
@@ -211,7 +211,7 @@
 }
 
 .movie-date-wrapper-active {
-  background-color: #333333;
+  background-color: black;
 }
 
 .movie-date-wrapper-active>* {
@@ -284,6 +284,7 @@ button.theater-location , button.theater-place{
 
 .reserve-time-button {
   margin-top: 10px;
+  border: none;
 }
 
 .reserve-time-want {
@@ -758,3 +759,8 @@ button.theater-location , button.theater-place{
   background-color:black;
   
 }
+.tk-poster{
+  height: 150px;
+  padding: 9px;
+  width: 150px;
+}    

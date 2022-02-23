@@ -34,10 +34,17 @@ function addDate() {
         const spanDay = document.createElement('span');
 
         //class넣기
-        button.classList = 'movie-date-wrapper';
+        button.classList = 'btn movie-date-wrapper';
         spanWeekOfDay.classList = 'movie-week-of-day';
         spanDay.classList = 'movie-day';
 
+        //onclick 넣기
+//        button.onclick = function() { 
+//        
+//        
+//        
+//        }
+        
         //weekOfDay[new Date(2022-03-날짜)]
         const dayOfWeek =
             weekOfDay[new Date(year + '-' + month + '-' + i).getDay()];
@@ -72,17 +79,30 @@ function dayClickEvent(button) {
             list.classList.remove('movie-date-wrapper-active');
         });
         button.classList.add('movie-date-wrapper-active');
-        console.log(button.childNodes[1].innerHTML);
+        //console.log(button.childNodes[1].innerHTML);
         inputReserveDate.value =
             year +
-            '.' +
+            '-' +
             month +
-            '.' +
-            button.childNodes[1].innerHTML +
-            '(' +
-            button.childNodes[0].innerHTML +
-            ')';
+            '-' +
+            button.childNodes[1].innerHTML;
         console.log(inputReserveDate.value);
+          
+        var getMcd = document.querySelector('#mvcd').value;
+        var tName = document.querySelector('#selectedTheater').value;
+        $.ajax({
+          type : "get",
+          url : '/ticket/daySelect.do?start_time='+inputReserveDate.value+'&m_cd='+getMcd+'&t_name='+tName,
+          dataType : "json",
+          contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+          success : function(data) {
+           
+             
+          },
+          error : function() {
+             alert("error");
+          }
+       }); //ajax end
     });
 }
 
@@ -96,9 +116,6 @@ theaterPlace.forEach(list => {
         inputSelectedTheater.value = list.innerHTML;
     });
 });
-
-
-
 
 reserveTimeWant.forEach(list => {
     list.addEventListener('click', function() {
@@ -135,9 +152,10 @@ moveSeatButton.addEventListener('click', function() {
 });
 
 var movieBtn = document.getElementsByClassName("movie-name-btn");
+
 //var movieBtn = document.getElementById('areaSelect');
 
-      function handleClick1(event) {
+      function handleClick10(event) {
         //console.log(event.target);
         //console.log(this);
         // 콘솔창을 보면 둘다 동일한 값이 나온다
@@ -145,15 +163,17 @@ var movieBtn = document.getElementsByClassName("movie-name-btn");
         if (event.target.classList[1] === "clicked") {
           event.target.classList.remove("clicked");
         } else {
+          
           for (var i = 0; i < movieBtn.length; i++) {
             movieBtn[i].classList.remove("clicked");
           }
+          
           event.target.classList.add("clicked");
         }
       }
       function init() {
         for (var i = 0; i < movieBtn.length; i++) {
-          movieBtn[i].addEventListener("click", handleClick1);
+          movieBtn[i].addEventListener("click", handleClick10);
         }
       }
       init();
@@ -185,6 +205,10 @@ ainit();
    var csrfTokenValue = "${_csrf.token}";
  function roadArea(mcd){
    $("#theater-location").empty();
+   //document.getElementById('theater-location').classList.remove('theater-place-active');
+   var Mvcd =  document.querySelector('#mvcd');
+   Mvcd.value= mcd;
+
    $.ajax({
          type : "get",
          url : '/ticket/areaSelect.do?m_cd='+mcd,
@@ -193,7 +217,8 @@ ainit();
           
             let res="";
             for(let i=0;i<data.length;i++){
-            res+="<button class='theater-location' id='theater-location' onclick='roadTheater("+data[i].t_area+","+data[i].m_cd+");'>"+data[i].t_area+"</button>";
+            res+="<button class='btn theater-location' id='theater-location' onclick='roadTheater("+data[i].t_area+","+data[i].m_cd+");'>"+data[i].area_name+"</button>";
+            res+="<input type='hidden' id='area' "+data[i].t_area+"/>";
             }
             $('#theater-location-wrapper').html(res);
             
@@ -234,7 +259,7 @@ function roadTheater(tcd,mcd){
          success : function(data1) {
             let res1="";
             for(let j=0;j<data1.length;j++){
-            res1+="<button class='theater-place' id='theater-place' onclick='matchDate("+data1[j].t_area+","+data1[j].m_cd+","+data1[j].t_cd+","+data1[j].t_name+");'>"+data1[j].t_name+"</button>";
+            res1+="<button class='btn theater-place' id='theater-place' onclick='matchDate("+data1[j].t_area+","+data1[j].m_cd+","+data1[j].t_cd+","+data1[j].t_name+");'>"+data1[j].t_name+"</button>";
             }
             $('#theater-place-wrapper').html(res1);
             

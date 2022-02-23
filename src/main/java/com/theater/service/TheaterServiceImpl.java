@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.theater.domain.AreainfoVO;
 import com.theater.domain.ScheduleVO;
 import com.theater.domain.ScreensVO;
 import com.theater.domain.SeatsVO;
@@ -80,6 +81,10 @@ public class TheaterServiceImpl implements TheaterService {
   @Override 
   public List<ScreensVO> adminScreenInfo(int t_cd) {
     return thmapper.adminScreenInfo(t_cd);
+  }
+  @Override 
+  public List<AreainfoVO> areainfo() {
+    return thmapper.areainfo();
   }
   
   @Override

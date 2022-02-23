@@ -53,7 +53,7 @@
 
 <!-- button -->
   <div class="adminbutton">
-    <a href="adminBoardModify.do?nt_cd=${prev.nt_cd}&pageNum=${cri.pageNum}&amount=${cri.amount}&type=${cri.type}&keyword=${cri.keyword}"
+    <a href="adminNoticeModify.do?nt_cd=${nview.nt_cd}"
        class="btn btn-outline-primary btn-rounded"><i class="fas fa-check"></i>修整
     </a>&nbsp;<!-- 수정 -->
     <a href="adminBoardDelete.do?nt_cd=${nview.nt_cd}" onClick="return confirm('削除しますか？')"

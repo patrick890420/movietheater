@@ -11,12 +11,12 @@ public interface EventService {
 //Common
   public void eventInsert(EventVO evo);
   public EventVO getAdminBoardView(int event_cd);
-  public boolean modify(EventVO evo);
   public boolean delete(int event_cd);
   
 //admin
   public List<EventVO> getEventList(Criteria cri);
   public List<EventVO> getEventList();
+  public void modify(EventVO evo);
 
 //User
 //조회수

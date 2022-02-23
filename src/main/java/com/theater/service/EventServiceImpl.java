@@ -38,8 +38,8 @@ public class EventServiceImpl implements EventService {
   }
 
   @Override
-  public boolean modify(EventVO evo) {
-    return eMapper.modify(evo)==1;
+  public void modify(EventVO evo) {
+    eMapper.modify(evo);
   }
 
   @Override

@@ -80,7 +80,7 @@
                               <c:forEach var="elist" items="${elist}">
                                 <tr>
                                   <td class="adminview57">${elist.event_cd}</td><!-- 번호 -->
-                                  <td><a href="adminBoardView.do?nt_cd=0&event_cd=${elist.event_cd}">${elist.title}</a></td><!-- 제목 -->
+                                  <td><a href="adminEventModify.do?nt_cd=0&event_cd=${elist.event_cd}">${elist.title}</a></td><!-- 제목 -->
                                   <td class="adminview57">
                                     <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${elist.wdate}"/>
                                     <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>

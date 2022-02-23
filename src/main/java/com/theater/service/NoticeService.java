@@ -11,7 +11,7 @@ public interface NoticeService {
 //Common(일반 list와 admin 이름만 같음)
   public void noticeInsert(NoticeVO nvo);
   public NoticeVO getAdminBoardView(int nt_cd);
-  public boolean modify(NoticeVO notice);
+  public void modify(NoticeVO nvo);
   public boolean delete(int nt_cd);
 
 //admin  

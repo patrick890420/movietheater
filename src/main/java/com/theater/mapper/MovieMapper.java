@@ -50,6 +50,7 @@ public interface MovieMapper {
       @Param("m_cd") int m_cd);
   
   //view  페이지
+  public double cmtAVG(int m_cd);
   
   
   //Info

@@ -65,7 +65,7 @@
                               <c:forEach var="nlist" items="${nlist}">
                                 <tr>
                                   <td class="adminview57">${nlist.nt_cd}</td><!-- 번호 -->
-                                  <td><a href="adminBoardView.do?event_cd=0&nt_cd=${nlist.nt_cd}">${nlist.title}</a></td><!-- 제목 -->
+                                  <td><a href="adminNoticeModify.do?event_cd=0&nt_cd=${nlist.nt_cd}">${nlist.title}</a></td><!-- 제목 -->
                                   <td class="adminview57">
                                     <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${nlist.wdate}"/>
                                     <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>

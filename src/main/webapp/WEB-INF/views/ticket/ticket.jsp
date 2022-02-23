@@ -11,7 +11,7 @@
         <table>
           <c:forEach items="${mvList}" var="mvList">
             <tr>
-              <td>
+              <td id="movie-list-td">
                 <c:if test="${mvList.rate == 12}">
                   <div class="tk-ep12">12</div>
                 </c:if>
@@ -27,8 +27,8 @@
                   <button class="btn movie-name-btn" id="areaSelect" onclick="roadArea(${mvList.m_cd });">
                     ${mvList.title}
                   </button>
-                  <input id="hdMcd" type="hidden" value="${mvList.m_cd }">
                   <input id="hdTitle" type="hidden" value="${mvList.title }">
+                  <input id="hdMcd" type="hidden" value="${mvList.m_cd }">
                 </td>
               </tr>
           </c:forEach>
@@ -57,19 +57,19 @@
     <div class="reserve-time">
       <div class="reserve-where">4관(Laser) 6층(총 240석)</div>
       <div class="reserve-time-wrapper">
-        <button class="reserve-time-button">
+        <button class=" btn reserve-time-button">
           <span class="reserve-time-want">12:20</span>
           <span class="reserve-time-remain">240석</span>
         </button>
-        <button class="reserve-time-button">
+        <button class=" btn reserve-time-button">
           <span class="reserve-time-want">14:20</span>
           <span class="reserve-time-remain">240석</span>
         </button>
-        <button class="reserve-time-button">
+        <button class=" btn reserve-time-button">
           <span class="reserve-time-want">16:20</span>
           <span class="reserve-time-remain">240석</span>
         </button>
-        <button class="reserve-time-button">
+        <button class="btn reserve-time-button">
           <span class="reserve-time-want">18:20</span>
           <span class="reserve-time-remain">240석</span>
         </button>
@@ -79,19 +79,24 @@
     </div>
   </div>
 </div>
-<div class="col-md-12 p-0 ticket_tnb">
-  <div class="col-md-7">
+<div class="container p-0 ticket_tnb">
+  <div class="row">
+  <div class="col-md-3">
   </div>
-  <div id="ticket_tnb">
-    <form class="moveSeatForm" action="moveSeat.do" method="post">
+  <div class="col-md-6">
+<!--     <img class="tk-poster" alt="" src="/resources/img/ticket/popcon2.png"/> -->
+<!--     <p>영화 제목</p> -->
+  </div>
+  <div id="ticket_tnb class="col-md-3"">
+    <form class="moveSeatForm" action="moveSeat.do" method="get">
       <input type="hidden" class="m_cd" name="m_cd" id="mvcd">
-      
-      <input type="hidden" class="selectedTheater" name="selectedTheater">
+      <input type="hidden" class="selectedTheater" id="selectedTheater" name="selectedTheater">
       <input type="hidden" class="selectedLocation" name="selectedLocation">
-      <input type="hidden" class="reserveDate" name="movieDate">
+      <input type="hidden" class="reserveDate" name="movieDate" id="movieDate">
       <input type="hidden" class="runningTime" name="runningTime">
       <button class="moveSeatButton btn btn-primary" type="button" onclick="location.href='/ticket/seat.do'">예약하기</button>
     </form>
+  </div>
   </div>
 </div>
 <%@ include file="../footer.jsp"%>

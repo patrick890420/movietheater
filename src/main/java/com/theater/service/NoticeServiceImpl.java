@@ -40,8 +40,8 @@ public class NoticeServiceImpl implements NoticeService {
   }
   
   @Override
-  public boolean modify(NoticeVO notice) {
-    return nMapper.modify(notice)==1;
+  public void modify(NoticeVO nvo) {
+   nMapper.modify(nvo);
   }
   
   @Override

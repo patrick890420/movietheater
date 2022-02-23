@@ -1,8 +1,5 @@
 package com.theater.domain;
 
-import java.sql.Time;
-import java.util.Date;
-
 import lombok.Data;
 
 @Data
