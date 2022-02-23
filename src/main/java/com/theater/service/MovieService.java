@@ -3,6 +3,7 @@ package com.theater.service;
 
 import java.util.List;
 
+import com.theater.domain.CmtAVG;
 import com.theater.domain.Criteria;
 import com.theater.domain.M_stillcutVO;
 import com.theater.domain.MovieInfoVO;
@@ -32,5 +33,5 @@ public interface MovieService {
   public int modify(ReviewVO rvo);
   public int remove(int rcode);
   public List<ReviewVO> getList(Criteria cri, int m_cd);
-  public double cmtAVG(int m_cd);
+  public CmtAVG cmtAVG(int m_cd);
 }

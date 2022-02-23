@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.theater.domain.CmtAVG;
 import com.theater.domain.Criteria;
 import com.theater.domain.M_stillcutVO;
 import com.theater.domain.MovieInfoVO;
@@ -100,7 +101,7 @@ public class MovieServiceImpl implements MovieService {
   }
   
   @Override
-  public double cmtAVG(int m_cd) {
+  public CmtAVG cmtAVG(int m_cd) {
     return mapper.cmtAVG(m_cd);
   }
 }//Impl

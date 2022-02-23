@@ -56,23 +56,11 @@
     <div class="reserve-title">시간</div>
     <div class="reserve-time">
       <div class="reserve-where">4관(Laser) 6층(총 240석)</div>
-      <div class="reserve-time-wrapper">
-        <button class=" btn reserve-time-button">
-          <span class="reserve-time-want">12:20</span>
-          <span class="reserve-time-remain">240석</span>
-        </button>
-        <button class=" btn reserve-time-button">
-          <span class="reserve-time-want">14:20</span>
-          <span class="reserve-time-remain">240석</span>
-        </button>
-        <button class=" btn reserve-time-button">
-          <span class="reserve-time-want">16:20</span>
-          <span class="reserve-time-remain">240석</span>
-        </button>
-        <button class="btn reserve-time-button">
-          <span class="reserve-time-want">18:20</span>
-          <span class="reserve-time-remain">240석</span>
-        </button>
+      <div class="reserve-time-wrapper" id="reserve-time-wrapper">
+<!--         <button class=" btn reserve-time-button"> -->
+<!--           <span class="reserve-time-want">12:20</span> -->
+<!--           <span class="reserve-time-remain">240석</span> -->
+<!--         </button> -->
       </div>
     </div>
     <div>
@@ -90,10 +78,11 @@
   <div id="ticket_tnb class="col-md-3"">
     <form class="moveSeatForm" action="moveSeat.do" method="get">
       <input type="hidden" class="m_cd" name="m_cd" id="mvcd">
-      <input type="hidden" class="selectedTheater" id="selectedTheater" name="selectedTheater">
+      <input type="hidden" class="t_area" id="selectedArea" name="t_area">
+      <input type="hidden" class="selectedTheater" id="selectedTheater" name="t_name">
       <input type="hidden" class="selectedLocation" name="selectedLocation">
-      <input type="hidden" class="reserveDate" name="movieDate" id="movieDate">
-      <input type="hidden" class="runningTime" name="runningTime">
+      <input type="hidden" class="reserveDate" name="movieDate" id="tkt_time">
+      <input type="hidden" class="runningTime" name="runningTime" id="runningTime">
       <button class="moveSeatButton btn btn-primary" type="button" onclick="location.href='/ticket/seat.do'">예약하기</button>
     </form>
   </div>
