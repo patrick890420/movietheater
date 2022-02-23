@@ -52,6 +52,16 @@ public class MembersServiceImpl implements MembersService {
 
   }
   
+  @Override
+  public int pwChk(String userpw) {
+    return mmapper.pwChk(userpw);
+  }
+  
+  @Override
+  public void mypasspro(MemberVO mvo) {
+    mmapper.mypasspro(mvo);
+  }
+  
 
   
 

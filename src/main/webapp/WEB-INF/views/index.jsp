@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
-	<!-- Hero Section Begin -->
-	<section class="hero" style="background:#000000eb; border-top:solid 3px red;">
-		<div class="">
+   <!-- Hero Section Begin -->
+   <section class="hero" style="background:#000000eb; border-top:solid 3px red;">
+      <div class="">
 
-				<div class="hero__items set-bg" style="margin:0 auto; max-width:1155px; text-align:center;">
+            <div class="hero__items set-bg" style="margin:0 auto; max-width:1155px; text-align:center;">
        <video autoplay="" muted="" style="width:100%;">
         <source src="https://adimg.cgv.co.kr/images/202202/Nightmare/Nightmare_1080x608_0214.mp4" type="video/mp4">
        </video>
-			</div>
-		</div>
+         </div>
+      </div>
 
     <div class="container">
       <div class="row">
@@ -240,11 +240,27 @@
                 </div>
               </div>
     </div>
+<<<<<<< HEAD
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="width:2%;">
+=======
+<<<<<<< HEAD
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="width:2%;">
+=======
+  <a class="carousel-control-prev float-left" href="#carouselExampleIndicators" role="button" data-slide="prev">
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
+<<<<<<< HEAD
   <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="width:2%;">
+=======
+<<<<<<< HEAD
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="width:2%;">
+=======
+  <a class="carousel-control-next float-right" href="#carouselExampleIndicators" role="button" data-slide="next">
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
@@ -254,6 +270,7 @@
         </div>
       </div>
      </div>
+<<<<<<< HEAD
 	</section>
 	<!-- Hero Section End -->
   <div id='btnTop' class="page-up">
@@ -263,6 +280,17 @@
       <span class="T_button" style="position:initial;">▲</span></a>
    </div>
 	<!-- Product Section Begin -->
+=======
+   </section>
+   <!-- Hero Section End -->
+  <div id='btnTop' class="page-up">
+      <a class="index_scbt2" href="/ticket/ticket.do">
+      <span class="T_button">예매하기</span></a>
+      <a class="index_scbt1" href="#">
+      <span class="T_button" style="position:initial;">▲</span></a>
+   </div>
+   <!-- Product Section Begin -->
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
      <section class="" style="padding-top:80px; padding-bottom:0px;">
     <div class="container">
       <div class="row">
@@ -484,6 +512,7 @@
      <section class="product spad">
      <div class="container">
       <div class="row">
+<<<<<<< HEAD
 				<div class="col-lg-12">
 					<div class="trending__product">
 						<div class="row">
@@ -513,6 +542,37 @@
             
 						<div class="row" style="padding:0 12px;">
 							<div class="col-lg-12 col-md-12 col-sm-12" style="padding:20px; border:groove; padding-right: 53%; border-radius: 15px;">
+=======
+            <div class="col-lg-12">
+               <div class="trending__product">
+                  <div class="row">
+                     <div class="col-lg-2 col-md-8 col-sm-8">
+                        <div class="section-title">
+                           <h4>공지사항</h4>
+                        </div>
+                     </div>
+              <div class="col-lg-7 col-md-8 col-sm-8">
+              <div class="rolling_box" style="padding:0px 10px 18px 10px;">
+              
+  <ul id ="rolling_box" style="border-left:solid">
+    <li class="card_sliding" id ="first"><p></p></li>
+    <li class="" id ="second"><p></p></li>
+    <li class="" id ="third"><p></p></li>
+  </ul>
+
+</div>
+</div>
+                     <div class="col-lg-3 col-md-4 col-sm-4">
+                        <div class="btn__all">
+                           <a class="dateblack" href="/notice/notice.do" class="primary-btn">View All <span
+                              class="arrow_right"></span></a>
+                        </div>
+                     </div>
+                  </div>
+            
+                  <div class="row" style="padding:0 12px;">
+                     <div class="col-lg-12 col-md-12 col-sm-12" style="padding:20px; border:groove; padding-right: 53%; border-radius: 15px;">
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
                 <div style="padding-top:20px; border-top:groove;">
                   <strong>고객센터 <span>&ensp;&ensp;1234-1234</span></strong>
                   <div style="margin-left:80px;">
@@ -532,15 +592,24 @@
                     <a class="dateblack" href="">대관/단체 문의</a>
                   </div>
                 </div>
-							</div>
-						</div>
+                     </div>
+                  </div>
             
+<<<<<<< HEAD
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!-- Product Section End -->
+=======
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- Product Section End -->
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
   <script>
 
         let rollingData = [
@@ -642,4 +711,8 @@ $(function(){
     });
 });
 </script>
+<<<<<<< HEAD
 <%@ include file="footer.jsp" %>	
+=======
+<%@ include file="footer.jsp" %>   
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git

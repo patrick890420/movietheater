@@ -12,6 +12,7 @@ public class ReserveVO {
   private int t_cd;
   private String area_name;
   private String start_time;
+  private int t_seat;
   
   
 }

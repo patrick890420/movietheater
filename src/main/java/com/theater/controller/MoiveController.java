@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.theater.domain.CmtAVG;
 import com.theater.domain.Criteria;
 import com.theater.domain.PageVO;
 import com.theater.domain.ReviewVO;
@@ -27,12 +28,18 @@ public class MoiveController {
 	
 	@GetMapping("/view.do")
 	public void view(@RequestParam("m_cd") int m_cd,Criteria cri, Model model) {
-	  
 		model.addAttribute("view", movieService.read(m_cd));
     model.addAttribute("review",movieService.get(m_cd));
     model.addAttribute("cut",movieService.movieStillcutSelect(m_cd));
     model.addAttribute("info",movieService.adminMovieSelect(m_cd));
-
+    model.addAttribute("avg",movieService.cmtAVG(m_cd));
+    double get = movieService.cmtAVG(m_cd).getReviewavg();
+    int a = (int)get; 
+    int b = a*10;
+    int c = b-5;
+    model.addAttribute("a",a);
+    model.addAttribute("b",b);
+    model.addAttribute("c",c);
 	}//view.do
 	
 	
@@ -42,7 +49,7 @@ public class MoiveController {
 	  PageVO pageVO = new PageVO(cri, movieService.getTotal(cri));
 	  model.addAttribute("pageMaker", pageVO);
 	  model.addAttribute("list",movieService.movieList(cri));
-	  log.info(movieService.movieList(cri));
+
     
 	  }
 	
@@ -58,8 +65,6 @@ public class MoiveController {
 	public String movieReviewInsert(@RequestParam("m_cd") int m_cd,Model model,ReviewVO rvo) {
 	  model.addAttribute("m_cd",m_cd);
 	  movieService.register(rvo);
-	  
-	  System.out.println(rvo);
 	  
 	  return "redirect:/movie/view.do";
 	}

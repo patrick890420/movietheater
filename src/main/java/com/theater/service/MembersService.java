@@ -13,6 +13,10 @@ public interface MembersService {
 	 public MemberVO selectMember(String userid);
 	 
 	 public void memberUpdate(MemberVO mvo);
+	 
+	 public int pwChk(String userpw);
+	 
+	 public void mypasspro(MemberVO mvo); 
 
 	 
 	 

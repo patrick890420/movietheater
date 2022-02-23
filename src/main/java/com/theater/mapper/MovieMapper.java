@@ -3,8 +3,8 @@ package com.theater.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
-import org.springframework.web.bind.annotation.RequestParam;
 
+import com.theater.domain.CmtAVG;
 import com.theater.domain.Criteria;
 import com.theater.domain.M_stillcutVO;
 import com.theater.domain.MovieInfoVO;
@@ -50,6 +50,7 @@ public interface MovieMapper {
       @Param("m_cd") int m_cd);
   
   //view  페이지
+  public CmtAVG cmtAVG(int m_cd);
   
   
   //Info

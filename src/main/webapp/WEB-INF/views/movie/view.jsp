@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <%@ include file="../header.jsp" %>
+
     <section class="anime-details spad">
         <div class="container">
             <div class="anime__details__content">
@@ -17,19 +18,19 @@
                                 <span>${view.subtitle }</span>
                             </div>
                             <div class="anime__details__rating">
-                              <fieldset class="rating">
-                                <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                                <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-                                <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                                <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-                                <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-                                <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                            <fieldset class="rating">
+                                <input type="radio" id="star5" name="rating" value="5" onclick="return(false);" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                                <input type="radio" id="star4half" name="rating" value="4 and a half" onclick="return(false);"/><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                <input type="radio" id="star4" name="rating" value="4" onclick="return(false);"/><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                                <input type="radio" id="star3half" name="rating" value="3 and a half" onclick="return(false);" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                <input type="radio" id="star3" name="rating" value="3" onclick="return(false);"/><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                <input type="radio" id="star2half" name="rating" value="2 and a half" onclick="return(false);"/><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                <input type="radio" id="star2" name="rating" value="2" onclick="return(false);"/><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                                <input type="radio" id="star1half" name="rating" value="1 and a half" onclick="return(false);"/><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                <input type="radio" id="star1" name="rating" value="1" onclick="return(false);"/><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                                <input type="radio" id="starhalf" name="rating" value="half" onclick="return(false);"/><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                             </fieldset>
-                                <span>1.029 Votes</span>
+                                <span>${avg.reviewcount } 투표 함!</span>
                             </div>
                             <div class="anime__details__widget">
                                 <div class="row">
@@ -44,8 +45,8 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6">
                                         <ul>
-                                            <li><span>Scores:</span> 평점(별점)</li>
-                                            <li><span>Status:</span> 상영 상태</li>
+                                            <li><span>평점</span>${avg.reviewavg } 점</li>
+                                            <li><span>Status:</span>상영 상태</li>
                                             <li><span>상영 시간</span>${view.rtime } 분</li>
                                             <li><span>상영 등급</span> ${view.rate }세 이용가</li>
                                         </ul>
@@ -89,6 +90,7 @@
                           <div class="section-title">
                                 <h5>Your Comment</h5>
                               <div class="test">
+                             
                               <fieldset class="rating1">
                                 <input type="radio" id="star5.1" name="rgrade" value="5" /><label class = "full" for="star5.1" title="Awesome - 5 stars"></label>
                                 <input type="radio" id="star4.1half" name="rgrade" value="4.5" /><label class="half" for="star4.1half" title="Pretty good - 4.5 stars"></label>
@@ -140,9 +142,22 @@
                 </div>
             </div>
         </section>
+        
 
 <script type="text/javascript" src="/resources/js/movie/review.js"></script>
-<script>
-let rating2 =$("#rating2 input[type=radio]:checked").val()
-</script>
+<script >
+ $(function(){ 
+    <c:set var="a" value="${a}"/>
+    <c:set var="b" value="${b}"/>
+    <c:set var="c" value="${c}"/>
+	 
+   <c:forEach varStatus="i" begin="0" end="${a}" step="1">
+     $('#star${i.current}').prop('checked', true);
+       <c:if test="${i.last && c ne 0}" >
+          $('#star${i.current}half').prop('checked', true);
+           </c:if>
+        </c:forEach>
+ });
+</script> 
+
 <%@ include file = "../footer.jsp" %>
