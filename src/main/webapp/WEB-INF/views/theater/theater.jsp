@@ -7,34 +7,39 @@
 <section class="">
       <div class="row">
         <div class="col-lg-12">
+        
      <ul class="nav t_city" role="tablist" id="myTab">
       <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-      <a href="#" id="1" onclick="citycheck(this.id)">서울</a>
+      <a href="#" id="1" onclick="citycheck(this.id)">${aList[0].area_name}</a>
       </li>
       <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-      <a href="#" id="2" onclick="citycheck(this.id)">경기</a>
+      <a href="#" id="2" onclick="citycheck(this.id)">${aList[1].area_name}</a>
       </li>
       <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-      <a href="#" id="3" onclick="citycheck(this.id)">인천</a>
+      <a href="#" id="3" onclick="citycheck(this.id)">${aList[2].area_name}</a>
       </li>
       <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-      <a href="/theater/theater.do?t_area=4">강원</a>
-      </li>
-      <li role="presentation" class="col-lg-2 col-md-2 col-sm-2">
-      <a href="/theater/theater.do?t_area=5">대전/충청</a>
+      <a href="/theater/theater.do?t_area=4">${aList[3].area_name}</a>
       </li>
       <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-      <a href="/theater/theater.do?t_area=6">대구</a>
-      </li>
-      <li role="presentation" class="col-lg-2 col-md-2 col-sm-2">
-      <a href="/theater/theater.do?t_area=7">부산/울산</a>
+      <a href="/theater/theater.do?t_area=5">${aList[4].area_name}</a>
       </li>
       <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-      <a href="/theater/theater.do?t_area=8">경상</a>
+      <a href="/theater/theater.do?t_area=6">${aList[5].area_name}</a>
       </li>
-      <li role="presentation" class="col-lg-2 col-md-2 col-sm-2">
-      <a href="/theater/theater.do?t_area=9">광주/전라/제주</a>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
+      <a href="/theater/theater.do?t_area=7">${aList[6].area_name}</a>
       </li>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
+      <a href="/theater/theater.do?t_area=8">${aList[7].area_name}</a>
+      </li>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
+      <a href="/theater/theater.do?t_area=9">${aList[8].area_name}</a>
+      </li>
+      <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
+      <a href="/theater/theater.do?t_area=10">${aList[9].area_name}</a>
+      </li>
+     
     </ul>
 
 <div class="tab-content">

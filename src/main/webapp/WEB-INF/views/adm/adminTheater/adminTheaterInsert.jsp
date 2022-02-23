@@ -57,16 +57,16 @@
                         <select class="custom-select mr-sm-2"
                           id="inlineFormCustomSelect" name="t_area">
                           <option selected>Area Select</option>
-                          <option value="1">1번째</option>
-                          <option value="2">2번째</option>
-                          <option value="3">3번째</option>
-                          <option value="4">4번째</option>
-                          <option value="5">5번째</option>
-                          <option value="6">6번째</option>
-                          <option value="7">7번째</option>
-                          <option value="8">8번째</option>
-                          <option value="9">9번째</option>
-                          <option value="10">10번째</option>
+                          <option value="1">도쿄1</option>
+                          <option value="2">도쿄2</option>
+                          <option value="3">도쿄3</option>
+                          <option value="4">도쿄4</option>
+                          <option value="5">도쿄5</option>
+                          <option value="6">도쿄6</option>
+                          <option value="7">도쿄7</option>
+                          <option value="8">도쿄8</option>
+                          <option value="9">도쿄9</option>
+                          <option value="10">도쿄10</option>
                         </select>
                       </div>
                     </div>

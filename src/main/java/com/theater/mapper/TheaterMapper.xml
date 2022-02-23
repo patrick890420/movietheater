@@ -23,6 +23,9 @@
 <select id="screencode" resultType="int"> <!-- 극장코드 -->
   select max(screen_cd) from screens
 </select>
+<select id="areainfo" resultType="com.theater.domain.AreainfoVO"> <!-- area코드 >> 이름 -->
+  SELECT * FROM AREAINFO
+</select>
 
 <!-- 영화 insert -->
   <insert id="theaterInsertPro">
