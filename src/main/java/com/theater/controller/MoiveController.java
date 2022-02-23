@@ -27,12 +27,11 @@ public class MoiveController {
 	
 	@GetMapping("/view.do")
 	public void view(@RequestParam("m_cd") int m_cd,Criteria cri, Model model) {
-	  
 		model.addAttribute("view", movieService.read(m_cd));
     model.addAttribute("review",movieService.get(m_cd));
     model.addAttribute("cut",movieService.movieStillcutSelect(m_cd));
     model.addAttribute("info",movieService.adminMovieSelect(m_cd));
-
+    model.addAttribute("avg",movieService.cmtAVG(m_cd));
 	}//view.do
 	
 	
@@ -42,7 +41,6 @@ public class MoiveController {
 	  PageVO pageVO = new PageVO(cri, movieService.getTotal(cri));
 	  model.addAttribute("pageMaker", pageVO);
 	  model.addAttribute("list",movieService.movieList(cri));
-	  log.info(movieService.movieList(cri));
     
 	  }
 	
