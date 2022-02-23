@@ -35,4 +35,12 @@
     AND F.M_CD = #{m_cd}
     AND T.T_AREA = #{t_area}
 </select>
+<select id="getDaySelect" resultType="com.theater.domain.ReserveVO"> 
+  SELECT
+    t.t_area,f.m_cd,t.t_name,t.t_cd
+    FROM FILMS F, SCREENS S, THEATERS T
+    WHERE F.SCREEN_CD = S.SCREEN_CD AND S.T_CD = T.T_CD
+    AND F.M_CD = #{m_cd}
+    AND T.T_AREA = #{t_area}
+</select>
 </mapper>
