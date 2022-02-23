@@ -68,10 +68,10 @@ function filmDate() {
         
         reserveDate1.append(button1);
 
-        dayClickEvent(button1);
+        dayClickEvent1(button1);
     }
 }
-function dayClickEvent(button) {
+function dayClickEvent1(button) {
     button.addEventListener('click', function() {
         const movieDateWrapperActive = document.querySelectorAll(
             '.theater-date-wrapper-active'
@@ -81,15 +81,17 @@ function dayClickEvent(button) {
         });
         button.classList.add('theater-date-wrapper-active');
         console.log(button.childNodes[1].innerHTML);
-        inputReserveDate.value =
-            year +
-            '.' +
-            month +
-            '.' +
-            button.childNodes[1].innerHTML +
-            '(' +
-            button.childNodes[0].innerHTML +
-            ')';
-        console.log(inputReserveDate.value);
+        
+        // 이거 콘솔에 2022.02.20(수) 이렇게 찍어주는건데 내꺼랑 충돌나서 주석으로 막아놈 이상있음 말해줘
+        //inputReserveDate.value =
+        //    year +
+        //    '.' +
+        //    month +
+        //    '.' +
+        //    button.childNodes[1].innerHTML +
+        //    '(' +
+        //    button.childNodes[0].innerHTML +
+        //    ')';
+        //console.log(inputReserveDate.value);
     });
 }

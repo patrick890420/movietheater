@@ -72,7 +72,7 @@
     <![CDATA[
     select * from 
     ( 
-      select /*+ index_desc(movies SYS_C007529) */ rownum rn, M_CD,TITLE,SUBTITLE,RDATE,RTIME,RATE,INTRO,POSTER from Movies
+      select /*+ index_desc(movies SYS_C007998) */ rownum rn, M_CD,TITLE,SUBTITLE,RDATE,RTIME,RATE,INTRO,POSTER from Movies
       where 
     ]]>
     <include refid="criteria"/>
@@ -124,12 +124,12 @@
  </delete>
  
  
- <insert id="movieReview">
-  insert into review (tkt_cd,review,rwriter,rdate,rgrade,rcode,m_cd) values(#{tkt_cd},#{review},#{rwriter},sysdate,#{rgrade},#{rcode},#{m_cd})
+ <insert id="movieReviewInsert">
+  insert into review (rcode,review,rwriter,rgrade,m_cd,rdate) values(rcode_seq.nextval,#{review},#{rwriter},#{rgrade},#{m_cd},sysdate)
  </insert>
  
- <select id="moviewReviewRead">
-  select * from review where rcode=#{rcode}
+ <select id="movieReviewRead" resultType="com.theater.domain.ReviewVO">
+  select * from review where m_cd=#{m_cd} order by rcode desc
  </select>
  
  <delete id="movieReviewDelete">

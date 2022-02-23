@@ -1,7 +1,5 @@
 package com.theater.domain;
 
-import java.sql.Time;
-
 import lombok.Data;
 
 @Data
@@ -15,5 +13,7 @@ public class MovieVO {
   private String rate;
   private String intro;
   private String poster;
+  
+
   
 }

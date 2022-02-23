@@ -1,6 +1,7 @@
 package com.theater.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.theater.domain.MemberVO;
@@ -50,6 +51,8 @@ public class MembersServiceImpl implements MembersService {
     mmapper.memberUpdate(mvo);
 
   }
+  
+
   
 
 

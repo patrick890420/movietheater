@@ -45,7 +45,7 @@
                 <tbody>
                   <c:forEach items="${t_slist}" var="t_slist" >
                   <tr>
-                    <td>${t_slist.screen_cd}</td>
+                    <td><a href="adminSchedule.do">${t_slist.screen_cd}</a></td>
                     <td>${t_slist.t_cd }</td>
                     <td>${t_slist.screen_type}</td>
                     <td>${t_slist.screen_name}</td>

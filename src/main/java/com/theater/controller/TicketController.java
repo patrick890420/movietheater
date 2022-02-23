@@ -1,5 +1,6 @@
 package com.theater.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,16 @@ public class TicketController {
     List<ReserveVO> theaterList = tservice.getTheaterSelect(rvo);
     return theaterList;
 
+  }
+  @GetMapping("/daySelect.do")
+  public  @ResponseBody List<ReserveVO> daySelect(@RequestParam("m_cd") int m_cd,@RequestParam("t_name") String t_name,@RequestParam("start_time") String start_time ) {
+    ReserveVO rvo = new ReserveVO();
+    rvo.setT_name(t_name);
+    rvo.setM_cd(m_cd);
+    rvo.setStart_time(start_time);
+    List<ReserveVO> timeList = tservice.getDaySelect(rvo);
+    return timeList;
+    
   }
   
   @GetMapping("/seat.do")

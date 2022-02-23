@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -130,7 +131,6 @@ public class AdminController {
     model.addAttribute("view",movieService.adminMovieSelect(m_cd));
     model.addAttribute("cut",movieService.movieStillcutSelect(m_cd));
 
-    
     return "adm/adminMovie/adminMovieView";
   }
   
@@ -183,7 +183,6 @@ public class AdminController {
   public String movieInfoInsertPro(MultipartHttpServletRequest mtfRequest,MovieInfoVO ivo,MovieVO mvo,Model model) {
     List<MultipartFile> fileList = mtfRequest.getFiles("stillcut");
     String src = mtfRequest.getParameter("src");
-    System.out.println("src value : " + src);
 
     String path = "C:\\upload\\";
     
@@ -191,8 +190,6 @@ public class AdminController {
     for (MultipartFile mf : fileList) {
       String originFileName = mf.getOriginalFilename(); // 원본 파일 명
       long fileSize = mf.getSize(); // 파일 사이즈
-//      System.out.println("originFileName : " + originFileName);
-//      System.out.println("fileSize : " + fileSize);
       UUID uuid = UUID.randomUUID();
       String safeFile = uuid.toString()+originFileName;
       fileNameArr.add(safeFile.substring(safeFile.lastIndexOf("//")+1));
@@ -276,6 +273,12 @@ public class AdminController {
     
     return "redirect:/adm/adminTheaterInsert.do";
     }
+  
+  @GetMapping("/adminSchedule.do") 
+  public String  admintheatherSchedule(Model model) {
+    model.addAttribute("mlist",TheaterService.adminScheduleSelect());
+    return "adm/adminTheater/adminSchedule";
+  }
   
   /* Ticketing */
   @GetMapping("/adminTicketing.do")

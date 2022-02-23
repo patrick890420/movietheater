@@ -89,5 +89,37 @@
 .rating1 > label:hover ~ input:checked ~ label, /* lighten current selection */
 .rating1 > input:checked ~ label:hover ~ label { color: #FFED85;  } 
 
+
+
+.rating2 { 
+  border: none;
+  float: left;
+  height:3px;
+}
+
+.rating2 > input { display: none; } 
+.rating2 > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating2 > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating2 > label { 
+  color: #ddd; 
+ float: right; 
+ height:3px;
+}
+.rating2 > label:checked ~ input ~ label, /* lighten current selection */
+.rating2 > input:checked ~ label { color: #FFD700;  } 
+
+
+
 /* 별점 기능 종료 */
 

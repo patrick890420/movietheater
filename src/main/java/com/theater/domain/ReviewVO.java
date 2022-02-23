@@ -12,7 +12,7 @@ public class ReviewVO {
   private String review; //리뷰내용
   private String rwriter; //리뷰작성자
   private Date rdate; //리뷰 작성일 sysdate
-  private int rgrade;  //평점
+  private double rgrade;  //평점
   private int m_cd;
   
 }

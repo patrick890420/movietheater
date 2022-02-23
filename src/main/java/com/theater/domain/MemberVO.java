@@ -16,4 +16,6 @@ public class MemberVO {
   private String email; //이메일
   
   private List<Member_authVO> authList; /* 여러개의 사용자 권한 */
+
+ 
 }
