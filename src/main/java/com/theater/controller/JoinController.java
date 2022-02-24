@@ -39,7 +39,8 @@ public class JoinController {
   public void join() {
 
   }
-//아이디 체크
+  
+  //아이디 체크
   @GetMapping("/idChk.do")
   public @ResponseBody int idChk(@RequestParam("userid") String userid) {
     int result = mservice.idChk(userid);

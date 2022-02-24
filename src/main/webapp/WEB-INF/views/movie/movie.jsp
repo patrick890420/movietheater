@@ -6,7 +6,7 @@
     <section class="product-page spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <div class="product__page__content">
                         <div class="product__page__title">
                             <div class="row">
@@ -39,7 +39,7 @@
                                     <option value="intro"><c:out value="${pageMaker.cri.searchType eq 'intro'?'selected':''}"/>내용</option>
                                   </select>
                                   <label>
-                                    <input type="text" class="event47" name="searchName" placeholder="검색어를 입력해 주세요">
+                                    <input type="text" style="border:groove; border-radius: 4px;" class="event47" name="searchName" placeholder="검색어를 입력해 주세요">
                                     <input type="hidden" name="pageNum" value="1">
                                     <input type="hidden" name="amount" value="9">
                                     <button type="submit" style="background:none; border:none;"><i class="icon_search"></i></button>
@@ -53,13 +53,32 @@
                         <div class="row">
                         <c:set var="num" value="${pageMaker.total-((pageMaker.cri.pageNum-1) * 10)}"/>
                           <c:forEach var="mlist" items="${list }"  >
-                            <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="col-lg-3 col-md-3 col-sm-3">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" ><img src="/upload/${mlist.poster}" alt="">
-                                        <div class="ep">${mlist.m_cd}</div>
-                                    </div>
+                                  <div style="height:44px; padding-right: 33px;">
+                                    <div style="COLOR:WHITE; TEXT-ALIGN:CENTER; padding:6px; BACKGROUND-IMAGE: linear-gradient(to left, rgb(255, 115, 86), rgb(251, 67, 87)); ">No.${mlist.m_cd}</div>
+                                  </div>
+                                    <div class="product__item__pic set-bg" >
+                                        <c:if test="${mlist.rate==99 }">
+                                          <div class="t_ep0" style="position:absolute;">전체</div>
+                                        </c:if>
+                                        <c:if test="${mlist.rate==12 }">
+                                          <div class="t_ep12" style="position:absolute;">12</div>
+                                        </c:if>
+                                        <c:if test="${mlist.rate==15 }">
+                                          <div class="t_ep15" style="position:absolute;">15</div>
+                                        </c:if>
+                                        <c:if test="${mlist.rate==19 }">
+                                          <div class="t_ep19" style="position:absolute;">19</div>
+                                        </c:if>
+                                        <img style="height:100%; border-radius:4px" src="/upload/${mlist.poster}" alt="">
+                                   </div>
+                                   
                                     <div class="product__item__text" >
-                                        <h5 ><a style="color:black;" href="view.do?m_cd=${mlist.m_cd}">${mlist.title}</a></h5>
+                                        <h5 ><a style="color:black;" href="view.do?m_cd=${mlist.m_cd}">${mlist.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
+                                        <fmt:parseDate value="${mlist.rdate}" var="dateValue" pattern="yyyy-MM-dd"/>
+                                        <h5><fmt:formatDate value="${dateValue}" pattern="yyyy-MM-dd"/><strong>  개봉</strong></h5>
+                                        <button class="btn" style="background-image :linear-gradient(to left, rgb(255, 115, 86), rgb(251, 67, 87));  margin: 10px 0;"><span style="color:white; font-weight:600;">예매하기</span></button>
                                     </div>
                                 </div>
                             </div>
@@ -92,44 +111,7 @@
                       <input type="hidden" name="searchName" value="${pageMaker.cri.searchName }">
                     </form>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="product__sidebar">
-                        <div class="product__sidebar__view">
-                            <div class="section-title">
-                                <h5>Top Rank</h5>
-                            </div>
-                            <ul class="filter__controls">
-                                <li class="active" data-filter="*">Day</li>
-                                <li data-filter=".week">Week</li>
-                                <li data-filter=".month">Month</li>
-                                <li data-filter=".years">Years</li>
-                            </ul>
-                            <div class="filter__gallery">
-                                <div class="product__sidebar__view__item set-bg mix day years"
-                                data-setbg="/resources/img/sidebar/tv-1.jpg">
-                                <h5><a href="#">Boruto: Naruto next generations</a></h5>
-                            </div>
-                            <div class="product__sidebar__view__item set-bg mix month week"
-                            data-setbg="/resources/img/sidebar/tv-2.jpg">
-                            <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
-                        </div>
-                        <div class="product__sidebar__view__item set-bg mix week years"
-                        data-setbg="/resources/img/sidebar/tv-3.jpg">
-                        <h5><a href="#">Sword art online alicization war of underworld</a></h5>
-                    </div>
-                    <div class="product__sidebar__view__item set-bg mix years month"
-                    data-setbg="/resources/img/sidebar/tv-4.jpg">
-                    <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
-                </div>
-                <div class="product__sidebar__view__item set-bg mix day"
-                data-setbg="/resources/img/sidebar/tv-5.jpg">
-                <h5><a href="#">Fate stay night unlimited blade works</a></h5>
-            </div>
-        </div>
-    </div>
-
-</div>
-</div>
+               
 </div>
 </div>
 </section>

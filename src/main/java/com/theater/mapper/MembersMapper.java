@@ -18,10 +18,12 @@ public interface MembersMapper {
   public void memberUpdate(MemberVO mvo);
   
   //비밀번호 중복 체크
-  public int pwChk(String userpw);
+  public String pwChk(String userpw);
   
   //비밀번호 수정
   public void mypasspro(MemberVO mvo);
+  
+  public MemberVO selectPw(String userid);
 
 
 }//class

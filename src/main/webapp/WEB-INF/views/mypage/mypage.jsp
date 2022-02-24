@@ -22,7 +22,7 @@
     <div class="list-group list-group-flush">
       <a
         class="list-group-item list-group-item-action list-group-item-light p-3"
-        href="mypage.do">アカウント管理</a> <a
+        href="memberUp.do">アカウント管理</a> <a
         class="list-group-item list-group-item-action list-group-item-light p-3"
         href="myreser.do">私の予約</a> <a
         class="list-group-item list-group-item-action list-group-item-light p-3"
