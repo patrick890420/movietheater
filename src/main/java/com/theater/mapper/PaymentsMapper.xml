@@ -6,5 +6,13 @@
   SELECT * FROM Payments
 </select>
 
+<!-- mycash 조인 -->
+<!-- select
+     t.tkt_cd, v.title, t.tkt_date, p.charge, p.pay_status 
+from
+    ticketings t, payments p, movies v
+where p.tkt_cd = t.tkt_cd
+and t.m_cd = v.m_cd 
+and t.id = 'admin'; -->
 
 </mapper>
