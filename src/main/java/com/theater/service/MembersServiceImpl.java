@@ -53,7 +53,7 @@ public class MembersServiceImpl implements MembersService {
   }
   
   @Override
-  public int pwChk(String userpw) {
+  public String pwChk(String userpw) {
     return mmapper.pwChk(userpw);
   }
   
@@ -62,7 +62,12 @@ public class MembersServiceImpl implements MembersService {
     mmapper.mypasspro(mvo);
   }
   
-
+  
+  @Override
+  public MemberVO selectPw(String userid) {
+     MemberVO mvo = mmapper.selectPw(userid);
+     return mvo;
+  }
   
 
 

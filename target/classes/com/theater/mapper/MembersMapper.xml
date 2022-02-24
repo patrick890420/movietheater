@@ -30,14 +30,19 @@
    where userid = #{userid} 
 </update>
 
-<select id="pwChk" resultType="int">
-    select count(*) from members <!--전체 비번 중복인걸 확인하는거라면 count 빼야 하는 것 아닌가...! 모르겠군 ㅋ int는 맞는지..?-->
+<select id="pwChk" resultType="String">
+    select count(*) from members <!--전체 비번 중복인걸 확인하는거라면 count 빼야 하는 것 아닌가...! 모르겠군 ㅋ int가 맞는지..?-->
     where userpw= #{userpw}
 </select>
 
-
-
-
-
+<select id="selectPw" resultType="com.theater.domain.MemberVO">
+  select * from members where userid = #{userid}
+  </select>
+  
+<update id="mypasspro">
+update members set
+userpw = #{userpw}
+where userid = {#userid}
+</update>
 
 </mapper>

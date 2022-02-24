@@ -52,16 +52,20 @@
   var imgArray = new Array();
   imgArray[0] = '/resources/img/theater/post1.jpg';
   imgArray[1] = '/resources/img/theater/post3.jpg';
+  var imgArray2 = new Array();
+  imgArray2[0] = '/resources/img/theater/footpost1.jpg';
+  imgArray2[1] = '/resources/img/theater/footpost2.jpg';
   
   function showImage(){
     var imgNum = Math.round(Math.random()*1);
     var objImg = document.getElementById("introImg");
     objImg.src = imgArray[imgNum];
+    var imgNum2 = Math.round(Math.random()*1);
+    var objImg2 = document.getElementById("introImg2");
+    objImg2.src = imgArray2[imgNum2];
   }
 </script>
-
 </head>
-
 <body onload="showImage()">
   <!-- Page Preloder -->
   <div id="preloder">
@@ -115,7 +119,7 @@
               <form name="lg" action="/adm/adminLogout" method="post"><!-- spring security 로그아웃은 get 불가 -->
                      
                 <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
-                <a href="/mypage/memberUp" style="text-align: center;"> <span class="icon_pencil-edit"><br>마이페이지</span></a>
+                <a href="/mypage/memberUp.do" style="text-align: center;"> <span class="icon_pencil-edit"><br>마이페이지</span></a>
                                
                 <button type="submit" style="border:0 none; background:transparent; top: -24px; right: 10px; position: relative;" ><span class="icon_lock-open_alt"><br>로그아웃</span></button> 
 
@@ -147,9 +151,9 @@
           </nav>
         </div>
       </div>
-      <div class="col-lg-3" style="text-align:right;">
+      <div class="col-lg-3" style="text-align:right; padding:0 !important;">
         <label style="margin:10px 0;">
-          <input type="text">
+          <input type="text" style="border:groove;">
           <button type="button" style="background:none; border:none;"><span
             class="icon_search"></span></button>
         </label>
