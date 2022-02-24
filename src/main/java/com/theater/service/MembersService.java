@@ -18,10 +18,10 @@ public interface MembersService {
 	 
 	 public void mypasspro(MemberVO mvo); 
 
-	 
+
 	 
 
   
 	 
 
-}
+}//class

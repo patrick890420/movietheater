@@ -35,7 +35,7 @@ select * from notice where nt_cd= #{nt_cd}
 </select>
 
 
-<!-- admin -->
+<!-- search -->
 <select id="getNoticeList" resultType="com.theater.domain.NoticeVO">
   <![CDATA[
         SELECT *

@@ -21,6 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.theater.domain.MemberVO;
 import com.theater.service.MembersService;
+import com.theater.service.PaymentsService;
 
 import lombok.AllArgsConstructor;
 import lombok.Setter;
@@ -32,8 +33,13 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class MypageController {
 
+
 @Setter(onMethod_=@Autowired)
 private MembersService mservice;
+
+@Setter(onMethod_=@Autowired)
+private PaymentsService pService;
+
 
   @GetMapping("/mypage.do")
   public void mypage() {
@@ -44,10 +50,10 @@ private MembersService mservice;
   public void myreser() {
 
   }
-  
-  @GetMapping("/mycash.do")
-  public void mycash() {
 
+  @GetMapping("/mycash.do")
+  public void mycash(Model model) {
+    model.addAttribute("cashList",pService.getCashList());
   }
   
   //비밀번호 수정 페이지

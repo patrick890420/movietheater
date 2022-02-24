@@ -1,5 +1,7 @@
 package com.theater.mapper;
 
+import java.util.List;
+
 import com.theater.domain.MemberVO;
 
 public interface MembersMapper {
@@ -21,4 +23,5 @@ public interface MembersMapper {
   //비밀번호 수정
   public void mypasspro(MemberVO mvo);
 
-}
+
+}//class
