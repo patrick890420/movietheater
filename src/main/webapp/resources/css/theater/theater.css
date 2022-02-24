@@ -284,3 +284,22 @@ input[type="radio"]:checked + strong {
 .theater-date-wrapper-active {
     background-color: #efefef !important;
 }
+.theater_list li{
+      font-weight:600;
+      margin: 7px;
+}
+.theater_list a{
+  color:#ffffffb8;
+}
+.theater_footpost{
+  text-align:center;
+  background: -webkit-linear-gradient( top, #ffffff, #df91416e);
+}
+.thicon_heart{
+  color: #ff0f01a6;
+    font-weight: 600;
+}
+.thicon_clip{
+  color: darkblue;
+    font-weight: 600;
+}

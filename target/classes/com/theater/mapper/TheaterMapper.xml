@@ -62,5 +62,12 @@
         and f.film_status = 1
   </select>
   
+  <select id="getCityCheck" resultType="com.theater.domain.TheatersVO">
+    SELECT
+     T_NAME,T_CD
+    FROM THEATERS
+    WHERE T_AREA = #{t_area}
+  </select>
+  
 </mapper>
 

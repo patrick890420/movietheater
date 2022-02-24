@@ -37,11 +37,12 @@ public class NoticeController {
     int total= nService.getTotal(cri);
     model.addAttribute("pageMaker",new PageVO(cri, total));
   }
-  
+
+//Common/ admin.user 공통이름
   @GetMapping("/noticeView.do")
   public void adminBoardView(@RequestParam("nt_cd")int nt_cd,Model model) {
     nService.getViewCount(nt_cd);
-    model.addAttribute("view",nService.getAdminBoardView(nt_cd));
+    model.addAttribute("nview",nService.getAdminBoardView(nt_cd));
     model.addAttribute("next",nService.nextPage(nt_cd));
     model.addAttribute("prev",nService.prevPage(nt_cd));
   }

@@ -1,12 +1,17 @@
 package com.theater.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.theater.domain.ReserveVO;
+import com.theater.domain.TheatersVO;
 import com.theater.service.TheaterService;
 
 import lombok.AllArgsConstructor;
@@ -24,11 +29,19 @@ public class TheaterController {
   
   @GetMapping("/theater.do")
   public void theater(Model model, @RequestParam(value="t_area", required=false, defaultValue= "1") String t_area,
-      @RequestParam(value="t_name", required=false, defaultValue= "슈밤") String t_name) {
+      @RequestParam(value="t_name", required=false, defaultValue= "강남") String t_name) {
     
-    System.out.println("t_area의 값?:"+t_area);
     model.addAttribute("aList",thservice.areainfo());
     model.addAttribute("thList", thservice.thread(t_area));
     model.addAttribute("thinfo", thservice.thinforead(t_name));
+  }
+  
+  @GetMapping("/cityCheck.do")
+  public  @ResponseBody List<TheatersVO> cityCheck(@RequestParam("t_area") int t_area ) {
+    TheatersVO tvo = new TheatersVO();
+    tvo.setT_area(t_area);
+    List<TheatersVO> cityList = thservice.getCityCheck(tvo);
+    return cityList;
+
   }
 }

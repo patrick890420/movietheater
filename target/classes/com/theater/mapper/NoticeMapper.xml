@@ -26,12 +26,38 @@
   <selectKey keyProperty="nt_cd" order="BEFORE" resultType="int">
     select notice_seq.nextval from dual
   </selectKey>
-  insert into notice (nt_cd,title,n_img,content,hits)
-  values (#{nt_cd},#{title},'TEST',#{content},0)
+  insert into notice (nt_cd,title,content,hits)
+  values (#{nt_cd},#{title},#{content},0)
 </insert>
 
+<select id="getAdminBoardView" resultType="com.theater.domain.NoticeVO">
+select * from notice where nt_cd= #{nt_cd}
+</select>
+
+
+<!-- admin -->
+<select id="getNoticeList" resultType="com.theater.domain.NoticeVO">
+  <![CDATA[
+        SELECT *
+        FROM ( SELECT ROWNUM RN,
+                A.*
+              FROM (SELECT * FROM NOTICE
+                    WHERE
+        ]]> 
+                    <if test="searchType == 'title'">TITLE LIKE '%'||#{searchName}||'%'</if>
+                    <if test="searchType == 'content'">CONTENT LIKE '%'||#{searchName}||'%'</if>
+                    <if test="searchType == null or searchType == ''"> 1=1</if>
+        <![CDATA[
+                    ORDER BY NT_CD DESC) A)
+        WHERE RN > (#{pageNum}-1) * #{amount} AND RN <= #{pageNum} * #{amount}
+        ]]>
+<!--     <![CDATA[ -->
+<!--       select * from notice where nt_cd > 0 order by nt_cd desc -->
+<!--     ]]> -->
+</select>
+
 <update id="modify">
-  update notice set title= #{title}, n_img= #{n_img}, content= #{content}
+  update notice set title= #{title}, content= #{content}
   where nt_cd= #{nt_cd}
 </update>
 
@@ -39,21 +65,8 @@
   delete notice where nt_cd= #{nt_cd}
 </delete>
 
-<!-- admin -->
-<select id="getNoticeList" resultType="com.theater.domain.NoticeVO">
-  select * from notice  
-</select>
-
-<select id="getAdminBoardView" resultType="com.theater.domain.NoticeVO">
-select * from notice where nt_cd= #{nt_cd}
-</select>
-
 
 <!-- User -->
-<select id="getNoticeView" resultType="com.theater.domain.NoticeVO">
-  select * from notice where nt_cd= #{nt_cd}
-</select>
-
 <!-- 조회수 -->
 <update id="getViewCount">
   update notice set hits= hits+ 1 where nt_cd= #{nt_cd}
@@ -62,9 +75,8 @@ select * from notice where nt_cd= #{nt_cd}
 <!-- 전체 래코드 갯수 -->
 <select id="getTotal" resultType="int">
   SELECT COUNT(*) AS TOTAL FROM NOTICE
-  WHERE  <if test="searchType == 'title'">TITLE LIKE '%'||#{searchType}||'%'</if>
-         <if test="searchType == 'content'">CONTNENT LIKE '%'||#{searchType}||'%'</if>
-         <if test="searchType == 'total'">CONT                                                                                                                                                                                                                                                                          ENT LIKE '%'||#{searchType}||'%' OR TITLE LIKE '%'||#{searchName}||'%'</if>
+  WHERE  <if test="searchType == 'title'">TITLE LIKE '%'||#{searchName}||'%'</if>
+         <if test="searchType == 'content'">CONTENT LIKE '%'||#{searchName}||'%'</if>
          <if test="searchType == null or searchType == ''"> 1=1</if>
 </select>
 

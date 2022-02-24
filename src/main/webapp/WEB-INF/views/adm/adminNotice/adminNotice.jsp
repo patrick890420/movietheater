@@ -15,6 +15,7 @@
             <ol class="breadcrumb m-0 p-0">
               <li class="breadcrumb-item"><a href="admin.do" class="text-muted">Home</a></li>
               <li class="breadcrumb-item"><a href="adminNotice.do" class="text-muted">お知らせ</a></li><!-- 공지 -->
+<!--               <li class="breadcrumb-item"><a href="adminEvent.do" class="text-muted">イベント</a></li>이벤트 -->
             </ol>
           </nav>
         </div>
@@ -42,21 +43,19 @@
                   <div class="col-12">
                     <div class="card">
                       <div class="card-body">
-<!--             <code> $().DataTable();</code> -->
-<!-- DataTable 사용법 -->
-<!--        <code> $("#테이블id").DataTable();</code> -->
+            <!--             <code> $().DataTable();</code> -->
+            <!-- DataTable 사용법 -->
+            <!--        <code> $("#테이블id").DataTable();</code> -->
                         <div class="table-responsive">
-                          <table id="noticeTable" class="table table-striped table-bordered no-wrap">
+                          <table id="adminNoticeTable" class="table table-striped table-bordered no-wrap">
                           <colgroup>
-                            <col width="6%">
-                            <col width="12%">
-                            <col width="*">
                             <col width="10%">
+                            <col width="*">
+                            <col width="20%">
                           </colgroup>
                             <thead>
                               <tr>
                                 <th class="adminview57">番号</th><!-- 번호 -->
-                                <th class="adminview57">イメージ</th><!-- img -->
                                 <th class="adminview57">題目</th><!-- 제목 -->
                                 <th class="adminview57">作成日</th><!-- 작성일 -->
                               </tr>
@@ -66,10 +65,7 @@
                               <c:forEach var="nlist" items="${nlist}">
                                 <tr>
                                   <td class="adminview57">${nlist.nt_cd}</td><!-- 번호 -->
-                                  <td>
-                                    <button type="button" class="btn" data-toggle="modal" data-target="#bs-example-modal-lg">${nlist.n_img}</button>
-                                  </td>
-                                  <td class="notice76"><a href="adminBoardView.do?nt_cd=${nlist.nt_cd}">${nlist.title}</a></td><!-- 제목 -->
+                                  <td><a href="adminNoticeModify.do?event_cd=0&nt_cd=${nlist.nt_cd}">${nlist.title}</a></td><!-- 제목 -->
                                   <td class="adminview57">
                                     <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${nlist.wdate}"/>
                                     <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>

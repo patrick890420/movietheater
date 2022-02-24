@@ -22,4 +22,5 @@ public interface TheaterMapper {
   public List<TheatersVO> theaterlist();//극장list
   public List<ScreensVO> adminScreenInfo(int t_cd);//극장list-screen
   public List<ScheduleVO> adminScheduleSelect();
+  public List<TheatersVO> getCityCheck(TheatersVO tvo);
 }

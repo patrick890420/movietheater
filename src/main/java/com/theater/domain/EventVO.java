@@ -12,8 +12,9 @@ public class EventVO {
   private String e_img;       //이미지
   private String content;     //내용
   private String wdate;       //작성일
-  private String finish;      //종료여부
-  private String sdate;       //시작일
-  private String fdate;       //종료일
+  private int hits;           //조회수
+//  private String finish;      //종료여부
+//  private String sdate;       //시작일
+//  private String fdate;       //종료일
   
 }//class

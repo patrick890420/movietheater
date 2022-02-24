@@ -95,3 +95,28 @@ function dayClickEvent1(button) {
         //console.log(inputReserveDate.value);
     });
 }
+
+//상단탭 메뉴 시작
+function citycheck(tharea){
+  $.ajax({
+        type : "get",
+        url : '/theater/cityCheck.do?t_area='+tharea,
+        dataType : "json",
+        success : function(data1) {
+           let city="";
+           for(let j=0;j<data1.length;j++){
+             
+             city+="<div class='t_citydata t_citydataline'>";
+             city+=" <strong><a href='/theater/theater.do?t_name="+data1[j].t_name+"'>"+data1[j].t_name+"</a></strong>";
+             city+="</div>";
+             
+           }
+           
+           $('#sub-low').remove();
+           $('#t_subcity').html(city);
+        },
+        error : function() {
+           alert("error");
+        }
+     }); //ajax end
+}
