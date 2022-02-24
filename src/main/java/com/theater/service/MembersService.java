@@ -14,14 +14,16 @@ public interface MembersService {
 	 
 	 public void memberUpdate(MemberVO mvo);
 	 
-	 public int pwChk(String userpw);
+	 public String pwChk(String userpw); // 비밀번호 체크
 	 
-	 public void mypasspro(MemberVO mvo); 
+	 public MemberVO selectPw(String userid); //흠.. 비번 조회도 필요할 것 같아서...?
+	 
+	 public void mypasspro(MemberVO mvo); //비밀번호 수정 처리 해 주는 친구
 
-	 
+
 	 
 
   
 	 
 
-}
+}//class
