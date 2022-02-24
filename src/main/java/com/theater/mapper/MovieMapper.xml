@@ -144,12 +144,12 @@
   select rcode,m_cd,review,rwriter,rdate from review where m_cd=#{m_cd} order by rcode asc
  </select>
  
- <select id="cmtAVG" resultType="double">
+ <select id="cmtAVG" resultType="com.theater.domain.CmtAVG">
    select
-  (SELECT ROUND(AVG(#{rgrade}),1) as rgrade
+  (SELECT ROUND(AVG(rgrade),1) as rgrade
   from review
   where m_cd = #{m_cd}) as reviewavg
-  ,(select count(rcode) from review where m_cd = 225) as reviewcount
+  ,(select count(rcode) from review where m_cd = #{m_cd}) as reviewcount
   from dual
  </select>
  

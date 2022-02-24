@@ -22,4 +22,6 @@ public interface TheaterService {
   public List<ScreensVO> adminScreenInfo(int t_cd);
   public List<AreainfoVO> areainfo();
   public List<ScheduleVO> adminScheduleSelect();
+  
+  public List<TheatersVO> getCityCheck(TheatersVO tvo);
 }

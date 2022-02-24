@@ -4,17 +4,26 @@ import java.util.List;
 
 import com.theater.domain.Criteria;
 import com.theater.domain.EventVO;
-import com.theater.domain.NoticeVO;
 
 public interface EventService {
 
 
 //Common
   public void eventInsert(EventVO evo);
+  public EventVO getAdminBoardView(int event_cd);
+  public boolean delete(int event_cd);
   
 //admin
-  public List<EventVO> getAdminList(Criteria cri);
-  public EventVO getAdminBoardView(int event_cd);
-  
+  public List<EventVO> getEventList(Criteria cri);
+  public List<EventVO> getEventList();
+  public void modify(EventVO evo);
+
+//User
+//조회수
+  public void getViewCount(int event_cd);
+//전체 래코드갯수
+  public int getTotal(Criteria cri); 
+  public EventVO nextPage(int event_cd);
+  public EventVO prevPage(int event_cd);
 
 }//inter

@@ -5,6 +5,26 @@
   margin-bottom: 50px;
 }
 
+.btn-rounded {
+  border-radius: 5em;
+}
+
+.btn-outline-danger {
+    color: #ff0000;
+    border-color: #ff0000;
+}
+
+.viewbg{
+  background: #f8f8f8;
+  margin-bottom: 30px;
+;
+}
+
+.viewrow h2, .viewrow p{
+  text-align: center;
+  padding-bottom: 10px;
+}
+
 /*                                Event*/
 
 .event9{
@@ -72,7 +92,7 @@
 .event64>p{
   font-weight: bold;
   color: #ff0000;
-  padding-left: 350px;
+  padding-left: 390px;
 }
 
 .event68{
@@ -101,6 +121,11 @@
 .eventview6{
   padding-bottom: 0px;
 }
+
+.eventview30{
+  margin-top: 20px;
+}
+
 .eventview36{
   background: #e9ecef;
   border-bottom: 1px solid #ccc;
@@ -152,8 +177,6 @@
 }
 
 /*                            view*/
-.view20 h2, .view20 p{
-  text-align: center;
-}
+
 
 

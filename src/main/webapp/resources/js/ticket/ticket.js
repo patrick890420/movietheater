@@ -86,18 +86,37 @@ function dayClickEvent(button) {
             month +
             '-' +
             button.childNodes[1].innerHTML;
-        console.log(inputReserveDate.value);
+        //console.log(inputReserveDate.value);
           
         var getMcd = document.querySelector('#mvcd').value;
         var tName = document.querySelector('#selectedTheater').value;
+        var tArea = document.querySelector('#area').value;
+        
         $.ajax({
           type : "get",
-          url : '/ticket/daySelect.do?start_time='+inputReserveDate.value+'&m_cd='+getMcd+'&t_name='+tName,
+          url : '/ticket/daySelect.do?start_time='+inputReserveDate.value+'&m_cd='+getMcd+'&t_name='+tName+'&t_area='+tArea,
           dataType : "json",
           contentType: "application/x-www-form-urlencoded; charset=UTF-8",
           success : function(data) {
-           
-             
+            let pushDiv="";
+            for(let i=0;i<data.length;i++){
+              pushDiv+="<button class='btn reserve-time-button'>";
+              pushDiv+="<span class='reserve-time-want'>"+data[i].start_time+"</span>";
+              pushDiv+="<span class='reserve-time-remain'>"+data[i].t_seat+"</span>";
+              pushDiv+="</button>";
+            }
+            $('#reserve-time-wrapper').html(pushDiv);
+            document.querySelectorAll('.reserve-time-want').forEach(list => {
+              list.addEventListener('click', function() {
+                  const reserveTimeActive = document.querySelectorAll('.reserve-time-active');
+                  reserveTimeActive.forEach(li => {
+                      li.classList.remove('reserve-time-active');
+                  });
+                  list.classList.add('reserve-time-active');
+                  //console.log(list.innerHTML);
+                  inputRunningTime.value = list.innerHTML;
+              });
+          });   
           },
           error : function() {
              alert("error");
@@ -117,17 +136,7 @@ theaterPlace.forEach(list => {
     });
 });
 
-reserveTimeWant.forEach(list => {
-    list.addEventListener('click', function() {
-        const reserveTimeActive = document.querySelectorAll('.reserve-time-active');
-        reserveTimeActive.forEach(li => {
-            li.classList.remove('reserve-time-active');
-        });
-        list.classList.add('reserve-time-active');
-        console.log(list.innerHTML);
-        inputRunningTime.value = list.innerHTML;
-    });
-});
+
 
 moveSeatButton.addEventListener('click', function() {
     if (!!inputTitle.value &&
@@ -259,7 +268,7 @@ function roadTheater(tcd,mcd){
          success : function(data1) {
             let res1="";
             for(let j=0;j<data1.length;j++){
-            res1+="<button class='btn theater-place' id='theater-place' onclick='matchDate("+data1[j].t_area+","+data1[j].m_cd+","+data1[j].t_cd+","+data1[j].t_name+");'>"+data1[j].t_name+"</button>";
+            res1+="<button class='btn theater-place' id='theater-place' >"+data1[j].t_name+"</button>";
             }
             $('#theater-place-wrapper').html(res1);
             

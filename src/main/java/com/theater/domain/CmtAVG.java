@@ -11,4 +11,6 @@ public class CmtAVG {
   private int reviewcount;
   private int rcode;
   
+  
+  
 }

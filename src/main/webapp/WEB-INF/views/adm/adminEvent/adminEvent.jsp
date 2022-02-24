@@ -15,6 +15,7 @@
             <ol class="breadcrumb m-0 p-0">
               <li class="breadcrumb-item"><a href="admin.do" class="text-muted">Home</a></li>
               <li class="breadcrumb-item"><a href="adminEvent.do" class="text-muted">イベント</a></li><!-- 이벤트 -->
+<!--               <li class="breadcrumb-item"><a href="adminNotice.do" class="text-muted">お知らせ</a></li>공지 -->
             </ol>
           </nav>
         </div>
@@ -35,20 +36,21 @@
     <div class="col-xl-12">
     <div class="card">
       <div class="card-body">
-          <ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
-            <li class="nav-item">
-              <a href="#actors" data-toggle="tab" aria-expanded="true" class="nav-link rounded-0 active">
-                <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
-                <span class="d-none d-lg-block">進行中の イベント</span><!-- 진행중인 이벤트 -->
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#directors" data-toggle="tab" aria-expanded="false" class="nav-link rounded-0 ">
-                <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
-                <span class="d-none d-lg-block">終了 イベント</span><!-- 종료 이벤트 -->
-              </a>
-            </li>
-          </ul>
+<!--           <ul class="nav nav-pills bg-nav-pills nav-justified mb-3"> -->
+<!--             <li class="nav-item"> -->
+<!--               <a href="#actors" data-toggle="tab" aria-expanded="true" class="nav-link rounded-0 active"> -->
+<!--                 <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i> -->
+<!--                 <span class="d-none d-lg-block">進行中の イベント</span>진행중인 이벤트 -->
+<!--               </a> -->
+<!--             </li> -->
+<!--             <li class="nav-item"> -->
+<!--               <a href="#directors" data-toggle="tab" aria-expanded="false" class="nav-link rounded-0 "> -->
+<!--                 <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i> -->
+<!--                 <span class="d-none d-lg-block">終了 イベント</span>종료 이벤트 -->
+<!--               </a> -->
+<!--             </li> -->
+<!--           </ul> -->
+
           <div class="tab-content">
               <div class="tab-pane show active" id="actors">
                 <!-- basic table -->
@@ -62,107 +64,52 @@
                         <div class="table-responsive">
                           <table id="adminEventTable" class="table table-striped table-bordered no-wrap">
                           <colgroup>
-                            <col width="6%">
-                            <col width="12%">
-                            <col width="*">
                             <col width="10%">
+                            <col width="*">
+                            <col width="20%">
                           </colgroup>
                             <thead>
                               <tr class="adminevent72">
                                 <th>番号</th><!-- 번호 -->
-                                <th>イメージ</th><!-- img -->
                                 <th>題目</th><!-- 제목 -->
-                                <th>基幹</th><!-- 기간 -->
+                                <th>作成日</th><!-- 작성일 -->
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <td>1</td>
-                                <td>이미지</td>
-                                <td><a href="#">System Architect</a></td>
-                                <td>2022.0202 ~ 2022.0202</td>
+                              <c:set var="num1" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}"/>
+                              <c:forEach var="elist" items="${elist}">
+                                <tr>
+                                  <td class="adminview57">${elist.event_cd}</td><!-- 번호 -->
+                                  <td><a href="adminEventModify.do?nt_cd=0&event_cd=${elist.event_cd}">${elist.title}</a></td><!-- 제목 -->
+                                  <td class="adminview57">
+                                    <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${elist.wdate}"/>
+                                    <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>
+                                </td>
                               </tr>
+                              <c:set var="num1" value="${num1-1}"/>
+                              </c:forEach>
                             </tbody>
-                            <tfoot>
-                              <tr>
-                                <th>Number</th>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                              </tr>
-                            </tfoot>
                           </table>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- Directors tab -->
-              <div class="tab-pane" id="directors">
-                <!-- basic table -->
-                <div class="row">
-                  <div class="col-12">
-                    <div class="card">
-                      <div class="card-body">
-            <!--             <code> $().DataTable();</code> -->
-                        <!-- DataTable 사용법 -->
-            <!--        <code> $("#테이블id").DataTable();</code> -->
-                        <div class="table-responsive">
-                          <table id="directorsTable" class="table table-striped table-bordered no-wrap">
-                          <colgroup>
-                            <col width="10%">
-                            <col width="10%">
-                            <col width="*">
-                            <col width="10%">
-                          </colgroup>
-                            <thead>
-                              <tr>
-                                <th>번호</th>
-                                <th>제목</th>
-                                <th>이미지</th>
-                                <th>기간</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>1</td>
-                                <td>이미지</td>
-                                <td><a href="#">제목</a></td>
-                                <td>Edinburgh</td>
-                              </tr>
-                            </tbody>
-                            <tfoot>
-                              <tr>
-                                <th>Number</th>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                              </tr>
-                            </tfoot>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- "tab-pane" -->
-<!--               글쓰기 -->
-              <button type="button" class="btn waves-effect waves-light btn-rounded btn-outline-primary admin103"
-                  onClick="location.href='adminBoardWrite.do'">글쓰기</button>
               </div>
               
+<!--               글쓰기 -->
+              <button type="button" class="btn waves-effect waves-light btn-rounded btn-outline-primary admin103"
+                  onClick="location.href='adminBoardWrite.do'">書き物</button><!-- 글쓰기 -->
+              </div>
           </div><!-- tab-content -->
       </div> <!-- end card-body-->
   </div> <!-- end card-->
 </div> <!-- col-xl-12 -->
-    
-
     <!-- ============================================================== -->
     <!-- End PAge Content -->
     <!-- ============================================================== -->
-  </div>
+</div>
   <!-- ============================================================== -->
   <!-- End Container fluid  -->
   <!-- ============================================================== -->
-  <%@ include file="../adminfooter.jsp"%>
+<%@ include file="../adminfooter.jsp"%>
