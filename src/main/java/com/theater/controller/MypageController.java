@@ -45,11 +45,7 @@ private PasswordEncoder pwEncoder;
   public void mypage() {
 
   }
-  
-  @GetMapping("/myreser.do")
-  public void myreser() {
 
-  }
   
   @GetMapping("/mycash.do")
   public void mycash() {
@@ -81,6 +77,11 @@ private PasswordEncoder pwEncoder;
     mservice.mypasspro(mvo);
 
     return "redirect:/";
+    
+//    ERROR: jdbc.sqltiming - 1. PreparedStatement.execute() FAILED! update members set userpw = '$2a$10$bHZnX0GmQlPYh8WJs/Ctru.EgdR8ZPiweWOFVjNu0dRUagdHbMzOq' 
+//        where userid = {#userid} 
+//         {FAILED after 6 msec}
+//        java.sql.SQLSyntaxErrorException: ORA-00911: invalid character
   }
   
   //회원정보 수정 페이지
@@ -101,6 +102,19 @@ private PasswordEncoder pwEncoder;
       return "redirect:/";  
   }
   
+  //나의 예약 페이지 조회
+  @GetMapping("/myreser.do")
+  public String relist(Model model,Principal principal) {
+    String id = principal.getName();
+    log.info("!!!!!!!!!!!!"+id);
+    model.addAttribute("relist", mservice.getRelist(id));
+    
+    log.info(mservice.getRelist(id));
+    
+    return "/mypage/myreser";
+  }
+  
+
 
   
 ////비밀번호 체크
