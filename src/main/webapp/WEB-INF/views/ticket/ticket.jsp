@@ -55,7 +55,7 @@
   <div class="time-part">
     <div class="reserve-title">시간</div>
     <div class="reserve-time">
-      <div class="reserve-where">4관(Laser) 6층(총 240석)</div>
+      <div class="reserve-where">1관(Laser) 6층(총 240석)</div>
       <div class="reserve-time-wrapper" id="reserve-time-wrapper">
 <!--         <button class=" btn reserve-time-button"> -->
 <!--           <span class="reserve-time-want">12:20</span> -->
@@ -75,15 +75,19 @@
 <!--     <img class="tk-poster" alt="" src="/resources/img/ticket/popcon2.png"/> -->
 <!--     <p>영화 제목</p> -->
   </div>
-  <div id="ticket_tnb class="col-md-3"">
-    <form class="moveSeatForm" action="moveSeat.do" method="get">
+  <div id="ticket_tnb" class="col-md-3">
+    <form class="moveSeatForm" action="/ticket/reserve.do" method="get">
       <input type="hidden" class="m_cd" name="m_cd" id="mvcd">
       <input type="hidden" class="t_area" id="selectedArea" name="t_area">
       <input type="hidden" class="selectedTheater" id="selectedTheater" name="t_name">
+      <input type="hidden" class="selectedStcd" id="selectedStcd" name="s_t_cd">
       <input type="hidden" class="selectedLocation" name="selectedLocation">
-      <input type="hidden" class="reserveDate" name="movieDate" id="tkt_time">
-      <input type="hidden" class="runningTime" name="runningTime" id="runningTime">
-      <button class="moveSeatButton btn btn-primary" type="button" onclick="location.href='/ticket/seat.do'">예약하기</button>
+      <input type="hidden" class="reserveDate" name="tkt_date" id="tkt_time">
+      <input type="hidden" class="runningTime" name="tkt_time" id="runningTime">
+      <sec:authorize access="isAuthenticated()">
+        <input type="hidden" class="id" name="id" value="<sec:authentication property="principal.member.userid"/>">      
+      </sec:authorize>
+      <button class="moveSeatButton btn btn-primary" type="submit" >예약하기</button>
     </form>
   </div>
   </div>

@@ -8,6 +8,7 @@ const theaterLocation = document.querySelectorAll('.theater-location');
 const reserveTimeWant = document.querySelectorAll('.reserve-time-want');
 const inputTitle = document.querySelector('.title');
 const inputSelectedTheater = document.querySelector('.selectedTheater');
+const inputSelectedStcd= document.querySelector('.selectedStcd');
 const inputSelectedLocation = document.querySelector('.selectedLocation');
 const inputReserveDate = document.querySelector('.reserveDate');
 const inputRunningTime = document.querySelector('.runningTime');
@@ -100,22 +101,23 @@ function dayClickEvent(button) {
           success : function(data) {
             let pushDiv="";
             for(let i=0;i<data.length;i++){
-              pushDiv+="<button class='btn reserve-time-button'>";
-              pushDiv+="<span class='reserve-time-want'>"+data[i].start_time+"</span>";
+              pushDiv+="<button class='btn reserve-time-button' onclick=getStcd("+data[i].s_t_cd+");>";
+              pushDiv+="<span class='reserve-time-want' onclick=getStcd("+data[i].s_t_cd+");>"+data[i].start_time+"</span>";
               pushDiv+="<span class='reserve-time-remain'>"+data[i].t_seat+"</span>";
+              pushDiv+="<input type='hidden' value='"+data[i].s_t_cd+"' id='hdStcd'>";
               pushDiv+="</button>";
             }
             $('#reserve-time-wrapper').html(pushDiv);
             document.querySelectorAll('.reserve-time-want').forEach(list => {
               list.addEventListener('click', function() {
-                  const reserveTimeActive = document.querySelectorAll('.reserve-time-active');
-                  reserveTimeActive.forEach(li => {
-                      li.classList.remove('reserve-time-active');
-                  });
-                  list.classList.add('reserve-time-active');
-                  //console.log(list.innerHTML);
-                  inputRunningTime.value = list.innerHTML;
+              const reserveTimeActive = document.querySelectorAll('.reserve-time-active');
+              reserveTimeActive.forEach(li => {
+                li.classList.remove('reserve-time-active');
               });
+              list.classList.add('reserve-time-active');
+              //console.log(list.innerHTML);
+              inputRunningTime.value = list.innerHTML;
+            });
           });   
           },
           error : function() {
@@ -125,6 +127,9 @@ function dayClickEvent(button) {
     });
 }
 
+function getStcd(stcd) {
+  inputSelectedStcd.value = stcd;
+}
 theaterPlace.forEach(list => {
     list.addEventListener('click', function() {
         const theaterPlaceWrapper = document.querySelectorAll('.theater-place-active');
@@ -136,29 +141,6 @@ theaterPlace.forEach(list => {
     });
 });
 
-
-
-moveSeatButton.addEventListener('click', function() {
-    if (!!inputTitle.value &&
-        !!inputSelectedTheater.value &&
-        !!inputReserveDate.value &&
-        !!inputRunningTime.value
-    ) {
-        moveSeatForm.submit();
-    } else {
-        toastr.options = {
-            positionClass: 'toast-top-full-width',
-            progressBar: true,
-            timeOut: 1000,
-        };
-        toastr.error(
-            '<div style="color:white">すべての項目をチェックしてください</div>',
-            '<div style="color:white">警告</div>', {
-                timeOut: 3000,
-            }
-        );
-    }
-});
 
 var movieBtn = document.getElementsByClassName("movie-name-btn");
 
