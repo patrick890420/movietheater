@@ -119,7 +119,7 @@
               <form name="lg" action="/adm/adminLogout" method="post"><!-- spring security 로그아웃은 get 불가 -->
                      
                 <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
-                <a href="/mypage/memberUp" style="text-align: center;"> <span class="icon_pencil-edit"><br>마이페이지</span></a>
+                <a href="/mypage/memberUp.do" style="text-align: center;"> <span class="icon_pencil-edit"><br>마이페이지</span></a>
                                
                 <button type="submit" style="border:0 none; background:transparent; top: -24px; right: 10px; position: relative;" ><span class="icon_lock-open_alt"><br>로그아웃</span></button> 
 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.theater.mapper.PaymentsMapper">
+
+<select id="getCashList" resultType="com.theater.domain.PaymentsVO">
+  SELECT * FROM Payments
+</select>
+
+<!-- mycash 조인 -->
+<!-- select
+     t.tkt_cd, v.title, t.tkt_date, p.charge, p.pay_status 
+from
+    ticketings t, payments p, movies v
+where p.tkt_cd = t.tkt_cd
+and t.m_cd = v.m_cd 
+and t.id = 'admin'; -->
+
+</mapper>
