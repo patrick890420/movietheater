@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>
+  
 <%@ include file="../header.jsp"%>
+
 <link rel="stylesheet" href="/resources/css/mypage/mypage.css"
   type="text/css">
-
 
 <!-- Bootstrap core JS-->
 <script
@@ -67,29 +68,19 @@
                     </tr>
 
                     <tbody>
-                      <c:set var="num1" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}" />
-                      <c:forEach var="list" items="${list}">
+                      <c:forEach var="cashList" items="${cashList}">
                         <tr>
-                          <!-- 코드 -->
-                          <td>코드</td>
-                          
+                          <td>${cashList.tkt_cd}</td>
                           <!-- 영화이름 (영화정보 페이지로 넘어가게 할까?)-->
-                          <td class="cash76">
-                          <a href="??.do?nt_cd=${list.nt_cd}">${list.title}</a></td>
-                          
+                          <td class="cash76"><a href="#"></a>영화이름</td>
+
                           <td>
-                            <!-- 예매일 --> <fmt:parseDate
-                              pattern="yyyy-MM-dd" var="dateString"
-                              value="${list.wdate}" /> <fmt:formatDate
-                              pattern="yyyy-MM-dd" value="${dateString}" />
+                            <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="예매일"/>
+                            <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}" />
                           </td>
-                          
-                          <td>금액</td>
-                          
+                          <td>${cashList.charge}</td>
                           <td>결제상태</td>
-                          
                         </tr>
-                        <c:set var="num1" value="${num1-1}" />
                       </c:forEach>
                     </tbody>
                   </table>

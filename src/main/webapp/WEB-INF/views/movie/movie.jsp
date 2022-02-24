@@ -71,7 +71,7 @@
                                         <c:if test="${mlist.rate==19 }">
                                           <div class="t_ep19" style="position:absolute;">19</div>
                                         </c:if>
-                                        <img style="height:100%; border-radius:4px" src="/upload/${mlist.poster}" alt="">
+                                       <a href="view.do?m_cd=${mlist.m_cd}"><img style="height:100%; border-radius:4px" src="/upload/${mlist.poster}" alt=""></a>
                                    </div>
                                    
                                     <div class="product__item__text" >

@@ -30,4 +30,5 @@ public interface MembersMapper {
   
   public List<ReListVO> getRelist(String id); //리스트로 담아야 하는 것 아닌지? 
 
-}
+
+}//class

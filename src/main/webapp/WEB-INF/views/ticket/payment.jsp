@@ -90,13 +90,9 @@
         </form>
       </div>
     </div>
-    <div class="seat-container">
-      <div class="seat-wrapper">
-        <div class="screen-view-wrapper">
-          <div class="screen-view">SCREEN</div>
-        </div>
-      </div>
-    </div>
+    
+    
+    
   </div>
 </div>
 <div id="ticket_tnb">
