@@ -34,4 +34,8 @@ public interface MovieService {
   public int remove(int rcode);
   public List<ReviewVO> getList(Criteria cri, int m_cd);
   public CmtAVG cmtAVG(int m_cd);
+  
+  public List<MovieVO>movieSelect1to5();
+  public List<MovieVO> movieSelect6to10();
+  public List<MovieVO>movieSelect11to15();
 }

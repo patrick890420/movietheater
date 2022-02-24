@@ -151,6 +151,25 @@
   where m_cd = #{m_cd}) as reviewavg
   ,(select count(rcode) from review where m_cd = #{m_cd}) as reviewcount
   from dual
+  
+  
+ </select>
+ 
+ <select id="movieSelect1to5" resultType="com.theater.domain.MovieVO">
+  
+ SELECT * FROM  (SELECT ROWNUM AS NUM, movies.* FROM movies order by m_cd desc)
+  WHERE  NUM BETWEEN 1 AND 5
+  
+ </select>
+ 
+ <select id="movieSelect6to10" resultType="com.theater.domain.MovieVO">
+ SELECT * FROM  (SELECT ROWNUM AS NUM1, movies.* FROM movies order by m_cd desc)
+  WHERE NUM1 BETWEEN 6 AND 10
+ </select>
+ 
+ <select id="movieSelect11to15" resultType="com.theater.domain.MovieVO">
+SELECT * FROM  (SELECT ROWNUM AS NUM2, movies.* FROM movies order by m_cd desc)
+  WHERE NUM2 BETWEEN 11 AND 15
  </select>
  
  

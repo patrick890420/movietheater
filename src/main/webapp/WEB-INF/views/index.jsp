@@ -27,218 +27,93 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-    <div class="index_mpost">
-                <div class="product__item">
-                  <div class="product__item__pic set-bg"
-                    data-setbg="/resources/img/trending/movie3.jpg">
-                    <div class="ep15">15</div>
-                    <div class="comment">
-                      <i class="fa fa-comments"></i> 11
-                    </div>
-                    <div class="view">
-                      <i class="fa fa-eye"></i> 9141
-                    </div>
-                  </div>
-                  <div class="product__item__text">
-                    <ul>
-                      <li>Active</li>
-                      <li>Movie</li>
-                    </ul>
-                    <h5>
-                      <a href="#">The Seven Deadly Sins: Wrath of the Gods</a>
-                    </h5>
-                  </div>
-                </div>
-              </div>
-              <div class="index_mpost">
-                <div class="product__item">
-                  <div class="product__item__pic set-bg"
-                    data-setbg="/resources/img/trending/movie3.jpg">
-                    <div class="ep15">15</div>
-                    <div class="comment">
-                      <i class="fa fa-comments"></i> 11
-                    </div>
-                    <div class="view">
-                      <i class="fa fa-eye"></i> 9141
-                    </div>
-                  </div>
-                  <div class="product__item__text">
-                    <ul>
-                      <li>Active</li>
-                      <li>Movie</li>
-                    </ul>
-                    <h5>
-                      <a href="#">The Seven Deadly Sins: Wrath of the Gods</a>
-                    </h5>
-                  </div>
-                </div>
-              </div>
-              <div class="index_mpost">
-                <div class="product__item">
-                  <div class="product__item__pic set-bg"
-                    data-setbg="/resources/img/trending/movie2.jpg">
-                    <div class="ep15">15</div>
-                    <div class="comment">
-                      <i class="fa fa-comments"></i> 11
-                    </div>
-                    <div class="view">
-                      <i class="fa fa-eye"></i> 9141
-                    </div>
-                  </div>
-                  <div class="product__item__text">
-                    <ul>
-                      <li>Active</li>
-                      <li>Movie</li>
-                    </ul>
-                    <h5>
-                      <a href="#">The Seven Deadly Sins: Wrath of the Gods</a>
-                    </h5>
-                  </div>
-                </div>
-              </div>
-              <div class="index_mpost">
-                <div class="product__item">
-                  <div class="product__item__pic set-bg"
-                    data-setbg="/resources/img/trending/movie1.jpg">
-                    <div class="ep15">15</div>
-                    <div class="comment">
-                      <i class="fa fa-comments"></i> 11
-                    </div>
-                    <div class="view">
-                      <i class="fa fa-eye"></i> 9141
-                    </div>
-                  </div>
-                  <div class="product__item__text">
-                    <ul>
-                      <li>Active</li>
-                      <li>Movie</li>
-                    </ul>
-                    <h5>
-                      <a href="#">The Seven Deadly Sins: Wrath of the Gods</a>
-                    </h5>
-                  </div>
-                </div>
-              </div>
-              <div class="index_mpost">
-                <div class="product__item">
-                  <div class="product__item__pic set-bg"
-                    data-setbg="/resources/img/trending/movie3.jpg">
-                    <div class="ep15">15</div>
-                    <div class="comment">
-                      <i class="fa fa-comments"></i> 11
-                    </div>
-                    <div class="view">
-                      <i class="fa fa-eye"></i> 9141
-                    </div>
-                  </div>
-                  <div class="product__item__text">
-                    <ul>
-                      <li>Active</li>
-                      <li>Movie</li>
-                    </ul>
-                    <h5>
-                      <a href="#">The Seven Deadly Sins: Wrath of the Gods</a>
-                    </h5>
-                  </div>
-                </div>
-              </div>
-    </div>
-    <div class="carousel-item">
+     <c:forEach items="${mlist1}" var="mlist1">
       <div class="index_mpost">
                 <div class="product__item">
-                  <div class="product__item__pic set-bg"
-                    data-setbg="/resources/img/trending/movie3.jpg">
-                    <div class="ep15">15</div>
-                    <div class="comment">
-                      <i class="fa fa-comments"></i> 11
-                    </div>
-                    <div class="view">
-                      <i class="fa fa-eye"></i> 9141
+                  <div class="product__item__pic set-bg">
+                    <c:if test="${mlist1.rate==99 }">
+                      <div class="t_ep0" style="position: relative !important; top: 45px; left: 5px;">전체</div>
+                    </c:if>
+                    <c:if test="${mlist1.rate==12 }">
+                      <div class="t_ep12" style="position: relative !important; top: 45px; left: 5px;">12</div>
+                    </c:if>
+                    <c:if test="${mlist1.rate==15 }">
+                      <div class="t_ep15" style="position: relative !important; top: 45px; left: 5px;">15</div>
+                    </c:if>
+                    <c:if test="${mlist1.rate==19 }">
+                      <div class="t_ep19" style="position: relative !important; top: 45px; left: 5px;">19</div>
+                    </c:if>
+                    <a href="view.do?m_cd=${mlist1.m_cd}"><img style="height:100%; border-radius:4px" src="/upload/${mlist1.poster}" alt=""></a>
                     </div>
                   </div>
                   <div class="product__item__text">
-                    <ul>
-                      <li>Active</li>
-                      <li>Movie</li>
-                    </ul>
-                    <h5>
-                      <a href="#">The Seven Deadly Sins: Wrath of the Gods</a>
-                    </h5>
+                     <h5 ><a style="color:white;" href="view.do?m_cd=${mlist1.m_cd}">${mlist1.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
                   </div>
                 </div>
-              </div>
-              <div class="index_mpost">
+                </c:forEach>
+                 </div>
+              
+      
+    <div class="carousel-item">
+    <c:forEach items="${mlist2}" var="mlist2">
+      <div class="index_mpost">
                 <div class="product__item">
-                  <div class="product__item__pic set-bg"
-                    data-setbg="/resources/img/trending/movie1.jpg">
-                    <div class="ep15">15</div>
-                    <div class="comment">
-                      <i class="fa fa-comments"></i> 11
-                    </div>
-                    <div class="view">
-                      <i class="fa fa-eye"></i> 9141
-                    </div>
+                  <div class="product__item__pic set-bg">
+                   <c:if test="${mlist2.rate==99 }">
+                      <div class="t_ep0" style="position: relative !important; top: 45px; left: 5px;">전체</div>
+                    </c:if>
+                    <c:if test="${mlist2.rate==12 }">
+                      <div class="t_ep12" style="position: relative !important; top: 45px; left: 5px;">12</div>
+                    </c:if>
+                    <c:if test="${mlist2.rate==15 }">
+                      <div class="t_ep15" style="position: relative !important; top: 45px; left: 5px;">15</div>
+                    </c:if>
+                    <c:if test="${mlist2.rate==19 }">
+                      <div class="t_ep19" style="position: relative !important; top: 45px; left: 5px;">19</div>
+                    </c:if>
+                    <a href="view.do?m_cd=${mlist2.m_cd}"><img style="height:100%; border-radius:4px" src="/upload/${mlist2.poster}" alt=""></a>
+                    
                   </div>
-                  <div class="product__item__text">
-                    <ul>
-                      <li>Active</li>
-                      <li>Movie</li>
-                    </ul>
-                    <h5>
-                      <a href="#">The Seven Deadly Sins: Wrath of the Gods</a>
-                    </h5>
+                   <div class="product__item__text">
+                     <h5 ><a style="color:white;" href="view.do?m_cd=${mlist2.m_cd}">${mlist2.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
                   </div>
                 </div>
               </div>
+              </c:forEach>
     </div>
 
     <div class="carousel-item">
+    <c:forEach items="${mlist3}" var="mlist3">
       <div class="index_mpost">
                 <div class="product__item">
-                  <div class="product__item__pic set-bg"
-                    data-setbg="/resources/img/trending/movie4.jpg">
-                    <div class="ep15">15</div>
-                    <div class="comment">
-                      <i class="fa fa-comments"></i> 11
-                    </div>
-                    <div class="view">
-                      <i class="fa fa-eye"></i> 9141
-                    </div>
+                  <div class="product__item__pic set-bg">
+                   <c:if test="${mlist3.rate==99 }">
+                      <div class="t_ep0" style="position: relative !important; top: 45px; left: 5px;">전체</div>
+                    </c:if>
+                    <c:if test="${mlist3.rate==12 }">
+                      <div class="t_ep12" style="position: relative !important; top: 45px; left: 5px;">12</div>
+                    </c:if>
+                    <c:if test="${mlist3.rate==15 }">
+                      <div class="t_ep15" style="position: relative !important; top: 45px; left: 5px;">15</div>
+                    </c:if>
+                    <c:if test="${mlist3.rate==19 }">
+                      <div class="t_ep19" style="position: relative !important; top: 45px; left: 5px;">19</div>
+                    </c:if>
+                     <a href="view.do?m_cd=${mlist3.m_cd}"><img style="height:100%; border-radius:4px" src="/upload/${mlist3.poster}" alt=""></a>
                   </div>
-                  <div class="product__item__text">
-                    <ul>
-                      <li>Active</li>
-                      <li>Movie</li>
-                    </ul>
-                    <h5>
-                      <a href="#">The Seven Deadly Sins: Wrath of the Gods</a>
-                    </h5>
-                  </div>
-                </div>
-              </div>
-              <div class="index_mpost">
-                <div class="product__item">
-                  <div class="product__item__pic set-bg"
-                    data-setbg="/resources/img/trending/movie4.jpg">
-                    <div class="ep15">15</div>
-                    <div class="comment">
-                      <i class="fa fa-comments"></i> 11
-                    </div>
-                    <div class="view">
-                      <i class="fa fa-eye"></i> 9141
-                    </div>
-                  </div>
-                  <div class="product__item__text">
-                    <ul>
-                      <li>Active</li>
-                      <li>Movie</li>
-                    </ul>
-                    <h5>
-                      <a href="#">The Seven Deadly Sins: Wrath of the Gods</a>
-                    </h5>
+                   <div class="product__item__text">
+                     <h5 ><a style="color:white;" href="view.do?m_cd=${mlist3.m_cd}">${mlist3.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
                   </div>
                 </div>
+                
               </div>
+              </c:forEach>
+    </div>
+         
+   
+             
+            
+              
     </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="width:2%;">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

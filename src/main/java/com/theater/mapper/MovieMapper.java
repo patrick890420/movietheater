@@ -52,6 +52,10 @@ public interface MovieMapper {
   //view  페이지
   public CmtAVG cmtAVG(int m_cd);
   
+  public List<MovieVO> movieSelect1to5();
+  public List<MovieVO> movieSelect6to10();
+  public List<MovieVO> movieSelect11to15();
+  
   
   //Info
 
