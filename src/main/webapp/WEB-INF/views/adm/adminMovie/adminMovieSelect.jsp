@@ -44,7 +44,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">영화 목록</h4>
+            <h4 class="card-title">映画リスト</h4>
             <h6 class="card-subtitle"> </h6>
             <div class="table-responsive">
               <table id="default_order"  class="table table-striped table-bordered display no-wrap" style="width: 100%">
@@ -67,7 +67,7 @@
                     <fmt:parseDate value="${mlist.rdate}" var="dateValue" pattern="yyyy-MM-dd"/>
                     <td><fmt:formatDate value="${dateValue}" pattern="yyyy-MM-dd"/></td>
                     <td>${mlist.rate}</td>
-                    <td><a class="btn btn-danger" href="/adm/adminMovieInfoInsert.do?m_cd=${mlist.m_cd }" >정보 입력</a></td>
+                    <td><a class="btn btn-danger" href="/adm/adminMovieInfoInsert.do?m_cd=${mlist.m_cd }" >情報入力</a></td>
                   </tr>
                   </c:forEach>
                 </tbody>
