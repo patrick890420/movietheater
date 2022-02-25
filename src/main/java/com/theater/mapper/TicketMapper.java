@@ -16,6 +16,7 @@ public interface TicketMapper {
   public List<ReserveVO> getDaySelect(ReserveVO rvo);
   public ReserveInsertVO getReserveInfo(ReserveInsertVO rvo);
   public void seatFix(SelectSeatVO svo);
+  public SelectSeatVO getTkInfo(SelectSeatVO svo);
   
   public void reserve(ReserveInsertVO rvo);
 

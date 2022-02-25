@@ -58,6 +58,12 @@ public class TicketServiceImpl implements TicketService {
     
   }
 
+  @Override
+  public SelectSeatVO getTkInfo(SelectSeatVO svo) {
+    
+    return tmapper.getTkInfo(svo);
+  }
+
   
 
 }

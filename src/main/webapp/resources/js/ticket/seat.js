@@ -287,8 +287,8 @@ reserveButton.addEventListener('click', function() {
     ticketNumber.value = reserveNumber.innerHTML;
     selectedSeat.value = selectedSeats.innerHTML;
     
-    alert(reserveNumber.innerHTML);
-    alert(selectedSeats.innerHTML);
+    //alert(reserveNumber.innerHTML);
+    //alert(selectedSeats.innerHTML);
     console.log(allNumber + '임');
     console.log(ticketNumber.value);
     console.log(allNumber === ticketNumber.value);
