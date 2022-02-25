@@ -76,19 +76,16 @@
           <div class="ticket-price-title">가격</div>
           <div class="ticket-price">0원</div>
         </div>
-        <form action="movePayment.do" class="seatForm" method="post">
-          <input type="hidden" class="title" name="title">
-          <input type="hidden" class="selectedTheater" name="selectedTheater">
-          <input type="hidden" class="reserveDate" name="movieDate">
-          <input type="hidden" class="runningTime" name="runningTime">
-          <input type="hidden" class="movieAge" name="movieAge" value="">
+        <form action="/ticket/movePayment.do" class="seatForm" method="get">
           <!-- 티켓의수(선택한 좌석) -->
           <input type="hidden" class="ticketNumber" name="ticketNumber">
-          <input type="hidden" class="selectedSeat" name="selectedSeat">
+          <input type="hidden" class="selectedSeat" name="seat_cd">
+          <input type="hidden" class="selectedTktCd" name="tkt_cd" value="${rsInfo.tkt_cd}">
+          <input type="hidden" class="selectedStcd" name="s_t_cd" value="${rsInfo.s_t_cd}">
           <!-- 결제 정보 -->
-          <input type="hidden" class="payMoney" name="payMoney">
+          <input type="hidden" class="payMoney" name="seat_price">
           <div class="">
-            <button type="button" class="reserve-button btn btn-primary">결제하기</button>
+            <button type="button" class="reserve-button btn btn-primary">좌석 선택 완료</button>
           </div>
         </form>
       </div>

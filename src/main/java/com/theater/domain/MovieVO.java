@@ -14,6 +14,6 @@ public class MovieVO {
   private String intro;
   private String poster;
   
-
+  private int rownum;
   
 }

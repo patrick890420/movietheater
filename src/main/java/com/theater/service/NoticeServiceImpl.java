@@ -40,8 +40,8 @@ public class NoticeServiceImpl implements NoticeService {
   }
   
   @Override
-  public boolean modify(NoticeVO notice) {
-    return nMapper.modify(notice)==1;
+  public void modify(NoticeVO nvo) {
+   nMapper.modify(nvo);
   }
   
   @Override
@@ -64,11 +64,6 @@ public class NoticeServiceImpl implements NoticeService {
 
 
 //User
-//view
-  @Override
-  public NoticeVO getNoticeView(int nt_cd) {
-   return nMapper.getNoticeView(nt_cd);
-  }
 //조회수
   @Override
   public void getViewCount(int nt_cd) {

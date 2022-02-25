@@ -30,14 +30,31 @@
    where userid = #{userid} 
 </update>
 
-<select id="pwChk" resultType="int">
-    select count(*) from members <!--전체 비번 중복인걸 확인하는거라면 count 빼야 하는 것 아닌가...! 모르겠군 ㅋ int는 맞는지..?-->
+<select id="pwChk" resultType="String">
+    select count(*) from members <!--전체 비번 중복인걸 확인하는거라면 count 빼야 하는 것 아닌가...! 모르겠군 ㅋ int가 맞는지..?-->
     where userpw= #{userpw}
 </select>
 
+<select id="selectPw" resultType="com.theater.domain.MemberVO">
+  select * from members where userid = #{userid}
+  </select>
+  
+<update id="mypasspro">
+update members set
+userpw = #{userpw}
+where userid = #{userid}
+</update>
 
+<select id="getRelist" resultType="com.theater.domain.ReListVO">
+SELECT m.title, m.subtitle, m.poster, t.tkt_nums as tkt_nums, s.seat_cd as seat_cd,t.tkt_date as tkt_date
+,m.m_cd as mm_cd, t.m_cd as tm_cd, t.tkt_cd as ttkt_cd, s.tkt_cd as stkt_cd,t.id as id,t.tkt_time as tkt_time
 
+FROM movies m, ticketings t, sold_seats s
 
-
+WHERE m.m_cd = t.m_cd
+AND t.tkt_cd = s.tkt_cd
+AND t.id = #{id} 
+ORDER BY t.tkt_cd desc
+</select>
 
 </mapper>

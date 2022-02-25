@@ -1,10 +1,12 @@
 package com.theater.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.theater.domain.MemberVO;
+import com.theater.domain.ReListVO;
 import com.theater.mapper.LoginMapper;
 import com.theater.mapper.MembersMapper;
 
@@ -52,17 +54,29 @@ public class MembersServiceImpl implements MembersService {
 
   }
   
-  @Override
-  public int pwChk(String userpw) {
-    return mmapper.pwChk(userpw);
-  }
+//  @Override
+//  public String pwChk(String userpw) {
+//    return mmapper.pwChk(userpw);
+//  }
   
   @Override
   public void mypasspro(MemberVO mvo) {
     mmapper.mypasspro(mvo);
   }
   
-
+  
+  @Override
+  public MemberVO selectPw(String userid) {
+     MemberVO mvo = mmapper.selectPw(userid);
+     return mvo;
+  }
+  
+  @Override
+  public List<ReListVO> getRelist(String id) {
+    return mmapper.getRelist(id); 
+  }
+  
+  
   
 
 

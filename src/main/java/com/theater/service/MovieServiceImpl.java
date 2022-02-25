@@ -104,4 +104,19 @@ public class MovieServiceImpl implements MovieService {
   public CmtAVG cmtAVG(int m_cd) {
     return mapper.cmtAVG(m_cd);
   }
+  
+  @Override
+  public List<MovieVO> movieSelect1to5() {
+    return mapper.movieSelect1to5();
+  }
+  
+  @Override
+  public List<MovieVO> movieSelect6to10() {
+    return mapper.movieSelect6to10();
+  }
+  
+  @Override
+  public List<MovieVO> movieSelect11to15() {
+    return mapper.movieSelect11to15();
+  }
 }//Impl

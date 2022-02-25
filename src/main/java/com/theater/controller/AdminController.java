@@ -293,7 +293,6 @@ public class AdminController {
     return "/adm/adminBoard/adminBoardWrite";
   }
 
-  
   @PostMapping("/adminBoardWritePro.do")
   public String adminBoardWritePro(@RequestParam("choice")String choice, NoticeVO nvo, EventVO evo) {
     if(choice.equals("N")) {
@@ -308,24 +307,23 @@ public class AdminController {
   
   @PostMapping(value="/boardImage.do", produces = "application/json; charset=utf8")
   public @ResponseBody String boardImage(@RequestParam("file") MultipartFile file) {
-     
-     JsonObject jsonObject = new JsonObject();
-     
-     String uploadFolder="c:\\upload";
-     log.info("file name : "+file.getOriginalFilename());
-     
-     String uploadFileName = file.getOriginalFilename();
-     //IE
-     uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("//")+1);
-     log.info("only file name : "+uploadFileName);
-     
-     UUID uuid = UUID.randomUUID();
-     
-     uploadFileName = uuid.toString()+"_"+uploadFileName;
-     
-     File uploadPath = new File(uploadFolder, getFolder());
-     
-     if(uploadPath.exists() == false) {
+
+    JsonObject jsonObject = new JsonObject();
+    String uploadFolder="c:\\upload";
+    log.info("file name : "+file.getOriginalFilename());
+    String uploadFileName = file.getOriginalFilename();
+
+    //IE
+    uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("//")+1);
+    log.info("only file name : "+uploadFileName);
+
+    UUID uuid = UUID.randomUUID();
+
+    uploadFileName = uuid.toString()+"_"+uploadFileName;
+
+    File uploadPath = new File(uploadFolder, getFolder());
+
+    if(uploadPath.exists() == false) {
         uploadPath.mkdirs();
      }
      File savefile = new File(uploadPath,uploadFileName);
@@ -350,24 +348,19 @@ public class AdminController {
   }
   
   @GetMapping("/adminBoardView.do")
-  public String adminBoardView(@RequestParam("nt_cd")int nt_cd,Model model) {
-    model.addAttribute("view",nService.getAdminBoardView(nt_cd));
-    model.addAttribute("next",nService.nextPage(nt_cd));
-    model.addAttribute("prev",nService.prevPage(nt_cd));
-    return "adm/adminBoard/adminBoardView";
-  }
-  
-  @GetMapping("adminBoardModify.do")
-  public String adminBoardModify(@RequestParam("nt_cd")int nt_cd,Model model) {
-    model.addAttribute("view",nService.getAdminBoardView(nt_cd));
-    return "adm/adminBoard/adminBoardModify";
-  }
-  
-  @PostMapping("/adminBoardModifyPro.do")
-  public String modify(NoticeVO notice, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) {
-    nService.modify(notice);
-      rttr.addFlashAttribute("result","success");
-    return "adm/adminNotice/adminNotice";
+  public String adminBoardView(@RequestParam("nt_cd")int nt_cd,@RequestParam("event_cd") int event_cd, Model model) {
+     
+    if(event_cd == 0) {
+      model.addAttribute("nview",nService.getAdminBoardView(nt_cd));
+      model.addAttribute("next",nService.nextPage(nt_cd));
+      model.addAttribute("prev",nService.prevPage(nt_cd));
+      return "adm/adminNotice/adminNoticeView";
+    }else {
+      model.addAttribute("eview",eService.getAdminBoardView(event_cd));
+      model.addAttribute("next",eService.nextPage(event_cd));
+      model.addAttribute("prev",eService.prevPage(event_cd));
+      return "adm/adminEvent/adminEventView";
+    }
   }
 
  @GetMapping("/adminBoardDelete.do")
@@ -381,13 +374,30 @@ public class AdminController {
 /* Board-> Event*/
   
   @GetMapping("/adminEvent.do")
-  public String adminEvent() {
+  public String adminEvent(Criteria cri, Model model) {
+    model.addAttribute("elist",eService.getEventList(cri));
     return "adm/adminEvent/adminEvent";
   }
   
-  @GetMapping("/adminEventview.do")
-  public String adminEventview() {
-    return "adm/adminEvent/adminEventview";
+  @GetMapping("/adminEventView.do")
+  public String getAdminBoardView(@RequestParam("event_cd")int event_cd, Model model) {
+    model.addAttribute("eview",eService.getAdminBoardView(event_cd));
+    model.addAttribute("next",eService.nextPage(event_cd));
+    model.addAttribute("prev",eService.prevPage(event_cd));
+    return "adm/adminBoard/adminBoardView";
+  }
+  
+  @GetMapping("/adminEventModify.do")
+  public String adminEventModify(@RequestParam("event_cd")int event_cd,Model model) {
+    model.addAttribute("eview",eService.getAdminBoardView(event_cd));
+    return "adm/adminEvent/adminEventModify";
+  }
+
+  
+  @GetMapping("/adminEventModifyPro.do")
+  public String adminEventModifyPro(EventVO evo) {
+    eService.modify(evo);
+    return "redirect:/adm/adminEvent.do";
   }
 
   
@@ -402,6 +412,19 @@ public class AdminController {
   @GetMapping("/adminNoticeview.do")
   public String adminNoticeview() {
     return "adm/adminNotice/adminNoticeview";
+  }
+  
+  @GetMapping("/adminNoticeModify.do")
+  public String adminNoticeModify(@RequestParam("nt_cd")int nt_cd,Model model) {
+    model.addAttribute("nview",nService.getAdminBoardView(nt_cd));
+    return "adm/adminNotice/adminNoticeModify";
+  }
+
+  
+  @GetMapping("/adminNoticeModifyPro.do")
+  public String adminNoticeModifyPro(NoticeVO nvo) {
+    nService.modify(nvo);
+    return "redirect:/adm/adminNotice.do";
   }
 
   /* Utility */
