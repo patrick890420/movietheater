@@ -65,14 +65,15 @@ AND tk.S_T_CD =#{s_t_cd}
   
   <insert id="seatFix" parameterType="java.util.List">
     <selectKey keyProperty="sold_cd" order="BEFORE"  resultType="int">
-      select max(sold_cd)+1 as sold_seq from sold_seats 
+      select sold_seq.nextval from dual
     </selectKey>
-     insert into sold_seats 
-        (sold_cd, s_t_cd, tkt_cd,seat_price,seat_cd) 
-      values
-    <foreach collection="seatList" item="item" separator="">
-        (#{sold_cd}+1, #{s_t_cd}, #{tkt_cd}, #{seat_price}, #{item})
-    </foreach>
+     insert into sold_seats(sold_cd, s_t_cd, tkt_cd,seat_price,seat_cd)
+      select sold_seq.nextval,A.* from( 
+    <foreach collection="seatList" item="item" index="index" separator="union all">
+    select
+      #{s_t_cd} as s_t_cd, #{tkt_cd} as tkt_cd, #{seat_price} as seat_price, #{item} as seat_cd
+      from dual
+    </foreach>) A
   </insert>    
 
 </mapper>
