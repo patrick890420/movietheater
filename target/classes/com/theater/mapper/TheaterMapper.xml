@@ -82,7 +82,7 @@
     AND s.SCREEN_CD = f.SCREEN_CD 
     AND f.FILM_CD = ft.FILM_CD 
     AND t.T_NAME =#{t_name}
-    AND TO_CHAR(ft.START_TIME,'yyyy-MM-dd') = #{start_date}
+    AND TO_CHAR(ft.START_TIME,'yyyy-MM-dd') = #{start_time}
 </select>  
 </mapper>
 
