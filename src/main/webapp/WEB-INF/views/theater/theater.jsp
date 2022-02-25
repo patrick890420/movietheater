@@ -248,6 +248,7 @@
                 <c:forEach items="${thinfo}" var="thinfo">
                   <div class="t_recotitle">
                     <strong>${thinfo.t_name}</strong>에서<br><span>나일강의 죽음</span><br>  어떠세요?
+                    
                   </div>
                   <div class="t_recoline"></div>
                   <div class="">
@@ -452,6 +453,7 @@
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 theater_footpost" style="margin: 5px 0;">
       <img id = "introImg2" border="0" style="width: 1155px;">
+      <input type="hidden" class="runningDate" id="runningDate">
     </div>
   </div>
 </section>

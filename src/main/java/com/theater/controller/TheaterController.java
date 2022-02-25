@@ -1,5 +1,7 @@
 package com.theater.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.theater.domain.ReserveVO;
 import com.theater.domain.TheatersVO;
 import com.theater.service.TheaterService;
 
@@ -49,6 +52,30 @@ public class TheaterController {
     tvo.setT_name(t_name);
     List<TheatersVO> cityList1 = thservice.getCityCheck2(tvo);
     return cityList1;
+
+  }
+  
+  @GetMapping("/dayClick.do")
+  public  @ResponseBody List<TheatersVO> dayClick(@RequestParam("t_name") String t_name,@RequestParam("start_time") String start_time ) {
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-M-d"); 
+    SimpleDateFormat dateFormat2 = new SimpleDateFormat("yyyy-MM-dd"); 
+    String beforeDate = start_time;
+    String afterDate = "";
+    
+    try {
+        Date date = dateFormat.parse(start_time); // 기존 string을 date 클래스로 변환
+        afterDate = dateFormat2.format(date); // 변환한 값의 format 변경
+    }
+    catch (Exception e) {
+        e.printStackTrace();
+    }
+    TheatersVO tvo = new TheatersVO();
+    tvo.setT_name(t_name);
+    tvo.setStart_time(afterDate);
+    
+    List<TheatersVO> screenInfo = thservice.getScreenInfo(tvo);
+        
+    return screenInfo;
 
   }
 }

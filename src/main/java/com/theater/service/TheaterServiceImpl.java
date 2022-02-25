@@ -101,4 +101,9 @@ public class TheaterServiceImpl implements TheaterService {
     
     return thmapper.getCityCheck2(tvo);
   }
+  @Override
+  public List<TheatersVO> getScreenInfo(TheatersVO tvo) {
+
+    return thmapper.getScreenInfo(tvo);
+  }
 }
