@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.theater.domain.ReserveVO;
 import com.theater.domain.TheatersVO;
 import com.theater.service.TheaterService;
 
@@ -29,7 +28,7 @@ public class TheaterController {
   
   @GetMapping("/theater.do")
   public void theater(Model model, @RequestParam(value="t_area", required=false, defaultValue= "1") String t_area,
-      @RequestParam(value="t_name", required=false, defaultValue= "강남") String t_name) {
+      @RequestParam(value="t_name", required=false, defaultValue= "슈밤") String t_name) {
     
     model.addAttribute("aList",thservice.areainfo());
     model.addAttribute("thList", thservice.thread(t_area));
@@ -42,6 +41,14 @@ public class TheaterController {
     tvo.setT_area(t_area);
     List<TheatersVO> cityList = thservice.getCityCheck(tvo);
     return cityList;
+
+  }
+  @GetMapping("/cityCheck2.do")
+  public  @ResponseBody List<TheatersVO> cityCheck2(@RequestParam("t_name") String t_name ) {
+    TheatersVO tvo = new TheatersVO();
+    tvo.setT_name(t_name);
+    List<TheatersVO> cityList1 = thservice.getCityCheck2(tvo);
+    return cityList1;
 
   }
 }
