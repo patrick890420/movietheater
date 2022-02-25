@@ -94,19 +94,22 @@ public class TicketController {
         e.printStackTrace();
     }
     rvo.setTkt_date(afterDate);
-    log.info(rvo);
     tservice.reserve(rvo);
     model.addAttribute("rsInfo",tservice.getReserveInfo(rvo));
     return "/ticket/seat";
   }
   
   @GetMapping("/movePayment.do")
-  public String movePayment(SelectSeatVO svo) {
+  public String movePayment(SelectSeatVO svo,Model model) {
+    log.info(svo);
+    
     String str =  svo.getSeat_cd();
     List<String> seatList = Arrays.asList(str.split(","));
-
+    
     svo.setSeatList(seatList);
     tservice.seatFix(svo);
+    model.addAttribute("tkInfo",tservice.getTkInfo(svo));
+    model.addAttribute("svoInfo",svo);
     return "/ticket/payment";
   }
   

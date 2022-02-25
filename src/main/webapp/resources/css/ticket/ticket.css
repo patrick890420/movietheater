@@ -105,7 +105,7 @@
 
 .reserve-title {
   border-bottom: 1px solid #dddddd;
-  background-color: #444444;
+  background-color: black;
   text-align: center;
   color: #dddddd;
   padding: 8px;
@@ -425,7 +425,7 @@ button.theater-location , button.theater-place{
 }
 
 .select-title {
-  background-color: #444444;
+  background-color: black;
   color: #dddddd;
   font-size: 16px;
   text-align: center;
@@ -763,4 +763,10 @@ button.theater-location , button.theater-place{
   height: 150px;
   padding: 9px;
   width: 150px;
+}
+.tk-img{
+  height: 180px;
+  padding-left: 50px;
+}
+  
 }    
