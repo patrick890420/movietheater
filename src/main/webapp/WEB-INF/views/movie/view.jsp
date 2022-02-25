@@ -8,8 +8,6 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="anime__details__pic set-bg"><img style="height:420px;" src="/upload/${view.poster}" alt="">
-                            <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                        </div>
                     </div>
                     <div class="col-lg-9">
                         <div class="anime__details__text">
@@ -30,32 +28,32 @@
                                 <input type="radio" id="star1" name="rating" value="1" onclick="return(false);"/><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
                                 <input type="radio" id="starhalf" name="rating" value="half" onclick="return(false);"/><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                             </fieldset>
-                                <span>${avg.reviewcount }명 투표 함!</span>
+                                <span>${avg.reviewcount }人　投票中!!</span>
                             </div>
                             <div class="anime__details__widget">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
                                         <ul>
-                                            <li><span>장르</span>${info.g_name }</li>
+                                            <li><span>ジャンル</span>${info.g_name }</li>
                                             <fmt:parseDate value="${view.rdate}" var="dateValue" pattern="yyyy-MM-dd"/>
-                                            <li><span>개봉일</span><fmt:formatDate value="${dateValue}" pattern="yyyy-MM-dd"/></li>
-                                            <li><span>감독</span>${info.d_name}</li>
-                                            <li><span>배우</span>${info.a_name }</li>
+                                            <li><span>公開日</span><fmt:formatDate value="${dateValue}" pattern="yyyy-MM-dd"/></li>
+                                            <li><span>監督</span>${info.d_name}</li>
+                                            <li><span>出演</span>${info.a_name }</li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
                                         <ul>
-                                            <li><span>평점</span>${avg.reviewavg } 점</li>
-                                            <li><span>Status:</span>상영 상태</li>
-                                            <li><span>상영 시간</span>${view.rtime } 분</li>
-                                            <li><span>상영 등급</span> ${view.rate }세 이용가</li>
+                                            <li><span>評点</span>${avg.reviewavg } 点</li>
+                                            <li><span>上映狀態</span>상영 상태</li>
+                                            <li><span>上映時間</span>${view.rtime } 分</li>
+                                            <li><span>映倫</span> ${view.rate }等級</li>
                                         </ul>
                                     </div>
                                     <p>${view.intro }</p>
                                 </div>
                             </div>
                             <div class="anime__details__btn mv-txt-center">
-                                <a href="#" class="watch-btn btn btn-primary"><span>Watch Now</span></a>
+                                <a href="#" class="watch-btn btn btn-primary"><span>今すぐに予約!!</span></a>
 <!--                                 <a><i class="fa fa-angle-right"></i></a> -->
                                 </div>
                             </div>
@@ -88,7 +86,7 @@
                         <sec:authorize access="isAuthenticated()">
                         <div class="anime__details__form">
                           <div class="section-title">
-                                <h5>Your Comment</h5>
+                                <h5>レビュー</h5>
                               <div class="test">
                              
                               <fieldset class="rating1">
@@ -109,7 +107,7 @@
                             <input type="hidden" name="rwriter" value="<sec:authentication property="principal.member.userid"/>" >
                             </sec:authorize>
                              <textarea class="cmt-border"  name="review" placeholder="Your Comment"></textarea>
-                                <button class="btn btn-primary fa fa-location-arrow register finish" type="submit"> Review</button>
+                                <button class="btn btn-primary fa fa-location-arrow register finish" type="submit">登錄</button>
                         </div>
                         </sec:authorize>
                         </form>

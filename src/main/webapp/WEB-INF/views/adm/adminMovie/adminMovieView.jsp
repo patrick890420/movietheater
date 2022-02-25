@@ -5,7 +5,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">영화 상세 페이지</h4>
+                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">映画詳細ページ</h4>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
@@ -35,40 +35,40 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="card-title" style="text-align:center; padding-bottom:35px;">영화 상세 정보</h2>
+                                <h2 class="card-title" style="text-align:center; padding-bottom:35px;">映画情報</h2>
                                     <div class="form-body">
                                         <div class="row">
                                                 <div class="anime__details__pic set-bg" style="padding-right:30px;"><img style="height:700px;" src="/upload/${view.poster}" alt=""></div>
                                             <div class="col-md-2 pt-5">
                                                 <div class="form-group">
-                                                    <p>영화 제목<p>
+                                                    <p>タイトル<p>
                                                 </div>
                                                 <div class="form-group">
-                                                    <p>영화 부제목</p>
+                                                    <p>サブタイトル</p>
                                                 </div>
                                                 <div class="form-group">
-                                                    <p>개봉일</p>
+                                                    <p>公開日</p>
                                                 </div>
                                                 <div class="form-group">
-                                                    <p>감독</p>
+                                                    <p>監督</p>
                                                 </div>
                                                 <div class="form-group">
-                                                    <p>배우</p>
+                                                    <p>出演</p>
                                                 </div>
                                                 <div class="form-group">
-                                                    <p>상영 시간</p>
+                                                    <p>上映時間</p>
                                                 </div>
                                                 <div class="form-group">
-                                                    <p>상영 등급</p>
+                                                    <p>映倫</p>
                                                 </div>
                                                 <div class="form-group">
-                                                    <p>상영 상태</p>
+                                                    <p>上映狀態</p>
                                                 </div>
                                                 <div class="form-group">
-                                                    <p>제작 국가</p>
+                                                    <p>製作國家</p>
                                                 </div>
                                                 <div class="form-group">
-                                                    <p>영화 소개</p>
+                                                    <p>映画紹介</p>
                                                 </div>
                                                 
                                             </div><!-- 왼쪽 -->
@@ -90,7 +90,7 @@
                                                 <p>${view.a_name }</p>
                                               </div>
                                               <div class="form-group">
-                                                 <p>${view.rtime } 분</p>
+                                                 <p>${view.rtime } 分</p>
                                               </div>
                                               <div class="form-group">
                                                 <p>${view.rate }</p>
@@ -123,8 +123,8 @@
                                       </div>
                                     <div class="form-actions pt-5">
                                         <div class="text-right">
-                                            <button type="button" class="btn btn-info">수정</button>
-                                            <button type="button" onclick="location.href='adminMovieDelete.do';" class="btn btn-dark">삭제</button>
+                                            <button type="button" class="btn btn-info">修正</button>
+                                            <button type="button" onclick="location.href='adminMovieDelete.do';" class="btn btn-dark">削除</button>
                                         </div>
                                     </div>
                                            <!--오른쪽 -->

@@ -40,9 +40,9 @@
               <div class="col-sm-12 col-md-6 col-lg-4">
                   <div class="card">
                       <div class="card-body">
-                          <h4 class="card-title">영화 배우</h4>
+                          <h4 class="card-title">俳優</h4>
                               <div class="form-group actorsForm">
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#actorsmodal">배우 검색</button>
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#actorsmodal">俳優檢索</button>
                                   <input class="form-contorl" id="a_name" name="a_name">
                                   <input type="hidden" id="a_cd" name="a_cd">
                               </div>
@@ -52,9 +52,9 @@
               <div class="col-sm-12 col-md-6 col-lg-4">
                   <div class="card">
                       <div class="card-body">
-                          <h4 class="card-title">영화 감독</h4>
+                          <h4 class="card-title">監督</h4>
                               <div class="form-group">
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#directrosmodal">감독 검색</button>
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#directrosmodal">監督檢索</button>
                                   <input class="form-contorl" id="d_name" name="d_name">
                                   <input type="hidden" id="d_cd" name="d_cd">
                               </div>
@@ -64,9 +64,9 @@
               <div class="col-sm-12 col-md-6 col-lg-4">
                   <div class="card">
                       <div class="card-body">
-                          <h4 class="card-title">영화 장르</h4>
+                          <h4 class="card-title">ジャンル</h4>
                               <div class="form-group">
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#genresmodal">장르 검색</button>
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#genresmodal">ジャンル檢索</button>
                                   <input class="form-contorl" id="g_name" name="g_name">
                                   <input type="hidden" id="g_cd" name="g_cd">
                               </div>
@@ -76,9 +76,9 @@
               <div class="col-sm-12 col-md-6 col-lg-4">
                   <div class="card">
                       <div class="card-body">
-                          <h4 class="card-title">국가</h4>
+                          <h4 class="card-title">製作國家</h4>
                               <div class="form-group">
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nationsmodal">국가 검색</button>
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nationsmodal">製作國家檢索</button>
                                   <input class="form-contorl" id="n_name" name="n_name">
                                   <input type="hidden" id="n_cd" name="n_cd">
                               </div>
@@ -96,16 +96,13 @@
                                       <input multiple="multiple" type="file" class="custom-file-input" id="inputGroupFile05" name="stillcut">
                                       <label class="custom-file-label" for="inputGroupFile05">Choose file</label>
                                   </div>
-                                  <div class="input-group-append">
-                                      <button class="btn btn-outline-secondary" type="button">업로드</button>
-                                  </div>
                               </div>
                       </div>
                   </div>
               </div>         
           <div class="mx-auto" style="text-align:center;">
-            <button type="submit" class="btn btn-info">Submit</button>
-            <button type="reset" class="btn btn-dark">Reset</button>
+            <button type="submit" class="btn btn-info">登錄</button>
+            <button type="reset" class="btn btn-dark">リセット</button>
           </div>
           
       </div><!-- 2-1 -->
