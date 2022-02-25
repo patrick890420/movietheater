@@ -68,6 +68,12 @@
     FROM THEATERS
     WHERE T_AREA = #{t_area}
   </select>
+  <select id="getCityCheck2" resultType="com.theater.domain.TheatersVO">
+    SELECT
+    T_NAME,T_CD,T_ADDRESS,T_SCREEN,T_SEAT
+    FROM Theaters
+    WHERE T_NAME = #{t_name}
+  </select>
   
 </mapper>
 

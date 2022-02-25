@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function filmDate() {
-    const weekOfDay1 = ['일', '월', '화', '수', '목', '금', '토'];
+    const weekOfDay1 = ['日', '月', '火', '水', '木', '金', '土'];
     year1 = date1.getFullYear();
     month1 = date1.getMonth()+1;
     const spanDay1 = document.createElement('span')
@@ -30,7 +30,7 @@ function filmDate() {
     //고정된 css
     spanDay1.classList = 't_spanmonth';
     
-    spanDay1.innerHTML = month1+'월';;
+    spanDay1.innerHTML = month1+'月';
     reserveDate1.append(spanDay1);
     
     
@@ -107,16 +107,48 @@ function citycheck(tharea){
            for(let j=0;j<data1.length;j++){
              
              city+="<div class='t_citydata t_citydataline'>";
-             city+=" <strong><a href='/theater/theater.do?t_name="+data1[j].t_name+"'>"+data1[j].t_name+"</a></strong>";
+             city+="<strong><a href='javascript:void(0)' onclick='citycheck2(\""+data1[j].t_name+"\");'>"+data1[j].t_name+"</a></strong>";
              city+="</div>";
              
            }
-           
+           $('#sub-low2').remove();
            $('#sub-low').remove();
+          
            $('#t_subcity').html(city);
+           
         },
         error : function() {
-           alert("error");
+           alert("error1");
         }
      }); //ajax end
 }
+//하단리스트
+function citycheck2(thcity){
+  $.ajax({
+        type : "get",
+        url : '/theater/cityCheck2.do?t_name='+thcity,
+        dataType : "json",
+        success : function(data2) {
+           let subcity1="";
+             subcity1+="<div class='t_subcitydata t_subcitydatainfo'>";
+             subcity1+="<div class='section-title'>";
+             subcity1+="<h2>"+data2[0].t_name+"</h2>";
+             subcity1+="</div>";
+             subcity1+="</div>";
+             subcity1+="<div class='t_infotext'>";
+             subcity1+="<strong>총 상영관 수 <span>"+data2[0].t_screen+"개관</span></strong>";
+             subcity1+="<strong class='t_sit'>총 좌석수 <span>"+data2[0].t_seat+"석</span></strong>"
+             subcity1+="</div>";
+             subcity1+="<div class='t_infotext'>";
+             subcity1+="<strong>"+data2[0].t_address+"<span>"
+             subcity1+="</div>";
+
+           
+           $('#t_subcity1').html(subcity1);
+        },
+        error : function() {
+           alert("error2");
+        }
+     }); //ajax end
+}
+
