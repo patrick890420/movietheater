@@ -359,10 +359,14 @@
          <div class="container">
           <div class="row">
             <div class="col-lg-12">
-         <ul class="nav nav-tabs t_tablist" role="tablist" id="myTab">
-          <li role="presentation" class="active col-lg-6 col-md-6 col-sm-6"><a href="#date" aria-controls="date" role="tab" data-toggle="tab">상영시간표</a></li>
-          <li role="presentation" class="col-lg-6 col-md-6 col-sm-6 t_tableftline"><a href="#charge" aria-controls="charge" role="tab" data-toggle="tab">요금안내</a></li>
-        </ul>
+             <ul class="nav nav-tabs t_tablist" role="tablist" id="myTab">
+              <li role="presentation" class="active col-lg-6 col-md-6 col-sm-6">
+                <a href="#date" aria-controls="date" role="tab" data-toggle="tab">상영시간표</a>
+              </li>
+              <li role="presentation" class="col-lg-6 col-md-6 col-sm-6 t_tableftline">
+                <a href="#charge" aria-controls="charge" role="tab" data-toggle="tab">요금안내</a>
+              </li>
+            </ul>
         <div class="tab-content">
           <div role="tabpanel" class="theater_date tab-pane active" id="date">
             <div class="t_date2">
