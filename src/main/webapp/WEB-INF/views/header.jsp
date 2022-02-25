@@ -144,7 +144,7 @@
                   <li><a href="">JSL-Movie극장</a></li>
                   <li><a href="">특별관</a></li>
                 </ul></li>
-              <li><a href="/ticket/ticket.do">예매</a></li>
+              <li><a href="/ticket/ticket.do">前売</a></li>
               <li><a href="/event/event.do">イベント</a></li><!-- EVENT -->
               <li><a href="/notice/notice.do">お知らせ</a></li><!-- 공지 -->
             </ul>
