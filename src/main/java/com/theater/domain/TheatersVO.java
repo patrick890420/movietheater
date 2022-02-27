@@ -10,4 +10,6 @@ public class TheatersVO {
   private String t_address;  //주소
   private int t_screen;   //총상영관수
   private int t_seat;     //총좌석수
+  
+  private String start_time;     //dayClick 떄문에 추가
 }

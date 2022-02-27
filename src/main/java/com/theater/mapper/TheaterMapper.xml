@@ -74,6 +74,15 @@
     FROM Theaters
     WHERE T_NAME = #{t_name}
   </select>
-  
+
+  <select id="getScreenInfo" resultType="com.theater.domain.TheatersVO"><!-- vo 수정필요 -->
+    SELECT * 
+    FROM FILMS f ,FILM_TIMETABLE ft ,THEATERS t, SCREENS s 
+    WHERE t.T_CD =s.T_CD 
+    AND s.SCREEN_CD = f.SCREEN_CD 
+    AND f.FILM_CD = ft.FILM_CD 
+    AND t.T_NAME =#{t_name}
+    AND TO_CHAR(ft.START_TIME,'yyyy-MM-dd') = #{start_time}
+</select>  
 </mapper>
 

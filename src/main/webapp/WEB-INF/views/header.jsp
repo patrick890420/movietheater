@@ -48,6 +48,9 @@
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <!-- 확인구간 -->
 
+<!-- 차트 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
 <script language = "javascript">
   var imgArray = new Array();
   imgArray[0] = '/resources/img/theater/post1.jpg';
@@ -138,13 +141,13 @@
         <div class="header__nav">
           <nav class="header__menu mobile-menu">
             <ul class="index_navtab">
-              <li><a href="/movie/movie.do">영화</a></li>
+              <li><a href="/movie/movie.do">映画</a></li>
               <li><a href="/theater/theater.do">극장<span class="arrow_carrot-down"></span></a>
                 <ul class="dropdown">
                   <li><a href="">JSL-Movie극장</a></li>
                   <li><a href="">특별관</a></li>
                 </ul></li>
-              <li><a href="/ticket/ticket.do">예매</a></li>
+              <li><a href="/ticket/ticket.do">前売</a></li>
               <li><a href="/event/event.do">イベント</a></li><!-- EVENT -->
               <li><a href="/notice/notice.do">お知らせ</a></li><!-- 공지 -->
             </ul>

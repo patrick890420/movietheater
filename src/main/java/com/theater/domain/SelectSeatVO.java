@@ -14,6 +14,12 @@ public class SelectSeatVO {
   private int tkt_cd;
   private int seat_price;
   
+  private String poster;
+  private String title;
+  private String subtitle;
+  private String tkt_time;
+  private String tkt_date;
+  
   private  List<String> seatList;
 
 }

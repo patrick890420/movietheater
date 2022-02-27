@@ -248,6 +248,7 @@
                 <c:forEach items="${thinfo}" var="thinfo">
                   <div class="t_recotitle">
                     <strong>${thinfo.t_name}</strong>에서<br><span>나일강의 죽음</span><br>  어떠세요?
+                    
                   </div>
                   <div class="t_recoline"></div>
                   <div class="">
@@ -359,10 +360,14 @@
          <div class="container">
           <div class="row">
             <div class="col-lg-12">
-         <ul class="nav nav-tabs t_tablist" role="tablist" id="myTab">
-          <li role="presentation" class="active col-lg-6 col-md-6 col-sm-6"><a href="#date" aria-controls="date" role="tab" data-toggle="tab">상영시간표</a></li>
-          <li role="presentation" class="col-lg-6 col-md-6 col-sm-6 t_tableftline"><a href="#charge" aria-controls="charge" role="tab" data-toggle="tab">요금안내</a></li>
-        </ul>
+             <ul class="nav nav-tabs t_tablist" role="tablist" id="myTab">
+              <li role="presentation" class="active col-lg-6 col-md-6 col-sm-6">
+                <a href="#date" aria-controls="date" role="tab" data-toggle="tab">상영시간표</a>
+              </li>
+              <li role="presentation" class="col-lg-6 col-md-6 col-sm-6 t_tableftline">
+                <a href="#charge" aria-controls="charge" role="tab" data-toggle="tab">요금안내</a>
+              </li>
+            </ul>
         <div class="tab-content">
           <div role="tabpanel" class="theater_date tab-pane active" id="date">
             <div class="t_date2">
@@ -448,6 +453,7 @@
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 theater_footpost" style="margin: 5px 0;">
       <img id = "introImg2" border="0" style="width: 1155px;">
+      <input type="hidden" class="runningDate" id="runningDate">
     </div>
   </div>
 </section>
