@@ -40,6 +40,7 @@ public class MoiveController {
     model.addAttribute("a",a);
     model.addAttribute("b",b);
     model.addAttribute("c",c);
+    
 	}//view.do
 	
 	
