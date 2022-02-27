@@ -8,19 +8,16 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.google.gson.JsonObject;
 import com.theater.domain.ActorsVO;
@@ -28,6 +25,7 @@ import com.theater.domain.Criteria;
 import com.theater.domain.DirectorsVO;
 import com.theater.domain.EventVO;
 import com.theater.domain.GenresVO;
+import com.theater.domain.MemberVO;
 import com.theater.domain.MovieInfoVO;
 import com.theater.domain.MovieVO;
 import com.theater.domain.NationVO;
@@ -36,6 +34,7 @@ import com.theater.domain.ScreensVO;
 import com.theater.domain.SeatsVO;
 import com.theater.domain.TheatersVO;
 import com.theater.service.EventService;
+import com.theater.service.MembersService;
 import com.theater.service.MovieService;
 import com.theater.service.NoticeService;
 import com.theater.service.TheaterService;
@@ -63,6 +62,9 @@ public class AdminController {
 /*Board-> Notice*/
   @Setter(onMethod_=@Autowired )
   public NoticeService nService;
+  
+  @Setter(onMethod_=@Autowired )
+  public MembersService MembersService;
 
 
 
@@ -75,10 +77,13 @@ public class AdminController {
   }
   
   /* Member */
+  
   @GetMapping("/adminMemberList.do")
-  public String adminMemberList() {
-    
+  public String adminMemberList(Model model, MemberVO memvo) { //@RequestParam("userid")String userid
+    //List<MemberVO> memlist = MembersService.memberSelect();
+    model.addAttribute("memlist", MembersService.memberSelect()); //죽고싶다
     return "adm/adminMember/adminMemberList";
+    
     
   }
   

@@ -77,6 +77,11 @@ public class MembersServiceImpl implements MembersService {
   }
   
   
+  @Override
+  public List<MemberVO> memberSelect() {
+    return mmapper.memberSelect();
+  }
+  
   
 
 
