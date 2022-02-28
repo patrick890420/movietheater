@@ -289,7 +289,7 @@
               <ul aria-expanded="false" class="collapse  first-level base-level-line">
                 <li class="sidebar-item">
                   <a href="/adm/adminMemberList.do" class="sidebar-link">
-                  <span class="hide-menu"> table sample </span>
+                  <span class="hide-menu"> Members </span>
                   </a>
                 </li>
                 <li class="sidebar-item">

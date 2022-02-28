@@ -29,6 +29,9 @@ public interface MembersMapper {
   //나의 예매 내역 조회....
   
   public List<ReListVO> getRelist(String id); //리스트로 담아야 하는 것 아닌지? 
+  
+  //admin 멤버 조회
+ public List<MemberVO> memberSelect();
 
 
 }//class

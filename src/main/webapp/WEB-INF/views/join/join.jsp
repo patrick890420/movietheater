@@ -4,7 +4,7 @@
 
 <!-- Normal Breadcrumb Begin -->
 <section class="normal-breadcrumb set-bg"
-  style="background-color: #001064;">
+  style="background-color: black;">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -120,8 +120,8 @@
                       data-parent="#accordion" style="">
                       <div class="">
                         <textarea rows="" cols=""
-                          style="width: 100%; border-block: none; margin-left: -3px; font-size: 15px;"> 박천규 강영훈 김민경 김태권 점심 맛있게 먹고 행복하세요^^
-                                        </textarea>
+                          style="width: 100%; border-block: none; margin-left: -3px; font-size: 15px; padding-bottom: 30px;"> jslグループ株式会社（以下「jsl」といいます。）、その子会社、および関連会社で構成されるjslグループ（以下「jslグループ」といいます。）は、お客様に最適でユニークなサービスを提供したいと考えており、グローバルに展開する楽天グループのサービスに容易にアクセスしていただけるように、 シングル・ログイン機能を含む共通IDプログラム（以下「jsl ID」といいます。）を提供しています。 お客様は、jslが定めるjsl会員規約（以下「本規約」といいます。）に基づいてアカウント（以下「アカウント」といいます。）を作成し、会員サービスをご利用いただくことができます。
+                         </textarea>
                       </div>
                     </div>
                   </div>
@@ -158,55 +158,55 @@
     $("#join_button").on("click", function() {
 
       if ($("#userName").val() == "") {
-        alert("성명을 입력해주세요.");
+        alert("氏名を入力してください。");
         $("#userName").focus();
         return false;
       }
       if ($("#userId").val() == "") {
-        alert("아이디를 입력해주세요.");
+        alert("ユーザIDを入力してください。");
         $("#userId").focus();
         return false;
       }
       if ($("#userMail").val() == "") {
-        alert("이메일을 입력해주세요.");
+        alert("メールアドレスを入力してください。");
         $("#userMail").focus();
         return false;
       }
       if ($("#userTel").val() == "") {
-        alert("전화번호를 입력해주세요.");
+        alert("電話番号を入力してください。");
         $("#userTel").focus();
         return false;
       }
       if ($("#userPass").val() == "") {
-        alert("비밀번호를 입력해주세요.");
+        alert("パスワードを入力してください。");
         $("#userPass").focus();
         return false;
       }
       if ($("#userPass2").val() == "") {
-        alert("비밀번호를 재입력해주세요.");
+        alert("パスワード確認入力）を入力してください。.");
         $("#userPass2").focus();
         return false;
       }
       if ($("#userPass").val() != $("#userPass2").val()) {
-        alert("두 비밀번호가 맞지 않습니다.");
+        alert("パスワードが違います。");
         //document.form.userPass2.value = "";
         // document.form.userPass2.focus();
         return false;
       }
       if ($("#birth").val() == "") {
-        alert("생일을 입력해 주세요");
+        alert("お誕生日を入力してください。");
         return false;
       }
 
       //if(!reg_num.test(birth.value)) { alert("생일은 숫자만 입력이 가능합니다."); return false;
 
       if ($("input[name=gender]:radio:checked").length == 0) {
-        alert('성별을 선택해주세요');
+        alert('性別を選択してください。');
         return false;
       }
 
       if (!$("input:checked[id='box1']").is(":checked")) {
-        alert("이용약관 동의가 필요합니다.");
+        alert("会員規約の同意は必須です。");
         return false;
       }
 
@@ -223,10 +223,10 @@
       success : function(data) {
         if (data == 0) {
           if ($("#userId").val() != "") {
-            alert("사용 가능한 아이디 입니다.");
+            alert("使用可能なアカウントです。");
           }
         } else {
-          alert("사용 불가능한 아이디 입니다.");
+          alert("使用不可能なアカウントです。");
           $("#userId").val("");
           $("#userId").focus();
           return false();
