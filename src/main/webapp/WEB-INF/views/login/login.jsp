@@ -4,7 +4,7 @@
 
 	 <!-- Normal Breadcrumb Begin -->
     <section class="normal-breadcrumb set-bg"
-    style="background-color: #001064;">
+    style="background-color: #8e8e8e;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -19,7 +19,7 @@
 
     <!-- Login Section Begin -->
     <section class="login spad">
-        <div class="container" style="padding: 100px 0; border: groove; background:url(/resources/img/sky.jpg);"  >
+        <div class="container" style="padding: 100px 0; border: groove; background:url(/resources/img/hubo.jpg); background-position: bottom;"  >
             <div class="row">
                 <div class="col-lg-6">
                     <div class="login__form">
