@@ -75,35 +75,39 @@
   margin-left:20px;
 }
 .t_ep0{
-  font-size: 1px;
+  font-size: 14px;
+    font-weight: 700;
     color: white;
     background: #5BC77E;
     display: inline-block;
-    padding: 6px 4px;
+    padding: 6px 12px;
     border-radius: 50px;
 }
 .t_ep19{
   font-size: 1px;
+    font-weight: 700;
     color: white;
-    background: #ED4C6B;
+    background: #dd2525;
     display: inline-block;
-    padding: 6px 4px;
+    padding: 9px 4px;
     border-radius: 50px;
 }
 .t_ep12{
-  font-size: 13px;
+  font-size: 1px;
+    font-weight: 700;
     color: white;
     background: #0484dfd9;
     display: inline-block;
-    padding: 4px 7px;
+    padding: 9px 4px;
     border-radius: 50px;
 }
 .t_ep15{
-  font-size: 13px;
+  font-size: 1px;
+    font-weight: 700;
     color: white;
-    background: #ff8100;
+    background: #ED4C6B;
     display: inline-block;
-    padding: 4px 7px;
+    padding: 9px 4px;
     border-radius: 50px;
 }
 .t_filminfo{
@@ -112,7 +116,9 @@
   padding-bottom: 30px;
 }
 .t_filmtitle{
- font-size: larger; font-weight: 900;
+ font-size: larger; 
+ font-weight: 900;
+ margin-left:7px;
 }
 .t_post{
   height:530px;
@@ -129,7 +135,8 @@
 }
 .t_chargetext{
   padding: 20px 0;
-  background: #80808026;
+  /*background: #80808026;*/
+  border-bottom:groove;
 }
 .t_city{
   text-align: center;
@@ -203,6 +210,7 @@ input[type="radio"]:checked + strong {
 }
 .t_modallisttext{
         padding:0 40px;
+        margin-bottom:15px;
 }
 .t_modallisttext strong{
         font-size:11px;
@@ -287,6 +295,7 @@ input[type="radio"]:checked + strong {
 .theater_list li{
       font-weight:600;
       margin: 7px;
+      margin-left:46px;
 }
 .theater_list a{
   color:#ffffffb8;
@@ -302,4 +311,20 @@ input[type="radio"]:checked + strong {
 .thicon_clip{
   color: darkblue;
     font-weight: 600;
+}
+.product__item__text h5 a {
+  color:black;
+}
+.t_chargetext .col-lg-6 strong span{
+  padding-right:35px;
+  float:right;
+}
+.t_sch_text{
+  margin: 30px 0 15px 30px;
+}
+.t_sch_time{
+  margin-left:30px;
+}
+.t_sch_seat{
+  font-size: 11px;
 }

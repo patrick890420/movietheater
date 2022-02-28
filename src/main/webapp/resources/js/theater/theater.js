@@ -98,16 +98,21 @@ function dayClickEvent1(button) {
           contentType: "application/x-www-form-urlencoded; charset=UTF-8",
           success : function(data) {
             let pushDiv="";
+            
+            pushDiv+="<div class='t_ep12'>등급</div>";
+            pushDiv+="<span class='t_filmtitle'>"+data[0].title+"</span>";
             for(let i=0;i<data.length;i++){
-              pushDiv+="<button class='btn reserve-time-button' onclick=getStcd("+data[i].s_t_cd+");>";
-              pushDiv+="<span class='reserve-time-want' onclick=getStcd("+data[i].s_t_cd+");>"+data[i].start_time+"</span>";
-              pushDiv+="<span class='reserve-time-remain'>"+data[i].t_seat+"</span>";
+              
+              pushDiv+="<p class='t_sch_text'>▶"+data[i].t_name+" 1階 ["+data[i].t_screen+"上映館]  総"+data[i].t_seat+"席</p>";
+              pushDiv+="<ul class='t_sch_time'><li class='t_filmtime'>";
+              pushDiv+="<strong><a href='javascript:void(0)' onclick=getStcd("+data[i].s_t_cd+");>"+data[i].start_time+"</a></strong>";
+              pushDiv+="<br><span class='reserve-time-remain t_sch_seat'>"+data[i].t_seat+"席</span>";
               pushDiv+="<input type='hidden' value='"+data[i].s_t_cd+"' id='hdStcd'>";
-              pushDiv+="</button>";
+              pushDiv+="</li></ul>";
             }
             
             //아래 부분은 수정 필요
-            $('#reserve-time-wrapper').html(pushDiv);
+            $('#reserve-time-wrapper2').html(pushDiv);
             document.querySelectorAll('.reserve-time-want').forEach(list => {
               list.addEventListener('click', function() {
               const reserveTimeActive = document.querySelectorAll('.reserve-time-active');
@@ -168,8 +173,8 @@ function citycheck2(thcity){
              subcity1+="</div>";
              subcity1+="<input type='hidden' class='getTname' value='"+data2[0].t_name+"'>";
              subcity1+="<div class='t_infotext'>";
-             subcity1+="<strong>총 상영관 수 <span>"+data2[0].t_screen+"개관</span></strong>";
-             subcity1+="<strong class='t_sit'>총 좌석수 <span>"+data2[0].t_seat+"석</span></strong>"
+             subcity1+="<strong>・ 上映館数 <span>"+data2[0].t_screen+" 館</span></strong>";
+             subcity1+="<strong class='t_sit'>・ 座席数 <span>"+data2[0].t_seat+" 席</span></strong>"
              subcity1+="</div>";
              subcity1+="<div class='t_infotext'>";
              subcity1+="<strong>"+data2[0].t_address+"<span>"

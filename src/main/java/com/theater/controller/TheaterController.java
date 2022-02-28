@@ -31,7 +31,7 @@ public class TheaterController {
   
   @GetMapping("/theater.do")
   public void theater(Model model, @RequestParam(value="t_area", required=false, defaultValue= "1") String t_area,
-      @RequestParam(value="t_name", required=false, defaultValue= "슈밤") String t_name) {
+      @RequestParam(value="t_name", required=false, defaultValue= "青森県") String t_name) {
     
     model.addAttribute("aList",thservice.areainfo());
     model.addAttribute("thList", thservice.thread(t_area));
