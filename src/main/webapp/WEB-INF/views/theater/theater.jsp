@@ -8,34 +8,34 @@
         <div class="col-lg-12 theater_list">
           <ul class="nav t_city" role="tablist" id="myTab">
             <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-              <a href="#"  onclick="citycheck(1);">${aList[0].area_name}</a>
+              <a href="javascript:void(0)" onclick="citycheck(1);">${aList[0].area_name}</a>
             </li>
             <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-              <a href="#"  onclick="citycheck(2);">${aList[1].area_name}</a>
+              <a href="javascript:void(0)" onclick="citycheck(2);">${aList[1].area_name}</a>
             </li>
             <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-              <a href="#"  onclick="citycheck(3);">${aList[2].area_name}</a>
+              <a href="javascript:void(0)" onclick="citycheck(3);">${aList[2].area_name}</a>
             </li>
             <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-              <a href="#"  onclick="citycheck(4);">${aList[3].area_name}</a>
+              <a href="javascript:void(0)" onclick="citycheck(4);">${aList[3].area_name}</a>
             </li>
             <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-              <a href="#"  onclick="citycheck(5);">${aList[4].area_name}</a>
+              <a href="javascript:void(0)" onclick="citycheck(5);">${aList[4].area_name}</a>
             </li>
             <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-              <a href="#"  onclick="citycheck(6);">${aList[5].area_name}</a>
+              <a href="javascript:void(0)" onclick="citycheck(6);">${aList[5].area_name}</a>
             </li>
             <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-              <a href="#"  onclick="citycheck(7);">${aList[6].area_name}</a>
+              <a href="javascript:void(0)" onclick="citycheck(7);">${aList[6].area_name}</a>
             </li>
             <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-              <a href="#"  onclick="citycheck(8);">${aList[7].area_name}</a>
+              <a href="javascript:void(0)" onclick="citycheck(8);">${aList[7].area_name}</a>
             </li>
             <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-              <a href="#"  onclick="citycheck(9);">${aList[8].area_name}</a>
+              <a href="javascript:void(0)" onclick="citycheck(9);">${aList[8].area_name}</a>
             </li>
             <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-              <a href="#"  onclick="citycheck(9);">${aList[9].area_name}</a>
+              <a href="javascript:void(0)" onclick="citycheck(10);">${aList[9].area_name}</a>
             </li>
           </ul>
           <div class="tab-content" >
@@ -46,7 +46,7 @@
                   <c:forEach items="${thList}" var="thList">
                     <div class="t_citydata t_citydataline">
                       <strong>
-                      <a href="/theater/theater.do?t_name=${thList.t_name}">${thList.t_name}</a>
+                       <a href="javascript:void(0)" onclick="citycheck2('${thList.t_name}');">${thList.t_name}</a>
                       </strong>
                     </div>
                   </c:forEach>
@@ -73,18 +73,24 @@
       <div class="">
         <div class="row">
           <div class="col-lg-7 col-md-7 col-sm-7">
-            <c:forEach items="${thinfo}" var="thinfo">
-              <div class="section-title">
-                <h2>${thinfo.t_name}</h2>
+            <div class="t_subcity1" id="t_subcity1">
+              <div id="sub-low2"> 
+                <c:forEach items="${thinfo}" var="thinfo">
+                  <div class="t_subcitydata t_subcitydatainfo">
+                    <div class="section-title">
+                      <h2>${thinfo.t_name}</h2>
+                    </div>
+                    <div class="t_infotext">
+                      <strong> 총 상영관 수 <span>&ensp;${thinfo.t_screen}개관</span></strong>
+                      <strong class="t_sit"> 총 좌석수 <span>&ensp;${thinfo.t_seat}석</span></strong>
+                    </div>
+                    <div class="t_infotext">
+                      <strong > ${thinfo.t_address}</strong>
+                    </div>
+                   </div>
+                </c:forEach>
               </div>
-              <div class="t_infotext">
-                <strong> 총 상영관 수 <span>&ensp;${thinfo.t_screen}개관</span></strong>
-                <strong class="t_sit"> 총 좌석수 <span>&ensp;${thinfo.t_seat}석</span></strong>
-              </div>
-              <div class="t_infotext">
-                <strong > ${thinfo.t_address}</strong>
-              </div>
-            </c:forEach>
+            </div>
           <div class="t_icon">
               <!-- 수정중 -->
     <!-- Button trigger modal -->
@@ -242,6 +248,7 @@
                 <c:forEach items="${thinfo}" var="thinfo">
                   <div class="t_recotitle">
                     <strong>${thinfo.t_name}</strong>에서<br><span>나일강의 죽음</span><br>  어떠세요?
+                    
                   </div>
                   <div class="t_recoline"></div>
                   <div class="">
@@ -353,10 +360,14 @@
          <div class="container">
           <div class="row">
             <div class="col-lg-12">
-         <ul class="nav nav-tabs t_tablist" role="tablist" id="myTab">
-          <li role="presentation" class="active col-lg-6 col-md-6 col-sm-6"><a href="#date" aria-controls="date" role="tab" data-toggle="tab">상영시간표</a></li>
-          <li role="presentation" class="col-lg-6 col-md-6 col-sm-6 t_tableftline"><a href="#charge" aria-controls="charge" role="tab" data-toggle="tab">요금안내</a></li>
-        </ul>
+             <ul class="nav nav-tabs t_tablist" role="tablist" id="myTab">
+              <li role="presentation" class="active col-lg-6 col-md-6 col-sm-6">
+                <a href="#date" aria-controls="date" role="tab" data-toggle="tab">상영시간표</a>
+              </li>
+              <li role="presentation" class="col-lg-6 col-md-6 col-sm-6 t_tableftline">
+                <a href="#charge" aria-controls="charge" role="tab" data-toggle="tab">요금안내</a>
+              </li>
+            </ul>
         <div class="tab-content">
           <div role="tabpanel" class="theater_date tab-pane active" id="date">
             <div class="t_date2">
@@ -442,6 +453,7 @@
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 theater_footpost" style="margin: 5px 0;">
       <img id = "introImg2" border="0" style="width: 1155px;">
+      <input type="hidden" class="runningDate" id="runningDate">
     </div>
   </div>
 </section>

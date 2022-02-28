@@ -22,7 +22,7 @@
     <div class="list-group list-group-flush">
       <a
         class="list-group-item list-group-item-action list-group-item-light p-3"
-        href="mypage.do">アカウント管理</a> <a
+        href="memberUp.do">アカウント管理</a> <a
         class="list-group-item list-group-item-action list-group-item-light p-3"
         href="myreser.do">私の予約</a> <a
         class="list-group-item list-group-item-action list-group-item-light p-3"
@@ -109,7 +109,10 @@
     });
   })
 
-  //아이디 중복
+  //기존 비밀번호와 바꿀 비밀번호가 다른가 ? 확인하는 것이 필요함
+  //아직은 뭘 입력하든 pw error가 뜬다,,,
+
+  
   $("#pass_button").click(function() {
     var pwCheck = $("input[name=userpw]").val();
     $.ajax({

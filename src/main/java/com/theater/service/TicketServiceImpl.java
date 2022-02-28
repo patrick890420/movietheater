@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.theater.domain.MovieVO;
+import com.theater.domain.ReserveInsertVO;
 import com.theater.domain.ReserveVO;
+import com.theater.domain.SelectSeatVO;
 import com.theater.domain.TheatersVO;
 import com.theater.mapper.TicketMapper;
 
@@ -38,5 +40,30 @@ public class TicketServiceImpl implements TicketService {
   public List<ReserveVO> getDaySelect(ReserveVO rvo) {
     return tmapper.getDaySelect(rvo);
   }
+
+  @Override
+  public void reserve(ReserveInsertVO rvo) {
+    tmapper.reserve(rvo);
+  }
+
+  @Override
+  public ReserveInsertVO getReserveInfo(ReserveInsertVO rvo) {
+    
+    return tmapper.getReserveInfo(rvo);
+  }
+
+  @Override
+  public void seatFix(SelectSeatVO svo) {
+    tmapper.seatFix(svo);
+    
+  }
+
+  @Override
+  public SelectSeatVO getTkInfo(SelectSeatVO svo) {
+    
+    return tmapper.getTkInfo(svo);
+  }
+
+  
 
 }

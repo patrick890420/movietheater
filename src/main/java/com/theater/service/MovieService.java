@@ -6,6 +6,7 @@ import java.util.List;
 import com.theater.domain.CmtAVG;
 import com.theater.domain.Criteria;
 import com.theater.domain.M_stillcutVO;
+import com.theater.domain.MovieChartVO;
 import com.theater.domain.MovieInfoVO;
 import com.theater.domain.MovieSelectVO;
 import com.theater.domain.MovieVO;
@@ -34,4 +35,10 @@ public interface MovieService {
   public int remove(int rcode);
   public List<ReviewVO> getList(Criteria cri, int m_cd);
   public CmtAVG cmtAVG(int m_cd);
+  
+  public List<MovieVO>movieSelect1to5();
+  public List<MovieVO> movieSelect6to10();
+  public List<MovieVO>movieSelect11to15();
+
+  public List<MovieChartVO> movieChart(int m_cd);
 }

@@ -86,24 +86,24 @@ function selectListUiFunction(selectSeatListUlActive) {
     selectSeatListUlActive.forEach(li => {
         if (li.parentNode.classList.contains('select-seat-ul-normal')) {
             normalNumber = Number(li.innerHTML);
-            normalMoney = 11000 * normalNumber;
+            normalMoney = 2000 * normalNumber;
             allMoney = normalMoney + teenMoney + oldMoney;
             allNumber = normalNumber + teenNumber + oldNumber;
-            ticketPrice.innerHTML = allMoney + '원';
+            ticketPrice.innerHTML = allMoney + '円';
             if (allNumber > 16) {
                 li.classList.remove('select-seat-ul-active');
                 allMoney -= normalMoney;
                 allNumber = allNumber - normalNumber;
 
                 selectNumberNormal[0].classList.add('select-seat-ul-active');
-                ticketPrice.innerHTML = allMoney + '원';
+                ticketPrice.innerHTML = allMoney + '円';
             }
         } else if (li.parentNode.classList.contains('select-seat-ul-teen')) {
             teenNumber = Number(li.innerHTML);
-            teenMoney = 8000 * teenNumber;
+            teenMoney = 1000 * teenNumber;
             allMoney = normalMoney + teenMoney + oldMoney;
             allNumber = normalNumber + teenNumber + oldNumber;
-            ticketPrice.innerHTML = allMoney + '원';
+            ticketPrice.innerHTML = allMoney + '円';
             if (allNumber > 16) {
                 li.classList.remove('select-seat-ul-active');
                 //normalNumber = teenNumber = oldNumber = 0;
@@ -111,14 +111,14 @@ function selectListUiFunction(selectSeatListUlActive) {
                 allNumber = allNumber - teenNumber;
 
                 selectNumberTeen[0].classList.add('select-seat-ul-active');
-                ticketPrice.innerHTML = allMoney + '원';
+                ticketPrice.innerHTML = allMoney + '円';
             }
         } else if (li.parentNode.classList.contains('select-seat-ul-old')) {
             oldNumber = Number(li.innerHTML);
-            oldMoney = 8000 * oldNumber;
+            oldMoney = 1000 * oldNumber;
             allMoney = normalMoney + teenMoney + oldMoney;
             allNumber = normalNumber + teenNumber + oldNumber;
-            ticketPrice.innerHTML = allMoney + '원';
+            ticketPrice.innerHTML = allMoney + '円';
             if (allNumber > 16) {
                 li.classList.remove('select-seat-ul-active');
 
@@ -126,22 +126,22 @@ function selectListUiFunction(selectSeatListUlActive) {
                 allNumber = allNumber - oldNumber;
 
                 selectNumberOld[0].classList.add('select-seat-ul-active');
-                ticketPrice.innerHTML = allMoney + '원';
+                ticketPrice.innerHTML = allMoney + '円';
             }
         }
 
         // allNumber = normalNumber + teenNumber + oldNumber;
         // allMoney = normalMoney + teenMoney + oldMoney;
-        console.log(allNumber + '명(총합)');
-        ticketPrice.innerHTML = allMoney + '원';
+        console.log(allNumber + '人(総和)');
+        ticketPrice.innerHTML = allMoney + '円';
 
         if (allNumber > 16) {
             console.log(li);
             li.classList.remove('select-seat-ul-active');
             // normalNumber = teenNumber = oldNumber = 0;
             toastr.error(
-                '<div style="color:white">지정한 인원수를 넘었습니다(최대 8명)</div>',
-                '<div style="color:white">인원수 확인</div>', {
+                '<div style="color:white">指定した人数を超えました。(最大8人)</div>',
+                '<div style="color:white">人数確認</div>', {
                     timeOut: 4000,
                 }
             );
@@ -224,8 +224,8 @@ function inputClickEvent(input) {
             if (clicked.length > allNumber) {
                 input.classList.remove('clicked');
                 toastr.error(
-                    '<div style="color:white">지정한 인원수를 넘었습니다</div>',
-                    '<div style="color:white">인원수 확인</div>', {
+                    '<div style="color:white">指定した人数を超えました。</div>',
+                    '<div style="color:white">人数確認</div>', {
                         timeOut: 4000
                     }
                 );
@@ -277,15 +277,18 @@ function mapping(input, i, j) {
 
 //form 제출시 hidden설정하기
 reserveButton.addEventListener('click', function() {
-    title.value = selectedMovie.innerHTML;
-    selectedTheater.value =
-        selectedTheaterPlaceInfo[0].innerHTML +
-        ' ' +
-        selectedTheaterPlaceInfo[1].innerHTML;
-    ticketDate.value = theaterDate.innerHTML;
-    runningTime.value = theaterTime.innerHTML;
+    //title.value = selectedMovie.innerHTML;
+    //selectedTheater.value =
+    //    selectedTheaterPlaceInfo[0].innerHTML +
+    //    ' ' +
+    //    selectedTheaterPlaceInfo[1].innerHTML;
+    //ticketDate.value = theaterDate.innerHTML;
+    //runningTime.value = theaterTime.innerHTML;
     ticketNumber.value = reserveNumber.innerHTML;
     selectedSeat.value = selectedSeats.innerHTML;
+    
+    //alert(reserveNumber.innerHTML);
+    //alert(selectedSeats.innerHTML);
     console.log(allNumber + '임');
     console.log(ticketNumber.value);
     console.log(allNumber === ticketNumber.value);
@@ -297,6 +300,6 @@ reserveButton.addEventListener('click', function() {
     ) {
         seatForm.submit();
     } else {
-        alert('좌석을 모두선택해 주세요!');
+        alert('座席を全てお選びください。');
     }
 });

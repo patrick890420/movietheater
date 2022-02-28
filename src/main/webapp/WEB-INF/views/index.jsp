@@ -45,11 +45,11 @@
                     </c:if>
                     <a href="view.do?m_cd=${mlist1.m_cd}"><img style="height:100%; border-radius:4px" src="/upload/${mlist1.poster}" alt=""></a>
                     </div>
-                  </div>
                   <div class="product__item__text">
                      <h5 ><a style="color:white;" href="view.do?m_cd=${mlist1.m_cd}">${mlist1.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
                   </div>
                 </div>
+                 </div>
                 </c:forEach>
                  </div>
               
@@ -72,7 +72,6 @@
                       <div class="t_ep19" style="position: relative !important; top: 45px; left: 5px;">19</div>
                     </c:if>
                     <a href="view.do?m_cd=${mlist2.m_cd}"><img style="height:100%; border-radius:4px" src="/upload/${mlist2.poster}" alt=""></a>
-                    
                   </div>
                    <div class="product__item__text">
                      <h5 ><a style="color:white;" href="view.do?m_cd=${mlist2.m_cd}">${mlist2.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
@@ -438,58 +437,58 @@
 
         first.children[0].innerHTML = rollingData[0]
 
-        setInterval(() => {
-            if(move == 2){
-                first.classList.remove('card_sliding')
-                first.classList.add('card_sliding_after')
+        setInterval(()=> {
+          if(move == 2){
+              first.classList.remove('card_sliding')
+              first.classList.add('card_sliding_after')
 
-                second.classList.remove('card_sliding_after')
-                second.classList.add('card_sliding')
+              second.classList.remove('card_sliding_after')
+              second.classList.add('card_sliding')
 
-                third.classList.remove('card_sliding_after')
-                third.classList.remove('card_sliding')
+              third.classList.remove('card_sliding_after')
+              third.classList.remove('card_sliding')
 
-                move = 0
-            } else if (move == 1){
-                first.classList.remove('card_sliding_after')
-                first.classList.add('card_sliding')
+              move = 0
+          } else if (move == 1){
+              first.classList.remove('card_sliding_after')
+              first.classList.add('card_sliding')
 
-                second.classList.remove('card_sliding_after')
-                second.classList.remove('card_sliding')
+              second.classList.remove('card_sliding_after')
+              second.classList.remove('card_sliding')
 
-                third.classList.remove('card_sliding')
-                third.classList.add('card_sliding_after')
+              third.classList.remove('card_sliding')
+              third.classList.add('card_sliding_after')
 
-                move = 2
-            } else if (move == 0) {
-                first.classList.remove('card_sliding_after')
-                first.classList.remove('card_sliding')
+              move = 2
+          } else if (move == 0) {
+              first.classList.remove('card_sliding_after')
+              first.classList.remove('card_sliding')
 
-                second.classList.remove('card_sliding')
-                second.classList.add('card_sliding_after')
+              second.classList.remove('card_sliding')
+              second.classList.add('card_sliding_after')
 
-                third.classList.remove('card_sliding_after')
-                third.classList.add('card_sliding')
+              third.classList.remove('card_sliding_after')
+              third.classList.add('card_sliding')
 
-                move = 1
-            }
-            
-            if(dataCnt < (rollingData.length - 1)) {
-                document.getElementById('rolling_box').children[listCnt].children[0].innerHTML = rollingData[dataCnt]
-                    dataCnt++
-            } else if(dataCnt == rollingData.length - 1) {
-                document.getElementById('rolling_box').children[listCnt].children[0].innerHTML = rollingData[dataCnt]
-                dataCnt = 0
-            }
+              move = 1
+          }
+          
+          if(dataCnt < (rollingData.length - 1)) {
+              document.getElementById('rolling_box').children[listCnt].children[0].innerHTML = rollingData[dataCnt]
+                  dataCnt++
+          } else if(dataCnt == rollingData.length - 1) {
+              document.getElementById('rolling_box').children[listCnt].children[0].innerHTML = rollingData[dataCnt]
+              dataCnt = 0
+          }
 
-            if(listCnt < 2) {
-                listCnt++
-            } else if (listCnt == 2) {
-                listCnt = 0
-            }
+          if(listCnt < 2) {
+              listCnt++
+          } else if (listCnt == 2) {
+              listCnt = 0
+          }
 
-            console.log(listCnt)
-        }, timer);
+          console.log(listCnt)
+      }, timer);
 
 
     </script>

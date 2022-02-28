@@ -73,8 +73,9 @@
 <!--               <img src="/resources/admin/assets/images/logo-icon.png" alt="homepage" class="light-logo" /> </b> End Logo icon  -->
               <!-- Logo text -->
               <span class="logo-text"> <!-- dark Logo text -->
-                <img src="/resources/img/newlogo.png" alt="homepage" class="dark-logo" style="height: 75px" /> <!-- Light Logo text -->
-                <img src="/resources/img/newlogo.png" class="light-logo" alt="homepage" style="height: 75px"/>
+                  <span class="logo">📽 JSL-CINEMA</span>
+<!--                 <img src="/resources/img/cuteLogo.png" alt="homepage" class="dark-logo" style="height: 75px" /> Light Logo text -->
+<!--                 <img src="/resources/img/cuteLogo.png" class="light-logo" alt="homepage" style="height: 75px"/> -->
               </span>
             </a>
           </div>

@@ -7,11 +7,10 @@ const theaterPlace1 = document.querySelectorAll('.theater-place');
 const reserveTimeWant1 = document.querySelectorAll('.reserve-time-want');
 const inputTitle1 = document.querySelector('.title');
 const inputSelectedTheater1 = document.querySelector('.selectedTheater');
-const inputReserveDate1 = document.querySelector('.reserveDate');
+const inputRunningDate = document.querySelector('.runningDate');
 const inputRunningTime1 = document.querySelector('.runningTime');
-const moveSeatForm1 = document.querySelector('.moveSeatForm');
-const moveSeatButton1 = document.querySelector('.moveSeatButton');
-const movieAge1 = document.querySelector('.movieAge');
+const movieDay = document.querySelector('.movie-day');
+
 
 let movieListAge1 = '';
 let year1 = 0;
@@ -22,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function filmDate() {
-    const weekOfDay1 = ['일', '월', '화', '수', '목', '금', '토'];
+    const weekOfDay1 = ['日', '月', '火', '水', '木', '金', '土'];
     year1 = date1.getFullYear();
     month1 = date1.getMonth()+1;
     const spanDay1 = document.createElement('span')
@@ -30,7 +29,7 @@ function filmDate() {
     //고정된 css
     spanDay1.classList = 't_spanmonth';
     
-    spanDay1.innerHTML = month1+'월';;
+    spanDay1.innerHTML = month1+'月';
     reserveDate1.append(spanDay1);
     
     
@@ -80,19 +79,52 @@ function dayClickEvent1(button) {
             list.classList.remove('theater-date-wrapper-active');
         });
         button.classList.add('theater-date-wrapper-active');
-        console.log(button.childNodes[1].innerHTML);
+        //console.log(button.childNodes[1].value);
+        //console.log(button.firstChild.innerHTML);
         
-        // 이거 콘솔에 2022.02.20(수) 이렇게 찍어주는건데 내꺼랑 충돌나서 주석으로 막아놈 이상있음 말해줘
-        //inputReserveDate.value =
-        //    year +
-        //    '.' +
-        //    month +
-        //    '.' +
-        //    button.childNodes[1].innerHTML +
-        //    '(' +
-        //    button.childNodes[0].innerHTML +
-        //    ')';
-        //console.log(inputReserveDate.value);
+        inputRunningDate.value =
+            year +
+            '-' +
+            month +
+            '-' +
+            button.firstChild.innerHTML;
+        console.log(inputRunningDate.value);
+        var getTname = document.querySelector('.getTname');
+        alert(getTname.value);
+        alert(inputRunningDate.value);
+        $.ajax({
+          type : "get",
+          url : '/theater/dayClick.do?start_time='+inputRunningDate.value+'&t_name='+getTname.value,
+          dataType : "json",
+          contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+          success : function(data) {
+            let pushDiv="";
+            for(let i=0;i<data.length;i++){
+              pushDiv+="<button class='btn reserve-time-button' onclick=getStcd("+data[i].s_t_cd+");>";
+              pushDiv+="<span class='reserve-time-want' onclick=getStcd("+data[i].s_t_cd+");>"+data[i].start_time+"</span>";
+              pushDiv+="<span class='reserve-time-remain'>"+data[i].t_seat+"</span>";
+              pushDiv+="<input type='hidden' value='"+data[i].s_t_cd+"' id='hdStcd'>";
+              pushDiv+="</button>";
+            }
+            
+            //아래 부분은 수정 필요
+            $('#reserve-time-wrapper').html(pushDiv);
+            document.querySelectorAll('.reserve-time-want').forEach(list => {
+              list.addEventListener('click', function() {
+              const reserveTimeActive = document.querySelectorAll('.reserve-time-active');
+              reserveTimeActive.forEach(li => {
+                li.classList.remove('reserve-time-active');
+              });
+              list.classList.add('reserve-time-active');
+              //console.log(list.innerHTML);
+              inputRunningTime.value = list.innerHTML;
+            });
+          });   
+          },
+          error : function() {
+             alert("error");
+          }
+       }); //ajax end
     });
 }
 
@@ -107,16 +139,51 @@ function citycheck(tharea){
            for(let j=0;j<data1.length;j++){
              
              city+="<div class='t_citydata t_citydataline'>";
-             city+=" <strong><a href='/theater/theater.do?t_name="+data1[j].t_name+"'>"+data1[j].t_name+"</a></strong>";
+             city+="<strong><a href='javascript:void(0)' onclick='citycheck2(\""+data1[j].t_name+"\");'>"+data1[j].t_name+"</a></strong>";
              city+="</div>";
              
            }
-           
+           $('#sub-low2').remove();
            $('#sub-low').remove();
+          
            $('#t_subcity').html(city);
+           
         },
         error : function() {
-           alert("error");
+           alert("error1");
         }
      }); //ajax end
 }
+//하단리스트
+function citycheck2(thcity){
+  $.ajax({
+        type : "get",
+        url : '/theater/cityCheck2.do?t_name='+thcity,
+        dataType : "json",
+        success : function(data2) {
+           let subcity1="";
+             subcity1+="<div class='t_subcitydata t_subcitydatainfo'>";
+             subcity1+="<div class='section-title'>";
+             subcity1+="<h2>"+data2[0].t_name+"</h2>";
+             subcity1+="</div>";
+             subcity1+="</div>";
+             subcity1+="<input type='hidden' class='getTname' value='"+data2[0].t_name+"'>";
+             subcity1+="<div class='t_infotext'>";
+             subcity1+="<strong>총 상영관 수 <span>"+data2[0].t_screen+"개관</span></strong>";
+             subcity1+="<strong class='t_sit'>총 좌석수 <span>"+data2[0].t_seat+"석</span></strong>"
+             subcity1+="</div>";
+             subcity1+="<div class='t_infotext'>";
+             subcity1+="<strong>"+data2[0].t_address+"<span>"
+             subcity1+="</div>";
+
+           
+           $('#t_subcity1').html(subcity1);
+        },
+        error : function() {
+           alert("error2");
+        }
+     }); //ajax end
+}
+
+
+

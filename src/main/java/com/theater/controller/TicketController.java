@@ -1,6 +1,7 @@
 package com.theater.controller;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -12,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.theater.domain.ReserveInsertVO;
 import com.theater.domain.ReserveVO;
+import com.theater.domain.SelectSeatVO;
 import com.theater.domain.TheatersVO;
 import com.theater.service.TicketService;
 
@@ -53,11 +56,6 @@ public class TicketController {
   @GetMapping("/daySelect.do")
   public  @ResponseBody List<ReserveVO> daySelect(@RequestParam("m_cd") int m_cd
       ,@RequestParam("t_name") String t_name,@RequestParam("start_time") String start_time,@RequestParam("t_area") String t_area ) {
-    log.info(m_cd);
-    
-    log.info(t_name);
-    log.info(t_area);
-   
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-M-d"); 
     SimpleDateFormat dateFormat2 = new SimpleDateFormat("yyyy-MM-dd"); 
      
@@ -71,20 +69,48 @@ public class TicketController {
     catch (Exception e) {
         e.printStackTrace();
     }
-    log.info(afterDate);
     ReserveVO rvo = new ReserveVO();
     rvo.setT_name(t_name);
     rvo.setM_cd(m_cd);
     rvo.setStart_time(afterDate);
     List<ReserveVO> timeList = tservice.getDaySelect(rvo);
-    log.info(timeList);
     return timeList;
     
   }
   
   @GetMapping("/reserve.do")
-  public void reserve() {
+  public String reserve(ReserveInsertVO rvo, Model model) {
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-M-d"); 
+    SimpleDateFormat dateFormat2 = new SimpleDateFormat("yyyy-MM-dd"); 
+     
+    String beforeDate = rvo.getTkt_date();
+    String afterDate = "";
     
+    try {
+        Date date = dateFormat.parse(rvo.getTkt_date()); // 기존 string을 date 클래스로 변환
+        afterDate = dateFormat2.format(date); // 변환한 값의 format 변경
+    }
+    catch (Exception e) {
+        e.printStackTrace();
+    }
+    rvo.setTkt_date(afterDate);
+    tservice.reserve(rvo);
+    model.addAttribute("rsInfo",tservice.getReserveInfo(rvo));
+    return "/ticket/seat";
+  }
+  
+  @GetMapping("/movePayment.do")
+  public String movePayment(SelectSeatVO svo,Model model) {
+    log.info(svo);
+    
+    String str =  svo.getSeat_cd();
+    List<String> seatList = Arrays.asList(str.split(","));
+    
+    svo.setSeatList(seatList);
+    tservice.seatFix(svo);
+    model.addAttribute("tkInfo",tservice.getTkInfo(svo));
+    model.addAttribute("svoInfo",svo);
+    return "/ticket/payment";
   }
   
   @GetMapping("/seat.do")

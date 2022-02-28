@@ -24,7 +24,7 @@
 
 <select id="getTheaterSelect" resultType="com.theater.domain.ReserveVO"> <!--영화관 리스트 -->     
   SELECT
-        DISTINCT (T.T_AREA) AS T_AREA ,F.M_CD,T.T_NAME,T.T_CD
+    DISTINCT (T.T_AREA) AS T_AREA ,F.M_CD,T.T_NAME,T.T_CD
   FROM FILMS F, SCREENS S, THEATERS T,AREAINFO A
   WHERE F.SCREEN_CD = S.SCREEN_CD 
   AND S.T_CD = T.T_CD
@@ -35,7 +35,7 @@
 </select>
 <select id="getDaySelect" resultType="com.theater.domain.ReserveVO"> 
  SELECT
-    (t.t_seat/t.t_screen) AS t_seat, to_char(ft.start_time,'HH24:MI') AS start_time 
+    (T.T_SEAT/T.T_SCREEN) AS T_SEAT, TO_CHAR(ft.start_time,'HH24:MI') AS START_TIME, S_T_CD 
     FROM FILMS F, SCREENS S, THEATERS T, FILM_TIMETABLE FT
     WHERE S.SCREEN_CD =  F.SCREEN_CD 
     AND S.T_CD = T.T_CD
@@ -46,6 +46,43 @@
     AND TO_CHAR(FT.start_time,'yyyy-MM-dd') = #{start_time}
     AND F.FILM_STATUS = 1
 </select>
+
+<select id="getReserveInfo" resultType="com.theater.domain.ReserveInsertVO"> 
+ SELECT
+  DISTINCT (SELECT MAX(TKT_CD) FROM TICKETINGS WHERE tk.ID= #{id} ) AS TKT_CD
+  ,S_T_CD
+FROM TICKETINGS tk
+WHERE tk.ID= #{id}
+AND tk.S_T_CD =#{s_t_cd}
+</select>
+
+ <insert id="reserve">
+  <selectKey keyProperty="tkt_cd" order="BEFORE" resultType="int">
+        SELECT TKT_SEQ.NEXTVAL FROM DUAL
+      </selectKey>
+    INSERT INTO TICKETINGS (TKT_CD,ID,S_T_CD,M_CD,TKT_DATE,TKT_TIME) VALUES (#{tkt_cd}, #{id}, #{s_t_cd}, #{m_cd}, #{tkt_date}, #{tkt_time})
+  </insert> 
+  
+  <insert id="seatFix" parameterType="java.util.List">
+    <selectKey keyProperty="sold_cd" order="BEFORE"  resultType="int">
+      select sold_seq.nextval from dual
+    </selectKey>
+     insert into sold_seats(sold_cd, s_t_cd, tkt_cd,seat_price,seat_cd)
+      select sold_seq.nextval,A.* from( 
+    <foreach collection="seatList" item="item" index="index" separator="union all">
+    select
+      #{s_t_cd} as s_t_cd, #{tkt_cd} as tkt_cd, #{seat_price} as seat_price, #{item} as seat_cd
+      from dual
+    </foreach>) A
+  </insert>    
+  
+  <select id="getTkInfo" resultType="com.theater.domain.SelectSeatVO"> 
+  
+  SELECT * 
+  FROM TICKETINGS t, MOVIES m  
+  WHERE t.M_CD = m.M_CD  
+  AND tkt_cd =#{tkt_cd} 
+  </select>
 
 
 </mapper>

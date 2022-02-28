@@ -34,12 +34,12 @@
                                 <div class="col-lg-12 " style="padding-right: 5px;">
                                 <div class="float-lg-right" style="padding-bottom: 30px;">
                                   <select  name="searchType" class="select">
-                                    <option value=""<c:out value="${pageMaker.cri.searchType==null?'selected':''}"/>>선택</option>
-                                    <option value="title"<c:out value="${pageMaker.cri.searchType eq 'title'?'selected':''}"/>>제목</option>
-                                    <option value="intro"><c:out value="${pageMaker.cri.searchType eq 'intro'?'selected':''}"/>내용</option>
+                                    <option value=""<c:out value="${pageMaker.cri.searchType==null?'selected':''}"/>>選択</option>
+                                    <option value="title"<c:out value="${pageMaker.cri.searchType eq 'title'?'selected':''}"/>>題目</option>
+                                    <option value="intro"><c:out value="${pageMaker.cri.searchType eq 'intro'?'selected':''}"/>内容</option>
                                   </select>
                                   <label>
-                                    <input type="text" style="border:groove; border-radius: 4px;" class="event47" name="searchName" placeholder="검색어를 입력해 주세요">
+                                    <input type="text" style="border:groove; border-radius: 4px;" class="event47" name="searchName" placeholder="検索語 入力 ">
                                     <input type="hidden" name="pageNum" value="1">
                                     <input type="hidden" name="amount" value="9">
                                     <button type="submit" style="background:none; border:none;"><i class="icon_search"></i></button>
@@ -60,25 +60,25 @@
                                   </div>
                                     <div class="product__item__pic set-bg" >
                                         <c:if test="${mlist.rate==99 }">
-                                          <div class="t_ep0" style="position:absolute;">전체</div>
+                                          <div class="t_ep0" style="position:absolute;">PG</div>
                                         </c:if>
                                         <c:if test="${mlist.rate==12 }">
-                                          <div class="t_ep12" style="position:absolute;">12</div>
+                                          <div class="t_ep12" style="position:absolute;">PG12</div>
                                         </c:if>
                                         <c:if test="${mlist.rate==15 }">
-                                          <div class="t_ep15" style="position:absolute;">15</div>
+                                          <div class="t_ep15" style="position:absolute;">R15+</div>
                                         </c:if>
                                         <c:if test="${mlist.rate==19 }">
-                                          <div class="t_ep19" style="position:absolute;">19</div>
+                                          <div class="t_ep19" style="position:absolute;">R18+</div>
                                         </c:if>
-                                        <img style="height:100%; border-radius:4px" src="/upload/${mlist.poster}" alt="">
+                                       <a href="view.do?m_cd=${mlist.m_cd}"><img style="height:100%; border-radius:4px" src="/upload/${mlist.poster}" alt=""></a>
                                    </div>
                                    
                                     <div class="product__item__text" >
                                         <h5 ><a style="color:black;" href="view.do?m_cd=${mlist.m_cd}">${mlist.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
                                         <fmt:parseDate value="${mlist.rdate}" var="dateValue" pattern="yyyy-MM-dd"/>
-                                        <h5><fmt:formatDate value="${dateValue}" pattern="yyyy-MM-dd"/><strong>  개봉</strong></h5>
-                                        <button class="btn" style="background-image :linear-gradient(to left, rgb(255, 115, 86), rgb(251, 67, 87));  margin: 10px 0;"><span style="color:white; font-weight:600;">예매하기</span></button>
+                                        <h5><fmt:formatDate value="${dateValue}" pattern="yyyy-MM-dd"/><strong> 公開</strong></h5>
+                                        <button class="btn" style="background-image :linear-gradient(to left, rgb(255, 115, 86), rgb(251, 67, 87));  margin: 10px 0;"><span style="color:white; font-weight:600;">予約</span></button>
                                     </div>
                                 </div>
                             </div>
