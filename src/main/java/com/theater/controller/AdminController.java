@@ -38,6 +38,7 @@ import com.theater.service.MembersService;
 import com.theater.service.MovieService;
 import com.theater.service.NoticeService;
 import com.theater.service.TheaterService;
+import com.theater.service.TicketService;
 import com.theater.service.UtilityService;
 
 import lombok.AllArgsConstructor;
@@ -66,7 +67,8 @@ public class AdminController {
   @Setter(onMethod_=@Autowired )
   public MembersService MembersService;
 
-
+  @Setter(onMethod_=@Autowired )
+  public TicketService tkService;
 
   @GetMapping("/admin")
   public void admin() {
@@ -287,9 +289,13 @@ public class AdminController {
   
   /* Ticketing */
   @GetMapping("/adminTicketing.do")
-  public String adminTicketing() {
+  public String adminTicketing(Model model) {
+    model.addAttribute("ticket",tkService.getTkList());
+    
     return "/adm/adminTicket/adminTicket";
   }
+  
+  
 
 
   /*adminBoard*/

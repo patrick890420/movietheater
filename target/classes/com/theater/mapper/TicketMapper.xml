@@ -76,13 +76,18 @@ AND tk.S_T_CD =#{s_t_cd}
     </foreach>) A
   </insert>    
   
-  <select id="getTkInfo" resultType="com.theater.domain.SelectSeatVO"> 
+<select id="getTkInfo" resultType="com.theater.domain.SelectSeatVO"> 
   
   SELECT * 
   FROM TICKETINGS t, MOVIES m  
   WHERE t.M_CD = m.M_CD  
   AND tkt_cd =#{tkt_cd} 
-  </select>
+</select>
 
+<select id="getTkList" resultType="com.theater.domain.TicketListVO"> 
+  SELECT * 
+  FROM TICKETINGS t, MOVIES m  
+  WHERE t.M_CD = m.M_CD
+</select>
 
 </mapper>
