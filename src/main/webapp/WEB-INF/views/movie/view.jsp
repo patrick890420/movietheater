@@ -167,7 +167,7 @@
     <c:set var="a" value="${a}"/>
     <c:set var="b" value="${b}"/>
     <c:set var="c" value="${c}"/>
-	 
+   
    <c:forEach varStatus="i" begin="0" end="${a}" step="1">
      $('#star${i.current}').prop('checked', true);
        <c:if test="${i.last && c ne 0}" >
@@ -177,12 +177,29 @@
  });
 </script> 
 <script type="text/javascript">
+            var jsonData =${json}
+            var jsonObject=JSON.stringify(jsonData);
+            var jData = JSON.parse(jsonObject);
+            
+            var valueList=new Array();
+            
+            for(var i=0; i<jData.length; i++) {
+            	var d = jData[i];
+            	valueList.push(d.id);
+            	valueList.push(d.m_cd);
+            	valueList.push(d.t_cd);
+            	valueList.push(d.t_m_cd);
+            	valueList.push(d.gender);
+            	valueList.push(d.birth);
+            	valueList.push(d.userid);
+            }
+            
             var context = document
                 .getElementById('ChartBar')
                 .getContext('2d');
             var myChart = new Chart(context, {
                 type: 'bar', // 차트의 형태
-                data: { // 차트에 들어갈 데이터
+                data: valueList { // 차트에 들어갈 데이터
                     labels: [
                         //x 축
                         '10대','20대','30대','40대','50대','60대 이상'
@@ -192,7 +209,7 @@
                             label: 'age', //차트 제목
                             fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
                             data: [
-                                21,19,25,20,23,26,25 //x축 label에 대응되는 데이터 값
+                                valueList //x축 label에 대응되는 데이터 값
                             ],
                             backgroundColor: [
                                 //색상

@@ -1,5 +1,8 @@
 package com.theater.controller;
 
+import java.util.Iterator;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,8 +11,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.theater.domain.CmtAVG;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.theater.domain.Criteria;
+import com.theater.domain.MovieChartVO;
 import com.theater.domain.PageVO;
 import com.theater.domain.ReviewVO;
 import com.theater.service.MovieService;
@@ -41,6 +47,37 @@ public class MoiveController {
     model.addAttribute("b",b);
     model.addAttribute("c",c);
     
+    List<MovieChartVO> chart = movieService.movieChart(m_cd);
+    
+    Gson gson = new Gson();
+    JsonArray jArray = new JsonArray();
+    
+    Iterator<MovieChartVO> it = chart.iterator();
+    
+    while(it.hasNext()) {
+      MovieChartVO chartVO = it.next();
+      JsonObject object = new JsonObject();
+      
+      String id = chartVO.getId();
+      m_cd = chartVO.getM_cd();
+      int t_cd = chartVO.getT_cd();
+      int t_m_cd = chartVO.getT_m_cd();
+      String gender = chartVO.getGender();
+      String birth = chartVO.getBirth();
+      String userid = chartVO.getUserid();
+      
+      object.addProperty("id", id);
+      object.addProperty("m_cd", m_cd);
+      object.addProperty("t_cd" , t_cd);
+      object.addProperty("t_m_cd", t_m_cd);
+      object.addProperty("gender", gender);
+      object.addProperty("userid", userid);
+      object.addProperty("birth", birth);
+      jArray.add(object);
+    }
+    String json = gson.toJson(jArray);
+    model.addAttribute("json",json);
+    
 	}//view.do
 	
 	
@@ -69,4 +106,6 @@ public class MoiveController {
 	  
 	  return "redirect:/movie/view.do";
 	}
+	
+	
 }//moive controller
