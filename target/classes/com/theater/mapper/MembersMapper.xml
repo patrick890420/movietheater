@@ -57,4 +57,8 @@ AND t.id = #{id}
 ORDER BY t.tkt_cd desc
 </select>
 
+<select id="memberSelect" resultType="com.theater.domain.MemberVO"> <!-- 위에 멤버 조회 있는데 굳이..? 만들어야 할가,,? 타입이,, 달라서,,?-->
+select * from members
+</select>
+
 </mapper>

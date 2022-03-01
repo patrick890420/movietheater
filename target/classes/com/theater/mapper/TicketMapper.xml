@@ -57,10 +57,10 @@ AND tk.S_T_CD =#{s_t_cd}
 </select>
 
  <insert id="reserve">
-  <selectKey keyProperty="tkt_cd" order="BEFORE" resultType="int">
-        SELECT TKT_SEQ.NEXTVAL FROM DUAL
-      </selectKey>
-    INSERT INTO TICKETINGS (TKT_CD,ID,S_T_CD,M_CD,TKT_DATE,TKT_TIME) VALUES (#{tkt_cd}, #{id}, #{s_t_cd}, #{m_cd}, #{tkt_date}, #{tkt_time})
+   <selectKey keyProperty="tkt_cd" order="BEFORE" resultType="int">
+     SELECT TKT_SEQ.NEXTVAL FROM DUAL
+   </selectKey>
+     INSERT INTO TICKETINGS (TKT_CD,ID,S_T_CD,M_CD,TKT_DATE,TKT_TIME) VALUES (#{tkt_cd}, #{id}, #{s_t_cd}, #{m_cd}, #{tkt_date}, #{tkt_time})
   </insert> 
   
   <insert id="seatFix" parameterType="java.util.List">
@@ -76,13 +76,18 @@ AND tk.S_T_CD =#{s_t_cd}
     </foreach>) A
   </insert>    
   
-  <select id="getTkInfo" resultType="com.theater.domain.SelectSeatVO"> 
+<select id="getTkInfo" resultType="com.theater.domain.SelectSeatVO"> 
   
   SELECT * 
   FROM TICKETINGS t, MOVIES m  
   WHERE t.M_CD = m.M_CD  
   AND tkt_cd =#{tkt_cd} 
-  </select>
+</select>
 
+<select id="getTkList" resultType="com.theater.domain.TicketListVO"> 
+  SELECT * 
+  FROM TICKETINGS t, MOVIES m  
+  WHERE t.M_CD = m.M_CD
+</select>
 
 </mapper>

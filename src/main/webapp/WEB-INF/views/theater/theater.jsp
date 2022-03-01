@@ -28,15 +28,7 @@
             <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
               <a href="javascript:void(0)" onclick="citycheck(7);">${aList[6].area_name}</a>
             </li>
-            <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-              <a href="javascript:void(0)" onclick="citycheck(8);">${aList[7].area_name}</a>
-            </li>
-            <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-              <a href="javascript:void(0)" onclick="citycheck(9);">${aList[8].area_name}</a>
-            </li>
-            <li role="presentation" class="col-lg-1 col-md-1 col-sm-1">
-              <a href="javascript:void(0)" onclick="citycheck(10);">${aList[9].area_name}</a>
-            </li>
+            
           </ul>
           <div class="tab-content" >
             <div role="tabpanel" class="tab-pane active" id="home">
@@ -81,8 +73,8 @@
                       <h2>${thinfo.t_name}</h2>
                     </div>
                     <div class="t_infotext">
-                      <strong> 총 상영관 수 <span>&ensp;${thinfo.t_screen}개관</span></strong>
-                      <strong class="t_sit"> 총 좌석수 <span>&ensp;${thinfo.t_seat}석</span></strong>
+                      <strong> ・ 上映館数 <span>${thinfo.t_screen} 館</span></strong>
+                      <strong class="t_sit">・ 座席数 <span>${thinfo.t_seat} 席</span></strong>
                     </div>
                     <div class="t_infotext">
                       <strong > ${thinfo.t_address}</strong>
@@ -96,21 +88,21 @@
     <!-- Button trigger modal -->
             <button type="button" class="btn t_modaliconstart" id="modal_show">
             <img src="/resources/img/theater/theatericon1.png" alt="대중교통 안내" class="t_iconimg">
-                <span class="t_modal_name">대중교통 안내</span>
+                <span class="t_modal_name">公共交通機関</span>
             </button>
     <!-- Modal1 -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title t_modaltitle" id="exampleModalLabel">대중교통 안내</h5>
+                    <h5 class="modal-title t_modaltitle" id="exampleModalLabel">公共交通機関</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                     <div class="modal-body">
                       <img src="/resources/img/theater/theatericon5.png" alt="대중교통 안내" class="t_iconimg">
-                      <span class="t_modaltextname">지하철로 오시는 길</span>
+                      <span class="t_modaltextname">電車をご利用の方</span>
                       <ul class="t_modallisttext">
                         <li>
                           <span>
@@ -137,7 +129,7 @@
                         </li>
                       </ul>
                       <img src="/resources/img/theater/theatericon4.png" alt="대중교통 안내" class="t_iconimg">
-                      <span class="t_modaltextname">버스로 오시는 길</span>
+                      <span class="t_modaltextname">バスをご利用の方</span>
                       <ul class="t_modallisttext">
                         <li>
                           <span>
@@ -151,21 +143,21 @@
                 </div>
                 <button type="button" class="btn" id="modal_show2">
                   <img src="/resources/img/theater/theatericon2.png" alt="자가용/주차 안내" class="t_iconimg">
-                  <span class="t_modal_name">자가용/주차 안내</span>
+                  <span class="t_modal_name">車をご利用の方</span>
                 </button>
                  <!-- Modal2 -->
                 <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title t_modaltitle2" id="exampleModalLabel">자가용/주차 안내</h5>
+                        <h5 class="modal-title t_modaltitle2" id="exampleModalLabel">車をご利用の方</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
                       <div class="modal-body">
                         <img src="/resources/img/theater/theatericon6.png" alt="자가용" class="t_iconimg">
-                        <span class="t_modaltextname">자가용으로 오시는 길</span>
+                        <span class="t_modaltextname">車をご利用の方</span>
                         <ul class="t_modallisttext">
                           <li>
                             <span>
@@ -183,7 +175,7 @@
                           </li>
                         </ul>
                         <img src="/resources/img/theater/theatericon7.png" alt="주차요금" class="t_iconimg">
-                        <span class="t_modaltextname">주차요금 안내</span>
+                        <span class="t_modaltextname">駐車場案内</span>
                         <ul class="t_modallisttext">
                           <li>
                             <span>
@@ -213,7 +205,7 @@
               </div>
               <button type="button" class="btn btn-default btn-sm map" id="modal_show3">
                 <img src="/resources/img/theater/theatericon3.png" alt="지도보기" class="t_iconimg">
-                <span class="t_modal_name">지도보기</span>
+                <span class="t_modal_name">劇場を探す</span>
               </button>
               <!-- Modal3 -->
               <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -247,12 +239,12 @@
               <div class="col-lg-3 col-md-3 col-sm-3 t_reco t_recoradi4">
                 <c:forEach items="${thinfo}" var="thinfo">
                   <div class="t_recotitle">
-                    <strong>${thinfo.t_name}</strong>에서<br><span>나일강의 죽음</span><br>  어떠세요?
+                    <strong>${thinfo.t_name}</strong>で<br><span>『ナイル殺人事件』</span><br>  どうですか？
                     
                   </div>
                   <div class="t_recoline"></div>
                   <div class="">
-                    <span>나일강의 죽음</span><br>예매율 25.9%
+                    <span style="font-weight:600;">ナイル殺人事件</span><br>前売り率   25.9%
                   </div>
                   <div class="t_icon2">
                     <a href=""><span class="icon_link_alt thicon_clip"></span></a>
@@ -362,10 +354,10 @@
             <div class="col-lg-12">
              <ul class="nav nav-tabs t_tablist" role="tablist" id="myTab">
               <li role="presentation" class="active col-lg-6 col-md-6 col-sm-6">
-                <a href="#date" aria-controls="date" role="tab" data-toggle="tab">상영시간표</a>
+                <a href="#date" aria-controls="date" role="tab" data-toggle="tab">上映スケジュール</a>
               </li>
               <li role="presentation" class="col-lg-6 col-md-6 col-sm-6 t_tableftline">
-                <a href="#charge" aria-controls="charge" role="tab" data-toggle="tab">요금안내</a>
+                <a href="#charge" aria-controls="charge" role="tab" data-toggle="tab">料金・割引サービス表</a>
               </li>
             </ul>
         <div class="tab-content">
@@ -383,6 +375,57 @@
               <span>주말(금~일)</span>
             </div>
           </div>
+          <div class="row t_chargetext">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <span>一般</span>
+              <strong><span>¥1,600</span></strong>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <span>一般</span>
+              <strong><span>¥1,900</span></strong>
+            </div>
+          </div>
+          <div class="row t_chargetext">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <span>大学生</span>
+              <strong><span>¥1,400</span></strong>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <span>大学生</span>
+              <strong><span>¥1,700</span></strong>
+            </div>
+          </div>
+          <div class="row t_chargetext">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <span>高校生</span>
+              <strong><span>¥1,200</span></strong>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <span>高校生</span>
+              <strong><span>¥1,500</span></strong>
+            </div>
+          </div>
+          <div class="row t_chargetext">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <span>中 / 小学生</span>
+              <strong><span>¥1,000</span></strong>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <span>中 / 小学生</span>
+              <strong><span>¥800</span></strong>
+            </div>
+          </div>
+          <div class="row t_chargetext">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <span>幼児（3才～）</span>
+              <strong><span>¥1,000</span></strong>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <span>幼児（3才～）</span>
+              <strong><span>¥800</span></strong>
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>
@@ -399,50 +442,54 @@
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 t_age">
               <div class="t_agelist">
-                <div class="t_ep0">전체</div>
-                  <strong>전체관람가</strong>
+                <div class="t_ep0">G</div>
+                  <strong>すべての観客</strong>
                 </div>
                 <div class="t_agelist">
-                  <div class="t_ep12">12</div>
-                  <strong>12세 관람가</strong>
+                  <div class="t_ep12">PG12</div>
+                  <strong>12歳以上</strong>
                 </div>
                 <div class="t_agelist">
-                  <div class="t_ep15">15</div>
-                    <strong>15세 관람가</strong>
+                  <div class="t_ep15">R15+</div>
+                    <strong>15歳以上</strong>
                   </div>
                 <div class="t_agelist">
-                  <div class="t_ep19">청불</div>
-                    <strong>청소년 관람불가</strong>
+                  <div class="t_ep19">R18+</div>
+                    <strong>18歳以上</strong>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="t_filminfo">
-                  <div>
-                    <div class="t_ep12">12</div>
-                      <span class="t_filmtitle">해적-도깨비 깃발</span>
-                      <p style="margin: 30px 0 15px 30px;">▶2D 3관  8층[삼화페인트 안심닥터관]총 172석</p>
-                      <ul style="margin-left: 30px;">
-                        <li class="t_filmtime">
-                          <strong>
-                            <a href="">7:30<br> <span
-                                style="font-size: 11px;">150석</span>
-                            </a>
-                          </strong>
-                        </li>
-                      </ul>
-                      <p style="margin: 30px 0 15px 30px;">▶2D 3관  8층[삼화페인트 안심닥터관]총 172석</p>
-                      <ul style="margin-left: 30px;">
-                        <li class="t_filmtime">
-                          <strong>
-                            <a href="">7:30<br> 
-                            <span style="font-size: 11px;">150석</span>
-                            </a>
-                         </strong>
-                       </li>
-                     </ul>
-                   </div>
+                  <div class="reserve-time-wrapper2" id="reserve-time-wrapper2">
+                    
+                    <div>
+                      <div class="t_ep12">PG12</div>
+                        <span class="t_filmtitle">해적-도깨비 깃발</span>
+                        <p class="t_sch_text">▶2D 3관  8층[삼화페인트 안심닥터관]총 172席</p>
+                        <ul class="t_sch_time">
+                          <li class="t_filmtime">
+                            <strong>
+                              <a href="">7:30<br> <span
+                                  style="font-size: 11px;">150席</span>
+                              </a>
+                            </strong>
+                          </li>
+                        </ul>
+                        <p style="margin: 30px 0 15px 30px;">▶2D 3관  8층[삼화페인트 안심닥터관]총 172席</p>
+                        <ul style="margin-left: 30px;">
+                          <li class="t_filmtime">
+                            <strong>
+                              <a href="">7:30<br> 
+                              <span class="t_sch_seat">150席</span>
+                              </a>
+                           </strong>
+                         </li>
+                       </ul>
+                     </div>
+                    </div>
+                    
                  </div>
                </div>
              </div>

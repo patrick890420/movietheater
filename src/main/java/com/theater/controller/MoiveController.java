@@ -10,10 +10,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.theater.domain.CmtAVG;
 import com.theater.domain.Criteria;
 import com.theater.domain.MovieChartVO;
 import com.theater.domain.PageVO;
@@ -23,10 +25,11 @@ import com.theater.service.MovieService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 
-@Controller
+
 @RequestMapping("/movie/*")
 @AllArgsConstructor
 @Log4j
+@Controller
 public class MoiveController {
 	private MovieService movieService;
   
@@ -107,5 +110,6 @@ public class MoiveController {
 	  return "redirect:/movie/view.do";
 	}
 	
-	
+ 
+
 }//moive controller

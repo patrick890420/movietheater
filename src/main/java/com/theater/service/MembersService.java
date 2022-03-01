@@ -19,18 +19,17 @@ public interface MembersService {
 	 
 //	 public String pwChk(String userpw); // 비밀번호 체크
 	 
-	 public MemberVO selectPw(String userid); //흠.. 비번 조회도 필요할 것 같아서...?
+	 //비밀번호 조회
+	 public MemberVO selectPw(String userid);
 	 
-	 public void mypasspro(MemberVO mvo); //비밀번호 수정 처리 해 주는 친구
+	 //비밀번호 수정 처리
+	 public void mypasspro(MemberVO mvo);
 	 
-	 //나의 예매 내역 조회....
+	 //나의 예매 내역 조회
+	 public List<ReListVO> getRelist(String id); 
 	  
-	  public List<ReListVO> getRelist(String id); //리스트로 담아야 하는 것 아닌지? 
+	 //admin 멤버 조회
+	 public List<MemberVO> memberSelect();
 
-
-	 
-
-  
-	 
 
 }//class
