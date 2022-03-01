@@ -1,6 +1,5 @@
 
 const date1 = new Date();
-console.log(date1.getFullYear());
 const lastDay1 = new Date(date1.getFullYear(), date1.getMonth() + 1, 0);
 const reserveDate1 = document.querySelector('.t_date2');
 const theaterPlace1 = document.querySelectorAll('.theater-place');

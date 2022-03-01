@@ -12,7 +12,7 @@ public interface NoticeMapper {
   public void noticeInsert(NoticeVO nvo);
   public NoticeVO getAdminBoardView(int nt_cd);
   public void modify(NoticeVO notice);
-  public int delete(int nt_cd);
+  public int NoticeDelete(int nt_cd);
 
 //admin
   public List<NoticeVO>getNoticeList(Criteria cri);
@@ -24,5 +24,8 @@ public interface NoticeMapper {
   public int getTotal(Criteria cri);
   public NoticeVO nextPage(int nt_cd);
   public NoticeVO prevPage(int nt_cd);
+
+//Index
+  public List<NoticeVO>getNoticeIndex();
 
 }//class

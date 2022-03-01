@@ -63,19 +63,20 @@
                 </div>
                 <!-- 차트 -->
               <div class="row">
-                <div class="col-md-12 col-lg-12">
-                <ul>
-                <li>
-                  <div class="col-md-4 col-lg-4">
-                    <canvas id="ChartBar"></canvas>
+                <div class="col-md-6 col-lg-6">
+                <div class="section-title">
+                  <h5>統計</h5>
+                </div>
+                  <div class="col-md-10 col-lg-10">
+                    <canvas id="ChartBar" height="159" width="380"></canvas>
                   </div>
-                </li>
-                <li>
-                  <div class="col-md-4 col-lg-4">
-                    <canvas id="ChartCircle"></canvas>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                  <div class="section-title">
                   </div>
-                </li>
-                 </ul>
+                  <div class="col-md-10 col-lg-10">
+                    <canvas id="doughnutchart" height="159" width="380"></canvas>
+                  </div>
                 </div>
               </div>
                 <!-- 차트 종료 -->
@@ -240,10 +241,10 @@
         </script>
         <script type="text/javascript">
             var context = document
-                .getElementById('ChartCircle')
+                .getElementById('doughnutchart')
                 .getContext('2d');
             var myChart = new Chart(context, {
-                type: 'pie', // 차트의 형태
+                type: 'doughnut', // 차트의 형태
                 data: { // 차트에 들어갈 데이터
                     labels: [
                         //x 축

@@ -158,6 +158,31 @@
             </div>
             <div class="row">
               <div class="col-lg-3 col-md-6 col-sm-6">
+                <c:forEach var="elist" items="${elist}">
+                <div class="product__item">
+                  <div class="product__item__pic set-bg"
+                    data-setbg="/resources/img/trending/event3.jpg" style="height:300px;">
+                    <div class="ep">18 / 18</div>
+                    <div class="comment">
+                      <i class="fa fa-comments"></i> 11
+                    </div>
+                    <div class="view">
+                      <i class="fa fa-eye"></i>${elist.hits}
+                    </div>
+                  </div>
+                  <div class="product__item__text">
+                  <strong><a href="eventView.do?event_cd=${elist.event_cd}">${elist.title}</a></strong>
+                    <h5>
+                      <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${elist.wdate}"/>
+                      <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>
+                    </h5>
+                  </div>
+                </div>
+                </c:forEach>
+              </div>
+              
+              
+              <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="product__item">
                   <div class="product__item__pic set-bg"
                     data-setbg="/resources/img/trending/event1.jpg" style="height:300px;">
@@ -181,26 +206,6 @@
                 <div class="product__item">
                   <div class="product__item__pic set-bg"
                     data-setbg="/resources/img/trending/event2.jpg" style="height:300px;">
-                    <div class="ep">18 / 18</div>
-                    <div class="comment">
-                      <i class="fa fa-comments"></i> 11
-                    </div>
-                    <div class="view">
-                      <i class="fa fa-eye"></i> 9141
-                    </div>
-                  </div>
-                  <div class="product__item__text">
-                  <strong>[킹메이커]CGV필름마크</strong>
-                    <h5>
-                      <a class="dateblack" href="#">2022.01.19~2022.02.27</a>
-                    </h5>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="product__item">
-                  <div class="product__item__pic set-bg"
-                    data-setbg="/resources/img/trending/event3.jpg" style="height:300px;">
                     <div class="ep">18 / 18</div>
                     <div class="comment">
                       <i class="fa fa-comments"></i> 11
@@ -363,7 +368,7 @@
                   <div class="row">
                      <div class="col-lg-2 col-md-8 col-sm-8">
                         <div class="section-title">
-                           <h4>공지사항</h4>
+                           <h4>お知らせ</h4><!-- 공지 -->
                         </div>
                      </div>
               <div class="col-lg-7 col-md-8 col-sm-8">
@@ -405,9 +410,23 @@
                   <div class="index_notice_tag">
                     <a class="dateblack" href="">대관/단체 문의</a>
                   </div>
-                </div>
-                     </div>
-                  </div>
+                </div><!-- style -->
+                
+                <div style="padding-top:20px;">
+                  <c:forEach var="nlist" items="${nlist}">
+                    <tr>
+                      <td><a href="noticeView.do?nt_cd=${nlist.nt_cd}">${nlist.title}</a></td>
+                      <td>
+                        <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${nlist.wdate}"/>
+                        <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>
+                      </td>
+                    </tr><br>
+                 </c:forEach>
+                 
+                </div><!-- style  -->
+                
+                     </div><!-- 12 -->
+                  </div><!-- row -->
             
                </div>
             </div>

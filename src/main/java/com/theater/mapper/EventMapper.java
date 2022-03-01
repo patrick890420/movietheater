@@ -17,7 +17,7 @@ public interface EventMapper {
   public List<EventVO>getEventList(Criteria cri);
   public List<EventVO>getEventList();
   public int modify(EventVO evo);
-  public int delete(int event_cd);
+  public int EventDelete(int event_cd);
 
 //User
   public void getViewCount(int event_cd);
@@ -25,4 +25,7 @@ public interface EventMapper {
   public EventVO nextPage(int event_cd);
   public EventVO prevPage(int event_cd);
 
+//index
+  public List<EventVO>getEventIndex();
+  
 }//inter

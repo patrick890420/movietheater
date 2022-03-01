@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.theater.domain.Criteria;
+import com.theater.service.EventService;
 import com.theater.service.MovieService;
+import com.theater.service.NoticeService;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -33,12 +35,20 @@ public class HomeController {
 	@Setter(onMethod_= @Autowired)
 	private MovieService movieService;
 	
+	@Setter(onMethod_= @Autowired)
+	private EventService eService;
+	
+	@Setter(onMethod_= @Autowired)
+  private NoticeService nService;
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 	  
 	  model.addAttribute("mlist1", movieService.movieSelect1to5());
 	  model.addAttribute("mlist2", movieService.movieSelect6to10());
 	  model.addAttribute("mlist3", movieService.movieSelect11to15());
+	  model.addAttribute("elist", eService.getEventIndex());
+	  model.addAttribute("nlist",nService.getNoticeIndex());
 	  
 	  return "index";
 	}
