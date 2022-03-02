@@ -53,7 +53,7 @@ FROM movies m, ticketings t, sold_seats s
 
 WHERE m.m_cd = t.m_cd
 AND t.tkt_cd = s.tkt_cd
-AND t.id = #{id} 
+AND t.id = #{id}
 ORDER BY t.tkt_cd desc
 </select>
 

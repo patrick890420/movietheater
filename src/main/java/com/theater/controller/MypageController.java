@@ -67,23 +67,18 @@ private PasswordEncoder pwEncoder;
     //RedirectAttributes 폼 형식의 문서를 작성 후, 서버로 보내면(POST 방식) 곧이어 다른 페이지로 리다이렉트 한다.
     //문제는 이러한 리다이렉트 방식이 GET 방식​ 이라 데이터 전송에는 적절하지 않다
     
-    String userid = principal.getName();
+    String userid = principal.getName(); // 현재 로그인한 유저 
+    String PassInDB = mservice.selectPw(userid); // DB에서 암호화된 비밀번호 가져오기 
     
-    String prePass = pwEncoder.encode(prePw);
-
-    String newPass = pwEncoder.encode(newPw); /* 암호화 */
-    
-    String PassInDB = mservice.selectPw(userid);
-    
-    log.info("현재 계정 : "  + userid);
-    log.info("DB비밀번호 : " + PassInDB);
-    log.info("기존 비밀번호  : " + prePass);
-    log.info("바꿀 비밀번호 : " + newPw + "\n암호화된 비번 : "+ newPass);
-    if ( prePass.equals(PassInDB)) {
+    // pwEncoder.matches(바꿀 비밀번호, 암호화된 비밀번호) 비교하여서 같으면 true, 다르면 false 
+    // 스프링 패스워드 인코더는 암호화할때마다 중간에 무작위값을 같이 암호화해서 매번 결과값이 다름!
+    // 즉 일반적인 비교연산(equals)로는 비교 불가능 / 반드시 (matches)를 사용할 것 
+    if ( pwEncoder.matches(prePw, PassInDB)) {
       MemberVO mvo = new MemberVO();
       mvo.setUserid(userid);
-      mvo.setUserpw(newPass);
+      mvo.setUserpw(pwEncoder.encode(newPw));
       mservice.mypasspro(mvo);
+      // 수구링 
       
       log.info("데이터 입력 완료 : " + mvo);
     } else {
