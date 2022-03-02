@@ -183,12 +183,12 @@
         return false;
       }
       if ($("#userPass2").val() == "") {
-        alert("パスワード確認入力）を入力してください。.");
+        alert("パスワード(確認入力）を入力してください。.");
         $("#userPass2").focus();
         return false;
       }
       if ($("#userPass").val() != $("#userPass2").val()) {
-        alert("パスワードが違います。");
+        alert("パスワードが一致しません。");
         //document.form.userPass2.value = "";
         // document.form.userPass2.focus();
         return false;

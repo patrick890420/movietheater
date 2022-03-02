@@ -104,6 +104,7 @@
                     <th>gender</th>
                     <th>phone</th>
                     <th>email</th>
+                    <th>회원 관리</th>
                   </tr> 
                 </thead>
                 <tbody>
@@ -116,6 +117,8 @@
                     <td>${memlist.gender}</td>
                     <td>${memlist.phone}</td>
                     <td>${memlist.email}</td>
+                    <td><a class='btn-fill' onclick="if( confirm('정말 삭제하시겠습니까?') ){ 
+                    href='adminDelete.do?userid=${memlist.userid }' }">삭제</a></td> 
                   </tr>
                   </c:forEach>
                 </tbody>
@@ -133,3 +136,18 @@
   <!-- End Container fluid  -->
   <!-- ============================================================== -->
   <%@ include file="../adminfooter.jsp"%>
+  
+  <script>
+  
+//   $(document).ready(function() {
+//     $("#memdel").on("click", function() {
+//       if (confirm('정말 삭제하시겠습니까?') == true) {
+//         document.form.submit();
+//     }else {
+//       return;
+//       }
+//     }
+
+  
+  
+  </script>

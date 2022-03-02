@@ -32,11 +32,11 @@ public class LoginController {
   @Setter(onMethod_ = @Autowired) /* pw암호화 해주는것 */
   private PasswordEncoder pwEncoder;
 
-	
-	@GetMapping("/login.do")
-	public void login() {
-		
-	}
+  
+  @GetMapping("/login.do")
+  public void login() {
+    
+  }
 
   @PostMapping("/loginPro.do") 
   public String memberLogin(MemberVO mvo, RedirectAttributes rdat) {
@@ -52,5 +52,5 @@ public class LoginController {
   }
 
 
-	
+  
 }

@@ -61,4 +61,8 @@ ORDER BY t.tkt_cd desc
 select * from members
 </select>
 
+ <delete id="adminDelete">
+  delete from members where userid=#{userid}
+ </delete>
+
 </mapper>
