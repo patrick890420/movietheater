@@ -27,4 +27,5 @@ public interface TheaterMapper {
   public List<TheatersVO> getScreenInfo(TheatersVO tvo);
   
   public void scheduleInsert(ScheduleVO scdvo);
+  public void scheduleCreate(ScheduleVO scdvo);
 }

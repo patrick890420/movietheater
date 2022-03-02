@@ -43,11 +43,11 @@
                 <tbody>
                   <c:forEach items="${t_slist}" var="t_slist" >
                   <tr>
-                    <td><a href="adminSchedule.do">${t_slist.screen_cd}</a></td>
+                    <td>${t_slist.screen_cd}</td>
                     <td>${t_slist.screen_type}</td>
                     <td>${t_slist.screen_name}</td>
                     <td>${t_slist.seat_amount}</td>
-                    <td><a class="btn btn-primary" href="adminSchedule.do">Schedule</a></td>
+                    <td><a class="btn btn-primary" href="adminSchedule.do?screen_cd=${t_slist.screen_cd}">Schedule</a></td>
                   </tr>
                   </c:forEach>
                 </tbody>

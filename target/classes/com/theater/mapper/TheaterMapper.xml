@@ -91,12 +91,12 @@
   <selectKey keyProperty="film_cd" order="BEFORE" resultType="int">
     select film_cd_seq.nextval from dual
   </selectKey>
-  insert into films (film_cd, m_cd, screen_cd, film_status) values (#{film_cd}, 0, #{screen_cd}, 0)
+  insert into films (film_cd, m_cd, screen_cd, film_status) values (#{film_cd}, #{m_cd}, #{screen_cd}, 1)
 </insert>
 <insert id="scheduleInsert">
   <selectKey keyProperty="s_t_cd" order="BEFORE" resultType="int">
     select s_t_cd_seq.nextval from dual
   </selectKey>
-  insert into theaters (t_cd, t_area, t_name, t_address, t_screen, t_seat) values (#{t_cd}, #{t_area}, #{t_name}, #{t_address}, #{t_screen},#{t_seat})
+  insert into film_timetable (s_t_cd, film_cd, start_time) values (#{s_t_cd}, #{film_cd}, #{start_time})
 </insert>
 </mapper>

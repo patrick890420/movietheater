@@ -70,7 +70,7 @@
             </div>
             <div class="input__item">
               <input type="text" placeholder="生年月日 例)1995-05-05"
-                id="birth" name="birth" maxlength="8"> <span
+                id="birth" name="birth"> <span
                 class="icon_calendar"></span>
             </div>
 
@@ -78,9 +78,9 @@
               style="background-color: white; border: solid #b7b7b7;">
               <span class="icon_heart_alt"></span>
               <div class="genderchoice">
-                <input type="radio" value="2" class="gender"
+                <input type="radio" value="女性" class="gender"
                   name="gender"> woman <input type="radio"
-                  value="1" class="gender" name="gender"> man
+                  value="男性" class="gender" name="gender"> man
               </div>
             </div>
             <!--          <ul class="join_box">

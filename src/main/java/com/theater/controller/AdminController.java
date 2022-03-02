@@ -289,16 +289,24 @@ public class AdminController {
     }
   
   @GetMapping("/adminSchedule.do") 
-  public String  admintheatherSchedule(Model model) {
+  public String  admintheatherSchedule(Model model,@RequestParam("screen_cd") int screen_cd) {
     model.addAttribute("mlist",TheaterService.adminScheduleSelect());
+    model.addAttribute("screen_cd",screen_cd);
     return "adm/adminTheater/adminSchedule";
   }
   
   @PostMapping("/adminScheduleInsertPro.do")
   public String adminScheduleInsertPro(ScheduleVO scdvo) {
+    
     TheaterService.scheduleInsert(scdvo);
     
     return "redirect:/adm/adminTheaterInsert.do";
+    }
+  
+  @PostMapping("/adminScheduleCreatePro.do")
+  public void adminScheduleCreate(ScheduleVO scdvo) {
+    TheaterService.scheduleCreate(scdvo);
+    
     }
   
   /* Ticketing */
