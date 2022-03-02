@@ -106,4 +106,9 @@ public class TheaterServiceImpl implements TheaterService {
 
     return thmapper.getScreenInfo(tvo);
   }
+  @Override
+  public void scheduleInsert(ScheduleVO scdvo) {
+    thmapper.scheduleInsert(scdvo);
+    
+  }
 }
