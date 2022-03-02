@@ -111,9 +111,4 @@ public class TheaterServiceImpl implements TheaterService {
     thmapper.scheduleInsert(scdvo);
     
   }
-  @Override
-  public void scheduleCreate(ScheduleVO scdvo) {
-    thmapper.scheduleCreate(scdvo);
-    
-  }
 }
