@@ -70,7 +70,7 @@
             </div>
             <div class="input__item">
               <input type="text" placeholder="生年月日 例)1995-05-05"
-                id="birth" name="birth" maxlength="8"> <span
+                id="birth" name="birth"> <span
                 class="icon_calendar"></span>
             </div>
 
