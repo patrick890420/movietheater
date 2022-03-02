@@ -24,7 +24,7 @@ public interface MembersMapper {
   //비밀번호 수정
   public void mypasspro(MemberVO mvo);
   
-  public MemberVO selectPw(String userid);
+  public String selectPw(String userid);
   
   //나의 예매 내역 조회....
   
@@ -32,6 +32,9 @@ public interface MembersMapper {
   
   //admin 멤버 조회
  public List<MemberVO> memberSelect();
+ 
+ //강제 탈퇴
+ public void adminDelete(String userid);
 
 
 }//class

@@ -97,25 +97,26 @@
                 style="width: 100%">
                 <thead>
                   <tr>
-                    <th>userId</th>
-                    <th>userPw</th>
-                    <th>userName</th>
-                    <th>birth</th>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Birthday</th>
                     <th>gender</th>
-                    <th>phone</th>
-                    <th>email</th>
+                    <th>Phone number</th>
+                    <th>Email address</th>
+                    <th>member control</th>
                   </tr> 
                 </thead>
                 <tbody>
                 <c:forEach items="${memlist}" var="memlist">
                   <tr>
                     <td>${memlist.userid}</td>
-                    <td>${memlist.userpw}</td>
                     <td>${memlist.username}</td>
                     <td>${memlist.birth}</td>
                     <td>${memlist.gender}</td>
                     <td>${memlist.phone}</td>
                     <td>${memlist.email}</td>
+                    <td><a class='btn-fill' onclick="if( confirm('정말 삭제하시겠습니까?') ){ 
+                    href='adminDelete.do?userid=${memlist.userid }' }">Delete</a></td> 
                   </tr>
                   </c:forEach>
                 </tbody>
@@ -133,3 +134,18 @@
   <!-- End Container fluid  -->
   <!-- ============================================================== -->
   <%@ include file="../adminfooter.jsp"%>
+  
+  <script>
+  
+//   $(document).ready(function() {
+//     $("#memdel").on("click", function() {
+//       if (confirm('정말 삭제하시겠습니까?') == true) {
+//         document.form.submit();
+//     }else {
+//       return;
+//       }
+//     }
+
+  
+  
+  </script>

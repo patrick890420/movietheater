@@ -20,7 +20,7 @@ public interface MembersService {
 //	 public String pwChk(String userpw); // 비밀번호 체크
 	 
 	 //비밀번호 조회
-	 public MemberVO selectPw(String userid);
+	 public String selectPw(String userid);
 	 
 	 //비밀번호 수정 처리
 	 public void mypasspro(MemberVO mvo);
@@ -30,6 +30,10 @@ public interface MembersService {
 	  
 	 //admin 멤버 조회
 	 public List<MemberVO> memberSelect();
+	 
+	 //회원 강제 탈퇴
+	 public void adminDelete(String userid);
+
 
 
 }//class

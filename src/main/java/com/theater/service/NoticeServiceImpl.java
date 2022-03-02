@@ -45,8 +45,8 @@ public class NoticeServiceImpl implements NoticeService {
   }
   
   @Override
-  public boolean delete(int nt_cd) {
-    return nMapper.delete(nt_cd)== 1;
+  public boolean NoticeDelete(int nt_cd) {
+    return nMapper.NoticeDelete(nt_cd)== 1;
   }
     
   @Override
@@ -70,5 +70,9 @@ public class NoticeServiceImpl implements NoticeService {
     nMapper.getViewCount(nt_cd);
   
 }
+  @Override
+  public List<NoticeVO> getNoticeIndex() {
+    return nMapper.getNoticeIndex();
+  }
   
 }//class

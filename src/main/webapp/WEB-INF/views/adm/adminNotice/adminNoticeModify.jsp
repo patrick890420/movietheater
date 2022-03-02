@@ -71,6 +71,10 @@
     <i class="fas fa-check"></i>&nbsp;修整
   </button>&nbsp;<!-- 수정 -->
   
+  <a href="adminNoticeDelete.do?nt_cd=${nview.nt_cd}" onClick="return confirm('削除しますか？')"
+     class="btn btn-outline-primary btn-rounded" id="delete_btn"><i class="fas fa-times"></i>削除
+  </a>&nbsp;<!-- 삭제 -->
+  
   <button type="reset" class="btn btn-outline-primary btn-rounded">書き直し</button>&nbsp;<!-- 다시쓰기 -->
   
   <button type="button" class="btn btn-outline-primary btn-rounded" onclick="location.href='adminNotice.do'">

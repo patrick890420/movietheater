@@ -12,7 +12,7 @@ public interface NoticeService {
   public void noticeInsert(NoticeVO nvo);
   public NoticeVO getAdminBoardView(int nt_cd);
   public void modify(NoticeVO nvo);
-  public boolean delete(int nt_cd);
+  public boolean NoticeDelete(int nt_cd);
 
 //admin  
   public List<NoticeVO> getNoticeList(Criteria cri);
@@ -26,5 +26,7 @@ public interface NoticeService {
   public NoticeVO nextPage(int nt_cd);
   public NoticeVO prevPage(int nt_cd);
 
+//Index
+  public List<NoticeVO>getNoticeIndex();
 
 }//interface

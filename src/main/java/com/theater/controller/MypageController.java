@@ -3,23 +3,16 @@ package com.theater.controller;
 import java.security.Principal;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.theater.domain.MemberVO;
 import com.theater.service.MembersService;
@@ -68,18 +61,34 @@ private PasswordEncoder pwEncoder;
 
   //비밀번호 수정 처리
   @PostMapping("/mypasspro.do")
-  public String mypasspro(Model model,MemberVO mvo,Principal principal) { //RedirectAttributes rdat
+  public String mypasspro(Model model,Principal principal,
+      @RequestParam("prePw") String prePw,
+      @RequestParam("newPw") String newPw) { //RedirectAttributes rdat
     //RedirectAttributes 폼 형식의 문서를 작성 후, 서버로 보내면(POST 방식) 곧이어 다른 페이지로 리다이렉트 한다.
     //문제는 이러한 리다이렉트 방식이 GET 방식​ 이라 데이터 전송에는 적절하지 않다
     
     String userid = principal.getName();
     
-    String inputPass = pwEncoder.encode(mvo.getUserpw()); /* 암호화 */
+    String prePass = pwEncoder.encode(prePw);
+
+    String newPass = pwEncoder.encode(newPw); /* 암호화 */
     
-    model.addAttribute("member", mservice.selectPw(userid));
-    mvo.setUserpw(inputPass);
+    String PassInDB = mservice.selectPw(userid);
     
-    mservice.mypasspro(mvo);
+    log.info("현재 계정 : "  + userid);
+    log.info("DB비밀번호 : " + PassInDB);
+    log.info("기존 비밀번호  : " + prePass);
+    log.info("바꿀 비밀번호 : " + newPw + "\n암호화된 비번 : "+ newPass);
+    if ( prePass.equals(PassInDB)) {
+      MemberVO mvo = new MemberVO();
+      mvo.setUserid(userid);
+      mvo.setUserpw(newPass);
+      mservice.mypasspro(mvo);
+      
+      log.info("데이터 입력 완료 : " + mvo);
+    } else {
+      log.info("데이터 입력 실패");
+    }
 
     return "redirect:/";
     
@@ -117,6 +126,18 @@ private PasswordEncoder pwEncoder;
     log.info(mservice.getRelist(id));
     
     return "/mypage/myreser";
+  }
+  
+  //탈퇴 페이지
+  @GetMapping("/byebye.do")
+  public void byebye() {
+
+  }
+  
+  //탈퇴 처리
+  @GetMapping("/byebyespro.do")
+  public void byebyespro() {
+    
   }
   
 
