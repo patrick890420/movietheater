@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -14,7 +15,7 @@
 <meta name="author" content="">
 <!-- Favicon icon -->
 <link rel="icon" type="image/png" sizes="16x16" href="/resources/admin/assets/images/favicon.png">
-<title>JSL Movie Admin</title>
+<title>JSL-CINEMA Admin</title>
 <!-- Custom CSS -->
   <script src="/resources/admin/assets/libs/jquery/dist/jquery.min.js"></script>
 <link href="/resources/admin/assets/extra-libs/c3/c3.min.css" rel="stylesheet">
@@ -227,7 +228,7 @@
                 src="/resources/admin/assets/images/users/profile-pic.jpg"
                 alt="user" class="rounded-circle" width="40"> <span
                 class="ml-2 d-none d-lg-inline-block"><span>Hello,</span>
-                  <span class="text-dark">Jason Doe</span> <i
+                  <span class="text-dark"><sec:authentication property="principal.member.userid"/></span> <i
                   data-feather="chevron-down" class="svg-icon"></i></span>
             </a>
               <div
