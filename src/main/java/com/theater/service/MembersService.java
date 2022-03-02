@@ -30,6 +30,10 @@ public interface MembersService {
 	  
 	 //admin 멤버 조회
 	 public List<MemberVO> memberSelect();
+	 
+	 //회원 강제 탈퇴
+	 public void adminDelete(String userid);
+
 
 
 }//class

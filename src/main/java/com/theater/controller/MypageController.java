@@ -80,6 +80,8 @@ private PasswordEncoder pwEncoder;
     mvo.setUserpw(inputPass);
     
     mservice.mypasspro(mvo);
+    
+    System.out.println(mvo.getUserpw());
 
     return "redirect:/";
     
