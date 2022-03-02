@@ -55,11 +55,11 @@
                               
                               <!-- name=userpw 어디에 줘야 하지 --> 
                               <input type="password" id="prePass" class="form-control form-control-alternative"
-                              placeholder="기존 비밀번호를 입력해 주세요." style="margin-top: 30px;" name="userpw">
+                              placeholder="기존 비밀번호를 입력해 주세요." style="margin-top: 30px;" name="prePw">
                               <input type="password" id="userPass" class="form-control form-control-alternative"
-                              placeholder="바꿀 비밀번호를 입력해 주세요." style="margin-top: 30px;" >
+                              placeholder="바꿀 비밀번호를 입력해 주세요." style="margin-top: 30px;" name="newPw" >
                                <input type="password" id="userPass2" class="form-control form-control-alternative"
-                              placeholder="바꿀 비밀번호를 재입력해 주세요." style="margin-top: 30px;">
+                              placeholder="바꿀 비밀번호를 재입력해 주세요." style="margin-top: 30px;" name="newPw2">
                               <button type="submit" class="input__btn4" id="pass_button" name="pass_button">확인</button>
                           </div>
                         </div>
@@ -112,21 +112,22 @@
   //기존 비밀번호와 바꿀 비밀번호가 다른가 ? 확인하는 것이 필요함
   //아직은 뭘 입력하든 pw error가 뜬다,,,
 
-  
-  $("#pass_button").click(function() {
+  // 여기에는 나중에 기ㅁ존비밀번호 유효성 검사용 Ajax 구문  넣어주면 될듯 
+  /* $("#pass_button").click(function() {
     var pwCheck = $("input[name=userpw]").val();
     $.ajax({
       type : "post",
       url : '/mypage/mypasspro.do',
       dataType : "json",
       success : function(data) {
-       
+        
+       // location.href="/index.do";
       },
       error : function() {
         alert("pw error");
       }
     }); //ajax end
-  }); //click end
+  }); //click end */
 </script>
 
 <!--       success : function(data) { -->

@@ -66,9 +66,8 @@ public class MembersServiceImpl implements MembersService {
   
   
   @Override
-  public MemberVO selectPw(String userid) {
-     MemberVO mvo = mmapper.selectPw(userid);
-     return mvo;
+  public String selectPw(String userid) {
+     return mmapper.selectPw(userid);
   }
   
   @Override

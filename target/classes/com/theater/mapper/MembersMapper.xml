@@ -35,8 +35,8 @@
     where userpw= #{userpw}
 </select>
 
-<select id="selectPw" resultType="com.theater.domain.MemberVO">
-  select * from members where userid = #{userid}
+<select id="selectPw" resultType="String">
+  select userpw from members where userid = #{userid}
   </select>
   
 <update id="mypasspro">
