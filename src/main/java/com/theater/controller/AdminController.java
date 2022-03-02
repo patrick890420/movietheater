@@ -388,10 +388,9 @@ public class AdminController {
     }
   }
 
- @GetMapping("/adminBoardDelete.do")
-  public String delete(@RequestParam("nt_cd") int nt_cd) {
-    nService.delete(nt_cd);
-  
+ @GetMapping("/adminNoticeDelete.do")
+  public String Noticedelete(@RequestParam("nt_cd") int nt_cd) {
+    nService.NoticeDelete(nt_cd);
     return "redirect:/adm/adminNotice.do";
  }
 
@@ -424,6 +423,12 @@ public class AdminController {
     eService.modify(evo);
     return "redirect:/adm/adminEvent.do";
   }
+  
+  @GetMapping("/adminEventDelete.do")
+  public String EventDelete(@RequestParam("event_cd") int event_cd) {
+    eService.EventDelete(event_cd);
+    return "redirect:/adm/adminEvent.do";
+ }
 
   
 /*Board-> Notice*/

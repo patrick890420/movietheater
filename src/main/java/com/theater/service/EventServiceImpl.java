@@ -43,8 +43,8 @@ public class EventServiceImpl implements EventService {
   }
 
   @Override
-  public boolean delete(int event_cd) {
-    return eMapper.delete(event_cd)== 1;
+  public boolean EventDelete(int event_cd) {
+    return eMapper.EventDelete(event_cd)== 1;
   }
 
   
@@ -73,6 +73,11 @@ public class EventServiceImpl implements EventService {
   @Override
   public List<EventVO> getEventList() {
     return eMapper.getEventList();
+  }
+
+  @Override
+  public List<EventVO> getEventIndex() {
+    return eMapper.getEventIndex();
   }
 
 }//class

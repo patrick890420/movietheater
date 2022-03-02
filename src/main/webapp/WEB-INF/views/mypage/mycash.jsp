@@ -86,7 +86,7 @@
                   </table>
                   </div>
 
-                  <%--        <!-- paging 나중에 다 수정하기-->
+<!-- paging 나중에 다 수정하기-->
         <form action="mycash.do" name="pageForm" method="get">
           <div class="product__pagination">
             <hr>
@@ -117,7 +117,7 @@
             <input type="hidden" name="amount" value="${pageMaker.cri.amount }">
           <input type="hidden" name="searchType" value="${pageMaker.cri.searchType }">
             <input  type="hidden" name="searchName" value="${pageMaker.cri.searchName }">
-        </form> --%>
+        </form>
                 </div>
                 <!-- md-12 -->
               </div>
