@@ -95,10 +95,10 @@
     <div class="row">
           <div class="col-lg-4">
         <div class="header__left">
-          <a href="/login/login.do" style="text-align: center;"><span class="icon_lock">페이스북</span></a>
-          <a href="/join/join.do" style="text-align: center;"><span class="icon_profile">유튜브</span></a>
-          <a href="/mypage/memberUp" style="text-align: center;"> <span class="icon_profile">인스타그램</span></a>
-          <a href="" style="text-align: center;"><span class="icon_profile">트위터</span></a>
+          <a href="#" style="text-align: center;"><span class="icon_lock">Facebook</span></a>
+          <a href="#" style="text-align: center;"><span class="icon_profile">YouTube</span></a>
+          <a href="#" style="text-align: center;"> <span class="icon_profile">Instagram</span></a>
+          <a href="#" style="text-align: center;"><span class="icon_profile">Twitter</span></a>
         </div>
       </div>
       <div class="col-lg-4" style="padding-top:13px;">

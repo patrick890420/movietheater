@@ -9,6 +9,8 @@ import com.theater.domain.ReserveInsertVO;
 import com.theater.domain.ReserveVO;
 import com.theater.domain.SelectSeatVO;
 import com.theater.domain.TheatersVO;
+import com.theater.domain.TicketListVO;
+import com.theater.domain.TicketsVO;
 import com.theater.mapper.TicketMapper;
 
 import lombok.AllArgsConstructor;
@@ -62,6 +64,12 @@ public class TicketServiceImpl implements TicketService {
   public SelectSeatVO getTkInfo(SelectSeatVO svo) {
     
     return tmapper.getTkInfo(svo);
+  }
+
+  @Override
+  public List<TicketListVO> getTkList() {
+    // TODO Auto-generated method stub
+    return tmapper.getTkList();
   }
 
   

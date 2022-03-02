@@ -1,5 +1,8 @@
 package com.theater.controller;
 
+import java.util.Iterator;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,9 +10,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.theater.domain.CmtAVG;
 import com.theater.domain.Criteria;
+import com.theater.domain.MovieChartVO;
 import com.theater.domain.PageVO;
 import com.theater.domain.ReviewVO;
 import com.theater.service.MovieService;
@@ -17,10 +25,11 @@ import com.theater.service.MovieService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 
-@Controller
+
 @RequestMapping("/movie/*")
 @AllArgsConstructor
 @Log4j
+@Controller
 public class MoiveController {
 	private MovieService movieService;
   
@@ -40,6 +49,37 @@ public class MoiveController {
     model.addAttribute("a",a);
     model.addAttribute("b",b);
     model.addAttribute("c",c);
+    
+    List<MovieChartVO> chart = movieService.movieChart(m_cd);
+    
+    Gson gson = new Gson();
+    JsonArray jArray = new JsonArray();
+    
+    Iterator<MovieChartVO> it = chart.iterator();
+    
+    while(it.hasNext()) {
+      MovieChartVO chartVO = it.next();
+      JsonObject object = new JsonObject();
+      
+      String id = chartVO.getId();
+      m_cd = chartVO.getM_cd();
+      int t_cd = chartVO.getT_cd();
+      int t_m_cd = chartVO.getT_m_cd();
+      String gender = chartVO.getGender();
+      String birth = chartVO.getBirth();
+      String userid = chartVO.getUserid();
+      
+      object.addProperty("id", id);
+      object.addProperty("m_cd", m_cd);
+      object.addProperty("t_cd" , t_cd);
+      object.addProperty("t_m_cd", t_m_cd);
+      object.addProperty("gender", gender);
+      object.addProperty("userid", userid);
+      object.addProperty("birth", birth);
+      jArray.add(object);
+    }
+    String json = gson.toJson(jArray);
+    model.addAttribute("json",json);
     
 	}//view.do
 	
@@ -69,4 +109,7 @@ public class MoiveController {
 	  
 	  return "redirect:/movie/view.do";
 	}
+	
+ 
+
 }//moive controller

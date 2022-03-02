@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-  pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../adminheader.jsp"%>
 <!-- Page wrapper  -->
 <!-- ============================================================== -->
@@ -38,7 +37,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Ticketing details</h4>
+            <h4 class="card-title">Details</h4>
             <h6 class="card-subtitle"> </h6>
             <div class="table-responsive">
               <table id="ticketTable"  class="table table-striped table-bordered display no-wrap" style="width: 100%">
@@ -48,26 +47,23 @@
                     <th>ID</th>
                     <th>MOVIE</th>
                     <th>DATE</th>
-                    <th>SEAT</th>
-                    <th>NUMS</th>
                     <th>PAYMENT</th>
                     <th>CHARGE</th>
                     <th>STATUS</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <c:forEach items="${ticket}" var="ticket">
                   <tr>
-                    <td></td>
-                    <td><a href="/adm/adminMovieView.do?m_cd="></a></td>
-                    <td></td>
-                    <fmt:parseDate value="" var="dateValue" pattern="yyyy-MM-dd"/>
-                    <td><fmt:formatDate value="" pattern="yyyy-MM-dd"/></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>${ticket.tkt_cd}</td>
+                    <td>${ticket.id}</td>
+                    <td>${ticket.title}</td>
+                    <td>${ticket.tkt_date}</td>
+                    <td>${ticket.pay_cd}</td>
+                    <td>${ticket.charge}</td>
                     <td><a class="btn btn-danger" href="" >キャンセル</a></td>
                   </tr>
+                  </c:forEach>
                 </tbody>
                 <tfoot>
                   <tr>
@@ -75,8 +71,6 @@
                     <th>ID</th>
                     <th>MOVIE</th>
                     <th>DATE</th>
-                    <th>SEAT</th>
-                    <th>NUMS</th>
                     <th>PAYMENT</th>
                     <th>CHARGE</th>
                     <th>STATUS</th>
@@ -92,6 +86,7 @@
     <!-- End PAge Content -->
     <!-- ============================================================== -->
   </div>
+</div>
   <!-- ============================================================== -->
   <!-- End Container fluid  -->
   <!-- ============================================================== -->
