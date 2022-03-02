@@ -2,8 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.theater.mapper.PaymentsMapper">
 
+<sql id="criteria">
+  <trim prefix="(" suffix=") AND" prefixOverrides="OR">
+    <foreach item="type" collection="typeArr">
+            <!-- Criteria->이름 같으면 getTypeArr(자동 호출) 실행 -->
+      <trim prefix="OR">
+        <choose>
+          <when test="type== 'T'.toString()">
+            title like '%'||#{keyword}||'%'
+          </when>
+        </choose>
+      </trim>
+    </foreach>
+  </trim>
+</sql>
+
 <select id="getCashList" resultType="com.theater.domain.PaymentsVO">
   SELECT * FROM Payments
+</select>
+
+<!-- 전체 래코드 갯수 -->
+<select id="getTotal" resultType="int">
+  SELECT COUNT(*) AS TOTAL FROM payments
+  WHERE  <if test="searchType == 'title'">TITLE LIKE '%'||#{searchName}||'%'</if>
+         <if test="searchType == null or searchType == ''"> 1=1</if>
 </select>
 
 <!-- mycash 조인 -->

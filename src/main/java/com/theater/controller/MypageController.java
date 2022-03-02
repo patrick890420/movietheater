@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.theater.domain.Criteria;
 import com.theater.domain.MemberVO;
+import com.theater.domain.PageVO;
 import com.theater.service.MembersService;
 import com.theater.service.PaymentsService;
 
@@ -46,8 +48,11 @@ private PasswordEncoder pwEncoder;
   }
 
   @GetMapping("/mycash.do")
-  public void mycash(Model model) {
-    model.addAttribute("cashList",pService.getCashList());
+  public void mycash(Criteria cri, Model model) {
+//    model.addAttribute("cashList",pService.getCashList(cri));
+//전체조회값
+    int total= pService.getTotal(cri);
+    model.addAttribute("pageMaker",new PageVO(cri, total));
   }
   
   //비밀번호 수정 페이지
