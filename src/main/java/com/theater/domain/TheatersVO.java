@@ -12,4 +12,5 @@ public class TheatersVO {
   private int t_seat;     //총좌석수
   
   private String start_time;     //dayClick 떄문에 추가
+  private String title;
 }

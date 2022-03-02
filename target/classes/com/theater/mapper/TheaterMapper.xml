@@ -49,8 +49,8 @@
       </selectKey>
 
     <foreach collection="list" item="list" open="insert all" close="SELECT * FROM SYS.DUAL" separator=" ">
-      into seats2 
-        (seat_cd, screen_cd, ary) 
+      into seats 
+        (seat_cd, screen_cd, seat_name) 
       values
         (#{seat_cd}, #{screen_cd}, #{list})
     </foreach>
@@ -76,13 +76,15 @@
   </select>
 
   <select id="getScreenInfo" resultType="com.theater.domain.TheatersVO"><!-- vo 수정필요 -->
-    SELECT * 
-    FROM FILMS f ,FILM_TIMETABLE ft ,THEATERS t, SCREENS s 
-    WHERE t.T_CD =s.T_CD 
+    SELECT
+    (T.T_SEAT/T.T_SCREEN) AS T_SEAT, TO_CHAR(ft.start_time,'HH24:MI') AS START_TIME, T_NAME, T_ADDRESS, T_SCREEN, M.TITLE AS TITLE
+    FROM FILMS f ,FILM_TIMETABLE ft,THEATERS t, SCREENS s, MOVIES m
+    WHERE t.T_CD =s.T_CD  
     AND s.SCREEN_CD = f.SCREEN_CD 
-    AND f.FILM_CD = ft.FILM_CD 
+    AND f.FILM_CD = ft.FILM_CD
     AND t.T_NAME =#{t_name}
     AND TO_CHAR(ft.START_TIME,'yyyy-MM-dd') = #{start_time}
+    AND f.M_CD = m.M_CD
 </select>  
 </mapper>
 

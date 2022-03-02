@@ -58,7 +58,7 @@
                 <tbody>
                   <tr>
                     <td></td>
-                    <td><a href="/adm/adminMovieView.do?m_cd="></a></td>
+                    <td></td>
                     <td></td>
                     <fmt:parseDate value="" var="dateValue" pattern="yyyy-MM-dd"/>
                     <td><fmt:formatDate value="" pattern="yyyy-MM-dd"/></td>

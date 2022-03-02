@@ -142,9 +142,9 @@
           <nav class="header__menu mobile-menu">
             <ul class="index_navtab">
               <li><a href="/movie/movie.do">映画</a></li>
-              <li><a href="/theater/theater.do">극장<span class="arrow_carrot-down"></span></a>
+              <li><a href="/theater/theater.do">劇場<span class="arrow_carrot-down"></span></a>
                 <ul class="dropdown">
-                  <li><a href="">JSL-Movie극장</a></li>
+                  <li><a href="">JSL-Movie劇場</a></li>
                   <li><a href="">특별관</a></li>
                 </ul></li>
               <li><a href="/ticket/ticket.do">前売</a></li>
