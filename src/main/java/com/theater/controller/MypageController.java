@@ -121,6 +121,18 @@ private PasswordEncoder pwEncoder;
     return "/mypage/myreser";
   }
   
+  //탈퇴 페이지
+  @GetMapping("/byebye.do")
+  public void byebye() {
+
+  }
+  
+  //탈퇴 처리
+  @GetMapping("/byebyespro.do")
+  public void byebyespro() {
+    
+  }
+  
 
 
   

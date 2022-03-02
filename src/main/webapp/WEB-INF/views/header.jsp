@@ -95,10 +95,10 @@
     <div class="row">
           <div class="col-lg-4">
         <div class="header__left">
-          <a href="#" style="text-align: center;"><span class="icon_lock">Facebook</span></a>
-          <a href="#" style="text-align: center;"><span class="icon_profile">YouTube</span></a>
-          <a href="#" style="text-align: center;"> <span class="icon_profile">Instagram</span></a>
-          <a href="#" style="text-align: center;"><span class="icon_profile">Twitter</span></a>
+          <a href="#" style="text-align: center;"><span class="social_facebook">Facebook</span></a>
+          <a href="#" style="text-align: center;"><span class="social_youtube">YouTube</span></a>
+          <a href="#" style="text-align: center;"> <span class="social_instagram">Instagram</span></a>
+          <a href="#" style="text-align: center;"><span class="social_twitter">Twitter</span></a>
         </div>
       </div>
       <div class="col-lg-4" style="padding-top:13px;">
