@@ -30,6 +30,7 @@ import com.theater.domain.MovieInfoVO;
 import com.theater.domain.MovieVO;
 import com.theater.domain.NationVO;
 import com.theater.domain.NoticeVO;
+import com.theater.domain.ScheduleVO;
 import com.theater.domain.ScreensVO;
 import com.theater.domain.SeatsVO;
 import com.theater.domain.TheatersVO;
@@ -38,6 +39,7 @@ import com.theater.service.MembersService;
 import com.theater.service.MovieService;
 import com.theater.service.NoticeService;
 import com.theater.service.TheaterService;
+import com.theater.service.TicketService;
 import com.theater.service.UtilityService;
 
 import lombok.AllArgsConstructor;
@@ -66,7 +68,8 @@ public class AdminController {
   @Setter(onMethod_=@Autowired )
   public MembersService MembersService;
 
-
+  @Setter(onMethod_=@Autowired )
+  public TicketService tkService;
 
   @GetMapping("/admin")
   public void admin() {
@@ -83,13 +86,19 @@ public class AdminController {
     //List<MemberVO> memlist = MembersService.memberSelect();
     model.addAttribute("memlist", MembersService.memberSelect()); //죽고싶다
     return "adm/adminMember/adminMemberList";
+  }
+  
+  /*강제탈퇴 처리*/
+  @GetMapping("/adminDelete.do")
+  public String adminDelete(String userid) {
     
+    MembersService.adminDelete(userid);
     
+    return "adm/adminMember/adminMemberList";
   }
   
   @GetMapping("/adminMemberInsert.do")
   public String adminMemberInsert() {
-    
     return "adm/adminMember/adminMemberInsert";
     
   }
@@ -285,11 +294,22 @@ public class AdminController {
     return "adm/adminTheater/adminSchedule";
   }
   
+  @PostMapping("/adminScheduleInsertPro.do")
+  public String adminScheduleInsertPro(ScheduleVO scdvo) {
+    TheaterService.scheduleInsert(scdvo);
+    
+    return "redirect:/adm/adminTheaterInsert.do";
+    }
+  
   /* Ticketing */
   @GetMapping("/adminTicketing.do")
-  public String adminTicketing() {
+  public String adminTicketing(Model model) {
+    model.addAttribute("ticket",tkService.getTkList());
+    
     return "/adm/adminTicket/adminTicket";
   }
+  
+  
 
 
   /*adminBoard*/
@@ -315,12 +335,12 @@ public class AdminController {
 
     JsonObject jsonObject = new JsonObject();
     String uploadFolder="c:\\upload";
-    log.info("file name : "+file.getOriginalFilename());
+//    log.info("file name : "+file.getOriginalFilename());
     String uploadFileName = file.getOriginalFilename();
 
     //IE
     uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("//")+1);
-    log.info("only file name : "+uploadFileName);
+//    log.info("only file name : "+uploadFileName);
 
     UUID uuid = UUID.randomUUID();
 
@@ -333,7 +353,7 @@ public class AdminController {
      }
      File savefile = new File(uploadPath,uploadFileName);
      String saveUrl = uploadFileName.toString();
-     log.info(saveUrl);
+//     log.info(saveUrl);
      
      try {
         file.transferTo(savefile);
@@ -348,7 +368,7 @@ public class AdminController {
      }
      
      String upload = jsonObject.toString();
-     log.info(upload);
+//     log.info(upload);
      return upload;
   }
   
@@ -453,12 +473,12 @@ public class AdminController {
     JsonObject jsonObject = new JsonObject();
     
     String uploadFolder="c:\\upload";
-    log.info("file name : "+uploadFile.getOriginalFilename());
+//    log.info("file name : "+uploadFile.getOriginalFilename());
     
     String uploadFileName = uploadFile.getOriginalFilename();
     //IE
     uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("//")+1);
-    log.info("only file name : "+uploadFileName);
+//    log.info("only file name : "+uploadFileName);
     
     UUID uuid = UUID.randomUUID();
     
@@ -471,7 +491,7 @@ public class AdminController {
     }
     File savefile = new File(uploadPath,uploadFileName);
     String saveUrl = uploadFileName.toString();
-    log.info(saveUrl);
+//    log.info(saveUrl);
     
     try {
       uploadFile.transferTo(savefile);
@@ -479,14 +499,14 @@ public class AdminController {
       jsonObject.addProperty("url", "/upload/"+uploadFileName);
       jsonObject.addProperty("responseCode", "success");
       avo.setA_img(uploadFileName);
-      log.info(uploadFileName);
+//      log.info(uploadFileName);
     }catch(Exception e) {
        e.printStackTrace();
        jsonObject.addProperty("responseCode", "error");
     }
     
     String upload = jsonObject.toString();
-    log.info(upload);
+//    log.info(upload);
 
     uService.actorsInsert(avo);
     return "redirect:/adm/adminCodeList.do";
@@ -497,12 +517,12 @@ public class AdminController {
     JsonObject jsonObject = new JsonObject();
     
     String uploadFolder="c:\\upload";
-    log.info("file name : "+uploadFile.getOriginalFilename());
+//    log.info("file name : "+uploadFile.getOriginalFilename());
     
     String uploadFileName = uploadFile.getOriginalFilename();
     //IE
     uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("//")+1);
-    log.info("only file name : "+uploadFileName);
+//    log.info("only file name : "+uploadFileName);
     
     UUID uuid = UUID.randomUUID();
     
@@ -515,7 +535,7 @@ public class AdminController {
     }
     File savefile = new File(uploadPath,uploadFileName);
     String saveUrl = uploadFileName.toString();
-    log.info(saveUrl);
+//    log.info(saveUrl);
     
     try {
       uploadFile.transferTo(savefile);
@@ -523,7 +543,7 @@ public class AdminController {
       jsonObject.addProperty("url", "/upload/"+uploadFileName);
       jsonObject.addProperty("responseCode", "success");
       dvo.setD_img(uploadFileName);
-      log.info(uploadFileName);
+//      log.info(uploadFileName);
     }catch(Exception e) {
        e.printStackTrace();
        jsonObject.addProperty("responseCode", "error");

@@ -84,23 +84,23 @@
     $("#pass_button").on("click", function() {
 
       if ($("#prePass").val() == "") {
-        alert("비번을 입력해주세요.");
+        alert("既存のパスワードを入力してください。");
         $("#prePass").focus();
         return false;
       }
       if ($("#userPass").val() == "") {
-        alert("찐비번을 입력해주세요.");
+        alert("新しいパスワードを入力してください。");
         $("#userPass").focus();
         return false;
       }
       if ($("#userPass2").val() == "") {
-        alert("찐비번을 재입력해주세요..");
+        alert("新しいパスワード(確認入力）を入力してください。");
         $("#userPass2").focus();
         return false;
       }
 
       if ($("#userPass").val() != $("#userPass2").val()) {
-        alert("두 비밀번호가 맞지 않습니다.");
+        alert("パスワードが一致しません。");
         //document.form.userPass2.value = "";
         // document.form.userPass2.focus();
         return false;
@@ -126,8 +126,21 @@
         alert("pw error");
       }
     }); //ajax end
-  }); //blur end
+  }); //click end
 </script>
+
+<!--       success : function(data) { -->
+<!--         if (data == 0) { -->
+<!--           if ($("#userPass").val() != "") { -->
+<!--             alert("가능한。"); -->
+<!--           } -->
+<!--         } else { -->
+<!--           alert("使用不可能なアカウントです。"); -->
+<!--           $("#userPass").val(""); -->
+<!--           $("#userPass").focus(); -->
+<!--           return false(); -->
+<!--         } -->
+<!--       }, -->
 
 <%@ include file="../footer.jsp"%>
 

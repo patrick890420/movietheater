@@ -14,6 +14,7 @@ $('#nationsTable').DataTable();
 $('#genresTable').DataTable();
 $('#adminEventTable').DataTable();
 $('#adminNoticeTable').DataTable();
+$('#ticketTable').DataTable();
 
 
 /****************************************

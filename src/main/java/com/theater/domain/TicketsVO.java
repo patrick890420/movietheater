@@ -13,5 +13,5 @@ public class TicketsVO {
   private int m_cd;     //영화코드
   private String tkt_time;  //예매시간
   private int tkt_nums;   //인원수
-  private Date tkt_date;   //예매일시
+  private String tkt_date;   //예매일시
 }

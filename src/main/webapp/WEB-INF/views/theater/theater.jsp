@@ -369,10 +369,10 @@
           <strong>2D 일반석</strong>
           <div class="row t_chargetext">
             <div class="col-lg-6 col-md-6 col-sm-6">
-              <span>주중(월~목)</span>
+              <span>平日料金(月~木)</span>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
-              <span>주말(금~일)</span>
+              <span>週末料金(金~日)</span>
             </div>
           </div>
           <div class="row t_chargetext">

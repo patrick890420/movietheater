@@ -32,6 +32,9 @@ public interface MembersMapper {
   
   //admin 멤버 조회
  public List<MemberVO> memberSelect();
+ 
+ //강제 탈퇴
+ public void adminDelete(String userid);
 
 
 }//class
