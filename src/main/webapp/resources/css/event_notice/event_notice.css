@@ -3,6 +3,7 @@
 .button{
   text-align: center;
   margin-bottom: 50px;
+  margin-top:20px;
 }
 
 .btn-rounded {
@@ -16,13 +17,13 @@
 
 .viewbg{
   background: #f8f8f8;
-  margin-bottom: 30px;
+  /*margin-bottom: 30px;*/
 ;
 }
 
 .viewrow h2, .viewrow p{
+  padding: 50px 0;
   text-align: center;
-  padding-bottom: 10px;
 }
 
 /*                                Event*/

@@ -426,19 +426,30 @@
                 <div class="t_filminfo">
                   <div class="reserve-time-wrapper2" id="reserve-time-wrapper2">
                     <c:forEach var="sclist" items="${sclist}">
-                    <div>
-                      <div class="t_ep12">PG12</div>
-                        <span class="t_filmtitle">${sclist.title}</span>
-                        <p class="t_sch_text">▶${sclist.t_name} 1階  [${sclist.t_screen}上映館]  総${sclist.t_seat}席</p>
-                        <ul class="t_sch_time">
-                          <li class="t_filmtime">
-                            <strong>
-                              <a href="">${sclist.start_time}<br> <span
-                                  style="font-size: 11px;">${sclist.t_seat}</span>
-                              </a>
-                            </strong>
-                          </li>
-                        </ul>
+                    <div class="t_sch_top">
+                      <c:if test="${sclist.rate==12 }">
+                        <div class="t_ep12">PG12</div>
+                       </c:if>
+                       <c:if test="${sclist.rate==15 }">
+                        <div class="t_ep15">R15+</div>
+                       </c:if>
+                       <c:if test="${sclist.rate==19 }">
+                        <div class="t_ep19">R18+</div>
+                       </c:if>
+                       <c:if test="${sclist.rate==99 }">
+                        <div class="t_ep0">G</div>
+                       </c:if>
+                          <span class="t_filmtitle">${sclist.title}</span>
+                          <p class="t_sch_text">▶${sclist.t_name} 1階  [${sclist.t_screen}上映館]  総${sclist.t_seat}席</p>
+                          <ul class="t_sch_time">
+                            <li class="t_filmtime">
+                              <strong>
+                                <a href="">${sclist.start_time}<br> <span
+                                    style="font-size: 11px;">${sclist.t_seat}</span>
+                                </a>
+                              </strong>
+                            </li>
+                          </ul>
                      </div>
                      </c:forEach>
                     </div>
