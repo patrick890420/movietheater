@@ -53,6 +53,7 @@ public class JoinController {
   public String register(MemberVO mvo, RedirectAttributes rdat) {
 
     String inputPass = pwEncoder.encode(mvo.getUserpw()); /* 암호화 */
+    log.info("회원가입할때 암호화된 비밀번호 데이터 : " + inputPass );
     mvo.setUserpw(inputPass);
 
     mservice.register(mvo);

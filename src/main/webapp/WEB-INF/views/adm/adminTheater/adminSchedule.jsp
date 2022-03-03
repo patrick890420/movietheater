@@ -4,12 +4,13 @@
     <div class="page-breadcrumb">
       <div class="row">
         <div class="col-7 align-self-center">
-          <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Movie Info registration</h4>
+          <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Movie Schedule Registration</h4>
           <div class="d-flex align-items-center">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb m-0 p-0">
                 <li class="breadcrumb-item"><a href="index.html" class="text-muted">Home</a></li>
                 <li class="breadcrumb-item text-muted active" aria-current="page">Movie</li>
+                <li class="breadcrumb-item text-muted active" aria-current="page">Schedule</li>
               </ol>
             </nav>
           </div>
@@ -19,18 +20,20 @@
     <div class="container-fluid">
       <div class="card">
         <div class="card-body">
-          <form name="adminScheduleInsertPro" action="adminScheduleInsertPro.do" method="post">
+          <form name="adminScheduleInsertPro" action="adminScheduleInsertPro.do" method="get">
             <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
+            <input type="hidden" name="screen_cd" value="${screen_cd}">
+            <input type="hidden" id="m_cd" name="m_cd">
               <div class="row">
                 <div class="col-sm-12 col-md-6 col-lg-4">
                   <div class="card">
                     <div class="card-body">
+                      <h4 class="card-title">Step1</h4>
                       <div class="form-group">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#filmsmodal">映画検索</button>
                       </div>
                       <div  class="form-group filmsForm">
-                        <input class="form-contorl" id="m_name" name="m_name">
-                        <input type="hidden" id="m_cd" name="m_cd">
+                        <input class="form-contorl" id="m_name" >
                       </div>    
                     </div>
                   </div>
@@ -38,7 +41,8 @@
                 <div class="col-sm-12 col-md-6 col-lg-4">
                   <div class="card">
                     <div class="card-body">
-                      <h4 class="card-title">上映時間</h4>
+                      <h4 class="card-title">Step2</h4>
+                      <h6 class="card-subtitle">上映時間</h6>
                       <h6 class="card-subtitle">* <code>映画の上映時間を選択してください。</code></h6>
                       <div class="form-group">
                         <input type="datetime-local" class="form-control" name="start_time" value="2022-03-10T12:00:00">
@@ -46,13 +50,12 @@
                     </div>
                   </div>
                 </div>
-                <div class="mx-auto" style="text-align:center;">
+                <div class="mx-auto" style="text-align:center;padding-top: 80px;">
                   <button type="submit" class="btn btn-info">Submit</button>
                   <button type="reset" class="btn btn-dark">Reset</button>
                 </div>
-              </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -125,6 +128,7 @@
     </div> <!-- end-->
     </div> <!-- end -->
   </div> <!-- end  -->
+</div>
 </div>
 <script>
 $(".moviesTr").on("click", function () {

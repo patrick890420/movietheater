@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -14,7 +15,7 @@
 <meta name="author" content="">
 <!-- Favicon icon -->
 <link rel="icon" type="image/png" sizes="16x16" href="/resources/admin/assets/images/favicon.png">
-<title>JSL Movie Admin</title>
+<title>JSL-CINEMA Admin</title>
 <!-- Custom CSS -->
   <script src="/resources/admin/assets/libs/jquery/dist/jquery.min.js"></script>
 <link href="/resources/admin/assets/extra-libs/c3/c3.min.css" rel="stylesheet">
@@ -227,7 +228,7 @@
                 src="/resources/admin/assets/images/users/profile-pic.jpg"
                 alt="user" class="rounded-circle" width="40"> <span
                 class="ml-2 d-none d-lg-inline-block"><span>Hello,</span>
-                  <span class="text-dark">Jason Doe</span> <i
+                  <span class="text-dark"><sec:authentication property="principal.member.userid"/></span> <i
                   data-feather="chevron-down" class="svg-icon"></i></span>
             </a>
               <div
@@ -292,16 +293,6 @@
                   <span class="hide-menu"> Members </span>
                   </a>
                 </li>
-                <li class="sidebar-item">
-                  <a href="/adm/adminMemberInsert.do" class="sidebar-link">
-                  <span class="hide-menu"> view & insert sample </span>
-                  </a>
-                </li>
-                <li class="sidebar-item">
-                  <a href="form-checkbox-radio.html" class="sidebar-link">
-                  <span class="hide-menu"> Checkboxes & Radios </span>
-                  </a>
-                </li>
               </ul>
             </li>
             <!-- Member end -->
@@ -320,12 +311,7 @@
                 </li>
                 <li class="sidebar-item">
                   <a href="/adm/adminMovieSelect.do" class="sidebar-link">
-                  <span class="hide-menu"> SomethingList </span>
-                  </a>
-                </li>
-                <li class="sidebar-item">
-                  <a href="form-checkbox-radio.html" class="sidebar-link">
-                  <span class="hide-menu"> Checkboxes & Radios </span>
+                  <span class="hide-menu"> Movie-List </span>
                   </a>
                 </li>
               </ul>
@@ -341,17 +327,12 @@
               <ul aria-expanded="false" class="collapse  first-level base-level-line">
                 <li class="sidebar-item">
                   <a href="/adm/adminTheaterInsert.do" class="sidebar-link">
-                  <span class="hide-menu"> Inputs </span>
+                  <span class="hide-menu"> Registration </span>
                   </a>
                 </li>
                 <li class="sidebar-item">
                   <a href="/adm/adminTheaterList.do" class="sidebar-link">
                   <span class="hide-menu"> Theater-List </span>
-                  </a>
-                </li>
-                <li class="sidebar-item">
-                  <a href="form-checkbox-radio.html" class="sidebar-link">
-                  <span class="hide-menu"> Checkboxes & Radios </span>
                   </a>
                 </li>
               </ul>
@@ -368,16 +349,6 @@
                 <li class="sidebar-item">
                   <a href="adminTicketing.do" class="sidebar-link">
                   <span class="hide-menu"> Ticketing details </span>
-                  </a>
-                </li>
-                <li class="sidebar-item">
-                  <a href="form-input-grid.html" class="sidebar-link">
-                  <span class="hide-menu"> Form Grids </span>
-                  </a>
-                </li>
-                <li class="sidebar-item">
-                  <a href="form-checkbox-radio.html" class="sidebar-link">
-                  <span class="hide-menu"> Checkboxes & Radios </span>
                   </a>
                 </li>
               </ul>
@@ -417,11 +388,11 @@
                   <span class="hide-menu"> Code List </span>
                   </a>
                 </li>
-                <li class="sidebar-item">
-                  <a href="form-input-grid.html" class="sidebar-link">
-                  <span class="hide-menu">not yet</span>
-                  </a>
-                </li>
+<!--                 <li class="sidebar-item"> -->
+<!--                   <a href="form-input-grid.html" class="sidebar-link"> -->
+<!--                   <span class="hide-menu">not yet</span> -->
+<!--                   </a> -->
+<!--                 </li> -->
               </ul>
             </li>
             <!-- Utility end -->

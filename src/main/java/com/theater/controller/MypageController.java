@@ -3,25 +3,20 @@ package com.theater.controller;
 import java.security.Principal;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.theater.domain.Criteria;
 import com.theater.domain.MemberVO;
+import com.theater.domain.PageVO;
 import com.theater.service.MembersService;
 import com.theater.service.PaymentsService;
 
@@ -53,8 +48,11 @@ private PasswordEncoder pwEncoder;
   }
 
   @GetMapping("/mycash.do")
-  public void mycash(Model model) {
-    model.addAttribute("cashList",pService.getCashList());
+  public void mycash(Criteria cri, Model model) {
+    model.addAttribute("cashList",pService.getCashList(cri));
+//전체조회값
+    int total= pService.getTotal(cri);
+    model.addAttribute("pageMaker",new PageVO(cri, total));
   }
   
   //비밀번호 수정 페이지
@@ -68,20 +66,29 @@ private PasswordEncoder pwEncoder;
 
   //비밀번호 수정 처리
   @PostMapping("/mypasspro.do")
-  public String mypasspro(Model model,MemberVO mvo,Principal principal) { //RedirectAttributes rdat
+  public String mypasspro(Model model,Principal principal,
+      @RequestParam("prePw") String prePw,
+      @RequestParam("newPw") String newPw) { //RedirectAttributes rdat
     //RedirectAttributes 폼 형식의 문서를 작성 후, 서버로 보내면(POST 방식) 곧이어 다른 페이지로 리다이렉트 한다.
     //문제는 이러한 리다이렉트 방식이 GET 방식​ 이라 데이터 전송에는 적절하지 않다
     
-    String userid = principal.getName();
+    String userid = principal.getName(); // 현재 로그인한 유저 
+    String PassInDB = mservice.selectPw(userid); // DB에서 암호화된 비밀번호 가져오기 
     
-    String inputPass = pwEncoder.encode(mvo.getUserpw()); /* 암호화 */
-    
-    model.addAttribute("member", mservice.selectPw(userid));
-    mvo.setUserpw(inputPass);
-    
-    mservice.mypasspro(mvo);
-    
-    System.out.println(mvo.getUserpw());
+    // pwEncoder.matches(바꿀 비밀번호, 암호화된 비밀번호) 비교하여서 같으면 true, 다르면 false 
+    // 스프링 패스워드 인코더는 암호화할때마다 중간에 무작위값을 같이 암호화해서 매번 결과값이 다름!
+    // 즉 일반적인 비교연산(equals)로는 비교 불가능 / 반드시 (matches)를 사용할 것 
+    if ( pwEncoder.matches(prePw, PassInDB)) {
+      MemberVO mvo = new MemberVO();
+      mvo.setUserid(userid);
+      mvo.setUserpw(pwEncoder.encode(newPw));
+      mservice.mypasspro(mvo);
+      // 수구링 
+      
+      log.info("데이터 입력 완료 : " + mvo);
+    } else {
+      log.info("데이터 입력 실패");
+    }
 
     return "redirect:/";
     
@@ -119,6 +126,18 @@ private PasswordEncoder pwEncoder;
     log.info(mservice.getRelist(id));
     
     return "/mypage/myreser";
+  }
+  
+  //탈퇴 페이지
+  @GetMapping("/byebye.do")
+  public void byebye() {
+
+  }
+  
+  //탈퇴 처리
+  @GetMapping("/byebyespro.do")
+  public void byebyespro() {
+    
   }
   
 

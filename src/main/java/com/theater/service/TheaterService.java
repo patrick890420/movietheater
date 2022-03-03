@@ -29,4 +29,5 @@ public interface TheaterService {
   
   public void scheduleInsert(ScheduleVO scdvo);
   
+  
 }
