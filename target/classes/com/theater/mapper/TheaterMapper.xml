@@ -77,7 +77,7 @@
 
   <select id="getScreenInfo" resultType="com.theater.domain.TheatersVO"><!-- vo 수정필요 -->
     SELECT
-    (T.T_SEAT/T.T_SCREEN) AS T_SEAT, TO_CHAR(ft.start_time,'HH24:MI') AS START_TIME, T_NAME, T_ADDRESS, T_SCREEN, M.TITLE AS TITLE
+    (T.T_SEAT/T.T_SCREEN) AS T_SEAT, TO_CHAR(ft.start_time,'HH24:MI') AS START_TIME, T_NAME, T_ADDRESS, T_SCREEN, M.TITLE AS TITLE, M.RATE AS RATE
     FROM FILMS f ,FILM_TIMETABLE ft,THEATERS t, SCREENS s, MOVIES m
     WHERE t.T_CD =s.T_CD  
     AND s.SCREEN_CD = f.SCREEN_CD 

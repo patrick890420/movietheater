@@ -322,11 +322,14 @@ input[type="radio"]:checked + strong {
   float:right;
 }
 .t_sch_text{
-  margin: 30px 0 15px 30px;
+  margin: 20px 0 15px 30px;
 }
 .t_sch_time{
   margin-left:30px;
 }
 .t_sch_seat{
   font-size: 11px;
+}
+.t_sch_top:nth-child(n+2){
+  margin-top:35px;
 }
