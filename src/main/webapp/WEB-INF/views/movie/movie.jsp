@@ -72,6 +72,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <c:set var="num" value="${num-1}"/>
                             </c:forEach>
                         </div>
                     </div>

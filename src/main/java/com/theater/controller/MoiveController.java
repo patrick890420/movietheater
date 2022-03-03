@@ -94,6 +94,7 @@ public class MoiveController {
 	  PageVO pageVO = new PageVO(cri, movieService.getTotal(cri));
 	  model.addAttribute("pageMaker", pageVO);
 	  model.addAttribute("list",movieService.movieList(cri));
+	 
 
     
 	  }
