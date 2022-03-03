@@ -61,7 +61,7 @@ select * from notice where nt_cd= #{nt_cd}
   where nt_cd= #{nt_cd}
 </update>
 
-<delete id="delete">
+<delete id="NoticeDelete">
   delete notice where nt_cd= #{nt_cd}
 </delete>
 
@@ -92,5 +92,8 @@ select * from notice where nt_cd= #{nt_cd}
     ]]>
 </select>
 
+<select id="getNoticeIndex" resultType="com.theater.domain.NoticeVO"> 
+  SELECT * FROM  notice
+ </select>
 
 </mapper>

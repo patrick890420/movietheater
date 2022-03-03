@@ -41,26 +41,22 @@
             <!-- Table -->
             <div class="row" style="margin-top: -6%;">
               <div class="col-xl-12 m-auto order-xl-1">
-                <div class="card-body">
-                  <form class="formform" name="formform" style="margin-left: 300px;" method="post" action="mypasspro.do">
+                <div class="card-body" style="margin-left: 50px; text-align: center;">
+                  <form class="formform" name="formform" style="margin-left: 300px;" method="post" action="byebyespro.do">
                     <input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}" />
                     <input type="hidden" value="${member.userid }">
-                    <h2 style="margin-top: 80px;">Changing the password.</h2>
+                    <h2 style="margin-top: 80px;">会員退会</h2>
                     <div class="pl-lg-12">
                       <div class="row">
                         <div class="col-lg-12" style="margin-top: 50px;">
                           <div class="form-group focused">
                             <label class="form-control-label"
-                              for="input-first-name">비밀번호를 변경하시려면,<br> 로그인 시 사용하시는 비밀번호를 입력해 주세요.</label>
+                              for="input-first-name">회원을 탈퇴하시려면,<br> 로그인 시 사용하시는 비밀번호를 입력해 주세요.</label>
                               
                               <!-- name=userpw 어디에 줘야 하지 --> 
-                              <input type="password" id="prePass" class="form-control form-control-alternative"
-                              placeholder="기존 비밀번호를 입력해 주세요." style="margin-top: 30px;" name="prePw">
                               <input type="password" id="userPass" class="form-control form-control-alternative"
-                              placeholder="바꿀 비밀번호를 입력해 주세요." style="margin-top: 30px;" name="newPw" >
-                               <input type="password" id="userPass2" class="form-control form-control-alternative"
-                              placeholder="바꿀 비밀번호를 재입력해 주세요." style="margin-top: 30px;" name="newPw2">
-                              <button type="submit" class="input__btn4" id="pass_button" name="pass_button">확인</button>
+                              placeholder="기존 비밀번호를 입력해 주세요." style="margin-top: 30px;" name="userpw">
+                              <button type="submit" class="input__btn5" id="bye_button" name="bye_button">退会</button>
                           </div>
                         </div>
                       </div>
@@ -81,30 +77,14 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $("#pass_button").on("click", function() {
+    $("#bye_button").on("click", function() {
 
-      if ($("#prePass").val() == "") {
-        alert("既存のパスワードを入力してください。");
-        $("#prePass").focus();
-        return false;
-      }
       if ($("#userPass").val() == "") {
-        alert("新しいパスワードを入力してください。");
+        alert("既存のパスワードを入力してください。");
         $("#userPass").focus();
         return false;
       }
-      if ($("#userPass2").val() == "") {
-        alert("新しいパスワード(確認入力）を入力してください。");
-        $("#userPass2").focus();
-        return false;
-      }
-
-      if ($("#userPass").val() != $("#userPass2").val()) {
-        alert("パスワードが一致しません。");
-        //document.form.userPass2.value = "";
-        // document.form.userPass2.focus();
-        return false;
-      }
+      
 
     });
   })
@@ -112,22 +92,22 @@
   //기존 비밀번호와 바꿀 비밀번호가 다른가 ? 확인하는 것이 필요함
   //아직은 뭘 입력하든 pw error가 뜬다,,,
 
-  // 여기에는 나중에 기ㅁ존비밀번호 유효성 검사용 Ajax 구문  넣어주면 될듯 
-  /* $("#pass_button").click(function() {
+  
+  $("#bye_button").click(function() {
     var pwCheck = $("input[name=userpw]").val();
     $.ajax({
       type : "post",
-      url : '/mypage/mypasspro.do',
+      url : '/mypage/byebyespro.do',
       dataType : "json",
       success : function(data) {
+       
         
-       // location.href="/index.do";
       },
       error : function() {
         alert("pw error");
       }
     }); //ajax end
-  }); //click end */
+  }); //click end
 </script>
 
 <!--       success : function(data) { -->

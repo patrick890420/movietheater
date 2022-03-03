@@ -49,6 +49,7 @@
         </div>
     </section>
     <!-- Login Section End -->
+    
 <script>
     function fn_login(){
         var lgn = document.getElementById("login");
@@ -57,5 +58,7 @@
         lgn.submit();
     }
   </script>	
+  
+  
 
 <%@ include file="../footer.jsp" %>	

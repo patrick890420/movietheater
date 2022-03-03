@@ -17,7 +17,7 @@ public class ScheduleVO {
   
   private int s_t_cd; //상영 상세 코드
   private int film_cd;  //상영코드
-  private Date start_time; //영화시작일시
+  private String start_time; //영화시작일시
   
   private int screen_cd; //상영관코드
 }

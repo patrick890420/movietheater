@@ -35,8 +35,8 @@
     where userpw= #{userpw}
 </select>
 
-<select id="selectPw" resultType="com.theater.domain.MemberVO">
-  select * from members where userid = #{userid}
+<select id="selectPw" resultType="String">
+  select userpw from members where userid = #{userid}
   </select>
   
 <update id="mypasspro">
@@ -53,12 +53,16 @@ FROM movies m, ticketings t, sold_seats s
 
 WHERE m.m_cd = t.m_cd
 AND t.tkt_cd = s.tkt_cd
-AND t.id = #{id} 
+AND t.id = #{id}
 ORDER BY t.tkt_cd desc
 </select>
 
 <select id="memberSelect" resultType="com.theater.domain.MemberVO"> <!-- 위에 멤버 조회 있는데 굳이..? 만들어야 할가,,? 타입이,, 달라서,,?-->
 select * from members
 </select>
+
+ <delete id="adminDelete">
+  delete from members where userid=#{userid}
+ </delete>
 
 </mapper>

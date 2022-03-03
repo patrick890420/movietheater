@@ -11,7 +11,7 @@ public interface EventService {
 //Common
   public void eventInsert(EventVO evo);
   public EventVO getAdminBoardView(int event_cd);
-  public boolean delete(int event_cd);
+  public boolean EventDelete(int event_cd);
   
 //admin
   public List<EventVO> getEventList(Criteria cri);
@@ -26,4 +26,6 @@ public interface EventService {
   public EventVO nextPage(int event_cd);
   public EventVO prevPage(int event_cd);
 
+//index
+  public List<EventVO>getEventIndex();
 }//inter

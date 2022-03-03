@@ -33,6 +33,7 @@ function filmDate() {
     
     
     for (i = date1.getDate(); i <= lastDay1.getDate(); i++) {
+    if(i<14){
         const button1 = document.createElement('button');
         const spanWeekOfDay1 = document.createElement('span');
         const spanDay1 = document.createElement('span');
@@ -67,6 +68,7 @@ function filmDate() {
         reserveDate1.append(button1);
 
         dayClickEvent1(button1);
+        }
     }
 }
 function dayClickEvent1(button) {

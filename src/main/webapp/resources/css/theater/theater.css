@@ -252,10 +252,12 @@ input[type="radio"]:checked + strong {
 }
 .theater_datelist:nth-child(3){
       background:#ffc107a8;
+      width: 38px;
       border-color:white;
 }
 .theater_datelist:nth-child(n+4){
       margin-left: 3.7%;
+      width: 38px;
       background:white;
       border-color:white;
 }
