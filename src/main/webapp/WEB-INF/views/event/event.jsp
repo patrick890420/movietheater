@@ -25,19 +25,26 @@
 <!-- Hero Section End -->
 
 <!-- search -->
-<form name="myform" method="get" action="event.do" id="searchForm">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-=9" style="padding-left: 799px;">
+
+
+<!-- Table -->
+<section class="notice" style="padding:25px 0;">
+<div class="container">
+
+  <div class="row">
+  <div class="col-md-6">
+  <p style="font-weight:600;">銃の掲示板&nbsp;&nbsp;<span>${pageMaker.total}</span>件</p>
+  </div>
+  <div class="col-md-6">
+  <form name="myform" method="get" action="event.do" id="searchForm" style="float:right;">
+      
       <select name="searchType" class="select">
         <option value=""<c:out value="${pageMaker.cri.searchType==null?'selected':''}"/>>選択</option><!-- 선택 -->
         <option value="title"<c:out value="${pageMaker.cri.searchType eq 'title'?'selected':''}"/>>題目</option><!-- 제목 -->
         <option value="content"<c:out value="${pageMaker.cri.searchType eq 'content'?'selected':''}"/>>内容</option><!-- 내용 -->
       </select>
-      </div>
-      <div class="col-lg-3 event45">
         <label>
-        <input type="text" class="event47" name="searchName" placeholder="検索語 入力 "><!-- 검색어 입력 -->
+        <input type="text" class="event47" name="searchName" placeholder="検索語 入力 " style="border: groove; text-align:center;"><!-- 검색어 입력 -->
 <%--           <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}"> --%>
 <%--           <input type="hidden" name="amount" value="${pageMaker.cri.amount}"> --%>
           <input type="hidden" name="pageNum" value="1">
@@ -46,19 +53,11 @@
           <span class="icon_search"></span>
           </button>
           </label>
-        </div><!-- lg3 -->
-    </div><!-- row -->
-  </div><!-- container -->
 </form>
-
-<!-- Table -->
-<section class="notice">
-<div class="container">
-<p style="font-weight:600;">銃の掲示板&nbsp;&nbsp;<span>${pageMaker.total}</span>件</p>
+  </div>
 <!-- 총 게시글                                                                                         건-->
-  <div class="row">
     <div class="col-md-12 pb-5">
-      <table class="table table-hover" id="EventTable">
+      <table class="table table-hover" id="EventTable" style="margin-bottom:0;">
         <colgroup>
           <col width="6%">
           <col width="*">
@@ -94,8 +93,7 @@
 
 <!-- paging -->
 <form action="notice.do" name ="pageForm" method="get">
-  <div class="product__pagination">
-  <hr>
+  <div class="product__pagination" style="border-top:solid 3px #80808036;'"> 
       <ul class="pagination pagination-sm">
 <!-- 2. 이전페이지 활성화여부 -->
         <c:if test="${pageMaker.prev}">
