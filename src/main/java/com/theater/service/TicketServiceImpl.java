@@ -72,6 +72,12 @@ public class TicketServiceImpl implements TicketService {
     return tmapper.getTkList();
   }
 
+  @Override
+  public List<TicketListVO> getPayList() {
+    
+    return tmapper.getPayList();
+  }
+
   
 
 }

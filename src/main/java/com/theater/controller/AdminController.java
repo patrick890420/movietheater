@@ -316,6 +316,12 @@ public class AdminController {
     
     return "/adm/adminTicket/adminTicket";
   }
+  @GetMapping("/adminPayment.do")
+  public String adminPayment(Model model) {
+    model.addAttribute("payment",tkService.getPayList());
+    
+    return "/adm/adminTicket/adminPayment";
+  }
   
   
 
