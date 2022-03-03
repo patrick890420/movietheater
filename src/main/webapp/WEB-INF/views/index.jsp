@@ -43,7 +43,7 @@
                     <c:if test="${mlist1.rate==19 }">
                       <div class="t_ep19" style="position: relative !important; top: 45px; left: 5px;">19</div>
                     </c:if>
-                    <a href="view.do?m_cd=${mlist1.m_cd}"><img style="height:100%; border-radius:4px" src="/upload/${mlist1.poster}" alt=""></a>
+                    <a href="view.do?m_cd=${mlist1.m_cd}"><img style="height:90%; border-radius:4px" src="/upload/${mlist1.poster}" alt=""></a>
                     </div>
                   <div class="product__item__text">
                      <h5 ><a style="color:white;" href="view.do?m_cd=${mlist1.m_cd}">${mlist1.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
@@ -71,7 +71,7 @@
                     <c:if test="${mlist2.rate==19 }">
                       <div class="t_ep19" style="position: relative !important; top: 45px; left: 5px;">19</div>
                     </c:if>
-                    <a href="view.do?m_cd=${mlist2.m_cd}"><img style="height:100%; border-radius:4px" src="/upload/${mlist2.poster}" alt=""></a>
+                    <a href="view.do?m_cd=${mlist2.m_cd}"><img style="height:90%; border-radius:4px" src="/upload/${mlist2.poster}" alt=""></a>
                   </div>
                    <div class="product__item__text">
                      <h5 ><a style="color:white;" href="view.do?m_cd=${mlist2.m_cd}">${mlist2.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
@@ -98,7 +98,7 @@
                     <c:if test="${mlist3.rate==19 }">
                       <div class="t_ep19" style="position: relative !important; top: 45px; left: 5px;">19</div>
                     </c:if>
-                     <a href="view.do?m_cd=${mlist3.m_cd}"><img style="height:100%; border-radius:4px" src="/upload/${mlist3.poster}" alt=""></a>
+                     <a href="view.do?m_cd=${mlist3.m_cd}"><img style="padding:height:90%; border-radius:4px" src="/upload/${mlist3.poster}" alt=""></a>
                   </div>
                    <div class="product__item__text">
                      <h5 ><a style="color:white;" href="view.do?m_cd=${mlist3.m_cd}">${mlist3.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>

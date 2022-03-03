@@ -33,7 +33,7 @@ function filmDate() {
     
     
     for (i = date1.getDate(); i <= lastDay1.getDate(); i++) {
-    if(i<14){
+    if(i < 15){
         const button1 = document.createElement('button');
         const spanWeekOfDay1 = document.createElement('span');
         const spanDay1 = document.createElement('span');

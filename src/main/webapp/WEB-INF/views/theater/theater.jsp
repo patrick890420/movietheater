@@ -280,66 +280,28 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-lg-4 col-md-4 col-sm-4">
-                    <div class="product__item">
-                      <div class="product__item__pic set-bg t_eventimg"
-                        data-setbg="/resources/img/trending/event1.jpg">
-                        <div class="ep">D-day</div>
-                        <div class="comment">
-                          <i class="fa fa-comments"></i> 11
+                <c:forEach var="elist" items="${elist}" begin="0" end="2">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                      <div class="product__item">
+                        <div class="product__item__pic set-bg t_eventimg"
+                          data-setbg="/resources/img/trending/event1.jpg">
+                          <div class="ep">D-day</div>
+                          <div class="view">
+                            <i class="fa fa-eye"></i> ${elist.hits}
+                          </div>
                         </div>
-                        <div class="view">
-                          <i class="fa fa-eye"></i> 9141
+                        <div class="product__item__text">
+                            <strong><a href="/event/eventView.do?event_cd=${elist.event_cd}">${elist.title}</a></strong>
+                          <h5>
+                            <a href="#/event/eventView.do?event_cd=${elist.event_cd}">
+                              <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${elist.wdate}"/>
+                              <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>
+                            </a>
+                          </h5>
                         </div>
-                      </div>
-                      <div class="product__item__text">
-                          <strong>[킹메이커]CGV필름마크</strong>
-                        <h5>
-                          <a href="#">2022.01.19~2022.02.27</a>
-                        </h5>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-lg-4 col-md-4 col-sm-4">
-                    <div class="product__item">
-                      <div class="product__item__pic set-bg t_eventimg"
-                        data-setbg="/resources/img/trending/event2.jpg">
-                        <div class="ep">D-day</div>
-                        <div class="comment">
-                          <i class="fa fa-comments"></i> 11
-                        </div>
-                        <div class="view">
-                          <i class="fa fa-eye"></i> 9141
-                        </div>
-                      </div>
-                      <div class="product__item__text">
-                      <strong>[킹메이커]CGV필름마크</strong>
-                        <h5>
-                          <a href="#">2022.01.19~2022.02.27</a>
-                        </h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-4 col-sm-4">
-                    <div class="product__item">
-                      <div class="product__item__pic set-bg t_eventimg"
-                        data-setbg="/resources/img/trending/event3.jpg">
-                        <div class="ep">D-day</div>
-                        <div class="comment">
-                          <i class="fa fa-comments"></i> 11
-                        </div>
-                        <div class="view">
-                          <i class="fa fa-eye"></i> 9141
-                        </div>
-                      </div>
-                      <div class="product__item__text">
-                      <strong>[킹메이커]CGV필름마크</strong>
-                        <h5>
-                          <a href="#">2022.01.19~2022.02.27</a>
-                        </h5>
-                      </div>
-                    </div>
-                  </div>
+                  </c:forEach>
                 </div>
               </div>
             </div>
@@ -463,31 +425,22 @@
               <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="t_filminfo">
                   <div class="reserve-time-wrapper2" id="reserve-time-wrapper2">
-                    
+                    <c:forEach var="sclist" items="${sclist}">
                     <div>
                       <div class="t_ep12">PG12</div>
-                        <span class="t_filmtitle">해적-도깨비 깃발</span>
-                        <p class="t_sch_text">▶2D 3관  8층[삼화페인트 안심닥터관]총 172席</p>
+                        <span class="t_filmtitle">${sclist.title}</span>
+                        <p class="t_sch_text">▶${sclist.t_name} 1階  [${sclist.t_screen}上映館]  総${sclist.t_seat}席</p>
                         <ul class="t_sch_time">
                           <li class="t_filmtime">
                             <strong>
-                              <a href="">7:30<br> <span
-                                  style="font-size: 11px;">150席</span>
+                              <a href="">${sclist.start_time}<br> <span
+                                  style="font-size: 11px;">${sclist.t_seat}</span>
                               </a>
                             </strong>
                           </li>
                         </ul>
-                        <p style="margin: 30px 0 15px 30px;">▶2D 3관  8층[삼화페인트 안심닥터관]총 172席</p>
-                        <ul style="margin-left: 30px;">
-                          <li class="t_filmtime">
-                            <strong>
-                              <a href="">7:30<br> 
-                              <span class="t_sch_seat">150席</span>
-                              </a>
-                           </strong>
-                         </li>
-                       </ul>
                      </div>
+                     </c:forEach>
                     </div>
                     
                  </div>
@@ -577,9 +530,9 @@ function myMap() {
 
 //위도, 경도 
 
-var center = new google.maps.LatLng(37.500431, 127.033176);
+var center = new google.maps.LatLng(36.326742, 127.407840);
 
-var handok = new google.maps.LatLng(37.499362, 127.033202);
+var handok = new google.maps.LatLng(36.326742, 127.407840);
 
 
 //맵 정보
@@ -618,7 +571,7 @@ var infowindow = new google.maps.InfoWindow(
 
 {
 
-content : "<div style=\"text-align:center;\"><strong>한독약품빌딩</strong><br>서울특별시 강남구 역삼1동 735<br><img src=\"handok_small.png\"></div>"
+content : "<div style=\"text-align:center;\"><strong>JSL_CINEMA</strong><br>대전 중구 용두동 731<br><img src=\"/resources/img/theater/theatericon1.png\"></div>"
 });
 infowindow.open(map, marker);
 }
