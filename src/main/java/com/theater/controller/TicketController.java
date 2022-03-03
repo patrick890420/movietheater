@@ -8,15 +8,19 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.theater.domain.PaymentsVO;
 import com.theater.domain.ReserveInsertVO;
 import com.theater.domain.ReserveVO;
 import com.theater.domain.SelectSeatVO;
 import com.theater.domain.TheatersVO;
+import com.theater.service.PaymentsService;
 import com.theater.service.TicketService;
 
 import lombok.AllArgsConstructor;
@@ -31,6 +35,10 @@ public class TicketController {
   
   @Setter(onMethod_ = @Autowired)
   private TicketService tservice;
+  
+  @Setter(onMethod_ = @Autowired)
+  private PaymentsService pservice;
+  
 
   @GetMapping("/ticket.do")
   public void ticket(Model model) {
@@ -115,6 +123,14 @@ public class TicketController {
   
   @GetMapping("/seat.do")
   public void seat() {
+    
+  }
+  
+  @RequestMapping(value = "/insertPayment")
+  @ResponseBody
+  public int pay(@RequestBody PaymentsVO pvo) {
+    
+    return  pservice.insertPay(pvo);
     
   }
 }

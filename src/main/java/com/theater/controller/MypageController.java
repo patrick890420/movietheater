@@ -49,7 +49,7 @@ private PasswordEncoder pwEncoder;
 
   @GetMapping("/mycash.do")
   public void mycash(Criteria cri, Model model) {
-//    model.addAttribute("cashList",pService.getCashList(cri));
+    model.addAttribute("cashList",pService.getCashList(cri));
 //전체조회값
     int total= pService.getTotal(cri);
     model.addAttribute("pageMaker",new PageVO(cri, total));

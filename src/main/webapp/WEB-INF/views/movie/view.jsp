@@ -160,21 +160,20 @@
                 </div>
             </div>
         </section>
-        
-        
+
  <script type="text/javascript" src="/resources/js/movie/review.js"></script>
-<script >
+<script>
  $(function(){ 
-	 <c:set var="a" value="${a}"/>
-	    <c:set var="b" value="${b}"/>
-	    <c:set var="c" value="${c}"/>
-	   
-	   <c:forEach varStatus="i" begin="0" end="${a}" step="1">
-	     $('#star${i.current}').prop('checked', true);
-	       <c:if test="${i.last && c ne 0}" >
-	          $('#star${i.current}half').prop('checked', true);
-	           </c:if>
-	        </c:forEach>
+      <c:set var="a" value="${a}"/>
+      <c:set var="b" value="${b}"/>
+      <c:set var="c" value="${c}"/>
+     
+     <c:forEach varStatus="i" begin="0" end="${a}" step="1">
+       $('#star${i.current}').prop('checked', true);
+         <c:if test="${i.last && c ne 0}" >
+            $('#star${i.current}half').prop('checked', true);
+             </c:if>
+          </c:forEach>
  });
 </script> 
 <script type="text/javascript">

@@ -172,10 +172,10 @@ SELECT * FROM  (SELECT ROWNUM AS NUM2, movies.* FROM movies order by m_cd desc)
   WHERE NUM2 BETWEEN 11 AND 15
  </select>
  
- <select id="movieChart">
+ <select id="movieChart" resultType="com.theater.domain.MovieChartVO">
   select m.m_cd as m_cd, t.tkt_cd as t_cd, b.gender, b.birth, t.id, b.userid, t.m_cd as t_m_cd
 from movies m,ticketings t,members b
-where m.m_cd =t.m_cd and t.id=b.userid and m.m_cd=#{m_cd};
+where m.m_cd =t.m_cd and t.id=b.userid and m.m_cd=#{m_cd}
  </select>
  
 </mapper>

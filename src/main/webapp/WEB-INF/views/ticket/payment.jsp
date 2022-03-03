@@ -61,9 +61,9 @@
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <script>
 
-let uid = document.getElementById(pay_cd);
-let name = document.getElementById(pay_name);
-let amount = document.getElementById(charge);
+let uid = document.getElementById("pay_cd").value;
+let name = document.getElementById("pay_name").value;
+let amount = document.getElementById("charge").value;
 function requestPay(){
 // let IMP = window.IMP;
 IMP.init('imp09327972') ;
@@ -82,6 +82,35 @@ IMP.request_pay({
   //결제 후 호출되는 callback함수
   if ( response.success ) { //결제 성공
     console.log(response);
+    var result = {
+        "imp_uid" : rsp.imp_uid,
+        "merchant_uid" : rsp.merchant_uid,
+        "biz_email" : 'test@test.test',
+        "pay_date" : new Date().getTime(),
+        "amount" : rsp.paid_amount,
+        "card_no" : rsp.apply_num,
+        "refund" : 'payed'
+        }
+    var csrfHeaderName = "${_csrf.headerName}";
+    var csrfTokenValue = "${_csrf.token}";
+    $(document).ajaxSend(function(e, xhr, options) {
+          xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+       });
+    $.ajax({
+      url : '/ticket/insertPayment.do', 
+          type :'POST',
+          data : JSON.stringify(result,
+              ['imp_uid', 'merchant_uid', 'biz_email', 
+                'pay_date', 'amount', 'card_no', 'refund']),
+          contentType:'application/json;charset=utf-8',
+          dataType: 'json', //서버에서 보내줄 데이터 타입
+          success: function(res){
+            console.log("추가성공"); 
+          },
+          error:function(){
+            console.log("Insert ajax 통신 실패!!!");
+          }
+    }) //ajax
   } else {
     alert('결제실패 : ' + response.error_msg);
   }

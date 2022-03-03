@@ -12,4 +12,5 @@ public interface PaymentsMapper {
 //전체 수
   public int getTotal(Criteria cri);
 
+  public int insertPay(PaymentsVO pvo);
 }//interface
