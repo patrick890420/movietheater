@@ -71,7 +71,7 @@
                                         <c:if test="${mlist.rate==19 }">
                                           <div class="t_ep19" style="position:absolute;">R18+</div>
                                         </c:if>
-                                       <a href="view.do?m_cd=${mlist.m_cd}"><img style="height:100%; border-radius:4px" src="/upload/${mlist.poster}" alt=""></a>
+                                       <a href="view.do?m_cd=${mlist.m_cd}"><img style="height:100%; width:230px; height: 325px; border-radius:4px" src="/upload/${mlist.poster}" alt=""></a>
                                    </div>
                                    
                                     <div class="product__item__text" >

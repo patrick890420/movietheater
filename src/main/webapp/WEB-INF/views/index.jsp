@@ -60,18 +60,18 @@
                 <div class="product__item">
                   <div class="product__item__pic set-bg">
                    <c:if test="${mlist2.rate==99 }">
-                      <div class="t_ep0" style="position: relative !important; top: 45px; left: 5px;">전체</div>
+                      <div class="t_ep0" style="position: relative !important; top: 45px; left: 5px;">PG</div>
                     </c:if>
                     <c:if test="${mlist2.rate==12 }">
-                      <div class="t_ep12" style="position: relative !important; top: 45px; left: 5px;">12</div>
+                      <div class="t_ep12" style="position: relative !important; top: 45px; left: 5px;">PG12</div>
                     </c:if>
                     <c:if test="${mlist2.rate==15 }">
-                      <div class="t_ep15" style="position: relative !important; top: 45px; left: 5px;">15</div>
+                      <div class="t_ep15" style="position: relative !important; top: 45px; left: 5px;">R15+</div>
                     </c:if>
                     <c:if test="${mlist2.rate==19 }">
-                      <div class="t_ep19" style="position: relative !important; top: 45px; left: 5px;">19</div>
+                      <div class="t_ep19" style="position: relative !important; top: 45px; left: 5px;">R18+</div>
                     </c:if>
-                    <a href="view.do?m_cd=${mlist2.m_cd}"><img style="height:100%; border-radius:4px" src="/upload/${mlist2.poster}" alt=""></a>
+                    <a href="view.do?m_cd=${mlist2.m_cd}"><img style="height:100%; border-radius:4px" src="/upload/${mlist2.poster}" alt="" style="width:205px; height:325px;"></a>
                   </div>
                    <div class="product__item__text">
                      <h5 ><a style="color:white;" href="view.do?m_cd=${mlist2.m_cd}">${mlist2.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
