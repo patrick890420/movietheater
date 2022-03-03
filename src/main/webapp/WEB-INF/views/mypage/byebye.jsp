@@ -55,7 +55,7 @@
                               
                               <!-- name=userpw 어디에 줘야 하지 --> 
                               <input type="password" id="userPass" class="form-control form-control-alternative"
-                              placeholder="기존 비밀번호를 입력해 주세요." style="margin-top: 30px;" name="userpw">
+                              placeholder="기존 비밀번호를 입력해 주세요." style="margin-top: 30px;" name="prePw">
                               <button type="submit" class="input__btn5" id="bye_button" name="bye_button">退会</button>
                           </div>
                         </div>
@@ -93,21 +93,21 @@
   //아직은 뭘 입력하든 pw error가 뜬다,,,
 
   
-  $("#bye_button").click(function() {
-    var pwCheck = $("input[name=userpw]").val();
-    $.ajax({
-      type : "post",
-      url : '/mypage/byebyespro.do',
-      dataType : "json",
-      success : function(data) {
+//   $("#bye_button").click(function() {
+//     var pwCheck = $("input[name=userpw]").val();
+//     $.ajax({
+//       type : "post",
+//       url : '/mypage/byebyespro.do',
+//       dataType : "json",
+//       success : function(data) {
        
         
-      },
-      error : function() {
-        alert("pw error");
-      }
-    }); //ajax end
-  }); //click end
+//       },
+//       error : function() {
+//         alert("pw error");
+//       }
+//     }); //ajax end
+//   }); //click end
 </script>
 
 <!--       success : function(data) { -->

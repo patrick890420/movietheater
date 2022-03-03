@@ -58,9 +58,7 @@ private PasswordEncoder pwEncoder;
   //비밀번호 수정 페이지
 //  @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')") //이거 맞는지 확인
   @GetMapping("/mypass.do")
-  public void mypass() { // @RequestParam 정보를 주세요
-    
-    
+  public void mypass() { // @RequestParam 정보를 주세요 
   }
   
 
@@ -135,8 +133,28 @@ private PasswordEncoder pwEncoder;
   }
   
   //탈퇴 처리
-  @GetMapping("/byebyespro.do")
-  public void byebyespro() {
+  @PostMapping("/byebyespro.do")
+  public String byebyespro(Model model,Principal principal,
+      @RequestParam("prePw") String prePw) {
+    
+    String userid = principal.getName(); // 현재 로그인한 유저 
+    String PassInDB = mservice.selectPw(userid); // DB에서 암호화된 비밀번호 가져오기 
+    
+    // pwEncoder.matches(바꿀 비밀번호, 암호화된 비밀번호) 비교하여서 같으면 true, 다르면 false 
+    // 스프링 패스워드 인코더는 암호화할때마다 중간에 무작위값을 같이 암호화해서 매번 결과값이 다름!
+    // 즉 일반적인 비교연산(equals)로는 비교 불가능 / 반드시 (matches)를 사용할 것 
+    if (pwEncoder.matches(prePw, PassInDB)) {
+      MemberVO mvo = new MemberVO();
+      mvo.setUserid(userid);
+      //mvo.setUserpw(pwEncoder.encode(newPw));
+      mservice.byebyespro(mvo);
+      
+      log.info("데이터 입력 완료 : " + mvo);
+    } else {
+      log.info("데이터 입력 실패");
+    }
+    
+    return "redirect:/";
     
   }
   

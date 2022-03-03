@@ -98,11 +98,21 @@
                         </div>
                         <div class="col-lg-4">
                           <div class="form-group focused">
-                            <label class="form-control-label"
-                              for="">gender</label> <input
-                              type="text" id="" name="gender"
-                              class="form-control form-control-alternative"
-                              value="${member.gender }" readonly>
+                            <label class="form-control-label" for="">gender</label> 
+                            
+                            <c:choose>
+                              <c:when test="${member.gender eq '1'}"> 
+                             <input type="text" id="" name="gender"
+                          class="form-control form-control-alternative"  value="男性" readonly>
+                          </c:when>
+                          <c:when test="${member.gender eq '2'}"> 
+                             <input type="text" id="" name="gender"
+                          class="form-control form-control-alternative"  value="女性" readonly>
+                          </c:when>
+                          </c:choose>
+
+          
+                             
                           </div>
                         </div>
                         <div class="col-lg-4">
