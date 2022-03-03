@@ -51,18 +51,12 @@
   </div><!-- container -->
 </form>
 
-
-<!-- 총 게시글 -->
-<div class="col-md-12 event64">
-  <p>銃の掲示板&nbsp;&nbsp;<span>${pageMaker.total}</span>件</p>
-<!-- 총 게시글                                                                                         건-->
-</div><!-- col-md-12 -->
-
-
 <!-- Table -->
 <section class="notice">
 <div class="container">
-  <div class="row51">
+<p style="font-weight:600;">銃の掲示板&nbsp;&nbsp;<span>${pageMaker.total}</span>件</p>
+<!-- 총 게시글                                                                                         건-->
+  <div class="row">
     <div class="col-md-12 pb-5">
       <table class="table table-hover" id="EventTable">
         <colgroup>
