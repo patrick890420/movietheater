@@ -54,7 +54,7 @@
                                 </div>
                             </div>
                             <div class="anime__details__btn mv-txt-center">
-                                <a href="#" class="watch-btn btn btn-primary"><span>今すぐに予約!!</span></a>
+                                <a href="ticket.do" class="watch-btn btn btn-primary"><span>今すぐに予約!!</span></a>
 <!--                                 <a><i class="fa fa-angle-right"></i></a> -->
                                 </div>
                             </div>
@@ -139,19 +139,19 @@
                             </div>
                             <div class="row">
                             <div class="col-lg-3 col-md-3">
-                              <div class="product__sidebar__view__item set-bg" data-setbg="/upload/${cut.still_img1}">
+                              <div class="product__sidebar__view__item set-bg" data-setbg="/upload/${cut.still_img1}" style="width: 285px; height: 210px">
                               </div>
                             </div>
                             <div class="col-lg-3 col-md-3">
-                              <div class="product__sidebar__view__item set-bg" data-setbg="/upload/${cut.still_img2}">
+                              <div class="product__sidebar__view__item set-bg" data-setbg="/upload/${cut.still_img2}" style="width: 285px; height: 210px">
                               </div>
                             </div>
                             <div class="col-lg-3 col-md-3">
-                              <div class="product__sidebar__view__item set-bg" data-setbg="/upload/${cut.still_img3}">
+                              <div class="product__sidebar__view__item set-bg" data-setbg="/upload/${cut.still_img3}" style="width: 285px; height: 210px">
                               </div>
                             </div>
                             <div class="col-lg-3 col-md-3">
-                              <div class="product__sidebar__view__item set-bg" data-setbg="/upload/${cut.still_img4}">
+                              <div class="product__sidebar__view__item set-bg" data-setbg="/upload/${cut.still_img4}" style="width: 285px; height: 210px">
                               </div>
                             </div>
                             </div>
@@ -160,21 +160,20 @@
                 </div>
             </div>
         </section>
- 
 
-<script type="text/javascript" src="/resources/js/movie/review.js"></script>
-<script >
+ <script type="text/javascript" src="/resources/js/movie/review.js"></script>
+<script>
  $(function(){ 
-    <c:set var="a" value="${a}"/>
-    <c:set var="b" value="${b}"/>
-    <c:set var="c" value="${c}"/>
-   
-   <c:forEach varStatus="i" begin="0" end="${a}" step="1">
-     $('#star${i.current}').prop('checked', true);
-       <c:if test="${i.last && c ne 0}" >
-          $('#star${i.current}half').prop('checked', true);
-           </c:if>
-        </c:forEach>
+      <c:set var="a" value="${a}"/>
+      <c:set var="b" value="${b}"/>
+      <c:set var="c" value="${c}"/>
+     
+     <c:forEach varStatus="i" begin="0" end="${a}" step="1">
+       $('#star${i.current}').prop('checked', true);
+         <c:if test="${i.last && c ne 0}" >
+            $('#star${i.current}half').prop('checked', true);
+             </c:if>
+          </c:forEach>
  });
 </script> 
 <script type="text/javascript">
@@ -185,14 +184,14 @@
             var valueList=new Array();
             
             for(var i=0; i<jData.length; i++) {
-            	var d = jData[i];
-            	valueList.push(d.id);
-            	valueList.push(d.m_cd);
-            	valueList.push(d.t_cd);
-            	valueList.push(d.t_m_cd);
-            	valueList.push(d.gender);
-            	valueList.push(d.birth);
-            	valueList.push(d.userid);
+              var d = jData[i];
+              valueList.push(d.id);
+              valueList.push(d.m_cd);
+              valueList.push(d.t_cd);
+              valueList.push(d.t_m_cd);
+              valueList.push(d.gender);
+              valueList.push(d.birth);
+              valueList.push(d.userid);
             }
             
             var context = document
@@ -318,5 +317,7 @@
                 }
             });
         </script>
+
+
 
 <%@ include file = "../footer.jsp" %>

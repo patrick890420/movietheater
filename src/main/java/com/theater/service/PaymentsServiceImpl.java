@@ -27,4 +27,10 @@ public class PaymentsServiceImpl implements PaymentsService {
     return pMapper.getTotal(cri);
   }
 
+  @Override
+  public int insertPay(PaymentsVO pvo) {
+    
+    return pMapper.insertPay(pvo);
+  }
+
 }//class

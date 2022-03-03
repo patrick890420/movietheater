@@ -31,7 +31,6 @@ public class LoginController {
 
   @Setter(onMethod_ = @Autowired) /* pw암호화 해주는것 */
   private PasswordEncoder pwEncoder;
-
   
   @GetMapping("/login.do")
   public void login() {

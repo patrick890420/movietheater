@@ -3,23 +3,24 @@
 
 
 <mapper namespace="com.theater.mapper.MovieMapper">
-  <sql id="criteria">
-    <trim prefix="(" suffix=") AND" prefixOverrides="OR">
-      <foreach item="type" collection="typeArr">
-              <!-- Criteria->이름 같으면 getTypeArr(자동 호출) 실행 -->
-        <trim prefix="OR">
-          <choose>
-            <when test="type== 'T'.toString()">
-              title like '%'||#{keyword}||'%'
-            </when>
-            <when test="type== 'C'.toString()">
-              content like '%'||#{keyword}||'%'
-            </when>
-          </choose>
-        </trim>
-      </foreach>
-    </trim>
-  </sql>
+
+ <sql id="criteria">
+  <trim prefix="(" suffix=") AND" prefixOverrides="OR">
+    <foreach item="type" collection="typeArr">
+            <!-- Criteria->이름 같으면 getTypeArr(자동 호출) 실행 -->
+      <trim prefix="OR">
+        <choose>
+          <when test="type== 'T'.toString()">
+            title like '%'||#{keyword}||'%'
+          </when>
+          <when test="type== 'C'.toString()">
+            intro like '%'||#{keyword}||'%'
+          </when>
+        </choose>
+      </trim>
+    </foreach>
+  </trim>
+</sql>
 
   <!-- 영화 insert -->
   <insert id="movieInsertPro">
@@ -29,8 +30,8 @@
     insert into movies (m_cd, title, subtitle, rdate, rtime, rate, intro, poster) values (#{m_cd}, #{title}, #{subtitle}, to_date(#{rdate},'YYYY-MM-DD'), #{rtime},#{rate},#{intro}, #{poster})
   </insert> 
   
-  <select id="movieList" resultType="com.theater.domain.MovieVO">
-     <![CDATA[
+  <select id="movieListPaging" resultType="com.theater.domain.MovieVO">
+  <![CDATA[
         SELECT *
         FROM ( SELECT ROWNUM RN,
                 A.*
@@ -45,11 +46,6 @@
         WHERE RN > (#{pageNum}-1) * #{amount} AND RN <= #{pageNum} * #{amount}
         ]]>
 
-
-<!--     <![CDATA[ -->
-<!--       select * from movies where m_cd > 0 order by m_cd desc -->
-<!--     ]]> -->
-    
   </select>
   
   <select id="read" resultType="com.theater.domain.MovieVO">
@@ -68,25 +64,25 @@
     ]]>
   </select>
   
-  <select id="movieListPaging" resultType="com.theater.domain.MovieVO">
-    <![CDATA[
-    select * from 
-    ( 
-      select /*+ index_desc(movies SYS_C007998) */ rownum rn, M_CD,TITLE,SUBTITLE,RDATE,RTIME,RATE,INTRO,POSTER from Movies
-      where 
-    ]]>
-    <include refid="criteria"/>
-    <![CDATA[
-      rownum <= #{pageNum} * #{amount}
-    ) 
-    where rn > (#{pageNum}-1) * #{amount}
-    ]]>
-  </select>
+<!--   <select id="movieList" resultType="com.theater.domain.MovieVO"> -->
+<!--     <![CDATA[ -->
+<!--     select * from  -->
+<!--     (  -->
+<!--       select /*+ index_desc(movies SYS_C007998) */ rownum rn, M_CD,TITLE,SUBTITLE,RDATE,RTIME,RATE,INTRO,POSTER from Movies -->
+<!--       where  -->
+<!--     ]]> -->
+<!--     <include refid="criteria"/> -->
+<!--     <![CDATA[ -->
+<!--       rownum <= #{pageNum} * #{amount} -->
+<!--     )  -->
+<!--     where rn > (#{pageNum}-1) * #{amount} -->
+<!--     ]]> -->
+<!--   </select> -->
   
   <select id="getTotal" resultType="int">
   SELECT COUNT(*) AS TOTAL FROM MOVIES
-  WHERE  <if test="searchType == 'title'">TITLE LIKE '%'||#{searchType}||'%'</if>
-         <if test="searchType == 'content'">INTRO LIKE '%'||#{searchType}||'%'</if>
+  WHERE  <if test="searchType == 'title'">TITLE LIKE '%'||#{searchName}||'%'</if>
+         <if test="searchType == 'intro'">INTRO LIKE '%'||#{searchName}||'%'</if>
          <if test="searchType == null or searchType == ''"> 1=1</if>
 </select>
   
@@ -172,10 +168,10 @@ SELECT * FROM  (SELECT ROWNUM AS NUM2, movies.* FROM movies order by m_cd desc)
   WHERE NUM2 BETWEEN 11 AND 15
  </select>
  
- <select id="movieChart">
+ <select id="movieChart" resultType="com.theater.domain.MovieChartVO">
   select m.m_cd as m_cd, t.tkt_cd as t_cd, b.gender, b.birth, t.id, b.userid, t.m_cd as t_m_cd
 from movies m,ticketings t,members b
-where m.m_cd =t.m_cd and t.id=b.userid and m.m_cd=#{m_cd};
+where m.m_cd =t.m_cd and t.id=b.userid and m.m_cd=#{m_cd}
  </select>
  
 </mapper>

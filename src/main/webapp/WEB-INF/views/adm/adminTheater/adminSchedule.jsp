@@ -10,7 +10,7 @@
               <ol class="breadcrumb m-0 p-0">
                 <li class="breadcrumb-item"><a href="index.html" class="text-muted">Home</a></li>
                 <li class="breadcrumb-item text-muted active" aria-current="page">Movie</li>
-                <li class="breadcrumb-item text-muted active" aria-current="page">Schdule</li>
+                <li class="breadcrumb-item text-muted active" aria-current="page">Schedule</li>
               </ol>
             </nav>
           </div>
@@ -20,9 +20,10 @@
     <div class="container-fluid">
       <div class="card">
         <div class="card-body">
-          <form name="adminScheduleCreatePro" action="adminScheduleCreatePro.do" method="post">
+          <form name="adminScheduleInsertPro" action="adminScheduleInsertPro.do" method="get">
             <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
             <input type="hidden" name="screen_cd" value="${screen_cd}">
+            <input type="hidden" id="m_cd" name="m_cd">
               <div class="row">
                 <div class="col-sm-12 col-md-6 col-lg-4">
                   <div class="card">
@@ -32,23 +33,11 @@
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#filmsmodal">映画検索</button>
                       </div>
                       <div  class="form-group filmsForm">
-                        <input class="form-contorl" id="m_name" name="m_name">
-                        <input type="hidden" id="m_cd" name="m_cd">
+                        <input class="form-contorl" id="m_name" >
                       </div>    
                     </div>
                   </div>
                 </div>
-                <div class="mx-auto" style="text-align:center;padding-top: 80px;">
-                  <button type="submit" class="btn btn-info">Submit</button>
-                  <button type="reset" class="btn btn-dark">Reset</button>
-                </div>
-              </div>
-            </form>
-            <form name="adminScheduleInsertPro" action="adminScheduleInsertPro.do" method="post">
-            <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
-            <input type="hidden" name="screen_cd" value="${screen_cd}">
-            <input type="hidden" id="m_cd2" name="m_cd">
-              <div class="row">
                 <div class="col-sm-12 col-md-6 col-lg-4">
                   <div class="card">
                     <div class="card-body">
@@ -65,9 +54,8 @@
                   <button type="submit" class="btn btn-info">Submit</button>
                   <button type="reset" class="btn btn-dark">Reset</button>
                 </div>
-              </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -141,6 +129,7 @@
     </div> <!-- end -->
   </div> <!-- end  -->
 </div>
+</div>
 <script>
 $(".moviesTr").on("click", function () {
   var filmsForm =$(this);
@@ -148,7 +137,6 @@ $(".moviesTr").on("click", function () {
   var mcd=filmsForm.find(".movieCode").text();
   $("#m_name").val(mname);
   $("#m_cd").val(mcd);
-  $("#m_cd2").val(mcd);
   $("#filmsmodal").modal('hide');
 });
 </script>

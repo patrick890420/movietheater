@@ -13,4 +13,5 @@ public class TheatersVO {
   
   private String start_time;     //dayClick 떄문에 추가
   private String title;
+  private String rate; //등급표시
 }

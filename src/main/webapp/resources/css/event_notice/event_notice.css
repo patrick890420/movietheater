@@ -3,6 +3,7 @@
 .button{
   text-align: center;
   margin-bottom: 50px;
+  margin-top:20px;
 }
 
 .btn-rounded {
@@ -16,13 +17,11 @@
 
 .viewbg{
   background: #f8f8f8;
-  margin-bottom: 30px;
-;
 }
 
 .viewrow h2, .viewrow p{
+  padding: 50px 0;
   text-align: center;
-  padding-bottom: 10px;
 }
 
 /*                                Event*/
@@ -74,14 +73,6 @@
 .event36{
   margin-bottom: 20px;
   margin-top: 25px;
-}
-
-.event39{
-  
-}
-
-.event45{
-  padding-left: 0px;
 }
 
 .event47{
@@ -154,12 +145,7 @@
 }
 
 
-/*                            notice*/
-.notice46>p{
-  font-weight: bold;
-  float: right;
-  color: #ff0000;
-}
+/*                           notice*/
 .notice68{
   text-align: center;
   }
