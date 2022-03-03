@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.theater.domain.ActorsVO;
+import com.theater.domain.AdminChartVO;
 import com.theater.domain.Criteria;
 import com.theater.domain.DirectorsVO;
 import com.theater.domain.EventVO;
@@ -72,7 +74,8 @@ public class AdminController {
   public TicketService tkService;
 
   @GetMapping("/admin")
-  public void admin() {
+  public void admin(Model model) {
+    model.addAttribute("info",uService.getAdminInfo());
   }
   
   @GetMapping("/adminLogin")
@@ -614,6 +617,15 @@ public class AdminController {
   public String genresDelete(Model model, @RequestParam("g_cd") String g_cd) {
     uService.genresDelete(g_cd);
     return "redirect:/adm/adminCodeList.do";
+  }
+  
+  /* admin chart */
+  @GetMapping("/chart1.do")
+  public @ResponseBody String chart1(Model model) {
+    
+    Gson gson = new Gson();
+    AdminChartVO result = uService.getChart1();
+    return  gson.toJson(result);
   }
   
 }
