@@ -13,7 +13,7 @@
               title like '%'||#{keyword}||'%'
             </when>
             <when test="type== 'C'.toString()">
-              content like '%'||#{keyword}||'%'
+              intro like '%'||#{keyword}||'%'
             </when>
           </choose>
         </trim>
@@ -85,8 +85,8 @@
   
   <select id="getTotal" resultType="int">
   SELECT COUNT(*) AS TOTAL FROM MOVIES
-  WHERE  <if test="searchType == 'title'">TITLE LIKE '%'||#{searchType}||'%'</if>
-         <if test="searchType == 'content'">INTRO LIKE '%'||#{searchType}||'%'</if>
+  WHERE  <if test="searchType == 'title'">TITLE LIKE '%'||#{searchName}||'%'</if>
+         <if test="searchType == 'intro'">INTRO LIKE '%'||#{searchName}||'%'</if>
          <if test="searchType == null or searchType == ''"> 1=1</if>
 </select>
   
