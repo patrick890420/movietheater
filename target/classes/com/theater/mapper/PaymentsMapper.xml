@@ -37,4 +37,10 @@ where p.tkt_cd = t.tkt_cd
 and t.m_cd = v.m_cd 
 and t.id = 'admin'; -->
 
+
+
+<insert id="insertPay"  parameterType="com.theater.domain.PaymentsVO">
+  insert into pay_cd (pay_cd,charge,pay_method,pay_status,pay_name)
+  values(#{imp_uid},#{merchant_uid}, #{biz_email}, #{pay_date}, #{amount}, #{card_no}, #{refund})
+</insert>
 </mapper>
