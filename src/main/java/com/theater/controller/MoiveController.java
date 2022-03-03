@@ -49,37 +49,41 @@ public class MoiveController {
     model.addAttribute("a",a);
     model.addAttribute("b",b);
     model.addAttribute("c",c);
-    
+
     List<MovieChartVO> chart = movieService.movieChart(m_cd);
-    
-    Gson gson = new Gson();
-    JsonArray jArray = new JsonArray();
-    
-    Iterator<MovieChartVO> it = chart.iterator();
-    
-    while(it.hasNext()) {
-      MovieChartVO chartVO = it.next();
-      JsonObject object = new JsonObject();
-      
-      String id = chartVO.getId();
-      m_cd = chartVO.getM_cd();
-      int t_cd = chartVO.getT_cd();
-      int t_m_cd = chartVO.getT_m_cd();
-      String gender = chartVO.getGender();
-      String birth = chartVO.getBirth();
-      String userid = chartVO.getUserid();
-      
-      object.addProperty("id", id);
-      object.addProperty("m_cd", m_cd);
-      object.addProperty("t_cd" , t_cd);
-      object.addProperty("t_m_cd", t_m_cd);
-      object.addProperty("gender", gender);
-      object.addProperty("userid", userid);
-      object.addProperty("birth", birth);
-      jArray.add(object);
-    }
-    String json = gson.toJson(jArray);
-    model.addAttribute("json",json);
+       
+       Gson gson = new Gson();
+       JsonArray jArray = new JsonArray();
+       
+       Iterator<MovieChartVO> it = chart.iterator();
+       
+       while(it.hasNext()) {
+         MovieChartVO chartVO = it.next();
+         JsonObject object = new JsonObject();
+         
+         String id = chartVO.getId();
+         m_cd = chartVO.getM_cd();
+         int t_cd = chartVO.getT_cd();
+         int t_m_cd = chartVO.getT_m_cd();
+         String gender = chartVO.getGender();
+         String birth = chartVO.getBirth();
+         String userid = chartVO.getUserid();
+         
+         object.addProperty("id", id);
+         object.addProperty("m_cd", m_cd);
+         object.addProperty("t_cd" , t_cd);
+         object.addProperty("t_m_cd", t_m_cd);
+         object.addProperty("gender", gender);
+         object.addProperty("userid", userid);
+         object.addProperty("birth", birth);
+         jArray.add(object);
+       }
+       String json = gson.toJson(jArray);
+       model.addAttribute("json",json);
+       
+       
+       
+   
     
 	}//view.do
 	
