@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.theater.domain.ReserveVO;
 import com.theater.domain.TheatersVO;
+import com.theater.service.EventService;
 import com.theater.service.TheaterService;
 
 import lombok.AllArgsConstructor;
@@ -29,13 +29,31 @@ public class TheaterController {
   @Setter(onMethod_ = @Autowired)
   private TheaterService thservice;
   
+  @Setter(onMethod_= @Autowired)
+  private EventService eService;
+  
   @GetMapping("/theater.do")
   public void theater(Model model, @RequestParam(value="t_area", required=false, defaultValue= "1") String t_area,
-      @RequestParam(value="t_name", required=false, defaultValue= "青森県") String t_name) {
+      @RequestParam(value="t_name", required=false, defaultValue= "青森県") String t_name
+      ) {
     
     model.addAttribute("aList",thservice.areainfo());
     model.addAttribute("thList", thservice.thread(t_area));
     model.addAttribute("thinfo", thservice.thinforead(t_name));
+    model.addAttribute("elist", eService.getEventIndex());
+
+    
+    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+    Date now = new Date();
+    
+    String now_dt = format.format(now);
+    System.out.println(now_dt);
+    
+    TheatersVO tvo = new TheatersVO();
+    tvo.setT_name(t_name);
+    tvo.setStart_time(now_dt);
+    log.info("확인"+thservice.getScreenInfo(tvo));
+    model.addAttribute("sclist", thservice.getScreenInfo(tvo));
   }
   
   @GetMapping("/cityCheck.do")
@@ -63,7 +81,7 @@ public class TheaterController {
     String afterDate = "";
     
     try {
-        Date date = dateFormat.parse(start_time); // 기존 string을 date 클래스로 변환
+        Date date = dateFormat.parse(beforeDate); // 기존 string을 date 클래스로 변환
         afterDate = dateFormat2.format(date); // 변환한 값의 format 변경
     }
     catch (Exception e) {
