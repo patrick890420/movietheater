@@ -90,7 +90,7 @@ public class TheaterController {
     TheatersVO tvo = new TheatersVO();
     tvo.setT_name(t_name);
     tvo.setStart_time(afterDate);
-    log.info(thservice.getScreenInfo(tvo));
+    log.info("DAYCLICK=="+thservice.getScreenInfo(tvo));
     List<TheatersVO> screenInfo = thservice.getScreenInfo(tvo);
         
     return screenInfo;
