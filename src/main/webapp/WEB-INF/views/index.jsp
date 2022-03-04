@@ -32,21 +32,21 @@
                 <div class="product__item">
                   <div class="product__item__pic set-bg">
                     <c:if test="${mlist1.rate==99 }">
-                      <div class="t_ep0" style="position: relative !important; top: 55px; left: 22px;">G</div>
+                      <div class="t_ep0" style="position: relative !important; top: 55px; left: 22px; border-radius: 25px;">G</div>
                     </c:if>
                     <c:if test="${mlist1.rate==12 }">
-                      <div class="t_ep12" style="position: relative !important; top: 55px; left: 22px;">PG12</div>
+                      <div class="t_ep12" style="position: relative !important; top: 55px; left: 22px; border-radius: 25px;">PG12</div>
                     </c:if>
                     <c:if test="${mlist1.rate==15 }">
-                      <div class="t_ep15" style="position: relative !important; top: 55px; left: 22px;">R15+</div>
+                      <div class="t_ep15" style="position: relative !important; top: 55px; left: 22px; border-radius: 25px;">R15+</div>
                     </c:if>
                     <c:if test="${mlist1.rate==19 }">
-                      <div class="t_ep19" style="position: relative !important; top: 55px; left: 22px;">R18+</div>
+                      <div class="t_ep19" style="position: relative !important; top: 55px; left: 22px; border-radius: 25px;">R18+</div>
                     </c:if>
                     <a href="/movie/view.do?m_cd=${mlist1.m_cd}"><img style="height:90%; padding:20px; border-radius:4px" src="/upload/${mlist1.poster}" alt=""></a>
                     </div>
                   <div class="product__item__text">
-                     <h5 style="padding-left: 20px;"><a style="color:white;" href="view.do?m_cd=${mlist1.m_cd}">${mlist1.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
+                     <h5 style="padding-left: 20px;"><a style="color:white;" href="/movie/view.do?m_cd=${mlist1.m_cd}">${mlist1.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
                   </div>
                 </div>
                  </div>
@@ -60,21 +60,21 @@
                 <div class="product__item">
                   <div class="product__item__pic set-bg">
                    <c:if test="${mlist2.rate==99 }">
-                      <div class="t_ep0" style="position: relative !important; top: 55px; left: 22px;">G</div>
+                      <div class="t_ep0" style="position: relative !important; top: 55px; left: 22px; border-radius: 25px;">G</div>
                     </c:if>
                     <c:if test="${mlist2.rate==12 }">
-                      <div class="t_ep12" style="position: relative !important; top: 55px; left: 22px;">PG12</div>
+                      <div class="t_ep12" style="position: relative !important; top: 55px; left: 22px; border-radius: 25px;">PG12</div>
                     </c:if>
                     <c:if test="${mlist2.rate==15 }">
-                      <div class="t_ep15" style="position: relative !important; top: 55px; left: 22px;">R15+</div>
+                      <div class="t_ep15" style="position: relative !important; top: 55px; left: 22px; border-radius: 25px;">R15+</div>
                     </c:if>
                     <c:if test="${mlist2.rate==19 }">
-                      <div class="t_ep19" style="position: relative !important; top: 55px; left: 22px;">R18+</div>
+                      <div class="t_ep19" style="position: relative !important; top: 55px; left: 22px; border-radius: 25px;">R18+</div>
                     </c:if>
                     <a href="/movie/view.do?m_cd=${mlist2.m_cd}"><img style="height:90%; padding:20px; border-radius:4px" src="/upload/${mlist2.poster}" alt="" style="width:205px; height:325px;"></a>
                   </div>
                    <div class="product__item__text">
-                     <h5 style="padding-left: 20px;"><a style="color:white;" href="view.do?m_cd=${mlist2.m_cd}">${mlist2.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
+                     <h5 style="padding-left: 20px;"><a style="color:white;" href="/movie/view.do?m_cd=${mlist2.m_cd}">${mlist2.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
                   </div>
                 </div>
               </div>
@@ -87,21 +87,21 @@
                 <div class="product__item">
                   <div class="product__item__pic set-bg">
                    <c:if test="${mlist3.rate==99 }">
-                      <div class="t_ep0" style="position: relative !important; top: 55px; left: 22px;">G</div>
+                      <div class="t_ep0" style="position: relative !important; top: 55px; left: 22px; border-radius: 25px;">G</div>
                     </c:if>
                     <c:if test="${mlist3.rate==12 }">
-                      <div class="t_ep12" style="position: relative !important; top: 55px; left: 22px;">PG12</div>
+                      <div class="t_ep12" style="position: relative !important; top: 55px; left: 22px; border-radius: 25px;">PG12</div>
                     </c:if>
                     <c:if test="${mlist3.rate==15 }">
-                      <div class="t_ep15" style="position: relative !important; top: 55px; left: 22px;">R15+</div>
+                      <div class="t_ep15" style="position: relative !important; top: 55px; left: 22px; border-radius: 25px;">R15+</div>
                     </c:if>
                     <c:if test="${mlist3.rate==19 }">
-                      <div class="t_ep19" style="position: relative !important; top: 55px; left: 22px;">R18+</div>
+                      <div class="t_ep19" style="position: relative !important; top: 55px; left: 22px; border-radius: 25px;">R18+</div>
                     </c:if>
                      <a href="/movie/view.do?m_cd=${mlist3.m_cd}"><img style="height:90%; padding:20px; border-radius:4px" src="/upload/${mlist3.poster}" alt=""></a>
                   </div>
                    <div class="product__item__text">
-                     <h5 style="padding-left: 20px;"><a style="color:white;" href="view.do?m_cd=${mlist3.m_cd}">${mlist3.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
+                     <h5 style="padding-left: 20px;"><a style="color:white;" href="/movie/view.do?m_cd=${mlist3.m_cd}">${mlist3.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
                   </div>
                 </div>
                 
