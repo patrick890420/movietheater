@@ -28,11 +28,11 @@
                         <h3 style="color:white;">Login</h3>
                         <form name="login" id="login">
                           <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-                            <div class="input__item">
+                            <div class="input__item" style="margin: 0 0 20px 0 !important;">
                               <input type="text" placeholder="ユーザーID" name="username">
                               <span class="icon_id"></span>
                             </div>
-                            <div class="input__item">
+                            <div class="input__item" style="margin: 0 0 20px 0 !important;">
                               <input type="password" name="password" placeholder="パスワード">
                               <span class="icon_lock"></span>
                             </div>
