@@ -50,11 +50,11 @@
                                             <li><span>映倫</span> ${view.rate }等級</li>
                                         </ul>
                                     </div>
-                                    <p>${view.intro }</p>
+                                    <p style="padding-left: 20px;">${view.intro }</p>
                                 </div>
                             </div>
                             <div class="anime__details__btn mv-txt-center">
-                                <a href="#" class="watch-btn btn btn-primary"><span>今すぐに予約!!</span></a>
+                                <a href="ticket.do" class="watch-btn btn btn-primary"><span>今すぐに予約!!</span></a>
 <!--                                 <a><i class="fa fa-angle-right"></i></a> -->
                                 </div>
                             </div>
@@ -87,7 +87,7 @@
                         <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
                         <div class="anime__details__review">
                             <div class="section-title">
-                                <h5>Reviews</h5>
+                                <h5>レビュー</h5>
                             </div>
                             <c:forEach items="${review}" var="review" begin="0" end="7">
                             <div class="anime__review__item">
@@ -95,9 +95,10 @@
                                     <img src="/resources/img/anime/review-1.jpg" alt="">
                                 </div>
                                 <div class="anime__review__item__text">
-                                    <h6>${review.rwriter }<span>${review.rdate}</span></h6>
+                                <fmt:parseDate value="${view.rdate}" var="dateValue1" pattern="yyyy-MM-dd"/>
+                                  <h6 style="font-size: 20px;">${review.rwriter }&nbsp; <span style="font-size:12px;">「<fmt:formatDate value="${dateValue1}" pattern="yyyy-MM-dd"/>」</span></h6>
+                                     <span>${review.review }</span>
                                     <div>
-                                    <span>${review.review }</span>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +107,7 @@
                         <sec:authorize access="isAuthenticated()">
                         <div class="anime__details__form">
                           <div class="section-title">
-                                <h5>レビュー</h5>
+                                <h5>コメント</h5>
                               <div class="test">
                              
                               <fieldset class="rating1">

@@ -90,4 +90,10 @@ AND tk.S_T_CD =#{s_t_cd}
   WHERE t.M_CD = m.M_CD
 </select>
 
+<select id="getPayList" resultType="com.theater.domain.TicketListVO"> 
+  SELECT * 
+  FROM TICKETINGS t, MOVIES m,PAYMENTS p  
+  WHERE t.M_CD = m.M_CD
+  AND t.TKT_CD = p.TKT_CD
+</select>
 </mapper>

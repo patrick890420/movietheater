@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.theater.mapper.UtilityMapper">
+
+<select id="getChart1" resultType="com.theater.domain.AdminChartVO">
+  SELECT *
+  FROM
+    (select COUNT(*) AS MEN
+       from members
+      where gender ='1'
+    ),
+    (select COUNT(*) AS WOMEN
+       from members
+      where gender ='2'
+    )
+</select>
+
+<select id="getAdminInfo" resultType="com.theater.domain.AdminVO">
+ SELECT
+  (SELECT COUNT(*) FROM MEMBERS) AS members
+  ,(SELECT 
+    SUM(P.CHARGE)
+    FROM TICKETINGS T, PAYMENTS p
+    WHERE T.TKT_CD = P.TKT_CD
+    AND  SUBSTR(T.TKT_DATE,1,7)  = TO_CHAR(SYSDATE,'yyyy-MM')) AS monthEarning
+  ,(SELECT COUNT(*) FROM FILMS WHERE FILM_STATUS =1) AS screenMovie
+  ,(SELECT COUNT(*) FROM THEATERS) AS theater
+ FROM DUAL
+</select>
+
+</mapper>

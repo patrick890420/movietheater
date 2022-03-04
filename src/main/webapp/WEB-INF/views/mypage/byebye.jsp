@@ -51,11 +51,11 @@
                         <div class="col-lg-12" style="margin-top: 50px;">
                           <div class="form-group focused">
                             <label class="form-control-label"
-                              for="input-first-name">회원을 탈퇴하시려면,<br> 로그인 시 사용하시는 비밀번호를 입력해 주세요.</label>
+                              for="input-first-name">会員退会のためには<br> パスワードを入力してください。</label>
                               
                               <!-- name=userpw 어디에 줘야 하지 --> 
                               <input type="password" id="userPass" class="form-control form-control-alternative"
-                              placeholder="기존 비밀번호를 입력해 주세요." style="margin-top: 30px;" name="prePw">
+                              placeholder="パスワードを入力してください。" style="margin-top: 30px;" name="prePw">
                               <button type="submit" class="input__btn5" id="bye_button" name="bye_button">退会</button>
                           </div>
                         </div>

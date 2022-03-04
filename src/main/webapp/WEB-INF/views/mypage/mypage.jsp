@@ -75,8 +75,7 @@
                     </div>
                     <hr class="my-4">
                     <!-- Address -->
-                    <h6 class="heading-small text-muted mb-4">이하의
-                      정보는 수정할 수 없습니다.</h6>
+                    <h6 class="heading-small text-muted mb-4">以下の情報は修正できません。</h6>
                     <div class="pl-lg-4">
                       <div class="row">
                         <div class="col-md-12">
@@ -140,8 +139,8 @@
                       </div>
 
                       <button type="submit" id="updatebtn" class="btn btn-primary" style="margin-left: 110px;">完了</button>
-                      <button type="reset" class="btn btn-secondary" value="리셋">リセット</button>
-                      <button type="button" class="btn btn-secondary" value="회원탈퇴" onclick="location.href='byebye.do'">退会</button>
+                      <button type="reset" class="btn btn-secondary" value="リセット">リセット</button>
+                      <button type="button" class="btn btn-secondary" value="退会" onclick="location.href='byebye.do'">退会</button>
 <!--                       <input type="button" class="btn btn-secondary" value="회원탈퇴"> -->
                        <!-- <button type="submit" class="btn btn-primary"
               id="join_button" name="join_button">会員登録へ</button> -->

@@ -15,16 +15,6 @@
                                         <h4>Moives Now Playing</h4>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-6">
-                                    <div class="product__page__filter">
-                                        <p>Order by:</p>
-                                        <select>
-                                            <option value="">A-Z</option>
-                                            <option value="">1-10</option>
-                                            <option value="">10-50</option>
-                                        </select>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="notice_search">
@@ -36,12 +26,12 @@
                                   <select  name="searchType" class="select">
                                     <option value=""<c:out value="${pageMaker.cri.searchType==null?'selected':''}"/>>選択</option>
                                     <option value="title"<c:out value="${pageMaker.cri.searchType eq 'title'?'selected':''}"/>>題目</option>
-                                    <option value="intro"><c:out value="${pageMaker.cri.searchType eq 'intro'?'selected':''}"/>内容</option>
+                                    <option value="intro"<c:out value="${pageMaker.cri.searchType eq 'intro'?'selected':''}"/>>内容</option><!-- 내용 -->
                                   </select>
                                   <label>
-                                    <input type="text" style="border:groove; border-radius: 4px;" class="event47" name="searchName" placeholder="検索語 入力 ">
+                                    <input type="text" style="text-align:center; border:groove; border-radius: 4px;" class="event47" name="searchName" placeholder="検索語 入力 ">
                                     <input type="hidden" name="pageNum" value="1">
-                                    <input type="hidden" name="amount" value="9">
+                                    <input type="hidden" name="amount" value="12">
                                     <button type="submit" style="background:none; border:none;"><i class="icon_search"></i></button>
                                     </label>
                                     </div>
@@ -60,7 +50,7 @@
                                   </div>
                                     <div class="product__item__pic set-bg" >
                                         <c:if test="${mlist.rate==99 }">
-                                          <div class="t_ep0" style="position:absolute;">PG</div>
+                                          <div class="t_ep0" style="position:absolute;">G</div>
                                         </c:if>
                                         <c:if test="${mlist.rate==12 }">
                                           <div class="t_ep12" style="position:absolute;">PG12</div>
@@ -78,10 +68,11 @@
                                         <h5 ><a style="color:black;" href="view.do?m_cd=${mlist.m_cd}">${mlist.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
                                         <fmt:parseDate value="${mlist.rdate}" var="dateValue" pattern="yyyy-MM-dd"/>
                                         <h5><fmt:formatDate value="${dateValue}" pattern="yyyy-MM-dd"/><strong> 公開</strong></h5>
-                                        <button class="btn" style="background-image :linear-gradient(to left, rgb(255, 115, 86), rgb(251, 67, 87));  margin: 10px 0;"><span style="color:white; font-weight:600;">予約</span></button>
+                                        <button onclick="location.href='/ticket/ticket.do'" class="btn" style="background-image :linear-gradient(to left, rgb(255, 115, 86), rgb(251, 67, 87));  margin: 10px 0;"><span style="color:white; font-weight:600;">予約</span></button>
                                     </div>
                                 </div>
                             </div>
+                            <c:set var="num" value="${num-1}"/>
                             </c:forEach>
                         </div>
                     </div>

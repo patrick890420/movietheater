@@ -1,14 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <%@ include file="../header.jsp" %>
 
 <!-- Hero Section Begin -->
 <section class="hero">
 <div class="container">
   <div class="row">
-    <div class="col-md-12 event9">
-      <h2>イベント</h2><!-- EVENT -->
-    </div><!-- md12 -->
+    <div class="col-md-12 event9"><h2>イベント</h2><!-- EVENT --></div><!-- md12 -->
   </div><!-- row -->
   <div class="row event13">
     <div class="col-md-12">
@@ -24,109 +21,90 @@
 </section><!-- hero -->
 <!-- Hero Section End -->
 
+<!-- Table -->
+<section class="notice" style="padding:25px 0;">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <p style="font-weight:600;">銃の掲示板&nbsp;&nbsp;<span>${pageMaker.total}</span>件</p>
+    </div>
+
 <!-- search -->
-<form name="myform" method="get" action="event.do" id="searchForm">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-=9" style="padding-left: 799px;">
-      <select name="searchType" class="select">
-        <option value=""<c:out value="${pageMaker.cri.searchType==null?'selected':''}"/>>選択</option><!-- 선택 -->
-        <option value="title"<c:out value="${pageMaker.cri.searchType eq 'title'?'selected':''}"/>>題目</option><!-- 제목 -->
-        <option value="content"<c:out value="${pageMaker.cri.searchType eq 'content'?'selected':''}"/>>内容</option><!-- 내용 -->
-      </select>
-      </div>
-      <div class="col-lg-3 event45">
-        <label>
-        <input type="text" class="event47" name="searchName" placeholder="検索語 入力 "><!-- 검색어 입력 -->
+<div class="col-md-6">
+  <form name="myform" method="get" action="event.do" id="searchForm" style="float:right;">
+    <select name="searchType" class="select">
+      <option value=""<c:out value="${pageMaker.cri.searchType==null?'selected':''}"/>>選択</option><!-- 선택 -->
+      <option value="title"<c:out value="${pageMaker.cri.searchType eq 'title'?'selected':''}"/>>題目</option><!-- 제목 -->
+      <option value="content"<c:out value="${pageMaker.cri.searchType eq 'content'?'selected':''}"/>>内容</option><!-- 내용 -->
+    </select>
+    <label>
+      <input type="text" class="event47" name="searchName" placeholder="検索語 入力 " style="border: groove; text-align:center;"><!-- 검색어 입력 -->
 <%--           <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}"> --%>
 <%--           <input type="hidden" name="amount" value="${pageMaker.cri.amount}"> --%>
-          <input type="hidden" name="pageNum" value="1">
-          <input type="hidden" name="amount" value="10">
-          <button type="submit" style="background:none; border:none;">
-          <span class="icon_search"></span>
-          </button>
-          </label>
-        </div><!-- lg3 -->
-    </div><!-- row -->
-  </div><!-- container -->
-</form>
-
-
-<!-- 총 게시글 -->
-<div class="col-md-12 event64">
-  <p>銃の掲示板&nbsp;&nbsp;<span>${pageMaker.total}</span>件</p>
-<!-- 총 게시글                                                                                         건-->
-</div><!-- col-md-12 -->
-
-
-<!-- Table -->
-<section class="notice">
-<div class="container">
-  <div class="row51">
-    <div class="col-md-12 pb-5">
-      <table class="table table-hover" id="EventTable">
-        <colgroup>
-          <col width="6%">
-          <col width="*">
-          <col width="10%">
-          <col width="11%">
-          <col width="7%">
-        </colgroup>
-        <tr>
-          <th>番号</th><!-- 번호 -->
-          <th class="notice68">題目</th><!-- 제목 -->
-          <th>管理者</th><!-- 관리자 -->
-          <th class="notice68">作成日</th><!-- 작성일 -->
-          <th>照会数</th><!-- 조회수 -->
-        </tr>
-        
-        <tbody>
-          <c:set var="num1" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}"/>
-          <c:forEach var="elist" items="${elist}">
-            <tr>
-              <td>${num1}</td><!-- 번호 -->
-              <td class="notice85"><a href="eventView.do?event_cd=${elist.event_cd}">${elist.title}</a></td><!-- 제목 -->
-              <td>管理者</td><!-- 관리자 -->
-              <td>
-                <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${elist.wdate}"/>
-                <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>
-              </td>
-              <td class="notice68">${elist.hits}</td>
-            </tr>
-           <c:set var="num1" value="${num1-1}"/>
-         </c:forEach>
-       </tbody>
+      <input type="hidden" name="pageNum" value="1">
+      <input type="hidden" name="amount" value="10">
+      <button type="submit" style="background:none; border:none;">
+        <span class="icon_search"></span>
+      </button>
+    </label>
+  </form>
+</div>
+<div class="col-md-12 pb-5">
+  <table class="table table-hover" id="EventTable" style="margin-bottom:0;">
+    <colgroup>
+      <col width="6%">
+      <col width="*">
+      <col width="10%">
+      <col width="11%">
+      <col width="7%">
+    </colgroup>
+    <tr>
+      <th>番号</th><!-- 번호 -->
+      <th class="notice68">題目</th><!-- 제목 -->
+      <th>管理者</th><!-- 관리자 -->
+      <th class="notice68">作成日</th><!-- 작성일 -->
+      <th>照会数</th><!-- 조회수 -->
+    </tr>
+    <tbody>
+      <c:set var="num1" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}"/>
+      <c:forEach var="elist" items="${elist}">
+      <tr>
+        <td>${num1}</td><!-- 번호 -->
+        <td class="notice85"><a href="eventView.do?event_cd=${elist.event_cd}">${elist.title}</a></td><!-- 제목 -->
+        <td>管理者</td><!-- 관리자 -->
+        <td>
+          <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${elist.wdate}"/>
+          <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>
+        </td>
+        <td class="notice68">${elist.hits}</td>
+      </tr>
+      <c:set var="num1" value="${num1-1}"/>
+      </c:forEach>
+      </tbody>
      </table>
 
 <!-- paging -->
 <form action="notice.do" name ="pageForm" method="get">
-  <div class="product__pagination">
-  <hr>
-      <ul class="pagination pagination-sm">
+  <div class="product__pagination" style="border-top:solid 3px #80808036;"> 
+    <ul class="pagination pagination-sm">
 <!-- 2. 이전페이지 활성화여부 -->
-        <c:if test="${pageMaker.prev}">
-          <li>
-            <a href="#" data-pagenum='${pageMaker.startPage - 1}'>
-              <i class="fa fa-angle-double-left"></i>
-            </a>
-          </li>
-        </c:if>
+    <c:if test="${pageMaker.prev}">
+    <li>
+      <a href="#" data-pagenum='${pageMaker.startPage - 1}'><i class="fa fa-angle-double-left"></i></a>
+    </li>
+    </c:if>
+    
 <!-- 1. 페이지네이션 처리 -->
-        <c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage}">
-          <li class="${pageMaker.pageNum eq num ? 'active' : ''}">
-            <a href="#" data-pagenum='${num}'>${num}</a>
-          </li>
-        </c:forEach>
+    <c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage}">
+      <li class="${pageMaker.pageNum eq num ? 'active' : ''}"><a href="#" data-pagenum='${num}'>${num}</a></li>
+    </c:forEach>
+
 <!-- 3. 다음버튼 활성화여부 -->
-        <c:if test="${pageMaker.next }">
-          <li>
-            <a href="#" data-pagenum='${pageMaker.endPage + 1}'>
-              <i class="fa fa-angle-double-right"></i>
-            </a>
-          </li>
-        </c:if>
-      </ul>
-    </div>
+    <c:if test="${pageMaker.next }">
+      <li><a href="#" data-pagenum='${pageMaker.endPage + 1}'><i class="fa fa-angle-double-right"></i></a></li>
+    </c:if>
+    </ul>
+  </div>
   <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
   <input type="hidden" name="amount" value="${pageMaker.cri.amount}">
   <input type="hidden" name="searchType" value="${pageMaker.cri.searchType}">
@@ -158,5 +136,4 @@
   }
 
 </script>
-
-<%@ include file="../footer.jsp" %>	
+<%@ include file="../footer.jsp" %>

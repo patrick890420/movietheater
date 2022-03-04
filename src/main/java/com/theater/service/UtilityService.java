@@ -3,6 +3,8 @@ package com.theater.service;
 import java.util.List;
 
 import com.theater.domain.ActorsVO;
+import com.theater.domain.AdminChartVO;
+import com.theater.domain.AdminVO;
 import com.theater.domain.DirectorsVO;
 import com.theater.domain.GenresVO;
 import com.theater.domain.NationVO;
@@ -29,5 +31,7 @@ public interface UtilityService {
   public void nationDelete(String n_cd);
   public void genresDelete(String g_cd);
   
+  public AdminChartVO getChart1();
   
+  public AdminVO getAdminInfo();
 }
