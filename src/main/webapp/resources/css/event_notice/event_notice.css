@@ -17,8 +17,6 @@
 
 .viewbg{
   background: #f8f8f8;
-  /*margin-bottom: 30px;*/
-;
 }
 
 .viewrow h2, .viewrow p{
@@ -75,14 +73,6 @@
 .event36{
   margin-bottom: 20px;
   margin-top: 25px;
-}
-
-.event39{
-  
-}
-
-.event45{
-  padding-left: 0px;
 }
 
 .event47{
@@ -155,12 +145,7 @@
 }
 
 
-/*                            notice*/
-.notice46>p{
-  font-weight: bold;
-  float: right;
-  color: #ff0000;
-}
+/*                           notice*/
 .notice68{
   text-align: center;
   }

@@ -82,9 +82,22 @@
                           <!-- 영화이름 (영화정보 페이지로 넘어가게 할까?)-->
                           <td class="cash76"><a href="#"></a>${pList.title}</td>
                           <td>${pList.tkt_date }</td>
-                          <td>${pList.charge}</td>
+                          <td><fmt:formatNumber value="${pList.charge}" type="currency"/></td>
+                          
                           <td>${pList.pay_method}</td>
-                          <td>${pList.pay_status}</td>
+                          
+                          <td>
+                            <c:choose>
+                            <c:when test="${pList.pay_status == '1'}">
+                            (<input type="checkbox" name="result" value="${pList.pay_status}"> 미결제)
+                            </c:when>
+                            <c:otherwise>
+                            <span>${pList.pay_status}</span>
+                            (<input type="checkbox" checked="checked" disabled="disabled" 
+                              value="${pList.pay_status}"> 결제완료)
+                            </c:otherwise>
+                            </c:choose>
+                          </td>
                         </tr>
                         <c:set var="num" value="${num-1}"/>
                       </c:forEach>
