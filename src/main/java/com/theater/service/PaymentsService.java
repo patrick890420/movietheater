@@ -8,7 +8,7 @@ import com.theater.domain.PaymentsVO;
 public interface PaymentsService {
 
 
-  public List<PaymentsVO>getCashList(Criteria cri);
+  public List<PaymentsVO>getCashList(Criteria cri,String id);
 
 //전체 수
   public int getTotal(Criteria cri);

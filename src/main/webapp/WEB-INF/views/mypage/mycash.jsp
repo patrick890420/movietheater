@@ -53,7 +53,7 @@
 
                 <!-- 총 게시글 -->
                 <div class="col-md-4">
-                  <p>銃の掲示板&nbsp;&nbsp;<span>${pageMaker.total}</span>件</p>
+<%--                   <p>銃の掲示板&nbsp;&nbsp;<span>${pageMaker.total}</span>件</p> --%>
                 </div><!-- col-md-4 -->
 
                   <table class="table table-hover" style="width: 1000px; margin-top: 50px; text-align: center;">
@@ -68,28 +68,36 @@
                     </colgroup>
                     <tr>
                       <th>번호</th>
-                      <th>코드</th>
                       <th>영화이름</th>
-                      <th>예매일</th>
+                      <th>결제일</th>
                       <th>금액</th>
+                      <th>결제수단</th>
                       <th>결제상태</th>
                     </tr>
-
                     <tbody>
                     <c:set var="num" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}"/>
-                      <c:forEach var="cashList" items="${cashList}">
+                      <c:forEach var="pList" items="${pList}">
                         <tr>
                           <td>${num}</td>
-                          <td>${cashList.tkt_cd}</td>
                           <!-- 영화이름 (영화정보 페이지로 넘어가게 할까?)-->
-                          <td class="cash76"><a href="#"></a>영화이름</td>
-
+                          <td class="cash76"><a href="#"></a>${pList.title}</td>
+                          <td>${pList.tkt_date }</td>
+                          <td><fmt:formatNumber value="${pList.charge}" type="currency"/></td>
+                          
+                          <td>${pList.pay_method}</td>
+                          
                           <td>
-                            <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="예매일"/>
-                            <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}" />
+                            <c:choose>
+                            <c:when test="${pList.pay_status == '1'}">
+                            (<input type="checkbox" name="result" value="${pList.pay_status}"> 미결제)
+                            </c:when>
+                            <c:otherwise>
+                            <span>${pList.pay_status}</span>
+                            (<input type="checkbox" checked="checked" disabled="disabled" 
+                              value="${pList.pay_status}"> 결제완료)
+                            </c:otherwise>
+                            </c:choose>
                           </td>
-                          <td>${cashList.charge}</td>
-                          <td>결제상태</td>
                         </tr>
                         <c:set var="num" value="${num-1}"/>
                       </c:forEach>

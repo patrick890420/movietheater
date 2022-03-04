@@ -48,8 +48,10 @@ private PasswordEncoder pwEncoder;
   }
 
   @GetMapping("/mycash.do")
-  public void mycash(Criteria cri, Model model) {
-    model.addAttribute("cashList",pService.getCashList(cri));
+  public void mycash(Criteria cri, Model model,Principal principal) {
+    String id = principal.getName();
+    
+    model.addAttribute("pList",pService.getCashList(cri,id));
 //전체조회값
     int total= pService.getTotal(cri);
     model.addAttribute("pageMaker",new PageVO(cri, total));
