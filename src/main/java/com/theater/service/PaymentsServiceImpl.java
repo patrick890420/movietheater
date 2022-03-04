@@ -18,8 +18,8 @@ public class PaymentsServiceImpl implements PaymentsService {
   private PaymentsMapper pMapper;
 
   @Override
-  public List<PaymentsVO> getCashList(Criteria cri) {
-    return pMapper.getCashList(cri);
+  public List<PaymentsVO> getCashList(Criteria cri, String id) {
+    return pMapper.getCashList(cri,id);
   }
 
   @Override
@@ -32,5 +32,7 @@ public class PaymentsServiceImpl implements PaymentsService {
     
     return pMapper.insertPay(pvo);
   }
+
+
 
 }//class

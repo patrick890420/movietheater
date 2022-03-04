@@ -19,6 +19,7 @@ public interface TicketService {
   public void seatFix(SelectSeatVO svo);
   public SelectSeatVO getTkInfo(SelectSeatVO svo);
   public List<TicketListVO> getTkList();
+  public List<TicketListVO> getPayList();
   
   public void reserve(ReserveInsertVO rvo);
 }

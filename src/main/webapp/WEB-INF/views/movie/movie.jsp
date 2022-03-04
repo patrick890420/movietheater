@@ -29,7 +29,7 @@
                                     <option value="intro"<c:out value="${pageMaker.cri.searchType eq 'intro'?'selected':''}"/>>内容</option><!-- 내용 -->
                                   </select>
                                   <label>
-                                    <input type="text" style="border:groove; border-radius: 4px;" class="event47" name="searchName" placeholder="検索語 入力 ">
+                                    <input type="text" style="text-align:center; border:groove; border-radius: 4px;" class="event47" name="searchName" placeholder="検索語 入力 ">
                                     <input type="hidden" name="pageNum" value="1">
                                     <input type="hidden" name="amount" value="12">
                                     <button type="submit" style="background:none; border:none;"><i class="icon_search"></i></button>

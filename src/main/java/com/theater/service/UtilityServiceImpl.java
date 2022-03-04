@@ -6,10 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.theater.domain.ActorsVO;
+import com.theater.domain.AdminChartVO;
+import com.theater.domain.AdminVO;
 import com.theater.domain.DirectorsVO;
 import com.theater.domain.GenresVO;
 import com.theater.domain.NationVO;
 import com.theater.mapper.CodeMapper;
+import com.theater.mapper.UtilityMapper;
 
 import lombok.AllArgsConstructor;
 import lombok.Setter;
@@ -20,6 +23,9 @@ public class UtilityServiceImpl implements UtilityService {
 
   @Setter(onMethod_ = @Autowired)
   private CodeMapper cmapper;
+  
+  @Setter(onMethod_ = @Autowired)
+  private UtilityMapper umapper;
   
   @Override
   public List<ActorsVO> getActorsList() {
@@ -109,6 +115,16 @@ public class UtilityServiceImpl implements UtilityService {
   public void genresModify(GenresVO gvo) {
     cmapper.genresModify(gvo);
     
+  }
+
+  @Override
+  public AdminChartVO getChart1() {
+    return umapper.getChart1();
+  }
+
+  @Override
+  public AdminVO getAdminInfo() {
+    return umapper.getAdminInfo();
   }
 
 }

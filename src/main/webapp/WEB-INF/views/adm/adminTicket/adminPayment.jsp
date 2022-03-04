@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col-7 align-self-center">
         <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">
-          Ticketing INFO
+          Payment INFO
         </h4>
         <div class="d-flex align-items-center">
         </div>
@@ -45,19 +45,30 @@
                   <tr>
                     <th>CODE</th>
                     <th>ID</th>
-                    <th>MOVIE</th>
                     <th>DATE</th>
-                    <th>CANCEL</th>
+                    <th>CHARGE</th>
+                    <th>METHOD</th>
+                    <th>STATUS</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <c:forEach items="${ticket}" var="ticket">
+                  <c:forEach items="${payment}" var="payment">
                   <tr>
-                    <td>${ticket.tkt_cd}</td>
-                    <td>${ticket.id}</td>
-                    <td>${ticket.title}</td>
-                    <td>${ticket.tkt_date}</td>
-                    <td><a class="btn btn-danger" href="" >キャンセル</a></td>
+                    <td>${payment.tkt_cd}</td>
+                    <td>${payment.id}</td>
+                    <td>${payment.tkt_date}</td>
+                    <td><fmt:formatNumber value="${payment.charge}" pattern="#,###" /></td>
+                    <c:if test="${payment.pay_method == 1}">
+                      <td>
+                        Card
+                      </td>
+                    </c:if>
+                    <c:if test="${payment.pay_status == 0}">
+                      <td>Unpaid</td>
+                    </c:if>  
+                    <c:if test="${payment.pay_status == 1}">
+                      <td>Completion</td>
+                    </c:if>  
                   </tr>
                   </c:forEach>
                 </tbody>
@@ -65,9 +76,10 @@
                   <tr>
                     <th>CODE</th>
                     <th>ID</th>
-                    <th>MOVIE</th>
                     <th>DATE</th>
-                    <th>CANCEL</th>
+                    <th>CHARGE</th>
+                    <th>METHOD</th>
+                    <th>STATUS</th>
                   </tr>
                 </tfoot>
               </table>
