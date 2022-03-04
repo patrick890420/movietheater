@@ -40,6 +40,6 @@
   <script src="/resources/admin/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
   <script src="/resources/admin/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
   <script src="/resources/admin/assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
-  <script src="/resources/admin/js/pages/dashboards/dashboard1.min.js"></script>
+  <script src="/resources/admin/js/pages/dashboards/dashboard1.js"></script>
 </body>
 </html>

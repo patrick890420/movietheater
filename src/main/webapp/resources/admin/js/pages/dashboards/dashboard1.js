@@ -4,14 +4,14 @@ $(function () {
     // Campaign
     // ==============================================================
 
-    var chart1 = c3.generate({
-        bindto: '#campaign-v2',
+    var charta1 = c3.generate({
+        bindto: '#campaign-v21',
         data: {
             columns: [
                 ['Direct Sales', 25],
                 ['Referral Sales', 15],
                 ['Afilliate Sales', 10],
-                ['Indirect Sales', 15]
+                ['Indirect Sales', 55]
             ],
 
             type: 'donut',
@@ -119,7 +119,7 @@ $(function () {
     var chart = new Chartist.Line('.stats', {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         series: [
-            [11, 10, 15, 21, 14, 23, 12]
+            [11, 20, 15, 21, 14, 23, 12]
         ]
     }, {
         low: 0,
