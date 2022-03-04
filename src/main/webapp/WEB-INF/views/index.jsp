@@ -415,8 +415,9 @@
   <script>
 
         let rollingData = [
-                           '<c:forEach var="nlist" items="${nlist}"><p>${nlist.title}</p></c:forEach>',
-                           '[기타]23년 VIP 선정 기준 변경 및 추가 기준 관련 안내'
+          <c:forEach var="nlist" items="${nlist}">
+          '<p>${nlist.title}</p>',
+          </c:forEach>
                           ]    // 롤링할 데이터를 넣으면 됩니다 갯수 제한 없어요
 
         let timer = 2000 // 롤링되는 주기 입니다 (1000 => 1초)
