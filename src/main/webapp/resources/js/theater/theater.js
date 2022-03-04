@@ -107,13 +107,13 @@ function dayClickEvent1(button) {
               pushDiv+="<div class='t_sch_top'>";
               console.log(data[0].rate);
               if(data[0].rate==12){
-              pubshDiv+="<div class='t_ep12'>PG12</div>";
+              pushDiv+="<div class='t_ep12'>PG12</div>";
               }else if(data[0].rate == 15){
-              pubshDiv+="<div class='t_ep15'>R15+</div>";
+              pushDiv+="<div class='t_ep15'>R15+</div>";
               }else if(data[0].rate == 19){
-              pubshDiv+="<div class='t_ep19'>R18+</div>";
+              pushDiv+="<div class='t_ep19'>R18+</div>";
               }else if(data[0].rate == 99){
-              pubshDiv+="<div class='t_ep0'>G</div>";
+              pushDiv+="<div class='t_ep0'>G</div>";
               }
               pushDiv+="<span class='t_filmtitle'>"+data[0].title+"</span>";
               pushDiv+="<p class='t_sch_text'>▶"+data[i].t_name+" 1階 ["+data[i].t_screen+"上映館]  総"+data[i].t_seat+"席</p>";
