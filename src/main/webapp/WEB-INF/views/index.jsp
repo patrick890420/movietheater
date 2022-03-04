@@ -316,10 +316,7 @@
                 <div class="product__item">
                   <div class="product__item__pic set-bg"
                     data-setbg="/resources/img/trending/theater1.png">
-                    <div class="ep">18 / 18</div>
-                    <div class="comment">
-                      <i class="fa fa-comments"></i> 11
-                    </div>
+                    <div class="ep">BEST</div>
                     <div class="view">
                       <i class="fa fa-eye"></i> 9141
                     </div>

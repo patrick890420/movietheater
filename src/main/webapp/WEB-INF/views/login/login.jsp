@@ -4,7 +4,7 @@
 
 	 <!-- Normal Breadcrumb Begin -->
     <section class="normal-breadcrumb set-bg"
-    style="background-color: #8e8e8e;">
+    style="background: #212529;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
