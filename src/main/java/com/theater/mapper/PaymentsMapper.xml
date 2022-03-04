@@ -17,8 +17,12 @@
   </trim>
 </sql>
 
-<select id="getCashList" resultType="com.theater.domain.PaymentsVO">
-  SELECT * FROM Payments
+<select id="getCashList" resultType="com.theater.domain.MycashVO">
+  SELECT * 
+  FROM TICKETINGS t, MOVIES m,PAYMENTS p  
+  WHERE t.M_CD = m.M_CD
+  AND t.TKT_CD = p.TKT_CD
+  AND t.id = #{id}
 </select>
 
 <!-- 전체 래코드 갯수 -->
