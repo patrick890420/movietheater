@@ -45,4 +45,5 @@ public interface MovieService {
   public List<FilmsVO> movieFilmsSelect();
   public FilmsVO movieFilmsSelect2(int m_cd);
   public void moviefilmsUpdate(int m_cd,String film_status);
+
 }
