@@ -161,11 +161,7 @@
               <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="product__item">
                   <div class="product__item__pic set-bg"
-                    data-setbg="/resources/img/trending/event3.jpg" style="height:300px;">
-                    <div class="ep">18 / 18</div>
-                    <div class="comment">
-                      <i class="fa fa-comments"></i> 11
-                    </div>
+                      data-setbg="/resources/img/trending/event3.jpg"style="height:300px;">
                     <div class="view">
                       <i class="fa fa-eye"></i>${elist.hits}
                     </div>
@@ -181,7 +177,7 @@
               </div>
               </c:forEach>
               
-          <!-- <div class="col-lg-3 col-md-6 col-sm-6">
+<!--            <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="product__item">
                   <div class="product__item__pic set-bg"
                     data-setbg="/resources/img/trending/event1.jpg" style="height:300px;">
@@ -240,15 +236,12 @@
                     </h5>
                   </div>
                 </div>
-              </div>
+              </div>          -->
+              
               <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="product__item">
                   <div class="product__item__pic set-bg"
-                    data-setbg="/resources/img/trending/event3.jpg" style="height:300px;">
-                    <div class="ep">18 / 18</div>
-                    <div class="comment">
-                      <i class="fa fa-comments"></i> 11
-                    </div>
+                     data-setbg="/resources/img/trending/event3.jpg" style="height:300px;">
                     <div class="view">
                       <i class="fa fa-eye"></i> 9141
                     </div>
@@ -261,14 +254,11 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-6 col-sm-6">
+
+               <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="product__item">
                   <div class="product__item__pic set-bg"
                     data-setbg="/resources/img/trending/event3.jpg" style="height:300px;">
-                    <div class="ep">18 / 18</div>
-                    <div class="comment">
-                      <i class="fa fa-comments"></i> 11
-                    </div>
                     <div class="view">
                       <i class="fa fa-eye"></i> 9141
                     </div>
@@ -280,8 +270,7 @@
                     </h5>
                   </div>
                 </div>
-              </div>-->
-              
+              </div>
             </div><!-- row -->
           </div>
         </div>

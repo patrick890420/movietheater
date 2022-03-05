@@ -41,7 +41,7 @@
 </div><!-- col-md-6 -->
 
 <div class="col-md-12 pb-5">
-  <table class="table table-hover" id="NoticeTable">
+  <table class="table table-hover" id="NoticeTable" style="margin-bottom:0">
     <colgroup>
       <col width="6%">
       <col width="*">

@@ -97,6 +97,7 @@
   display: flex;
   justify-content: center;
   height: 350px;
+  margin-bottom: 80px;
 }
 
 .reserve-container>div {
@@ -159,7 +160,7 @@
 }
 
 .reserve-date {
-  padding-top: 5px;
+  padding-top: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -219,8 +220,8 @@
 }
 
 .theater-wrapper {
-  padding-left: 12px;
-  padding-top: 15px;
+/*   padding-left: 12px; */
+/*   padding-top: 15px; */
   display: flex;
 }
 
