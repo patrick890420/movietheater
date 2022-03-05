@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                             <div class="anime__details__btn mv-txt-center">
-                                <a href="ticket.do" class="watch-btn btn btn-primary"><span>今すぐに予約!!</span></a>
+                                <a href="/ticket/ticket.do" class="watch-btn btn btn-primary"><span>今すぐに予約!!</span></a>
 <!--                                 <a><i class="fa fa-angle-right"></i></a> -->
                                 </div>
                             </div>
@@ -184,126 +184,6 @@
           </c:forEach>
  });
 </script> 
-<script type="text/javascript">
-            var jsonData =${json}
-            var jsonObject=JSON.stringify(jsonData);
-            var jData = JSON.parse(jsonObject);
-            
-            var valueList=new Array();
-            
-            for(var i=0; i<jData.length; i++) {
-              var d = jData[i];
-              valueList.push(d.id);
-              valueList.push(d.m_cd);
-              valueList.push(d.t_cd);
-              valueList.push(d.t_m_cd);
-              valueList.push(d.gender);
-              valueList.push(d.birth);
-              valueList.push(d.userid);
-            }
-            
-            var context = document
-                .getElementById('ChartBar')
-                .getContext('2d');
-            var myChart = new Chart(context, {
-                type: 'bar', // 차트의 형태
-                data: valueList { // 차트에 들어갈 데이터
-                    labels: [
-                        //x 축
-                        '10대','20대','30대','40대','50대','60대 이상'
-                    ],
-                    datasets: [
-                        { //데이터
-                            label: 'age', //차트 제목
-                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
-                            data: [
-                                valueList //x축 label에 대응되는 데이터 값
-                            ],
-                            backgroundColor: [
-                                //색상
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                //경계선 색상
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 2 //경계선 굵기
-                        }/* ,
-                        {
-                            label: 'test2',
-                            fill: false,
-                            data: [
-                                8, 34, 12, 24
-                            ],
-                            backgroundColor: 'rgb(157, 109, 12)',
-                            borderColor: 'rgb(157, 109, 12)'
-                        } */
-                    ]
-                },
-                options: {
-                    scales: {
-                        yAxes: [
-                            {
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }
-                        ]
-                    }
-                }
-            });
-        </script>
-<script>
-$(document).ready(function(){
 
-  $.ajax({
-    url: '/movie/view.do', 
-    type: 'get',
-    dataType: 'json',
-    contentType : 'application/json;charset=utf-8',
-    success: function (data) {
-      $("#menSp").text(data.men);
-      $("#womenSp").text(data.women);
-      var chart1 = c3.generate({
-        bindto: '#campaign-v2',
-        data: {
-            columns: [
-                ['Men', data.men],['Women', data.women]
-            ],
-
-            type: 'donut',
-            tooltip: {
-                show: true
-            }
-        },
-        donut: {
-            label: {
-                show: false
-            },
-            title: 'Gender',
-            width: 18
-        },
-
-        legend: {
-            hide: true
-        },
-        color: {
-            pattern: [
-                '#5f76e8',
-                '#ff4f70'
-            ]
-        }
-    });
-</script>
 
 <%@ include file = "../footer.jsp" %>
