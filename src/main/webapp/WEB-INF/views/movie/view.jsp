@@ -45,7 +45,14 @@
                                     <div class="col-lg-6 col-md-6">
                                         <ul>
                                             <li><span>評点</span>${avg.reviewavg } 点</li>
-                                            <li><span>上映狀態</span>상영 상태</li>
+                                            <li><span>上映狀態</span>
+                                              <c:if test="${film.film_status==1 }">
+                                                <span>上映中</span>
+                                              </c:if>
+                                              <c:if test="${film.film_status==0 }">
+                                                <span>上映終了</span>
+                                              </c:if>
+                                            </li>
                                             <li><span>上映時間</span>${view.rtime } 分</li>
                                             <li><span>映倫</span> ${view.rate }等級</li>
                                         </ul>
@@ -136,7 +143,7 @@
                     <div class="col-lg-12 col-md-12 pt-4">
                         <div class="anime__details__sidebar">
                             <div class="section-title">
-                                <h5>스틸 컷</h5>
+                                <h5>スチールカット</h5>
                             </div>
                             <div class="row">
                             <div class="col-lg-3 col-md-3">

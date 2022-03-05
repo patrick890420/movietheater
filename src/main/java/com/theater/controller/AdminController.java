@@ -26,6 +26,7 @@ import com.theater.domain.AdminChartVO;
 import com.theater.domain.Criteria;
 import com.theater.domain.DirectorsVO;
 import com.theater.domain.EventVO;
+import com.theater.domain.FilmsVO;
 import com.theater.domain.GenresVO;
 import com.theater.domain.MemberVO;
 import com.theater.domain.MovieInfoVO;
@@ -130,6 +131,17 @@ public class AdminController {
     model.addAttribute("list",movieService.movieSelect());
     return "adm/adminMovie/adminMovieSelect";
   }
+  @GetMapping("/adminMovieFilmUpdate.do")
+  public String adminMovieFilmUpdate(Model model,@RequestParam("m_cd")int m_cd,@RequestParam("Film_status")String Film_status)  {
+    model.addAttribute("films",movieService.movieFilmsSelect2(m_cd));
+    FilmsVO fvo = new FilmsVO();
+    
+
+    movieService.moviefilmsUpdate(m_cd);
+    
+    
+    return "redirect:/adm/adminMovieInfoInsert.do";
+  }
   
   @GetMapping("/adminMovieInfoInsert.do")
   public String adminMovieInfoInsert(MovieInfoVO ivo,Model model, @RequestParam("m_cd")int m_cd){
@@ -139,6 +151,8 @@ public class AdminController {
     model.addAttribute("directors", uService.getDitrectorsList());
     model.addAttribute("nations", uService.getNationsList());
     model.addAttribute("genres",  uService.getGenresList());
+    model.addAttribute("films",movieService.movieFilmsSelect2(m_cd));
+    log.info(movieService.movieFilmsSelect2(m_cd));
     
     return "adm/adminMovie/adminMovieInfoInsert";
   }
@@ -147,6 +161,7 @@ public class AdminController {
   public String adminMovieView(@RequestParam("m_cd") int m_cd,Model model) {
     model.addAttribute("view",movieService.adminMovieSelect(m_cd));
     model.addAttribute("cut",movieService.movieStillcutSelect(m_cd));
+    model.addAttribute("film",movieService.movieFilmsSelect2(m_cd));
 
     return "adm/adminMovie/adminMovieView";
   }
