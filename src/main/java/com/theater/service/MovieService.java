@@ -3,6 +3,7 @@ package com.theater.service;
 
 import java.util.List;
 
+import com.theater.domain.AdminChartVO;
 import com.theater.domain.CmtAVG;
 import com.theater.domain.Criteria;
 import com.theater.domain.FilmsVO;
@@ -45,5 +46,8 @@ public interface MovieService {
   public List<FilmsVO> movieFilmsSelect();
   public FilmsVO movieFilmsSelect2(int m_cd);
   public void moviefilmsUpdate(int m_cd,String film_status);
+  
+  public List<MovieChartVO> getChart1(int m_cd);
+  public List<MovieChartVO> getChart2(int m_cd);
 
 }

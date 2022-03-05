@@ -65,6 +65,8 @@ public interface MovieMapper {
 
   public void moviefilmsUpdate(@Param("m_cd")int m_cd, @Param("film_status")String film_status);
 
+  public List<MovieChartVO> getChart1(int m_cd);
+  public List<MovieChartVO> getChart2(int m_cd);
   //Info
 
 }

@@ -174,6 +174,33 @@ from movies m,ticketings t,members b
 where m.m_cd =t.m_cd and t.id=b.userid and m.m_cd=#{m_cd}
  </select>
  
+ <select id="getChart1" resultType="com.theater.domain.MovieChartVO">
+   SELECT AGE , COUNT(*) AS AGEGROUP
+  FROM(
+  SELECT FLOOR(MONTHS_BETWEEN(SYSDATE, TO_DATE(BIRTH))/120)*10 AS AGE
+  FROM TICKETINGS t , MEMBERS m 
+  WHERE t.ID = m.USERID 
+  AND t.M_CD = #{m_cd}
+  )GROUP BY AGE ORDER BY 1
+</select>
+
+<select id="getChart2" resultType="com.theater.domain.MovieChartVO">
+  SELECT *
+  FROM
+    (select COUNT(*) AS MEN
+       from ticketings t, members m
+      where t.id =m.userid  
+      and gender ='1'
+      and t.M_CD =#{m_cd}
+    ),
+    (select COUNT(*) AS WOMEN
+       from ticketings t, members m
+      where t.id =m.userid  
+      and gender ='2'
+      and t.M_CD =#{m_cd}
+    )
+</select>
+ 
  <select id="movieFilmsSelect" resultType="com.theater.domain.FilmsVO">
     select * from films
  </select>
