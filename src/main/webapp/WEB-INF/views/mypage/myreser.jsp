@@ -7,7 +7,7 @@
   content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Simple Sidebar - Start Bootstrap Template</title>
+<title></title>
 
 
 <div class="d-flex" id="wrapper">
@@ -52,19 +52,16 @@
                 style="margin-left: -180px; margin-top: 30px;">
                 <div class="anime__details__title">
                   <h3>${relist.title }</h3>
-                  <span><${relist.subtitle }</span>
+                  <span>${relist.subtitle }</span>
                 </div>
                 <div class="anime__details__widget">
                <div class="row">
                     <div class="col-lg-12 col-md-12">
                       <ul>
-                        <li><span>映画館</span> 유성온천 5관</li>
-<%--                         <fmt:parseDate value="${view.rdate}" --%>
-<%--                           var="dateValue" pattern="yyyy-MM-dd" /> --%>
+                        <li><span>映画館</span> ${relist.t_name } / ${relist.screen_name}</li>
                         <li><span>上映日時</span>
-<%--                         <fmt:formatDate value="${dateValue}" --%>
-<%--                             pattern="yyyy-MM-dd" /></li> --%>
-<%--                         <li><span>人数</span> ${relist.tkt_nums }</li> --%>
+                            ${relist.tkt_date } / ${relist.tkt_time}
+                        </li>
                         <li><span>席</span> ${relist.seat_cd }</li>
                       </ul>
                     </div> <!-- 12들 -->
@@ -79,9 +76,45 @@
             </c:forEach>
           </div>
         </div>
+        <form action="myreser.do" name ="pageForm" method="get">
+          <div class="product__pagination" style="border-top:solid 3px #80808036;">
+            <ul class="pagination pagination-sm">
+              <c:if test="${pageMaker.prev}">
+              <li>
+                <a href="#" data-pagenum='${pageMaker.startPage - 1 }'><i class="fa fa-angle-double-left"></i></a>
+              </li>
+              </c:if>
+              <c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
+              <li class="${pageMaker.pageNum eq num ? 'active' : ''}">
+                <a href="#" data-pagenum='${num}'>${num}</a>
+              </li>
+              </c:forEach>
+              <c:if test="${pageMaker.next }">
+              <li>
+                <a href="#" data-pagenum='${pageMaker.endPage + 1 }'><i class="fa fa-angle-double-right"></i></a>
+              </li>
+              </c:if>
+            </ul>
+          </div>
+          <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+          <input type="hidden" name="amount" value="${pageMaker.cri.amount }">
+          <input type="hidden" name="searchType" value="${pageMaker.cri.searchType }">
+          <input type="hidden" name="searchName" value="${pageMaker.cri.searchName }">
+        </form>
       </div>
       </div>
     </nav>
   </div>
 </div>
+
+<script>
+
+  var pagination = document.querySelector(".pagination");
+  pagination.onclick = function() {
+    event.preventDefault(); 
+    document.pageForm.pageNum.value = event.target.dataset.pagenum;
+    document.pageForm.submit(); 
+  }
+
+</script>
 <%@ include file="../footer.jsp"%>
