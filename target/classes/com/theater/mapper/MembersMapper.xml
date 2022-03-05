@@ -64,5 +64,13 @@ select * from members
  <delete id="adminDelete">
   delete from members where userid=#{userid}
  </delete>
+ 
+ <delete id="byebyespro">
+ delete from members 
+ where userid= #{userid}
+
+ 
+ 
+ </delete>
 
 </mapper>

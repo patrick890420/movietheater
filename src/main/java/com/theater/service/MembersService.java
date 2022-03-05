@@ -33,6 +33,9 @@ public interface MembersService {
 	 
 	 //회원 강제 탈퇴
 	 public void adminDelete(String userid);
+	 
+	 //회원 직접 탈퇴
+	 public void byebyespro(MemberVO mvo);
 
 
 

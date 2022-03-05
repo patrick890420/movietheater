@@ -85,6 +85,11 @@ public class MembersServiceImpl implements MembersService {
   public void adminDelete(String userid) {
     mmapper.adminDelete(userid);
   }
+  
+  @Override
+  public void byebyespro(MemberVO mvo) {
+    mmapper.byebyespro(mvo);
+  }
 
   
 
