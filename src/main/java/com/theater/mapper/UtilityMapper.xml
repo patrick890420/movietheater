@@ -14,6 +14,19 @@
       where gender ='2'
     )
 </select>
+<select id="getChart2" resultType="com.theater.domain.AdminChartVO">
+  SELECT AGE , COUNT(*) AS AGEGROUP
+  FROM(
+  SELECT FLOOR(MONTHS_BETWEEN(SYSDATE, TO_DATE(BIRTH))/120)*10 AS AGE  FROM MEMBERS m 
+  )GROUP BY AGE ORDER BY 1
+</select>
+<select id="getChart3" resultType="com.theater.domain.AdminChartVO">
+  SELECT  SUBSTR(t.TKT_DATE,6,2) AS TKT_DATE ,FLOOR(sum(p.CHARGE)/1000) AS CHARGE
+  FROM TICKETINGS t, PAYMENTS p 
+  WHERE t.TKT_CD = p.TKT_CD  
+  GROUP BY SUBSTR(t.TKT_DATE,6,2)
+  ORDER BY 1
+</select>
 
 <select id="getAdminInfo" resultType="com.theater.domain.AdminVO">
  SELECT

@@ -122,11 +122,11 @@
           <div class="col-lg-6 col-md-12">
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title">Members Gender Ratio</h4>
+                <h4 class="card-title">Members Gender</h4>
                 <div id="campaign-v2" class="mt-2" style="height: 283px; width: 100%;"></div>
                 <ul class="list-style-none mb-0">
-                  <li><i
-                    class="fas fa-circle text-primary font-10 mr-2"></i>
+                  <li>
+                    <i class="fas fa-circle text-primary font-10 mr-2"></i>
                     <span class="text-muted">Men</span> 
                     <span class="text-dark float-right font-weight-medium" id="menSp"></span>
                   </li>
@@ -142,12 +142,11 @@
           <div class="col-lg-6 col-md-12">
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title">Net Income</h4>
-                <div class="net-income mt-4 position-relative"
-                  style="height: 294px;"></div>
+                <h4 class="card-title">Members Age</h4>
+                <div id="month-income" class="month-income mt-4 position-relative" style="height: 294px;"></div>
                 <ul class="list-inline text-center mt-5 mb-2">
-                  <li class="list-inline-item text-muted font-italic">Sales
-                    for this month</li>
+                  <li class="list-inline-item text-muted font-italic">
+                    </li>
                 </ul>
               </div>
             </div>
@@ -169,8 +168,7 @@
                   </div>
                 </div>
                 <div class="pl-4 mb-5">
-                  <div class="stats ct-charts position-relative"
-                    style="height: 315px;"></div>
+                  <div class="stats ct-charts position-relative" style="height: 500px; width: 100%;"></div>
                 </div>
                 <ul class="list-inline text-center mt-4 mb-0">
                   <li class="list-inline-item text-muted font-italic">Earnings
@@ -227,108 +225,151 @@ $(document).ready(function(){
             ]
         }
     });
-
     d3.select('#campaign-v2 .c3-chart-arcs-title').style('font-family', 'Rubik');
+
     
-    //chart2
-    var data = {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-        series: [
-            [5, 4, 3, 7, 5, 10]
-        ]
-    };
+  //chart2
+  
+  var options1 ="";
+  var responsiveOptions ="";
+  var data1 ="";
+    $.ajax({
+      url: '/adm/chart2.do', 
+      type: 'get',
+      dataType: 'json',
+      contentType : 'application/json;charset=utf-8',
+      success: function (result) {
+        console.log(result[0].agegroup);
+        console.log(result[1].agegroup);
+        console.log(result[2].agegroup);
+         data1 = {
+            labels: ['10','20', '30', '40', '50', '60'],
+            series: [
+                [parseInt(result[0].agegroup)
+                  ,parseInt(result[1].agegroup)
+                  , parseInt(result[2].agegroup)
+                  , parseInt(result[3].agegroup)
+                  , parseInt(result[4].agegroup)
+                  , parseInt(result[5].agegroup)
+                ]
+            ]
+        };
 
-    var options = {
-        axisX: {
-            showGrid: false
-        },
-        seriesBarDistance: 1,
-        chartPadding: {
-            top: 15,
-            right: 15,
-            bottom: 5,
-            left: 0
-        },
-        plugins: [
-            Chartist.plugins.tooltip()
-        ],
-        width: '100%'
-    };
-
-    var responsiveOptions = [
-        ['screen and (max-width: 640px)', {
-            seriesBarDistance: 5,
+         options1 = {
             axisX: {
-                labelInterpolationFnc: function (value) {
-                    return value[0];
+                showGrid: false
+            },
+            seriesBarDistance: 1,
+            chartPadding: {
+                top: 15,
+                right: 15,
+                bottom: 5,
+                left: 0
+            },
+            plugins: [
+                Chartist.plugins.tooltip()
+            ],
+            width: '100%'
+        };
+
+        responsiveOptions = [
+            ['screen and (max-width: 640px)', {
+                seriesBarDistance: 5,
+                axisX: {
+                    labelInterpolationFnc: function (value) {
+                        return value[0];
+                    }
                 }
-            }
-        }]
-    ];
-    new Chartist.Bar('.net-income', data, options, responsiveOptions);
+            }]
+        ];
+        new Chartist.Bar('#month-income', data1, options1, responsiveOptions);
+      }
+    }); //end ajax
+    
     
     
     //chart3
     
-    var chart = new Chartist.Line('.stats', {
-      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-      series: [
-          [11, 20, 15, 21, 14, 23, 12]
-      ]
-  }, {
-      low: 0,
-      high: 28,
-      showArea: true,
-      fullWidth: true,
-      plugins: [
-          Chartist.plugins.tooltip()
-      ],
-      axisY: {
-          onlyInteger: true,
-          scaleMinSpace: 40,
-          offset: 20,
-          labelInterpolationFnc: function (value) {
-              return (value / 1) + 'k';
+    $.ajax({
+      url: '/adm/chart3.do', 
+      type: 'get',
+      dataType: 'json',
+      contentType : 'application/json;charset=utf-8',
+      success: function (result) {
+        var chart = new Chartist.Line('.stats', {
+          labels: ['1月', '2月', '3月', '4月','5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+          series: [
+              [parseInt(result[0].charge),
+                parseInt(result[1].charge),
+                parseInt(result[2].charge),
+                parseInt(result[3].charge),
+                parseInt(result[4].charge),
+                parseInt(result[5].charge),
+                parseInt(result[6].charge),
+                parseInt(result[7].charge),
+                parseInt(result[8].charge),
+                parseInt(result[9].charge),
+                parseInt(result[10].charge),
+                parseInt(result[11].charge)]
+          ]
+        }, {
+            low: 0,
+            high: 200,
+            showArea: true,
+            fullWidth: true,
+            plugins: [
+                Chartist.plugins.tooltip()
+            ],
+            axisY: {
+                onlyInteger: true,
+                scaleMinSpace: 40,
+                offset: 20,
+                labelInterpolationFnc: function (value) {
+                    return (value / 1) + 'k';
+                }
+            },
+        });
+      
+        // Offset x1 a tiny amount so that the straight stroke gets a bounding box
+        chart.on('draw', function (ctx) {
+            if (ctx.type === 'area') {
+                ctx.element.attr({
+                    x1: ctx.x1 + 0.001
+                });
+            }
+        });
+      
+        // Create the gradient definition on created event (always after chart re-render)
+        chart.on('created', function (ctx) {
+            var defs = ctx.svg.elem('defs');
+            defs.elem('linearGradient', {
+                id: 'gradient',
+                x1: 0,
+                y1: 1,
+                x2: 0,
+                y2: 0
+            }).elem('stop', {
+                offset: 0,
+                'stop-color': 'rgba(255, 255, 255, 1)'
+            }).parent().elem('stop', {
+                offset: 1,
+                'stop-color': 'rgba(80, 153, 255, 1)'
+            });
+        });
+      
+        $(window).on('resize', function () {
+            chart.update();
+        });
+          },
+          error: function (xhr, status, error) {
+             console.log("ajax error");
           }
-      },
-  });
+      })
+        
+        
+      }// end success
+    });//end ajax
 
-  // Offset x1 a tiny amount so that the straight stroke gets a bounding box
-  chart.on('draw', function (ctx) {
-      if (ctx.type === 'area') {
-          ctx.element.attr({
-              x1: ctx.x1 + 0.001
-          });
-      }
-  });
-
-  // Create the gradient definition on created event (always after chart re-render)
-  chart.on('created', function (ctx) {
-      var defs = ctx.svg.elem('defs');
-      defs.elem('linearGradient', {
-          id: 'gradient',
-          x1: 0,
-          y1: 1,
-          x2: 0,
-          y2: 0
-      }).elem('stop', {
-          offset: 0,
-          'stop-color': 'rgba(255, 255, 255, 1)'
-      }).parent().elem('stop', {
-          offset: 1,
-          'stop-color': 'rgba(80, 153, 255, 1)'
-      });
-  });
-
-  $(window).on('resize', function () {
-      chart.update();
-  });
-    },
-    error: function (xhr, status, error) {
-       console.log("ajax error");
-    }
-})
-  
 });
 
 </script>
