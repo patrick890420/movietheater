@@ -649,4 +649,20 @@ public class AdminController {
     return  gson.toJson(result);
   }
   
+  @GetMapping("/chart2.do")
+  public @ResponseBody String chart2(Model model) {
+    
+    Gson gson = new Gson();
+    List<AdminChartVO> result = uService.getChart2();
+    return  gson.toJson(result);
+  }
+  
+  @GetMapping("/chart3.do")
+  public @ResponseBody String chart3(Model model) {
+    
+    Gson gson = new Gson();
+    List<AdminChartVO> result = uService.getChart3();
+    return  gson.toJson(result);
+  }
+  
 }

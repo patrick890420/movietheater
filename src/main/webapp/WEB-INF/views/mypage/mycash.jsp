@@ -83,18 +83,24 @@
                           <td class="cash76"><a href="#"></a>${pList.title}</td>
                           <td>${pList.tkt_date }</td>
                           <td><fmt:formatNumber value="${pList.charge}" type="currency"/></td>
-                          
-                          <td>${pList.pay_method}</td>
-                          
+                          <td>
+                            <c:if test="${pList.pay_method == '1'}">
+                            <button type="button" class="btn waves-effect waves-light btn-rounded btn-danger"
+                              value="${pList.pay_status}">card
+                            </button>
+                            </c:if>
+                          </td>
                           <td>
                             <c:choose>
                             <c:when test="${pList.pay_status == '1'}">
-                            (<input type="checkbox" name="result" value="${pList.pay_status}"> 미결제)
+                            <button type="button" class="btn waves-effect waves-light btn-rounded btn-danger"
+                              value="${pList.pay_status}">미결제
+                            </button>
                             </c:when>
                             <c:otherwise>
-                            <span>${pList.pay_status}</span>
-                            (<input type="checkbox" checked="checked" disabled="disabled" 
-                              value="${pList.pay_status}"> 결제완료)
+                            <button type="button" class="btn waves-effect waves-light btn-rounded btn-primary"
+                              value="${pList.pay_status}">결제완료
+                            </button>
                             </c:otherwise>
                             </c:choose>
                           </td>

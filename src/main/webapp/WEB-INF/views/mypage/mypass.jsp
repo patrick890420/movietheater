@@ -51,16 +51,16 @@
                         <div class="col-lg-12" style="margin-top: 50px;">
                           <div class="form-group focused">
                             <label class="form-control-label"
-                              for="input-first-name">비밀번호를 변경하시려면,<br> 로그인 시 사용하시는 비밀번호를 입력해 주세요.</label>
+                              for="input-first-name">パスワードを変更するには、<br> 以前のパスワードを入力してください。</label>
                               
                               <!-- name=userpw 어디에 줘야 하지 --> 
                               <input type="password" id="prePass" class="form-control form-control-alternative"
-                              placeholder="기존 비밀번호를 입력해 주세요." style="margin-top: 30px;" name="prePw">
+                              placeholder="既存のパスワードを入力してください。" style="margin-top: 30px;" name="prePw">
                               <input type="password" id="userPass" class="form-control form-control-alternative"
-                              placeholder="바꿀 비밀번호를 입력해 주세요." style="margin-top: 30px;" name="newPw" >
+                              placeholder="新しいパスワードを入力してください。" style="margin-top: 30px;" name="newPw" >
                                <input type="password" id="userPass2" class="form-control form-control-alternative"
-                              placeholder="바꿀 비밀번호를 재입력해 주세요." style="margin-top: 30px;" name="newPw2">
-                              <button type="submit" class="input__btn4" id="pass_button" name="pass_button">확인</button>
+                              placeholder="新しいパスワードを再入力してください。" style="margin-top: 30px;" name="newPw2">
+                              <button type="submit" class="input__btn4" id="pass_button" name="pass_button">確定</button>
                           </div>
                         </div>
                       </div>

@@ -32,6 +32,8 @@ public interface UtilityService {
   public void genresDelete(String g_cd);
   
   public AdminChartVO getChart1();
+  public List<AdminChartVO> getChart2();
+  public List<AdminChartVO> getChart3();
   
   public AdminVO getAdminInfo();
 }
