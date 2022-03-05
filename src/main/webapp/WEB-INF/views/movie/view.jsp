@@ -50,7 +50,7 @@
                                             <li><span>映倫</span> ${view.rate }等級</li>
                                         </ul>
                                     </div>
-                                    <p>${view.intro }</p>
+                                    <p style="padding-left: 20px;">${view.intro }</p>
                                 </div>
                             </div>
                             <div class="anime__details__btn mv-txt-center">
@@ -62,23 +62,23 @@
                     </div>
                 </div>
                 <!-- 차트 -->
-              <div class="row">
-                <div class="col-md-6 col-lg-6">
-                <div class="section-title">
-                  <h5>統計</h5>
-                </div>
-                  <div class="col-md-10 col-lg-10">
-                    <canvas id="ChartBar" height="159" width="380"></canvas>
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-6">
-                  <div class="section-title">
-                  </div>
-                  <div class="col-md-10 col-lg-10">
-                    <canvas id="doughnutchart" height="159" width="380"></canvas>
-                  </div>
-                </div>
-              </div>
+<!--               <div class="row"> -->
+<!--                 <div class="col-md-6 col-lg-6"> -->
+<!--                 <div class="section-title"> -->
+<!--                   <h5>統計</h5> -->
+<!--                 </div> -->
+<!--                   <div class="col-md-10 col-lg-10"> -->
+<!--                     <canvas id="ChartBar" height="159" width="380"></canvas> -->
+<!--                   </div> -->
+<!--                 </div> -->
+<!--                 <div class="col-md-6 col-lg-6"> -->
+<!--                   <div class="section-title"> -->
+<!--                   </div> -->
+<!--                   <div class="col-md-10 col-lg-10"> -->
+<!--                     <canvas id="doughnutchart" height="159" width="380"></canvas> -->
+<!--                   </div> -->
+<!--                 </div> -->
+<!--               </div> -->
                 <!-- 차트 종료 -->
                 <div class="row register">
                     <div class="col-lg-12 col-md-12">
@@ -87,7 +87,7 @@
                         <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
                         <div class="anime__details__review">
                             <div class="section-title">
-                                <h5>Reviews</h5>
+                                <h5>レビュー</h5>
                             </div>
                             <c:forEach items="${review}" var="review" begin="0" end="7">
                             <div class="anime__review__item">
@@ -95,9 +95,10 @@
                                     <img src="/resources/img/anime/review-1.jpg" alt="">
                                 </div>
                                 <div class="anime__review__item__text">
-                                    <h6>${review.rwriter }<span>${review.rdate}</span></h6>
+                                <fmt:parseDate value="${view.rdate}" var="dateValue1" pattern="yyyy-MM-dd"/>
+                                  <h6 style="font-size: 20px;">${review.rwriter }&nbsp; <span style="font-size:12px;">「<fmt:formatDate value="${dateValue1}" pattern="yyyy-MM-dd"/>」</span></h6>
+                                     <span>${review.review }</span>
                                     <div>
-                                    <span>${review.review }</span>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +107,7 @@
                         <sec:authorize access="isAuthenticated()">
                         <div class="anime__details__form">
                           <div class="section-title">
-                                <h5>レビュー</h5>
+                                <h5>コメント</h5>
                               <div class="test">
                              
                               <fieldset class="rating1">
@@ -255,69 +256,47 @@
                 }
             });
         </script>
-        <script type="text/javascript">
-            var context = document
-                .getElementById('doughnutchart')
-                .getContext('2d');
-            var myChart = new Chart(context, {
-                type: 'doughnut', // 차트의 형태
-                data: { // 차트에 들어갈 데이터
-                    labels: [
-                        //x 축
-                        '남자','여자'
-                    ],
-                    datasets: [
-                        { //데이터
-                            label: 'gender', //차트 제목
-                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
-                            data: [
-                                21,19,25,20,23,26,25 //x축 label에 대응되는 데이터 값
-                            ],
-                            backgroundColor: [
-                                //색상
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                //경계선 색상
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 1 //경계선 굵기
-                        }/* ,
-                        {
-                            label: 'test2',
-                            fill: false,
-                            data: [
-                                8, 34, 12, 24
-                            ],
-                            backgroundColor: 'rgb(157, 109, 12)',
-                            borderColor: 'rgb(157, 109, 12)'
-                        } */
-                    ]
-                },
-                options: {
-                    scales: {
-                        yAxes: [
-                            {
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }
-                        ]
-                    }
-                }
-            });
-        </script>
+<script>
+$(document).ready(function(){
 
+  $.ajax({
+    url: '/movie/view.do', 
+    type: 'get',
+    dataType: 'json',
+    contentType : 'application/json;charset=utf-8',
+    success: function (data) {
+      $("#menSp").text(data.men);
+      $("#womenSp").text(data.women);
+      var chart1 = c3.generate({
+        bindto: '#campaign-v2',
+        data: {
+            columns: [
+                ['Men', data.men],['Women', data.women]
+            ],
 
+            type: 'donut',
+            tooltip: {
+                show: true
+            }
+        },
+        donut: {
+            label: {
+                show: false
+            },
+            title: 'Gender',
+            width: 18
+        },
+
+        legend: {
+            hide: true
+        },
+        color: {
+            pattern: [
+                '#5f76e8',
+                '#ff4f70'
+            ]
+        }
+    });
+</script>
 
 <%@ include file = "../footer.jsp" %>

@@ -4,7 +4,7 @@
 
 <!-- Normal Breadcrumb Begin -->
 <section class="normal-breadcrumb set-bg"
-  style="background-color: black;">
+  style="background-color: #212529;">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -18,14 +18,14 @@
 <!-- Normal Breadcrumb End -->
 
 <!-- Signup Section Begin -->
-<section class="signup spad">
+<section class="signup spad" style="background: url(/resources/img/login.jpg);">
   <div class="container">
     <div class="row">
       <div class="col-lg-12" style="margin-left: -60px;">
         <div class="login__form" style="text-align: center;">
         
           <form action="/join/joinPro.do" method="post" id=join_form
-            style="padding: 50px 300px; background: url(/resources/img/sky.jpg); padding-top: 100px; border: groove;">
+            style="padding: 50px 300px; background:#000000e3; padding-top: 100px; border: groove;">
             <input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}" />
             <div class="input__item">
               <input type="text" placeholder="お名前"
@@ -134,7 +134,7 @@
 
             </div>
             <!-- end .mb-4-->
-            <input type="checkbox" id="box1" name="box1"> 同意します。&nbsp;&nbsp;
+            <input type="checkbox" id="box1" name="box1"><span style="color:white;">同意します。</span>&nbsp;&nbsp;
             <button type="submit" class="btn btn-primary"
               id="join_button" name="join_button">会員登録へ</button>
         </div>

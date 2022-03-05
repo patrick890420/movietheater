@@ -8,7 +8,7 @@
         <div class="col-lg-3">
           <div class="footer__logo">
             <a href="/"> 
-            <span style="font-size: x-large; font-weight: 800; color: black;">📽JSL-Movie</span>
+            <span style="font-size: x-large; font-weight: 800; color: WHITE;">📽 JSL-CINEMA</span>
           </a>
           </div>
         </div>
@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <p>
+          <p style="color:white;">
             Copyright &copy;
             <script>
               document.write(new Date().getFullYear());

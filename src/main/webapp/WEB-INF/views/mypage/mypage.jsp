@@ -11,7 +11,7 @@
 <title>Simple Sidebar - Start Bootstrap Template</title>
 
 
-<div class="d-flex" id="wrapper">
+<div class="d-flex" id="wrapper" style="width: 1536px; margin: 0 auto;">
   <!-- Sidebar-->
 
   <div class="border-end bg-white" id="sidebar-wrapper"
@@ -34,7 +34,7 @@
   <!-- Page content wrapper-->
   <div id="page-content-wrapper">
     <!-- Top navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" style="width: 1180px;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" style="width: 1180px; border: groove !important; margin-bottom: 10px;">
       <div class="container-fluid">
         <div class="main-content">
           <div class="container mt-7">
@@ -42,7 +42,7 @@
             <div class="row" style="margin-top: -6%;">
               <div class="col-xl-8 m-auto order-xl-1">
                 <div class="card-body">
-                  <form class="formform" name="form1" id="form1" method="post" action="/mypage/memberUpdate.do" style="margin-left: 150px;">
+                  <form class="formform" name="form1" id="form1" method="post" action="/mypage/memberUpdate.do" style="margin:35px 0 35px 150px;">
                     <input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}" />
                     <h2 style="margin-top: 80px; text-align: center; margin-bottom: 50px;">My account.</h2>
 <!--                     <h6 class="heading-small text-muted mb-4">私のアカウント</h6> -->
@@ -125,12 +125,14 @@
                         <textarea rows="4"
                           class="form-control form-control-alternative"
                           placeholder="A few words about you ..."
-                          readonly>jslグループ株式会社（以下「jsl」といいます。）、その子会社、および関連会社で構成されるjslグループ（以下「jslグループ」といいます。）は、お客様に最適でユニークなサービスを提供したいと考えており、グローバルに展開する楽天グループのサービスに容易にアクセスしていただけるように、 シングル・ログイン機能を含む共通IDプログラム（以下「jsl ID」といいます。）を提供しています。 お客様は、jslが定めるjsl会員規約（以下「本規約」といいます。）に基づいてアカウント（以下「アカウント」といいます。）を作成し、会員サービスをご利用いただくことができます。
-            </textarea>
+                          readonly
+                          style="margin-bottom: 25px;"
+                          >jslグループ株式会社（以下「jsl」といいます。）、その子会社、および関連会社で構成されるjslグループ（以下「jslグループ」といいます。）は、お客様に最適でユニークなサービスを提供したいと考えており、グローバルに展開する楽天グループのサービスに容易にアクセスしていただけるように、 シングル・ログイン機能を含む共通IDプログラム（以下「jsl ID」といいます。）を提供しています。 お客様は、jslが定めるjsl会員規約（以下「本規約」といいます。）に基づいてアカウント（以下「アカウント」といいます。）を作成し、会員サービスをご利用いただくことができます。
+                        </textarea>
                       </div>
 
-                      <button type="submit" id="updatebtn" class="btn btn-primary" style="margin-left: 110px;">完了</button>
-                      <button type="reset" class="btn btn-secondary" value="리셋">リセット</button>
+                      <button type="submit" id="updatebtn" class="btn btn-primary">完了</button>
+                      <button type="reset" class="btn btn-secondary" value="리셋" style="margin-left: 174px;">リセット</button>
                       <button type="button" class="btn btn-secondary" value="회원탈퇴" onclick="location.href='byebye.do'">退会</button>
 <!--                       <input type="button" class="btn btn-secondary" value="회원탈퇴"> -->
                        <!-- <button type="submit" class="btn btn-primary"
