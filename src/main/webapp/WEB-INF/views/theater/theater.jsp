@@ -106,25 +106,25 @@
                       <ul class="t_modallisttext">
                         <li>
                           <span>
-                            <strong>[JSL-Movie 영업시간 내]</strong>
+                            <strong>[開場時間以内]</strong>
                           </span>
-                          <p class="t_modaltext"> 오전 10시 30분 ~ 오후 10시 </p>
+                          <p class="t_modaltext"> AM 10:00 〜 PM 9:00</p>
                         </li>
                         <li>
                           <span>
-                            <strong>오룡역 하차 > 3번 출구로 이동 > JSL빌딩 진입</strong>
+                            <strong>五竜駅で下車 > A4出口  > JSL-ビル進入</strong>
                           </span>
-                          <p class="t_modaltext"> JSL빌딩 엘리베이터로 5층 이동 > JSL-Movie 입구 </p>
+                          <p class="t_modaltext"> JSL-ビルのビルエレベーターで5F移動 > JSL-CINEMAの入り口 </p>
                         </li>
                         <li>
                           <span>
-                            <strong>[JSL-Movie 영업시간 외]</strong>
+                            <strong>[開場時間以外]</strong>
                           </span>
-                          <p class="t_modaltext"> 오후 10시 ~ 익일 오전 10시 30분 </p>
+                          <p class="t_modaltext"> PM 09:00 〜 AM 10:00 </p>
                         </li>
                         <li>
                           <span>
-                            <strong>오룡역 하차 > 3번 출구 > 좌측 도보 200미터 이동 > JSL-Movie 입구</strong>
+                            <strong>五竜駅で下車 >  A4出口 > 200メートル移動 > JSL-CINEMAの入口</strong>
                           </span>
                         </li>
                       </ul>
@@ -133,7 +133,7 @@
                       <ul class="t_modallisttext">
                         <li>
                           <span>
-                            <strong>JSL정류장하차> 좌측 도보 200미터 이동 > JSL-Movie 입구</strong>
+                            <strong>JSLバス停で下車 > 左側歩道に200メートル移動 > JSL-CINEMAの入口</strong>
                           </span>
                           </li>
                         </ul>
@@ -161,17 +161,17 @@
                         <ul class="t_modallisttext">
                           <li>
                             <span>
-                              <strong>[네비게이션 주소]</strong>
+                              <strong>[ナビゲーションアドレス]</strong>
                             </span>
-                            <p class="t_modaltext"> 대전 중구 계룡로 761, JSL-Movie </p>
+                            <p class="t_modaltext"> JSL-CINEMA 761, Gyeryong-ro, Jung-gu, Daejeon </p>
                           </li>
                           <li>
                             <span>
-                              <strong>[주차 TIP]</strong>
+                              <strong>[パーキングエリア]</strong>
                             </span>
-                            <p class="t_modaltext"> P1층 > G, H, J 15 ~ 19번 (옐로우 존) </p>
-                            <p class="t_modaltext"> P1층 > G, H, J 15 ~ 19번 (옐로우 존) </p>
-                            <p class="t_modaltext"> 해당 위치 주차 시 JSL-Movie 진입이 용이합니다. (전용 엘리베이터) </p>
+                            <p class="t_modaltext"> P1階 > G, H, J 15 ~ 19番 (イエローゾーン) </p>
+                            <p class="t_modaltext"> P1階 > G, H, J 15 ~ 19番 (イエローゾーン) </p>
+                            <p class="t_modaltext"> 該当する位置に駐車する場合、 JSL-CINEMA 進入が容易です。</p>
                           </li>
                         </ul>
                         <img src="/resources/img/theater/theatericon7.png" alt="주차요금" class="t_iconimg">
@@ -179,24 +179,24 @@
                         <ul class="t_modallisttext">
                           <li>
                             <span>
-                              <strong>[주차 할인]</strong>
+                              <strong>[駐車割引]</strong>
                             </span>
-                            <p class="t_modaltext"> 무인정산기 주차권 인증 시 영화 관람 당일 3시간 무료(초과 시 30분당 1,000원 / JSL몰 구매 금액 합산 시 최대 12시간) </p>
+                            <p class="t_modaltext"> 無人精算機に駐車券を認証すると、映画観覧当日3時間無料 (超過した場合、 30分あたり 1,000円 / JSLモールの購入金額を合算すると最大12時間) </p>
                           </li>
                           <li>
                             <span>
-                              <strong>[무인정산기 위치]</strong>
+                              <strong>[無人精算機の位置]</strong>
                             </span>
-                            <p class="t_modaltext"> JSL-Movie 지상 1층, P1~ P3 전용 엘리베이터 로비 </p>
+                            <p class="t_modaltext"> JSL-Movie 地上一階, P1~ P3 専用エレベーターロビー </p>
                           </li>
                           <li>
                             <span>
-                              <strong>[주차권 안내]-사전정산 시스템</strong>
+                              <strong>[駐車券の案内]</strong>
                             </span>
-                            <p class="t_modaltext"> [모바일 티켓] </p>
-                            <p class="t_modaltext"> 바로티켓 상단 주차권 버튼 클릭 시 바코드 생성 </p>
-                            <p class="t_modaltext"> [지류 티켓] </p>
-                            <p class="t_modaltext"> 영화 티켓 하단 주차권 바코드 사용 </p>
+                            <p class="t_modaltext"> [モバイルチケット] </p>
+                            <p class="t_modaltext"> 上段の駐車券ボタンをクリックすると、バーコード作成 </p>
+                            <p class="t_modaltext"> [映画チケット] </p>
+                            <p class="t_modaltext"> 映画チケット下段の駐車券バーコードを使用 </p>
                           </li>
                         </ul>
                       </div>
@@ -212,7 +212,7 @@
                 <div class="modal-dialog" role="document">
                       <div class="modal-content">
                           <div class="modal-header">
-                              <h5 class="modal-title t_modaltitle3" id="exampleModalLabel">지도보기</h5>
+                              <h5 class="modal-title t_modaltitle3" id="exampleModalLabel">アドレス情報</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                               </button>
@@ -253,7 +253,7 @@
                 </c:forEach>
               </div>
               <div class="col-lg-2 col-md-2 col-sm-2 t_reco t_recoradi4">
-                <img src="/resources/img/trending/movie1.jpg" class="t_recoradi4">
+                <img src="/resources/img/trending/movie4.jpg" class="t_recoradi4">
               </div>
             </div>
           </div>
