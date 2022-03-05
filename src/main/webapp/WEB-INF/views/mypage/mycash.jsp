@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>
-  
 <%@ include file="../header.jsp"%>
 
 <link rel="stylesheet" href="/resources/css/mypage/mypage.css"
@@ -67,12 +66,12 @@
                       <col width="20%">
                     </colgroup>
                     <tr>
-                      <th>번호</th>
-                      <th>영화이름</th>
-                      <th>결제일</th>
-                      <th>금액</th>
-                      <th>결제수단</th>
-                      <th>결제상태</th>
+                      <th>番号</th><!-- 번호 -->
+                      <th>映画の名前</th><!-- 영화이름 -->
+                      <th>決済日</th><!-- 결제일 -->
+                      <th>円</th><!-- 금액 -->
+                      <th>決済手段</th><!-- 결제수단 -->
+                      <th>決済状態</th><!-- 결제상태 -->
                     </tr>
                     <tbody>
                     <c:set var="num" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}"/>
@@ -85,7 +84,7 @@
                           <td><fmt:formatNumber value="${pList.charge}" type="currency"/></td>
                           <td>
                             <c:if test="${pList.pay_method == '1'}">
-                            <button type="button" class="btn waves-effect waves-light btn-rounded btn-danger"
+                            <button type="button" class="btn waves-effect waves-light btn-rounded btn-dark"
                               value="${pList.pay_status}">card
                             </button>
                             </c:if>
@@ -94,12 +93,12 @@
                             <c:choose>
                             <c:when test="${pList.pay_status == '1'}">
                             <button type="button" class="btn waves-effect waves-light btn-rounded btn-danger"
-                              value="${pList.pay_status}">미결제
+                              value="${pList.pay_status}">未決済<!-- 미결제 -->
                             </button>
                             </c:when>
                             <c:otherwise>
                             <button type="button" class="btn waves-effect waves-light btn-rounded btn-primary"
-                              value="${pList.pay_status}">결제완료
+                              value="${pList.pay_status}">決済完了<!-- 결제완료 -->
                             </button>
                             </c:otherwise>
                             </c:choose>
@@ -154,15 +153,9 @@
       </div>
     </div>
   </nav>
-
-
-
-
 </div>
 
-
 <%@ include file="../footer.jsp"%>
-
 
 <script>
 
