@@ -108,17 +108,19 @@
           
       </div><!-- 2-1 -->
       </form>
-      <form method="get" action="/adm/adminMovieFilmUpdate.do?m_cd=${films.m_cd}" >
+      <form method="get" action="adminMovieFilmUpdate.do" >
         <c:choose>
-          <c:when test="${films.film_status == 1}">
+         <c:when test="${films.film_status == 1}">
+          <input type="hidden" value="${films.m_cd}" name="m_cd">
           <input type="hidden" value="0" name="film_status">
               <button type="submit">情報入力</button>
           </c:when>
                <c:otherwise>
+               <input type="hidden" value="${films.m_cd}" name="m_cd">
                  <input type="hidden" value="1" name="film_status">
                  <button type="submit">入力</button>
               </c:otherwise>
-              </c:choose>
+        </c:choose>
               </form>
           <!-- ============================================================== -->
           <!-- End PAge Content -->

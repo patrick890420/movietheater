@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -132,12 +133,11 @@ public class AdminController {
     return "adm/adminMovie/adminMovieSelect";
   }
   @GetMapping("/adminMovieFilmUpdate.do")
-  public String adminMovieFilmUpdate(Model model,@RequestParam("m_cd")int m_cd,@RequestParam("Film_status")String Film_status)  {
+  public String adminMovieFilmUpdate(Model model,@RequestParam("m_cd")int m_cd,@RequestParam("film_status") String film_status)  {
     model.addAttribute("films",movieService.movieFilmsSelect2(m_cd));
-    FilmsVO fvo = new FilmsVO();
     
 
-    movieService.moviefilmsUpdate(m_cd);
+    movieService.moviefilmsUpdate(m_cd,film_status);
     
     
     return "redirect:/adm/adminMovieInfoInsert.do";
