@@ -89,7 +89,9 @@
                           <td>
                             <c:choose>
                             <c:when test="${pList.pay_status == '1'}">
-                            (<input type="checkbox" name="result" value="${pList.pay_status}"> 미결제)
+                            <button type="button" class="btn waves-effect waves-light btn-rounded btn-danger"
+                              value="${pList.pay_status}">미결제
+                            </button>
                             </c:when>
                             <c:otherwise>
                             <span>${pList.pay_status}</span>
