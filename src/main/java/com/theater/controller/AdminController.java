@@ -133,14 +133,16 @@ public class AdminController {
     return "adm/adminMovie/adminMovieSelect";
   }
   @GetMapping("/adminMovieFilmUpdate.do")
-  public String adminMovieFilmUpdate(Model model,@RequestParam("m_cd")int m_cd,@RequestParam("film_status") String film_status)  {
+  
+  public String adminMovieFilmUpdate(Model model,@RequestParam("m_cd")int m_cd,@RequestParam("film_status")String film_status)  {
+
     model.addAttribute("films",movieService.movieFilmsSelect2(m_cd));
     
 
     movieService.moviefilmsUpdate(m_cd,film_status);
     
     
-    return "redirect:/adm/adminMovieInfoInsert.do";
+    return "redirect:/adm/adminMovieSelect.do";
   }
   
   @GetMapping("/adminMovieInfoInsert.do")

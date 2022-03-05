@@ -2,6 +2,10 @@ package com.theater.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
+import com.theater.domain.Criteria;
+import com.theater.domain.CriteriaMyPage;
 import com.theater.domain.MemberVO;
 import com.theater.domain.ReListVO;
 
@@ -28,7 +32,7 @@ public interface MembersMapper {
 
   // 나의 예매 내역 조회....
 
-  public List<ReListVO> getRelist(String id); // 리스트로 담아야 하는 것 아닌지?
+  public List<ReListVO> getRelist(CriteriaMyPage cri);
 
   // admin 멤버 조회
   public List<MemberVO> memberSelect();
@@ -38,5 +42,7 @@ public interface MembersMapper {
 
   // 회원 본인 탈퇴
   public void byebyespro(MemberVO mvo);
+  
+  public int getTotal(CriteriaMyPage cri);
 
 }// class

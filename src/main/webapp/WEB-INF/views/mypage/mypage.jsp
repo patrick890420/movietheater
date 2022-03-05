@@ -118,7 +118,7 @@
                           <div class="form-group">
                             <label class="form-control-label"
                               for="">birthday</label> <input
-                              type="number" id="" name="birth"
+                              type="text" id="" name="birth"
                               class="form-control form-control-alternative"
                               value="${member.birth }" readonly>
                           </div>
