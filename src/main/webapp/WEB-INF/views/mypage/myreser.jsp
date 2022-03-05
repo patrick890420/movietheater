@@ -58,20 +58,20 @@
                <div class="row">
                     <div class="col-lg-12 col-md-12">
                       <ul>
-                        <li><span>극장</span> 유성온천 5관</li>
+                        <li><span>映画館</span> 유성온천 5관</li>
 <%--                         <fmt:parseDate value="${view.rdate}" --%>
 <%--                           var="dateValue" pattern="yyyy-MM-dd" /> --%>
-                        <li><span>상영일시</span>
+                        <li><span>上映日時</span>
 <%--                         <fmt:formatDate value="${dateValue}" --%>
 <%--                             pattern="yyyy-MM-dd" /></li> --%>
-                        <li><span>인원</span> ${relist.tkt_nums }</li>
-                        <li><span>좌석</span> ${relist.seat_cd }</li>
+                        <li><span>人数</span> ${relist.tkt_nums }</li>
+                        <li><span>席</span> ${relist.seat_cd }</li>
                       </ul>
                     </div> <!-- 12들 -->
                     </div>
                 </div>
                 <div class="input__btn">
-                  <input type="button" class="input__btn3" value="예매 취소">
+                  <input type="button" class="input__btn3" value="予約キャンセル">
                   <hr style="margin-left: -220px; width: 140%;">
                 </div>
               </div>
