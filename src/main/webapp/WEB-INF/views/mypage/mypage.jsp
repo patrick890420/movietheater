@@ -110,20 +110,19 @@
                           </c:when>
                           </c:choose>
 
-          
-                             
                           </div>
                         </div>
                         <div class="col-lg-4">
                           <div class="form-group">
                             <label class="form-control-label"
                               for="">birthday</label> <input
-                              type="number" id="" name="birth"
+                              type="text" id="" name="birth"
                               class="form-control form-control-alternative"
-                              value="${member.birth }" readonly>
+                              value="${member.birth}" readonly>
                           </div>
                         </div>
                       </div>
+
                     </div>
                     <hr class="my-4">
                     <!-- Description -->
@@ -140,15 +139,11 @@
                         </textarea>
                       </div>
 
-<<<<<<< HEAD
-                      <button type="submit" id="updatebtn" class="btn btn-primary" style="margin-left: 110px;">完了</button>
+
+                      <button type="submit" id="updatebtn" name="updatebtn" class="btn btn-primary" style="margin-left: 110px;">完了</button>
                       <button type="reset" class="btn btn-secondary" value="リセット">リセット</button>
                       <button type="button" class="btn btn-secondary" value="退会" onclick="location.href='byebye.do'">退会</button>
-=======
-                      <button type="submit" id="updatebtn" class="btn btn-primary">完了</button>
-                      <button type="reset" class="btn btn-secondary" value="리셋" style="margin-left: 174px;">リセット</button>
-                      <button type="button" class="btn btn-secondary" value="회원탈퇴" onclick="location.href='byebye.do'">退会</button>
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
+
 <!--                       <input type="button" class="btn btn-secondary" value="회원탈퇴"> -->
                        <!-- <button type="submit" class="btn btn-primary"
               id="join_button" name="join_button">会員登録へ</button> -->

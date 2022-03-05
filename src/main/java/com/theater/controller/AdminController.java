@@ -87,7 +87,7 @@ public class AdminController {
   @GetMapping("/adminMemberList.do")
   public String adminMemberList(Model model, MemberVO memvo) { //@RequestParam("userid")String userid
     //List<MemberVO> memlist = MembersService.memberSelect();
-    model.addAttribute("memlist", MembersService.memberSelect()); //죽고싶다
+    model.addAttribute("memlist", MembersService.memberSelect());
     return "adm/adminMember/adminMemberList";
   }
   
@@ -97,7 +97,7 @@ public class AdminController {
     
     MembersService.adminDelete(userid);
     
-    return "adm/adminMember/adminMemberList";
+    return "adm/admin"; //야매로 여기로 가게 함 ㅎ 왜냐하면 삭제 후 멤버 리스트가 0개로 뜨기 때문
   }
   
   @GetMapping("/adminMemberInsert.do")

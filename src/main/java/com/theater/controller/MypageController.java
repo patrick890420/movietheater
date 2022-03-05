@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -150,7 +151,7 @@ private PasswordEncoder pwEncoder;
       mvo.setUserid(userid);
       //mvo.setUserpw(pwEncoder.encode(newPw));
       mservice.byebyespro(mvo);
-      
+      SecurityContextHolder.clearContext(); 
       log.info("데이터 입력 완료 : " + mvo);
     } else {
       log.info("데이터 입력 실패");
