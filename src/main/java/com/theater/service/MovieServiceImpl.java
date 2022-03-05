@@ -136,7 +136,7 @@ public class MovieServiceImpl implements MovieService {
     return mapper.movieFilmsSelect2(m_cd);
   }
  @Override
-public FilmsVO moviefilmsUpdate(int m_cd) {
-   return mapper.moviefilmsUpdate(m_cd);
+public void moviefilmsUpdate(int m_cd, String film_status) {
+    mapper.moviefilmsUpdate(m_cd,film_status);
  }
 }//Impl

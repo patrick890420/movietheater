@@ -62,7 +62,7 @@ public interface MovieMapper {
   
   public List<FilmsVO> movieFilmsSelect();
   public FilmsVO movieFilmsSelect2(int m_cd);
-  public FilmsVO moviefilmsUpdate(int m_cd);
+  public void moviefilmsUpdate(@Param("m_cd")int m_cd, @Param("film_status")String film_status);
   //Info
 
 }

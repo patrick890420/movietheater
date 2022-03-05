@@ -64,7 +64,7 @@
                         <li><span>上映日時</span>
 <%--                         <fmt:formatDate value="${dateValue}" --%>
 <%--                             pattern="yyyy-MM-dd" /></li> --%>
-                        <li><span>人数</span> ${relist.tkt_nums }</li>
+<%--                         <li><span>人数</span> ${relist.tkt_nums }</li> --%>
                         <li><span>席</span> ${relist.seat_cd }</li>
                       </ul>
                     </div> <!-- 12들 -->
