@@ -86,7 +86,7 @@ function selectListUiFunction(selectSeatListUlActive) {
     selectSeatListUlActive.forEach(li => {
         if (li.parentNode.classList.contains('select-seat-ul-normal')) {
             normalNumber = Number(li.innerHTML);
-            normalMoney = 2000 * normalNumber;
+            normalMoney = 1600 * normalNumber;
             allMoney = normalMoney + teenMoney + oldMoney;
             allNumber = normalNumber + teenNumber + oldNumber;
             ticketPrice.innerHTML = allMoney + '円';

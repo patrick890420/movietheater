@@ -64,6 +64,7 @@
 let uid = document.getElementById("pay_cd").value;
 let name = document.getElementById("pay_name").value;
 let amount = document.getElementById("charge").value;
+
 function requestPay(){
 // let IMP = window.IMP;
 IMP.init('imp09327972') ;
@@ -105,7 +106,7 @@ IMP.request_pay({
           contentType:'application/json;charset=utf-8',
           dataType: 'json', //서버에서 보내줄 데이터 타입
           success: function(res){
-            console.log("추가성공"); 
+            console.log("추가성공");
           },
           error:function(){
             console.log("Insert ajax 통신 실패!!!");
