@@ -45,8 +45,8 @@
                     </c:if>
                     <a href="/movie/view.do?m_cd=${mlist1.m_cd}"><img style="height:90%; padding:20px; border-radius:4px" src="/upload/${mlist1.poster}" alt=""></a>
                     </div>
-                  <div class="product__item__text titleshort">
-                     <h5 style="padding-left: 20px;"><a style="color:white;" href="/movie/view.do?m_cd=${mlist1.m_cd}">${mlist1.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
+                  <div class="product__item__text">
+                     <h5 style="padding-left: 20px;"><a style="color:white;" href="/movie/view.do?m_cd=${mlist1.m_cd}"><span class="titleshort">${mlist1.title}</span></a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
                   </div>
                 </div>
                  </div>
@@ -74,7 +74,7 @@
                     <a href="/movie/view.do?m_cd=${mlist2.m_cd}"><img style="height:90%; padding:20px; border-radius:4px" src="/upload/${mlist2.poster}" alt="" style="width:205px; height:325px;"></a>
                   </div>
                    <div class="product__item__text">
-                     <h5 style="padding-left: 20px;"><a style="color:white;" href="/movie/view.do?m_cd=${mlist2.m_cd}">${mlist2.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
+                     <h5 style="padding-left: 20px;"><a style="color:white;" href="/movie/view.do?m_cd=${mlist2.m_cd}"><span class="titleshort">${mlist2.title}</span></a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
                   </div>
                 </div>
               </div>
@@ -100,8 +100,8 @@
                     </c:if>
                      <a href="/movie/view.do?m_cd=${mlist3.m_cd}"><img style="height:90%; padding:20px; border-radius:4px" src="/upload/${mlist3.poster}" alt=""></a>
                   </div>
-                   <div class="product__item__text titleshort">
-                     <h5 style="padding-left: 20px;"><a style="color:white;" href="/movie/view.do?m_cd=${mlist3.m_cd}">${mlist3.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
+                   <div class="product__item__text">
+                     <h5 style="padding-left: 20px;"><a style="color:white;" href="/movie/view.do?m_cd=${mlist3.m_cd}"><span class="titleshort">${mlist3.title}</span></a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
                   </div>
                 </div>
                 
@@ -140,7 +140,7 @@
      <section class="" style="padding-top:80px; padding-bottom:0px;">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
+      <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="trending__product">
             <div class="row">
               <div class="col-lg-8 col-md-8 col-sm-8">
@@ -155,31 +155,31 @@
                     class="arrow_right"></span></a>
                 </div>
               </div>
+            </div><!--  -->
             </div>
-            <div class="row">
-            <c:forEach var="elist" items="${elist}">
-              <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="product__item">
-                  <div class="product__item__pic set-bg"
-                    data-setbg="/resources/img/trending/event3.jpg" style="height:300px;">
-                    <div class="ep">18 / 18</div>
-                    <div class="comment">
-                      <i class="fa fa-comments"></i> 11
-                    </div>
+            </div>
+            </div>
+            <c:forEach var="elist" items="${elist}" begin="0" end="5">
+              
+                <div class="product__item imgn4" style="width:23%; float:left; margin:0 10px;">
+                  <div class="product__item__pic set-bg img2n4" style="height:300px;">${elist.content}
+                    <div class="ep">NEW</div>
                     <div class="view">
                       <i class="fa fa-eye"></i>${elist.hits}
                     </div>
                   </div>
                   <div class="product__item__text">
-                  <strong><a href="/event/eventView.do?event_cd=${elist.event_cd}">${elist.title}</a></strong>
+                  <strong><a href="/event/eventView.do?event_cd=${elist.event_cd}"><span class="titleshort3 titleshort2">${elist.title}</span></a></strong>
                     <h5>
                       <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${elist.wdate}"/>
                       <fmt:formatDate pattern="yyyy-MM-dd" value="${dateString}"/>
                     </h5>
                   </div>
                 </div>
-              </div>
+              
               </c:forEach>
+              
+                
               
           <!-- <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="product__item">
@@ -241,57 +241,15 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6 col-md-6 col-sm-6">
-                <div class="product__item">
-                  <div class="product__item__pic set-bg"
-                    data-setbg="/resources/img/trending/event3.jpg" style="height:300px;">
-                    <div class="ep">18 / 18</div>
-                    <div class="comment">
-                      <i class="fa fa-comments"></i> 11
-                    </div>
-                    <div class="view">
-                      <i class="fa fa-eye"></i> 9141
-                    </div>
-                  </div>
-                  <div class="product__item__text">
-                  <strong>[킹메이커]CGV필름마크</strong>
-                    <h5>
-                      <a class="dateblack" href="#">2022.01.19~2022.02.27</a>
-                    </h5>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="product__item">
-                  <div class="product__item__pic set-bg"
-                    data-setbg="/resources/img/trending/event3.jpg" style="height:300px;">
-                    <div class="ep">18 / 18</div>
-                    <div class="comment">
-                      <i class="fa fa-comments"></i> 11
-                    </div>
-                    <div class="view">
-                      <i class="fa fa-eye"></i> 9141
-                    </div>
-                  </div>
-                  <div class="product__item__text">
-                  <strong>[킹메이커]CGV필름마크</strong>
-                    <h5>
-                      <a class="dateblack" href="#">2022.01.19~2022.02.27</a>
-                    </h5>
-                  </div>
-                </div>
-              </div>-->
+              -->
               
-            </div><!-- row -->
+            <!-- row -->
           </div>
-        </div>
-      </div>
-     </div>
      </section>
      <section class="" style="padding-bottom:0px;">
-    <div class="container">
+    <div class="container" style="display: block; clear: both;">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12" style="margin-top: 90px;">
           <div class="trending__product">
             <div class="row">
               <div class="col-lg-8 col-md-8 col-sm-8">

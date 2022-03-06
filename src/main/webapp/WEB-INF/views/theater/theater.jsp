@@ -283,8 +283,7 @@
                 <c:forEach var="elist" items="${elist}" begin="0" end="2">
                     <div class="col-lg-4 col-md-4 col-sm-4">
                       <div class="product__item">
-                        <div class="product__item__pic set-bg t_eventimg"
-                          data-setbg="/resources/img/trending/event1.jpg">
+                        <div class="product__item__pic set-bg img2n4" style="height:300px;">${elist.content}
                           <div class="ep">D-day</div>
                           <div class="view">
                             <i class="fa fa-eye"></i> ${elist.hits}
