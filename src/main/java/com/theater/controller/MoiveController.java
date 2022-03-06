@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.theater.domain.AdminChartVO;
 import com.theater.domain.CmtAVG;
 import com.theater.domain.Criteria;
 import com.theater.domain.MovieChartVO;
@@ -51,41 +52,7 @@ public class MoiveController {
     model.addAttribute("b",b);
     model.addAttribute("c",c);
 
-    List<MovieChartVO> chart = movieService.movieChart(m_cd);
-       
-       Gson gson = new Gson();
-       JsonArray jArray = new JsonArray();
-       
-       Iterator<MovieChartVO> it = chart.iterator();
-       
-       while(it.hasNext()) {
-         MovieChartVO chartVO = it.next();
-         JsonObject object = new JsonObject();
-         
-         String id = chartVO.getId();
-         m_cd = chartVO.getM_cd();
-         int t_cd = chartVO.getT_cd();
-         int t_m_cd = chartVO.getT_m_cd();
-         String gender = chartVO.getGender();
-         String birth = chartVO.getBirth();
-         String userid = chartVO.getUserid();
-         
-         object.addProperty("id", id);
-         object.addProperty("m_cd", m_cd);
-         object.addProperty("t_cd" , t_cd);
-         object.addProperty("t_m_cd", t_m_cd);
-         object.addProperty("gender", gender);
-         object.addProperty("userid", userid);
-         object.addProperty("birth", birth);
-         jArray.add(object);
-       }
-       String json = gson.toJson(jArray);
-       model.addAttribute("json",json);
-       
-       
-       
    
-    
 	}//view.do
 	
 	
@@ -116,6 +83,20 @@ public class MoiveController {
 	  return "redirect:/movie/view.do";
 	}
 	
- 
+	@GetMapping("/chart1.do")
+ public @ResponseBody String chart1(@RequestParam("m_cd") int m_cd) {
+    
+    Gson gson = new Gson();
+    List<MovieChartVO> result = movieService.getChart1(m_cd);
+    return  gson.toJson(result);
+  }//chart1.do
+	
+	 @GetMapping("/chart2.do")
+	  public @ResponseBody String chart2(@RequestParam("m_cd") int m_cd) {
+	   Gson gson = new Gson();
+	    List<MovieChartVO> result = movieService.getChart2(m_cd);
+	    return  gson.toJson(result);
+	   
+	  }//chart2.do
 
 }//moive controller

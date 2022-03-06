@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                             <div class="anime__details__btn mv-txt-center">
-                                <a href="ticket.do" class="watch-btn btn btn-primary"><span>今すぐに予約!!</span></a>
+                                <a href="/ticket/ticket.do" class="watch-btn btn btn-primary"><span>今すぐに予約!!</span></a>
 <!--                                 <a><i class="fa fa-angle-right"></i></a> -->
                                 </div>
                             </div>
@@ -69,23 +69,23 @@
                     </div>
                 </div>
                 <!-- 차트 -->
-<!--               <div class="row"> -->
-<!--                 <div class="col-md-6 col-lg-6"> -->
-<!--                 <div class="section-title"> -->
-<!--                   <h5>統計</h5> -->
-<!--                 </div> -->
-<!--                   <div class="col-md-10 col-lg-10"> -->
-<!--                     <canvas id="ChartBar" height="159" width="380"></canvas> -->
-<!--                   </div> -->
-<!--                 </div> -->
-<!--                 <div class="col-md-6 col-lg-6"> -->
-<!--                   <div class="section-title"> -->
-<!--                   </div> -->
-<!--                   <div class="col-md-10 col-lg-10"> -->
-<!--                     <canvas id="doughnutchart" height="159" width="380"></canvas> -->
-<!--                   </div> -->
-<!--                 </div> -->
-<!--               </div> -->
+              <div class="row mv_height350">
+                <div class="col-md-6 col-lg-6">
+                <div class="section-title">
+                  <h5>統計</h5>
+                </div>
+                  <div class="col-md-10 col-lg-10">
+                    <canvas id="ChartBar" height="280" width="380"></canvas>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                  <div class="section-title">
+                  </div>
+                  <div class="col-md-10 col-lg-10">
+                    <canvas id="pieChart" height="280" width="380"></canvas>
+                  </div>
+                </div>
+              </div>
                 <!-- 차트 종료 -->
                 <div class="row register">
                     <div class="col-lg-12 col-md-12">
@@ -184,126 +184,134 @@
           </c:forEach>
  });
 </script> 
+
 <script type="text/javascript">
-            var jsonData =${json}
-            var jsonObject=JSON.stringify(jsonData);
-            var jData = JSON.parse(jsonObject);
-            
-            var valueList=new Array();
-            
-            for(var i=0; i<jData.length; i++) {
-              var d = jData[i];
-              valueList.push(d.id);
-              valueList.push(d.m_cd);
-              valueList.push(d.t_cd);
-              valueList.push(d.t_m_cd);
-              valueList.push(d.gender);
-              valueList.push(d.birth);
-              valueList.push(d.userid);
+var m_cd = ${view.m_cd};
+$.ajax({
+  url: '/movie/chart1.do?m_cd='+m_cd, 
+  type: 'get',
+  dataType: 'json',
+  contentType : 'application/json;charset=utf-8',
+  success: function (result) {
+
+    var context = document
+    .getElementById('ChartBar')
+    .getContext('2d');
+var myChart = new Chart(context, {
+    type: 'bar', // 차트의 형태
+    data: { // 차트에 들어갈 데이터
+        labels: [
+            //x 축
+            '10代','20代','30代','40代','50代','60代 以上'
+        ],
+        datasets: [
+            { //데이터
+                label: 'age', //차트 제목
+                fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                data: [
+                  result[0].agegroup,
+                  result[1].agegroup,
+                  result[2].agegroup,
+                  result[3].agegroup,
+                  result[4].agegroup,
+                  result[5].agegroup //x축 label에 대응되는 데이터 값
+                ],
+                backgroundColor: [
+                    //색상
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    //경계선 색상
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 2 //경계선 굵기
             }
-            
-            var context = document
-                .getElementById('ChartBar')
-                .getContext('2d');
-            var myChart = new Chart(context, {
-                type: 'bar', // 차트의 형태
-                data: valueList { // 차트에 들어갈 데이터
-                    labels: [
-                        //x 축
-                        '10대','20대','30대','40대','50대','60대 이상'
-                    ],
-                    datasets: [
-                        { //데이터
-                            label: 'age', //차트 제목
-                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
-                            data: [
-                                valueList //x축 label에 대응되는 데이터 값
-                            ],
-                            backgroundColor: [
-                                //색상
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                //경계선 색상
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 2 //경계선 굵기
-                        }/* ,
-                        {
-                            label: 'test2',
-                            fill: false,
-                            data: [
-                                8, 34, 12, 24
-                            ],
-                            backgroundColor: 'rgb(157, 109, 12)',
-                            borderColor: 'rgb(157, 109, 12)'
-                        } */
-                    ]
-                },
-                options: {
-                    scales: {
-                        yAxes: [
-                            {
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }
-                        ]
-                    }
-                }
-            });
-        </script>
-<script>
-$(document).ready(function(){
-
-  $.ajax({
-    url: '/movie/view.do', 
-    type: 'get',
-    dataType: 'json',
-    contentType : 'application/json;charset=utf-8',
-    success: function (data) {
-      $("#menSp").text(data.men);
-      $("#womenSp").text(data.women);
-      var chart1 = c3.generate({
-        bindto: '#campaign-v2',
-        data: {
-            columns: [
-                ['Men', data.men],['Women', data.women]
-            ],
-
-            type: 'donut',
-            tooltip: {
-                show: true
-            }
-        },
-        donut: {
-            label: {
-                show: false
-            },
-            title: 'Gender',
-            width: 18
-        },
-
-        legend: {
-            hide: true
-        },
-        color: {
-            pattern: [
-                '#5f76e8',
-                '#ff4f70'
-            ]
+              ]
+          },
+          options: {
+              scales: {
+                  yAxes: [
+                      {
+                          ticks: {
+                              beginAtZero: true
+                          }
+                      }
+                  ]
+              }
+          }
+      });
+          
         }
+      });
+
+</script>
+<script type="text/javascript">
+var m_cd = ${view.m_cd};
+$.ajax({
+  url: '/movie/chart2.do?m_cd='+m_cd, 
+  type: 'get',
+  dataType: 'json',
+  contentType : 'application/json;charset=utf-8',
+  success: function (result) {
+    console.log(result);
+    var context = document
+    .getElementById('pieChart')
+    .getContext('2d');
+    
+    var myChart = new Chart(context, {
+    type: 'pie', // 차트의 형태
+    data: { // 차트에 들어갈 데이터
+        labels: [
+            //x 축
+            '男性','女性'
+        ],
+        datasets: [
+            { //데이터
+                label: 'gender', //차트 제목
+                fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                data: [
+                  parseInt(result[0].men),parseInt(result[0].women) //x축 label에 대응되는 데이터 값
+
+                ],
+                backgroundColor: [
+                    //색상
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 99, 132, 0.7)',
+                ],
+                borderColor: [
+                    //경계선 색상
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                ],
+                borderWidth: 1, //경계선 굵기
+                hoverOffset: 4
+                
+            }/* ,
+            {
+                label: 'test2',
+                fill: false,
+                data: [
+                    8, 34, 12, 24
+                ],
+                backgroundColor: 'rgb(157, 109, 12)',
+                borderColor: 'rgb(157, 109, 12)'
+            } */
+            ]
+        },
     });
+  }//end success
+});//end ajax
+
 </script>
 
 <%@ include file = "../footer.jsp" %>

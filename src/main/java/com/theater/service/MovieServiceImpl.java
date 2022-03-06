@@ -135,8 +135,21 @@ public class MovieServiceImpl implements MovieService {
   public FilmsVO movieFilmsSelect2(int m_cd) {
     return mapper.movieFilmsSelect2(m_cd);
   }
+    
  @Override
-public FilmsVO moviefilmsUpdate(int m_cd) {
-   return mapper.moviefilmsUpdate(m_cd);
+ public void moviefilmsUpdate(int m_cd, String film_status) {
+    mapper.moviefilmsUpdate(m_cd,film_status);
+
  }
+
+@Override
+public List<MovieChartVO> getChart1(int m_cd) {
+  
+  return  mapper.getChart1(m_cd);
+}
+
+@Override
+public List<MovieChartVO> getChart2(int m_cd) {
+  return mapper.getChart2(m_cd);
+}
 }//Impl

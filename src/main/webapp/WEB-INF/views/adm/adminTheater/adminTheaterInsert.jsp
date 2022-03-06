@@ -57,16 +57,13 @@
                         <select class="custom-select mr-sm-2"
                           id="inlineFormCustomSelect" name="t_area">
                           <option selected>Area Select</option>
-                          <option value="1">도쿄1</option>
-                          <option value="2">도쿄2</option>
-                          <option value="3">도쿄3</option>
-                          <option value="4">도쿄4</option>
-                          <option value="5">도쿄5</option>
-                          <option value="6">도쿄6</option>
-                          <option value="7">도쿄7</option>
-                          <option value="8">도쿄8</option>
-                          <option value="9">도쿄9</option>
-                          <option value="10">도쿄10</option>
+                          <option value="1">東北地区 </option>
+                          <option value="2">関東地区</option>
+                          <option value="3">中部地区</option>
+                          <option value="4">関西地区</option>
+                          <option value="5">中国地区</option>
+                          <option value="6">四国地区</option>
+                          <option value="7">九州地区</option>
                         </select>
                       </div>
                     </div>
