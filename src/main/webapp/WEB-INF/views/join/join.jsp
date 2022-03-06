@@ -83,19 +83,6 @@
                   value="1" class="gender" name="gender"> 男性
               </div>
             </div>
-            <!--          <ul class="join_box">
-              <li class="checkBox check02">
-                <ul class="clearfix">
-                  <li>이용약관 동의(필수)</li>
-              </li>
-            </ul>
-            <textarea name="" id="">
-                이 약관은 행운의 편지 어쩌고
-                헠헠 마라탕 중국당면
-                ㅇㅇㅇ
-                안녕하세요
-                스크롤
-            </textarea> -->
 
             <div class="row">
               <div class="col-lg-12">
@@ -134,9 +121,8 @@
 
             </div>
             <!-- end .mb-4-->
-            <input type="checkbox" id="box1" name="box1"><span style="color:white;">同意します。</span>&nbsp;&nbsp;
-            <button type="submit" class="btn btn-primary"
-              id="join_button" name="join_button">会員登録へ</button>
+            <input type="checkbox" id="box1" name="box1" style="zoom: 1.2; width: 30px;"><span style="color:white;">同意します。</span>&nbsp;&nbsp;
+            <button type="submit" class="btn btn-primary" id="join_button" name="join_button">会員登録へ</button>
         </div>
         <!-- end col -->
 
@@ -209,6 +195,11 @@
         alert("会員規約の同意は必須です。");
         return false;
       }
+      
+      else{
+        alert("회원등록ㅇ ㅘㄴ료");
+      }
+      
 
     });
   })
@@ -237,7 +228,12 @@
       }
     }); //ajax end
   }); //blur end
+  
+  
+  
 </script>
+
+
 
 
 <%@ include file="../footer.jsp"%>
