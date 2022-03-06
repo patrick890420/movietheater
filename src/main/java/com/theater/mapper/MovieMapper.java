@@ -2,11 +2,11 @@ package com.theater.mapper;
 
 import java.util.List;
 
-
 import org.apache.ibatis.annotations.Param;
 
 import com.theater.domain.CmtAVG;
 import com.theater.domain.Criteria;
+import com.theater.domain.FilmsVO;
 import com.theater.domain.M_stillcutVO;
 import com.theater.domain.MovieChartVO;
 import com.theater.domain.MovieInfoVO;
@@ -60,6 +60,9 @@ public interface MovieMapper {
   
   public List<MovieChartVO> movieChart(int m_cd);
   
+  public List<FilmsVO> movieFilmsSelect();
+  public FilmsVO movieFilmsSelect2(int m_cd);
+  public FilmsVO moviefilmsUpdate(int m_cd);
   //Info
 
 }

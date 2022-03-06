@@ -42,6 +42,7 @@ public class MoiveController {
     model.addAttribute("cut",movieService.movieStillcutSelect(m_cd));
     model.addAttribute("info",movieService.adminMovieSelect(m_cd));
     model.addAttribute("avg",movieService.cmtAVG(m_cd));
+    model.addAttribute("film",movieService.movieFilmsSelect2(m_cd));
     double get = movieService.cmtAVG(m_cd).getReviewavg();
     int a = (int)get; 
     int b = a*10;
