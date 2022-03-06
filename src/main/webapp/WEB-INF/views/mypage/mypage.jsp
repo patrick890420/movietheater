@@ -75,8 +75,7 @@
                     </div>
                     <hr class="my-4">
                     <!-- Address -->
-                    <h6 class="heading-small text-muted mb-4">이하의
-                      정보는 수정할 수 없습니다.</h6>
+                    <h6 class="heading-small text-muted mb-4">以下の情報は修正できません。</h6>
                     <div class="pl-lg-4">
                       <div class="row">
                         <div class="col-md-12">
@@ -98,18 +97,28 @@
                         </div>
                         <div class="col-lg-4">
                           <div class="form-group focused">
-                            <label class="form-control-label"
-                              for="">gender</label> <input
-                              type="text" id="" name="gender"
-                              class="form-control form-control-alternative"
-                              value="${member.gender }" readonly>
+                            <label class="form-control-label" for="">gender</label> 
+                            
+                            <c:choose>
+                              <c:when test="${member.gender eq '1'}"> 
+                             <input type="text" id="" name="gender"
+                          class="form-control form-control-alternative"  value="男性" readonly>
+                          </c:when>
+                          <c:when test="${member.gender eq '2'}"> 
+                             <input type="text" id="" name="gender"
+                          class="form-control form-control-alternative"  value="女性" readonly>
+                          </c:when>
+                          </c:choose>
+
+          
+                             
                           </div>
                         </div>
                         <div class="col-lg-4">
                           <div class="form-group">
                             <label class="form-control-label"
                               for="">birthday</label> <input
-                              type="number" id="" name="birth"
+                              type="text" id="" name="birth"
                               class="form-control form-control-alternative"
                               value="${member.birth }" readonly>
                           </div>
@@ -130,10 +139,9 @@
                           >jslグループ株式会社（以下「jsl」といいます。）、その子会社、および関連会社で構成されるjslグループ（以下「jslグループ」といいます。）は、お客様に最適でユニークなサービスを提供したいと考えており、グローバルに展開する楽天グループのサービスに容易にアクセスしていただけるように、 シングル・ログイン機能を含む共通IDプログラム（以下「jsl ID」といいます。）を提供しています。 お客様は、jslが定めるjsl会員規約（以下「本規約」といいます。）に基づいてアカウント（以下「アカウント」といいます。）を作成し、会員サービスをご利用いただくことができます。
                         </textarea>
                       </div>
-
-                      <button type="submit" id="updatebtn" class="btn btn-primary">完了</button>
-                      <button type="reset" class="btn btn-secondary" value="리셋" style="margin-left: 174px;">リセット</button>
-                      <button type="button" class="btn btn-secondary" value="회원탈퇴" onclick="location.href='byebye.do'">退会</button>
+                      <button type="submit" id="updatebtn" class="btn btn-primary" style="margin-left: 110px;">完了</button>
+                      <button type="reset" class="btn btn-secondary" value="リセット">リセット</button>
+                      <button type="button" class="btn btn-secondary" value="退会" onclick="location.href='byebye.do'">退会</button>
 <!--                       <input type="button" class="btn btn-secondary" value="회원탈퇴"> -->
                        <!-- <button type="submit" class="btn btn-primary"
               id="join_button" name="join_button">会員登録へ</button> -->

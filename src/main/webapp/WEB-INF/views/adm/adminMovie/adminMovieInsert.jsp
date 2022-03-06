@@ -60,7 +60,7 @@
                           <h4 class="card-title">公開日</h4>
                           <h6 class="card-subtitle"><code></code></h6>
                               <div class="form-group">
-                                  <input name="rdate" type="text" class="form-control" value="2022-05-13">
+                                  <input name="rdate" type="text" class="form-control" value="2022-03-10">
                               </div>
                       </div>
                   </div>

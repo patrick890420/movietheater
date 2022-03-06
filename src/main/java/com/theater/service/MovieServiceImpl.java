@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.theater.domain.CmtAVG;
 import com.theater.domain.Criteria;
+import com.theater.domain.FilmsVO;
 import com.theater.domain.M_stillcutVO;
 import com.theater.domain.MovieChartVO;
 import com.theater.domain.MovieInfoVO;
@@ -125,4 +126,30 @@ public class MovieServiceImpl implements MovieService {
   public List<MovieChartVO> movieChart(int m_cd) {
     return mapper.movieChart(m_cd);
   }
+  
+  @Override
+  public List<FilmsVO> movieFilmsSelect() {
+    return mapper.movieFilmsSelect();
+  }
+    @Override
+  public FilmsVO movieFilmsSelect2(int m_cd) {
+    return mapper.movieFilmsSelect2(m_cd);
+  }
+    
+ @Override
+ public void moviefilmsUpdate(int m_cd, String film_status) {
+    mapper.moviefilmsUpdate(m_cd,film_status);
+
+ }
+
+@Override
+public List<MovieChartVO> getChart1(int m_cd) {
+  
+  return  mapper.getChart1(m_cd);
+}
+
+@Override
+public List<MovieChartVO> getChart2(int m_cd) {
+  return mapper.getChart2(m_cd);
+}
 }//Impl

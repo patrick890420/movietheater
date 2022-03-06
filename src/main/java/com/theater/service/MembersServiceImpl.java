@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.theater.domain.Criteria;
+import com.theater.domain.CriteriaMyPage;
 import com.theater.domain.MemberVO;
 import com.theater.domain.ReListVO;
 import com.theater.mapper.LoginMapper;
@@ -71,8 +73,8 @@ public class MembersServiceImpl implements MembersService {
   }
   
   @Override
-  public List<ReListVO> getRelist(String id) {
-    return mmapper.getRelist(id); 
+  public List<ReListVO> getRelist(CriteriaMyPage cri) {
+    return mmapper.getRelist(cri); 
   }
   
   
@@ -84,6 +86,17 @@ public class MembersServiceImpl implements MembersService {
   @Override
   public void adminDelete(String userid) {
     mmapper.adminDelete(userid);
+  }
+  
+  @Override
+  public void byebyespro(MemberVO mvo) {
+    mmapper.byebyespro(mvo);
+  }
+
+  @Override
+  public int getTotal(CriteriaMyPage cri) {
+   
+    return mmapper.getTotal(cri);
   }
 
   

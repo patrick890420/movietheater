@@ -46,15 +46,24 @@ where userid = #{userid}
 </update>
 
 <select id="getRelist" resultType="com.theater.domain.ReListVO">
-SELECT m.title, m.subtitle, m.poster, t.tkt_nums as tkt_nums, s.seat_cd as seat_cd,t.tkt_date as tkt_date
-,m.m_cd as mm_cd, t.m_cd as tm_cd, t.tkt_cd as ttkt_cd, s.tkt_cd as stkt_cd,t.id as id,t.tkt_time as tkt_time
 
-FROM movies m, ticketings t, sold_seats s
-
-WHERE m.m_cd = t.m_cd
-AND t.tkt_cd = s.tkt_cd
-AND t.id = #{id}
-ORDER BY t.tkt_cd desc
+  <![CDATA[
+        SELECT *
+        FROM ( SELECT ROWNUM RN,
+                A.*
+              FROM (SELECT m.title AS title, m.subtitle AS subtitle, m.poster AS poster, s.seat_cd AS seat_cd
+                  , t.tkt_date AS tkt_date, t.tkt_time AS tkt_time , t_name AS t_name , screen_name AS screen_name
+              FROM ticketings t,movies m, sold_seats s,FILM_TIMETABLE ft,FILMS f ,SCREENS sc,THEATERS th
+              WHERE t.tkt_cd = s.tkt_cd
+              AND m.m_cd = t.m_cd
+              AND s.S_T_CD =ft.S_T_CD 
+              AND ft.FILM_CD = f.FILM_CD
+              AND f.SCREEN_CD =sc.SCREEN_CD
+              AND sc.T_CD = th.T_CD 
+              AND t.id = #{id}
+              ORDER BY t.tkt_cd DESC) A)
+        WHERE RN > (#{pageNum}-1) * #{amount} AND RN <= #{pageNum} * #{amount}
+  ]]>
 </select>
 
 <select id="memberSelect" resultType="com.theater.domain.MemberVO"> <!-- 위에 멤버 조회 있는데 굳이..? 만들어야 할가,,? 타입이,, 달라서,,?-->
@@ -64,5 +73,23 @@ select * from members
  <delete id="adminDelete">
   delete from members where userid=#{userid}
  </delete>
+ 
+ <delete id="byebyespro">
+ delete from members 
+ where userid= #{userid}
+ </delete>
+ 
+ <select id="getTotal" resultType="int">
+ SELECT 
+  COUNT(*) 
+  FROM ticketings t,movies m, sold_seats s,FILM_TIMETABLE ft,FILMS f ,SCREENS sc,THEATERS th 
+  WHERE t.tkt_cd = s.tkt_cd 
+  AND m.m_cd = t.m_cd 
+  AND s.S_T_CD=ft.S_T_CD 
+  AND ft.FILM_CD = f.FILM_CD 
+  AND f.SCREEN_CD =sc.SCREEN_CD 
+  AND sc.T_CD = th.T_CD 
+  AND t.id = #{id} 
+</select>
 
 </mapper>

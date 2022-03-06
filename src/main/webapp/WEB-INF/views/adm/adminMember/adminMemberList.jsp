@@ -88,8 +88,8 @@
             <h4 class="card-title">会員リスト</h4>
             <h6 class="card-subtitle">
                                      こちらで会員のリストを見られます。
-              <code> columns.orderData</code>
-              option.
+<!--               <code> columns.orderData</code> -->
+<!--               option. -->
             </h6>
             <div class="table-responsive">
               <table id="multi_col_order"
@@ -115,7 +115,7 @@
                     <td>${memlist.gender}</td>
                     <td>${memlist.phone}</td>
                     <td>${memlist.email}</td>
-                    <td><a class='btn-fill' onclick="if( confirm('정말 삭제하시겠습니까?') ){ 
+                    <td><a class='btn-fill' onclick="if( confirm('会員を削除しますか？') ){ 
                     href='adminDelete.do?userid=${memlist.userid }' }">Delete</a></td> 
                   </tr>
                   </c:forEach>

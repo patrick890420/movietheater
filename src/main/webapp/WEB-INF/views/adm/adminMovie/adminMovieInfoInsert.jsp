@@ -100,6 +100,7 @@
                       </div>
                   </div>
               </div>         
+              
           <div class="mx-auto" style="text-align:center;">
             <button type="submit" class="btn btn-info">登錄</button>
             <button type="reset" class="btn btn-dark">リセット</button>
@@ -107,6 +108,22 @@
           
       </div><!-- 2-1 -->
       </form>
+      <form method="get" action="/adm/adminMovieFilmUpdate.do" >
+        <c:choose>
+         <c:when test="${films.film_status == 1}">
+          <input type="hidden" value="${films.m_cd}" name="m_cd">
+          <input type="hidden" value="0" name="film_status">
+          <input type="hidden" value="${films.m_cd}" name="m_cd">
+              <button type="submit">情報入力</button>
+          </c:when>
+               <c:otherwise>
+               <input type="hidden" value="${films.m_cd}" name="m_cd">
+                 <input type="hidden" value="1" name="film_status">
+                 <input type="hidden" value="${films.m_cd}" name="m_cd">
+                 <button type="submit">入力</button>
+              </c:otherwise>
+        </c:choose>
+              </form>
           <!-- ============================================================== -->
           <!-- End PAge Content -->
           <!-- ============================================================== -->

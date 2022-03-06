@@ -5,7 +5,9 @@
       <div class="">
 
             <div class="hero__items set-bg" style="margin:0 auto; max-width:1155px; text-align:center;">
-       <iframe width="1055" height="500" src="https://www.youtube.com/embed/L_Thez9j0i0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <video autoplay="" muted="" style="width:100%;">
+        <source src="https://adimg.cgv.co.kr/images/202202/Nightmare/Nightmare_1080x608_0214.mp4" type="video/mp4">
+       </video>
          </div>
       </div>
 

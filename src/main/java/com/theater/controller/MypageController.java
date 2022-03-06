@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.theater.domain.Criteria;
+import com.theater.domain.CriteriaMyPage;
 import com.theater.domain.MemberVO;
+import com.theater.domain.PageMyVO;
 import com.theater.domain.PageVO;
 import com.theater.service.MembersService;
 import com.theater.service.PaymentsService;
@@ -60,9 +63,7 @@ private PasswordEncoder pwEncoder;
   //비밀번호 수정 페이지
 //  @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')") //이거 맞는지 확인
   @GetMapping("/mypass.do")
-  public void mypass() { // @RequestParam 정보를 주세요
-    
-    
+  public void mypass() { // @RequestParam 정보를 주세요 
   }
   
 
@@ -87,9 +88,7 @@ private PasswordEncoder pwEncoder;
       mservice.mypasspro(mvo);
       // 수구링 
       
-      log.info("데이터 입력 완료 : " + mvo);
     } else {
-      log.info("데이터 입력 실패");
     }
 
     return "redirect:/";
@@ -120,12 +119,14 @@ private PasswordEncoder pwEncoder;
   
   //나의 예약 페이지 조회
   @GetMapping("/myreser.do")
-  public String relist(Model model,Principal principal) {
+  public String relist(Model model,Principal principal,CriteriaMyPage cri) {
     String id = principal.getName();
-    log.info("!!!!!!!!!!!!"+id);
-    model.addAttribute("relist", mservice.getRelist(id));
+    cri.setId(id);
+    model.addAttribute("relist", mservice.getRelist(cri));
     
-    log.info(mservice.getRelist(id));
+    int total= mservice.getTotal(cri);
+    
+    model.addAttribute("pageMaker",new PageMyVO(cri, total));
     
     return "/mypage/myreser";
   }
@@ -137,8 +138,26 @@ private PasswordEncoder pwEncoder;
   }
   
   //탈퇴 처리
-  @GetMapping("/byebyespro.do")
-  public void byebyespro() {
+  @PostMapping("/byebyespro.do")
+  public String byebyespro(Model model,Principal principal,
+      @RequestParam("prePw") String prePw) {
+    
+    String userid = principal.getName(); // 현재 로그인한 유저 
+    String PassInDB = mservice.selectPw(userid); // DB에서 암호화된 비밀번호 가져오기 
+    
+    // pwEncoder.matches(바꿀 비밀번호, 암호화된 비밀번호) 비교하여서 같으면 true, 다르면 false 
+    // 스프링 패스워드 인코더는 암호화할때마다 중간에 무작위값을 같이 암호화해서 매번 결과값이 다름!
+    // 즉 일반적인 비교연산(equals)로는 비교 불가능 / 반드시 (matches)를 사용할 것 
+    if (pwEncoder.matches(prePw, PassInDB)) {
+      MemberVO mvo = new MemberVO();
+      mvo.setUserid(userid);
+      //mvo.setUserpw(pwEncoder.encode(newPw));
+      mservice.byebyespro(mvo);
+      SecurityContextHolder.clearContext();
+    } else {
+    }
+    
+    return "redirect:/";
     
   }
   

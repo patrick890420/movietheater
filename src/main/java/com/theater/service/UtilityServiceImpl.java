@@ -127,4 +127,14 @@ public class UtilityServiceImpl implements UtilityService {
     return umapper.getAdminInfo();
   }
 
+  @Override
+  public List<AdminChartVO> getChart2() {
+    return umapper.getChart2();
+  }
+
+  @Override
+  public List<AdminChartVO> getChart3() {
+    return umapper.getChart3();
+  }
+
 }

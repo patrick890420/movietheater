@@ -155,7 +155,7 @@ function citycheck(tharea){
            let city="";
            for(let j=0;j<data1.length;j++){
              
-             city+="<div class='t_citydata t_citydataline'>";
+             city+="<div class='t_citydata t_citydataline t_tab'>";
              city+="<strong><a href='javascript:void(0)' onclick='citycheck2(\""+data1[j].t_name+"\");'>"+data1[j].t_name+"</a></strong>";
              city+="</div>";
              

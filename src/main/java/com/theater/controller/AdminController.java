@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +27,7 @@ import com.theater.domain.AdminChartVO;
 import com.theater.domain.Criteria;
 import com.theater.domain.DirectorsVO;
 import com.theater.domain.EventVO;
+import com.theater.domain.FilmsVO;
 import com.theater.domain.GenresVO;
 import com.theater.domain.MemberVO;
 import com.theater.domain.MovieInfoVO;
@@ -130,6 +132,18 @@ public class AdminController {
     model.addAttribute("list",movieService.movieSelect());
     return "adm/adminMovie/adminMovieSelect";
   }
+  @GetMapping("/adminMovieFilmUpdate.do")
+  
+  public String adminMovieFilmUpdate(Model model,@RequestParam("m_cd")int m_cd,@RequestParam("film_status")String film_status)  {
+
+    model.addAttribute("films",movieService.movieFilmsSelect2(m_cd));
+    
+
+    movieService.moviefilmsUpdate(m_cd,film_status);
+    
+    
+    return "redirect:/adm/adminMovieSelect.do";
+  }
   
   @GetMapping("/adminMovieInfoInsert.do")
   public String adminMovieInfoInsert(MovieInfoVO ivo,Model model, @RequestParam("m_cd")int m_cd){
@@ -139,6 +153,8 @@ public class AdminController {
     model.addAttribute("directors", uService.getDitrectorsList());
     model.addAttribute("nations", uService.getNationsList());
     model.addAttribute("genres",  uService.getGenresList());
+    model.addAttribute("films",movieService.movieFilmsSelect2(m_cd));
+    log.info(movieService.movieFilmsSelect2(m_cd));
     
     return "adm/adminMovie/adminMovieInfoInsert";
   }
@@ -147,6 +163,7 @@ public class AdminController {
   public String adminMovieView(@RequestParam("m_cd") int m_cd,Model model) {
     model.addAttribute("view",movieService.adminMovieSelect(m_cd));
     model.addAttribute("cut",movieService.movieStillcutSelect(m_cd));
+    model.addAttribute("film",movieService.movieFilmsSelect2(m_cd));
 
     return "adm/adminMovie/adminMovieView";
   }
@@ -631,6 +648,22 @@ public class AdminController {
     
     Gson gson = new Gson();
     AdminChartVO result = uService.getChart1();
+    return  gson.toJson(result);
+  }
+  
+  @GetMapping("/chart2.do")
+  public @ResponseBody String chart2(Model model) {
+    
+    Gson gson = new Gson();
+    List<AdminChartVO> result = uService.getChart2();
+    return  gson.toJson(result);
+  }
+  
+  @GetMapping("/chart3.do")
+  public @ResponseBody String chart3(Model model) {
+    
+    Gson gson = new Gson();
+    List<AdminChartVO> result = uService.getChart3();
     return  gson.toJson(result);
   }
   

@@ -333,3 +333,8 @@ input[type="radio"]:checked + strong {
 .t_sch_top:nth-child(n+2){
   margin-top:35px;
 }
+
+.t_tab:nth-child(6) {
+    margin-top:15px;
+    
+}
