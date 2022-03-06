@@ -110,20 +110,19 @@
                           </c:when>
                           </c:choose>
 
-          
-                             
                           </div>
                         </div>
                         <div class="col-lg-4">
                           <div class="form-group">
                             <label class="form-control-label"
                               for="">birthday</label> <input
-                              type="number" id="" name="birth"
+                              type="text" id="" name="birth"
                               class="form-control form-control-alternative"
-                              value="${member.birth }" readonly>
+                              value="${member.birth}" readonly>
                           </div>
                         </div>
                       </div>
+
                     </div>
                     <hr class="my-4">
                     <!-- Description -->
@@ -140,9 +139,10 @@
                         </textarea>
                       </div>
 
-                      <button type="submit" id="updatebtn" class="btn btn-primary" style="margin-left: 110px;">完了</button>
+                      <button type="submit" id="updatebtn" name="updatebtn" class="btn btn-primary" style="margin-left: 110px;">完了</button>
                       <button type="reset" class="btn btn-secondary" value="リセット">リセット</button>
                       <button type="button" class="btn btn-secondary" value="退会" onclick="location.href='byebye.do'">退会</button>
+
 
 <!--                       <input type="button" class="btn btn-secondary" value="회원탈퇴"> -->
                        <!-- <button type="submit" class="btn btn-primary"
@@ -155,10 +155,9 @@
           </div>
         </div>
       </div>
-  </div>
   </nav>
 </div>
-
+</div>
 
 
 <%@ include file="../footer.jsp"%>

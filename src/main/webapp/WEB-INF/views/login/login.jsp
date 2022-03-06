@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="normal__breadcrumb__text">
-                        <h2 style="color: #fff;">Login</h2>
+                        <h2 style="color: #fff;">Welcome</h2>
                     </div>
                 </div>
             </div>

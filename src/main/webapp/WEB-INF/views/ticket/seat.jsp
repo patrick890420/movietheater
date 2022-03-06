@@ -61,7 +61,6 @@
             <span>残りの席</span><span class="remain-seats">152</span>/<span
               class="all-seats">172</span>
           </div>
-
         </div>
         <div class="select-theater-date">
           <div class="theater-date"></div>

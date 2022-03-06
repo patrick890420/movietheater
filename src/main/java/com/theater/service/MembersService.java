@@ -2,6 +2,8 @@ package com.theater.service;
 
 import java.util.List;
 
+import com.theater.domain.Criteria;
+import com.theater.domain.CriteriaMyPage;
 import com.theater.domain.MemberVO;
 import com.theater.domain.ReListVO;
 
@@ -26,7 +28,7 @@ public interface MembersService {
 	 public void mypasspro(MemberVO mvo);
 	 
 	 //나의 예매 내역 조회
-	 public List<ReListVO> getRelist(String id); 
+	 public List<ReListVO> getRelist(CriteriaMyPage cri); 
 	  
 	 //admin 멤버 조회
 	 public List<MemberVO> memberSelect();
@@ -36,6 +38,8 @@ public interface MembersService {
 	 
 	 //회원 직접 탈퇴
 	 public void byebyespro(MemberVO mvo);
+	 
+	 public int getTotal(CriteriaMyPage cri); 
 
 
 

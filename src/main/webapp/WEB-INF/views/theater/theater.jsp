@@ -36,7 +36,7 @@
                 <!-- 극장이름 들어가는곳 -->
                 <div id="sub-low">
                   <c:forEach items="${thList}" var="thList">
-                    <div class="t_citydata t_citydataline">
+                    <div class="t_citydata t_citydataline t_tab">
                       <strong>
                        <a href="javascript:void(0)" onclick="citycheck2('${thList.t_name}');">${thList.t_name}</a>
                       </strong>

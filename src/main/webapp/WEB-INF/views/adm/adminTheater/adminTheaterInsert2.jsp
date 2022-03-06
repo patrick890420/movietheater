@@ -85,14 +85,14 @@
                         <select class="custom-select mr-sm-2"
                           id="inlineFormCustomSelect" name="screen_name">
                           <option selected>Screen Select</option>
-                          <option value="1극장">1극장</option>
-                          <option value="2극장">2극장</option>
-                          <option value="3극장">3극장</option>
-                          <option value="4극장">4극장</option>
-                          <option value="5극장">5극장</option>
-                          <option value="6극장">6극장</option>
-                          <option value="7극장">7극장</option>
-                          <option value="8극장">8극장</option>
+                          <option value="1劇場">1劇場</option>
+                          <option value="2劇場">2劇場</option>
+                          <option value="3劇場">3劇場</option>
+                          <option value="4劇場">4劇場</option>
+                          <option value="5劇場">5劇場</option>
+                          <option value="6劇場">6劇場</option>
+                          <option value="7劇場">7劇場</option>
+                          <option value="8劇場">8劇場</option>
                         </select>
                       </div>
                     </div>

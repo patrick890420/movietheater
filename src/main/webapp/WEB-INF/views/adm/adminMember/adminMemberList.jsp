@@ -47,7 +47,7 @@
 <!--                                         こちらでは新しい会員を登録することができます。 -->
 <!--               <code> $().DataTable();</code> -->
 <!--               DataTable 사용법 -->
-<!-- <!--          <code> $("#테이블id").DataTable();</code> --> -->
+<!-- <!--          <code> $("#테이블id").DataTable();</code> --> 
 <!--               . You can refer full documentation from here  -->
 <!--               <a href="https://datatables.net/">Datatables</a> -->
 <!--             </h6> -->
@@ -112,11 +112,25 @@
                     <td>${memlist.userid}</td>
                     <td>${memlist.username}</td>
                     <td>${memlist.birth}</td>
-                    <td>${memlist.gender}</td>
+                    
+                    <c:choose>
+                    <c:when test="${memlist.gender eq '1'}"> 
+                    <td>男性</td>
+                    </c:when>
+                    
+                    <c:when test="${memlist.gender eq '2'}"> 
+                     <td>女性</td>
+                     </c:when>
+                     </c:choose>
+
                     <td>${memlist.phone}</td>
                     <td>${memlist.email}</td>
-                    <td><a class='btn-fill' onclick="if( confirm('会員を削除しますか？') ){ 
-                    href='adminDelete.do?userid=${memlist.userid }' }">Delete</a></td> 
+                    <td><button type="button" class="btn btn-secondary">
+                    <a class='btn-fill' onclick="if( confirm('会員を削除しますか？') ){href='adminDelete.do?userid=${memlist.userid }' }">会員削除</a> </button> </td> 
+                    
+<%--                     <a class='btn-fill' onclick="if( confirm('会員を削除しますか？') ){  --%>
+<%--                     href='adminDelete.do?userid=${memlist.userid }' }">회원삭제</a> --%>
+
                   </tr>
                   </c:forEach>
                 </tbody>
