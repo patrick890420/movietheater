@@ -36,7 +36,7 @@
       <div class="container-fluid">
         <div class="main-content">
           <div class="container mt-7">
-            <div class="row" style="margin-top: -6%;">
+            <div class="row">
                  <h2 style="margin-top: 115px; margin-left: 190px; margin-bottom: 30px;">My Reservation.</h2>
                 <h6 class="heading-small text-muted mb-4" style="margin-left: 190px;"></h6>
                <c:forEach items="${relist}" var="relist"> 

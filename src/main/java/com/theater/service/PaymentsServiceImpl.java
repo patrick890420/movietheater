@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.theater.domain.Criteria;
+import com.theater.domain.CriteriaMyPage;
 import com.theater.domain.PaymentsVO;
 import com.theater.mapper.PaymentsMapper;
 
@@ -18,12 +19,12 @@ public class PaymentsServiceImpl implements PaymentsService {
   private PaymentsMapper pMapper;
 
   @Override
-  public List<PaymentsVO> getCashList(Criteria cri, String id) {
-    return pMapper.getCashList(cri,id);
+  public List<PaymentsVO> getCashList(CriteriaMyPage cri) {
+    return pMapper.getCashList(cri);
   }
 
   @Override
-  public int getTotal(Criteria cri) {
+  public int getTotal(CriteriaMyPage cri) {
     return pMapper.getTotal(cri);
   }
 
@@ -33,6 +34,10 @@ public class PaymentsServiceImpl implements PaymentsService {
     return pMapper.insertPay(pvo);
   }
 
+  @Override
+  public List<PaymentsVO> getCashPaging(CriteriaMyPage cri) {
+    return pMapper.getCashList(cri);
+  }
 
 
 }//class
