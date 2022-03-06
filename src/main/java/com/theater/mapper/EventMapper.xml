@@ -31,7 +31,7 @@
 </insert>
 
 <select id="getAdminBoardView" resultType="com.theater.domain.EventVO">
-select * from event where event_cd= #{event_cd}
+select * from event where event_cd= #{event_cd} 
 </select>
 
 
@@ -93,7 +93,7 @@ select * from event where event_cd= #{event_cd}
 </select>
 
 <select id="getEventIndex" resultType="com.theater.domain.EventVO"> 
-  SELECT * FROM  event
+  SELECT * FROM  event order by event_cd desc
  </select>
 
 </mapper>

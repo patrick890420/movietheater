@@ -65,7 +65,7 @@
                                    </div>
                                    
                                     <div class="product__item__text" >
-                                        <h5 ><a style="color:black;" href="view.do?m_cd=${mlist.m_cd}">${mlist.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
+                                        <h5 ><a style="color:black;" href="view.do?m_cd=${mlist.m_cd}"><span class="titleshort1">${mlist.title}</span></a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
                                         <fmt:parseDate value="${mlist.rdate}" var="dateValue" pattern="yyyy-MM-dd"/>
                                         <h5><fmt:formatDate value="${dateValue}" pattern="yyyy-MM-dd"/><strong> 公開</strong></h5>
                                         <button onclick="location.href='/ticket/ticket.do'" class="btn" style="background-image :linear-gradient(to left, rgb(255, 115, 86), rgb(251, 67, 87));  margin: 10px 0;"><span style="color:white; font-weight:600;">予約</span></button>

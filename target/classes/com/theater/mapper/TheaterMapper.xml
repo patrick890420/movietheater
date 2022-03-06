@@ -97,4 +97,12 @@
   SELECT * FROM SYS.DUAL
 </insert>
 
+<select id="adminScheduleList" resultType="com.theater.domain.ScheduleVO">
+SELECT * FROM FILMS f ,FILM_TIMETABLE ft, MOVIES m 
+  WHERE f.FILM_CD = ft.FILM_CD  
+  AND f.SCREEN_CD = #{screen_cd}
+  AND f.M_CD = m.M_CD 
+</select>  
+
+
 </mapper>

@@ -59,6 +59,34 @@
         </div>
       </div>
     </div>
+    <div class="table-responsive">
+      <table id="actorsTable" class="table table-striped table-bordered no-wrap text-center">
+        <thead>
+          <tr>
+            <th>CODE</th>
+            <th>NAME</th>
+          </tr>
+        </thead>
+          <tbody>
+            <c:forEach items="${scheduleList}" var="scheduleList">
+                <tr class="">
+                  <td>
+                    <p class=" mb-0" data-toggle="modal" data-target="#actors-header-modal">${scheduleList.title}</p>
+                  </td>
+                  <td>
+                    <p class=" mb-0" data-toggle="modal" data-target="#actors-header-modal">${scheduleList.start_time}</p>
+                  </td>
+                </tr>
+            </c:forEach>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>CODE</th>
+              <th>NAME</th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
 <!-- 모달 -->
 <div id="filmsmodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="fullWidthModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-full-width">

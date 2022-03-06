@@ -121,9 +121,8 @@
 
             </div>
             <!-- end .mb-4-->
-            <input type="checkbox" id="box1" name="box1"><span style="color:white;">同意します。</span>&nbsp;&nbsp;
-            <button type="submit" onclick="javascript:btn()" class="btn btn-primary"
-              id="join_button" name="join_button">会員登録へ</button>
+            <input type="checkbox" id="box1" name="box1" style="zoom: 1.2; width: 30px;"><span style="color:white;">同意します。</span>&nbsp;&nbsp;
+            <button type="submit" class="btn btn-primary" id="join_button" name="join_button">会員登録へ</button>
         </div>
         <!-- end col -->
 
@@ -196,6 +195,11 @@
         alert("会員規約の同意は必須です。");
         return false;
       }
+      
+      else{
+        alert("회원등록ㅇ ㅘㄴ료");
+      }
+      
 
     });
   })
@@ -225,7 +229,7 @@
     }); //ajax end
   }); //blur end
   
-  function btn(){ alert('登録が完了しました。 再ログインしてください。'); } 
+  
   
 </script>
 

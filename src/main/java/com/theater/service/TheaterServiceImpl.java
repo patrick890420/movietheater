@@ -111,4 +111,9 @@ public class TheaterServiceImpl implements TheaterService {
     thmapper.scheduleInsert(scdvo);
     
   }
+  
+  @Override
+  public List<ScheduleVO> adminScheduleList(int screen_cd) {
+    return thmapper.adminScheduleList(screen_cd);
+  }
 }
