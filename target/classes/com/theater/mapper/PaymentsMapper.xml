@@ -8,9 +8,7 @@
             <!-- Criteria->이름 같으면 getTypeArr(자동 호출) 실행 -->
       <trim prefix="OR">
         <choose>
-          <when test="type== 'T'.toString()">
-            title like '%'||#{keyword}||'%'
-          </when>
+          <when test="type== 'T'.toString()"></when>
         </choose>
       </trim>
     </foreach>
@@ -18,33 +16,42 @@
 </sql>
 
 <select id="getCashList" resultType="com.theater.domain.MycashVO">
-  SELECT * 
-  FROM TICKETINGS t, MOVIES m,PAYMENTS p  
-  WHERE t.M_CD = m.M_CD
-  AND t.TKT_CD = p.TKT_CD
-  AND t.id = #{id}
+  <![CDATA[
+     SELECT *
+     FROM ( SELECT ROWNUM RN,
+           A.*
+           FROM (SELECT  t.tkt_date as tkt_date, m.title as title, p.charge as charge
+               , p.pay_method as pay_method, p.pay_status as pay_status
+           FROM TICKETINGS t, MOVIES m,PAYMENTS p  
+           WHERE t.M_CD = m.M_CD
+           AND t.TKT_CD = p.TKT_CD
+           AND t.id = #{id}
+           ORDER BY t.TKT_CD DESC) A)
+           WHERE RN > (#{pageNum}-1) * #{amount} AND RN <= #{pageNum} * #{amount}
+        ]]>
 </select>
 
 <!-- 전체 래코드 갯수 -->
 <select id="getTotal" resultType="int">
-  SELECT COUNT(*) AS TOTAL FROM payments
-  WHERE  <if test="searchType == 'title'">TITLE LIKE '%'||#{searchName}||'%'</if>
-         <if test="searchType == null or searchType == ''"> 1=1</if>
+  SELECT COUNT(*) AS TOTAL FROM payments p,TICKETINGS tk
+  WHERE tk.tkt_cd = p.tkt_cd
+  and tk.id = #{id}
 </select>
-
-<!-- mycash 조인 -->
-<!-- select
-     t.tkt_cd, v.title, t.tkt_date, p.charge, p.pay_status 
-from
-    ticketings t, payments p, movies v
-where p.tkt_cd = t.tkt_cd
-and t.m_cd = v.m_cd 
-and t.id = 'admin'; -->
-
-
 
 <insert id="insertPay"  parameterType="com.theater.domain.PaymentsVO">
   insert into pay_cd (pay_cd,charge,pay_method,pay_status,pay_name)
   values(#{imp_uid},#{merchant_uid}, #{biz_email}, #{pay_date}, #{amount}, #{card_no}, #{refund})
 </insert>
+
+<select id="getCashPaging" resultType="com.theater.domain.PaymentsVO">
+<![CDATA[
+    select tkt_cd, charge, pay_method, pay_status from(
+      select tkt_cd, charge, pay_method, pay_status, rownum as rn from Payments
+      where 
+      rownum <= #{pageNum} * #{amount}
+    ) where rn > (#{pageNum}-1)*#{amount}
+    ]]>
+  </select>
+
+
 </mapper>

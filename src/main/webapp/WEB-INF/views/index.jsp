@@ -45,7 +45,7 @@
                     </c:if>
                     <a href="/movie/view.do?m_cd=${mlist1.m_cd}"><img style="height:90%; padding:20px; border-radius:4px" src="/upload/${mlist1.poster}" alt=""></a>
                     </div>
-                  <div class="product__item__text">
+                  <div class="product__item__text titleshort">
                      <h5 style="padding-left: 20px;"><a style="color:white;" href="/movie/view.do?m_cd=${mlist1.m_cd}">${mlist1.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
                   </div>
                 </div>
@@ -100,7 +100,7 @@
                     </c:if>
                      <a href="/movie/view.do?m_cd=${mlist3.m_cd}"><img style="height:90%; padding:20px; border-radius:4px" src="/upload/${mlist3.poster}" alt=""></a>
                   </div>
-                   <div class="product__item__text">
+                   <div class="product__item__text titleshort">
                      <h5 style="padding-left: 20px;"><a style="color:white;" href="/movie/view.do?m_cd=${mlist3.m_cd}">${mlist3.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
                   </div>
                 </div>
@@ -385,23 +385,26 @@
             
                   <div class="row" style="padding:0 12px;">
                      <div class="col-lg-12 col-md-12 col-sm-12" style="padding:20px; border:groove; padding-right: 53%; border-radius: 15px;">
-                <div style="padding-top:20px; border-top:groove;">
-                  <strong>고객센터 <span>&ensp;&ensp;1234-1234</span></strong>
+                <div style="padding-top:20px; border-top:groove; width: 1100px;">
+                  <strong>カスタマーセンター <span>&ensp;&ensp;1234-1234</span></strong>
+<!--                   고객센터 -->
                   <div style="margin-left:80px;">
-                  <span>고객센터 운영시간 (평일 09:00~18:00)</span>
-                  <p>업무시간 외 자동응답 안내 가능합니다.</p>
+                  <span>カスタマーセンター営業時間 (平日 09:00~18:00)</span>
+<!--                   고객센터 운영시간 (평일 09:00~18:00) -->
+                  <p>業務時間外の自動応答のご案内が可能です。.</p>
+<!--                   업무시간 외 자동응답 안내 가능합니다. -->
                   </div>
                   <div class="index_notice_tag">
                     <a class="dateblack" href="">FAQ</a>
                   </div>
                   <div class="index_notice_tag">
-                    <a class="dateblack" href="">1:1문의</a>
+                    <a class="dateblack" href="">1:1お問い合わせ</a><!-- 1:1문의 -->
                   </div>
                   <div class="index_notice_tag">
-                    <a class="dateblack" href="">분실물 문의</a>
+                    <a class="dateblack" href="">紛失物 お問い合わせ</a><!-- 분실물 문의 -->
                   </div>
                   <div class="index_notice_tag">
-                    <a class="dateblack" href="">대관/단체 문의</a>
+                    <a class="dateblack" href="">代官 / 団体のお問い合わせ</a><!-- 대관/단체 문의 -->
                   </div>
                 </div><!-- style -->
                 </div><!-- 12 -->
@@ -415,9 +418,15 @@
   <script>
 
         let rollingData = [
+<<<<<<< HEAD
+                           <c:forEach var="nlist" items="${nlist}">
+                           '<p>${nlist.title}</p>',
+                           </c:forEach>
+=======
           <c:forEach var="nlist" items="${nlist}" begin="0" end="2">
           '<p>${nlist.title}</p>',
           </c:forEach>
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
                           ]    // 롤링할 데이터를 넣으면 됩니다 갯수 제한 없어요
 
         let timer = 2000 // 롤링되는 주기 입니다 (1000 => 1초)

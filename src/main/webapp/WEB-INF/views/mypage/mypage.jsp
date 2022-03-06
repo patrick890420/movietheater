@@ -146,6 +146,7 @@
                       <button type="button" class="btn btn-secondary" value="退会" onclick="location.href='byebye.do'">退会</button>
 
 
+
 <!--                       <input type="button" class="btn btn-secondary" value="회원탈퇴"> -->
                        <!-- <button type="submit" class="btn btn-primary"
               id="join_button" name="join_button">会員登録へ</button> -->
@@ -157,13 +158,11 @@
           </div>
         </div>
       </div>
-  </div>
   </nav>
 </div>
 
+
 <script> function btn(){ alert('変更されました。'); } </script>
-
-
 
 
 <%@ include file="../footer.jsp"%>

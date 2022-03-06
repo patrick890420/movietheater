@@ -57,9 +57,7 @@
   </insert>    
   
   <select id="adminScheduleSelect" resultType="com.theater.domain.ScheduleVO">
-    SELECT * FROM MOVIES m, films f
-      WHERE m.m_cd = f.m_cd
-        and f.film_status = 1
+    SELECT * FROM MOVIES m
   </select>
   
   <select id="getCityCheck" resultType="com.theater.domain.TheatersVO">
