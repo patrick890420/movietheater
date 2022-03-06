@@ -13,6 +13,11 @@ public class MovieChartVO {
   private String birth;
   private String id;
   private String userid;
+  private String men;
+  private String women;
+  
+  private String age;
+  private int agegroup;
   
   
 }

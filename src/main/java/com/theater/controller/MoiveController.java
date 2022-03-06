@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.theater.domain.AdminChartVO;
 import com.theater.domain.CmtAVG;
 import com.theater.domain.Criteria;
 import com.theater.domain.MovieChartVO;
@@ -52,7 +53,6 @@ public class MoiveController {
     model.addAttribute("c",c);
 
    
-    
 	}//view.do
 	
 	
@@ -83,6 +83,20 @@ public class MoiveController {
 	  return "redirect:/movie/view.do";
 	}
 	
- 
+	@GetMapping("/chart1.do")
+ public @ResponseBody String chart1(@RequestParam("m_cd") int m_cd) {
+    
+    Gson gson = new Gson();
+    List<MovieChartVO> result = movieService.getChart1(m_cd);
+    return  gson.toJson(result);
+  }//chart1.do
+	
+	 @GetMapping("/chart2.do")
+	  public @ResponseBody String chart2(@RequestParam("m_cd") int m_cd) {
+	   Gson gson = new Gson();
+	    List<MovieChartVO> result = movieService.getChart2(m_cd);
+	    return  gson.toJson(result);
+	   
+	  }//chart2.do
 
 }//moive controller

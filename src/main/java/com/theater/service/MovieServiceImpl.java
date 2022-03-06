@@ -141,4 +141,15 @@ public class MovieServiceImpl implements MovieService {
     mapper.moviefilmsUpdate(m_cd,film_status);
 
  }
+
+@Override
+public List<MovieChartVO> getChart1(int m_cd) {
+  
+  return  mapper.getChart1(m_cd);
+}
+
+@Override
+public List<MovieChartVO> getChart2(int m_cd) {
+  return mapper.getChart2(m_cd);
+}
 }//Impl
