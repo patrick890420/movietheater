@@ -160,8 +160,10 @@
             <c:forEach var="elist" items="${elist}">
               <div class="n3 col-md-6 col-sm-6 n4">
                 <div class="product__item">
-                  <div class="product__item__pic set-bg"
-                      data-setbg="/resources/img/trending/event3.jpg"style="height:300px;">
+<!--                   <div class="product__item__pic set-bg" data-setbg="/resources/img/trending/event3.jpg"style="height:300px;"> -->
+                       <div class="product__item__pic set-bg">
+                       <div class="container-fluid" style="">${elist.content}</div>
+                       
                     <div class="view">
                       <i class="fa fa-eye"></i>${elist.hits}
                     </div>
@@ -179,33 +181,32 @@
               
               </c:forEach>
               
-              <div class="col-lg-6 col-md-6 col-sm-6">
-                <div class="product__item">
-                  <div class="product__item__pic set-bg"
-                     data-setbg="/resources/img/trending/event3.jpg" style="height:300px;">
-                  </div>
-                  <div class="product__item__text">
-                  <strong>[킹메이커]CGV필름마크</strong>
-                    <h5>
-                      <a class="dateblack" href="#">2022.01.19~2022.02.27</a>
-                    </h5>
-                  </div>
-                </div>
-              </div>
-
-               <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="product__item">
-                  <div class="product__item__pic set-bg"
-                    data-setbg="/resources/img/trending/event3.jpg" style="height:300px;">
-                  </div>
-                  <div class="product__item__text">
-                  <strong>[킹메이커]CGV필름마크</strong>
-                    <h5>
-                      <a class="dateblack" href="#">2022.01.19~2022.02.27</a>
-                    </h5>
-                  </div>
-                </div>
-              </div>
+<!--               <div class="col-lg-6 col-md-6 col-sm-6"> -->
+<!--                 <div class="product__item"> -->
+<!--                   <div class="product__item__pic set-bg" -->
+<!--                      data-setbg="/resources/img/trending/event3.jpg" style="height:300px;"> -->
+<!--                   </div> -->
+<!--                   <div class="product__item__text"> -->
+<!--                   <strong>[킹메이커]CGV필름마크</strong> -->
+<!--                     <h5> -->
+<!--                       <a class="dateblack" href="#">2022.01.19~2022.02.27</a> -->
+<!--                     </h5> -->
+<!--                   </div> -->
+<!--                 </div> -->
+<!--               </div> -->
+<!--                <div class="col-lg-3 col-md-6 col-sm-6"> -->
+<!--                 <div class="product__item"> -->
+<!--                   <div class="product__item__pic set-bg" -->
+<!--                     data-setbg="/resources/img/trending/event3.jpg" style="height:300px;"> -->
+<!--                   </div> -->
+<!--                   <div class="product__item__text"> -->
+<!--                   <strong>[킹메이커]CGV필름마크</strong> -->
+<!--                     <h5> -->
+<!--                       <a class="dateblack" href="#">2022.01.19~2022.02.27</a> -->
+<!--                     </h5> -->
+<!--                   </div> -->
+<!--                 </div> -->
+<!--               </div> -->
               
 <!--            <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="product__item">

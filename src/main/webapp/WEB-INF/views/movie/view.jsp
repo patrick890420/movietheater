@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                             <div class="anime__details__btn mv-txt-center">
-                                <a href="ticket.do" class="watch-btn btn btn-primary"><span>今すぐに予約!!</span></a>
+                                <a href="/ticket/ticket.do" class="watch-btn btn btn-primary"><span>今すぐに予約!!</span></a>
 <!--                                 <a><i class="fa fa-angle-right"></i></a> -->
                                 </div>
                             </div>
@@ -313,6 +313,5 @@ $.ajax({
 });//end ajax
 
 </script>
-
 
 <%@ include file = "../footer.jsp" %>

@@ -139,16 +139,9 @@
                           >jslグループ株式会社（以下「jsl」といいます。）、その子会社、および関連会社で構成されるjslグループ（以下「jslグループ」といいます。）は、お客様に最適でユニークなサービスを提供したいと考えており、グローバルに展開する楽天グループのサービスに容易にアクセスしていただけるように、 シングル・ログイン機能を含む共通IDプログラム（以下「jsl ID」といいます。）を提供しています。 お客様は、jslが定めるjsl会員規約（以下「本規約」といいます。）に基づいてアカウント（以下「アカウント」といいます。）を作成し、会員サービスをご利用いただくことができます。
                         </textarea>
                       </div>
-
-<<<<<<< HEAD
                       <button type="submit" id="updatebtn" class="btn btn-primary" style="margin-left: 110px;">完了</button>
                       <button type="reset" class="btn btn-secondary" value="リセット">リセット</button>
                       <button type="button" class="btn btn-secondary" value="退会" onclick="location.href='byebye.do'">退会</button>
-=======
-                      <button type="submit" id="updatebtn" class="btn btn-primary">完了</button>
-                      <button type="reset" class="btn btn-secondary" value="리셋" style="margin-left: 174px;">リセット</button>
-                      <button type="button" class="btn btn-secondary" value="회원탈퇴" onclick="location.href='byebye.do'">退会</button>
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
 <!--                       <input type="button" class="btn btn-secondary" value="회원탈퇴"> -->
                        <!-- <button type="submit" class="btn btn-primary"
               id="join_button" name="join_button">会員登録へ</button> -->
