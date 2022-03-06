@@ -153,7 +153,10 @@ private PasswordEncoder pwEncoder;
       mvo.setUserid(userid);
       //mvo.setUserpw(pwEncoder.encode(newPw));
       mservice.byebyespro(mvo);
-      SecurityContextHolder.clearContext();
+
+      SecurityContextHolder.clearContext(); 
+      log.info("데이터 입력 완료 : " + mvo);
+
     } else {
     }
     

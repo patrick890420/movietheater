@@ -110,8 +110,6 @@
                           </c:when>
                           </c:choose>
 
-          
-                             
                           </div>
                         </div>
                         <div class="col-lg-4">
@@ -120,10 +118,11 @@
                               for="">birthday</label> <input
                               type="text" id="" name="birth"
                               class="form-control form-control-alternative"
-                              value="${member.birth }" readonly>
+                              value="${member.birth}" readonly>
                           </div>
                         </div>
                       </div>
+
                     </div>
                     <hr class="my-4">
                     <!-- Description -->
@@ -139,9 +138,14 @@
                           >jslグループ株式会社（以下「jsl」といいます。）、その子会社、および関連会社で構成されるjslグループ（以下「jslグループ」といいます。）は、お客様に最適でユニークなサービスを提供したいと考えており、グローバルに展開する楽天グループのサービスに容易にアクセスしていただけるように、 シングル・ログイン機能を含む共通IDプログラム（以下「jsl ID」といいます。）を提供しています。 お客様は、jslが定めるjsl会員規約（以下「本規約」といいます。）に基づいてアカウント（以下「アカウント」といいます。）を作成し、会員サービスをご利用いただくことができます。
                         </textarea>
                       </div>
-                      <button type="submit" id="updatebtn" class="btn btn-primary" style="margin-left: 110px;">完了</button>
+
+
+
+                      <button type="submit" id="updatebtn" name="updatebtn" class="btn btn-primary" style="margin-left: 110px;">完了</button>
                       <button type="reset" class="btn btn-secondary" value="リセット">リセット</button>
                       <button type="button" class="btn btn-secondary" value="退会" onclick="location.href='byebye.do'">退会</button>
+
+
 <!--                       <input type="button" class="btn btn-secondary" value="회원탈퇴"> -->
                        <!-- <button type="submit" class="btn btn-primary"
               id="join_button" name="join_button">会員登録へ</button> -->

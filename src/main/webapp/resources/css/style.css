@@ -2522,3 +2522,9 @@ ol {
         flex: 0 0 50%;
         max-width: 50%;
         }
+        .titleshort {
+        width:200px;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        }

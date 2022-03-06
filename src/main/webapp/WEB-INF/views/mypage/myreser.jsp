@@ -10,7 +10,7 @@
 <title></title>
 
 
-<div class="d-flex" id="wrapper">
+<div class="d-flex" id="wrapper" style="width: 1536px; margin: 0 auto;">
   <!-- Sidebar-->
 
   <div class="border-end bg-white" id="sidebar-wrapper"
@@ -32,7 +32,7 @@
   <!-- Page content wrapper-->
   <div id="page-content-wrapper">
     <!-- Top navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" style="width: 1180px;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" style="width: 1180px; border: groove !important; margin-bottom: 10px;">
       <div class="container-fluid">
         <div class="main-content">
           <div class="container mt-7">

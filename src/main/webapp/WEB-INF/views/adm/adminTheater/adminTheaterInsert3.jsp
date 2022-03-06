@@ -54,28 +54,22 @@
                   <div class="seat-wrapper"></div>
                   </div>
                 </div>
+                <h4 id="list-item-4" style="margin-left:26px;">Information registration.</h4>
                 <div class="col-lg-12 mb-3" style="text-align: right;">
-                  <div class="btn-list">
+                  <div class="btn-list" style="margin-bottom:5px;">
                     <button type="submit" class="btn btn-success">
-                      <i class="fas fa-check"></i> Success
+                      <i class="fas fa-check"></i> registration
                     </button>
+                    <button type="button"
+                    class="btn btn-danger dropdown-toggle"
+                    data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Cancel</button>
                   </div>
                 </div>
               </div>
               </form>
-              <h4 id="list-item-4">Information registration.</h4>
-              <div class="col-lg-12 mb-3" style="text-align: right;">
-                <div class="btn-list">
-                  <a href="${path}/theater/insert.do"><button type="button"
-                    class="btn btn-primary dropdown-toggle"
-                    data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">registration</button></a>
-                  <button type="button"
-                    class="btn btn-danger dropdown-toggle"
-                    data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">Cancel</button>
-                </div>
-              </div>
+              
+            
             </div>
           </div>
         </div>

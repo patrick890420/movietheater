@@ -78,9 +78,9 @@
               style="background-color: white; border: solid #b7b7b7;">
               <span class="icon_heart_alt"></span>
               <div class="genderchoice">
-                <input type="radio" value="1" class="gender"
-                  name="gender"> woman <input type="radio"
-                  value="2" class="gender" name="gender"> man
+                <input type="radio" value="2" class="gender"
+                  name="gender"> 女性 <input type="radio"
+                  value="1" class="gender" name="gender"> 男性
               </div>
             </div>
             <!--          <ul class="join_box">
