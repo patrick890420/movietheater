@@ -97,10 +97,9 @@
                             </td>
                             <td>
                               <p class="movieRdate" data-toggle="modal" data-target="#primary-header-modal"><fmt:parseDate value="${mlist.rdate}" var="dateValue" pattern="yyyy-MM-dd"/>
-                                                                                                            <fmt:formatDate value="${dateValue}" pattern="yyyy-MM-dd"/></p>
                             </td> 
                             <td>
-                              <p class="movieRtime" data-toggle="modal" data-target="#primary-header-modal">${mlist.rtime }분</p>
+                              <p class="movieRtime" data-toggle="modal" data-target="#primary-header-modal">${mlist.rtime }分</p>
                             </td> 
                             <td>
                               <p class="movieRate" data-toggle="modal" data-target="#primary-header-modal">${mlist.rate }</p>
