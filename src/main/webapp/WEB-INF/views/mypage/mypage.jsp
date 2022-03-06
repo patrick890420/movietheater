@@ -160,9 +160,13 @@
       </div>
   </nav>
 </div>
+</div>
 
 
 <script> function btn(){ alert('変更されました。'); } </script>
+
+
+
 
 
 <%@ include file="../footer.jsp"%>
