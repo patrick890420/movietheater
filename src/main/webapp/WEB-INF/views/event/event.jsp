@@ -116,7 +116,7 @@
 </section><!-- hero -->
 
 <!-- 하단 배너 -->
-<div class="col-md-12 event142">
+<div class="col-md-12 event119">
   <img src="/resources/img/event.jpg" alt="..." class="img-rounded">
 </div>
 
