@@ -13,7 +13,7 @@
 <script src="js/scripts.js"></script>
 
 
-<div class="d-flex" id="wrapper">
+<div class="d-flex" id="wrapper" style="width: 1536px; margin: 0 auto;">
 
   <!-- Sidebar-->
 
@@ -36,8 +36,8 @@
   </div>
 
   <nav
-    class="navbar navbar-expand-lg navbar-light bg-light border-bottom"
-    style="width: 1180px;">
+    class="navbar navbar-expand-lg navbar-light bg-light border-bottom "
+    style="width: 1180px; border: groove !important; margin-bottom: 10px;">
     <div class="container-fluid">
       <div class="main-content">
         <div class="container mt-7">
