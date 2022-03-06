@@ -2522,9 +2522,49 @@ ol {
         flex: 0 0 50%;
         max-width: 50%;
         }
-        .titleshort {
-        width:200px;
-        white-space:nowrap;
-        overflow:hidden;
-        text-overflow:ellipsis;
+        .titleshort{
+        width:170px;
+        display: block;/* 블록태그로 만들어준다 */
+        text-overflow: ellipsis;/* 말줄임 css */
+        white-space: nowrap;/*글자를 한줄로 모아준다*/
+        overflow: hidden;
+        }
+        .titleshort1{
+        width:220px;
+        display: block;/* 블록태그로 만들어준다 */
+        text-overflow: ellipsis;/* 말줄임 css */
+        white-space: nowrap;/*글자를 한줄로 모아준다*/
+        overflow: hidden;
+        }
+        
+        .imgn4:nth-of-type(5){
+        height:400px !important;
+        }
+        .imgn4:nth-of-type(5) .img2n4{
+        height:700px !important;
+        }
+        .imgn4:nth-of-type(6){
+        width:540px !important;
+        }
+        .titleshort2 {
+        width:250px;
+        display: block;/* 블록태그로 만들어준다 */
+        text-overflow: ellipsis;/* 말줄임 css */
+        white-space: nowrap;/*글자를 한줄로 모아준다*/
+        overflow: hidden;
+        }
+        .titleshort2 .titleshort3:nth-of-type(5) {
+        width:530px !important; 
+        display: block;/* 블록태그로 만들어준다 */
+        text-overflow: ellipsis;/* 말줄임 css */
+        white-space: nowrap;/*글자를 한줄로 모아준다*/
+        overflow: hidden;
+        }
+        .product__item__pic img {
+          object-fit:fill;
+          height:300px;
+        }
+       .imgn4:nth-of-type(5) img {
+          object-fit:fill;
+          height:700px;
         }
