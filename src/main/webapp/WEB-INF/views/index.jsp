@@ -5,9 +5,7 @@
       <div class="">
 
             <div class="hero__items set-bg" style="margin:0 auto; max-width:1155px; text-align:center;">
-       <video autoplay="" muted="" style="width:100%;">
-        <source src="https://adimg.cgv.co.kr/images/202202/Nightmare/Nightmare_1080x608_0214.mp4" type="video/mp4">
-       </video>
+       <iframe width="1055" height="500" src="https://www.youtube.com/embed/L_Thez9j0i0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
          </div>
       </div>
 
@@ -415,7 +413,7 @@
   <script>
 
         let rollingData = [
-          <c:forEach var="nlist" items="${nlist}">
+          <c:forEach var="nlist" items="${nlist}" begin="0" end="2">
           '<p>${nlist.title}</p>',
           </c:forEach>
                           ]    // 롤링할 데이터를 넣으면 됩니다 갯수 제한 없어요
