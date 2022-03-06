@@ -45,7 +45,7 @@
                     </c:if>
                     <a href="/movie/view.do?m_cd=${mlist1.m_cd}"><img style="height:90%; padding:20px; border-radius:4px" src="/upload/${mlist1.poster}" alt=""></a>
                     </div>
-                  <div class="product__item__text">
+                  <div class="product__item__text titleshort">
                      <h5 style="padding-left: 20px;"><a style="color:white;" href="/movie/view.do?m_cd=${mlist1.m_cd}">${mlist1.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
                   </div>
                 </div>
@@ -100,7 +100,7 @@
                     </c:if>
                      <a href="/movie/view.do?m_cd=${mlist3.m_cd}"><img style="height:90%; padding:20px; border-radius:4px" src="/upload/${mlist3.poster}" alt=""></a>
                   </div>
-                   <div class="product__item__text">
+                   <div class="product__item__text titleshort">
                      <h5 style="padding-left: 20px;"><a style="color:white;" href="/movie/view.do?m_cd=${mlist3.m_cd}">${mlist3.title}</a>&ensp;<span style="font-size:12px; color: gray; font-weight: 600;"></span></h5>
                   </div>
                 </div>
