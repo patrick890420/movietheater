@@ -141,7 +141,7 @@
 
 
 
-                      <button type="submit" id="updatebtn" name="updatebtn" class="btn btn-primary" style="margin-left: 110px;">完了</button>
+                      <button type="submit" onclick="javascript:btn()" id="updatebtn" name="updatebtn" class="btn btn-primary" style="margin-left: 110px;">完了</button>
                       <button type="reset" class="btn btn-secondary" value="リセット">リセット</button>
                       <button type="button" class="btn btn-secondary" value="退会" onclick="location.href='byebye.do'">退会</button>
 
@@ -160,6 +160,9 @@
   </div>
   </nav>
 </div>
+
+<script> function btn(){ alert('変更されました。'); } </script>
+
 
 
 
