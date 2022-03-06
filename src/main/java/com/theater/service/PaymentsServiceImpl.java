@@ -33,6 +33,16 @@ public class PaymentsServiceImpl implements PaymentsService {
     return pMapper.insertPay(pvo);
   }
 
+  @Override
+  public List<PaymentsVO> nextPage(int pay_cd) {
+    return pMapper.nextPage(pay_cd);
+  }
+
+  @Override
+  public List<PaymentsVO> prevPage(int pay_cd) {
+    return pMapper.prevPage(pay_cd);
+  }
+
 
 
 }//class

@@ -174,4 +174,17 @@ from movies m,ticketings t,members b
 where m.m_cd =t.m_cd and t.id=b.userid and m.m_cd=#{m_cd}
  </select>
  
+ <select id="movieFilmsSelect" resultType="com.theater.domain.FilmsVO">
+    select * from films
+ </select>
+ 
+ <select id="movieFilmsSelect2" resultType="com.theater.domain.FilmsVO">
+    select * from films where m_cd=#{m_cd}
+ </select>
+ 
+<update id="moviefilmsUpdate">
+update films set
+FILM_STATUS = #{film_status}
+where m_cd = #{m_cd}
+ </update>
 </mapper>

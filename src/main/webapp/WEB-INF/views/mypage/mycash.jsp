@@ -69,7 +69,7 @@
                       <th>番号</th><!-- 번호 -->
                       <th>映画の名前</th><!-- 영화이름 -->
                       <th>決済日</th><!-- 결제일 -->
-                      <th>円</th><!-- 금액 -->
+                      <th>金額</th><!-- 금액 -->
                       <th>決済手段</th><!-- 결제수단 -->
                       <th>決済状態</th><!-- 결제상태 -->
                     </tr>
@@ -81,7 +81,7 @@
                           <!-- 영화이름 (영화정보 페이지로 넘어가게 할까?)-->
                           <td class="cash76"><a href="#"></a>${pList.title}</td>
                           <td>${pList.tkt_date }</td>
-                          <td><fmt:formatNumber value="${pList.charge}" type="currency"/></td>
+                          <td><fmt:formatNumber value="${pList.charge}"/>円</td>
                           <td>
                             <c:if test="${pList.pay_method == '1'}">
                             <button type="button" class="btn waves-effect waves-light btn-rounded btn-dark"
@@ -161,7 +161,7 @@
 
 window.addEventListener('DOMContentLoaded', event => {
 
-    // Toggle the side navigation
+//      Toggle the side navigation
     const sidebarToggle = document.body.querySelector('#sidebarToggle');
     if (sidebarToggle) {
         // Uncomment Below to persist sidebar toggle between refreshes

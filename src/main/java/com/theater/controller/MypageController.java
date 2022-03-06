@@ -48,13 +48,16 @@ private PasswordEncoder pwEncoder;
   }
 
   @GetMapping("/mycash.do")
-  public void mycash(Criteria cri, Model model,Principal principal) {
+  public void mycash(Criteria cri, Model model,Principal principal,@RequestParam("pay_cd")int pay_cd) {
     String id = principal.getName();
     
     model.addAttribute("pList",pService.getCashList(cri,id));
+
 //전체조회값
     int total= pService.getTotal(cri);
     model.addAttribute("pageMaker",new PageVO(cri, total));
+    model.addAttribute("next",pService.nextPage(pay_cd));
+    model.addAttribute("prev",pService.prevPage(pay_cd));
   }
   
   //비밀번호 수정 페이지

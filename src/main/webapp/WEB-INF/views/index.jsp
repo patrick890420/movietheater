@@ -374,7 +374,7 @@
             
                   <div class="row" style="padding:0 12px;">
                      <div class="col-lg-12 col-md-12 col-sm-12" style="padding:20px; border:groove; padding-right: 53%; border-radius: 15px;">
-                <div style="padding-top:20px; border-top:groove;">
+                <div style="padding-top:20px; border-top:groove; width: 1100px;">
                   <strong>カスタマーセンター <span>&ensp;&ensp;1234-1234</span></strong>
 <!--                   고객센터 -->
                   <div style="margin-left:80px;">
@@ -407,8 +407,9 @@
   <script>
 
         let rollingData = [
-                           '<c:forEach var="nlist" items="${nlist}"><p>${nlist.title}</p></c:forEach>',
-                          //'[기타]23년 VIP 선정 기준 변경 및 추가 기준 관련 안내'
+                           <c:forEach var="nlist" items="${nlist}">
+                           '<p>${nlist.title}</p>',
+                           </c:forEach>
                           ]    // 롤링할 데이터를 넣으면 됩니다 갯수 제한 없어요
 
         let timer = 2000 // 롤링되는 주기 입니다 (1000 => 1초)

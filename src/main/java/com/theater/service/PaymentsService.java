@@ -14,5 +14,9 @@ public interface PaymentsService {
   public int getTotal(Criteria cri);
   
   public int insertPay(PaymentsVO pvo);
+  
+  public List<PaymentsVO>nextPage(int pay_cd);
+  public List<PaymentsVO>prevPage(int pay_cd);
+  
 
 }//interface

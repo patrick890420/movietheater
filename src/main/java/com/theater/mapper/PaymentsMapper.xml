@@ -23,7 +23,22 @@
   WHERE t.M_CD = m.M_CD
   AND t.TKT_CD = p.TKT_CD
   AND t.id = #{id}
+  <![CDATA[
+        SELECT *
+        FROM ( SELECT ROWNUM RN,
+                A.*
+              FROM (SELECT * FROM payments
+                    WHERE
+        ]]> 
+                    <if test="searchType == 'title'">TITLE LIKE '%'||#{searchName}||'%'</if>
+                    <if test="searchType == null or searchType == ''"> 1=1</if>
+        <![CDATA[
+                    ORDER BY NT_CD DESC) A)
+        WHERE RN > (#{pageNum}-1) * #{amount} AND RN <= #{pageNum} * #{amount}
+        ]]>
 </select>
+
+
 
 <!-- 전체 래코드 갯수 -->
 <select id="getTotal" resultType="int">
@@ -36,5 +51,35 @@
   insert into pay_cd (pay_cd,charge,pay_method,pay_status,pay_name)
   values(#{imp_uid},#{merchant_uid}, #{biz_email}, #{pay_date}, #{amount}, #{card_no}, #{refund})
 </insert>
+
+<select id="getListWithPaging" resultType="com.theater.domain.PaymentsVO">
+  <![CDATA[
+    select
+      pay_cd,charge,pay_method,pay_status,pay_name
+    from
+        (
+        select /*+INDEX_DESC(payments payments_pk) */
+          rownum rn, pay_cd,charge,pay_method,pay_status,pay_name
+        from
+          payments
+        where rownum <= #{pageNum}*#{amount}
+       )
+       where rn > (#{pageNum} -1)*#{amount}
+     ]]>
+   </select>
+
+<select id="nextPage" resultType="com.theater.domain.PaymentsVO">
+  <![CDATA[
+    select * from payments where pay_cd< #{pay_cd} and rownum=1 order by pay_cd desc
+    ]]>
+</select>
+
+<select id="prevPage" resultType="com.theater.domain.PaymentsVO">
+  <![CDATA[
+    select * from payments where pay_cd> #{pay_cd} and rownum=1 order by pay_cd asc
+    ]]>
+</select>
+
+
 
 </mapper>
