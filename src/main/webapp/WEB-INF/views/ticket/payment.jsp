@@ -43,15 +43,15 @@
           <div class="ticket-price-title">決済金額</div>
           <div class="ticket-price">${svoInfo.seat_price }円</div>
         </div>
-        
           <!-- 결제 정보 -->
-          <form>
-          <input type="hidden" class="selectedTktCd" id="pay_cd" name="pay_cd" value="${rsInfo.tkt_cd}">
-          <input type="hidden" class="selectedTktCd" id="pay_name" name="pay_name" value="${tkInfo.title}">
-          <input type="hidden" class="payMoney" id="charge" name="charge" value="${svoInfo.seat_price }">
-            <div class="">
-              <input type="button" onclick="requestPay();" value="決済" class="reserve-button btn btn-primary pull-right">
-            </div>
+          <form id="frm" method="post">
+            <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
+            <input type="hidden" class="selectedTktCd" id="tkt_cd" name="tkt_cd" value="${tkInfo.tkt_cd}">
+            <input type="hidden" class="selectedTktCd" id="pay_name" name="pay_name" value="${tkInfo.title}">
+            <input type="hidden" class="payMoney" id="charge" name="charge" value="${svoInfo.seat_price }">
+              <div class="">
+                <input type="button" onclick="requestPay();" value="決済" class="reserve-button btn btn-primary pull-right">
+              </div>
           </form>
       </div>
     </div>
@@ -61,9 +61,9 @@
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <script>
 
-let uid = document.getElementById("pay_cd").value;
+let tkt_cd = document.getElementById("tkt_cd").value;
 let name = document.getElementById("pay_name").value;
-let amount = document.getElementById("charge").value;
+let charge = document.getElementById("charge").value;
 
 function requestPay(){
 // let IMP = window.IMP;
@@ -71,9 +71,9 @@ IMP.init('imp09327972') ;
 IMP.request_pay({
   pg : 'html5_inicis',
     pay_method : 'card',
-    merchant_uid: uid, // 상점에서 관리하는 주문 번호
+    merchant_uid: tkt_cd, // 상점에서 관리하는 주문 번호
     name : name,
-    amount : amount,
+    amount : charge,
     buyer_email : 'iamport@siot.do',
     buyer_name : '구매자이름',
     buyer_tel : '010-1234-5678',
@@ -81,6 +81,24 @@ IMP.request_pay({
     buyer_postcode : '123-456'
 }, function(response) {
   //결제 후 호출되는 callback함수
+  var data = {"tkt_cd" : tkt_cd ,"charge" : charge};
+    $.ajax({
+      url : '/ticket/insertPayment.do', 
+          type :'POST',
+          data : JSON.stringify(data),
+          beforeSend : function(xhr)
+          {   /*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
+              xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
+          },
+          dataType: 'JSON',
+          contentType : "application/json;charset=UTF-8",
+          success: function(res){
+            console.log("추가성공");
+          },
+          error:function(){
+            console.log("Insert ajax 통신 실패!!!");
+          }
+    }) //ajax
   if ( response.success ) { //결제 성공
     console.log(response);
     var result = {
@@ -92,26 +110,8 @@ IMP.request_pay({
         "card_no" : rsp.apply_num,
         "refund" : 'payed'
         }
-    var csrfHeaderName = "${_csrf.headerName}";
-    var csrfTokenValue = "${_csrf.token}";
-    $(document).ajaxSend(function(e, xhr, options) {
-          xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
-       });
-    $.ajax({
-      url : '/ticket/insertPayment.do', 
-          type :'POST',
-          data : JSON.stringify(result,
-              ['imp_uid', 'merchant_uid', 'biz_email', 
-                'pay_date', 'amount', 'card_no', 'refund']),
-          contentType:'application/json;charset=utf-8',
-          dataType: 'json', //서버에서 보내줄 데이터 타입
-          success: function(res){
-            console.log("추가성공");
-          },
-          error:function(){
-            console.log("Insert ajax 통신 실패!!!");
-          }
-    }) //ajax
+    alert(rsp.imp_uid);
+    
   } else {
     alert('결제실패 : ' + response.error_msg);
   }
