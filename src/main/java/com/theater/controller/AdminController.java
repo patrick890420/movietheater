@@ -154,7 +154,6 @@ public class AdminController {
     model.addAttribute("nations", uService.getNationsList());
     model.addAttribute("genres",  uService.getGenresList());
     model.addAttribute("films",movieService.movieFilmsSelect2(m_cd));
-    log.info(movieService.movieFilmsSelect2(m_cd));
     
     return "adm/adminMovie/adminMovieInfoInsert";
   }
@@ -320,7 +319,6 @@ public class AdminController {
   public String adminScheduleInsertPro(ScheduleVO scdvo) {
     String start_time = scdvo.getStart_time().replace("T", " ");
     scdvo.setStart_time(start_time);
-    log.info(scdvo.getStart_time());
     TheaterService.scheduleInsert(scdvo);
     
     return "redirect:/adm/adminTheaterInsert.do";
