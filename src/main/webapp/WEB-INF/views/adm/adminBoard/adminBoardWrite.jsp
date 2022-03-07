@@ -135,7 +135,7 @@ $(document).ready(function() {
          enctype: 'multipart/form-data',
          processData: false,
          success: function(img_name) {
-           alert(img_name);
+//           alert(img_name);
           $(el).summernote('editor.insertImage',img_name.url);
          }, error: function (e) { 
            // 전송 후 에러 발생 시 실행 코드
