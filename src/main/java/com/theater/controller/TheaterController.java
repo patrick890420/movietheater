@@ -52,7 +52,6 @@ public class TheaterController {
     TheatersVO tvo = new TheatersVO();
     tvo.setT_name(t_name);
     tvo.setStart_time(now_dt);
-    log.info("확인"+thservice.getScreenInfo(tvo));
     model.addAttribute("sclist", thservice.getScreenInfo(tvo));
   }
   
