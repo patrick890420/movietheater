@@ -196,9 +196,6 @@
         return false;
       }
       
-      else{
-        alert("회원등록ㅇ ㅘㄴ료");
-      }
       
 
     });
