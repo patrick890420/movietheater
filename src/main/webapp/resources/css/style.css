@@ -2538,10 +2538,10 @@ ol {
         }
         
         .imgn4:nth-of-type(5){
-        height:400px !important;
+        height:300px !important;
         }
         .imgn4:nth-of-type(5) .img2n4{
-        height:700px !important;
+        height:523px !important;
         }
         .imgn4:nth-of-type(6){
         width:540px !important;
@@ -2562,12 +2562,12 @@ ol {
         }
         .product__item__pic img {
           object-fit:fill;
-          height:300px;
+          height:220px;
           border-radius:20px;
         }
        .imgn4:nth-of-type(5) img {
           object-fit:fill;
-          height:700px;
+          height:521px;
         }
         .movieSelection_title{
         position: absolute;

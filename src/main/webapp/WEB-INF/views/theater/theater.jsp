@@ -282,15 +282,15 @@
                 <div class="row">
                 <c:forEach var="elist" items="${elist}" begin="0" end="2">
                     <div class="col-lg-4 col-md-4 col-sm-4">
-                      <div class="product__item">
-                        <div class="product__item__pic set-bg img2n4" style="height:300px;">${elist.content}
+                      <div class="product__item" style="padding: 0 30px;">
+                        <div class="product__item__pic set-bg img2n4" style="height:218px;">${elist.content}
                           <div class="ep">D-day</div>
                           <div class="view">
                             <i class="fa fa-eye"></i> ${elist.hits}
                           </div>
                         </div>
                         <div class="product__item__text">
-                            <strong><a href="/event/eventView.do?event_cd=${elist.event_cd}">${elist.title}</a></strong>
+                            <strong><a href="/event/eventView.do?event_cd=${elist.event_cd}"><span class="titleshort3">${elist.title}</span></a></strong>
                           <h5>
                             <a href="#/event/eventView.do?event_cd=${elist.event_cd}">
                               <fmt:parseDate pattern="yyyy-MM-dd" var="dateString" value="${elist.wdate}"/>

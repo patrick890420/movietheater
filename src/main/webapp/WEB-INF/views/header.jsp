@@ -53,8 +53,8 @@
 
 <script language = "javascript">
   var imgArray = new Array();
-  imgArray[0] = '/resources/img/theater/post1.jpg';
-  imgArray[1] = '/resources/img/theater/post3.jpg';
+  imgArray[0] = '/resources/img/theater/KakaoTalk_20220307_154429504_02.jpg';
+  imgArray[1] = '/resources/img/theater/KakaoTalk_20220307_154429504_03.jpg';
   var imgArray2 = new Array();
   imgArray2[0] = '/resources/img/theater/footpost1.jpg';
   imgArray2[1] = '/resources/img/theater/footpost2.jpg';
@@ -79,10 +79,10 @@
   <header class="header" style="background:black;">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12" style="text-align:center;">
           <div class="">
             <a href="./index.html">
-            <img id = "introImg" border="0">
+            <img style="width:1140px;" id = "introImg" border="0">
             </a>
           </div>
         </div>

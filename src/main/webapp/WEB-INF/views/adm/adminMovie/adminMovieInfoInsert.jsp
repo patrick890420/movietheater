@@ -19,6 +19,24 @@
                       </nav>
                   </div>
               </div>
+              <div class="col-5" >
+              <form method="get" style="float:right;" action="/adm/adminMovieFilmUpdate.do" >
+        <c:choose>
+         <c:when test="${films[0].film_status == 1}">
+          <input type="hidden" value="${films[0].m_cd}" name="m_cd">
+          <input type="hidden" value="0" name="film_status">
+          <input type="hidden" value="${films[0].m_cd}" name="m_cd">
+              <button class="btn btn-primary" type="submit">上映中止</button>
+          </c:when>
+               <c:otherwise>
+               <input type="hidden" value="${films[0].m_cd}" name="m_cd">
+                 <input type="hidden" value="1" name="film_status">
+                 <input type="hidden" value="${films[0].m_cd}" name="m_cd">
+                 <button class="btn btn-primary" type="submit">上映</button>
+              </c:otherwise>
+        </c:choose>
+              </form>
+              </div>
            </div>
       </div><!-- 1-1 -->
       <!-- ============================================================== -->
@@ -108,22 +126,7 @@
           
       </div><!-- 2-1 -->
       </form>
-      <form method="get" action="/adm/adminMovieFilmUpdate.do" >
-        <c:choose>
-         <c:when test="${films[0].film_status == 1}">
-          <input type="hidden" value="${films[0].m_cd}" name="m_cd">
-          <input type="hidden" value="0" name="film_status">
-          <input type="hidden" value="${films[0].m_cd}" name="m_cd">
-              <button type="submit">情報入力</button>
-          </c:when>
-               <c:otherwise>
-               <input type="hidden" value="${films[0].m_cd}" name="m_cd">
-                 <input type="hidden" value="1" name="film_status">
-                 <input type="hidden" value="${films[0].m_cd}" name="m_cd">
-                 <button type="submit">入力</button>
-              </c:otherwise>
-        </c:choose>
-              </form>
+      
           <!-- ============================================================== -->
           <!-- End PAge Content -->
           <!-- ============================================================== -->
