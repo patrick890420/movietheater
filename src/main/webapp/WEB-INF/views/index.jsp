@@ -5,9 +5,7 @@
       <div class="">
 
             <div class="hero__items set-bg" style="margin:0 auto; max-width:1155px; text-align:center;">
-       <video autoplay="" muted="" style="width:100%;">
-        <source src="https://adimg.cgv.co.kr/images/202202/Nightmare/Nightmare_1080x608_0214.mp4" type="video/mp4">
-       </video>
+       <video preload="metadata" id="eq-2546-1536-0-29980" crossorigin="Anonymous" style="position: absolute; width: 100%; height: 100%; display: block;" src="blob:https://eqc163kcaa.eq.webcdn.stream.ne.jp/62745446-a4fe-4f5a-8f82-4e9bf4c6aae4"></video>
          </div>
       </div>
 
