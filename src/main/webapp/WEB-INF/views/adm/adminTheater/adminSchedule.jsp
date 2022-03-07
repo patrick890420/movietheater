@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid">
+    <div style="padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; width: 100%;">
       <div class="card">
         <div class="card-body">
           <form name="adminScheduleInsertPro" action="adminScheduleInsertPro.do" method="get">
@@ -59,12 +59,13 @@
         </div>
       </div>
     </div>
+    <div class="container-fluid">
     <div class="table-responsive">
       <table id="actorsTable" class="table table-striped table-bordered no-wrap text-center">
         <thead>
           <tr>
-            <th>CODE</th>
-            <th>NAME</th>
+            <th>MOVIE</th>
+            <th>TIME</th>
           </tr>
         </thead>
           <tbody>
@@ -81,11 +82,12 @@
           </tbody>
           <tfoot>
             <tr>
-              <th>CODE</th>
-              <th>NAME</th>
+              <th>MOVIE</th>
+              <th>TIME</th>
             </tr>
           </tfoot>
         </table>
+      </div>
       </div>
 <!-- 모달 -->
 <div id="filmsmodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="fullWidthModalLabel" aria-hidden="true">
