@@ -132,7 +132,7 @@ public class MovieServiceImpl implements MovieService {
     return mapper.movieFilmsSelect();
   }
     @Override
-  public FilmsVO movieFilmsSelect2(int m_cd) {
+  public List<FilmsVO> movieFilmsSelect2(int m_cd) {
     return mapper.movieFilmsSelect2(m_cd);
   }
     

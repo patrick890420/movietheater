@@ -9,7 +9,7 @@
   <div class="page-breadcrumb">
     <div class="row">
       <div class="col-7 align-self-center">
-        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">書き物</h4><!-- 글쓰기 -->
+        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">作成</h4><!-- 글쓰기 -->
         <div class="d-flex align-items-center">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb m-0 p-0">
@@ -61,7 +61,7 @@
         <td><input class="form-control" type="text" name="title" placeholder="題目"></td>
       </tr>
       <tr>
-        <th class="adminwrite66">内容</th><!-- 내용 -->
+        <th style="line-height: 333px;">内容</th><!-- 내용 -->
         
         <td>
         <textarea class="form-control summernote" name="content" id="summernote" rows="8" placeholder="内容"></textarea>
@@ -144,6 +144,6 @@ $(document).ready(function() {
   }
 
 });//function
-  
+
 </script>
 <%@ include file="../adminfooter.jsp"%>

@@ -374,18 +374,13 @@
       </div><!-- container -->
    </section>
    <!-- Product Section End -->
-  <script>
+
+<script>
 
         let rollingData = [
-<<<<<<< HEAD
-          <c:forEach var="nlist" items="${nlist}" begin="0" end="2">
-          '<p>${nlist.title}</p>',
-          </c:forEach>
-=======
                         <c:forEach var="nlist" items="${nlist}" begin="0" end="2">
                         '<p>${nlist.title}</p>',
                         </c:forEach>
->>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
                           ]    // 롤링할 데이터를 넣으면 됩니다 갯수 제한 없어요
 
         let timer = 2000 // 롤링되는 주기 입니다 (1000 => 1초)
@@ -454,8 +449,8 @@
           console.log(listCnt)
       }, timer);
 
+</script>
 
-    </script>
 <!-- 스크롤버튼 -->
     <script>
 $(function(){

@@ -96,22 +96,21 @@ IMP.request_pay({
             console.log("추가성공");
           },
           error:function(){
-            console.log("Insert ajax 통신 실패!!!");
+            
           }
     }) //ajax
   if ( response.success ) { //결제 성공
     console.log(response);
     var result = {
-        "imp_uid" : rsp.imp_uid,
-        "merchant_uid" : rsp.merchant_uid,
+        "imp_uid" : response.imp_uid,
+        "merchant_uid" : response.merchant_uid,
         "biz_email" : 'test@test.test',
         "pay_date" : new Date().getTime(),
-        "amount" : rsp.paid_amount,
-        "card_no" : rsp.apply_num,
+        "amount" : response.paid_amount,
+        "card_no" : response.apply_num,
         "refund" : 'payed'
         }
-    alert(rsp.imp_uid);
-    
+    location.href = "/";
   } else {
     alert('결제실패 : ' + response.error_msg);
   }

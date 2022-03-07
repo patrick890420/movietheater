@@ -57,7 +57,7 @@
                     <td>${ticket.id}</td>
                     <td>${ticket.title}</td>
                     <td>${ticket.tkt_date}</td>
-                    <td><a class="btn btn-danger" href="" >キャンセル</a></td>
+                    <td><button class="btn btn-danger" value="キャンセル" onclick="cancelPay();"></button></td>
                   </tr>
                   </c:forEach>
                 </tbody>
@@ -81,6 +81,7 @@
     <!-- ============================================================== -->
   </div>
 </div>
+
   <!-- ============================================================== -->
   <!-- End Container fluid  -->
   <!-- ============================================================== -->

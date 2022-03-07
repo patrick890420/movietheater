@@ -97,10 +97,10 @@
                                                 <p>${view.rate }</p>
                                               </div>
                                               <div class="form-group">
-                                                <p><c:if test="${film.film_status==1 }">
+                                                <p><c:if test="${film[0].film_status==1 }">
                                                                                              上映中
                                               </c:if>
-                                              <c:if test="${film.film_status==0 }">
+                                              <c:if test="${film[0].film_status==0 }">
                                                                                             上映終了
                                               </c:if></p>
                                               </div>

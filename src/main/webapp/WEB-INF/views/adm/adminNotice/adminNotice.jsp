@@ -82,7 +82,6 @@
                 </div>
               </div>
               <!-- Directors tab -->
-              
 <!--               글쓰기 -->
                 <button type="button" class="btn waves-effect waves-light btn-rounded btn-outline-primary admin103"
                   onClick="location.href='adminBoardWrite.do'">作成</button><!-- 작성 -->
