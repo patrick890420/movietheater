@@ -145,7 +145,7 @@
               <li><a href="/theater/theater.do">劇場<span class="arrow_carrot-down"></span></a>
                 <ul class="dropdown">
                   <li><a href="">JSL-Movie劇場</a></li>
-                  <li><a href="">특별관</a></li>
+                  <li><a href="">スペシャル館</a></li>
                 </ul></li>
               <li><a href="/ticket/ticket.do">前売</a></li>
               <li><a href="/event/event.do">イベント</a></li><!-- EVENT -->

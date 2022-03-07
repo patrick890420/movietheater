@@ -5,9 +5,7 @@
       <div class="">
 
             <div class="hero__items set-bg" style="margin:0 auto; max-width:1155px; text-align:center;">
-       <video autoplay="" muted="" style="width:100%;">
-        <source src="https://adimg.cgv.co.kr/images/202202/Nightmare/Nightmare_1080x608_0214.mp4" type="video/mp4">
-       </video>
+       <video preload="metadata" id="eq-2546-1536-0-29980" crossorigin="Anonymous" style="position: absolute; width: 100%; height: 100%; display: block;" src="blob:https://eqc163kcaa.eq.webcdn.stream.ne.jp/62745446-a4fe-4f5a-8f82-4e9bf4c6aae4"></video>
          </div>
       </div>
 
@@ -132,7 +130,7 @@
    <!-- Hero Section End -->
   <div id='btnTop' class="page-up">
       <a class="index_scbt2" href="/ticket/ticket.do">
-      <span class="T_button">예매하기</span></a>
+      <span class="T_button">予約する</span></a>
       <a class="index_scbt1" href="#">
       <span class="T_button" style="position:initial;">▲</span></a>
    </div>
@@ -254,7 +252,7 @@
             <div class="row">
               <div class="col-lg-8 col-md-8 col-sm-8">
                 <div class="section-title">
-                  <h4 style="float:left;">극장</h4>
+                  <h4 style="float:left;">Theater</h4>
                     <span style="font-size:24px; color:#808080ab; line-height:24px;"> ㅣSpecial</span>
                 </div>
               </div>
@@ -269,11 +267,8 @@
               <div class="col-lg-7 col-md-7 col-sm-7">
                 <div class="product__item">
                   <div class="product__item__pic set-bg"
-                    data-setbg="/resources/img/trending/theater1.png">
+                    data-setbg="/resources/img/KakaoTalk_20220306_221808027.png">
                     <div class="ep">BEST</div>
-                    <div class="view">
-                      <i class="fa fa-eye"></i> 9141
-                    </div>
                   </div>
                 </div>
               </div>
@@ -346,7 +341,7 @@
                 <div style="padding-top:20px; border-top:groove; width: 1100px;">
                   <strong>カスタマーセンター <span>&ensp;&ensp;1234-1234</span></strong>
 <!--                   고객센터 -->
-                  <div style="margin-left:80px;">
+                  <div>
                   <span>カスタマーセンター営業時間 (平日 09:00~18:00)</span>
 <!--                   고객센터 운영시간 (평일 09:00~18:00) -->
                   <p>業務時間外の自動応答のご案内が可能です。.</p>
@@ -373,7 +368,8 @@
       </div><!-- container -->
    </section>
    <!-- Product Section End -->
-  <script>
+
+<script>
 
         let rollingData = [
                         <c:forEach var="nlist" items="${nlist}" begin="0" end="2">
@@ -447,8 +443,8 @@
           console.log(listCnt)
       }, timer);
 
+</script>
 
-    </script>
 <!-- 스크롤버튼 -->
     <script>
 $(function(){

@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -109,7 +110,6 @@ public class TicketController {
   
   @GetMapping("/movePayment.do")
   public String movePayment(SelectSeatVO svo,Model model) {
-    log.info(svo);
     
     String str =  svo.getSeat_cd();
     List<String> seatList = Arrays.asList(str.split(","));
@@ -126,11 +126,11 @@ public class TicketController {
     
   }
   
-  @RequestMapping(value = "/insertPayment")
-  @ResponseBody
-  public int pay(@RequestBody PaymentsVO pvo) {
-    
+  @RequestMapping(value = "/insertPayment" ,method = RequestMethod.POST)
+  public @ResponseBody int pay(@RequestBody PaymentsVO pvo) {
+
+    log.info("!!!!!!!"+pvo);
     return  pservice.insertPay(pvo);
-    
+   
   }
 }
