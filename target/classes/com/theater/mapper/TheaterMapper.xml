@@ -57,9 +57,7 @@
   </insert>    
   
   <select id="adminScheduleSelect" resultType="com.theater.domain.ScheduleVO">
-    SELECT * FROM MOVIES m, films f
-      WHERE m.m_cd = f.m_cd
-        and f.film_status = 1
+    SELECT * FROM MOVIES m
   </select>
   
   <select id="getCityCheck" resultType="com.theater.domain.TheatersVO">
@@ -98,5 +96,13 @@
     into film_timetable (s_t_cd, film_cd, start_time) values (s_t_cd_seq.nextval, #{film_cd}, to_date(#{start_time},'yyyy-MM-dd hh24:mi:ss'))
   SELECT * FROM SYS.DUAL
 </insert>
+
+<select id="adminScheduleList" resultType="com.theater.domain.ScheduleVO">
+SELECT * FROM FILMS f ,FILM_TIMETABLE ft, MOVIES m 
+  WHERE f.FILM_CD = ft.FILM_CD  
+  AND f.SCREEN_CD = #{screen_cd}
+  AND f.M_CD = m.M_CD 
+</select>  
+
 
 </mapper>

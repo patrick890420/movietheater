@@ -49,15 +49,17 @@ private PasswordEncoder pwEncoder;
   public void mypage() {
 
   }
-
+  
   @GetMapping("/mycash.do")
-  public void mycash(Criteria cri, Model model,Principal principal) {
+  public String mycash(Model model,Principal principal, CriteriaMyPage cri) {
     String id = principal.getName();
-    
-    model.addAttribute("pList",pService.getCashList(cri,id));
+    cri.setId(id);
+    model.addAttribute("pList",pService.getCashList(cri));
+
 //전체조회값
     int total= pService.getTotal(cri);
-    model.addAttribute("pageMaker",new PageVO(cri, total));
+    model.addAttribute("pageMaker",new PageMyVO(cri, total));
+    return "/mypage/mycash";
   }
   
   //비밀번호 수정 페이지

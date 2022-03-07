@@ -310,6 +310,7 @@ public class AdminController {
   
   @GetMapping("/adminSchedule.do") 
   public String  admintheatherSchedule(Model model,@RequestParam("screen_cd") int screen_cd) {
+    model.addAttribute("scheduleList", TheaterService.adminScheduleList(screen_cd));
     model.addAttribute("mlist",TheaterService.adminScheduleSelect());
     model.addAttribute("screen_cd",screen_cd);
     return "adm/adminTheater/adminSchedule";

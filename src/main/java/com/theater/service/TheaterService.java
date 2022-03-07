@@ -27,6 +27,8 @@ public interface TheaterService {
   public List<TheatersVO> getCityCheck2(TheatersVO tvo);
   public List<TheatersVO> getScreenInfo(TheatersVO tvo);
   
+  public List<ScheduleVO> adminScheduleList(int screen_cd);
+  
   public void scheduleInsert(ScheduleVO scdvo);
   
   

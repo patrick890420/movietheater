@@ -91,8 +91,7 @@ function dayClickEvent1(button) {
             button.firstChild.innerHTML;
         console.log(inputRunningDate.value);
         var getTname = document.querySelector('.getTname');
-        alert(getTname.value);
-        alert(inputRunningDate.value);
+        
         $.ajax({
           type : "get",
           url : '/theater/dayClick.do?start_time='+inputRunningDate.value+'&t_name='+getTname.value,
@@ -118,8 +117,8 @@ function dayClickEvent1(button) {
               pushDiv+="<span class='t_filmtitle'>"+data[0].title+"</span>";
               pushDiv+="<p class='t_sch_text'>▶"+data[i].t_name+" 1階 ["+data[i].t_screen+"上映館]  総"+data[i].t_seat+"席</p>";
               pushDiv+="<ul class='t_sch_time'><li class='t_filmtime'>";
-              pushDiv+="<strong><a href='javascript:void(0)' onclick=getStcd("+data[i].s_t_cd+");>"+data[i].start_time+"</a></strong>";
-              pushDiv+="<br><span class='reserve-time-remain t_sch_seat'>"+data[i].t_seat+"席</span>";
+              pushDiv+="<strong><a href='/ticket/ticket.do' onclick=getStcd("+data[i].s_t_cd+");>"+data[i].start_time+"";
+              pushDiv+="<br><span class='reserve-time-remain t_sch_seat'>"+data[i].t_seat+"席</span></a></strong>";
               pushDiv+="<input type='hidden' value='"+data[i].s_t_cd+"' id='hdStcd'>";
               pushDiv+="</li></ul></div>";
             }

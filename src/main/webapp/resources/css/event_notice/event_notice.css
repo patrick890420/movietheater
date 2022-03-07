@@ -99,7 +99,11 @@
 
 
 /*                            하단 배너*/
-.event142>img{
+.event119{
+  background: -webkit-linear-gradient( top, #fff, #dc35455e);
+}
+
+.event119>img{
   display : block;
   margin : 0 auto;
   width: 1170px;

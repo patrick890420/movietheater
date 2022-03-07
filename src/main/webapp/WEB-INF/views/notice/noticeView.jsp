@@ -11,7 +11,6 @@
   <div class="container" style="background:#80808036;">
     <div class="col-md-12">
       <div style="padding:10px 0;">
-        <span style="font-weight:600;">【현재페이지넣어주세요】</span>
         <span style="font-weight:600;">${nview.title}</span>
         <span style="float:right;">${nview.wdate}&nbsp;<i class="fa fa-eye"></i>&nbsp;${nview.hits}</span>
       </div>
