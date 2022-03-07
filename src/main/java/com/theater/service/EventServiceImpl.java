@@ -71,8 +71,8 @@ public class EventServiceImpl implements EventService {
   }
 
   @Override
-  public List<EventVO> getEventList() {
-    return eMapper.getEventList();
+  public List<EventVO> getAdminEventList() {
+    return eMapper.getAdminEventList();
   }
 
   @Override

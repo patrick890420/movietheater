@@ -15,7 +15,7 @@ public interface EventMapper {
 
 //admin입력
   public List<EventVO>getEventList(Criteria cri);
-  public List<EventVO>getEventList();
+  public List<EventVO>getAdminEventList();
   public int modify(EventVO evo);
   public int EventDelete(int event_cd);
 

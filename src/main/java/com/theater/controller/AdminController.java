@@ -428,8 +428,8 @@ public class AdminController {
 /* Board-> Event*/
   
   @GetMapping("/adminEvent.do")
-  public String adminEvent(Criteria cri, Model model) {
-    model.addAttribute("elist",eService.getEventList(cri));
+  public String adminEvent(Model model) {
+    model.addAttribute("elist",eService.getAdminEventList());
     return "adm/adminEvent/adminEvent";
   }
   
@@ -464,8 +464,8 @@ public class AdminController {
 /*Board-> Notice*/
 
   @GetMapping("/adminNotice.do")
-  public String adminNotice(Criteria cri,Model model) {
-    model.addAttribute("nlist",nService.getNoticeList(cri));
+  public String adminNotice(Model model) {
+    model.addAttribute("nlist",nService.getAdminNoticeList());
     return "adm/adminNotice/adminNotice";
   }
   

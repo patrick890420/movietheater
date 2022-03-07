@@ -56,6 +56,10 @@ select * from event where event_cd= #{event_cd}
 <!--     ]]> -->
 </select>
 
+<select id="getAdminEventList" resultType="com.theater.domain.EventVO">
+ Select * from EVENT
+</select>
+
 <update id="modify">
   update event set title= #{title}, content= #{content}
   where event_cd= #{event_cd}

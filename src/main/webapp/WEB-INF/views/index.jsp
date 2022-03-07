@@ -1,8 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
    <!-- Hero Section Begin -->
+<<<<<<< HEAD
    <section class="hero" style="background:#000000eb; border-top:solid 3px red; padding: 0">
       <div  style="background: black;">
+=======
+   <section class="hero" style="background:#000000eb; border-top:solid 3px red;">
+      <div class="">
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
         <div class="hero__items set-bg" style="margin:0 auto; max-width:1155px; text-align:center;">
         <div class="film_movie" style="position: relative;">
         <video autoplay="" muted="" style="width:100%;">
@@ -126,13 +131,13 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+  </div><!-- carousel slide -->
+  </div><!-- "" -->
   </div>
   </div>
-          </div>
-        </div>
-      </div>
-     </div>
-   </section>
+  </div>
+</section>
+   
    <!-- Hero Section End -->
   <div id='btnTop' class="page-up">
       <a class="index_scbt2" href="/ticket/ticket.do">
@@ -368,15 +373,13 @@
                 </div><!-- style -->
                 </div><!-- 12 -->
                   </div><!-- row -->
-               </div>
-            </div><!-- 12 -->
+               </div><!-- trending__product -->
+            </div><!-- col-lg-12 -->
          </div><!-- row -->
       </div><!-- container -->
-   </section>
-   <!-- Product Section End -->
+</section><!-- Product Section End -->
 
 <script>
-
         let rollingData = [
                         <c:forEach var="nlist" items="${nlist}" begin="0" end="2">
                         '<p>${nlist.title}</p>',
