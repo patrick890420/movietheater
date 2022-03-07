@@ -2563,6 +2563,7 @@ ol {
         .product__item__pic img {
           object-fit:fill;
           height:300px;
+          border-radius:20px;
         }
        .imgn4:nth-of-type(5) img {
           object-fit:fill;
