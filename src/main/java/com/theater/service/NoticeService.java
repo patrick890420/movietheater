@@ -16,7 +16,7 @@ public interface NoticeService {
 
 //admin  
   public List<NoticeVO> getNoticeList(Criteria cri);
-  public List<NoticeVO> getNoticeList();
+  public List<NoticeVO> getAdminNoticeList();
 
 //User
 //조회수

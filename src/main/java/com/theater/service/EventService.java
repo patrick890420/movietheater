@@ -15,7 +15,7 @@ public interface EventService {
   
 //admin
   public List<EventVO> getEventList(Criteria cri);
-  public List<EventVO> getEventList();
+  public List<EventVO> getAdminEventList();
   public void modify(EventVO evo);
 
 //User

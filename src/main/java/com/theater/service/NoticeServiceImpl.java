@@ -58,8 +58,8 @@ public class NoticeServiceImpl implements NoticeService {
     return nMapper.prevPage(nt_cd);
   }
   @Override
-  public List<NoticeVO> getNoticeList() {
-    return nMapper.getNoticeList();
+  public List<NoticeVO> getAdminNoticeList() {
+    return nMapper.getAdminNoticeList();
   }
 
 

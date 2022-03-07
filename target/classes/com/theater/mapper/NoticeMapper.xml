@@ -56,6 +56,10 @@ select * from notice where nt_cd= #{nt_cd}
 <!--     ]]> -->
 </select>
 
+<select id="getAdminNoticeList" resultType="com.theater.domain.NoticeVO">
+ Select * from NOTICE
+</select>
+
 <update id="modify">
   update notice set title= #{title}, content= #{content}
   where nt_cd= #{nt_cd}
