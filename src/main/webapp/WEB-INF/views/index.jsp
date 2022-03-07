@@ -3,6 +3,7 @@
    <!-- Hero Section Begin -->
    <section class="hero" style="background:#000000eb; border-top:solid 3px red;">
       <div class="">
+<<<<<<< HEAD
 
            <div class="">
             <div class="hero__items set-bg" style="margin:0 auto; max-width:1155px; text-align:center;">
@@ -10,6 +11,18 @@
         <source src="https://adimg.cgv.co.kr/images/202202/Nightmare/Nightmare_1080x608_0214.mp4" type="video/mp4">
        </video>
          </div>
+=======
+        <div class="hero__items set-bg" style="margin:0 auto; max-width:1155px; text-align:center;">
+        <div class="film_movie" style="position: relative;">
+        <video autoplay="" muted="" style="width:100%;">
+        <source src="/resources/img/2022-03-07 14-36-21.mp4" type="video/mp4">
+        </video>
+       <strong id="ctl00_PlaceHolderContent_AD_MOVIE_NM" class="movieSelection_title">アンチャーテッド</strong>
+       <span id="ctl00_PlaceHolderContent_AD_DESCRIPTION_NM" class="movieSelection_txt">出演<br>トム・ホランド、マーク・ウォールバーグ<br>アントニオ・バンデラス、ソフィア・アリ</span>
+        <a href="#" class="btn_movieSelection_detailView"><span>映画の情報&ensp;▶</span></a>
+        </div>
+        </div>
+>>>>>>> branch 'develop' of https://github.com/patrick890420/movietheater.git
       </div>
 
     <div class="container">
