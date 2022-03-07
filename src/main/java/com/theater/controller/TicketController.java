@@ -127,10 +127,8 @@ public class TicketController {
   }
   
   @RequestMapping(value = "/insertPayment" ,method = RequestMethod.POST)
-  public @ResponseBody int pay(@RequestBody PaymentsVO pvo) {
-
-    log.info("!!!!!!!"+pvo);
-    return  pservice.insertPay(pvo);
+  public @ResponseBody void pay(@RequestBody PaymentsVO pvo) {
+    pservice.insertPay(pvo);
    
   }
 }

@@ -34,7 +34,6 @@ public class LoginController {
   
   @GetMapping("/login.do")
   public void login() {
-    log.info("로그인 실행 확인");
   }
 
   @PostMapping("/loginPro.do") 

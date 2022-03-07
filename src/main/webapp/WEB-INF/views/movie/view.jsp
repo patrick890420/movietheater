@@ -46,15 +46,29 @@
                                         <ul>
                                             <li><span>評点</span>${avg.reviewavg } 点</li>
                                             <li><span>上映狀態</span>
-                                              <c:if test="${film.film_status==1 }">
-                                                <span>上映中</span>
+                                              <c:if test="${film[0].film_status==1 }">
+                                                <span style="color:#000;">上映中</span>
                                               </c:if>
-                                              <c:if test="${film.film_status==0 }">
-                                                <span>上映終了</span>
+                                              <c:if test="${film[0].film_status==0 }">
+                                                <span style="color:#000;">上映終了</span>
                                               </c:if>
                                             </li>
                                             <li><span>上映時間</span>${view.rtime } 分</li>
-                                            <li><span>映倫</span> ${view.rate }等級</li>
+                                            <li><span>映倫</span>
+                                            <c:if test="${view.rate==99 }">
+                                              G
+                                        </c:if>
+                                        <c:if test="${view.rate==12 }">
+                                         PG12
+                                        </c:if>
+                                        <c:if test="${view.rate==15 }">
+                                          R15+
+                                        </c:if>
+                                        <c:if test="${view.rate==19 }">
+                                          R18+
+                                        </c:if>
+                                        
+                                            </li>
                                         </ul>
                                     </div>
                                     <p style="padding-left: 20px;">${view.intro }</p>
@@ -99,7 +113,7 @@
                             <c:forEach items="${review}" var="review" begin="0" end="7">
                             <div class="anime__review__item">
                                 <div class="anime__review__item__pic">
-                                    <img src="/resources/img/anime/review-1.jpg" alt="">
+                                    <img src="/resources/img/review-1.jpg" alt="">
                                 </div>
                                 <div class="anime__review__item__text">
                                 <fmt:parseDate value="${view.rdate}" var="dateValue1" pattern="yyyy-MM-dd"/>
