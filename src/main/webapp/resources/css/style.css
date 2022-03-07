@@ -2568,3 +2568,10 @@ ol {
           object-fit:fill;
           height:700px;
         }
+        .titleshort3 {
+         width:200px;
+        display: block;/* 블록태그로 만들어준다 */
+        text-overflow: ellipsis;/* 말줄임 css */
+        white-space: nowrap;/*글자를 한줄로 모아준다*/
+        overflow: hidden;
+        }
